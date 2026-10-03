@@ -1,0 +1,165 @@
+# Episode 21 child — stable hospital monitoring regime versus patient-linked dynamic opportunity
+
+Status: complete planned experiment; no cohort count, fitted parameter, prediction, metric, confidence interval, or scientific result is claimed. Child of `[prior hypothesis]`. The proposal preserves the parent’s adult first-ICU/S6 population, strict documented respiratoryCare endpoint, all-eligible continuation audit, hospital-held-out outcome estimand, timing controls, and matched baseline/temporal alternative. The substantive advance is an outcome-blind decomposition of observation opportunity into a stable hospital component and a within-stay dynamic residual.
+
+## Decision-relevant opening
+
+The parent established the right unresolved boundary but leaves one ambiguity inside its observation-density adjustment. A dense record can arise because a hospital has a stable high-frequency monitoring/documentation regime, or because a particular patient’s observation opportunity changes dynamically before the recorded respiratory transition. These explanations imply different scientific conclusions and different next studies:
+
+- A stable-regime explanation predicts that a hospital’s typical source occupancy explains much of the apparent association; within-stay deviations should add little once the hospital reference intensity is included.
+- A patient-linked dynamic-opportunity explanation predicts that a stay’s source-specific observation residuals and their recent changes add information beyond the hospital reference regime, and that the parent’s increment is attenuated when those residuals enter the continuation/observation standardization.
+- A shared-documentation explanation predicts that either component is mostly a proxy for generic charting, that the result reproduces for non-respiratory documentation or schedule-preserving nulls, or that timing is concentrated after the landmark/start.
+
+The strongest claim supported by the inspected evidence and parent is narrower: eICU supplies linked, multi-center ICU-relative records in which recorded offsets, source occupancy, and strict respiratoryCare interval rules can be audited across hospitals. Pollard et al. [K1] explicitly describe close monitoring and the fact that only part of bedside streams is archived for clinical documentation. That supports an observation/documentation concern, not a clinical interpretation of a treatment row or respiratoryCare row. Rajkomar et al. [K2] support the feasibility of temporal EHR representations, but their abstract does not resolve this provenance problem. Tang et al. [K3] support reproducible temporal feature construction, but not a site-versus-patient decomposition.
+
+The unresolved claim tested here is:
+
+> Among adult first-ICU stays that reach minute 360, does a pre-landmark, respiratory-specific association with a later strict documented respiratoryCare interval-start persist after separating stable hospital monitoring intensity from patient-linked dynamic observation opportunity, measured continuation/observation selection, pre-landmark physiology, and shared documentation?
+
+This is a bounded noncausal association/provenance estimand. It is not a claim about treatment delivery, physiologic onset, indication, mechanism, mortality benefit, or causality.
+
+A supportive result requires a pre-landmark dynamic-residual contrast beyond the hospital component in at least five viable held-out hospitals, stable under selection weighting and timing/negative-control falsifiers, with concordant direction in the transparent and temporal models. A result dominated by the hospital component supports a stable monitoring-regime explanation. Attenuation after dynamic residual adjustment supports patient-linked observation selection. Generic, post-start, or schedule-null replication supports shared documentation. An imprecise or positivity-failed result is inconclusive, not evidence for either explanation.
+
+## Population and temporal boundaries
+
+Time zero is ICU admission. All offsets below are ICU-relative minutes.
+
+The cohort is frozen to the parent:
+
+1. Read `patient.csv.gz). Require finite `patientunitstayid`, `hospitalid`, and `unitdischargeoffset`; `unitvisitnumber=1`; `unitstaytype=admit`; and adult age `>=18`. Preserve the source’s `age>89` category; do not recode it as a numeric age.
+2. Within each `uniquepid`, retain the row with the smallest finite `unitadmitoffset`, breaking ties by `patientunitstayid`. `uniquepid` is used only for this first-ICU deduplication and is never joined to another table.
+3. Report the complete adult first-ICU flow before restricting to S6. Define the parent S6 opportunity as `unitdischargeoffset>360`. Keep early alive and early expired ICU discharges in the all-eligible continuation audit; do not assign them a post-360 endpoint or manufacture a death time.
+4. Preserve the parent’s four outcome-blind respiratoryCare starting strata at minute 360: (A) a valid documented interval covers 360; (B) respiratoryCare rows exist but no auditable active interval covers 360; (C) no respiratoryCare row is available in [0,360]; and (D) unknown/contradictory state. The primary explanatory population remains B/C; A is a secondary reference and D is audited and excluded from the primary analysis if unresolved.
+5. Define each all-eligible prefix through `u_i=min(360,max(0,unitdischargeoffset))`. For S6 stays the prefix reaches 360; for early exits it ends at the observed exit.
+
+All primary predictors and observation-process variables use only rows with offsets in inclusive [0,360]. No row after 360 from treatment, respiratoryCare, respiratoryCharting, carePlanEOL, Apache, vitals, labs, or discharge enters predictors, hospital reference intensity, or continuation weights. A prespecified boundary sensitivity uses predictors through [0,330] and leaves a 30-minute gap before the endpoint window.
+
+The primary endpoint remains the parent endpoint exactly. Let `R_start_doc` be the first strict documented respiratoryCare interval-start in (360,720] before the earlier of minute 720 and `unitdischargeoffset`, requiring finite `ventstartoffset`, a finite `ventendoffset` only when strictly greater than the start or an explicitly open interval, and no valid interval covering the immediately preceding minute. Retain raw `respcareid` and all candidate rows before collapsing duplicate starts. Keep malformed, contradictory, same-offset, post-discharge, and ambiguous rows in an endpoint audit and exclude them from the valid endpoint. Do not substitute `R_stop_doc` for the primary endpoint.
+
+For each S6 stay, use 30-minute discrete-time competing outcomes in (360,720]: first valid `R_start_doc`, ICU exit before the event (alive or expired, retaining `unitdischargestatus`), or administrative follow-up end at 720. The event is counted only before ICU exit.
+
+## Estimands
+
+The parent estimand is retained as the primary comparison: the held-out-hospital incremental association between pre-360 treatment/process information and `R_start_doc`, adjusted for the parent’s six-channel vital trajectory, state/process blocks, measured continuation/observation selection, and inherited timing controls. Report unweighted and selection-standardized versions separately by starting stratum and hospital; pooled summaries are secondary.
+
+Episode 21 adds a decomposition estimand. For each source channel (g), define:
+
+- (X_{igb}): the stay-level observation opportunity in 30-minute pre-landmark bin (b), using both occupied-bin and finite-row-count features. The source channels are vitalPeriodic, vitalAperiodic, finite/revision-filtered lab results, treatment, respiratoryCharting, respiratoryCare, and carePlanEOL.
+- (H_{hgb}): stable hospital monitoring intensity, estimated outcome-blind from the same source channel and bin among other adult first-ICU stays at hospital (h), using only their observed prefix. The denominator for bin (b) includes only stays still at risk at the end of that bin; early discharge is not treated as missing charting. Use a frozen empirical-Bayes/binomial smoothing rule selected before endpoint fitting: ((sum X+alpha)/(sum A+alpha+eta)), with (alpha=eta=1), and retain the reference count and positivity flag.
+- (D_{igb}=X_{igb}-H_{hgb}): the patient-linked dynamic observation residual. Also retain the last-three-bin mean residual, first-to-last residual change, and missingness/occupancy masks. These are observation-process quantities, not patient severity or physiology.
+- (H_{hgcdot}) and (D_{igcdot}): predeclared scalar summaries over [0,360], computed only from bins in which the stay is at risk.
+
+For an index stay, (H_{hgb}) is leave-one-stay-out. In a held-out outcome hospital, its (H) vector may be computed from the hospital’s other unlabeled adult first-ICU prefixes, never from endpoint labels or fitted outcome parameters. This is an outcome-held-out, site-calibrated estimand, not a claim of deployment to a completely unseen hospital with no reference records. A strict hospital-held-out sensitivity estimates (H) only from training hospitals and uses hospital metadata where available; if the stable component cannot be identified under that restriction, that limitation is reported rather than silently imputed.
+
+The principal contrasts are:
+
+1. Physiology/state only versus physiology + hospital (H): stable-regime increment.
+2. Physiology + (H) versus physiology + (H+D): patient-linked dynamic-opportunity increment.
+3. Parent raw observation blocks versus the orthogonalized (H+D) blocks: whether the parent’s observation signal is materially reallocated between stable site regime and within-stay dynamics.
+4. Unweighted S6 association versus parent `W6` and decomposition-specific (W6^H)/(W6^{H+D}) selection sensitivities. The weights standardize only to measured continuation/observation opportunity under positivity; they do not recover post-discharge outcomes.
+
+Report a prespecified standardized association contrast: the difference in 720-minute cumulative incidence or discrete-time log-risk comparing the training-fold 90th versus 10th percentile of (D), conditional on the same (H), state, and inherited trajectory blocks. Quantile thresholds are learned in training folds and frozen for the held-out fold. Also report block likelihood/deviance contrasts, calibration and uncertainty; no causal interpretation is attached.
+
+## Observation-process construction and inherited timing audit
+
+Build the parent’s all-eligible 30-minute continuation record through 360. At each prefix time (t), retain only information observed by (t): baseline fields; current discharge opportunity; carePlanEOL save/discussion offsets <=t; source counts, occupied bins, and last finite offsets for all seven channels; and the inherited finite lab/revision rules. Fit continuation models with and without (D) after including (H), using hospital-held-out folds. Use stabilized numerator with baseline terms, denominator with the measured time-varying process terms, a single frozen 0.05–0.95 probability truncation rule, and report unclipped/clipped weights, maximum, mean, quantiles, hospital distribution, positivity, and ESS. If positivity or ESS fails, the corresponding weighted estimand is inconclusive.
+
+The hospital reference intensity is recomputed within each training/fitting partition, with raw row identifiers and reference counts retained. Do not use the endpoint, `actualicumortality`, Apache predictions, post-360 rows, or post-start timing to construct (H), (D), or weights. `apachePatientResult.csv.gz` is audit-only and never a predictor or weight input.
+
+Retain the parent’s outcome-blind treatment vocabulary and process blocks from `treatment.csv.gz): `T_resp_any`, `T_support_candidate`, `T_any_record`, hierarchy/frequency-matched `T_nonresp_control`, counts, first/last offsets, inter-event gaps, duplicate/string-offset flags, and 30-minute bin masks. The primary model uses treatment offsets in [0,360] only.
+
+For every valid `R_start_doc=s`, retain timing partitions for w=10, 30, and 60 minutes:
+
+- (C_mathrm{pre}): treatmentoffset <=360 and 0 < s-treatmentoffset <=w.
+- (C_mathrm{mid}): 360<treatmentoffset<=s within w, descriptive post-landmark/pre-start evidence only.
+- (C_mathrm{after}): s<treatmentoffset<=s+w, a backfill/common-documentation warning only.
+- Clinical respiratoryCharting offset and respiratoryCharting entry-offset comparisons, retaining exact ties, duplicate/backfill flags, lags, raw row IDs, and whether chart rows fall in [0,360], (360,s], or >s.
+
+Because treatment has no entry timestamp, a treatment row cannot be decomposed into clinical versus entry time. This is an essential unavailable dependency, not an assumption.
+
+## Exact eICU source bindings and schema audit
+
+The configured guide is `datasets/eicu/README.md`. The full catalog is `[internal dataset path]`, catalog [source checksum]. The eICU snapshot is `[source checksum]`. All listed files are read-only gzip ordinary files whose archive member is an ordinary file; there is no inner archive member. The source directory is:
+
+`[internal dataset path]`
+
+Required sources, schema files, hashes, joins, and fields are:
+
+- `patient.csv.gz`, [source checksum]; schema `datasets/eicu/table-ab037c09d7df9a3c.json`, schema [source checksum]. Required fields: `patientunitstayid, uniquepid, hospitalid, age, unitadmitoffset, unitvisitnumber, unitstaytype, unitdischargeoffset, unitdischargestatus`.
+- `vitalPeriodic.csv.gz`, [source checksum]; schema `datasets/eicu/table-a22c6d6981a32279.json`, schema [source checksum]. Join `patientunitstayid`; time `observationoffset`; payload `temperature,sao2,heartrate,respiration,systemicmean`.
+- `vitalAperiodic.csv.gz`, [source checksum]; schema `datasets/eicu/table-72ace5b89971196b.json`, schema [source checksum]. Join `patientunitstayid`; time `observationoffset`; payload `noninvasivemean`.
+- `respiratoryCare.csv.gz`, [source checksum]; schema `datasets/eicu/table-75bd08623beb504f.json`, schema [source checksum]. Join `patientunitstayid`; time/interval fields `respcarestatusoffset,ventstartoffset,ventendoffset,priorventstartoffset,priorventendoffset`; row/audit fields `respcareid,currenthistoryseqnum,airwaytype,airwaysize,airwayposition,cuffpressure`.
+- `respiratoryCharting.csv.gz`, [source checksum]; schema `datasets/eicu/table-339bf06c7eef27e0.json`, schema [source checksum]. Join `patientunitstayid`; times `respchartoffset,respchartentryoffset`; labels/values `respcharttypecat,respchartvaluelabel,respchartvalue`; row `respchartid`.
+- `treatment.csv.gz`, [source checksum]; schema `datasets/eicu/table-5461361964176606.json`, schema [source checksum]. Join `patientunitstayid`; fields `treatmentid,treatmentoffset,treatmentstring,activeupondischarge`. There is no treatment-entry timestamp.
+- `hospital.csv.gz`, [source checksum]; schema `datasets/eicu/table-811df7b2ef435e12.json`, schema [source checksum]. Join only `patient.hospitalid=hospital.hospitalid`; fields `numbedscategory,teachingstatus,region`.
+- `carePlanEOL.csv.gz`, [source checksum]; schema `datasets/eicu/table-4a60395475cf75e7.json`, schema [source checksum]. Join `patientunitstayid`; fields `cpleolid,cpleolsaveoffset,cpleoldiscussionoffset,activeupondischarge`.
+- `apachePatientResult.csv.gz`, [source checksum]; schema `datasets/eicu/table-754bebf64d3d9909.json`, schema [source checksum]. Join `patientunitstayid`; fields `actualicumortality,apachescore,predictedicumortality,predictediculos,predictedhospitalmortality,predictedhospitallos`. Audit-only.
+- `lab.csv.gz`, [source checksum]; schema `datasets/eicu/table-79bdb33275339b1a.json`, schema [source checksum]. Join `patientunitstayid`; fields `labid,labtypeid,labname,labresult,labmeasurenameinterface,labmeasurenamesystem,labresultoffset,labresultrevisedoffset`, with the inherited finite-result and revision rules in [0,360].
+
+Every cross-table join is on `patientunitstayid) except patient-to-hospital. Never join `uniquepid) across tables. The solver must fail closed if the catalog/snapshot/source/schema hashes or raw headers differ, and must write the source/header/row-ID audit before fitting.
+
+For the inherited state model, use only finite vital rows in [0,360] from the five `vitalPeriodic` measures and `vitalAperiodic.noninvasivemean), on a common 12-bin 30-minute grid, retaining per-bin median/count/missingness, early [0,60] and late [300,360] summaries, late-minus-early changes, centered slopes, IQR, and last finite offset under the parent’s no-forward-fill rules. This is measured physiology/recording, not a severity gold standard.
+
+## Models, split, uncertainty, and method choice
+
+All models receive the same patient-level inputs: the parent six-channel value/mask trajectory and state/process blocks; treatment/process features; the seven-channel observation opportunity sequence (X); cross-fitted (H) and (D) sequences and summaries; hospital metadata; EOL/continuation variables; and the same competing endpoint labels. No model receives post-360 inputs, endpoint timing partitions, or Apache outcome fields.
+
+Transparent baseline:
+
+- Fit cause-specific 30-minute discrete-time elastic-net hazards for `R_start_doc`, ICU exit, and administrative end. Flatten the 12-bin physiology and (H/D) sequences, concatenate scalar state/process features, standardize/impute inside each fitting fold, and select penalty/mixing by training-fold likelihood with a one-standard-error rule.
+- Predefine nested block comparisons: M0 physiology/state; M1 M0+raw process; M2 M0+(H); M3 M0+(H+D). Report signed grouped coefficients, standardized (D) contrasts, incremental held-out log likelihood/deviance, cumulative incidence, Brier score, calibration-in-the-large/slope, and per-hospital estimates.
+- The baseline is the primary scientific test because its blocks make the stable-versus-dynamic allocation inspectable.
+
+Substantive learned/temporal alternative:
+
+- Fit a small two-layer temporal-convolution model with separate channels for physiology values/masks, raw observation opportunity, (H), and (D), plus a dense branch for scalar state/process features. Use matched cause-specific hazard heads for the same three outcomes, same inputs, same fold assignments, same missingness rules, same `W6`/decomposition-weight sensitivities, and a fixed parameter budget with training-fold early stopping.
+- The alternative can reveal nonlinear interactions such as a recent patient-specific increase in observation residual only being informative at a particular physiological trajectory shape, which flattening and additive elastic-net terms may miss. It is scientifically useful only if its block attribution and falsification behavior agree with the decomposition; a predictive gain alone is not supportive.
+- Compare the temporal alternative with the baseline on the same held-out hospitals using paired cluster-bootstrap intervals over hospitals (2,000 replicates if stable, otherwise a prespecified equivalent), cause-specific Brier/calibration, cumulative incidence, log-likelihood/deviance, and the (H)-versus-(D) contrast. Do not rank the models by AUROC alone.
+
+The future solver deliverable is newly estimated, not a reproduction: (i) frozen source/header/row and cohort-flow audits; (ii) outcome-blind (H)/(D) manifests and reference counts; (iii) all-eligible continuation models and (W6,W6^H,W6^{H+D}) diagnostics; (iv) nested baseline and temporal-model held-out predictions; (v) endpoint, stratum, hospital, EOL, density, and early-exit estimates with uncertainty; (vi) timing and permutation falsification tables; and (vii) a claim-to-output table linking every conclusion to computed files.
+
+Compute planning is CPU-first. The current discovery limits are 2 concurrent jobs, 2 GPU slots, and 9,000 science seconds; no model fitting was run in discovery. The future solver planning ceiling is 16 CPUs, 262144 MiB RAM, 28,800 seconds, and up to 8 GPUs. Gzip scans, source joins, cross-fitted sparse elastic-net and hospital bootstrap are expected to be CPU-first. The full audit/fit estimate of 4–8 hours is unmeasured and must be profiled by a bounded row/schema scan before commitment. The temporal model may request one allocated A100 GPU if profiling shows matrix throughput is limiting; inside an allocated job it must use `cuda:0`, explicitly move model/tensors to the device, and never infer GPU availability from ordinary shell CUDA visibility. GPU use is optional and has no scientific merit. If the alternative cannot fit the solver envelope after profiling, defer that model explicitly while retaining the baseline decomposition; do not replace the scientific question with a cheaper endpoint.
+
+## Falsification, interpretation, and stopping rules
+
+Prespecify and freeze all rules before inspecting endpoint labels or fitting outcomes.
+
+1. **Stable-versus-dynamic decomposition test.** Compare M2 and M3 in held-out hospitals. A dynamic increment must survive (H)-only adjustment and be directionally consistent across at least five viable hospitals; a stable-regime increment must be visible in M2 and shrink materially in M3 only if within-stay residuals account for it. Report the raw parent block beside orthogonalized blocks.
+2. **Dynamic-order falsifier.** Permute the order of (D_{igb}) within stay while preserving each source’s count, occupancy, (H), and missingness, and repeat a schedule-preserving cyclic shift within hospital and starting stratum. A purported dynamic result that survives unchanged is evidence against a temporal patient-linked interpretation.
+3. **Hospital-component falsifier.** Permute (H_{hgb}) across hospitals within source and time strata while preserving its marginal distribution and (D) construction. The stable hospital block should lose its association; if it does not, inspect leakage or a generic time/source artifact.
+4. **Generic documentation controls.** Repeat endpoint/timing contrasts for frequency-matched non-respiratory treatment and first generic charting/observation events. A matching signal is adverse to respiratory-specific provenance.
+5. **Pre/post timing.** Support requires pre-landmark (C_mathrm{pre}) evidence without concentration in (C_mathrm{mid}), (C_mathrm{after}), exact ties, duplicate/backfill rows, or post-start respiratoryCharting entry offsets. The absence of treatment-entry time limits the conclusion.
+6. **Selection and EOL.** Report all-eligible early alive/expired exits, carePlanEOL activity, density/source-complete strata, unweighted and weighted effects, ESS, truncation, influence, and hospital distributions. Strong attenuation under (W6^{H+D}), concentration in EOL/dense strata, or unstable weights supports selection/ascertainment and makes the standardized estimand inconclusive.
+7. **Physiology and boundary.** Repeat the inherited state-matched and [0,330]+gap checks. Permute complete pre-landmark vital trajectories within hospital × starting-stratum while preserving masks and density. These are measurement/provenance nulls, not independence proofs.
+8. **Transport.** No pooled result is supportive if one hospital, one starting state, one EOL stratum, or one observation-density stratum supplies the direction. Require at least five viable held-out hospitals and report uncertainty, not just pooled discrimination.
+9. **Leakage audit.** Confirm that (H) is leave-one-stay-out, that all fold-fitted thresholds/vocabulary/imputation/weights use training data only, and that no endpoint, post-360 row, Apache actual/predicted field, or post-start timing enters any predictor.
+
+Supportive results establish only that a reproducible pre-landmark recorded association is more compatible with patient-linked dynamic observation opportunity (or a stable hospital regime, depending on the nested contrast) than with the tested measured alternatives. They do not establish clinical deterioration, invasive ventilation, treatment delivery, physiologic onset, mechanism, causality, benefit, or a bedside decision rule.
+
+Adverse results include a hospital-only increment with little (D) addition; (D) attenuation under selection weighting; persistence under dynamic-order or hospital permutation; generic/non-respiratory replication; post-start or entry-offset concentration; schedule-null failure; low ESS/positivity; or failure to transport. These redirect interpretation toward stable workflow, observation selection, shared documentation, timing/backfill, or unresolved source semantics. They do not prove that no clinical signal exists.
+
+Inconclusive results include fewer than five viable hospitals, insufficient reference counts, no positivity for hospital (H), unstable weights, broad cluster intervals, irreconcilable interval semantics, or the inability to separate treatment clinical time from entry time. Continue only to a source-adjudication study if the decomposition is stable and pre-landmark; revise the direction if it is selection- or workflow-dominated; defer/abandon the stronger claim if the falsifiers fail or the endpoint cannot be made auditable.
+
+## Clinical limits and required next evidence
+
+Computable claims are limited to cohort flow, ICU-relative offsets, source occupancy/counts, outcome-blind hospital reference intensity, within-stay residual dynamics, continuation/observation associations under stated positivity assumptions, strict recorded respiratoryCare interval starts, timing partitions, held-out model contrasts, uncertainty, and the specified falsification outputs.
+
+Unavailable or clinically adjudicated evidence includes treatment order, administration, indication, dose, delivery, treatment entry/backfill time, ventilator/device identity and state, bedside event time, waveform/FiO2, physiologic onset, reliable death time, untreated latent severity, causal effects, and clinical utility. Narrative notes and raw waveforms are unavailable; `vitalPeriodic` is a five-minute summary stream. Stronger conclusions require expert review against orders, administration/device logs and bedside timing, appropriate physiologic data, and independent or prospective validation.
+
+The stable hospital component is an observation-regime descriptor, not a hospital quality or clinician-behavior measure. The dynamic residual is not a patient severity score. Neither component should be presented as a treatment target.
+
+## Alternatives retained and deferral record
+
+The elastic-net hazard is retained as the transparent baseline because its block contrasts directly answer whether (D) adds beyond (H) and physiology. The temporal-convolution alternative is retained because it can reveal temporal shape and interactions without changing the estimand or input information. Both use identical patient-level inputs, endpoint, competing outcomes, fold assignment, weights, and uncertainty.
+
+A raw event-sequence transformer is deferred: it could model ordering, but the provenance question requires auditable (H/D) attribution and treatment lacks an entry timestamp. A causal treatment-effect model is deferred because assignment, indication, administration, and delivery are absent. A mechanistic ventilator model is deferred because validated device state, FiO2, waveforms, and bedside timing are absent. A pure site-random-effect model is not chosen as the sole method because it cannot test patient-linked dynamics; it is retained as the H-only nested comparator. Revisit these alternatives only if source provenance, clinical adjudication, or richer physiologic/device data becomes available.
+
+## Key references
+
+The exactly three inspected works are mapped in the proposal as [K1], [K2], and [K3]. Their limitations and source receipts are in `key-references.json`, with attached UTF-8 excerpts:
+
+- [K1] Pollard et al., 2018: eICU monitoring/documentation and multi-center data scope.
+- [K2] Rajkomar et al., 2018: abstract-only evidence for temporal EHR representation and multi-center prediction.
+- [K3] Tang et al., 2020: full-text XML evidence for reproducible structured-EHR preprocessing and eICU proof of concept.
+
+No demonstration paper is reproduced. The available evidence is used to bound the question and method, not to claim a result.
