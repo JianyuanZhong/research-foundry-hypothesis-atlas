@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1190" height="683" viewBox="0 0 1190 683" role="img" aria-label="Therapeutic Target Prioritization hypothesis lineage">
+<rect width="1190" height="683" fill="#101512"/>
+<text x="35" y="45" fill="#eef2e5" font-family="Georgia" font-size="29">Therapeutic Target Prioritization</text>
+<text x="36" y="73" fill="#abbc9b" font-family="sans-serif" font-size="13">16 hypotheses and starting questions · actual parent links · anonymous review view</text>
+<text x="35" y="132.0" fill="#b9cca9" font-family="sans-serif" font-size="12">E-MTAB-8316 + E-MTAB-8873 + E-MTAB-8322</text>
+<text x="35" y="252.0" fill="#b9cca9" font-family="sans-serif" font-size="12">GSE95588 + E-MTAB-8316</text>
+<text x="35" y="484.0" fill="#b9cca9" font-family="sans-serif" font-size="12">Multi-study: E-MTAB-8316, E-MTAB-8322, E-MTAB-8873, GSE95588</text>
+<path d="M239.0,306.0 C315.0,306.0 145.0,524.0 221.0,524.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,151.0 C315.0,151.0 145.0,524.0 221.0,524.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,524.0 C315.0,524.0 335.0,524.0 411.0,524.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,524.0 C505.0,524.0 525.0,524.0 601.0,524.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,524.0 C695.0,524.0 715.0,545.0 791.0,545.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,524.0 C695.0,524.0 715.0,503.0 791.0,503.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,545.0 C885.0,545.0 905.0,531.0 981.0,531.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,545.0 C885.0,545.0 905.0,559.0 981.0,559.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,306.0 C315.0,306.0 335.0,271.0 411.0,271.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,306.0 C315.0,306.0 335.0,341.0 411.0,341.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,341.0 C505.0,341.0 525.0,341.0 601.0,341.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,341.0 C695.0,341.0 715.0,299.0 791.0,299.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,341.0 C695.0,341.0 715.0,383.0 791.0,383.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,341.0 C695.0,341.0 715.0,327.0 791.0,327.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,341.0 C695.0,341.0 715.0,355.0 791.0,355.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<g><title>D2-195C7DE527 · Protective versus pathogenic states</title><circle cx="230.0" cy="151.0" r="8" fill="#c8e2a9"/><text x="245.0" y="155.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-195C7DE527</text></g>
+<g><title>D2-28C2BC3620 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="420.0" cy="271.0" r="8" fill="#c8e2a9"/><text x="435.0" y="275.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-28C2BC3620</text></g>
+<g><title>D2-145A4673E7 · MerTK remission signal: cell state or macrophage-state composition?</title><circle cx="800.0" cy="299.0" r="8" fill="#c8e2a9"/><text x="815.0" y="303.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-145A4673E7</text></g>
+<g><title>D2-1927BBAC60 · Context-specific intervention response</title><circle cx="230.0" cy="306.0" r="8" fill="#c8e2a9"/><text x="245.0" y="310.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-1927BBAC60</text></g>
+<g><title>D2-1724BBCD62 · MerTK remission signal: cell state or macrophage-state composition?</title><circle cx="800.0" cy="327.0" r="8" fill="#c8e2a9"/><text x="815.0" y="331.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-1724BBCD62</text></g>
+<g><title>D2-766FDF0EA7 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="420.0" cy="341.0" r="8" fill="#c8e2a9"/><text x="435.0" y="345.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-766FDF0EA7</text></g>
+<g><title>D2-E38C911CE3 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="610.0" cy="341.0" r="8" fill="#c8e2a9"/><text x="625.0" y="345.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-E38C911CE3</text></g>
+<g><title>D2-2F6E9698AB · MerTK inhibitor response: target-specific signal or assay-compatible alternatives?</title><circle cx="800.0" cy="355.0" r="8" fill="#c8e2a9"/><text x="815.0" y="359.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-2F6E9698AB</text></g>
+<g><title>D2-6CD0A26615 · MerTK remission signal: cell state or macrophage-state composition?</title><circle cx="800.0" cy="383.0" r="8" fill="#c8e2a9"/><text x="815.0" y="387.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-6CD0A26615</text></g>
+<g><title>D2-5300D67F55 · Independent, source-specific triangulation of context-selective MerTK harm</title><circle cx="800.0" cy="503.0" r="8" fill="#c8e2a9"/><text x="815.0" y="507.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-5300D67F55</text></g>
+<g><title>D2-4ADC9FDA91 · Context-specific MerTK target prioritization in rheumatoid-arthritis synovial coculture</title><circle cx="230.0" cy="524.0" r="8" fill="#c8e2a9"/><text x="245.0" y="528.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-4ADC9FDA91</text></g>
+<g><title>D2-3CF12384D2 · Donor-aware identifiability of context-selective MerTK harm in RA synovial coculture</title><circle cx="420.0" cy="524.0" r="8" fill="#c8e2a9"/><text x="435.0" y="528.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-3CF12384D2</text></g>
+<g><title>D2-8F30DB23A7 · Donor-aware identifiability of context-selective MerTK harm in RA synovial coculture</title><circle cx="610.0" cy="524.0" r="8" fill="#c8e2a9"/><text x="625.0" y="528.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-8F30DB23A7</text></g>
+<g><title>D2-BD06531C2E · Source-local benefit–harm gate for context-selective MerTK prioritization</title><circle cx="990.0" cy="531.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="535.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-BD06531C2E</text></g>
+<g><title>D2-AF14627657 · Independent transferability of context-selective MerTK perturbation</title><circle cx="800.0" cy="545.0" r="8" fill="#c8e2a9"/><text x="815.0" y="549.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-AF14627657</text></g>
+<g><title>D2-E22FBC2FE8 · A benefit-axis identifiability gate for context-selective MerTK perturbation</title><circle cx="990.0" cy="559.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="563.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-E22FBC2FE8</text></g>
+</svg>

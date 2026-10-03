@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-label="Four domain research forest overview">
+<rect width="1200" height="660" fill="#101512"/>
+<text x="55" y="65" fill="#eff4e8" font-family="Georgia" font-size="42">AI-generated research hypothesis forests</text>
+<text x="57" y="98" fill="#aabd9c" font-family="sans-serif" font-size="16">Four scientific domains · anonymous hypotheses · recorded parent links</text>
+<rect x="55" y="145" width="510" height="205" rx="18" fill="#1b291e" stroke="#526748"/>
+<text x="81" y="190" fill="#f1f4e9" font-family="sans-serif" font-weight="bold" font-size="21">Clinical &amp; Population Health Research</text>
+<text x="82" y="235" fill="#d6e9b5" font-family="Georgia" font-size="36">258</text>
+<text x="205" y="234" fill="#aab99e" font-family="sans-serif" font-size="14">nodes · 218 generated versions</text>
+<text x="82" y="280" fill="#b9c9ae" font-family="sans-serif" font-size="13">HCC · MIMIC-IV · eICU</text>
+<circle cx="110" cy="315" r="6" fill="#c8e2a9"/><path d="M116,315 C153,315 151,315 185,315" fill="none" stroke="#78906d"/><circle cx="191" cy="315" r="6" fill="#c8e2a9"/><path d="M197,315 C234,315 231,315 265,315" fill="none" stroke="#78906d"/><circle cx="271" cy="315" r="6" fill="#c8e2a9"/>
+<rect x="605" y="145" width="510" height="205" rx="18" fill="#1b291e" stroke="#526748"/>
+<text x="631" y="190" fill="#f1f4e9" font-family="sans-serif" font-weight="bold" font-size="21">Therapeutic Target Prioritization</text>
+<text x="632" y="235" fill="#d6e9b5" font-family="Georgia" font-size="36">16</text>
+<text x="755" y="234" fill="#aab99e" font-family="sans-serif" font-size="14">nodes · 14 generated versions</text>
+<text x="632" y="280" fill="#b9c9ae" font-family="sans-serif" font-size="13">GEO / ArrayExpress intervention studies</text>
+<circle cx="660" cy="315" r="6" fill="#c8e2a9"/><path d="M666,315 C703,315 701,315 735,315" fill="none" stroke="#78906d"/><circle cx="741" cy="315" r="6" fill="#c8e2a9"/><path d="M747,315 C784,315 781,315 815,315" fill="none" stroke="#78906d"/><circle cx="821" cy="315" r="6" fill="#c8e2a9"/>
+<rect x="55" y="380" width="510" height="205" rx="18" fill="#1b291e" stroke="#526748"/>
+<text x="81" y="425" fill="#f1f4e9" font-family="sans-serif" font-weight="bold" font-size="21">Disease Mechanisms &amp; Pathway Hypotheses</text>
+<text x="82" y="470" fill="#d6e9b5" font-family="Georgia" font-size="36">14</text>
+<text x="205" y="469" fill="#aab99e" font-family="sans-serif" font-size="14">nodes · 11 generated versions</text>
+<text x="82" y="515" fill="#b9c9ae" font-family="sans-serif" font-size="13">GEO / ArrayExpress cell-state studies</text>
+<circle cx="110" cy="550" r="6" fill="#c8e2a9"/><path d="M116,550 C153,550 151,550 185,550" fill="none" stroke="#78906d"/><circle cx="191" cy="550" r="6" fill="#c8e2a9"/><path d="M197,550 C234,550 231,550 265,550" fill="none" stroke="#78906d"/><circle cx="271" cy="550" r="6" fill="#c8e2a9"/>
+<rect x="605" y="380" width="510" height="205" rx="18" fill="#1b291e" stroke="#526748"/>
+<text x="631" y="425" fill="#f1f4e9" font-family="sans-serif" font-weight="bold" font-size="21">Population Multi-omics &amp; Disease Targets</text>
+<text x="632" y="470" fill="#d6e9b5" font-family="Georgia" font-size="36">115</text>
+<text x="755" y="469" fill="#aab99e" font-family="sans-serif" font-size="14">nodes · 63 generated versions</text>
+<text x="632" y="515" fill="#b9c9ae" font-family="sans-serif" font-size="13">UK Biobank</text>
+<circle cx="660" cy="550" r="6" fill="#c8e2a9"/><path d="M666,550 C703,550 701,550 735,550" fill="none" stroke="#78906d"/><circle cx="741" cy="550" r="6" fill="#c8e2a9"/><path d="M747,550 C784,550 781,550 815,550" fill="none" stroke="#78906d"/><circle cx="821" cy="550" r="6" fill="#c8e2a9"/>
+</svg>

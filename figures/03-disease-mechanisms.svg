@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1190" height="655" viewBox="0 0 1190 655" role="img" aria-label="Disease Mechanisms &amp; Pathway Hypotheses hypothesis lineage">
+<rect width="1190" height="655" fill="#101512"/>
+<text x="35" y="45" fill="#eef2e5" font-family="Georgia" font-size="29">Disease Mechanisms &amp; Pathway Hypotheses</text>
+<text x="36" y="73" fill="#abbc9b" font-family="sans-serif" font-size="13">14 hypotheses and starting questions · actual parent links · anonymous review view</text>
+<text x="35" y="132.0" fill="#b9cca9" font-family="sans-serif" font-size="12">E-MTAB-8316 + E-MTAB-8873 + GSE95588</text>
+<text x="35" y="392.0" fill="#b9cca9" font-family="sans-serif" font-size="12">E-MTAB-8322 + E-MTAB-8873; GSE89408 as context</text>
+<text x="35" y="512.0" fill="#b9cca9" font-family="sans-serif" font-size="12">E-MTAB-8322; coculture context</text>
+<path d="M239.0,207.0 C315.0,207.0 335.0,165.0 411.0,165.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,165.0 C505.0,165.0 525.0,179.0 601.0,179.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,165.0 C505.0,165.0 525.0,151.0 601.0,151.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,151.0 C695.0,151.0 715.0,151.0 791.0,151.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,207.0 C315.0,207.0 335.0,249.0 411.0,249.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,249.0 C505.0,249.0 525.0,249.0 601.0,249.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,249.0 C695.0,249.0 715.0,249.0 791.0,249.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,249.0 C885.0,249.0 905.0,235.0 981.0,235.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,249.0 C885.0,249.0 905.0,207.0 981.0,207.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,249.0 C885.0,249.0 905.0,263.0 981.0,263.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,249.0 C885.0,249.0 905.0,291.0 981.0,291.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<g><title>D3-11985B2E5F · MerTK specificity repair: a donor-blocked macrophage–FLS interaction test</title><circle cx="610.0" cy="151.0" r="8" fill="#c8e2a9"/><text x="625.0" y="155.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-11985B2E5F</text></g>
+<g><title>D3-8107E60104 · MerTK state versus composition: a source-separated macrophage–FLS test</title><circle cx="800.0" cy="151.0" r="8" fill="#c8e2a9"/><text x="815.0" y="155.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-8107E60104</text></g>
+<g><title>D3-2F9BE0A370 · MerTK-conditioned macrophage–fibroblast communication in rheumatoid arthritis</title><circle cx="420.0" cy="165.0" r="8" fill="#c8e2a9"/><text x="435.0" y="169.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-2F9BE0A370</text></g>
+<g><title>D3-79F4D5009E · MerTK specificity repair: a donor-blocked macrophage–FLS interaction test</title><circle cx="610.0" cy="179.0" r="8" fill="#c8e2a9"/><text x="625.0" y="183.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-79F4D5009E</text></g>
+<g><title>D3-F680DC5C21 · Directional cell communication</title><circle cx="230.0" cy="207.0" r="8" fill="#c8e2a9"/><text x="245.0" y="211.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-F680DC5C21</text></g>
+<g><title>D3-24FAB17842 · Does the remission–resistance macrophage signal travel across donors?</title><circle cx="990.0" cy="207.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="211.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-24FAB17842</text></g>
+<g><title>D3-33A768666E · Do remission-associated macrophage averages reflect captured state representation?</title><circle cx="990.0" cy="235.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="239.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-33A768666E</text></g>
+<g><title>D3-9450FD8C77 · MERTK-state dependence of synovial fibroblast responses</title><circle cx="420.0" cy="249.0" r="8" fill="#c8e2a9"/><text x="435.0" y="253.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-9450FD8C77</text></g>
+<g><title>D3-20A6350EA2 · Synovial macrophage remission signal: composition or within-state regulation?</title><circle cx="610.0" cy="249.0" r="8" fill="#c8e2a9"/><text x="625.0" y="253.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-20A6350EA2</text></g>
+<g><title>D3-3BC37E909C · Synovial macrophage remission signal: composition or within-state regulation?</title><circle cx="800.0" cy="249.0" r="8" fill="#c8e2a9"/><text x="815.0" y="253.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-3BC37E909C</text></g>
+<g><title>D3-924F307338 · Do remission-associated macrophage averages reflect captured state representation?</title><circle cx="990.0" cy="263.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="267.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-924F307338</text></g>
+<g><title>D3-B03DDAADEF · Do remission-associated macrophage averages reflect captured state representation?</title><circle cx="990.0" cy="291.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="295.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-B03DDAADEF</text></g>
+<g><title>D3-1CEA8C9831 · Composition versus within-cell regulation</title><circle cx="230.0" cy="411.0" r="8" fill="#c8e2a9"/><text x="245.0" y="415.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-1CEA8C9831</text></g>
+<g><title>D3-F4A1736A6C · Persistence versus remission</title><circle cx="230.0" cy="531.0" r="8" fill="#c8e2a9"/><text x="245.0" y="535.0" fill="#dce8d5" font-family="monospace" font-size="10">D3-F4A1736A6C</text></g>
+</svg>

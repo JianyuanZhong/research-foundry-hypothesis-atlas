@@ -1,0 +1,477 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3660" height="5703" viewBox="0 0 3660 5703" role="img" aria-label="Clinical &amp; Population Health Research hypothesis lineage">
+<rect width="3660" height="5703" fill="#101512"/>
+<text x="35" y="45" fill="#eef2e5" font-family="Georgia" font-size="29">Clinical &amp; Population Health Research</text>
+<text x="36" y="73" fill="#abbc9b" font-family="sans-serif" font-size="13">258 hypotheses and starting questions · actual parent links · anonymous review view</text>
+<text x="35" y="132.0" fill="#b9cca9" font-family="sans-serif" font-size="12">HCC</text>
+<text x="35" y="1548.0" fill="#b9cca9" font-family="sans-serif" font-size="12">MIMIC-IV</text>
+<text x="35" y="3456.0" fill="#b9cca9" font-family="sans-serif" font-size="12">eICU</text>
+<path d="M239.0,5133.1 C315.0,5133.1 335.0,4927.2 411.0,4927.2" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,1083.4 C315.0,1083.4 335.0,1283.0 411.0,1283.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,5133.1 C315.0,5133.1 335.0,5339.0 411.0,5339.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,2649.5 C315.0,2649.5 335.0,2649.5 411.0,2649.5" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,4927.2 C505.0,4927.2 525.0,4927.2 601.0,4927.2" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,2649.5 C505.0,2649.5 525.0,2703.0 601.0,2703.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,4927.2 C695.0,4927.2 715.0,5171.0 791.0,5171.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,4927.2 C695.0,4927.2 715.0,5276.0 791.0,5276.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,4927.2 C695.0,4927.2 715.0,4334.7 791.0,4334.7" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,2649.5 C505.0,2649.5 525.0,2675.0 601.0,2675.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,1083.4 C315.0,1083.4 335.0,656.3 411.0,656.3" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,1083.4 C315.0,1083.4 335.0,1311.0 411.0,1311.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,2649.5 C505.0,2649.5 525.0,2570.4 601.0,2570.4" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,5276.0 C885.0,5276.0 905.0,5311.0 981.0,5311.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,5276.0 C885.0,5276.0 905.0,5241.0 981.0,5241.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,2570.4 C695.0,2570.4 715.0,2647.0 791.0,2647.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,2570.4 C695.0,2570.4 715.0,2493.8 791.0,2493.8" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,656.3 C505.0,656.3 525.0,1255.0 601.0,1255.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,656.3 C505.0,656.3 525.0,960.2 601.0,960.2" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,2493.8 C885.0,2493.8 905.0,2493.8 981.0,2493.8" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,656.3 C505.0,656.3 525.0,219.0 601.0,219.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,960.2 C695.0,960.2 715.0,960.2 791.0,960.2" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,656.3 C505.0,656.3 525.0,191.0 601.0,191.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,5241.0 C1075.0,5241.0 1095.0,5227.0 1171.0,5227.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,5241.0 C1075.0,5241.0 1095.0,5255.0 1171.0,5255.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,5241.0 C1075.0,5241.0 1095.0,5199.0 1171.0,5199.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,5241.0 C1075.0,5241.0 1095.0,5283.0 1171.0,5283.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,960.2 C885.0,960.2 905.0,1199.0 981.0,1199.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,960.2 C885.0,960.2 905.0,454.7 981.0,454.7" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,960.2 C885.0,960.2 905.0,1227.0 981.0,1227.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,2959.0 C315.0,2959.0 335.0,2931.0 411.0,2931.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,2959.0 C315.0,2959.0 335.0,3015.0 411.0,3015.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,2959.0 C315.0,2959.0 335.0,2987.0 411.0,2987.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,2959.0 C315.0,2959.0 335.0,2959.0 411.0,2959.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,2959.0 C315.0,2959.0 335.0,2903.0 411.0,2903.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,4334.7 C885.0,4334.7 905.0,4324.0 981.0,4324.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,454.7 C1075.0,454.7 1095.0,454.7 1171.0,454.7" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,4334.7 C885.0,4334.7 905.0,4219.0 981.0,4219.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,4334.7 C885.0,4334.7 905.0,4461.0 981.0,4461.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,2493.8 C1075.0,2493.8 1095.0,2619.0 1171.0,2619.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,2493.8 C1075.0,2493.8 1095.0,2368.6 1171.0,2368.6" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,454.7 C1265.0,454.7 1285.0,275.0 1361.0,275.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,454.7 C1265.0,454.7 1285.0,247.0 1361.0,247.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,454.7 C1265.0,454.7 1285.0,361.3 1361.0,361.3" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,454.7 C1265.0,454.7 1285.0,935.4 1361.0,935.4" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,4324.0 C1075.0,4324.0 1095.0,4359.0 1171.0,4359.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,4324.0 C1075.0,4324.0 1095.0,4289.0 1171.0,4289.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1379.0,361.3 C1455.0,361.3 1475.0,361.3 1551.0,361.3" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,2368.6 C1265.0,2368.6 1285.0,2591.0 1361.0,2591.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,4289.0 C1265.0,4289.0 1285.0,4247.0 1361.0,4247.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,4289.0 C1265.0,4289.0 1285.0,4331.0 1361.0,4331.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,4289.0 C1265.0,4289.0 1285.0,4303.0 1361.0,4303.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,4289.0 C1265.0,4289.0 1285.0,4275.0 1361.0,4275.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,2368.6 C1265.0,2368.6 1285.0,2171.0 1361.0,2171.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,2368.6 C1265.0,2368.6 1285.0,2343.9 1361.0,2343.9" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,361.3 C1645.0,361.3 1665.0,303.0 1741.0,303.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,361.3 C1645.0,361.3 1665.0,366.0 1741.0,366.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,361.3 C1645.0,361.3 1665.0,415.0 1741.0,415.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1379.0,2343.9 C1455.0,2343.9 1475.0,2199.0 1551.0,2199.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,4461.0 C1075.0,4461.0 1095.0,4415.0 1171.0,4415.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,4461.0 C1075.0,4461.0 1095.0,4443.0 1171.0,4443.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1379.0,2343.9 C1455.0,2343.9 1475.0,2488.8 1551.0,2488.8" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,4461.0 C1075.0,4461.0 1095.0,4387.0 1171.0,4387.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,4461.0 C1075.0,4461.0 1095.0,4598.9 1171.0,4598.9" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,366.0 C1835.0,366.0 1855.0,387.0 1931.0,387.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,366.0 C1835.0,366.0 1855.0,345.0 1931.0,345.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,2199.0 C1645.0,2199.0 1665.0,2199.0 1741.0,2199.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,4598.9 C1265.0,4598.9 1285.0,4726.9 1361.0,4726.9" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1949.0,345.0 C2025.0,345.0 2045.0,331.0 2121.0,331.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1189.0,4598.9 C1265.0,4598.9 1285.0,4471.0 1361.0,4471.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1949.0,345.0 C2025.0,345.0 2045.0,359.0 2121.0,359.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,2488.8 C1645.0,2488.8 1665.0,2414.6 1741.0,2414.6" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1379.0,4726.9 C1455.0,4726.9 1475.0,4954.7 1551.0,4954.7" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,2488.8 C1645.0,2488.8 1665.0,2563.0 1741.0,2563.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1379.0,4726.9 C1455.0,4726.9 1475.0,4499.0 1551.0,4499.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1379.0,935.4 C1455.0,935.4 1475.0,1171.0 1551.0,1171.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1379.0,935.4 C1455.0,935.4 1475.0,1143.0 1551.0,1143.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1379.0,935.4 C1455.0,935.4 1475.0,443.0 1551.0,443.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1379.0,935.4 C1455.0,935.4 1475.0,984.7 1551.0,984.7" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,4954.7 C1645.0,4954.7 1665.0,5087.0 1741.0,5087.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,4954.7 C1645.0,4954.7 1665.0,4527.0 1741.0,4527.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,4954.7 C1645.0,4954.7 1665.0,4901.5 1741.0,4901.5" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,4954.7 C1645.0,4954.7 1665.0,5115.0 1741.0,5115.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,4954.7 C1645.0,4954.7 1665.0,5143.0 1741.0,5143.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,2414.6 C1835.0,2414.6 1855.0,2507.0 1931.0,2507.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,984.7 C1645.0,984.7 1665.0,903.3 1741.0,903.3" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,2414.6 C1835.0,2414.6 1855.0,2325.0 1931.0,2325.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,903.3 C1835.0,903.3 1855.0,1115.0 1931.0,1115.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,4901.5 C1835.0,4901.5 1855.0,5059.0 1931.0,5059.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,903.3 C1835.0,903.3 1855.0,691.6 1931.0,691.6" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,4901.5 C1835.0,4901.5 1855.0,4677.5 1931.0,4677.5" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,4901.5 C1835.0,4901.5 1855.0,4968.0 1931.0,4968.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1949.0,2325.0 C2025.0,2325.0 2045.0,2255.0 2121.0,2255.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1949.0,2325.0 C2025.0,2325.0 2045.0,2311.0 2121.0,2311.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1949.0,2325.0 C2025.0,2325.0 2045.0,2409.0 2121.0,2409.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1949.0,691.6 C2025.0,691.6 2045.0,471.0 2121.0,471.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1949.0,691.6 C2025.0,691.6 2045.0,912.3 2121.0,912.3" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1949.0,4968.0 C2025.0,4968.0 2045.0,4968.0 2121.0,4968.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2139.0,2409.0 C2215.0,2409.0 2235.0,2367.0 2311.0,2367.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2139.0,2409.0 C2215.0,2409.0 2235.0,2395.0 2311.0,2395.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2139.0,2409.0 C2215.0,2409.0 2235.0,2451.0 2311.0,2451.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2139.0,2409.0 C2215.0,2409.0 2235.0,2423.0 2311.0,2423.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2139.0,912.3 C2215.0,912.3 2235.0,1066.0 2311.0,1066.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1569.0,984.7 C1645.0,984.7 2235.0,1066.0 2311.0,1066.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2139.0,4968.0 C2215.0,4968.0 2235.0,4968.0 2311.0,4968.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,1066.0 C2405.0,1066.0 2425.0,1087.0 2501.0,1087.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,1066.0 C2405.0,1066.0 2425.0,1045.0 2501.0,1045.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,4968.0 C2405.0,4968.0 2425.0,5031.0 2501.0,5031.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,4968.0 C2405.0,4968.0 2425.0,5003.0 2501.0,5003.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,1045.0 C2595.0,1045.0 2615.0,1059.0 2691.0,1059.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,4968.0 C2405.0,4968.0 2425.0,4947.0 2501.0,4947.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,4968.0 C2405.0,4968.0 2425.0,4891.0 2501.0,4891.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,1045.0 C2595.0,1045.0 2615.0,1031.0 2691.0,1031.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2139.0,2311.0 C2215.0,2311.0 2235.0,2311.0 2311.0,2311.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2139.0,912.3 C2215.0,912.3 2235.0,667.8 2311.0,667.8" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2139.0,912.3 C2215.0,912.3 2235.0,1003.0 2311.0,1003.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,2414.6 C1835.0,2414.6 1855.0,2227.0 1931.0,2227.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,2414.6 C1835.0,2414.6 1855.0,2479.0 1931.0,2479.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1759.0,2414.6 C1835.0,2414.6 1855.0,2535.0 1931.0,2535.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,4947.0 C2595.0,4947.0 2615.0,4919.0 2691.0,4919.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,4947.0 C2595.0,4947.0 2615.0,4975.0 2691.0,4975.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,4947.0 C2595.0,4947.0 2615.0,4947.0 2691.0,4947.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,667.8 C2405.0,667.8 2425.0,667.8 2501.0,667.8" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M1949.0,4677.5 C2025.0,4677.5 2045.0,4677.5 2121.0,4677.5" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,667.8 C2595.0,667.8 2615.0,639.0 2691.0,639.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,667.8 C2595.0,667.8 2615.0,611.0 2691.0,611.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,667.8 C2595.0,667.8 2615.0,947.0 2691.0,947.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,667.8 C2595.0,667.8 2615.0,499.0 2691.0,499.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,667.8 C2595.0,667.8 2615.0,583.0 2691.0,583.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,667.8 C2595.0,667.8 2615.0,527.0 2691.0,527.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,667.8 C2595.0,667.8 2615.0,758.6 2691.0,758.6" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,667.8 C2595.0,667.8 2615.0,555.0 2691.0,555.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,667.8 C2595.0,667.8 2615.0,891.0 2691.0,891.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2139.0,4677.5 C2215.0,4677.5 2235.0,4677.5 2311.0,4677.5" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,4677.5 C2405.0,4677.5 2425.0,4555.0 2501.0,4555.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,3248.1 C315.0,3248.1 335.0,3315.0 411.0,3315.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,4677.5 C2405.0,4677.5 2425.0,4863.0 2501.0,4863.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,4677.5 C2405.0,4677.5 2425.0,4611.0 2501.0,4611.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,4677.5 C2405.0,4677.5 2425.0,4583.0 2501.0,4583.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,4677.5 C2405.0,4677.5 2425.0,4775.5 2501.0,4775.5" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,3248.1 C315.0,3248.1 335.0,3175.0 411.0,3175.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,3248.1 C315.0,3248.1 335.0,3254.3 411.0,3254.3" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2709.0,758.6 C2785.0,758.6 2805.0,667.0 2881.0,667.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,3254.3 C505.0,3254.3 525.0,3254.3 601.0,3254.3" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2709.0,758.6 C2785.0,758.6 2805.0,863.0 2881.0,863.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2709.0,758.6 C2785.0,758.6 2805.0,745.8 2881.0,745.8" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,4775.5 C2595.0,4775.5 2615.0,4716.0 2691.0,4716.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2519.0,4775.5 C2595.0,4775.5 2615.0,4835.0 2691.0,4835.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2899.0,745.8 C2975.0,745.8 2995.0,751.0 3071.0,751.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2899.0,745.8 C2975.0,745.8 2995.0,814.0 3071.0,814.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2899.0,745.8 C2975.0,745.8 2995.0,695.0 3071.0,695.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2899.0,745.8 C2975.0,745.8 2995.0,723.0 3071.0,723.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,3254.3 C695.0,3254.3 715.0,3217.0 791.0,3217.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,3254.3 C695.0,3254.3 715.0,3259.0 791.0,3259.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,3254.3 C695.0,3254.3 715.0,3287.0 791.0,3287.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,3217.0 C885.0,3217.0 905.0,3203.0 981.0,3203.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2709.0,4716.0 C2785.0,4716.0 2805.0,4667.0 2881.0,4667.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2709.0,4716.0 C2785.0,4716.0 2805.0,4751.0 2881.0,4751.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2709.0,4716.0 C2785.0,4716.0 2805.0,4807.0 2881.0,4807.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2709.0,4716.0 C2785.0,4716.0 2805.0,4639.0 2881.0,4639.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,3217.0 C885.0,3217.0 905.0,3231.0 981.0,3231.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M3089.0,814.0 C3165.0,814.0 3185.0,793.0 3261.0,793.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M3089.0,814.0 C3165.0,814.0 3185.0,835.0 3261.0,835.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2899.0,4751.0 C2975.0,4751.0 2995.0,4723.0 3071.0,4723.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2899.0,4751.0 C2975.0,4751.0 2995.0,4779.0 3071.0,4779.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M3279.0,793.0 C3355.0,793.0 3375.0,807.0 3451.0,807.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,2311.0 C2405.0,2311.0 2425.0,2283.0 2501.0,2283.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,2311.0 C2405.0,2311.0 2425.0,2339.0 2501.0,2339.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M3279.0,793.0 C3355.0,793.0 3375.0,779.0 3451.0,779.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2329.0,2311.0 C2405.0,2311.0 2425.0,2311.0 2501.0,2311.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2709.0,947.0 C2785.0,947.0 2805.0,975.0 2881.0,975.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M3089.0,4723.0 C3165.0,4723.0 3185.0,4751.0 3261.0,4751.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M3089.0,4723.0 C3165.0,4723.0 3185.0,4723.0 3261.0,4723.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2709.0,947.0 C2785.0,947.0 2805.0,947.0 2881.0,947.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M3089.0,4723.0 C3165.0,4723.0 3185.0,4695.0 3261.0,4695.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2899.0,975.0 C2975.0,975.0 2995.0,975.0 3071.0,975.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M2709.0,947.0 C2785.0,947.0 2805.0,919.0 2881.0,919.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,1943.0 C315.0,1943.0 335.0,1943.0 411.0,1943.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,4083.0 C315.0,4083.0 335.0,4083.0 411.0,4083.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,1426.0 C315.0,1426.0 335.0,1447.0 411.0,1447.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,4083.0 C505.0,4083.0 525.0,4083.0 601.0,4083.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,1426.0 C315.0,1426.0 335.0,1405.0 411.0,1405.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,4083.0 C695.0,4083.0 715.0,4083.0 791.0,4083.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,1405.0 C505.0,1405.0 525.0,1405.0 601.0,1405.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,1943.0 C505.0,1943.0 525.0,1971.0 601.0,1971.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,1943.0 C505.0,1943.0 525.0,1915.0 601.0,1915.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,4083.0 C885.0,4083.0 905.0,4055.0 981.0,4055.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,4083.0 C885.0,4083.0 905.0,4111.0 981.0,4111.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,1915.0 C695.0,1915.0 715.0,1915.0 791.0,1915.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,4111.0 C1075.0,4111.0 1095.0,4139.0 1171.0,4139.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,4111.0 C1075.0,4111.0 1095.0,4111.0 1171.0,4111.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M999.0,4111.0 C1075.0,4111.0 1095.0,4083.0 1171.0,4083.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,1915.0 C885.0,1915.0 905.0,1887.0 981.0,1887.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,1405.0 C695.0,1405.0 715.0,1391.0 791.0,1391.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,1915.0 C885.0,1915.0 905.0,1915.0 981.0,1915.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,1915.0 C885.0,1915.0 905.0,1943.0 981.0,1943.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,1405.0 C695.0,1405.0 715.0,1419.0 791.0,1419.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,3785.0 C315.0,3785.0 335.0,3785.0 411.0,3785.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,3095.0 C315.0,3095.0 335.0,3095.0 411.0,3095.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,3785.0 C505.0,3785.0 525.0,3785.0 601.0,3785.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,3785.0 C695.0,3785.0 715.0,3827.0 791.0,3827.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,3785.0 C695.0,3785.0 715.0,3743.0 791.0,3743.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,3785.0 C695.0,3785.0 715.0,3855.0 791.0,3855.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M239.0,1351.0 C315.0,1351.0 335.0,1351.0 411.0,1351.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M429.0,3095.0 C505.0,3095.0 525.0,3095.0 601.0,3095.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,3785.0 C695.0,3785.0 715.0,3715.0 791.0,3715.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,3095.0 C695.0,3095.0 715.0,3095.0 791.0,3095.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M619.0,3785.0 C695.0,3785.0 715.0,3785.0 791.0,3785.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,3785.0 C885.0,3785.0 905.0,3771.0 981.0,3771.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,3785.0 C885.0,3785.0 905.0,3799.0 981.0,3799.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<path d="M809.0,3095.0 C885.0,3095.0 905.0,3095.0 981.0,3095.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
+<g><title>D1-33F4EB6948 · HCC branch A: treatment recovery versus care-process signal</title><circle cx="230.0" cy="151.0" r="8" fill="#c8e2a9"/><text x="245.0" y="155.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-33F4EB6948</text></g>
+<g><title>D1-2B4AFF4CA4 · a day-42, censoring-aware test of recorded assay state versus care process after first dated exact-code TACE</title><circle cx="610.0" cy="191.0" r="8" fill="#c8e2a9"/><text x="625.0" y="195.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-2B4AFF4CA4</text></g>
+<g><title>D1-A6811F5958 · a day-42, censoring-aware test of recorded assay state versus care process after first dated exact-code TACE</title><circle cx="610.0" cy="219.0" r="8" fill="#c8e2a9"/><text x="625.0" y="223.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A6811F5958</text></g>
+<g><title>D1-1654426DD6 · Day-42 HCC recorded-assay transport: auditable support, workflow separation, and an adjudication gate</title><circle cx="1370.0" cy="247.0" r="8" fill="#c8e2a9"/><text x="1385.0" y="251.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-1654426DD6</text></g>
+<g><title>D1-7388786269 · Day-42 HCC assay transportability: frozen support and workflow/state interpretation</title><circle cx="1370.0" cy="275.0" r="8" fill="#c8e2a9"/><text x="1385.0" y="279.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-7388786269</text></g>
+<g><title>D1-07900E75B1 · early workflow timing versus later recorded-state signal</title><circle cx="1750.0" cy="303.0" r="8" fill="#c8e2a9"/><text x="1765.0" y="307.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-07900E75B1</text></g>
+<g><title>D1-30D443CBBA · temporal and competing-care boundary for the day-42 HCC assay-state experiment</title><circle cx="2130.0" cy="331.0" r="8" fill="#c8e2a9"/><text x="2145.0" y="335.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-30D443CBBA</text></g>
+<g><title>D1-2D1B24C03C · day-42 HCC assay state with support-gated workflow and non-TACE checks</title><circle cx="1940.0" cy="345.0" r="8" fill="#c8e2a9"/><text x="1955.0" y="349.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-2D1B24C03C</text></g>
+<g><title>D1-E4ED410897 · temporal and competing-operational-care boundary for day-42 HCC assay state</title><circle cx="2130.0" cy="359.0" r="8" fill="#c8e2a9"/><text x="2145.0" y="363.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-E4ED410897</text></g>
+<g><title>D1-A0840A7635 · Day-42 HCC recorded-assay transport: auditable support, workflow separation, and an adjudication gate</title><circle cx="1370.0" cy="361.3" r="8" fill="#c8e2a9"/><text x="1385.0" y="365.3" fill="#dce8d5" font-family="monospace" font-size="10">D1-A0840A7635</text></g>
+<g><title>D1-4DC8CED798 · Day-42 HCC exact-code repeat-TACE: patient-held-out state-versus-workflow test</title><circle cx="1560.0" cy="361.3" r="8" fill="#c8e2a9"/><text x="1575.0" y="365.3" fill="#dce8d5" font-family="monospace" font-size="10">D1-4DC8CED798</text></g>
+<g><title>D1-2FCD04CB6F · Day-42 HCC: recorded assay state versus a pre-outcome review-workflow proxy</title><circle cx="1750.0" cy="366.0" r="8" fill="#c8e2a9"/><text x="1765.0" y="370.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-2FCD04CB6F</text></g>
+<g><title>D1-B923C7B951 · Day-42 HCC: recorded assay state versus a pre-outcome review-workflow proxy</title><circle cx="1940.0" cy="387.0" r="8" fill="#c8e2a9"/><text x="1955.0" y="391.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B923C7B951</text></g>
+<g><title>D1-7213C066BD · representation-boundary memo</title><circle cx="1750.0" cy="415.0" r="8" fill="#c8e2a9"/><text x="1765.0" y="419.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-7213C066BD</text></g>
+<g><title>D1-146510A2BB · HCC day-42 endpoint triangulation for operational repeat-TACE transport</title><circle cx="1560.0" cy="443.0" r="8" fill="#c8e2a9"/><text x="1575.0" y="447.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-146510A2BB</text></g>
+<g><title>D1-4196B57F22 · day-42 repeat-TACE risk, separated assay state from observation and retreatment process</title><circle cx="990.0" cy="454.7" r="8" fill="#c8e2a9"/><text x="1005.0" y="458.7" fill="#dce8d5" font-family="monospace" font-size="10">D1-4196B57F22</text></g>
+<g><title>D1-5D8E980060 · Day-42 recorded-assay signal: transportability across observation and care-process strata</title><circle cx="1180.0" cy="454.7" r="8" fill="#c8e2a9"/><text x="1195.0" y="458.7" fill="#dce8d5" font-family="monospace" font-size="10">D1-5D8E980060</text></g>
+<g><title>D1-572E82E965 · HCC nested trajectory increment beyond the day-42 snapshot</title><circle cx="2130.0" cy="471.0" r="8" fill="#c8e2a9"/><text x="2145.0" y="475.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-572E82E965</text></g>
+<g><title>D1-0E3BCD2C45 · assay content versus a competing observation process</title><circle cx="2700.0" cy="499.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="503.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-0E3BCD2C45</text></g>
+<g><title>D1-2EBBBEBF95 · assay content versus a competing observation process</title><circle cx="2700.0" cy="527.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="531.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-2EBBBEBF95</text></g>
+<g><title>D1-3E165367F0 · independent audit and endpoint-provenance repair</title><circle cx="2700.0" cy="555.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="559.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-3E165367F0</text></g>
+<g><title>D1-6429CB1062 · assay content versus a competing observation process</title><circle cx="2700.0" cy="583.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="587.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-6429CB1062</text></g>
+<g><title>D1-A4759CE145 · assay content versus a competing observation process</title><circle cx="2700.0" cy="611.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="615.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A4759CE145</text></g>
+<g><title>D1-B7C4381DDF · assay content versus a competing observation process</title><circle cx="2700.0" cy="639.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="643.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B7C4381DDF</text></g>
+<g><title>D1-12F0DFF455 · audited first-recorded-TACE question</title><circle cx="420.0" cy="656.3" r="8" fill="#c8e2a9"/><text x="435.0" y="660.3" fill="#dce8d5" font-family="monospace" font-size="10">D1-12F0DFF455</text></g>
+<g><title>D1-2EB18075AE · pre-endpoint documentation-conditioned assay contrast</title><circle cx="2890.0" cy="667.0" r="8" fill="#c8e2a9"/><text x="2905.0" y="671.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-2EB18075AE</text></g>
+<g><title>D1-509B2BB429 · assay content versus observation/workflow</title><circle cx="2320.0" cy="667.8" r="8" fill="#c8e2a9"/><text x="2335.0" y="671.8" fill="#dce8d5" font-family="monospace" font-size="10">D1-509B2BB429</text></g>
+<g><title>D1-3C2D0A046F · post-procedure coherence versus planned documentation</title><circle cx="2510.0" cy="667.8" r="8" fill="#c8e2a9"/><text x="2525.0" y="671.8" fill="#dce8d5" font-family="monospace" font-size="10">D1-3C2D0A046F</text></g>
+<g><title>D1-EB5DEF3532 · HCC repeat-TACE: pre-index-to-day-42 assay trajectory versus snapshot and workflow</title><circle cx="1940.0" cy="691.6" r="8" fill="#c8e2a9"/><text x="1955.0" y="695.6" fill="#dce8d5" font-family="monospace" font-size="10">D1-EB5DEF3532</text></g>
+<g><title>D1-1E675458FC · stable assay profile versus within-person change</title><circle cx="3080.0" cy="695.0" r="8" fill="#c8e2a9"/><text x="3095.0" y="699.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-1E675458FC</text></g>
+<g><title>D1-3A5A592644 · stable assay profile versus within-person change</title><circle cx="3080.0" cy="723.0" r="8" fill="#c8e2a9"/><text x="3095.0" y="727.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-3A5A592644</text></g>
+<g><title>D1-7EC9555350 · assay-result content versus observation and capture clocks</title><circle cx="2890.0" cy="745.8" r="8" fill="#c8e2a9"/><text x="2905.0" y="749.8" fill="#dce8d5" font-family="monospace" font-size="10">D1-7EC9555350</text></g>
+<g><title>D1-4BDCC43C2D · stable assay profile versus within-person change</title><circle cx="3080.0" cy="751.0" r="8" fill="#c8e2a9"/><text x="3095.0" y="755.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-4BDCC43C2D</text></g>
+<g><title>D1-CDE65D829E · closure plus capture-aware negative control</title><circle cx="2700.0" cy="758.6" r="8" fill="#c8e2a9"/><text x="2715.0" y="762.6" fill="#dce8d5" font-family="monospace" font-size="10">D1-CDE65D829E</text></g>
+<g><title>D1-47F05BE8F9 · assay content versus assay opportunity</title><circle cx="3460.0" cy="779.0" r="8" fill="#c8e2a9"/><text x="3475.0" y="783.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-47F05BE8F9</text></g>
+<g><title>D1-7B826F0F09 · pre-outcome day-28 check for day-42 observation selection</title><circle cx="3270.0" cy="793.0" r="8" fill="#c8e2a9"/><text x="3285.0" y="797.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-7B826F0F09</text></g>
+<g><title>D1-9AD6A0E452 · assay-result information beyond care/documentation workflow</title><circle cx="3460.0" cy="807.0" r="8" fill="#c8e2a9"/><text x="3475.0" y="811.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-9AD6A0E452</text></g>
+<g><title>D1-E3EB90F6D6 · stable assay profile versus within-person change</title><circle cx="3080.0" cy="814.0" r="8" fill="#c8e2a9"/><text x="3095.0" y="818.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-E3EB90F6D6</text></g>
+<g><title>D1-BF06BA7FFA · an earlier competing-observation check for the HCC assay-change question</title><circle cx="3270.0" cy="835.0" r="8" fill="#c8e2a9"/><text x="3285.0" y="839.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-BF06BA7FFA</text></g>
+<g><title>D1-AFD03EDFC2 · pre-endpoint documentation-conditioned assay contrast</title><circle cx="2890.0" cy="863.0" r="8" fill="#c8e2a9"/><text x="2905.0" y="867.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-AFD03EDFC2</text></g>
+<g><title>D1-EB067220B0 · assay content versus a competing observation process</title><circle cx="2700.0" cy="891.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="895.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-EB067220B0</text></g>
+<g><title>D1-4FCFF4A8F1 · HCC repeat-TACE episode validity: a decision-facing adjudication gate</title><circle cx="1750.0" cy="903.3" r="8" fill="#c8e2a9"/><text x="1765.0" y="907.3" fill="#dce8d5" font-family="monospace" font-size="10">D1-4FCFF4A8F1</text></g>
+<g><title>D1-851952DF2A · HCC trajectory repair: observation-selection-robust day-42 increment</title><circle cx="2130.0" cy="912.3" r="8" fill="#c8e2a9"/><text x="2145.0" y="916.3" fill="#dce8d5" font-family="monospace" font-size="10">D1-851952DF2A</text></g>
+<g><title>D1-5D4D4A3548 · stable assay profile versus within-person day-42 change</title><circle cx="2890.0" cy="919.0" r="8" fill="#c8e2a9"/><text x="2905.0" y="923.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-5D4D4A3548</text></g>
+<g><title>D1-B3F939C4BE · Day-42 HCC assay transportability: frozen support and workflow/state interpretation</title><circle cx="1370.0" cy="935.4" r="8" fill="#c8e2a9"/><text x="1385.0" y="939.4" fill="#dce8d5" font-family="monospace" font-size="10">D1-B3F939C4BE</text></g>
+<g><title>D1-F7F97BBFE0 · closure plus capture-aware negative control</title><circle cx="2700.0" cy="947.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="951.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-F7F97BBFE0</text></g>
+<g><title>D1-B82E02C704 · stable assay profile versus within-person day-42 change</title><circle cx="2890.0" cy="947.0" r="8" fill="#c8e2a9"/><text x="2905.0" y="951.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B82E02C704</text></g>
+<g><title>D1-EBEF993805 · a day-42, censoring-aware test of recorded assay state versus care process after first dated exact-code TACE</title><circle cx="610.0" cy="960.2" r="8" fill="#c8e2a9"/><text x="625.0" y="964.2" fill="#dce8d5" font-family="monospace" font-size="10">D1-EBEF993805</text></g>
+<g><title>D1-7FD7A4513B · a day-42, censoring-aware test of recorded assay state versus care process after first dated exact-code TACE</title><circle cx="800.0" cy="960.2" r="8" fill="#c8e2a9"/><text x="815.0" y="964.2" fill="#dce8d5" font-family="monospace" font-size="10">D1-7FD7A4513B</text></g>
+<g><title>D1-F3AEFEE90E · process-conditioned assay-content</title><circle cx="2890.0" cy="975.0" r="8" fill="#c8e2a9"/><text x="2905.0" y="979.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-F3AEFEE90E</text></g>
+<g><title>D1-D89D69F651 · process-conditioned assay-content</title><circle cx="3080.0" cy="975.0" r="8" fill="#c8e2a9"/><text x="3095.0" y="979.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-D89D69F651</text></g>
+<g><title>D1-8CB0C4FF88 · HCC day-42 endpoint triangulation for operational repeat-TACE transport</title><circle cx="1560.0" cy="984.7" r="8" fill="#c8e2a9"/><text x="1575.0" y="988.7" fill="#dce8d5" font-family="monospace" font-size="10">D1-8CB0C4FF88</text></g>
+<g><title>D1-AD7D26470F · HCC endpoint-validity : lead-time corroboration around the day-42 trajectory</title><circle cx="2320.0" cy="1003.0" r="8" fill="#c8e2a9"/><text x="2335.0" y="1007.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-AD7D26470F</text></g>
+<g><title>D1-1807E9040E · HCC day-42 trajectory: corroboration-timing falsifier</title><circle cx="2700.0" cy="1031.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="1035.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-1807E9040E</text></g>
+<g><title>D1-8617A21725 · observation-transport and downstream documentation falsification</title><circle cx="2510.0" cy="1045.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="1049.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-8617A21725</text></g>
+<g><title>D1-61EA7808AA · HCC successor: pre-procedure versus post-procedure corroboration of the day-42 trajectory</title><circle cx="2700.0" cy="1059.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="1063.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-61EA7808AA</text></g>
+<g><title>D1-E00B81A67B · endpoint coherence under day-42 observation selection</title><circle cx="2320.0" cy="1066.0" r="8" fill="#c8e2a9"/><text x="2335.0" y="1070.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-E00B81A67B</text></g>
+<g><title>D1-6086BEF6C2 · HCC method exploration: dynamic response versus care-process explanation</title><circle cx="230.0" cy="1083.4" r="8" fill="#c8e2a9"/><text x="245.0" y="1087.4" fill="#dce8d5" font-family="monospace" font-size="10">D1-6086BEF6C2</text></g>
+<g><title>D1-96488D2B0D · documentation-balanced endpoint coherence at day 42</title><circle cx="2510.0" cy="1087.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="1091.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-96488D2B0D</text></g>
+<g><title>D1-F64C24D63C · HCC assay trajectory versus day-42 snapshot for repeat-TACE endpoint validity</title><circle cx="1940.0" cy="1115.0" r="8" fill="#c8e2a9"/><text x="1955.0" y="1119.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-F64C24D63C</text></g>
+<g><title>D1-C0992BBC98 · HCC day-42 endpoint triangulation for operational repeat-TACE transport</title><circle cx="1560.0" cy="1143.0" r="8" fill="#c8e2a9"/><text x="1575.0" y="1147.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-C0992BBC98</text></g>
+<g><title>D1-CE85CFEA72 · HCC process-conditioned assay innovation after day-42 TACE</title><circle cx="1560.0" cy="1171.0" r="8" fill="#c8e2a9"/><text x="1575.0" y="1175.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-CE85CFEA72</text></g>
+<g><title>D1-8D2896BDC1 · day-42 repeat-TACE risk, separated assay state from observation and retreatment process</title><circle cx="990.0" cy="1199.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="1203.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-8D2896BDC1</text></g>
+<g><title>D1-E5C881125D · Day-42 landmark HCC : assay payload versus care process, with an irregular-event audit</title><circle cx="990.0" cy="1227.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="1231.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-E5C881125D</text></g>
+<g><title>D1-F19B129986 · decision estimand for recorded post-TACE retreatment</title><circle cx="610.0" cy="1255.0" r="8" fill="#c8e2a9"/><text x="625.0" y="1259.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-F19B129986</text></g>
+<g><title>D1-8AEA2217FF · Dynamic post-TACE liver-state signal versus observation process in HCC</title><circle cx="420.0" cy="1283.0" r="8" fill="#c8e2a9"/><text x="435.0" y="1287.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-8AEA2217FF</text></g>
+<g><title>D1-E38F989919 · Dynamic post-TACE liver-state information versus observation process in locally recorded HCC care</title><circle cx="420.0" cy="1311.0" r="8" fill="#c8e2a9"/><text x="435.0" y="1315.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-E38F989919</text></g>
+<g><title>D1-AA180FF03E · transient versus sustained liver-reserve change after TACE</title><circle cx="230.0" cy="1351.0" r="8" fill="#c8e2a9"/><text x="245.0" y="1355.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-AA180FF03E</text></g>
+<g><title>D1-5F38D86C29 · Does the early post-TACE lab trajectory persist?</title><circle cx="420.0" cy="1351.0" r="8" fill="#c8e2a9"/><text x="435.0" y="1355.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-5F38D86C29</text></g>
+<g><title>D1-451BC03183 · index-anchored timing and competing-observation sensitivity</title><circle cx="800.0" cy="1391.0" r="8" fill="#c8e2a9"/><text x="815.0" y="1395.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-451BC03183</text></g>
+<g><title>D1-346AA34A90 · HCC post-TACE trajectory: measurement-validity successor</title><circle cx="420.0" cy="1405.0" r="8" fill="#c8e2a9"/><text x="435.0" y="1409.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-346AA34A90</text></g>
+<g><title>D1-DB561C90DA · HCC post-TACE trajectory: transportability and observation-process</title><circle cx="610.0" cy="1405.0" r="8" fill="#c8e2a9"/><text x="625.0" y="1409.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-DB561C90DA</text></g>
+<g><title>D1-A43E31E6EA · HCC post-TACE trajectory: endpoint-validity and competing-event</title><circle cx="800.0" cy="1419.0" r="8" fill="#c8e2a9"/><text x="815.0" y="1423.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A43E31E6EA</text></g>
+<g><title>D1-ADFE2F1C70 · HCC hypothesis and Harbor experiment</title><circle cx="230.0" cy="1426.0" r="8" fill="#c8e2a9"/><text x="245.0" y="1430.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-ADFE2F1C70</text></g>
+<g><title>D1-5206902561 · measurement and endpoint validity refinement for the HCC post-TACE trajectory</title><circle cx="420.0" cy="1447.0" r="8" fill="#c8e2a9"/><text x="435.0" y="1451.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-5206902561</text></g>
+<g><title>D1-039A23F6CB · Residual physiologic instability immediately before alive ICU discharge: a competing-risk MIMIC-IV test</title><circle cx="230.0" cy="1567.0" r="8" fill="#c8e2a9"/><text x="245.0" y="1571.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-039A23F6CB</text></g>
+<g><title>D1-1A8D5C7229 · Persistent deep sedation after stabilization</title><circle cx="230.0" cy="1607.0" r="8" fill="#c8e2a9"/><text x="245.0" y="1611.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-1A8D5C7229</text></g>
+<g><title>D1-26CF39D19D · Creatinine increases during diuresis</title><circle cx="230.0" cy="1647.0" r="8" fill="#c8e2a9"/><text x="245.0" y="1651.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-26CF39D19D</text></g>
+<g><title>D1-32F033D3AE · Residual physiologic instability immediately before alive ICU discharge: a competing-risk MIMIC-IV test</title><circle cx="230.0" cy="1687.0" r="8" fill="#c8e2a9"/><text x="245.0" y="1691.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-32F033D3AE</text></g>
+<g><title>D1-36D1B18E0B · Heterogeneity in the effects of transfusion</title><circle cx="230.0" cy="1727.0" r="8" fill="#c8e2a9"/><text x="245.0" y="1731.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-36D1B18E0B</text></g>
+<g><title>D1-37312BEFA2 · Acute glucose elevation relative to chronic glycemia</title><circle cx="230.0" cy="1767.0" r="8" fill="#c8e2a9"/><text x="245.0" y="1771.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-37312BEFA2</text></g>
+<g><title>D1-38B0EE3631 · Timing of diuretic initiation</title><circle cx="230.0" cy="1807.0" r="8" fill="#c8e2a9"/><text x="245.0" y="1811.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-38B0EE3631</text></g>
+<g><title>D1-4F9363A85E · Asynchronous organ recovery</title><circle cx="230.0" cy="1847.0" r="8" fill="#c8e2a9"/><text x="245.0" y="1851.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-4F9363A85E</text></g>
+<g><title>D1-119B84C5D6 · MIMIC-IV renal-discordance: longitudinal discriminator repair</title><circle cx="990.0" cy="1887.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="1891.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-119B84C5D6</text></g>
+<g><title>D1-2211A2AB58 · Repair : observed discordant renal recovery at the ICU-discharge landmark</title><circle cx="610.0" cy="1915.0" r="8" fill="#c8e2a9"/><text x="625.0" y="1919.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-2211A2AB58</text></g>
+<g><title>D1-D9BC622BA8 · MIMIC-IV renal-discordance repair: feasibility and design note</title><circle cx="800.0" cy="1915.0" r="8" fill="#c8e2a9"/><text x="815.0" y="1919.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-D9BC622BA8</text></g>
+<g><title>D1-3319D2904B · MIMIC-IV renal-discordance: longitudinal discriminator repair</title><circle cx="990.0" cy="1915.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="1919.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-3319D2904B</text></g>
+<g><title>D1-5194999FD9 · Asynchronous organ recovery</title><circle cx="230.0" cy="1943.0" r="8" fill="#c8e2a9"/><text x="245.0" y="1947.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-5194999FD9</text></g>
+<g><title>D1-EF7877D7B1 · MIMIC-IV proposal: discordant renal recovery at ICU discharge</title><circle cx="420.0" cy="1943.0" r="8" fill="#c8e2a9"/><text x="435.0" y="1947.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-EF7877D7B1</text></g>
+<g><title>D1-BA1FC11D08 · make discharge and documentation selection testable</title><circle cx="990.0" cy="1943.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="1947.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-BA1FC11D08</text></g>
+<g><title>D1-924C091A25 · Repair : observed discordant renal recovery at the ICU-discharge landmark</title><circle cx="610.0" cy="1971.0" r="8" fill="#c8e2a9"/><text x="625.0" y="1975.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-924C091A25</text></g>
+<g><title>D1-51DD9AF8BB · Acute glucose elevation relative to chronic glycemia</title><circle cx="230.0" cy="2011.0" r="8" fill="#c8e2a9"/><text x="245.0" y="2015.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-51DD9AF8BB</text></g>
+<g><title>D1-62583CC073 · Residual instability at ICU discharge: a time-specific competing-risk audit</title><circle cx="230.0" cy="2051.0" r="8" fill="#c8e2a9"/><text x="245.0" y="2055.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-62583CC073</text></g>
+<g><title>D1-7D649F5CD1 · Timing of diuretic initiation</title><circle cx="230.0" cy="2091.0" r="8" fill="#c8e2a9"/><text x="245.0" y="2095.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-7D649F5CD1</text></g>
+<g><title>D1-7F64DCC70B · Residual instability before ICU discharge</title><circle cx="230.0" cy="2131.0" r="8" fill="#c8e2a9"/><text x="245.0" y="2135.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-7F64DCC70B</text></g>
+<g><title>D1-B77BB79420 · Complementary branch: lagged, component-specific audit of discordant-AKI recovery</title><circle cx="1370.0" cy="2171.0" r="8" fill="#c8e2a9"/><text x="1385.0" y="2175.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B77BB79420</text></g>
+<g><title>D1-2F88EC208E · Support-aware successor of the lagged discordant-AKI design</title><circle cx="1560.0" cy="2199.0" r="8" fill="#c8e2a9"/><text x="1575.0" y="2203.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-2F88EC208E</text></g>
+<g><title>D1-F0D8057A7C · Support-ascertainment repair: observed-opportunity discordant AKI</title><circle cx="1750.0" cy="2199.0" r="8" fill="#c8e2a9"/><text x="1765.0" y="2203.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-F0D8057A7C</text></g>
+<g><title>D1-36238E3987 · Lagged component-specific AKI discordance: support-ordered competing risks with a matched temporal comparison</title><circle cx="1940.0" cy="2227.0" r="8" fill="#c8e2a9"/><text x="1955.0" y="2231.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-36238E3987</text></g>
+<g><title>D1-3FD1C7BFCB · pre-exposure severity and informative ICU-exit repair</title><circle cx="2130.0" cy="2255.0" r="8" fill="#c8e2a9"/><text x="2145.0" y="2259.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-3FD1C7BFCB</text></g>
+<g><title>D1-778922A5DA · MIMIC AKI discordance: all-eligible landmark flow and component-specific outcomes</title><circle cx="2510.0" cy="2283.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="2287.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-778922A5DA</text></g>
+<g><title>D1-4F5327C89B · pre-exposure severity and informative ICU-exit repair</title><circle cx="2130.0" cy="2311.0" r="8" fill="#c8e2a9"/><text x="2145.0" y="2315.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-4F5327C89B</text></g>
+<g><title>D1-5EDF0AD893 · pre-exposure severity and informative ICU-exit repair</title><circle cx="2320.0" cy="2311.0" r="8" fill="#c8e2a9"/><text x="2335.0" y="2315.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-5EDF0AD893</text></g>
+<g><title>D1-94D208B75A · MIMIC AKI discordance: all-eligible landmark-survival and ascertainment repair</title><circle cx="2510.0" cy="2311.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="2315.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-94D208B75A</text></g>
+<g><title>D1-96314A72A8 · support-aware temporal comparison</title><circle cx="1940.0" cy="2325.0" r="8" fill="#c8e2a9"/><text x="1955.0" y="2329.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-96314A72A8</text></g>
+<g><title>D1-980664D86A · MIMIC AKI discordance: all-eligible landmark flow and component-specific outcomes</title><circle cx="2510.0" cy="2339.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="2343.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-980664D86A</text></g>
+<g><title>D1-DCF524E46D · Lagged ascertainment audit and proposal: discordant-AKI recovery</title><circle cx="1370.0" cy="2343.9" r="8" fill="#c8e2a9"/><text x="1385.0" y="2347.9" fill="#dce8d5" font-family="monospace" font-size="10">D1-DCF524E46D</text></g>
+<g><title>D1-0D40E102C0 · MIMIC AKI discordance: residual severity and observation-opportunity audit</title><circle cx="2320.0" cy="2367.0" r="8" fill="#c8e2a9"/><text x="2335.0" y="2371.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-0D40E102C0</text></g>
+<g><title>D1-0F7D26F066 · Outcome-ascertainment audit: discordant-AKI recovery</title><circle cx="1180.0" cy="2368.6" r="8" fill="#c8e2a9"/><text x="1195.0" y="2372.6" fill="#dce8d5" font-family="monospace" font-size="10">D1-0F7D26F066</text></g>
+<g><title>D1-95B0F4EC67 · MIMIC AKI discordance: residual severity and observation-opportunity audit</title><circle cx="2320.0" cy="2395.0" r="8" fill="#c8e2a9"/><text x="2335.0" y="2399.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-95B0F4EC67</text></g>
+<g><title>D1-83D576D3DB · MIMIC AKI discordance: residual severity and observation-opportunity audit</title><circle cx="2130.0" cy="2409.0" r="8" fill="#c8e2a9"/><text x="2145.0" y="2413.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-83D576D3DB</text></g>
+<g><title>D1-2818CDDEC7 · support-ordered, noncausal lagged discordant-AKI comparison</title><circle cx="1750.0" cy="2414.6" r="8" fill="#c8e2a9"/><text x="1765.0" y="2418.6" fill="#dce8d5" font-family="monospace" font-size="10">D1-2818CDDEC7</text></g>
+<g><title>D1-AC5953519A · MIMIC AKI discordance: residual severity and observation-opportunity audit</title><circle cx="2320.0" cy="2423.0" r="8" fill="#c8e2a9"/><text x="2335.0" y="2427.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-AC5953519A</text></g>
+<g><title>D1-B1C8DFB4A6 · MIMIC AKI discordance: residual severity and observation-opportunity audit</title><circle cx="2320.0" cy="2451.0" r="8" fill="#c8e2a9"/><text x="2335.0" y="2455.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B1C8DFB4A6</text></g>
+<g><title>D1-9E898FBEAF · Lagged component-specific AKI discordance: support-ordered competing risks with a matched temporal comparison</title><circle cx="1940.0" cy="2479.0" r="8" fill="#c8e2a9"/><text x="1955.0" y="2483.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-9E898FBEAF</text></g>
+<g><title>D1-48BBDB76D9 · Support-anchored lagged discordant-AKI successor</title><circle cx="1560.0" cy="2488.8" r="8" fill="#c8e2a9"/><text x="1575.0" y="2492.8" fill="#dce8d5" font-family="monospace" font-size="10">D1-48BBDB76D9</text></g>
+<g><title>D1-197F6B8C76 · landmark selection and residual severity in discordant-AKI recovery</title><circle cx="800.0" cy="2493.8" r="8" fill="#c8e2a9"/><text x="815.0" y="2497.8" fill="#dce8d5" font-family="monospace" font-size="10">D1-197F6B8C76</text></g>
+<g><title>D1-95A9815838 · landmark selection and residual severity in discordant-AKI recovery</title><circle cx="990.0" cy="2493.8" r="8" fill="#c8e2a9"/><text x="1005.0" y="2497.8" fill="#dce8d5" font-family="monospace" font-size="10">D1-95A9815838</text></g>
+<g><title>D1-E270650DA6 · Observable risk-set contrast for discordant renal recovery after ICU acute kidney injury</title><circle cx="1940.0" cy="2507.0" r="8" fill="#c8e2a9"/><text x="1955.0" y="2511.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-E270650DA6</text></g>
+<g><title>D1-F91096013A · Strictly lagged MIMIC AKI discordance: severity, support, exit and ascertainment audit</title><circle cx="1940.0" cy="2535.0" r="8" fill="#c8e2a9"/><text x="1955.0" y="2539.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-F91096013A</text></g>
+<g><title>D1-C36EE1B7E2 · independent executable/schema audit</title><circle cx="1750.0" cy="2563.0" r="8" fill="#c8e2a9"/><text x="1765.0" y="2567.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-C36EE1B7E2</text></g>
+<g><title>D1-08C3B9CAF6 · discordant kidney recovery after ICU AKI</title><circle cx="610.0" cy="2570.4" r="8" fill="#c8e2a9"/><text x="625.0" y="2574.4" fill="#dce8d5" font-family="monospace" font-size="10">D1-08C3B9CAF6</text></g>
+<g><title>D1-FE019C7AAF · residual instability at ICU discharge</title><circle cx="1370.0" cy="2591.0" r="8" fill="#c8e2a9"/><text x="1385.0" y="2595.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-FE019C7AAF</text></g>
+<g><title>D1-264991677A · lagged temporal validation of discordant-AKI recovery</title><circle cx="1180.0" cy="2619.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="2623.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-264991677A</text></g>
+<g><title>D1-4B396BBD98 · discordant kidney recovery after ICU AKI</title><circle cx="800.0" cy="2647.0" r="8" fill="#c8e2a9"/><text x="815.0" y="2651.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-4B396BBD98</text></g>
+<g><title>D1-8989254C90 · Discordant recovery after acute kidney injury</title><circle cx="230.0" cy="2649.5" r="8" fill="#c8e2a9"/><text x="245.0" y="2653.5" fill="#dce8d5" font-family="monospace" font-size="10">D1-8989254C90</text></g>
+<g><title>D1-9876D4A6BA · discordant kidney recovery after ICU AKI</title><circle cx="420.0" cy="2649.5" r="8" fill="#c8e2a9"/><text x="435.0" y="2653.5" fill="#dce8d5" font-family="monospace" font-size="10">D1-9876D4A6BA</text></g>
+<g><title>D1-5DA02926A7 · discordant kidney recovery after ICU AKI</title><circle cx="610.0" cy="2675.0" r="8" fill="#c8e2a9"/><text x="625.0" y="2679.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-5DA02926A7</text></g>
+<g><title>D1-DE82C2760C · discordant kidney recovery after ICU AKI — repair</title><circle cx="610.0" cy="2703.0" r="8" fill="#c8e2a9"/><text x="625.0" y="2707.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-DE82C2760C</text></g>
+<g><title>D1-92936D0BBF · Different meanings of persistent hyperlactatemia</title><circle cx="230.0" cy="2743.0" r="8" fill="#c8e2a9"/><text x="245.0" y="2747.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-92936D0BBF</text></g>
+<g><title>D1-A250C56EB7 · Persistent deep sedation after stabilization</title><circle cx="230.0" cy="2783.0" r="8" fill="#c8e2a9"/><text x="245.0" y="2787.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A250C56EB7</text></g>
+<g><title>D1-A6578BE3E1 · Timing of antimicrobial de-escalation</title><circle cx="230.0" cy="2823.0" r="8" fill="#c8e2a9"/><text x="245.0" y="2827.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A6578BE3E1</text></g>
+<g><title>D1-A80357ED6E · Creatinine increases during diuresis</title><circle cx="230.0" cy="2863.0" r="8" fill="#c8e2a9"/><text x="245.0" y="2867.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A80357ED6E</text></g>
+<g><title>D1-03CB2B9D07 · Residual physiologic instability immediately before ICU discharge</title><circle cx="420.0" cy="2903.0" r="8" fill="#c8e2a9"/><text x="435.0" y="2907.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-03CB2B9D07</text></g>
+<g><title>D1-1AD6D49208 · Branch C — residual instability before ICU discharge</title><circle cx="420.0" cy="2931.0" r="8" fill="#c8e2a9"/><text x="435.0" y="2935.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-1AD6D49208</text></g>
+<g><title>D1-BB8FA55243 · Residual instability before ICU discharge</title><circle cx="230.0" cy="2959.0" r="8" fill="#c8e2a9"/><text x="245.0" y="2963.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-BB8FA55243</text></g>
+<g><title>D1-5E216C7F70 · Branch A — residual instability before ICU discharge</title><circle cx="420.0" cy="2959.0" r="8" fill="#c8e2a9"/><text x="435.0" y="2963.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-5E216C7F70</text></g>
+<g><title>D1-BFF179BA3C · Residual physiologic instability before ICU discharge: a leakage-safe 48-hour MIMIC-IV test</title><circle cx="420.0" cy="2987.0" r="8" fill="#c8e2a9"/><text x="435.0" y="2991.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-BFF179BA3C</text></g>
+<g><title>D1-EB32A4C833 · Branch C — residual instability before ICU discharge</title><circle cx="420.0" cy="3015.0" r="8" fill="#c8e2a9"/><text x="435.0" y="3019.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-EB32A4C833</text></g>
+<g><title>D1-BC40FE415D · Heterogeneity in the effects of transfusion</title><circle cx="230.0" cy="3055.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3059.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-BC40FE415D</text></g>
+<g><title>D1-CCCA6C6FC4 · Discordant recovery after acute kidney injury</title><circle cx="230.0" cy="3095.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3099.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-CCCA6C6FC4</text></g>
+<g><title>D1-0CFA099A4B · When apparent AKI recovery is discordant: a MIMIC-IV landmark study</title><circle cx="420.0" cy="3095.0" r="8" fill="#c8e2a9"/><text x="435.0" y="3099.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-0CFA099A4B</text></g>
+<g><title>D1-A0BD1DB565 · Does discordant AKI recovery add prognostic information beyond observation intensity?</title><circle cx="610.0" cy="3095.0" r="8" fill="#c8e2a9"/><text x="625.0" y="3099.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A0BD1DB565</text></g>
+<g><title>D1-C7145E6FBF · Does discordant AKI recovery add prognostic information beyond observation intensity?</title><circle cx="800.0" cy="3095.0" r="8" fill="#c8e2a9"/><text x="815.0" y="3099.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-C7145E6FBF</text></g>
+<g><title>D1-34321AF9CB · Does discordant AKI recovery add prognostic information beyond observation intensity?</title><circle cx="990.0" cy="3095.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="3099.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-34321AF9CB</text></g>
+<g><title>D1-D0C64C10A3 · Timing of antimicrobial de-escalation</title><circle cx="230.0" cy="3135.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3139.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-D0C64C10A3</text></g>
+<g><title>D1-59B2CD2220 · a falsifiable temporal boundary test for ICU-discharge instability</title><circle cx="420.0" cy="3175.0" r="8" fill="#c8e2a9"/><text x="435.0" y="3179.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-59B2CD2220</text></g>
+<g><title>D1-0709D28AB0 · all-eligible observation-aware ICU-discharge instability with a paired temporal boundary check</title><circle cx="990.0" cy="3203.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="3207.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-0709D28AB0</text></g>
+<g><title>D1-06E45555A9 · unknown-aware ICU-discharge instability with a preserved temporal boundary</title><circle cx="800.0" cy="3217.0" r="8" fill="#c8e2a9"/><text x="815.0" y="3221.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-06E45555A9</text></g>
+<g><title>D1-4475FCDCCF · unknown-aware ICU-discharge instability with a preserved temporal boundary</title><circle cx="990.0" cy="3231.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="3235.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-4475FCDCCF</text></g>
+<g><title>D1-F26726A07E · Residual instability at ICU discharge: a time-specific competing-risk audit</title><circle cx="230.0" cy="3248.1" r="8" fill="#c8e2a9"/><text x="245.0" y="3252.1" fill="#dce8d5" font-family="monospace" font-size="10">D1-F26726A07E</text></g>
+<g><title>D1-D8F180FADF · a falsifiable temporal boundary test for ICU-discharge instability</title><circle cx="420.0" cy="3254.3" r="8" fill="#c8e2a9"/><text x="435.0" y="3258.3" fill="#dce8d5" font-family="monospace" font-size="10">D1-D8F180FADF</text></g>
+<g><title>D1-D33B4E15C4 · a falsifiable temporal boundary test for ICU-discharge instability</title><circle cx="610.0" cy="3254.3" r="8" fill="#c8e2a9"/><text x="625.0" y="3258.3" fill="#dce8d5" font-family="monospace" font-size="10">D1-D33B4E15C4</text></g>
+<g><title>D1-1F4434AB17 · all-eligible observation-aware ICU-discharge instability with a paired temporal boundary check</title><circle cx="800.0" cy="3259.0" r="8" fill="#c8e2a9"/><text x="815.0" y="3263.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-1F4434AB17</text></g>
+<g><title>D1-8A07022386 · all-eligible observation-aware ICU-discharge instability with a paired temporal boundary check</title><circle cx="800.0" cy="3287.0" r="8" fill="#c8e2a9"/><text x="815.0" y="3291.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-8A07022386</text></g>
+<g><title>D1-F2B6BA8274 · Observation-selection repair: all-eligible ICU-discharge instability</title><circle cx="420.0" cy="3315.0" r="8" fill="#c8e2a9"/><text x="435.0" y="3319.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-F2B6BA8274</text></g>
+<g><title>D1-F7389479D4 · Different meanings of persistent hyperlactatemia</title><circle cx="230.0" cy="3355.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3359.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-F7389479D4</text></g>
+<g><title>D1-010BC76700 · Hypoglycemia after insulin</title><circle cx="230.0" cy="3475.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3479.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-010BC76700</text></g>
+<g><title>D1-05C9B4334B · Hospital differences in recovery speed</title><circle cx="230.0" cy="3515.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3519.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-05C9B4334B</text></g>
+<g><title>D1-16C63F43E1 · Hyperoxia exposure</title><circle cx="230.0" cy="3555.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3559.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-16C63F43E1</text></g>
+<g><title>D1-2B38198CD8 · Ventilatory burden and liberation from ventilation</title><circle cx="230.0" cy="3595.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3599.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-2B38198CD8</text></g>
+<g><title>D1-3D349ABF28 · Nighttime ICU discharge</title><circle cx="230.0" cy="3635.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3639.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-3D349ABF28</text></g>
+<g><title>D1-54F165FD8C · Hospital differences in recovery speed</title><circle cx="230.0" cy="3675.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3679.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-54F165FD8C</text></g>
+<g><title>D1-67820F648F · eICU 24-hour landmark: lab-process signal and hospital transport</title><circle cx="800.0" cy="3715.0" r="8" fill="#c8e2a9"/><text x="815.0" y="3719.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-67820F648F</text></g>
+<g><title>D1-6CEF73ED9C · eICU laboratory-testing signals and hospital transport of ICU mortality prediction</title><circle cx="800.0" cy="3743.0" r="8" fill="#c8e2a9"/><text x="815.0" y="3747.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-6CEF73ED9C</text></g>
+<g><title>D1-2B94342F55 · eICU lab-order process: within-site severity signal or between-site workflow signal?</title><circle cx="990.0" cy="3771.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="3775.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-2B94342F55</text></g>
+<g><title>D1-579EC4E497 · Prediction models&#x27; dependence on testing practices</title><circle cx="230.0" cy="3785.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3789.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-579EC4E497</text></g>
+<g><title>D1-90F291D322 · lab-testing practice and ICU mortality transport</title><circle cx="420.0" cy="3785.0" r="8" fill="#c8e2a9"/><text x="435.0" y="3789.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-90F291D322</text></g>
+<g><title>D1-5CC541BE5E · lab-testing practice and ICU mortality transport</title><circle cx="610.0" cy="3785.0" r="8" fill="#c8e2a9"/><text x="625.0" y="3789.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-5CC541BE5E</text></g>
+<g><title>D1-A7208AD6C6 · eICU laboratory-process prediction and hospital transport</title><circle cx="800.0" cy="3785.0" r="8" fill="#c8e2a9"/><text x="815.0" y="3789.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A7208AD6C6</text></g>
+<g><title>D1-409D7A2518 · eICU laboratory process: severity proxy or site signature?</title><circle cx="990.0" cy="3799.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="3803.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-409D7A2518</text></g>
+<g><title>D1-B52688C1D5 · eICU laboratory-testing signals and hospital transport of ICU mortality prediction</title><circle cx="800.0" cy="3827.0" r="8" fill="#c8e2a9"/><text x="815.0" y="3831.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B52688C1D5</text></g>
+<g><title>D1-DE6C015E74 · eICU lab-testing signals and hospital transport of ICU mortality prediction</title><circle cx="800.0" cy="3855.0" r="8" fill="#c8e2a9"/><text x="815.0" y="3859.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-DE6C015E74</text></g>
+<g><title>D1-5ED07734AC · Duration of hypotension</title><circle cx="230.0" cy="3895.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3899.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-5ED07734AC</text></g>
+<g><title>D1-948938D9B1 · Nighttime ICU discharge</title><circle cx="230.0" cy="3935.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3939.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-948938D9B1</text></g>
+<g><title>D1-A92F9E6A0C · Hospital differences in vasopressor strategies</title><circle cx="230.0" cy="3975.0" r="8" fill="#c8e2a9"/><text x="245.0" y="3979.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A92F9E6A0C</text></g>
+<g><title>D1-A9E95BB159 · Reduced testing and subsequent deterioration</title><circle cx="230.0" cy="4015.0" r="8" fill="#c8e2a9"/><text x="245.0" y="4019.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A9E95BB159</text></g>
+<g><title>D1-A2CE7DCAC5 · temporal hypotension signal versus care-process artifacts</title><circle cx="990.0" cy="4055.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="4059.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A2CE7DCAC5</text></g>
+<g><title>D1-B5B09AA7BC · Duration of hypotension</title><circle cx="230.0" cy="4083.0" r="8" fill="#c8e2a9"/><text x="245.0" y="4087.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B5B09AA7BC</text></g>
+<g><title>D1-56853CC55C · Cumulative hypotension duration beyond nadir as a predictor of incident AKI in eICU</title><circle cx="420.0" cy="4083.0" r="8" fill="#c8e2a9"/><text x="435.0" y="4087.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-56853CC55C</text></g>
+<g><title>D1-1C0191116D · Cumulative systemic hypotension duration beyond nadir as a predictor of incident creatinine-defined AKI in eICU</title><circle cx="610.0" cy="4083.0" r="8" fill="#c8e2a9"/><text x="625.0" y="4087.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-1C0191116D</text></g>
+<g><title>D1-D2D021E238 · Cumulative hypotension duration beyond nadir as a predictor of incident creatinine-defined AKI in eICU</title><circle cx="800.0" cy="4083.0" r="8" fill="#c8e2a9"/><text x="815.0" y="4087.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-D2D021E238</text></g>
+<g><title>D1-4EA6329D93 · scalar hypotension summaries versus temporal recovery trajectories</title><circle cx="1180.0" cy="4083.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="4087.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-4EA6329D93</text></g>
+<g><title>D1-BDBF3657E1 · Evolution : separating early hypotension duration from observation, treatment, and severity artifacts</title><circle cx="990.0" cy="4111.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="4115.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-BDBF3657E1</text></g>
+<g><title>D1-8DE27D0900 · audited creatinine label and matched scalar-versus-trajectory test</title><circle cx="1180.0" cy="4111.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="4115.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-8DE27D0900</text></g>
+<g><title>D1-B15CCE31D4 · audited creatinine label and matched scalar-versus-trajectory test</title><circle cx="1180.0" cy="4139.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="4143.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B15CCE31D4</text></g>
+<g><title>D1-B88EFE9BE4 · Risk among interhospital transfer patients</title><circle cx="230.0" cy="4179.0" r="8" fill="#c8e2a9"/><text x="245.0" y="4183.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B88EFE9BE4</text></g>
+<g><title>D1-1E9B40C015 · Branch A — temporally ordered patient-state versus workflow transport in eICU</title><circle cx="990.0" cy="4219.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="4223.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-1E9B40C015</text></g>
+<g><title>D1-49F41F1839 · laboratory-result versus vital-observation process</title><circle cx="1370.0" cy="4247.0" r="8" fill="#c8e2a9"/><text x="1385.0" y="4251.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-49F41F1839</text></g>
+<g><title>D1-7580578C4E · laboratory-result process versus vital-observation process</title><circle cx="1370.0" cy="4275.0" r="8" fill="#c8e2a9"/><text x="1385.0" y="4279.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-7580578C4E</text></g>
+<g><title>D1-85950BA4CA · Branch B — vital-trajectory state versus laboratory-process transport in eICU</title><circle cx="1180.0" cy="4289.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="4293.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-85950BA4CA</text></g>
+<g><title>D1-CA113B3040 · laboratory-result versus vital-observation process</title><circle cx="1370.0" cy="4303.0" r="8" fill="#c8e2a9"/><text x="1385.0" y="4307.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-CA113B3040</text></g>
+<g><title>D1-86D6FD74BB · Selection and censoring boundary for the eICU testing-process transportability signal</title><circle cx="990.0" cy="4324.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="4328.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-86D6FD74BB</text></g>
+<g><title>D1-E465EF80BA · laboratory-result versus vital-observation process</title><circle cx="1370.0" cy="4331.0" r="8" fill="#c8e2a9"/><text x="1385.0" y="4335.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-E465EF80BA</text></g>
+<g><title>D1-11D485DEE9 · Patient-state versus documentation signal in hospital transport of early ICU mortality models</title><circle cx="800.0" cy="4334.7" r="8" fill="#c8e2a9"/><text x="815.0" y="4338.7" fill="#dce8d5" font-family="monospace" font-size="10">D1-11D485DEE9</text></g>
+<g><title>D1-DCE83916B9 · Outcome-timing and recorded-gap boundary of the eICU laboratory-process transport signal</title><circle cx="1180.0" cy="4359.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="4363.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-DCE83916B9</text></g>
+<g><title>D1-B40D54D31D · a 12-hour, no-early-EOL intensity/gap test of patient state versus documentation</title><circle cx="1180.0" cy="4387.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="4391.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B40D54D31D</text></g>
+<g><title>D1-C2795D30C6 · domain-specific patient-state versus documentation process</title><circle cx="1180.0" cy="4415.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="4419.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-C2795D30C6</text></g>
+<g><title>D1-D6AE06247B · domain-specific patient-state versus documentation process</title><circle cx="1180.0" cy="4443.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="4447.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-D6AE06247B</text></g>
+<g><title>D1-D74421CEF4 · Selection and censoring boundary for the eICU testing-process transportability signal</title><circle cx="990.0" cy="4461.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="4465.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-D74421CEF4</text></g>
+<g><title>D1-1B6894E3A6 · Temporal state sufficiency for the eICU lab/vital recording-process increment</title><circle cx="1370.0" cy="4471.0" r="8" fill="#c8e2a9"/><text x="1385.0" y="4475.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-1B6894E3A6</text></g>
+<g><title>D1-A09F4E07FD · outcome-semantics branch</title><circle cx="1560.0" cy="4499.0" r="8" fill="#c8e2a9"/><text x="1575.0" y="4503.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-A09F4E07FD</text></g>
+<g><title>D1-08E46CDBFE · site-stratified transportability of the post-360 recorded-vital transition</title><circle cx="1750.0" cy="4527.0" r="8" fill="#c8e2a9"/><text x="1765.0" y="4531.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-08E46CDBFE</text></g>
+<g><title>D1-08DEFF4352 · physiologic trajectory versus latent severity</title><circle cx="2510.0" cy="4555.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="4559.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-08DEFF4352</text></g>
+<g><title>D1-1D8CAFB2C3 · landmark physiology versus operational transition</title><circle cx="2510.0" cy="4583.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="4587.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-1D8CAFB2C3</text></g>
+<g><title>D1-E9136D1B76 · a 12-hour, no-early-EOL intensity/gap test of patient state versus documentation</title><circle cx="1180.0" cy="4598.9" r="8" fill="#c8e2a9"/><text x="1195.0" y="4602.9" fill="#dce8d5" font-family="monospace" font-size="10">D1-E9136D1B76</text></g>
+<g><title>D1-388BA5B2A5 · physiologic trajectory versus latent severity</title><circle cx="2510.0" cy="4611.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="4615.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-388BA5B2A5</text></g>
+<g><title>D1-3328CE2047 · stable hospital monitoring regime versus patient-linked dynamic opportunity</title><circle cx="2890.0" cy="4639.0" r="8" fill="#c8e2a9"/><text x="2905.0" y="4643.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-3328CE2047</text></g>
+<g><title>D1-3F355CD241 · respiratory-specific recording acceleration versus generic observation</title><circle cx="2890.0" cy="4667.0" r="8" fill="#c8e2a9"/><text x="2905.0" y="4671.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-3F355CD241</text></g>
+<g><title>D1-4666106C9C · independent respiratory-care corroboration</title><circle cx="1940.0" cy="4677.5" r="8" fill="#c8e2a9"/><text x="1955.0" y="4681.5" fill="#dce8d5" font-family="monospace" font-size="10">D1-4666106C9C</text></g>
+<g><title>D1-6CB1620C79 · Treatment-record corroboration of a documented respiratory-care transition</title><circle cx="2130.0" cy="4677.5" r="8" fill="#c8e2a9"/><text x="2145.0" y="4681.5" fill="#dce8d5" font-family="monospace" font-size="10">D1-6CB1620C79</text></g>
+<g><title>D1-83C34B5D9E · independent timing versus shared documentation</title><circle cx="2320.0" cy="4677.5" r="8" fill="#c8e2a9"/><text x="2335.0" y="4681.5" fill="#dce8d5" font-family="monospace" font-size="10">D1-83C34B5D9E</text></g>
+<g><title>D1-30F9318F33 · measurement-validity controls for the non-respiratory nurse endpoint</title><circle cx="3270.0" cy="4695.0" r="8" fill="#c8e2a9"/><text x="3285.0" y="4699.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-30F9318F33</text></g>
+<g><title>D1-727208C087 · landmark selection, observation opportunity, and respiratory-transition provenance</title><circle cx="2700.0" cy="4716.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="4720.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-727208C087</text></g>
+<g><title>D1-317511D6BA · respiratory specificity versus generic documentation</title><circle cx="3080.0" cy="4723.0" r="8" fill="#c8e2a9"/><text x="3095.0" y="4727.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-317511D6BA</text></g>
+<g><title>D1-3D983DB491 · respiratory records versus latent physiology and treatment timing</title><circle cx="3270.0" cy="4723.0" r="8" fill="#c8e2a9"/><text x="3285.0" y="4727.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-3D983DB491</text></g>
+<g><title>D1-43F6A2F419 · is process signal a missing temporal state?</title><circle cx="1370.0" cy="4726.9" r="8" fill="#c8e2a9"/><text x="1385.0" y="4730.9" fill="#dce8d5" font-family="monospace" font-size="10">D1-43F6A2F419</text></g>
+<g><title>D1-6EBB286EFE · stable hospital monitoring regime versus patient-linked dynamic opportunity</title><circle cx="2890.0" cy="4751.0" r="8" fill="#c8e2a9"/><text x="2905.0" y="4755.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-6EBB286EFE</text></g>
+<g><title>D1-4D6DBB810A · measurement-validity controls for the non-respiratory nurse endpoint</title><circle cx="3270.0" cy="4751.0" r="8" fill="#c8e2a9"/><text x="3285.0" y="4755.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-4D6DBB810A</text></g>
+<g><title>D1-65346CF79A · physiologic trajectory versus latent severity</title><circle cx="2510.0" cy="4775.5" r="8" fill="#c8e2a9"/><text x="2525.0" y="4779.5" fill="#dce8d5" font-family="monospace" font-size="10">D1-65346CF79A</text></g>
+<g><title>D1-54F9E9D473 · respiratory specificity after generic-process decomposition</title><circle cx="3080.0" cy="4779.0" r="8" fill="#c8e2a9"/><text x="3095.0" y="4783.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-54F9E9D473</text></g>
+<g><title>D1-DCCC62E3FC · respiratory-specific recording acceleration versus generic observation</title><circle cx="2890.0" cy="4807.0" r="8" fill="#c8e2a9"/><text x="2905.0" y="4811.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-DCCC62E3FC</text></g>
+<g><title>D1-C637D19F9D · lead-time provenance of the recorded respiratory transition</title><circle cx="2700.0" cy="4835.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="4839.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-C637D19F9D</text></g>
+<g><title>D1-D07122984E · landmark physiology versus operational transition</title><circle cx="2510.0" cy="4863.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="4867.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-D07122984E</text></g>
+<g><title>D1-04CB946D93 · treatment-stream corroboration of a documented respiratoryCare start</title><circle cx="2510.0" cy="4891.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="4895.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-04CB946D93</text></g>
+<g><title>D1-17680B06CB · operational transition versus source-defined trajectory change</title><circle cx="1750.0" cy="4901.5" r="8" fill="#c8e2a9"/><text x="1765.0" y="4905.5" fill="#dce8d5" font-family="monospace" font-size="10">D1-17680B06CB</text></g>
+<g><title>D1-B2E225F494 · treatment-stream concordance after an availability/workflow stress test</title><circle cx="2700.0" cy="4919.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="4923.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B2E225F494</text></g>
+<g><title>D1-9016DCA512 · Testing-process signals and hospital transportability of early-ICU mortality models</title><circle cx="420.0" cy="4927.2" r="8" fill="#c8e2a9"/><text x="435.0" y="4931.2" fill="#dce8d5" font-family="monospace" font-size="10">D1-9016DCA512</text></g>
+<g><title>D1-4B768C478B · Testing-process signals and hospital transportability of early-ICU mortality models</title><circle cx="610.0" cy="4927.2" r="8" fill="#c8e2a9"/><text x="625.0" y="4931.2" fill="#dce8d5" font-family="monospace" font-size="10">D1-4B768C478B</text></g>
+<g><title>D1-7F9E1F89F1 · treatment-stream corroboration of a documented respiratoryCare start</title><circle cx="2510.0" cy="4947.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="4951.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-7F9E1F89F1</text></g>
+<g><title>D1-B74EAA70F0 · treatment-stream concordance after an availability/workflow stress test</title><circle cx="2700.0" cy="4947.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="4951.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B74EAA70F0</text></g>
+<g><title>D1-B2346869EE · process signal and a post-360-minute deterioration boundary</title><circle cx="1560.0" cy="4954.7" r="8" fill="#c8e2a9"/><text x="1575.0" y="4958.7" fill="#dce8d5" font-family="monospace" font-size="10">D1-B2346869EE</text></g>
+<g><title>D1-86563D0BE5 · independent respiratory-care corroboration</title><circle cx="1940.0" cy="4968.0" r="8" fill="#c8e2a9"/><text x="1955.0" y="4972.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-86563D0BE5</text></g>
+<g><title>D1-AF1E369189 · Narrow proposal — documented respiratory-support initiation after minute 360</title><circle cx="2130.0" cy="4968.0" r="8" fill="#c8e2a9"/><text x="2145.0" y="4972.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-AF1E369189</text></g>
+<g><title>D1-47DE6E378D · independent respiratoryCharting corroboration with availability and exit controls</title><circle cx="2320.0" cy="4968.0" r="8" fill="#c8e2a9"/><text x="2335.0" y="4972.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-47DE6E378D</text></g>
+<g><title>D1-C7916B720B · Treatment-stream corroboration of a documented respiratoryCare start</title><circle cx="2700.0" cy="4975.0" r="8" fill="#c8e2a9"/><text x="2715.0" y="4979.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-C7916B720B</text></g>
+<g><title>D1-ABB0FE82A8 · temporal transition corroboration from treatment records</title><circle cx="2510.0" cy="5003.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="5007.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-ABB0FE82A8</text></g>
+<g><title>D1-C046E948A3 · treatment-stream corroboration of a documented respiratoryCare start</title><circle cx="2510.0" cy="5031.0" r="8" fill="#c8e2a9"/><text x="2525.0" y="5035.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-C046E948A3</text></g>
+<g><title>D1-B169F6AA59 · independent respiratory-care corroboration</title><circle cx="1940.0" cy="5059.0" r="8" fill="#c8e2a9"/><text x="1955.0" y="5063.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-B169F6AA59</text></g>
+<g><title>D1-589AD7F383 · operational transition versus source-defined trajectory change</title><circle cx="1750.0" cy="5087.0" r="8" fill="#c8e2a9"/><text x="1765.0" y="5091.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-589AD7F383</text></g>
+<g><title>D1-AB737F7C4D · site-stratified transportability of the post-360 recorded-vital transition</title><circle cx="1750.0" cy="5115.0" r="8" fill="#c8e2a9"/><text x="1765.0" y="5119.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-AB737F7C4D</text></g>
+<g><title>D1-C3B136B54E · Prediction models&#x27; dependence on testing practices</title><circle cx="230.0" cy="5133.1" r="8" fill="#c8e2a9"/><text x="245.0" y="5137.1" fill="#dce8d5" font-family="monospace" font-size="10">D1-C3B136B54E</text></g>
+<g><title>D1-F546F3C8DD · site-stratified transportability of the post-360 recorded-vital transition</title><circle cx="1750.0" cy="5143.0" r="8" fill="#c8e2a9"/><text x="1765.0" y="5147.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-F546F3C8DD</text></g>
+<g><title>D1-86C163000D · Patient-state versus documentation signal in hospital transport of early ICU mortality models</title><circle cx="800.0" cy="5171.0" r="8" fill="#c8e2a9"/><text x="815.0" y="5175.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-86C163000D</text></g>
+<g><title>D1-38B23445C4 · lab-observed instability followed by a monitoring gap</title><circle cx="1180.0" cy="5199.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="5203.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-38B23445C4</text></g>
+<g><title>D1-391B7FC56B · Laboratory-observed instability followed by a monitoring gap</title><circle cx="1180.0" cy="5227.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="5231.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-391B7FC56B</text></g>
+<g><title>D1-55314E7C09 · Hospital-held-out patient-state versus documentation-process signal in eICU</title><circle cx="990.0" cy="5241.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="5245.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-55314E7C09</text></g>
+<g><title>D1-AEE67825C6 · lab-observed instability followed by a monitoring gap</title><circle cx="1180.0" cy="5255.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="5259.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-AEE67825C6</text></g>
+<g><title>D1-E5AF40DD4C · Patient-state versus hospital-documentation signal in eICU testing-process transportability</title><circle cx="800.0" cy="5276.0" r="8" fill="#c8e2a9"/><text x="815.0" y="5280.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-E5AF40DD4C</text></g>
+<g><title>D1-FE5FED70CF · lab-observed instability followed by a monitoring gap</title><circle cx="1180.0" cy="5283.0" r="8" fill="#c8e2a9"/><text x="1195.0" y="5287.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-FE5FED70CF</text></g>
+<g><title>D1-80ABE66210 · Hospital-held-out eICU mortality transport: patient state, documentation process, and residual case mix</title><circle cx="990.0" cy="5311.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="5315.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-80ABE66210</text></g>
+<g><title>D1-C38080BF39 · Testing-process signals and hospital transportability of early-ICU mortality models</title><circle cx="420.0" cy="5339.0" r="8" fill="#c8e2a9"/><text x="435.0" y="5343.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-C38080BF39</text></g>
+<g><title>D1-CF84E93BEE · Hyperoxia exposure</title><circle cx="230.0" cy="5379.0" r="8" fill="#c8e2a9"/><text x="245.0" y="5383.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-CF84E93BEE</text></g>
+<g><title>D1-D330BF1EA7 · Ventilatory burden and liberation from ventilation</title><circle cx="230.0" cy="5419.0" r="8" fill="#c8e2a9"/><text x="245.0" y="5423.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-D330BF1EA7</text></g>
+<g><title>D1-DE87AFA03B · Hypoglycemia after insulin</title><circle cx="230.0" cy="5459.0" r="8" fill="#c8e2a9"/><text x="245.0" y="5463.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-DE87AFA03B</text></g>
+<g><title>D1-EBDD63A5AF · Reduced testing and subsequent deterioration</title><circle cx="230.0" cy="5499.0" r="8" fill="#c8e2a9"/><text x="245.0" y="5503.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-EBDD63A5AF</text></g>
+<g><title>D1-F4B4FDB98C · Risk among interhospital transfer patients</title><circle cx="230.0" cy="5539.0" r="8" fill="#c8e2a9"/><text x="245.0" y="5543.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-F4B4FDB98C</text></g>
+<g><title>D1-F9C79BAD20 · Hospital differences in vasopressor strategies</title><circle cx="230.0" cy="5579.0" r="8" fill="#c8e2a9"/><text x="245.0" y="5583.0" fill="#dce8d5" font-family="monospace" font-size="10">D1-F9C79BAD20</text></g>
+</svg>
