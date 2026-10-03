@@ -1,0 +1,117 @@
+# Dynamic child: lab-observed instability followed by a monitoring gap
+
+Status: proposed substantive child of `[prior hypothesis]`. No fitted study result is claimed.
+
+Observed bounded feasibility diagnostic (job `[research job]`, 4 CPUs/16 GiB, 144.3 seconds): applying the >720-minute adult first-stay filters and repeat-`uniquepid` exclusion to the exact `patient.csv.gz` and finite/revision-filtered `lab.csv.gz` found 99,878 stays across 207 hospitals; 165 hospitals had at least 100 stays; 83,933 stays had an early [0,360] result; 74,462 had a late (360,720] result; 17,864 had an early result but no late result; and 5,382 had `unitdischargestatus=Expired`. These are availability counts before fold-specific analyte selection and stress scoring, not an association or model result.
+
+
+
+## Decision-relevant opening
+
+The parent asks whether early laboratory-result process features transport poorly across hospitals because they encode documentation practice rather than patient state. That is important, but its bedside implication remains indirect: a process-aware mortality score may need recalibration.
+
+This child tests a more consequential boundary: among adults who remain in the ICU beyond 12 hours and have an early lab-observed stress state, is there a reproducible association between no recorded laboratory result in the next six hours and later ICU-discharge mortality? If yes, does the association disappear when the late process vector is reassigned within hospital and early-state strata? The next decision would differ:
+
+- a patient-linked, transported signal would justify prospective adjudication of a “stress plus no recorded result” monitoring-review alert;
+- a signal preserved after patient linkage is destroyed would justify interface/workflow audit, not an alert or automatic testing;
+- no precise signal would not justify either intervention.
+
+“Lab-observed stress” is deliberately narrower than physiologic instability. The available eICU tables have no vital signs, treatment, order, specimen, or clinician-rationale fields. The experiment must not call a recorded result an order or a missing result a missed test.
+
+The strongest available evidence supports sequential EHR information as useful for mortality prediction [K1], predictive missingness as a potential transport liability [K2], and the need to test calibration and data availability outside the development setting [K3]. None establishes that reduced laboratory recording after an abnormal/volatile early state identifies a clinically actionable monitoring gap in ICU patients. The unresolved claim is observational and falsifiable:
+
+> Conditional on an early lab-observed stress state and survival/observation through 720 minutes, zero recorded valid laboratory results in (360,720] is associated with higher subsequent ICU-discharge mortality, transports to unseen hospitals, and attenuates toward the early-state baseline when the late process vector is permuted within hospital and early-state strata.
+
+This does not claim that ordering fewer tests causes death, that an additional test would reduce mortality, or that a result was clinically indicated.
+
+## Why the population and time zero change
+
+The parent’s admission time zero and >360-minute eligibility are suitable for transport prediction, but they do not guarantee that a six-hour late-testing exposure precedes the endpoint. This child therefore changes the landmark for a specific temporal reason:
+
+- source population: the parent’s adult first eligible ICU admit stays, with nonmissing `patientunitstayid`, `uniquepid`, `hospitalid`, `unitdischargeoffset`, and `unitdischargestatus`; `unitvisitnumber=1`; `unitstaytype=admit`; numeric age >=18, retaining eICU >89 as adult;
+- exclusion: exclude every `uniquepid` with more than one otherwise eligible primary stay, as in the parent;
+- dynamic cohort: require `unitdischargeoffset>720` and at least one finite, valid lab result in [0,360]. A sensitivity cohort requires two distinct early analyte keys or a repeated early result, because a stress score cannot be clinically interpreted without observed state;
+- time zero for the outcome analysis: 720 minutes after ICU admission, conditional on remaining observed in the ICU beyond that landmark;
+- early state window: [0,360] minutes;
+- exposure window: (360,720] minutes;
+- outcome: unchanged from the parent, `Y=1` if `unitdischargestatus=Expired`, otherwise 0. This is ICU-discharge mortality, not 24-hour or complete-hospital mortality. It is observed after the revised landmark by construction, but no death time is available.
+
+The revised estimand is the transported, descriptive risk contrast at the 720-minute landmark: the difference in predicted ICU-discharge mortality between low late recorded-result intensity and at least one recorded result, standardized to the development covariate distribution, within early high-stress versus low-stress strata. It is conditional on 12-hour ICU observation and early laboratory recording, so it is not an admission-population mortality effect and is not causal.
+
+The parent estimand remains the anchor for a secondary analysis: the original admission-to-ICU-discharge transport comparison is retained unchanged. This child’s primary estimand is narrower because temporal precedence is necessary for a testing-process question.
+
+## Exact data binding
+
+The verified eICU snapshot contains 31 ordinary gzip CSV sources and no archive member is used. This child uses exactly the same four read-only sources as the parent:
+
+1. Patient table `patient`: `[internal dataset path]`, source [source checksum], table JSON `datasets/eicu/table-ab037c09d7df9a3c.json`, schema [source checksum]. Required columns are `patientunitstayid`, `patienthealthsystemstayid`, `uniquepid`, `hospitalid`, `unitvisitnumber`, `unitstaytype`, `age`, `gender`, `ethnicity`, `admissionweight`, `unitadmitoffset`, `unitdischargeoffset`, and `unitdischargestatus`. Join key: `patientunitstayid`; `uniquepid` is grouping/exclusion only.
+
+2. Hospital table `hospital`: `[internal dataset path]`, source [source checksum], table JSON `datasets/eicu/table-811df7b2ef435e12.json`, schema [source checksum]. Join `patient.hospitalid=hospital.hospitalid). `hospitalid`, `numbedscategory`, `teachingstatus`, and `region` are reporting/fold variables only, never model predictors.
+
+3. Laboratory table `lab`: `[internal dataset path]`, source [source checksum], table JSON `datasets/eicu/table-79bdb33275339b1a.json`, schema [source checksum]. Required columns are `labid`, `patientunitstayid`, `labresultoffset`, `labtypeid`, `labname`, `labresult`, `labresulttext`, `labmeasurenamesystem`, `labmeasurenameinterface`, and `labresultrevisedoffset`. Join only on `patientunitstayid`. Retain finite numeric `labresult` with `labresultoffset` in [0,720] and blank or <=720 `labresultrevisedoffset`; exclude `labresulttext`. Define analyte as normalized `labname` plus `labmeasurenamesystem`, falling back to `labmeasurenameinterface` when system is blank. A row is a recorded result, not evidence of an order or specimen collection.
+
+4. Apache audit table `apachePatientResult`: `[internal dataset path]`, source [source checksum], table JSON `datasets/eicu/table-754bebf64d3d9909.json`, schema [source checksum]. Join by `patientunitstayid`. Inspect only `actualicumortality` for a descriptive label-discordance audit; do not use Apache scores, predicted/actual mortality or LOS fields as features or replace the primary outcome.
+
+All source rows remain read-only. No source archive is modified.
+
+## Operational variables and leakage controls
+
+Within each outer training partition, select up to 30 analyte keys by distinct-stay coverage among [0,360], requiring >=1% development-stay coverage. Selection, value scaling, category handling and thresholds are development-only.
+
+For each selected analyte in [0,360], create the latest finite value, first and last valid offsets, valid-result count and presence. Define a development-only robust scale as max(IQR, a fixed positive numerical floor). For analytes with an early value, form clipped robust-deviation and, where at least two early values exist, clipped first-to-last change components. The early lab-observed stress score `S` is the mean of available components across observed selected analytes, with the change component omitted only when unavailable and weights renormalized. Do not use clinical reference ranges that are absent from eICU. Define high stress by the development 75th percentile of `S`, fixed for reference and held-out hospitals; retain `S` continuously in models. Report the number lacking enough values separately rather than treating them as physiologically stable.
+
+The exposure is late recorded-result intensity in (360,720]. Primary `G=1` means zero valid result rows in that window; comparator `G=0` means at least one. Secondary exposure is the count of valid rows and distinct valid result offsets, analyzed continuously with prespecified log1p scaling. These are recording-process variables, not orders or testing decisions.
+
+No value, offset, revision, or process feature after 720 minutes enters the primary matrices. A positive leakage audit may inspect (720,1080] only to prove exclusion. It cannot enter fitting, prediction, bootstrap or interpretation. The Apache audit is label validation only. Duplicate `patientunitstayid` rows and missing joins are audited and reported.
+
+## Hospital-held-out experiment
+
+Retain hospitals with at least 100 dynamic-cohort stays based only on eligibility and early/lab availability, and require at least five hospitals. Use the parent’s frozen hospital hashing and five greedy balanced outer folds, keeping every hospital in one fold. In each outer training set, make the parent’s deterministic patient-grouped 80/20 internal reference split before any analyte selection, scaling, stress threshold, fitting or permutation. Fit on development only; score the untouched reference and held-out hospitals without recalibration.
+
+The simple baseline is an elastic-net logistic model with static predictors (age, gender, ethnicity, admissionweight), early latest values, early process counts/presence, continuous `S`, `G`, and prespecified `S-high × G` interaction. It estimates an interpretable model-standardized risk contrast for `G=1` versus `G=0` within stress strata. The substantive learned alternative is a fixed histogram gradient-boosting classifier on the identical development rows, inputs and outcome, with `S`, late process counts and their nonlinear interaction available. Its added information is a nonlinear threshold/interaction surface—whether a monitoring gap matters only above a particular observed-stress burden—not a small predictive leaderboard gain. Both models use the same five hospital folds, internal reference, preprocessing, outcome, metrics and uncertainty.
+
+For each model report AUROC, AUPRC, Brier score, calibration intercept/slope and calibration-in-the-large, per-hospital metrics, and standardized predicted-risk contrasts for `G=1` versus `G=0` at the development covariate distribution, separately for high and low stress. Report policy-scenario net benefit at 0.10 and 0.20 only as alert tradeoffs for a hypothetical monitoring-review flag; thresholds are not validated clinical thresholds and there is no assumed treatment benefit or test burden. Use 2,000 hospital-cluster bootstrap replicates with paired model/control contributions for 95% intervals; patient bootstrap alone is insufficient.
+
+The primary scientific contrast is the held-out high-stress standardized risk contrast minus the corresponding low-stress contrast, with the logistic interaction as the transparent confirmatory output. The transport contrast is the difference between development-reference and hospital-held-out contrasts. All conclusions must point to frozen predictions, contrast tables and bootstrap files.
+
+## Falsification and interpretation
+
+A patient-linked monitoring-gap pattern is supportive only if the held-out high-stress contrast is positive with a 95% hospital-cluster interval excluding zero, the high-minus-low interaction has the prespecified direction, and the contrast attenuates toward the early-state model when complete late process vectors are permuted within hospital and development-derived early-stress quintile. The permutation preserves hospital process distributions and coarse early state while breaking patient-to-late-process linkage. A model-only result without this pattern is not sufficient.
+
+The documentation/site rival is supported if the original held-out contrast is positive but the matched permutation retains a similar contrast, or if a process-only model transports similarly while early state adds little. That would motivate interface and workflow audit, not a patient alert.
+
+An adverse result for the child is a precise near-zero or negative high-stress contrast, no high-minus-low interaction, and no calibration or policy-scenario advantage for the gap flag; this would favor the parent’s broader transport question or indicate that recorded-result density is not a useful dynamic decision marker. It would not prove that testing is adequate.
+
+Results are inconclusive when hospital/event counts are inadequate, the zero-result exposure is too sparse, the stress threshold or analyte set is unstable, cluster intervals span clinically relevant values, the original and permutation controls disagree, or the label audit is materially discordant. A wide interval is imprecision, not refutation. Concentration of the association in the 12–24-hour stay band is a selection/terminal-discharge warning, not evidence of benefit; duration-stratified analyses are sensitivity descriptions only because duration is post-landmark and can be a collider.
+
+The strongest rival explanation is severity-dependent observation: clinicians may stop ordering, or interfaces may stop recording, when patients are dying or receiving comfort-focused care. The data cannot separate those mechanisms. The dynamic experiment can discriminate patient-linked versus hospital-preserved recorded-process patterns, but not establish a causal effect of ordering or an intervention benefit.
+
+## Alternatives and compute
+
+The baseline and learned alternative test the same scientific target and split. The baseline is preferred for the primary interpretable interaction and transport contrast. The GBM is retained because it can reveal a nonlinear stress-by-gap boundary that logistic interaction may miss. A neural event-sequence model is deferred: the key exposure is a six-hour count/absence and the eICU source lacks order/specimen/interface semantics; more capacity would not resolve the central rival. Reconsider it only if a bounded readiness fold shows sufficient repeated event sequences and the simple/GBM models leave a reproducible timing pattern unexplained.
+
+Planned solver envelope: 16 CPUs, 128–256 GiB RAM, <=28,800 seconds (up to 8 hours), CPU tabular extraction and fits; bootstrap replicates do not refit. The parent’s estimated 2–8 hour scan/fit range is unverified. No GPU is required or scientifically advantaged for these fixed tabular summaries. The managed 4-CPU/16-GiB availability scan is discovery-only and is not the solver estimate.
+
+The actual deliverable is newly fitted cross-hospital baseline and GBM models plus frozen cohort/fold/reference manifests, selected analyte and scaling manifests, early-state and late-process features, original and state-matched-permutation predictions, per-hospital contrast/metric tables, cluster bootstrap intervals, leakage and label audits, and an interpretation report. Completion is those outputs with uncertainty, whether supportive, adverse or inconclusive—not confirmation of the hypothesis.
+
+## Unavailable evidence and required follow-up
+
+Unavailable fields are laboratory orders/cancellations, specimen collection time, interface outage/audit trail, missingness reason, vital signs, treatment and ventilation, clinician rationale, goals-of-care decisions, death time, complete notes, clinical reference ranges, and an independent adjudication of whether a test was indicated. The `patient` table’s discharge offset does not supply a death timestamp. Conditioning on 12-hour observation and early recording limits transport and can select a survivor/measurement subset. Hospital-held-out folds do not randomize care or remove case mix, severity, treatment, terminal-decision or interface bias.
+
+A supportive result requires clinical review of sampled records plus external order/interface data, then prospective silent alert validation and an impact study measuring mortality, false alerts, test burden and harms. No bedside testing recommendation follows from this retrospective experiment.
+
+## Three inspected works
+
+[K1] Rajkomar A, Oren E, Chen K, et al. “Scalable and accurate deep learning with electronic health records.” npj Digital Medicine. 2018;1:18. DOI: 10.1038/s41746-018-0029-1. The inspected abstract excerpt supports multi-center mortality prediction and temporally ordered EHR representations. It does not isolate laboratory-result process or establish a monitoring intervention. This child adds an explicitly landmarked process exposure and patient-linkage falsification.
+
+[K2] Gao S, Albu E, Stijnen P, et al. “Comparing methods for handling missing data in electronic health records for dynamic risk prediction of central-line associated bloodstream infection.” BMC Medical Research Methodology. 2026;26:128. DOI: 10.1186/s12874-026-02819-y; PMCID: PMC13227632. The inspected material is abstract-only and supports that information presence/missingness can be predictive and transport-sensitive. It does not establish ICU mortality, laboratory ordering behavior or causality. This child tests the bounded eICU analogue with explicit state-matched permutation.
+
+[K3] Hadler RA, Lakamana SK, Moorman T, Bozkurt S. “Testing Transferability of a Mortality Risk Model for Interhospital Transfer Using Real-World Electronic Health Records: External Validation and Model Enhancement.” Critical Care Explorations. 2026;8(9):e1442. DOI: 10.1097/CCE.0000000000001442; PMCID: PMC13561170. The inspected abstract excerpt supports the deployment importance of external validation, calibration and data availability. It does not distinguish patient state from testing process or solve the temporal monitoring question. This child makes that distinction a prespecified dynamic comparison.
+
+Exactly these three distinct works are attached as the local receipt-hashed `key-references.json` and UTF-8 excerpts `K1-rajkomar-2018-excerpt.txt`, `K2-gao-2026-excerpt.txt`, and `K3-hadler-2026-excerpt.txt`. K1 and K3 are cited from inspected abstract excerpts; K2 is explicitly abstract-only. No additional work is claimed as an inspected key reference.
+
+## Why this branch is or is not better than the parent
+
+This is a substantive improvement only if the board values an intervention-adjacent monitoring decision over a general transportability warning. It adds temporal precedence, a concrete monitoring-gap phenotype, an early-state interaction, and a next-step choice between patient alert and site audit. It preserves the parent’s hospital-held-out framework, read-only sources, ICU-discharge mortality, paired controls, uncertainty and causal limits.
+
+It is not uniformly better. The revised cohort is smaller and conditioned on 12-hour observation plus early recording; “stress” is a laboratory proxy; zero recorded results can reflect discharge, comfort care or interface failure; and the endpoint remains ICU-discharge mortality without a death time. If the availability diagnostic shows too few hospitals or too few high-stress/no-late-result stays, or if the primary contrast cannot be estimated with useful precision, retain [prior hypothesis] as the anchor and defer this child. The parent remains preferable for a broad transportability study when the dynamic exposure is sparse or clinically uninterpretable.
