@@ -1,0 +1,115 @@
+# Episode 19 generation: unknown-aware ICU-discharge instability with a preserved temporal boundary
+
+Status: design-only successor of [prior hypothesis]. No cohort scan, feature materialization, model fit, Harbor execution, or clinical result was run.
+
+## Scientific opening, claim and advance
+
+The selected parent tests whether persistent multi-domain abnormality in the final 24 hours before an alive ICU exit is more specific for first 48-hour ICU readmission or hospital death than the same contrast 24–48 hours earlier. Its principal vulnerability is selection into the exposure-known cohort: adequate observations in both windows may depend on severity, staffing, destination, care intensity, treatment limitation or the opportunity to measure.
+
+This child makes every eligible adult alive at an observed index ICU exit primary. Final-window exposure is a four-level observed state: stable, one persistent domain, at least two persistent domains, or unknown/insufficient. Unknown is retained, never coded as stable or abnormal. The parent’s paired known-in-both-windows late-minus-early contrast is a prespecified complementary temporal falsification.
+
+[K1] found only moderate and similar discharge-day SWIFT, SOFA and TISS-28 performance for 48-hour unplanned ICU readmission or unexpected death in a single-center cohort. [K2] used the last 48 hours, explicit missingness and chronological LSTM inputs in MIMIC-III, motivating temporal comparison but not proving an interpretable physiologic boundary. [K3] showed that patient characteristics and discharge circumstances change their associations as the readmission interval changes, bounding interpretation of a 48-hour endpoint. These works support the clinical opening, not this MIMIC-IV estimand.
+
+The unresolved question is:
+
+> Among all adults reaching an observed alive index ICU exit, does an observed final-24-hour state of persistent multi-domain abnormality have a distinct 48-hour first-event risk profile from observed stable state after unknown/insufficient exposure is retained, and does the paired late-versus-early contrast remain positive without being explained by observation opportunity, pre-window severity, destination or oxygen-support documentation?
+
+The primary hypothesis is that the all-eligible `multi` state has higher first-event risk than `stable`, with an explicitly characterized `unknown` state, and that the known-in-both-windows late contrast exceeds the earlier contrast. The strongest rival is observation selection: unknown or sparse recording carries the risk, and the restricted contrast attenuates after density accounting. Other rivals are residual severity, destination, treatment limitation, chronic oxygen/support meaning and documentation lag.
+
+This is a prognostic/descriptive association conditional on reaching an observed alive exit. It is not a causal effect of discharge timing, discharge delay, monitoring, treatment, oxygen, destination or goals-of-care. A positive result would justify prospective discharge-readiness/monitoring adjudication; an unknown/density-dominated result would redirect the direction toward measurement and transition processes; a late contrast no larger than the early contrast would reject the time-local interpretation. The archive cannot adjudicate discharge rationale, treatment limitation, clinician intent, chronic oxygen indication, work of breathing, function or mechanism.
+
+## Population and fixed time rules
+
+Unit: one hospital admission.
+
+1. Join `icu/icustays.csv.gz` to `hosp/admissions.csv.gz` on `(subject_id,hadm_id)`, then `hosp/patients.csv.gz` on `subject_id`.
+2. Keep `patients.anchor_age >= 18`; report `gender`.
+3. Require finite `icustays.intime < icustays.outtime`; retain the earliest valid ICU stay per `(subject_id,hadm_id)` by `intime), tie-breaking by minimum `stay_id`. Do not replace a first stay that fails the alive-exit rule with a later stay.
+4. Let `t_d=icustays.outtime`. Retain only `deathtime` null or strictly later than `t_d`; death exactly at `t_d` is ineligible. Keep all destinations.
+5. Primary late window `W_L=[t_d-24h,t_d)); earlier window `W_E=[t_d-48h,t_d-24h)). Both have four half-open six-hour bins.
+6. Primary records require `charttime<t_d` and, when non-null, `storetime<=t_d`; missing storetime fails closed. Charttime-only is a labelled documentation-lag sensitivity. No post-`t_d` value is a predictor.
+7. Outcomes use `[t_d,t_d+48h)).
+
+Use fixed itemids: 220045 HR; 220052 MAP; 220210 RR; 220277 SpO2; 223761 Fahrenheit; 223762 Celsius; 223834 O2 Flow; 223835 FiO2; 226732 O2 Delivery Device(s), text-only descriptive sensitivity. Resolve via `d_items` and fail closed on missing/colliding item, label, abbreviation, linksto, category, unitname, param_type, lownormalvalue or highnormalvalue. Require finite valuenum and compatible valueuom. Collapse Fahrenheit/Celsius after conversion, flag conflicting values beyond a prespecified tolerance. Per bin use median HR/MAP/RR/SpO2/temperature and maximum O2 flow/FiO2, with valid counts and masks.
+
+Flags are respiratory/oxygen (SpO2<92%, flow>0 or FiO2>0.21), hemodynamic (MAP<65 or HR>100/<50), ventilatory (RR>24/<8), and temperature (<36.0 or >38.3 Celsius). A domain is persistent when flagged in at least two bins. Define E_L as stable (none), one (one), multi (at least two), or unknown (fewer than three valid primary bins). Missing is unknown, not normal.
+
+Primary estimand: all-eligible state-specific first-event risks and absolute contrasts `multi-stable` and `unknown-stable`; unknown is an ascertainment result, not a physiologic effect. Secondary paired cohort: exposure-known in both windows (at least three valid bins each), fixed before outcomes. Estimate for R and D:
+`Delta_RD,k = RD_k(W_L,multi versus stable) - RD_k(W_E,multi versus stable)`,
+standardized to the same static/pre-W_E distribution, with no late value in the early comparison. Also report the fixed eight-bin transitions stable→stable, stable→persistent, persistent→persistent, persistent→stable and other/unknown, plus stable, persistent, final-two-bin newly abnormal, first-two-bin resolving, intermittent and unknown late classes.
+
+## Outcomes and observation-selection audit
+
+For every eligible exit, define first transitions:
+
+- R: earliest later `icustays.intime>=t_d` and <`t_d+48h` for the same admission, excluding index stay.
+- D: `admissions.deathtime` in the outcome window.
+- A: valid alive `admissions.dischtime` in the window, only before R and D.
+- L: loss of same-hospital follow-up only when neither death nor discharge is verifiable and the last valid timestamp from bound transfer, ICU, lab, chart, input, output or procedure records is before 48 hours. If admission endpoints are complete, report L zero/not estimable.
+
+If R and D tie exactly, assign D first and emit a data-integrity flag. `hospital_expire_flag` is a check, never a death time. Report separate R/D/A/L denominators, events, invalid times, administrative censoring and Aalen–Johansen CIFs; R-or-D is secondary. Loss is observability, not a clinical outcome.
+
+Define O_L=1 when at least three of four late bins are valid under the primary gate. Keep O_L=0 as unknown. Count opportunity per bin from valid core and all records in chartevents, labevents, inputevents, outputevents and procedureevents. Freeze density cutpoints in training data. Report availability flow, storetime failures, density quartiles, charttime-only sensitivity, and state contrasts by density and destination. A density gradient or attenuation after density stratification is adverse to a physiologic interpretation.
+
+A secondary observation model uses only pre-W_L information: age, gender, admission_type; ICU first_careunit, intime, outtime, los; W_E core summaries/masks/counts and all-chartevent coverage; W_E opportunity counts; and latest pre-W_L finite values/missingness for 50912 creatinine, 50813 lactate, 50809 glucose, 50811 and 51222 hemoglobin kept distinct, 51265 platelets and 51301 WBC. Enforce `d_labitems` label/fluid/category gates. Fit P(O_L=1|Z) on training only, truncate stabilized weights at training 1st/99th percentiles, and report weight distributions, effective sample size and positivity. This weighted known-exposure sensitivity targets the all-eligible population only under untestable conditional missing-at-random; it is not a correction.
+
+Immediate destination is the first `hosp/transfers` row with `intime>=t_d`, retaining transfer_id,eventtype,careunit,intime,outtime and unknown. Ultimate `discharge_location` is separate. Neither is in primary adjustment. Core-ZIP scope: the core archive has no `note/discharge` or `note/discharge_detail` member. Separately configured ordinary read-only files `[internal dataset path]` and `[internal dataset path]` do exist outside the core ZIP, but are unavailable to the executable predictors and reserved for future outcome-blinded clinical adjudication. No note or OMR value substitutes for intent; `hosp/omr` is not a validated goals-of-care dictionary and is unused.
+
+## Matched baseline and learned temporal alternative
+
+Use identical all-eligible subjects, outcome clocks, four-level E_L, pre-window covariates and deterministic subject split for both methods. Hash `subject_id` into 70/15/15 train/validation/test; keep all admissions of a subject together. Training-only scaling, density cutpoints, category maps and weights.
+
+Baseline B is separate six-hour cause-specific discrete-time logistic hazards for R, D, A and L. Features: E_L, domain flags/counts/masks, order-free bin summaries, O_L, core/total density, static covariates, ICU timing/LOS and pre-W_E lab severity/missingness. Standardize held-out 48-hour CIFs to all eligible. Report state-specific calibration, cause-specific Brier, risks/RDs and subject-cluster bootstrap intervals.
+
+Temporal alternative T is a one-layer GRU over 12 chronological two-hour late-window bins: seven numeric channels after temperature collapse, masks, elapsed/bin index, core and total counts and domain flags. Encode unknown/insufficient coverage explicitly; missing is not normal. Static covariates and earlier severity enter a static head. Output R/D/A/L hazards over eight six-hour intervals. Use hidden size 32, dropout 0, Adam 1e-3, batch 128, max 50 epochs, early stop after five validation epochs without Brier improvement, seeds {17,29,43}. Compare chronological T with an order-permuted T under the identical split/protocol.
+
+B deliberately loses order, recency, persistence shape and observation-burst timing; T can reveal whether those features explain the state contrast. Evaluate interval/48-hour Brier, calibration slope/intercept or observed-versus-predicted bins, secondary AUROC/AUPRC, seed-specific results and subject bootstrap. A small discrimination gain without stable calibration, state/transition change or permutation separation is predictive utility, not a scientific advance.
+
+Transformer, causal discharge-policy and mechanistic latent-physiology models are deferred: capacity cannot solve absent intent, treatment limitation, work-of-breathing, function, fluid-state, measured GFR, adjudication or external validation. Revisit only with those dependencies or evidence from a bounded GRU/order diagnostic, not a small AUROC gain.
+
+## Falsification and interpretation
+
+Supportive requires: (1) all-eligible multi versus stable R and/or D RD positive with a 95% interval excluding zero, R/D/A/L shown separately; (2) unknown risk and availability explicitly reported; (3) direction not confined to one adequately sized density/destination stratum; (4) paired late RD larger than early RD with uncertainty; (5) stable→persistent and newly abnormal patterns exceed stable/resolving with support; and (6) weighted sensitivity and chronological T are compatible, with T stable across seeds and not reproduced by permutation. This supports only a reproducible time-local prognostic association.
+
+Adverse: the contrast disappears/reverses when unknown is retained or after density/weighting; unknown has the main gradient; early is comparable; one destination, hospice-like disposition or oxygen component explains it; charttime-only reverses it; or chronological and permuted T agree. These favor observation selection, residual severity, destination/support meaning or generic prediction.
+
+Inconclusive: dictionary/unit/availability failure, high unknown fraction, positivity/ESS failure, fewer than 100 subjects or 20 events in a required stratum, incompatible clocks, material L, sparse paired transitions, unstable seeds/calibration, or intervals spanning clinically important benefit and harm. Do not retune thresholds, windows, unknown labels, destinations or weight truncation after outcomes. An imprecise null is not decisive refutation.
+
+Computationally checkable: source bindings, filters, joins, time gates, unknown construction, event precedence, transitions, density/weights, splits, CIFs, calibration, Brier and uncertainty. Clinical adjudication/another study is required for treatment limitation, discharge rationale, goals of care, chronic oxygen, work of breathing, function, intent, mechanism, causal policy and transportability.
+
+## Exact MIMIC source bindings
+
+Source rows are read-only. The parent exact catalog/schema audit is reused; compiler must recheck it before execution.
+
+Source archive: `[internal dataset path]`; configured binding target `[internal dataset path]`; archive [source checksum]; MIMIC snapshot `[source checksum]`. Full catalog `[internal dataset path]`, [source checksum].
+
+- `hosp/patients.csv.gz`: subject_id,gender,anchor_age,dod; join subject_id; time dod; schema [source checksum].
+- `hosp/admissions.csv.gz`: subject_id,hadm_id,admittime,dischtime,deathtime,admission_type,discharge_location,hospital_expire_flag; join (subject_id,hadm_id); times admittime,dischtime,deathtime; schema [source checksum].
+- `icu/icustays.csv.gz`: subject_id,hadm_id,stay_id,first_careunit,last_careunit,intime,outtime,los; join (subject_id,hadm_id); times intime,outtime; schema [source checksum].
+- `icu/chartevents.csv.gz`: subject_id,hadm_id,stay_id,charttime,storetime,itemid,valuenum,value,valueuom,warning; join (subject_id,hadm_id,stay_id); times charttime,storetime; schema [source checksum].
+- `icu/d_items.csv.gz`: itemid,label,abbreviation,linksto,category,param_type,unitname,lownormalvalue,highnormalvalue; dictionary join itemid; schema [source checksum].
+- `hosp/labevents.csv.gz`: labevent_id,subject_id,hadm_id,itemid,charttime,storetime,valuenum,value,valueuom,flag; join (subject_id,hadm_id); times charttime,storetime; schema [source checksum].
+- `hosp/d_labitems.csv.gz`: itemid,label,fluid,category; dictionary join itemid; schema [source checksum].
+- `icu/inputevents.csv.gz`: subject_id,hadm_id,stay_id,starttime,endtime,storetime,itemid,amount,amountuom,rate,rateuom,totalamount,totalamountuom,ordercategoryname,secondaryordercategoryname,ordercomponenttypedescription,ordercategorydescription,statusdescription; join (subject_id,hadm_id,stay_id); times starttime,endtime,storetime; schema [source checksum].
+- `icu/outputevents.csv.gz`: subject_id,hadm_id,stay_id,charttime,storetime,itemid,value,valueuom; join (subject_id,hadm_id,stay_id); times charttime,storetime; schema [source checksum].
+- `icu/procedureevents.csv.gz`: subject_id,hadm_id,stay_id,starttime,endtime,storetime,itemid,value,valueuom,ordercategoryname,ordercategorydescription,statusdescription; join (subject_id,hadm_id,stay_id); times starttime,endtime,storetime; schema [source checksum].
+- `hosp/transfers.csv.gz`: subject_id,hadm_id,transfer_id,eventtype,careunit,intime,outtime; join (subject_id,hadm_id); times intime,outtime; schema [source checksum].
+- `hosp/omr.csv.gz` (audit only): subject_id,chartdate,seq_num,result_name,result_value; not a goals-of-care proxy; schema [source checksum].
+
+These are the parent-verified bindings. The parent archive check found no `note/discharge.csv.gz` or `note/discharge_detail.csv.gz`; no note or OMR value substitutes for intent.
+
+## Compute, completion and references
+
+Future solver envelope: 16 CPUs, 262144 MiB RAM, 28800 seconds, subject to compiler verification against current inputs.json. CPU work includes archive scans, materialization, B, CIFs and 1,000 subject-cluster bootstrap intervals. T is CPU-first; one allocated A100 is optional if repeated sequence fits bottleneck. If used, request one allocated device and use cuda:0. These are planning estimates inherited from the parent, not measured results for this child; no proposer/solver training or discovery computation was run.
+
+Completion requires the all-eligible flow/availability manifest; four-level risks and R/D/A/L CIFs; density/destination/severity audits; paired late/early RDs and transitions; weighted sensitivity with positivity/ESS; held-out B/T calibration, Brier and uncertainty plus permutation; and a conclusion linked to named outputs and labelled supportive/adverse/inconclusive. Readiness is not completion.
+
+The exact three inspected works and attached UTF-8 excerpts/receipts are in `key-references.json`: `evidence-k1-rosa.txt`, `evidence-k2-lin.txt`, `evidence-k3-brown.txt`. This is an adaptation, not reproduction.
+
+### Bibliography
+
+[K1] Rosa RG, Roehrig C, de Oliveira RP et al. Comparison of Unplanned Intensive Care Unit Readmission Scores: A Prospective Cohort Study. PLoS ONE. 2015;10(11):e0143127. DOI:10.1371/journal.pone.0143127.
+
+[K2] Lin Y-W, Zhou Y, Faghri F, Shaw MJ, Campbell RH. Analysis and prediction of unplanned intensive care unit readmission using recurrent neural networks with long short-term memory. PLoS ONE. 2019;14(7):e0218942. DOI:10.1371/journal.pone.0218942.
+
+[K3] Brown SES, Ratcliffe SJ, Halpern SD. An empirical derivation of the optimal time interval for defining ICU readmissions. Medical Care. 2013;51(8):706–714. DOI:10.1097/MLR.0b013e318293c2fa; PMID:23698182; PMCID:PMC3714373.

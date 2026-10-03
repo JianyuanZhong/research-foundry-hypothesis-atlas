@@ -1,0 +1,125 @@
+# Episode 19 method-alternative child: assay content versus a competing observation process
+
+Status: design only. No cohort count, fitted parameter, prediction, effect, or clinical conclusion is claimed.
+
+Parent: `[prior hypothesis]`. This child keeps the parent’s exact HCC population, day-42 landmark, [43,181) follow-up, O0/O1/O2/O3 endpoint definitions, planned-care negative control, R42/R28 weighting, patient-held-out temporal split, and source bindings. Its substantive change is to decide whether the matched elastic-net/GRU comparison is enough for the endpoint-interpretation threat. It retains that comparison as the primary assay-content test and adds one predeclared joint competing-observation sensitivity model. The joint model is not allowed to convert documentation into intent, completion, response, benefit, causality, or mechanism.
+
+## Scientific question and what remains unresolved
+
+The strongest claim supported by the inherited evidence and design is narrow: in the first dated exact-code TACE population, information in the pre-index-to-day-42 assay trajectory may add held-out predictive information beyond a day-42 snapshot for a later operational TACE record, after baseline severity, assay opportunity, workflow features, and the parent’s observation-selection checks. The parent’s O3 repair makes the record more coherent by requiring inherited O2 plus a strictly post-procedure same-visit corroborator within 72 hours.
+
+The unresolved claim is stronger and clinically consequential: does assay content have an endpoint-specific association with a coherent downstream procedure episode, or does it merely predict a latent care-intensity/documentation process that produces O3, planned-only records, and other source capture together? O3 does not fully remove that rival because a post-procedure examination, order, or medication can itself be a consequence of the same care intensity. The planned-only label is useful but can be asymmetrically missing when post-source capture is absent.
+
+The leading explanation predicts a larger trajectory increment for O3 than for planned-only or generic source capture. The rival predicts a common increment across those observation outcomes, or a result that disappears when the endpoint is represented as an observation process. A model comparison alone cannot prove either explanation: a GRU gain can be workflow prediction, and a joint model can only decompose recorded processes, not recover unobserved intent.
+
+[K1] shows that ordered longitudinal records can contain predictive temporal structure while also learning biases of the recording system. [K2] demonstrates the value of explicitly modeling longitudinal EHR occurrence and selection processes, including inverse-probability handling, but does not establish a local HCC procedure-intent label. [K3] uses longitudinal routine clinical data and modality ablations to show why data-generation and missingness checks matter, while its unavailable full article/STAR Methods and different setting do not validate this HCC endpoint. This child adds a label-specific observation-process test to the parent’s endpoint-provenance repair; it does not reproduce any of these works.
+
+## Fixed population, time, endpoints, and estimand
+
+Use the first row in `procedures` for each patient whose Unicode-normalized, trimmed, case-folded `手术` equals `TACE`, with nonmissing `患者主索引`, `就诊号`, and `开始时间`. Call the time `t0`. Exclude malformed dates, deterministic parent-defined duplicate/alias failures, and patients without all-source observation through `t0+42 days` from the R42 arm. Retain the parent R28 arm and early-repeat exclusions. Patient-held-out grouping is only `患者主索引`; every table join is exactly (`患者主索引`, `就诊号`). No personal identity field, file order, or cross-namespace join is permitted.
+
+Later candidates must have a valid procedure `开始时间 tp` in [`t0+43 days`, `t0+181 days`). Keep the parent’s first-event estimands and 14-day risk bins [43,57), [57,71), …, [169,181):
+
+- O0: first later unique literal-code TACE.
+- O1: O0’s parent semantic hepatic-arterial procedure plus valid same-patient/same-visit examination or order corroboration.
+- O2: O1 plus the parent’s same-visit medication corroboration.
+- O3: first later candidate satisfying O2 and at least one same-patient/same-visit corroborator with nonmissing event/start time `u` strictly after `tp` and no later than `tp+72 hours`. Qualifying families are `examinations.开始时间`, `orders.开始时间` with nonblank status not containing normalized `取消`, `作废`, `撤销`, or `停用`, and `medications.开始时间`. This direction-of-time rule is provenance only, not proof of completed treatment.
+- O_preplanned: first later literal TACE candidate with an `orders.开立时间` in [`tp-7 days`,`tp`), no qualifying post-procedure source in (`tp`,`tp+72 hours`], and valid order status/time. A candidate satisfying O3 is classified O3, not planned-only. Missing status/time is `unresolved_provenance`, never planned-only.
+
+The primary contrast remains the paired patient-level held-out incremental predictive loss
+
+`D42_j = L_w(A_snap42,j) - L_w(A_traj42,j)`
+
+for `j=O0` (primary), O1, O2 when its support gate passes, and O3 as the endpoint-provenance boundary. `A0=M0+B0+P_obs+P_care`; `A_snap42=A0+S42`; `A_traj42=A0+T42`. No learned alternative may add post-day-42 covariates as predictors.
+
+## Exact available source bindings
+
+Snapshot: `[source checksum]`. All HCC members are ordinary CSV files; no archive member is unpacked. The complete catalog is `datasets/README.md`; HCC schemas are `datasets/hcc/README.md` and its table JSON files; the catalog SHA-256 is `[source checksum]`.
+
+| table | exact read-only source and SHA-256 | required columns in this child |
+|---|---|---|
+| procedures | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源` for index, later candidates, `tp`, and provenance audit |
+| encounters | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室` for M0, opportunity, and care-process features |
+| examinations | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `检查`, `检查所见`, `检查诊断`, `开始时间`, `检查号` for O1/O3 and generic capture |
+| orders | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `医嘱(非药品)`, `开立时间`, `开始时间`, `结束时间`, `医嘱状态`, `频次` for O1/O3/O_preplanned and capture |
+| medications | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `用药`, `单次用药剂量`, `单次用药剂量单位`, `频次`, `开始时间`, `结束时间`, `用药方式`, `药品类型` for O2/O3 and capture |
+| labs | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间` for the eight assay labels, B0/S42/T42, opportunity, and trajectory |
+| clinical_documents, diagnoses, pathology | exact paths and hashes in `datasets/hcc/README.md` and `metadata.json` | coverage/context audit only; their event-time limitations prevent them from being an O3, planned, or generic-capture label |
+
+The schemas document many-to-one relationships to encounters on the same composite key; duplicate audits precede joins. Local dates support within-participant intervals but exact calendar dates are not released. Lab units/reference ranges are absent. Images, raw waveforms, validated narrative temporality, outside-care capture, and an independent scheduling/intent registry are unavailable.
+
+## Method comparison and selection
+
+### Primary baseline: transparent elastic-net hazards
+
+Fit the parent’s pooled-logistic discrete-time hazard separately for each endpoint and each label family. Inputs are fixed one-hot risk-bin indicators, M0, B0, P_obs, P_care, S42, T42, A0, A_snap42 and A_traj42; no future endpoint provenance fields are predictors. Alpha is 0.5 and lambda is selected only by inner grouped development-fold log loss. Fit parsers, token maps, imputation, scaling, and R42 weights inside development folds only. Report coefficients and feature-block incremental losses so the assay-versus-workflow comparison is auditable.
+
+### Matched learned alternative: compact time-aware GRU
+
+Use the same patient/visit rows and same target windows as the baseline. The sequence contains the eight assay labels, content tokens, sample type, relative time, inter-event time, opportunity tag, and assay-missingness indicators from `t0-365 days` through `t0+42 days`; M0/workflow covariates enter only at the hazard head. Keep one GRU layer, hidden size 32, dropout 0.10, two-layer 32/16 head, Adam 1e-3, weight decay 1e-4, at most 50 epochs, eight-epoch early stopping, seeds 17/29/41, and identical folds, right-censoring masks, targets, and weights. The GRU can reveal whether irregular order and assay timing/content jointly carry reproducible information that fixed pooled summaries lose. It cannot reveal whether that information is biological rather than workflow-generated.
+
+### Joint competing-observation alternative
+
+If and only if the readiness gate below passes, fit one compact multi-task model with the same GRU encoder inputs and a matched elastic-net multi-task comparator. The model has three predeclared heads at each 14-day bin:
+
+1. a coherent-event head for first O3;
+2. a planned/documentation head for first O_preplanned, excluding candidates classified O3;
+3. a generic-capture head for the first post-day-42 valid row in any of `encounters`, `examinations`, `orders`, `medications`, or `labs`, with the exact table key and valid time retained. This is an observation-process outcome, not a clinical outcome.
+
+For the first-literal-TACE classification audit, additionally partition each first later literal TACE into mutually exclusive `O3`, `O_preplanned`, or `unresolved_provenance` (including O0-only and missing status/time). Do not treat unresolved as a clinical negative. The joint loss is the sum of cause-specific discrete-time log losses for O3 and planned-only, plus the generic-capture auxiliary loss, with the parent’s R42 weights applied only to the relevant arm. Shared encoder weights may be used, but each head must have separate logits and report head-specific calibration, Brier/log loss, and the trajectory-minus-snapshot increment. The elastic-net comparator uses the same heads and feature blocks with separate cause-specific coefficients; it is not a larger unstructured feature expansion.
+
+The key estimand is not a latent “true treatment” probability. Predeclare:
+
+`D_specific = D_O3 - D_preplanned`
+
+and report `D_capture` as an auxiliary process comparison, all with paired patient-level uncertainty. A positive O3 increment with weak planned-only and generic-capture increments is more compatible with endpoint-specific information. Similar increments across heads indicate that the assay trajectory predicts observation/care intensity. An O3 increment that survives only in the GRU, but not the matched joint elastic-net, is representation-unstable and not supportive. A joint model cannot rescue O3 if O3 is sparse, if generic capture is nearly synonymous with O3, or if planned-only is defined mainly by absent data.
+
+This is a scientifically substantive alternative because the current one-target baseline/GRU comparison loses the distinction between endpoint-specific and shared observation-process information. It is not justified as a complexity bonus: it will be deferred/rejected if the heads are not supported or if its predeclared contrasts are not identifiable from available fields.
+
+### Model choice
+
+Run the primary elastic-net/GRU comparison for O0/O1/O2/O3 regardless of the joint-model gate. Run the joint alternative only when the materialized audit shows, before test scoring, nonzero development and test support for O3 and O_preplanned, generic-capture risk sets, finite R42 ESS, and no head with near-deterministic duplication of another label. If the gate fails, retain the primary comparison, report the exact failure, and defer joint modeling pending better capture or clinical adjudication. If it passes, use the joint model as a sensitivity/interpretation analysis, not as a replacement endpoint.
+
+## Split, uncertainty, evaluation, and falsification
+
+Use the parent’s chronological patient split: earliest 80% by `t0` for development and latest 20% untouched test; five grouped development folds; no patient overlap. Freeze all preprocessing and model selection in development. On the untouched test set, report patient-level paired log loss, Brier/integrated Brier, calibration by risk bin, event/risk-set counts, paired availability, missing and tied times, O0/O1/O2/O3/ planned-only overlap, unresolved classes, generic-capture counts, R42/R28 support, ESS, and weight tails.
+
+Use 1,000 patient-level paired bootstrap resamples with max-|t| adjustment over the single predeclared family: O0/O1/O2/O3, planned-only, generic capture, `D42`, `D_specific`, `D_capture`, ordinary/R42/R28 weights, both methods, and the fixed parent falsifiers. No test-driven change to the 72-hour window, source-family rules, label hierarchy, subgroup, or loss.
+
+Required falsifiers and sensitivity checks are unchanged from the parent and include late-window removal [`t0+35,t0+42`] before the landmark, R28, workflow-only and time-only models, within-patient assay-content permutation, timestamp permutation preserving values, and source-family/endpoint overlap audits. Add two process checks: (a) replace assay content with an exact trajectory-order permutation while retaining opportunity and source-capture variables; (b) compare the joint model’s O3/planned/generic head increments under a development-frozen assay-value permutation. A broad shared improvement is adverse to assay-specific interpretation.
+
+Supportive results require all of the following: O0 and O1 retain a positive, simultaneous lower-bound trajectory-versus-snapshot contrast under R42 with ordinary direction consistent; O3 passes support/ESS/overlap gates and is directionally consistent in both primary methods; planned-only and generic-capture increments are materially weaker under the predeclared resolution rule; and the result survives late-window, R28, workflow/time, and permutation checks. A joint-model result is supportive only if its head-specific calibration is adequate and `D_specific` is positive with a simultaneous interval excluding the predeclared non-specific region. No numerical threshold is invented here; the solver must freeze the resolution rule before touching the test set and record it in `trajectory_support_freeze.json`.
+
+Adverse results include O3 losing the increment while planned-only or generic capture retains it; comparable increments across all heads; O3/GRU gains without elastic-net or joint-head stability; failures under R28/late removal/permutation; or endpoint labels dominated by unresolved/missing status. These results leave at most a workflow/documentation association and argue against added model complexity.
+
+Inconclusive results include too few O3 or planned-only events, generic capture nearly identical to O3, finite but low ESS, missing post-source capture dominating the planned label, wide simultaneous intervals, or nonidentifiable head contrasts. Do not reclassify missing as planned, tune heads after test results, or infer a null from an imprecise interval.
+
+## Actual scientific deliverable and compute
+
+Completion requires newly fitted, held-out predictions and losses—not merely readiness:
+
+- `endpoint_provenance_audit.csv` with every later TACE candidate, source-family times, status rules, O3/planned/unresolved class, and deterministic tie/overlap decisions;
+- `endpoint_class_counts.csv` with development/test event counts, risk sets, capture counts, overlap, missingness, R42/R28 ESS, and weight tails;
+- `heldout_predictions_losses.csv` for elastic-net and GRU across A0/A_snap42/A_traj42 and O0/O1/O2/O3/planned-only;
+- `joint_observation_predictions_losses.csv` with separate O3, planned-only, and generic-capture heads, including `D_specific` and `D_capture`;
+- `selection_robust_contrasts.csv`, `trajectory_falsification.csv`, `trajectory_gru_sensitivity.csv`, `trajectory_support_freeze.json`, `trajectory_decision_gate.json`, and `claim_output_map.md`.
+
+The current discovery episode runs no fit. The future solver planning envelope is at most 16 CPUs, 262,144 MiB, up to 8 GPUs, and 28,800 seconds. A measured estimate is unavailable. Planning estimate: source materialization and endpoint audit 4 CPUs/16 GiB/1–3 hours; elastic-net and 1,000 bootstrap/permutation calculations 4 CPUs/16 GiB/1–3 hours; compact GRU primary 4 CPUs/16 GiB/one allocated A100/2–5 hours; joint three-head GRU plus three seeds 4 CPUs/16 GiB/one allocated A100/3–6 hours. GPU use is optional for the small tabular fits but reasonable for repeated sequence fits; inside an allocated job use `cuda:0` and do not override device visibility. These are unverified planning estimates, not observed results.
+
+## Clinical interpretation boundary and next decision
+
+Supportive results establish only that day-42 assay trajectory information adds held-out information for a better-provenance operational record and is less compatible with the specific planned-only/shared-capture pattern. They do not establish radiographic response, viable tumor, treatment completion, retreatment intent, treatment failure, survival, toxicity, utility, clinical benefit, mechanism, or causality.
+
+Adverse results redirect the question to care-intensity and observation measurement; they do not prove that assays are clinically uninformative. Inconclusive results justify deferral until scheduling/intent, imaging or radiology, treatment technical details, reliable timed narrative evidence, and outside-care capture are obtained. Blinded chart/intent/imaging adjudication would still be required to translate O3 into a clinical endpoint.
+
+The essential unmeasured evidence remains procedure intent and completion, imaging response, indication, technical dose/embolization details, toxicity, survival and patient benefit, reliable event-time semantics for clinical documents/diagnoses/pathology, and care outside the source system. A joint observation-process model can make the recorded-data rival more distinguishable; it cannot identify the missing clinical state.
+
+## Three inspected works
+
+[K1] Shmatko A, Jung AW, Gaurav K, Brunak S, Mortensen LH, Birney E, Fitzgerald T, Gerstung M. “Learning the natural history of human disease with generative transformers.” Nature. 2025;647:248–256. DOI: 10.1038/s41586-025-09529-3. Full article/XML evidence was inspected in the inherited parent evidence; this work supports temporal structure and records bias, but does not validate HCC endpoint intent or response.
+
+[K2] Urbut SM, Ding Y, Nakao T, Koyama S, Misra A, Jiang X, Harish A, Gaffney L, Hornsby WE, Smoller JW, Gusev A, Natarajan P, Parmigiani G. “A Bayesian framework for longitudinal EHR and genetic discovery.” Nature. 2026;656:924–935. DOI: 10.1038/s41586-026-10780-5. Full article/supplement evidence was inspected in the inherited parent evidence; this work bounds the value of explicit longitudinal/selection modeling, but its genetics and cross-cohort setting are not reproduced.
+
+[K3] Liu F, Wang K, Xu H, Tang C, Shen X, et al. “Advancing cancer detection and treatment using longitudinal routine clinical data.” Cell. 2026. DOI: 10.1016/j.cell.2026.07.009. The inspected evidence is the available supplement/metadata excerpt, not the unavailable main article or complete STAR Methods; it supports explicit modality/data-quality comparisons but does not establish this HCC endpoint.
+
+Evidence receipts and UTF-8 excerpts for these three unchanged works are inherited from the parent candidate and attached through the supporting paths. No new literature claim is made here.

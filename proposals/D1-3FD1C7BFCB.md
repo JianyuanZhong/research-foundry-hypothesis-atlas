@@ -1,0 +1,137 @@
+# Evolution audit: pre-exposure severity and informative ICU-exit repair
+
+Status: design-only child of [prior hypothesis]. No cohort scan, model fit, Harbor execution, or clinical result was run.
+
+## Decision and scientific opening
+
+The parent’s central question remains important and falsifiable:
+
+> Among adults with a creatinine-defined AKI episode who reach a prespecified landmark in their first eligible ICU stay, does lagged creatinine/urine/recorded-input discordance predict seven-day hospital death or ICU-recorded RRT, component by component, beyond observed support and surveillance processes?
+
+The parent already repaired the major boundary, input-construction, renal-opportunity, and endpoint-precedence problems. The remaining weakness is the interpretation of its severity/observation audit. Most support and density variables are collected in the same lagged interval that defines discordance. They are therefore useful process descriptions, but not a clean measure of severity before the exposure is observed. A signal that disappears after conditioning on them could reflect post-exposure selection or support response, not residual baseline severity. Conversely, a signal that persists only in ICU patients who remain observable can be an informative ICU-exit/ascertainment contrast.
+
+This child adds a pre-exposure audit without changing the primary exposure, risk sets, outcome clocks, or estimands. For each landmark, it defines a covariate window strictly before the lagged exposure interval and requires the solver to report how much of the contrast is explained by that fixed context. It also makes ICU exit a reported transition competing with ICU-recorded RRT, rather than treating it as ordinary censoring or interpreting ICU-RRT as hospital-wide RRT.
+
+Evidence supports only the bounded premise that creatinine-based kidney assessment can be distorted by muscle loss [K1], that fluid/renal observation and critical-illness severity are entangled in outcome associations [K2], and that longitudinal temporal models require strict splitting and calibration [K3]. None establishes this MIMIC-specific discordance estimand, true GFR, true fluid balance, treatment intent, complete RRT capture, mechanism, or causality. The unresolved claim is whether a lagged component-specific association remains after severity and observation opportunity are measured before the exposure, and whether any ICU-RRT contrast is separable from early ICU exit.
+
+## Weakest assumption and proposed repair
+
+The leading rival is residual physiologic severity and differential observation opportunity. A more severely ill patient may have abnormal vital signs/labs, more charting and input documentation, less measurable urine, more support, earlier death, or earlier ICU transfer. The parent’s support-first/renal-first audit tests temporal ordering inside the exposure/support windows, but does not by itself establish that the observed contrast is beyond severity present before those windows.
+
+The repaired comparison is:
+
+- primary: the parent’s unadjusted, component-specific Aalen–Johansen contrasts within the frozen risk set and support/order strata;
+- pre-exposure severity audit: add only variables observed before the lagged exposure interval, with fixed training-derived summaries and missingness indicators;
+- observation audit: use pre-exposure chart/lab density and timing opportunity, separately from exposure-window density;
+- ICU-exit audit: report exit before ICU-RRT as a competing event and compare exit/death/RRT flows by discordance state.
+
+These are prognostic/descriptive comparisons. Covariate adjustment does not identify a causal effect, and persistence after the audit does not prove intrinsic renal dysfunction.
+
+## Population, boundaries and estimands
+
+Use exactly the parent population and source bindings:
+
+- MIMIC-IV adults with `hosp/patients.anchor_age >= 18`, joined by `subject_id`.
+- Join `icu/icustays` to `hosp/admissions` on `(subject_id, hadm_id)`; require finite `intime < outtime`, `admittime <= intime`, `intime < dischtime`, and `outtime > admittime). Clip observable ICU follow-up at valid `dischtime` and retain an `outtime > dischtime` exception flag.
+- Within each `hadm_id`, sort by `intime`, then `stay_id`, and retain exactly the first eligible stay. Do not substitute a later stay if the first has no qualifying t0. Keep all admissions for a subject in one model split.
+- Define t0 exactly as the parent does from primary `hosp/labevents.itemid=50912), using finite `valuenum`, compatible `valueuom`, clinical `charttime), same-admission comparators, same-time duplicate median, bounded blank-`hadm_id` assignment, and the prespecified pre-t0 RRT exclusion set. Itemid 52546 remains sensitivity only; `storetime` never advances an observation.
+- For (L\in\{24,48,72\}), let `Ltime=t0+L`, `A_L=[max(t0,Ltime-24h), Ltime-6h)`, and washout `W_L=[Ltime-6h,Ltime)). The three six-hour A-bins, state definitions, opportunity rules, and input precedence are unchanged.
+- The primary risk set is alive at `Ltime`, in the clipped index ICU interval, without incident RRT before `Ltime`, and eligible under the parent’s state/opportunity rules. Washout deaths, ICU exits, RRT, and loss of opportunity remain attrition categories and are never reassigned a later state.
+- Hospital death is the first valid `hosp/admissions.deathtime` in `[Ltime,Ltime+7d)), no later than valid `dischtime`, with `hospital_expire_flag` a consistency check; alive hospital discharge competes.
+- ICU-recorded RRT is the first exact-set `icu/procedureevents` row with finite `starttime) in the same seven-day window, strictly before clipped ICU exit and while alive. ICU exit and death before RRT compete; exact ties follow the parent’s frozen precedence. Ward/post-ICU RRT is not imputed.
+
+Retain the parent estimands:
+`RD_D(L,s)=F_D(7d|discordant,s)-F_D(7d|concordant,s)` and
+`RD_R(L,s)=F_R(7d|discordant,s)-F_R(7d|concordant,s)`,
+where (F) is the observed Aalen–Johansen cumulative incidence in the same landmark risk set and frozen support/order stratum. The primary interpretation remains component-specific and noncausal.
+
+## Strict pre-exposure severity and observation window
+
+Let `a_L=max(t0,Ltime-24h)`, the start of `A_L`. Define the pre-exposure context window
+`B_L=[a_L-6h,a_L)`.
+This is strictly before every primary exposure observation. At L=24 it is `[t0-6h,t0)); at L=48 and L=72 it is immediately before the corresponding 24-hour lagged assessment interval. No value in `A_L), `W_L), or after `Ltime) may enter `B_L). If the index ICU/admission boundary truncates B, preserve the truncated duration and mark the context incomplete.
+
+Construct a prespecified observed-severity vector, not a latent SOFA or GFR estimate:
+
+1. From `icu/chartevents`, use finite `valuenum`, compatible `valueuom`, and clinical `charttime` for dictionary-resolved exact labels `Heart Rate`, `Non Invasive Blood Pressure mean`, `Arterial Blood Pressure mean`, `Respiratory Rate`, `SpO2`, `Temperature Fahrenheit`, `Temperature Celsius`, and `GCS Total`. The solver must join `icu/d_items` on `itemid`, freeze the itemids whose labels exactly match this list before fitting, report the resolved list and units, and fail closed for a missing or ambiguous label rather than substituting an undocumented item. Use physiologically oriented B-window summaries (minimum/maximum as appropriate), last value, number of valid rows, and missingness/duration masks.
+2. From `hosp/labevents`, use primary creatinine `itemid=50912` and a fixed nonrenal lab panel resolved through `hosp/d_labitems`: lactate, BUN, white-cell count, platelet count, and total bilirubin. Retain the resolved itemid/label/unit manifest; require finite `valuenum`, compatible `valueuom), and `charttimein B_L`. Report last and worst-direction values, counts, and masks. Item 52546 is not silently merged into the primary creatinine context.
+3. From `icu/inputevents`, use only the parent’s fail-closed accepted administered-volume pathway (compatible mL `totalamount` then `amount`, then compatible mL/hour `rate` integrated over a positive clipped interval), restricted to B_L. Preserve accepted volume, row count, unresolved/non-mL fraction, item/order-category composition, and input-present mask. These are recorded administrations, not intent or dose-response.
+4. From `icu/procedureevents`, retain the parent exact RRT set and dictionary-resolved invasive/non-invasive ventilation sensitivity, restricted to B_L, with valid `starttime`, duration and presence indicators.
+5. Define pre-exposure observation opportunity independently: valid non-creatinine `hosp/labevents) count, valid non-weight/non-CVP `icu/chartevents) count, unique observed hours, input-row count, procedure-row count, and B duration observed. Counts use clinical `charttime`/support `starttime`, not `storetime`. The parent’s exposure-window density remains a separate post-t0 process sensitivity, never the pre-exposure audit substitute.
+
+All item selection is from the available dictionary fields `itemid,label,fluid,category` in `hosp/d_labitems` and `itemid,label,abbreviation,linksto,category,unitname,param_type` in `icu/d_items`; the solver must save the exact resolved item lists and compatible-unit decisions. No missing value is normal physiology. B-derived quartiles or context categories are fitted on the training subjects only and frozen before test evaluation. If B has fewer than two valid observation hours, classify the context as incomplete rather than imputing it.
+
+## Severity/observation analysis
+
+First publish the parent’s empirical layer unchanged: component-specific AJ CIFs, denominators, event/competing-event counts, washout attrition, unknown states, support/order cells, and subject-cluster bootstrap intervals. A cell with fewer than 50 risk-set subjects or fewer than 10 events for that component is inconclusive and is not adaptively merged.
+
+Then add three predeclared audits:
+
+1. Report B-severity and B-observation distributions by primary state, discordance component, support-order category and landmark. Compare standardized component CIF contrasts within frozen B-context strata (low/middle/high severity and low/high opportunity) only when support is adequate.
+2. Fit the parent fixed-summary cause-specific six-hour hazard baseline twice: parent summaries alone, and parent summaries plus B context. Fit/standardize predictions only from the training partition; report component-specific held-out CIF calibration, integrated/time-dependent Brier score, predicted-versus-observed competing-event counts, and standardized discordant-minus-concordant contrasts. The second model is an adjustment/sensitivity, not a causal estimator.
+3. Report a process-only pre-exposure diagnostic using B observation density, with no renal discordance input, and compare its component CIF gradient with the renal contrast. Repeat with B completeness and a prespecified A-opportunity restriction. Do not call this a negative-control outcome.
+
+The ICU-exit audit reports, for every discordance component and L, the six-hour washout flow and seven-day RRT competing causes: ICU-recorded RRT, ICU exit before RRT, hospital death before RRT, administrative censoring, and timing exceptions. Use `hosp/transfers` only as a descriptive movement sensitivity joined on `(subject_id,hadm_id)`; do not infer ward RRT from it. A large discordance-associated exit gradient means the ICU-RRT estimate is an observation-limited transition contrast, not evidence of lower or higher hospital-wide RRT.
+
+Supportive results require a directionally consistent component contrast at L=48 with directional replication at L=24 or 72, acceptable uncertainty, persistence in adequately supported and pre-exposure B-context strata, no comparable B-density gradient, and no material dependence on boundary/current-window, storetime, excluded-item, or ICU-exit composition. This supports a reproducible prognostic association conditional on observed context; it does not support mechanism.
+
+Adverse results are disappearance after adding B context, concentration in high B-density/severity or support-first strata, a comparable pre-exposure process-only gradient, reversal across B completeness, or an ICU-exit gradient that accounts for the RRT contrast. These weaken the renal-discordance interpretation and redirect attention to severity/ascertainment; they do not prove normal GFR or absence of treatment effect.
+
+Inconclusive results include sparse B strata, <10 component events, high B incompleteness, clinically important intervals, inconsistent death times, large washout selection, or a learned improvement without component-specific calibration/contrast replication. The solver must not treat an imprecise null as refutation.
+
+## Matched baseline and temporal alternative
+
+Both methods use the same eligible admission-landmark rows, t0, A/W boundaries, outcomes, B context, and subject-level deterministic 70/15/15 split seeded `20261002`; all admissions of a subject remain in one partition.
+
+The fixed-summary baseline is the scientific primary. It uses prespecified A summaries (creatinine peak/level/slope, three-bin urine values/masks, accepted input and composition, support/order and missingness) plus B summaries and B observation density. It fits separate six-hour pooled-logistic competing-risk hazards for hospital death and ICU-recorded RRT, recursively produces seven-day CIFs, and reports held-out component calibration, Brier score, secondary discrimination, observed/predicted competing-event counts, standardized contrasts, support/order/B-context strata, and 1,000 subject-cluster bootstrap percentile intervals. No outcome-derived selection or post-test threshold choice is allowed.
+
+The substantive learned alternative is a small two-stream temporal competing-risk model: one stream has the renal A-bins (creatinine, direct urine, masks, coverage and item composition); the other has recorded input, organ support, nonrenal observation density, missingness, and ordering. B summaries and fixed demographic/ICU context are concatenated as static covariates. It has separate discrete-time cause-specific heads for hospital death/alive discharge and ICU-RRT/ICU-exit/death. It sees no W_L, outcome, post-L value, or future ICU movement. Required ablations are fixed-summary, B-context-only, renal-only, support/observation-only, and full two-stream. The temporal model is retained for scientific interpretation only if held-out component CIF calibration and Brier performance are stable and it changes a component/order/B-context interpretation reproducibly at L=48 with directional support at another landmark. A small AUROC gain, an opaque embedding, or a gain driven only by ICU-exit coding is insufficient.
+
+The temporal model can reveal within-A persistence and renal-versus-support ordering that fixed summaries lose, while the B context tests whether that information is incremental beyond pre-exposure severity. It cannot reveal an unmeasured latent physiologic mechanism. A latent state-space/GFR model is deferred because the available tables have no measured GFR, cystatin C, muscle mass, tubular injury marker, or adjudicated volume state.
+
+## Exact source bindings and availability
+
+The parent’s inspected MIMIC binding audit is retained unchanged:
+
+- source archive: `[internal dataset path]`, [source checksum];
+- configured binding target: `[internal dataset path]`;
+- snapshot: `[source checksum]`;
+- full catalog: `[internal dataset path]`, [source checksum].
+
+Required archive members, schemas, keys and clinical time fields are unchanged:
+
+- `mimic-iv-3.1/icu/icustays.csv.gz`: `subject_id,hadm_id,stay_id,first_careunit,last_careunit,intime,outtime,los`; join `(subject_id,hadm_id)`; time `intime,outtime`; schema SHA `[source checksum]`.
+- `mimic-iv-3.1/hosp/admissions.csv.gz`: `subject_id,hadm_id,admittime,dischtime,deathtime,admission_type,discharge_location,hospital_expire_flag`; join `(subject_id,hadm_id)`; time `admittime,dischtime,deathtime`; SHA `[source checksum]`.
+- `mimic-iv-3.1/hosp/patients.csv.gz`: `subject_id,gender,anchor_age,dod`; join `subject_id`; time `dod`; SHA `[source checksum]`.
+- `mimic-iv-3.1/hosp/labevents.csv.gz`: `labevent_id,subject_id,hadm_id,itemid,charttime,storetime,valuenum,valueuom,flag`; join `(subject_id,hadm_id)` or bounded blank-`hadm_id`; time `charttime,storetime`; SHA `[source checksum]`.
+- `mimic-iv-3.1/hosp/d_labitems.csv.gz`: `itemid,label,fluid,category`; dictionary; SHA `[source checksum]`.
+- `mimic-iv-3.1/icu/outputevents.csv.gz`: `subject_id,hadm_id,stay_id,charttime,itemid,value,valueuom,storetime`; join `(subject_id,hadm_id,stay_id)`; time `charttime`; SHA `[source checksum]`.
+- `mimic-iv-3.1/icu/inputevents.csv.gz`: `subject_id,hadm_id,stay_id,starttime,endtime,storetime,itemid,amount,amountuom,totalamount,totalamountuom,rate,rateuom,ordercategoryname,secondaryordercategoryname,ordercomponenttypedescription,ordercategorydescription,statusdescription,orderid,linkorderid,patientweight`; join `(subject_id,hadm_id,stay_id)`; time `starttime,endtime,storetime`; SHA `[source checksum]`.
+- `mimic-iv-3.1/icu/chartevents.csv.gz`: `subject_id,hadm_id,stay_id,charttime,storetime,itemid,valuenum,value,valueuom,warning`; join `(subject_id,hadm_id,stay_id)`; time `charttime,storetime`; SHA `[source checksum]`.
+- `mimic-iv-3.1/icu/d_items.csv.gz`: `itemid,label,abbreviation,linksto,category,unitname,param_type`; dictionary; SHA `[source checksum]`.
+- `mimic-iv-3.1/icu/procedureevents.csv.gz`: `subject_id,hadm_id,stay_id,starttime,endtime,storetime,itemid,value,valueuom,ordercategoryname,statusdescription`; join `(subject_id,hadm_id,stay_id)`; time `starttime,endtime,storetime`; SHA `0cbde2f880a06ba4b2c5057ae6f640fddfc06099929d29aa1fc11ae4f83efe2`.
+- `mimic-iv-3.1/hosp/transfers.csv.gz`: `subject_id,hadm_id,transfer_id,eventtype,careunit,intime,outtime`; join `(subject_id,hadm_id)`; descriptive movement sensitivity; SHA `[source checksum]`.
+
+The exact urine item set, weight item set, RRT item set, half-open interval rules, input precedence, and order definitions are inherited unchanged from the parent. The new B variables use only columns in these members. Source rows remain read-only; derived manifests and outputs belong in the workspace.
+
+## Compute, feasibility and selection
+
+The future solver envelope is 16 CPU, 262,144 MiB RAM, at most 28,800 seconds. CPU is the default for archive scans, fixed summaries, AJ estimates, and bootstrap. The small temporal model is feasible CPU-first if readiness confirms row counts and event support; one allocated A100 is optional for repeated sequence fits. A shell CUDA check is not evidence of hardware absence; an allocated job must use the configured GPU image and `cuda:0). These are planning estimates, not measured runtimes. Unverified quantities are eligible landmarks/events after exact filters, B feature materialization size, sparse-cell prevalence, GRU convergence, and bootstrap time. No discovery fit was run.
+
+Selection: this pre-exposure audit is selected over a larger transformer because it directly tests the clinical rival with auditable fields and preserves the empirical estimand. A causal treatment model is deferred because intent and complete exposure are unavailable. A latent physiologic model is deferred because it cannot be validated against measured filtration or volume. Revisit either only with adjudicated physiologic markers, complete follow-up, or an external cohort.
+
+## Scientific deliverable and limits
+
+Completion requires the exact flow, B item-resolution/unit manifest, primary AJ component estimates, pre-exposure severity/observation strata and adjusted sensitivity, ICU-exit transition table, fixed-summary and ablation predictions, held-out component calibration/Brier/uncertainty, and a conclusion linked to those outputs as supportive, adverse, or inconclusive.
+
+Computationally checkable claims include source/member/schema binding, filters, joins, time windows, B-before-A ordering, event precedence, flow counts, AJ estimates, split integrity, model metrics, calibration and uncertainty. True GFR, total-body fluid balance, muscle mass, treatment intent, complete ward/post-ICU RRT, goals of care, causal effects, mechanism, and transportability require clinical adjudication or another study.
+
+## Inspected key works
+
+[K1] Sadjadi et al. (2026), abstract-only: bounds interpretation of kidney-protection/support outcomes and their limitations; it does not establish this MIMIC discordance association or mechanism.
+
+[K2] Melo et al. (2026), abstract-only: bounds associations between fluid accumulation, severity and ICU outcomes; it motivates separating recorded balance from true volume and from severity, but does not establish causality or complete RRT.
+
+[K3] Shmatko et al. (2025), inspected full-text excerpt: supports a bounded longitudinal-model comparator with patient-level splitting/calibration; it does not establish a clinical effect or validate this MIMIC target.
+
+These are the parent’s three distinct frozen works. Their receipts and attached UTF-8 evidence are reused unchanged; no new reference is introduced. This branch is an adaptation and not a reproduction of any demonstration.
