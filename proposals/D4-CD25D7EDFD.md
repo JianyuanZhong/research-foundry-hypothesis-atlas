@@ -1,6 +1,6 @@
 # Repaired UKB seed 23: repeated CBC discordance and cancer-site risk
 
-Status: planned study design; counts marked “observed feasibility” are bounded source audits, not hypothesis-test results. Parent: [prior hypothesis]. Seed origin: expert-20261002-ukb-23.
+Status: planned study design; counts marked “observed feasibility” are bounded source audits, not hypothesis-test results. Parent: [prior hypothesis]. Seed origin: [starting question].
 
 ## Scientific opening and deliverable
 

@@ -1,6 +1,6 @@
 # Hypoglycemia after insulin
 
-Seed ID: `expert-20260913-eicu-09`
+Seed ID: `[starting question]`
 Dataset: eICU
 Original number: 9 (identifier, not rank)
 Source: `研究选题.xlsx`, `研究选题!A30:I30`

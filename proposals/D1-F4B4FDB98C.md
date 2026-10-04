@@ -1,6 +1,6 @@
 # Risk among interhospital transfer patients
 
-Seed ID: `expert-20260913-eicu-07`
+Seed ID: `[starting question]`
 Dataset: eICU
 Original number: 7 (identifier, not rank)
 Source: `研究选题.xlsx`, `研究选题!A28:I28`

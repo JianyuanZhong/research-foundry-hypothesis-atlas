@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="820" viewBox="0 0 1160 820" role="img" aria-label="Disease Mechanisms &amp; Pathway Hypotheses"><rect width="100%" height="100%" fill="#111a21"/>
+<rect x="10" y="10" width="1140" height="800" rx="14" fill="#172630" stroke="#364a57"/>
+<text x="32" y="44" fill="#e5edf2" font-family="Arial,sans-serif" font-size="21" >Disease Mechanisms &amp; Pathways</text>
+<text x="32" y="69" fill="#bfd0db" font-family="Arial,sans-serif" font-size="14" >37 nodes · 34 generated versions</text>
+<text x="32" y="96.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="12" >GEO / ArrayExpress · 37</text>
+<path d="M36.00,690.00 C113.36,690.00 113.36,573.80 190.71,573.80" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M190.71,573.80 C268.07,573.80 268.07,441.00 345.43,441.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M345.43,441.00 C422.79,441.00 422.79,524.00 500.14,524.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M190.71,573.80 C268.07,573.80 268.07,535.86 345.43,535.86" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M190.71,706.60 C268.07,706.60 268.07,630.71 345.43,630.71" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M654.86,725.57 C732.21,725.57 732.21,690.00 809.57,690.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,690.00 C113.36,690.00 113.36,706.60 190.71,706.60" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M500.14,690.00 C577.50,690.00 577.50,725.57 654.86,725.57" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M190.71,706.60 C268.07,706.60 268.07,725.57 345.43,725.57" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M500.14,690.00 C577.50,690.00 577.50,630.71 654.86,630.71" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M500.14,690.00 C577.50,690.00 577.50,535.86 654.86,535.86" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,690.00 C113.36,690.00 113.36,441.00 190.71,441.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M500.14,690.00 C577.50,690.00 577.50,441.00 654.86,441.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M345.43,630.71 C422.79,630.71 422.79,690.00 500.14,690.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M500.14,358.00 C577.50,358.00 577.50,346.14 654.86,346.14" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M500.14,358.00 C577.50,358.00 577.50,156.43 654.86,156.43" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M654.86,251.29 C732.21,251.29 732.21,192.00 809.57,192.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,192.00 C113.36,192.00 113.36,175.40 190.71,175.40" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M809.57,192.00 C886.93,192.00 886.93,441.00 964.29,441.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M809.57,192.00 C886.93,192.00 886.93,662.33 964.29,662.33" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M964.29,441.00 C1041.64,441.00 1041.64,441.00 1119.00,441.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M345.43,346.14 C422.79,346.14 422.79,192.00 500.14,192.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M654.86,251.29 C732.21,251.29 732.21,524.00 809.57,524.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M964.29,441.00 C1041.64,441.00 1041.64,662.33 1119.00,662.33" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M190.71,308.20 C268.07,308.20 268.07,251.29 345.43,251.29" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M964.29,219.67 C1041.64,219.67 1041.64,219.67 1119.00,219.67" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M500.14,358.00 C577.50,358.00 577.50,251.29 654.86,251.29" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M190.71,308.20 C268.07,308.20 268.07,346.14 345.43,346.14" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M654.86,251.29 C732.21,251.29 732.21,358.00 809.57,358.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M809.57,192.00 C886.93,192.00 886.93,219.67 964.29,219.67" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M345.43,346.14 C422.79,346.14 422.79,358.00 500.14,358.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,192.00 C113.36,192.00 113.36,308.20 190.71,308.20" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M190.71,308.20 C268.07,308.20 268.07,156.43 345.43,156.43" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-2F9BE0A370.md"><title>D3-2F9BE0A370 · MerTK-conditioned macrophage–fibroblast communication in rheumatoid arthritis</title><circle cx="190.71" cy="573.80" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-1CEA8C9831.md"><title>D3-1CEA8C9831 · Composition versus within-cell regulation</title><circle cx="36.00" cy="192.00" r="1.9" fill="#111a21" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-11985B2E5F.md"><title>D3-11985B2E5F · MerTK specificity repair: a donor-blocked macrophage–FLS interaction test</title><circle cx="345.43" cy="441.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-8107E60104.md"><title>D3-8107E60104 · MerTK state versus composition: a source-separated macrophage–FLS test</title><circle cx="500.14" cy="524.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-F4A1736A6C.md"><title>D3-F4A1736A6C · Persistence versus remission</title><circle cx="36.00" cy="524.00" r="1.9" fill="#111a21" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-F680DC5C21.md"><title>D3-F680DC5C21 · Directional cell communication</title><circle cx="36.00" cy="690.00" r="1.9" fill="#111a21" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-79F4D5009E.md"><title>D3-79F4D5009E · MerTK specificity repair: a donor-blocked macrophage–FLS interaction test</title><circle cx="345.43" cy="535.86" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-20A6350EA2.md"><title>D3-20A6350EA2 · Synovial macrophage remission signal: composition or within-state regulation?</title><circle cx="345.43" cy="630.71" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-04DC5CBC3D.md"><title>D3-04DC5CBC3D · Do remission-associated macrophage averages reflect captured state representation?</title><circle cx="809.57" cy="690.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-9450FD8C77.md"><title>D3-9450FD8C77 · MERTK-state dependence of synovial fibroblast responses</title><circle cx="190.71" cy="706.60" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-B03DDAADEF.md"><title>D3-B03DDAADEF · Do remission-associated macrophage averages reflect captured state representation?</title><circle cx="654.86" cy="725.57" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-9AE56E0256.md"><title>D3-9AE56E0256 · Can the E-MTAB-8873 inhibitor contrast be interpreted?</title><circle cx="345.43" cy="725.57" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-924F307338.md"><title>D3-924F307338 · Do remission-associated macrophage averages reflect captured state representation?</title><circle cx="654.86" cy="630.71" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-33A768666E.md"><title>D3-33A768666E · Do remission-associated macrophage averages reflect captured state representation?</title><circle cx="654.86" cy="535.86" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-2C1BD669D1.md"><title>D3-2C1BD669D1 · Does UNC1062-associated FLS response depend on the macrophage subset?</title><circle cx="190.71" cy="441.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-24FAB17842.md"><title>D3-24FAB17842 · Does the remission–resistance macrophage signal travel across donors?</title><circle cx="654.86" cy="441.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-3BC37E909C.md"><title>D3-3BC37E909C · Synovial macrophage remission signal: composition or within-state regulation?</title><circle cx="500.14" cy="690.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-BDF25BA739.md"><title>D3-BDF25BA739 · Provisional repair: E-MTAB-8873 macrophage context</title><circle cx="654.86" cy="346.14" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-65615B2082.md"><title>D3-65615B2082 · Provisional hypothesis: macrophage context changes FLS transcript state beyond donor composition</title><circle cx="654.86" cy="156.43" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-961283A90E.md"><title>D3-961283A90E · Provisional repair: E-MTAB-8873 macrophage-context hypothesis</title><circle cx="809.57" cy="192.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-ADFB961354.md"><title>D3-ADFB961354 · Provisional hypothesis: tissue signal is driven by cell composition rather than within-cell state</title><circle cx="190.71" cy="175.40" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-7615B13362.md"><title>D3-7615B13362 · Provisional hypothesis: macrophage context changes FLS state beyond donor composition</title><circle cx="964.29" cy="441.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-88E2158EF6.md"><title>D3-88E2158EF6 · Provisional hypothesis: macrophage context changes FLS state beyond donor composition</title><circle cx="964.29" cy="662.33" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-3CC34063E0.md"><title>D3-3CC34063E0 · Provisional hypothesis: E-MTAB-8873 macrophage context and donor composition</title><circle cx="1119.00" cy="441.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-6CA9BC10D1.md"><title>D3-6CA9BC10D1 · Provisional hypothesis: macrophage context changes FLS state beyond composition</title><circle cx="500.14" cy="192.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-BECBB4B8D2.md"><title>D3-BECBB4B8D2 · Provisional successor hypothesis: macrophage context changes FLS state beyond donor composition</title><circle cx="809.57" cy="524.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-B53B94EBF7.md"><title>D3-B53B94EBF7 · Episode 9 provisional hypothesis: macrophage context changes FLS state beyond donor composition</title><circle cx="1119.00" cy="662.33" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-A1126788C7.md"><title>D3-A1126788C7 · Provisional hypothesis: macrophage context changes FLS transcript state beyond composition</title><circle cx="36.00" cy="358.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-5B3B33BF2B.md"><title>D3-5B3B33BF2B · Provisional hypothesis: macrophage context induces a reproducible within-FLS state response</title><circle cx="345.43" cy="251.29" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-2603ED214B.md"><title>D3-2603ED214B · Provisional hypothesis: donor-aware macrophage context in E-MTAB-8873</title><circle cx="1119.00" cy="219.67" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-B19F7433BD.md"><title>D3-B19F7433BD · Provisional E-MTAB-8873 macrophage-context hypothesis</title><circle cx="654.86" cy="251.29" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-FC9EC56539.md"><title>D3-FC9EC56539 · E-MTAB-8873 repair note and provisional hypothesis</title><circle cx="345.43" cy="346.14" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-B80B0A8E91.md"><title>D3-B80B0A8E91 · Provisional hypothesis: macrophage context leaves a reproducible FLS transcript signature</title><circle cx="809.57" cy="358.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-1C823B983C.md"><title>D3-1C823B983C · E-MTAB-8873 pair-reconciliation evidence note</title><circle cx="964.29" cy="219.67" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-8E76453165.md"><title>D3-8E76453165 · E-MTAB-8873 donor-aware repair (provisional hypothesis)</title><circle cx="500.14" cy="358.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-C9EE145938.md"><title>D3-C9EE145938 · Provisional hypothesis: macrophage context changes FLS state through a cell-intrinsic response, not merely composition</title><circle cx="190.71" cy="308.20" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D3-232F6A22BB.md"><title>D3-232F6A22BB · Provisional repair: E-MTAB-8873 macrophage-context response in FLS</title><circle cx="345.43" cy="156.43" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<text x="32" y="798" fill="#91a7b5" font-family="Arial,sans-serif" font-size="10" >Recorded derivation →</text>
+</svg>

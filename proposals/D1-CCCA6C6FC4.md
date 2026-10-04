@@ -1,6 +1,6 @@
 # Discordant recovery after acute kidney injury
 
-Seed ID: `expert-20260913-mimic-03`
+Seed ID: `[starting question]`
 Dataset: MIMIC-IV
 Original number: 3 (identifier, not rank)
 Source: `研究选题.xlsx`, `研究选题!A14:I14`

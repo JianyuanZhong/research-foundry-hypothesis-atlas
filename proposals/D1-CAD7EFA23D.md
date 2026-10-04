@@ -1,0 +1,156 @@
+# Decision-bounded monitoring value of lactate-by-perfusion at a fixed ICU landmark
+
+## Scientific deliverable and substantive advance
+
+This is a substantive child of `[prior hypothesis]`. It preserves the parent’s primary live-exit estimand, the fixed-landmark 24-hour R/D/S/U endpoint, the dual clinical/recording-time coverage gate, the event-support rules, the uncertainty plan, and the noncausal claim boundaries. It adds a clinically consequential but bounded question:
+
+> At a prespecified 12-hour ICU landmark, does the lactate-by-measured-perfusion phenotype improve identification of patients who will have the parent’s operational adverse transition (ICU-level rescue/readmission or timed death) within 24 hours, at a fixed enhanced-monitoring/escalation-review workload?
+
+The new decision estimand is not treatment effect, benefit of rescue, or proof that an alert should change care. It is a policy-independent alert-capture estimand: among patients who are alive, still under ICU observation, and meet the already frozen strict coverage gate at t_F = intime+12 hours, compare held-out capture of the exact adverse composite (A=RorD) when the top 5%, 10%, or 20% of patients by predicted 24-hour cumulative incidence of (A) receive a hypothetical enhanced-monitoring review. The primary workload is 10%; 5% and 20% are fixed secondary workloads. The same R, D, S, N and U labels are retained, with S an observation-boundary competing transition and U unresolved ascertainment.
+
+The primary decision contrast is:
+
+**Rule:** G_{10} =
+Pr(A	ext{ is captured by the top 10% under }B_{
+m disc})
+-
+Pr(A	ext{ is captured by the top 10% under }B_0).
+
+The top-k rule is applied within the held-out test partition after all model fitting and threshold choices are frozen; it estimates event capture at equal review capacity. A secondary operational view applies each model’s training/validation-locked CIF threshold intended to alert 10% of the training population and reports realized test workload, capture, PPV, calibration and false-alert burden. No test outcome selects a threshold, workload, feature, phenotype, or model.
+
+The preregistered decision hypothesis is that (G_{10}) is at least 5 percentage points and its subject-bootstrap interval excludes zero, while Bdisc remains calibrated and its gain is not reproduced by the process-only model Bmask. This is a deliberately stringent criterion for saying that the phenotype has bounded monitoring value. A smaller positive gain can be reported as predictive association but does not establish a useful monitoring allocation. The learned model J1 is a substantive alternative, not a confirmation requirement: it tests whether ordered, nonlinear lactate/MAP/pressor trajectories reveal additional ranking information that the transparent phenotype loses.
+
+Completion requires the solver to newly produce:
+
+1. an all-valid and strict-gate flow for both parent estimands, with the parent’s exact counts and reason codes;
+2. a fixed-landmark, endpoint-independent feature/provenance manifest using only information available at (t_F);
+3. the parent’s live-exit and fixed-landmark competing-risk CIF/interaction outputs unchanged in definition;
+4. B0, B1, Bmask, Bdisc and J1 held-out three-cause predictions on the same strict fixed-landmark subjects, source whitelist and subject-level split;
+5. the fixed 5/10/20% alert-capture, PPV, calibration and false-alert tables for B0, Bdisc and J1, with R and D captured separately and S/N/U reported;
+6. subject-level uncertainty for CIFs, the phenotype interaction, Bdisc-minus-B0 alert capture, Bdisc-minus-Bmask capture and J1-minus-Bdisc capture;
+7. a decision claim ledger tying every operational statement to a computed output and explicitly refusing claims about treatment benefit, rescue appropriateness or monitoring utility.
+
+If a parent gate or fixed event-support gate fails, the corresponding association and decision claims are not estimable. The solver must report the complete audit and not replace the fixed landmark, merge indeterminate cells, relabel U, or lower the alert-workload criterion after inspecting results.
+
+## Unresolved question, strongest supported evidence and clinical importance
+
+The strongest evidence currently available is design-level and source-level: the local MIMIC-IV 3.1 snapshot contains ICU boundaries, repeated lactate and MAP records, vasoactive intervals, organ laboratories, ICU support/procedure records, and admission death/discharge fields from which the parent’s operational trajectory and competing states can be constructed. The audited dictionary resolves lactate 50813 as Lactate/Blood, MAP 220052 as Arterial Blood Pressure mean, 220181 as Non Invasive Blood Pressure mean, 225312 as ART BP Mean, and 226559 as Foley. The 11 selected vasoactive item IDs link to `inputevents`, and the nine rescue IDs link to `procedureevents`. This establishes data availability, not prevalence, physiological validity, or clinical benefit. No fitted result is claimed.
+
+The parent established an important prognostic hypothesis: persistent lactate may have different 48-hour risk associations when measured perfusion is improving versus worsening, with a fixed early-landmark robustness analysis to reduce live-exit selection concerns. What remains unresolved is whether that association can support a bounded near-term monitoring or escalation-review allocation. A statistically detectable interaction can still be too poorly calibrated, too sparse, too dependent on observation intensity, or too weak at a realistic alert capacity to inform such a decision. Conversely, useful event capture at fixed workload would be a stronger operational result than an isolated hazard ratio, while still remaining observational.
+
+The substantive advance over the parent is therefore an estimand change from “is there prognostic effect modification?” to “does the prespecified phenotype add reliable held-out event capture at a constrained monitoring capacity?” It also repairs a concrete fixed-landmark leakage threat: `icustays.last_careunit` is a stay-level terminal field and cannot be used as a feature at (t_F). The fixed model instead uses the `transfers` interval covering (t_F), plus `icustays.first_careunit`, both available by the landmark. For the live-exit analysis, care-unit features likewise come from the transfer interval covering t_L = t_0-1 hour; terminal `last_careunit` is prohibited from the primary feature matrix. This repair does not alter an endpoint or a coverage rule.
+
+A supportive result would justify only prospective evaluation of a context-aware monitoring-review trigger for a similar population, with the alert burden and ascertainment limitations carried forward. It would not show that review prevents R/D, that escalation is appropriate, or that treating lactate or perfusion improves outcome. An adverse result would be clinically useful: if Bdisc does not beat B0 at fixed workload, if Bmask matches it, or if gains disappear under timing and process falsifications, the phenotype should not be promoted as an escalation signal from these data. An inconclusive result would mean that the data cannot resolve the decision question because of sparse events, coverage, U, calibration, overlap or uncertainty, not that the phenotype is absent.
+
+## Population and exact time origins
+
+### Fixed-landmark decision population
+
+Use the earliest valid ICU stay per `hadm_id` satisfying non-null `subject_id`, `hadm_id`, `stay_id`, `intime`, `outtime`, and `intime < outtime`, with a matching `hosp/admissions` row. Require
+
+**Rule:** t_F=intime+12	ext{ hours}<outtime,
+
+`dischtime > t_F`, and alive/ascertainable status at (t_F): `deathtime` null or later than (t_F), with no contradictory `hospital_expire_flag=1` and missing timed death. Patients dead, discharged from hospital, or out of ICU before (t_F) remain in the all-eligible flow and are not re-indexed. This is a fixed operational landmark, not an adjudicated stabilization time; MIMIC contains no such adjudication.
+
+The feature window is ([intime,t_F]), split into ([intime,intime+6h]) and ((intime+6h,t_F]). All charted features require finite clinical `charttime <= t_F` and finite `storetime <= t_F`. Interval features require finite `starttime < endtime`, use clinical time for overlap and direction, require `storetime <= t_F`, and are clipped only to the feature window. No post-(t_F) clinical time may enter a feature matrix even if it was stored earlier.
+
+The four parent phenotype cells remain fixed: persistent versus nonpersistent lactate crossed with improving versus worsening measured perfusion. Persistent lactate means early and late valid-lactate medians are each at least 2.0 mmol/L. The fixed 4.0 mmol/L threshold is a sensitivity only. Improving means late minus early median MAP is at least 5 mmHg and late target-pressor minutes are no greater than early minutes. Worsening means late minus early median MAP is at most -5 mmHg and late target-pressor minutes are no less than early minutes. Remaining cases are indeterminate and are retained descriptively, never merged into a primary cell. Missing pressor intervals mean missing ascertainment, never zero exposure. The parent’s live-exit feature window, t_L = t_0-1 hour buffer, phenotype, and endpoint remain unchanged.
+
+### Exact fixed competing-risk endpoint
+
+Follow ((t_F,t_F+24h]) and order the first transition:
+
+- R is the earliest qualifying ICU-level rescue/readmission record: a new target-pressor interval in `icu/inputevents` beginning after (t_F); a `procedureevents` interval beginning after (t_F) for item 224385 (Intubation), 225792 (Invasive Ventilation), 225794 (Non-invasive Ventilation), 225441 (Hemodialysis), 225802 (Dialysis - CRRT), 225803 (Dialysis - CVVHD), 225805 (Peritoneal Dialysis), 225809 (Dialysis - CVVHDF), or 225955 (Dialysis - SCUF); or a later `icu/icustays` row for the same `subject_id, hadm_id`, different `stay_id`, and `intime>t_F`. A support interval already active across (t_F) is not a new start. Exact duplicate rows are collapsed using complete available identity fields. If several R components begin together, retain one R time with component flags.
+- D is `hosp/admissions.deathtime > t_F` and (le t_F+24h), no later than tied R; if `dischtime` is non-null, death must be no later than discharge.
+- S is an alive `dischtime` in ((t_F,t_F+24h]) before R/D, with `hospital_expire_flag=0` and `deathtime` null or later than discharge. S is an observation boundary, not a favorable outcome.
+- N is no R, D or S by 24 hours while ascertainable.
+- U is missing/contradictory timed death or another record-level condition preventing first-state ordering.
+
+If R and D tie, D precedes R. The primary target for the alert-capture estimand is A=R-or-D, with R, D, S, N and U separately reported. The live-exit endpoint remains the parent’s exact 48-hour first R/D/S/N/U ordering, including R as a later same-admission ICU stay, D by `deathtime`, S as alive discharge boundary, and U for unresolved contradictions. No endpoint is shortened, broadened, or relabeled to create more events.
+
+For primary decision tables, U cases are not silently treated as non-events: report the ascertainable denominator and U fraction, and perform the parent’s adverse-U and non-adverse-U bounds. A U fraction above the frozen gate makes the decision claim inconclusive. S remains a competing transition in the discrete-time model and is not counted as A. Event capture is reported for A, R and D separately; an apparent gain confined to S, N or administrative follow-up cannot support escalation monitoring.
+
+## Exact source bindings, fields, keys and availability
+
+All sources are read-only. The source guide is `datasets/README.md`; the MIMIC guide is `datasets/mimic/README.md`; the full catalog is `[internal dataset path]`, catalog [source checksum]. The structured source is `[internal dataset path]` (10,551,747,784 bytes; [source checksum]), snapshot `[source checksum]`. The separate read-only note sources remain available but are excluded; images and raw waveforms are unavailable.
+
+| Role | Catalog table / exact archive member | Required fields, joins and temporal rule |
+|---|---|---|
+| ICU index and later stay | `icu/icustays` / `mimic-iv-3.1/icu/icustays.csv.gz` | `subject_id,hadm_id,stay_id,first_careunit,last_careunit,intime,outtime,los`; join `hosp/admissions` on `subject_id,hadm_id`; use `intime/outtime` for index and later R. `first_careunit` is allowed; `last_careunit` is prohibited from primary pre-landmark features. |
+| Admission context/endpoints | `hosp/admissions` / `mimic-iv-3.1/hosp/admissions.csv.gz` | `subject_id,hadm_id,admittime,dischtime,deathtime,admission_type,admit_provider_id,admission_location,discharge_location,insurance,language,marital_status,race,edregtime,edouttime,hospital_expire_flag`; join on `subject_id,hadm_id`. Only admission context fields (admission type/location, with prespecified categorical handling) may be predictors; `dischtime,deathtime,discharge_location,hospital_expire_flag` are endpoint/eligibility fields only. |
+| Demographics | `hosp/patients` / `mimic-iv-3.1/hosp/patients.csv.gz` | `subject_id,gender,anchor_age,anchor_year,anchor_year_group,dod`; join on `subject_id`; use age, gender and anchor-year-group; prohibit `dod` and `anchor_year` as a date-like predictor. |
+| MAP and chart process | `icu/chartevents` / `mimic-iv-3.1/icu/chartevents.csv.gz` | `stay_id` join; `charttime,storetime,itemid,value,valuenum,valueuom`; use item IDs 220052, 220181, 225312, finite `valuenum`, canonical `mmHg`, both timestamps by cutoff; same-time duplicates across MAP items collapse by median and item presence is retained. |
+| ICU item dictionary | `icu/d_items` / `mimic-iv-3.1/icu/d_items.csv.gz` | `itemid,label,abbreviation,linksto,category,unitname,param_type,lownormalvalue,highnormalvalue`; verify item/link/unit before extraction. Audited labels include ABPm, NBPm, ART BP Mean, Foley and the pressor/procedure links. |
+| Vasoactive intervals | `icu/inputevents` / `mimic-iv-3.1/icu/inputevents.csv.gz` | `subject_id,hadm_id,stay_id,caregiver_id,starttime,endtime,storetime,itemid,amount,amountuom,rate,rateuom,orderid,linkorderid,ordercategoryname,secondaryordercategoryname,ordercomponenttypedescription,ordercategorydescription,patientweight,totalamount,totalamountuom,isopenbag,continueinnextdept,statusdescription,originalamount,originalrate`; join on `stay_id`; target IDs 221906, 222315, 221289, 229617, 221749, 229630, 229631, 229632, 221662, 221653, 221986. Use valid interval presence/minutes only, never pseudo-dose pooling. |
+| Foley/output process | `icu/outputevents` / `mimic-iv-3.1/icu/outputevents.csv.gz` | `stay_id` join; `charttime,storetime,itemid,value,valueuom`; use 226559 (Foley), finite canonical mL, both times by cutoff; missing output is not zero and Foley is corroborative only. |
+| ICU rescue procedures | `icu/procedureevents` / `mimic-iv-3.1/icu/procedureevents.csv.gz` | `subject_id,hadm_id,stay_id,starttime,endtime,storetime,itemid,value,valueuom,location,locationcategory,orderid,linkorderid,ordercategoryname,ordercategorydescription,patientweight,isopenbag,continueinnextdept,statusdescription,originalamount,originalrate`; join on `stay_id`; support IDs 224385, 225792, 225794, 225441, 225802, 225803, 225805, 225809, 225955; clinical start defines R, not a feature. |
+| Lactate/organ labs | `hosp/labevents` / `mimic-iv-3.1/hosp/labevents.csv.gz` | `labevent_id,subject_id,hadm_id,specimen_id,itemid,order_provider_id,charttime,storetime,value,valuenum,valueuom,ref_range_lower,ref_range_upper,flag,priority,comments`; join on `subject_id,hadm_id`; lactate 50813 and ALT 50861, AST 50878, bilirubin 50885, creatinine 50912, bicarbonate 50882, hemoglobin 51222, platelets 51265, WBC 51300; require finite values, canonical units where specified, both timestamps by cutoff. |
+| Lab dictionary | `hosp/d_labitems` / `mimic-iv-3.1/hosp/d_labitems.csv.gz` | `itemid,label,fluid,category`; verify Lactate/Blood and organ-lab labels before extraction. |
+| Landmark care unit/process | `hosp/transfers` / `mimic-iv-3.1/hosp/transfers.csv.gz` | `subject_id,hadm_id,transfer_id,eventtype,careunit,intime,outtime`; join on `subject_id,hadm_id`; use only the interval with `intime<=t_F<outtime` (or the prespecified boundary convention) for landmark care unit. No future transfer or terminal care-unit field may enter features. |
+
+The note members `note/discharge.csv.gz`, `note/discharge_detail.csv.gz`, `note/radiology.csv.gz` and `note/radiology_detail.csv.gz` are available but excluded. The source metadata states that raw waveforms and MIMIC-CXR images are unavailable. No note, image or waveform claim is made.
+
+## Coverage, observation process and selection controls
+
+The parent’s coverage rules are frozen and copied into this child. In each early and late half, record valid lactate counts/distinct times, accepted units and chart/store lag; valid MAP counts/distinct times and item-presence bits; target-pressor interval counts, item-presence, duplicates, union minutes and invalid intervals; all-valid input intervals as process audit rather than zero support; Foley counts/times/unit failures; each organ analyte’s value/test indicators; and counts before/after each filter.
+
+The strict gate requires in both halves at least one valid lactate, at least two valid MAP observations at distinct clinical times, and at least one valid target-pressor interval. After this endpoint-independent gate is frozen, require for each parent four-cell interaction: at least 40 full-gate subjects, at least 10 A events in every full cell, at least 8 held-out test subjects and at least 3 held-out A events per cell, U <=10% overall and <=20% per cell. Fewer than five R or five D events in a cell prevents component-specific interaction claims. No outcome-dependent cell pooling or threshold change is permitted.
+
+The parent’s live-exit outcome-free q audit and fixed-landmark coverage-completeness overlap/ESS audit are retained unchanged. A q or coverage-weighting failure makes only the weighted sensitivity inconclusive; it cannot repair the unweighted cohort. The decision estimand additionally reports the alert denominator, top-k composition, overlap of B0/Bdisc/J1 alert sets, risk calibration in alert/non-alert groups, and event capture among A, R and D. Alert evaluation is performed on the same strict-gate test subjects; no test subject is used for model, threshold or feature selection.
+
+The fixed decision result must be accompanied by the same process and timing diagnostics as the parent: clinical/storetime availability, chart-time-only sensitivity, MAP-only/pressor-only/Foley sensitivity, threshold 2.0 versus fixed 4.0 mmol/L, 6-hour fixed-landmark labeled sensitivity, 4/6/8-bin history, terminal-bin omission, and separate R/D/S/U analyses.
+
+## Models, decision analysis and matched learned alternative
+
+All models use the same deterministic subject-level 70/15/15 split, with all admissions from a subject in one partition. The split is frozen before fitting. B0, B1, Bmask, Bdisc and J1 use the same strict fixed-landmark subjects, endpoint labels, source whitelist and cutoff. For the live-exit parent estimand, the same source and split discipline applies.
+
+- **B0 transparent competing-risk baseline.** Penalized discrete-time cause-specific complementary-log-log hazards for R, D and S, using admission context, age/gender/year-group, first-careunit and landmark transfer careunit, elapsed ICU time, terminal valid lactate/MAP/organ values, active support status, terminal masks and measurement-process summaries. It is the latest-state/context comparator for whether the phenotype adds value.
+- **B1 order-blind history comparator.** Adds fixed twelve one-hour-bin summaries over the 12-hour fixed window (medians, minima, maxima, SD/IQR, abnormal fractions, valid-bin and distinct-time counts, pressor presence/minutes, Foley charting and lab-test indicators) without early/late order.
+- **Bmask process-only falsification.** Uses context, masks, counts, time-since-observation, test intensity, Foley charting, pressor-presence and support-process history, but no physiologic values. It tests whether alert capture is driven by documentation intensity.
+- **Bdisc phenotype-aware baseline.** B1 plus the fixed persistent-lactate indicator, early/late lactate medians, fixed improving/indeterminate/worsening direction, early/late MAP and pressor changes, their lactate interaction, organ values and separate availability indicators. The interaction is the scientific feature; indeterminate remains a labeled category and is not forced into improving/worsening. Bdisc is the primary transparent model for (G_{10}).
+- **J1 learned alternative.** A small masked chronological GRU with six two-hour bins, the same raw physiologic, mask, process, support and context domains and exactly the same subjects, labels, split and held-out test partition as Bdisc. It has a three-cause R/D/S head and predicts discrete-time hazards/CIFs. Hidden size 32 or 64, dropout, early stopping and five fixed seeds are selected only on training/validation. J1 can reveal persistence, reversal, time-local lactate/MAP coupling and nonlinear trajectories discarded by B0/B1/Bdisc; a gain without calibration, Bdisc/Bmask separation or attenuation after chronology shuffling is not evidence for the phenotype.
+  
+For decision evaluation, freeze all model parameters and thresholds before test scoring. At each 5%, 10% and 20% workload, rank by predicted 24-hour CIF(A) with S as a competing state. Report top-k event capture (TP_A/#A), R capture, D capture, PPV (TP_A/k), false-alert rate among ascertainable non-A, calibration intercept/slope and calibration curves in alert/non-alert groups. Also report the training/validation-locked CIF-threshold policy’s realized alert rate and the same quantities. Bdisc-minus-B0 is the primary incremental phenotype contrast; Bdisc-minus-Bmask is the process-specificity check; J1-minus-Bdisc is the learned temporal-information contrast. Do not use a small AUROC change as a clinical decision claim.
+
+## Uncertainty, analysis and falsification
+
+Fit cause-specific hazards and derive 6-, 12- and 24-hour CIFs for R, D, S and A for the fixed estimand, and the parent’s 12/24/48-hour outputs for live exit. Report the four-cell standardized interaction (Delta) exactly as the parent defines it, component contrasts, multiclass and composite Brier scores, calibration, alert-capture contrasts and threshold-policy workload. Use 1,000 subject-level bootstrap replicates where the solver envelope permits, otherwise report the exact completed number and whether uncertainty is conditional on fixed test predictions or includes model refits. Bootstrap CIFs, (Delta), Bdisc-minus-B0/Bmask/J1 alert-capture differences, PPV, calibration and U-bound results. Keep the two-point null region for (Delta) and the 5-point decision criterion separate.
+
+Required falsifications include:
+
+- full source/member/schema/dictionary/link/unit audit; invalid-value, reversed-interval, duplicate and clipping counts;
+- join, first-index, landmark-time, no-future-transfer and no-subject-crossing-split audits;
+- a prohibited-field scan that must fail closed on `last_careunit`, `dischtime`, `deathtime`, `discharge_location`, `hospital_expire_flag`, `dod`, notes and any post-cutoff clinical time;
+- chart-time-only versus chart-plus-storetime sensitivity;
+- Bdisc versus Bmask and explicit phenotype-only/process-only controls;
+- within-subject early/late permutation preserving masks and counts;
+- complete endpoint-label permutation within each partition;
+- fixed 2.0 versus 4.0 mmol/L threshold, MAP-only/all-MAP/pressor-only/Foley sensitivity and 6-hour landmark sensitivity;
+- 4/6/8-bin history, terminal-bin omission and no-rate/no-amount pooling;
+- permutation of phenotype labels within coverage strata and chronology shuffle of J1, with any learned alert-capture gain required to attenuate;
+- separate R, D and S capture, 7-day live-exit horizon, adverse/non-adverse U bounds, q/coverage overlap and ESS;
+- fixed-workload stability by care unit, anchor-year-group, age/sex and measurement-intensity strata where support permits.
+
+A decision signal is supportive only if the fixed strict gate and event-support rules pass, (G_{10}ge5) percentage points with a subject-bootstrap interval excluding zero, Bdisc is acceptably calibrated, Bdisc beats Bmask at the same workload, and the result is not erased by available-by-cutoff timing, phenotype permutation, U bounds, or R/D decomposition. Concordant J1 capture can strengthen evidence that ordered information matters; J1 alone cannot rescue a failed transparent phenotype claim. A positive signal only at 5% or only under the threshold selected after test inspection is not supportive.
+
+Adverse evidence is a reversed (G_{10}) beyond its uncertainty, no incremental capture over B0, capture explained by Bmask or by S rather than A/R/D, disappearance under storetime availability or phenotype permutation, a failed source/timestamp audit, or J1’s gain surviving chronology permutation. It challenges the operational monitoring hypothesis but does not prove that improving perfusion causes harm or that no patient should be monitored.
+
+Inconclusive evidence includes failed coverage/event/U gates, sparse R/D components, alert fractions that cannot be held or reproduced, calibration instability, broad intervals (for the decision contrast, an interval spanning both zero and the 5-point criterion), poor overlap/ESS, or materially discordant timing/ascertainment sensitivities. An inconclusive result cannot be converted to a positive result by changing the alert budget.
+
+Computationally checkable claims are source provenance, schemas, dictionary labels, joins, timing, coverage, phenotype coding, endpoint ordering, split integrity, fitted predictions, CIFs, Brier/calibration, alert capture, uncertainty, overlap and falsification outputs. Clinical adjudication or another prospective/external study is required for true treatment benefit, whether a rescue was appropriate or preventable, clinician intent, complete ward-level escalation ascertainment, monitoring benefit, alert harms, net utility, patient preferences, physiological mechanism, causal fluid/pressor effects, discharge appropriateness and transportability. MIMIC’s notes are available but excluded, and the local metadata states that raw waveforms and MIMIC-CXR images are not available; neither missing modality can be inferred from this study.
+
+## Method alternatives, selection and compute record
+
+The simple baseline is B0: a transparent discrete-time competing-risk model that a clinician or analyst can audit and recalibrate. Bdisc is the selected transparent scientific comparator because its terms expose the fixed lactate-by-perfusion question; B0 supplies the latest-state/context decision reference, and Bmask tests observation-process substitution. All use the same endpoint, subjects, split and outcome-independent preprocessing.
+
+J1 is the selected learned alternative, not because complexity is intrinsically valuable, but because six chronological bins can reveal persistence, reversal and time-local cross-domain coupling that terminal and order-blind summaries lose. Its target is the same three-cause discrete-time R/D/S hazard and its evaluation is the same held-out CIF, calibration, Brier and fixed-workload capture. Five seeds and any hyperparameter choice are training/validation-only. J1 is deliberately small; it does not expand the clinical question or claim mechanistic discovery.
+
+A compact two-component latent mixture on early-to-late lactate/MAP/pressor changes was considered and deferred: without adjudicated stabilization, dose-quality evidence or validated physiological labels, latent components could mostly encode selective treatment recording. A larger transformer and a treatment-effect model are also deferred. The transformer would add scale without resolving the fixed alert-capture uncertainty; treatment effect would require treatment intent, responsiveness, counterfactual outcomes and adequate time-varying confounding control, which these tables do not supply. These are evidence-bound choices, not blanket exclusions of neural methods, GPU use or structured data.
+
+Measured discovery facts are the source/archive hashes, catalog schemas, exact archive members, and dictionary labels/links/units verified by read-only inspection. Unmeasured are strict-gate prevalence, event counts, overlap/ESS, calibration, alert capture, bootstrap duration and J1 convergence. The future solver envelope is 16 CPUs, 262,144 MiB memory, up to 8 A100-SXM4-80GB GPUs and 28,800 seconds; discovery science budget is separate (7,200 seconds). B0/B1/Bmask/Bdisc and CIFs are expected to be CPU-first but runtime is unmeasured. J1 is expected to fit on CPU at this small size; if repeated seeds/refits threaten the envelope, an allocated GPU may be requested and the model/tensors must use `cuda:0` inside the allocation. No GPU is required, and no proposer/solver training is authorized.
+
+## Reference provenance and availability boundaries
+
+Inspected and used as method context: `references/research-ambition/README.md` and `methods-and-compute.md`. They support comparing transparent structured summaries with a bounded longitudinal learned representation; they do not validate this MIMIC phenotype. The natural-history demonstration’s local article/XML and training note were available; the Bayesian demonstration’s article/supplement were available; the cancer demonstration’s main article and complete STAR Methods remain unavailable locally, so no claim from unavailable text is made. The expert-seed catalog and `cards/mimic-01.md` were inspected; the asynchronous-recovery idea is an untested rationale, not evidence. No public literature claim beyond these inspected local materials is made.
+
+All four configured datasets remain accessible read-only through the workspace, but this proposal uses only MIMIC-IV 3.1. No cross-dataset validation or transportability claim is made. Derived manifests and solver outputs belong in the writable workspace.

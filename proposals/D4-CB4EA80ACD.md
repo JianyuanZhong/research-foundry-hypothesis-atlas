@@ -1,0 +1,157 @@
+# Fail-closed, selection-audited baseline cystatin-C incremental-information experiment
+
+## Lineage and substantive successor change
+
+This is a compilation-repair child of `[prior hypothesis]`. The clinical question, cohorts, temporal boundaries, estimands, outcomes, model family, falsification logic, fail-closed neutral stop, and evidence limits below are intentionally unchanged. The repairs are limited to binding this version to the current workspace and making provenance and output contracts unambiguous.
+
+This is a compilation-repair child of assessed-valid `[prior hypothesis]`, itself descended from `[prior hypothesis]` and `[prior hypothesis]`. It preserves the frozen baseline-only Direction-A scientific question, the observed-repeat schedule-marginal primary estimand, exact UK Biobank source snapshot and field instances, no-imputation rule, equations conditional on certification, nested repeated cross-fitting, paired bootstrap, aggregate-only boundary, and neutral technical-stop behavior.
+
+The inherited substantive improvement is a predeclared **repeat-observation selection audit plus availability-robust sensitivity estimand**; this child adds only compilation-critical provenance/path and output-contract repairs. The primary analysis remains restricted to the original complete baseline/instance-1 biomarker repeat-attender cohort `S_A`; the new analysis does not replace, pool with, or rescue the primary result. It separates two scientifically different exclusions that are otherwise conflated:
+
+1. no qualifying exported instance-1 creatinine/date/age observation, and
+2. a qualifying repeat observation exists but instance-1 cystatin C is unavailable or invalid.
+
+Because the primary outcome needs only repeat creatinine, date, and repeat age, the same frozen baseline cystatin-C exposure can be evaluated in a prespecified broader repeat-creatinine cohort. This tests whether any apparent incremental signal is dependent on complete **repeat cystatin-C availability**, rather than merely on having a qualifying repeat creatinine observation. The broader sensitivity still conditions on observed repeat attendance and therefore does not solve nonattendance or transportability.
+
+A second substantive implementation repair makes certificate hashing executable: certificate content is canonicalized with its detached hash field omitted, and the expected hash is supplied in the immutable manifest. No self-referential hash is accepted.
+
+## Clinical question, supported evidence, and unresolved claims
+
+The strongest claim supported by the available local evidence is narrow. The frozen UKB rectangular export contains the required `eid`-keyed columns and can, if their semantics and assay provenance are externally certified, support an out-of-sample comparison of baseline predictors for a later protocol-defined repeat creatinine-derived threshold state among people with an eligible exported repeat observation. Local metadata does not by itself establish biomarker labels, units, specimen matrix, assay comparability, field-specific missing codes, or the clinical meaning of the threshold.
+
+The primary unresolved claim is:
+
+> Among certified baseline complete-biomarker participants with a qualifying complete exported instance-1 observation, does adding baseline cystatin-C threshold information improve reproducible out-of-sample prediction and fixed-capacity ranking of the protocol-defined repeat creatinine-derived threshold state beyond the frozen baseline creatinine/age/sex comparator?
+
+The new prespecified sensitivity claim is:
+
+> Is the direction and practical magnitude of that incremental contrast preserved when eligibility requires a qualifying repeat creatinine/date/age observation but does not require repeat cystatin-C completeness?
+
+A supportive result can motivate a future study of biomarker-informed review prioritization after a repeat observation has already been obtained. Neither analysis evaluates ordering a test, causing attendance, treatment, clinical benefit, harm, cost, net benefit, CKD, chronicity, measured GFR, true progression, causality, or transportability.
+
+## Frozen UKB sources, schemas, and exact bindings
+
+Use only UKB snapshot `[source checksum]`. Sources are read-only ordinary files. Hash each source before reading participant values and require exact equality.
+
+| Logical table | Read-only source | Archive member | Source SHA-256 | Exact current schema JSON | Schema-file SHA-256 (raw JSON bytes) | Required columns |
+|---|---|---|---|---|---|---|
+| `biological_samples` | `[internal dataset path]` | ordinary file | `[source checksum]` | `[internal dataset path]` | `[source checksum]` | `eid`, `30700-0.0`, `30700-1.0`, `30720-0.0`, `30720-1.0` |
+| `assessment` | `[internal dataset path]` | ordinary file | `[source checksum]` | `[internal dataset path]` | `[source checksum]` | `eid`, `53-0.0`, `53-1.0`, `21003-0.0`, `21003-1.0` |
+| `population` | `[internal dataset path]` | ordinary file | `[source checksum]` | `[internal dataset path]` | `[source checksum]` | `eid`, `31-0.0`, `21022-0.0` |
+
+The schema JSONs must independently declare the listed table ID, `eid` identity key, `field-instance.array` encoding, ordinary-file/no-archive-member semantics, and every required header. The **schema-file SHA-256** in the table above is the digest of the exact JSON bytes at the current absolute path. Separately, each JSON contains an embedded `schema_sha256` metadata value; these are not the digest of the JSON file and must not be conflated with it. The current embedded declarations are `[source checksum]` for `biological_samples`, `[source checksum]` for `assessment`, and `[source checksum]` for `population`. Compilation must record and verify both layers: raw-file digest against the table binding, and embedded declaration against the exact current JSON content/catalog metadata; neither is a substitute for the other. In the source catalog, an ordinary file is represented by `member: null`, while the UKB README describes the same fact as archive member `ordinary file`; these are equivalent representations, not two different archive members. Join horizontally on unique `eid` only. Reject duplicate keys, missing keys, inconsistent overlapping keys, wrong snapshot, source/schema hash mismatch, wrong table ID, non-null archive member, or missing headers. Do not read additional participant columns. The frozen local catalog is `[internal dataset path]` with [source checksum].
+
+## Certificate contract and deterministic hash rule
+
+No named biomarker, eGFR, exposure, outcome, cohort, model, ranking, or bootstrap result may be emitted unless an immutable certificate is available at the declared manifest path:
+
+`[internal dataset path]`
+
+This path is a required input, not an assertion that the file currently exists. A missing file causes a technical stop. The certificate must bind the snapshot, all three source hashes, all three current schema hashes, table IDs, exact rectangular export, and the following ten field-instance columns:
+
+`30700-0.0`, `30700-1.0`, `30720-0.0`, `30720-1.0`, `53-0.0`, `53-1.0`, `21003-0.0`, `21003-1.0`, `31-0.0`, `21022-0.0`.
+
+For each field, require authoritative identity/label, array and instance identity, coding scheme or numeric unit, applicable missing/special codes and meanings, availability, and evidence location. For biomarker fields additionally require analyte, matrix, scale/conversion, assay/platform or laboratory-method statement, and instance-0/instance-1 comparability. For dates require representation, calendar parsing, and explicit evidence for baseline `53-0.0` and exported instance-1 `53-1.0`. For age and sex require the approved local metadata and evidence hashes; accept only certified sex codes 0 and 1. No global negative-code rule is allowed.
+
+The certificate must bind the equation source/version, every coefficient and exponent, age and sex conventions, creatinine conversion, output interpretation, and exact field-to-equation map. It must explicitly state that no race term or unbound field is used. Certificate evidence may be public dictionary material or a release-provided data dictionary, but participant rows and clinical notes must never be sent to public search.
+
+To make hashing non-self-referential, require an immutable manifest JSON at `[internal dataset path]` containing `certificate_path`, `certificate_sha256`, and the expected certificate hash. Its `certificate_path` must equal the current-workspace certificate path above, not a parent or support path. Compute the certificate hash as SHA-256 of canonical UTF-8 JSON with sorted object keys, deterministic separators, and the `certificate_sha256` member omitted. The verifier recomputes this detached canonical hash and compares it with the manifest. The certificate itself may record the expected hash as informational, but that field is excluded from the hash. Reject duplicate/ambiguous evidence, unhashed evidence, stale evidence, or a certificate whose `scientific_interpretation_authorized` is not true.
+
+Use this ordered state machine, recording a small aggregate pass artifact for each transition:
+
+`SOURCE_SCHEMA_PASS -> SEMANTIC_CERT_PASS -> ASSAY_EQUATION_PASS -> TEMPORAL_CERT_PASS -> COHORT_RECONSTRUCTION_PASS -> ANALYSIS_PASS`.
+
+Any failure before `ANALYSIS_PASS` emits only a reason-coded technical stop, input hashes, and structural source/schema diagnostics. It must not emit B/R/T/U/S counts, biomarker distributions, events, exposure cells, model metrics, rankings, p-values, or bootstrap quantities. Suggested code is `STOP_FIELD_UNCERTIFIED` for missing/failed semantic evidence and `STOP_SOURCE_SCHEMA` for source/schema failure. Synthetic toy-table QA may test canonical hashing, state transitions, date parsing, equations, folds, and stop behavior, but must be isolated and labeled synthetic.
+
+## Population and timing
+
+After certification, bind variables exactly as follows:
+
+- `sex = population[31-0.0]`, certified `0 = Female`, `1 = Male`;
+- `age_0 = population[21022-0.0]` (approved age at recruitment, years);
+- `age_1 = assessment[21003-1.0]`;
+- `date_0 = assessment[53-0.0]` and `date_1 = assessment[53-1.0]`;
+- `cr_0`, `cr_1`, `cys_0`, `cys_1` from biological-samples fields `30700-0.0`, `30700-1.0`, `30720-0.0`, and `30720-1.0`.
+
+Apply only field-specific certified missing-code rules. Require finite positive baseline biomarkers, finite positive baseline age, certified sex, and parseable baseline date for `B`. Require finite positive repeat creatinine, finite positive repeat age/date, `date_1 > date_0`, and `t=(date_1-date_0)/365.25` in inclusive `[2,8]` for the repeat-creatinine availability mask `Q`. Require additionally finite positive repeat cystatin C for the original complete-repeat mask `R`.
+
+Use the certified unit/conversion exactly once. Conditional on the certificate, use the fixed 2021 race-free creatinine equation
+
+`eGFRcr = 142 * min(Scr/k,1)^a * max(Scr/k,1)^(-1.200) * 0.9938^age * female_factor`,
+
+with `(k,a,female_factor)=(0.7,-0.241,1.012)` for sex 0 and `(0.9,-0.302,1)` for sex 1, and the fixed cystatin-C equation
+
+`eGFRcys = 133 * min(Scys/0.8,1)^(-0.499) * max(Scys/0.8,1)^(-1.328) * 0.996^age * 0.932^(female)`,
+
+where `female=1` for sex 0 and `0` for sex 1 in the multiplicative factor convention. These are estimated filtration equations, not measured GFR.
+
+Define exactly:
+
+- `T_A = B ∩ {eGFRcr_0 >= 60}`;
+- `U_A = T_A ∩ Q` (broader repeat-creatinine sensitivity cohort);
+- `S_A = T_A ∩ Q ∩ {repeat cystatin C is certified finite and positive}` (frozen primary cohort);
+- `E = 1{eGFRcys_0 < 60}`;
+- `Y = 1{eGFRcr_1 < 60}`.
+
+The primary estimand remains in `S_A`, conditional on the observed exported instance-1 schedule. `U_A` is a separate sensitivity estimand and is never merged into `S_A`, used to alter its folds, or used to rescue a failed primary gate. Neither cohort includes nonattenders or substitutes a later repeat. Neither endpoint is CKD, chronicity, progression, incident diagnosis, measured GFR, or a fixed-horizon outcome.
+
+The expected parent anchors `B=468887`, `R=16546`, `T_A=461530`, `S_A=16372`, 309 primary outcomes, 348 primary exposures, and primary `E×Y` cells `(15769,255,294,54)` are diagnostics only and must not be forced. The new `Q`, `U_A`, and selection-flow quantities have no assumed values. Any mismatch is reported; if exact primary reconstruction fails, return `STOP_COHORT_RECONSTRUCTION` and do not reinterpret the mismatch as biology.
+
+## Prespecified selection audit
+
+Before fitting any model, report only aggregate selection-flow quantities after certification:
+
+`B -> T_A -> U_A -> S_A`, with separate losses for baseline eligibility, repeat creatinine/date/age eligibility, and repeat cystatin completeness. Report counts and proportions, never participant identifiers. Within `T_A`, compare `U_A` versus `T_A\U_A`, and within `U_A`, compare `S_A` versus `U_A\S_A`, using only prespecified baseline variables available before the repeat: sex, age_0, eGFRcr_0, and E. Report aggregate means/quantiles or category proportions and standardized mean differences; do not use these diagnostics to reweight, alter eligibility, select covariates, or change the primary estimand.
+
+This audit distinguishes attendance/creatinine observation from repeat cystatin availability. It cannot determine why a person attended, why a specimen was missing, or whether excluded people would have had the outcome. A large selection imbalance is a warning about external applicability, not evidence against the biomarker association.
+
+## Models and primary estimands
+
+For both cohorts, use the same baseline-only comparator and incremental model, fitted independently within the cohort:
+
+- `M0`: ridge logistic regression with intercept, sex, four-column Harrell restricted-cubic spline of baseline `eGFRcr_0`, three-column restricted-cubic spline of `age_0`, and the four sex-by-eGFRcr products;
+- `M1`: every `M0` term plus exactly `E` and `E*(eGFRcr_0-60)/10`.
+
+Use training-only quantiles 0.05/0.275/0.50/0.725/0.95 for the eGFR basis and 0.05/0.35/0.65/0.95 for age, training-only centering/scaling, unpenalized intercept, fixed lambda grid `10^(-4),10^(-3.5),...,10^4`, and largest-one-standard-error inner log-loss selection. Zero variance, coincident knots, nonfinite values, or failed convergence invalidates that fit. No date, `t`, repeat biomarker, attendance indicator, or post-baseline field is a predictor. No imputation, continuous cystatin value, alternative equation, threshold, later repeat, Direction-B analysis, or outcome-driven transformation is permitted.
+
+Use ten repeated outer five-fold cross-fits with seeds `260911` through `260920`, stratified within all four `E×Y` cells by seeded permutation and round-robin assignment, with inner seed `outer_seed + 1000 + outer_fold`. Use identical fold assignments for M0 and M1 within each cohort, but never share rows across cohorts in a way that leaks sensitivity-cohort membership into primary preprocessing. Retain ten out-of-fold probabilities per participant per model, average them, and clip only log-loss calculations to `[10^-6,1-10^-6]`. Report aggregate dimensions and clipping counts only.
+
+The primary contrast is
+
+`Delta_Brier(S_A) = 1000 * [mean_{S_A}((Y-p0)^2) - mean_{S_A}((Y-p1)^2)]`.
+
+The prespecified fixed-capacity secondary contrast in `S_A` uses `K=ceil(0.10*N)` and
+
+`Delta_yield10(S_A) = 1000 * (events in top-K M1 - events in top-K M0)/K`,
+
+with exact ties broken by `SHA-256("direction-A-capacity-v2|" + eid)`. This is a schedule-marginal ranking contrast, not a testing or treatment policy.
+
+For the selection-robustness sensitivity, calculate the analogous `Delta_Brier(U_A)` using the independently cross-fitted U_A predictions. It is descriptive/robustness evidence, not a replacement primary test. Report its paired participant-bootstrap interval and sign agreement with `Delta_Brier(S_A)` only if its cohort-specific computation passes all technical gates. Do not claim that U_A represents all baseline participants or nonattenders. The U_A run is locked before looking at its results: construct U_A from the same certified source snapshot and masks, fit its own ten repeated five-fold cross-fits with the declared seeds and training-only preprocessing, and retain no preprocessing object, fold assignment, prediction, or tuning choice from S_A. Its paired participant bootstrap resamples U_A participants only, targets the fixed already-frozen U_A out-of-fold predictions, uses the same 2,000-success/2,500-attempt percentile-interval procedure and seed declaration, and reports no new primary p-value or alpha claim. U_A cannot change S_A eligibility, folds, tuning, multiplicity, testing order, supportive gate, or the neutral-stop state. If either cohort fails a technical gate, suppress that cohort's named model quantities and label the sensitivity unavailable; never silently substitute S_A quantities for U_A or vice versa.
+
+## Inference, gates, and falsification
+
+Freeze all ten prediction columns before inference. For the primary Brier and, only after its supportive gate, the primary capacity contrast, use paired participant bootstrap seed `260921`, 2,000 successful replicates, maximum 2,500 attempts, percentile 95% interval, and symmetric null-centered plus-one p-value. The U_A sensitivity uses the same declared bootstrap procedure and is not allowed to change the primary testing order or alpha allocation. Preserve comparator-signal, calibration, event-support, convergence, fold-isolation, split-sign, and privacy gates; record failed fits and bootstrap attempts rather than silently replacing them.
+
+Primary supportive interpretation requires certification, exact source/schema audit, exact `S_A` reconstruction, all model and support gates, at least 8/10 positive repeat-specific primary Brier contrasts, primary Brier interval excluding zero with positive contrast and `p<0.05`, and then the same prespecified gate for the capacity contrast. A sensitivity result cannot rescue a primary failure.
+
+Predeclared selection-robustness interpretation requires, in addition, a valid `U_A` run and a directionally concordant `Delta_Brier(U_A)` with an interval that does not contradict the primary direction. If `U_A` is adverse while `S_A` is supportive, classify the apparent primary finding as sensitive to repeat-cystatin availability and do not describe it as robust to the broader repeat-creatinine cohort. If both are inconclusive, the incremental claim remains unresolved. This sensitivity is not evidence of transportability.
+
+Adverse means a prespecified primary contrast is wholly negative, M1 reproducibly loses calibration while M0 passes, or repeat-specific signs favor M0. Inconclusive means an interval crosses zero, signs conflict, support fails, or computation is unstable. Missing or unverifiable semantic/assay evidence is a technical stop, not adverse or inconclusive biology.
+
+Falsification and integrity checks are fixed in advance: M0 must beat the intercept-only prevalence comparator in each reported cohort; fold assignments must isolate participants and be identical across M0/M1 within cohort; a fixed-seed training-fold-only random feature and a training-fold-only permutation of E must not reproduce a claimed biomarker-specific gain; top-K sets must have equal size and identical eligible membership; removal of `t` must not change row selection, preprocessing, tuning, or ranking; and the primary result must not be driven by one outer repeat. Negative-control failure blocks supportive interpretation.
+
+## Output-permission contract
+
+Output permissions are state-specific and fail closed. Before `SOURCE_SCHEMA_PASS`, emit only a reason-coded `STOP_SOURCE_SCHEMA` and structural diagnostics that do not contain participant values or named biological/model quantities. After source/schema pass but before `SEMANTIC_CERT_PASS`, emit only `STOP_FIELD_UNCERTIFIED` (or the exact certificate reason) plus input/path/hash and structural certificate diagnostics; do not emit B/R/T/U/S counts, selection-flow counts, biomarker distributions, eGFR values, events, E/Y cells, predictions, metrics, rankings, p-values, or bootstrap quantities. After each successful gate, emit only the aggregate artifact authorized by that gate. Selection-flow and baseline selection-audit quantities become permissible only after semantic, assay/equation, and temporal certification and successful cohort reconstruction. Named S_A model results require `ANALYSIS_PASS` for S_A; named U_A sensitivity results require its own complete analysis gates. A terminal technical stop always outranks any expected parent anchor or partially computed result. No private certificate evidence is copied into aggregate output.
+
+## Interpretation table and evidence boundary
+
+- **Supportive primary, selection-robust:** certified `S_A` primary passes, capacity gate passes, and `U_A` sensitivity is directionally concordant. Conclude only reproducible incremental information and, separately, robustness to excluding the repeat-cystatin-completeness requirement among observed repeat-creatinine attendees.
+- **Supportive primary, selection-sensitive:** `S_A` passes but `U_A` is adverse or directionally contradictory. Conclude only that the signal is confined or sensitive to the complete-repeat-biomarker selection; do not generalize it to repeat-creatinine attendees more broadly.
+- **Adverse:** certified primary evidence favors M0 under the frozen estimand. This weighs against the stated incremental-information claim in the selected protocol cohort, not against all uses of cystatin C.
+- **Inconclusive:** uncertainty, instability, failed analytic gates, or conflicting metrics prevents resolution. This is not equivalence.
+- **Technical stop:** source/schema or certificate failure. Emit only the reason-coded stop and structural audit; no named biological or model result exists.
+
+Automatic verification can check source and schema identity, headers, keys, joins, detached certificate hash, evidence-hash matching, state order, field map, conversions, equations conditional on certification, masks, selection-flow arithmetic, folds, no-future-feature use, prediction dimensions, calibration, bootstrap arithmetic, equal-capacity ranking, and branch/conclusion consistency. It cannot establish truthful assay provenance, analytical validity, measured GFR, threshold clinical meaning, attendance mechanisms, missing-follow-up completeness, causal utility, benefit, harm, clinical actionability, or transportability. Those require authoritative steward/laboratory evidence, clinical adjudication, external validation, and prospective decision-impact or pragmatic/randomized study.
+
+All outputs are aggregate-only. Never publish `eid`, raw values, participant-level predictions, folds, ranks, coefficients linked to participants, clinical notes, or certificate evidence that contains private data.

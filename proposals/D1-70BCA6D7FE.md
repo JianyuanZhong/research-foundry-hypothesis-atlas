@@ -1,0 +1,73 @@
+# Residual physiologic instability at ICU discharge and early ICU return
+
+## Hypothesis and unresolved question
+
+Among adults discharged alive from a first ICU stay during a hospitalization, does persistent oxygen support and/or unstable physiology during the final 24 hours before ICU discharge identify higher risk of ICU return within 48 hours or death within 48 hours, beyond the last measured values and routine case mix?
+
+The falsifiable hypothesis is that residual instability is associated with a higher primary composite risk and that the ordered 24-hour trajectory provides incremental, calibrated information over a last-value baseline. This is not a conclusion already supported by the data: the expert seed proposes the idea but is explicitly untested, and the local data check only establishes that the relevant dated measurements and outcomes are available. The strongest presently supported claim is data feasibility, not a clinical association or causal effect.
+
+## Clinical importance and advance
+
+ICU discharge decisions trade scarce beds against the harm of moving a patient whose reserve is inadequate. A reproducible signal of persistent oxygen need or recurrent physiologic excursions could support targeted monitoring, step-down placement, or a prospective discharge study. The advance is to separate a final snapshot from recovery trajectory and quantify whether trajectory information is clinically useful at the discharge landmark. A positive association would justify prospective adjudication of discharge-readiness criteria; it would not show that delaying discharge or changing oxygen treatment improves outcomes.
+
+This is a bounded adaptation of the expert seed “Residual instability before ICU discharge” ([starting question], imported candidate [prior hypothesis]). It is not a reproduction of any demonstration. The inspected Delphi article supports studying dated event order and calibration; the inspected Oncoformer supplement supports longitudinal/missingness ablations but its main text, full methods and imaging are unavailable; the inspected ALADYNOULLI article supports uncertainty-aware longitudinal representations but its genetics and multi-biobank setting are unavailable. Those papers do not establish this ICU hypothesis.
+
+## Population and temporal design
+
+Use MIMIC-IV 3.1 ICU stays joined to hospital admissions.
+
+- Include the first ICU stay per subject_id, hadm_id with non-null outtime, where outtime is after intime, and with a valid linked admission. “First” is determined by intime; this avoids correlated repeated discharge landmarks while allowing a later ICU stay to be an outcome.
+- The index is that stay’s outtime. Use only measurements with measurement time in [outtime - 24 hours, outtime). No storetime or later chart is a predictor.
+- Include all adult ages represented by MIMIC’s deidentified anchor_age; report the anchor_age greater-than-89 top-code limitation. Exclude stays without a usable 24-hour window or with impossible timestamps. Do not exclude patients who later die; death is an outcome.
+- Primary follow-up is 48 hours after outtime, administratively truncated at the linked admission’s dischtime. ICU return is any subsequent icu/icustays row with the same subject_id, hadm_id and intime after outtime and no later than outtime+48h. MIMIC does not reliably label planned versus unplanned return, so call this “ICU return,” not unplanned readmission.
+- Primary outcome is ICU return within 48 hours or death with a non-null hosp/admissions.deathtime in (outtime, min(outtime+48h, dischtime)]. Secondary outcomes are ICU return within 7 days, exact-timestamp in-hospital death before dischtime, and a competing-risk analysis of ICU return versus death before hospital discharge. hospital_expire_flag is used in a sensitivity analysis when deathtime is missing, with event time treated as unknown; it must not be silently treated as an exact timestamp.
+- If dischtime is at or before outtime, exclude from the 48-hour risk set and report the count. If an admission has a later ICU stay before outtime due to data anomalies, exclude and report. There is no cross-subject calendar interpretation because the snapshot uses subject-specific shifted timestamps.
+
+## Exact available inputs and construction
+
+Read-only source archive:
+ [internal dataset path], [source checksum]. Relevant members are mimic-iv-3.1/icu/icustays.csv.gz and the other members below. The archive is the source; derived hourly data and analysis outputs belong in the workspace.
+
+Cohort and outcomes:
+
+- icu/icustays.csv.gz: columns subject_id, hadm_id, stay_id, first_careunit, last_careunit, intime, outtime, los; join to admissions on subject_id, hadm_id, and use stay_id as the measurement join key.
+- hosp/admissions.csv.gz: columns subject_id, hadm_id, admittime, dischtime, deathtime, admission_type, admit_provider_id, admission_location, discharge_location, insurance, language, marital_status, race, edregtime, edouttime, hospital_expire_flag; supplies hospital boundary, admission type, death and sensitivity flag.
+- hosp/patients.csv.gz: columns subject_id, gender, anchor_age, anchor_year, anchor_year_group, dod; join on subject_id for baseline demographics. Do not use dod to define an index-time feature or future outcome.
+- icu/chartevents.csv.gz: columns subject_id, hadm_id, stay_id, caregiver_id, charttime, storetime, itemid, value, valuenum, valueuom, warning; join on stay_id (and verify subject/hadm), filter by charttime, use numeric valuenum where appropriate.
+- icu/d_items.csv.gz: columns itemid, label, abbreviation, linksto, category, unitname, param_type, lownormalvalue, highnormalvalue; use it as the item dictionary and assert labels/item IDs before extraction.
+- icu/datetimeevents.csv.gz and icu/procedureevents.csv.gz: available for ventilation/procedure sensitivity checks. procedureevents columns are subject_id, hadm_id, stay_id, caregiver_id, starttime, endtime, storetime, itemid, value, valueuom, location, locationcategory, orderid, linkorderid, ordercategoryname, ordercategorydescription, patientweight, isopenbag, continueinnextdept, statusdescription, originalamount, originalrate. Do not infer intubation duration from a chart label alone; report the procedure-sensitive analysis separately if item validation succeeds.
+
+Core chartevents.itemid bindings verified in local icu/d_items.csv.gz:
+
+- HR: 220045 Heart Rate.
+- MAP: 220181 Non Invasive Blood Pressure mean and 220052 Arterial Blood Pressure mean; preserve source type and prefer arterial only in a prespecified sensitivity, never average arterial and non-invasive readings as if identical.
+- RR: 220210 Respiratory Rate.
+- SpO2: 220277 O2 saturation pulseoxymetry.
+- O2 support: 223835 Inspired O2 Fraction (FiO2) and 223834 O2 Flow (L/min), analyzed as separate variables because their units and clinical meanings differ.
+- Ventilation context: 223848 Ventilator Type, 223849 Ventilator Mode, 220339 PEEP set; these are mixed/text or numeric and require dictionary-aware encoding.
+- Temperature: 223762 Temperature Celsius and 223761 Temperature Fahrenheit; convert Fahrenheit only if used, and do not duplicate a same-time observation.
+- Optional kidney/hematology sensitivity: 220615 Creatinine (serum) and 220228 Hemoglobin from chart events; these are not part of the primary discharge-instability index unless sufficient coverage is demonstrated.
+
+Resample each core numeric stream into 24 one-hour bins ending at outtime, using the within-bin median and an observation mask. Prespecify clinically interpretable excursion features (for example MAP <65, SpO2 <92, RR >24, HR >110) and conduct threshold sensitivity over clinically defensible alternatives; thresholds are research operationalizations, not diagnoses. For FiO2 and O2 flow, report median, maximum, last-bin value and proportion of observed bins above prespecified support thresholds, with threshold and device context stated. Do not impute a normal value for an unmeasured variable. The primary trajectory model uses masks; a masked sensitivity tests whether performance is driven by testing intensity.
+
+## Estimand, models and uncertainty
+
+Primary estimand: difference in held-out 48-hour composite risk prediction and adjusted association of the prespecified instability summaries, not a treatment effect. Report risk ratios/odds ratios only as associations with 95% bootstrap confidence intervals and calibration; do not describe them as causal.
+
+Baseline model: penalized logistic regression using the final valid hourly-bin values (and masks), oxygen support/context, age, gender, ICU LOS, first/last careunit, admission type, and a small prespecified set of hospital admission covariates. A second snapshot-only model removes all trajectory summaries and uses only last values. This quantifies how much ordinary discharge data explain.
+
+Alternative: a small masked GRU or temporal-convolution network on the same 24 hourly bins and covariates. Use patient-level, stratified train/validation/test splits so stays from one patient cannot cross partitions; hyperparameters are fixed using training/validation only. Calibrate on validation and lock the test model. Compare AUROC, AUPRC, integrated Brier score, calibration intercept/slope, calibration plots, and bootstrap CIs on the untouched test set. Report subgroup calibration by age band, sex, first careunit and admission type, with adequate-count rules. Use permutation of within-patient bin order and mask ablation to determine whether any gain is trajectory order rather than observation density. A prespecified interpretable threshold-excursion score and a cause-specific competing-risk model are sensitivity analyses.
+
+The future solver must newly fit the baseline and trajectory model and estimate held-out predictions, calibration/uncertainty and associations. Completion requires saved cohort counts, feature-coverage table, model coefficients/weights or fixed model artifact, held-out prediction file keyed by stay_id, and a results table with confidence intervals. No conclusion is acceptable unless linked to those computed outputs.
+
+## Falsification and interpretation
+
+- Supportive: instability features have directionally higher adjusted risk, the 95% CI excludes the null in the primary analysis, and the trajectory model improves integrated Brier/calibration or clinically relevant risk stratification over the snapshot baseline with uncertainty intervals that exclude no improvement; the result persists under mask/order and threshold sensitivities. This supports prognostic value and a prospective monitoring/discharge-readiness study, not a policy or causal treatment claim.
+- Adverse: estimates are null or reverse, the trajectory model is no better or worse after calibration, or the apparent association disappears after accounting for careunit/admission type or mask/order. This falsifies the stated incremental trajectory hypothesis and argues against using this signal alone for discharge decisions.
+- Inconclusive: too few eligible stays/events, poor feature coverage, unstable subgroup estimates, positivity/measurement-process problems, wide intervals crossing clinically important values, or failure to define death timing. Then report feasibility/uncertainty without selecting a clinical rule.
+- Robustness that is not enough: hospital-expire flag sensitivity, alternative oxygen thresholds, and alternate MAP source can test data definitions but cannot repair unmeasured discharge rationale.
+- The data cannot adjudicate clinical stability, goals of care, planned versus unplanned ICU return, floor staffing, treatment limitation, post-discharge deterioration outside the hospitalization, or whether delaying discharge improves outcomes. Missing bedside context and lack of external hospital validation require expert review and another prospective or multi-site study. This single-center retrospective analysis cannot establish clinical truth automatically.
+
+## Missing dependencies and safety
+
+MIMIC’s local metadata states that timestamps are shifted within subject and cross-subject calendar alignment is invalid; it also states that radiology text is available but chest-X-ray images and raw waveforms are not. No image or waveform is required here. Clinical notes may be inspected privately for a future adjudication substudy, but this proposal does not use unvalidated text extraction as a primary label. Source rows remain read-only; only compact derived files and results are written to the workspace.

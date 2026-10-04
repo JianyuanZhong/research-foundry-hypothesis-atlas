@@ -54,7 +54,7 @@ All joins use `patientunitstayid`, except `patient.hospitalid=hospital.hospitali
 | `nurseAssessment.csv.gz` | `patientunitstayid,nurseassessid,nurseassessoffset,nurseassessentryoffset,cellattributepath,celllabel,cellattribute,cellattributevalue` | `[source checksum]`; `table-a782000603e9e364.json` |
 | `nurseCare.csv.gz` | `patientunitstayid,nursecareid,celllabel,nursecareoffset,nursecareentryoffset,cellattributepath,cellattribute,cellattributevalue` | `[source checksum]`; `table-58a7011a0975a52f.json` |
 | `carePlanEOL.csv.gz` | `patientunitstayid,cpleolid,cpleolsaveoffset,cpleoldiscussionoffset,activeupondischarge` | `[source checksum]`; `table-4a60395475cf75e7.json` |
-| `hospital.csv.gz` | `hospitalid,numbedscategory,teachingstatus,region`; patient-only join | `16684f45680921fb263fdd057ac921709a9e81fc663228e0d6a4665390a6`; `table-811df7b2ef435e12.json` |
+| `hospital.csv.gz` | `hospitalid,numbedscategory,teachingstatus,region`; patient-only join | `[source checksum]`; `table-811df7b2ef435e12.json` |
 | `lab.csv.gz` | inherited finite/revised rules: `patientunitstayid,labresultoffset,labresultrevisedoffset,labname,labresult,labmeasurenamesystem,labmeasurenameinterface` in [0,360] | `[source checksum]`; `table-79bdb33275339b1a.json` |
 
 The exact source directory is `[internal dataset path]`. The readiness audit must verify all paths, headers, hashes, finite-offset rules and row/ID integrity. The inspected metadata states that offsets are minutes from ICU admission, vitalPeriodic is a five-minute summary rather than raw waveform, public narrative notes are removed, and raw waveforms are unavailable. `treatment` has no entry timestamp; no source establishes treatment order, administration, dose, delivery, indication, device state or bedside time.

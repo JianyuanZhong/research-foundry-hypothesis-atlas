@@ -73,4 +73,3 @@ Deferred: ApoB/albumin/ALT/CRP liver-family direction, because the measured sour
 Deferred: repeated metabolic change and pancreatic directions; inherited audits found zero pancreatic events in the planned repeat windows and only sparse inpatient pancreatic support. Do not rescue them by broadening outcomes.
 
 Rejected: cross-namespace joins to `ukb672073`, treating codes without same-index dates as events, using absent inpatient indices, pooling registry and inpatient dates into a gold standard, or claiming causal/mechanistic/clinical-utility conclusions.
-

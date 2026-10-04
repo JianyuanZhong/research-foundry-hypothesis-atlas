@@ -1,6 +1,6 @@
 # Reduced testing and subsequent deterioration
 
-Seed ID: `expert-20260913-eicu-08`
+Seed ID: `[starting question]`
 Dataset: eICU
 Original number: 8 (identifier, not rank)
 Source: `研究选题.xlsx`, `研究选题!A29:I29`

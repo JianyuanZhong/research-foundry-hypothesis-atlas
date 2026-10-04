@@ -137,4 +137,3 @@ Not identifiable with this snapshot: whether the procedure was intended or compl
 [K2] Urbut SM, Ding Y, Nakao T, Koyama S, Misra A, Jiang X, Harish A, Gaffney L, Hornsby WE, Smoller JW, Gusev A, Natarajan P, Parmigiani G. A Bayesian framework for longitudinal EHR and genetic discovery. Nature. 2026. DOI: 10.1038/s41586-026-10780-5.
 
 [K3] Liu Y, Liu Y, Zhao Y, Luo Y, Hao X. From static snapshots to longitudinal trajectories: artificial intelligence in women's reproductive and ovarian health. Frontiers in Endocrinology. 2026. DOI: 10.3389/fendo.2026.1893963.
-

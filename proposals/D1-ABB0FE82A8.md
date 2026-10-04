@@ -68,7 +68,7 @@ Only documented `patientunitstayid` joins are permitted, except `patient.hospita
 | treatment | `[internal dataset path]` | `[source checksum]` | `[source checksum]`; `treatmentid, patientunitstayid, treatmentoffset, treatmentstring, activeupondischarge` |
 | respiratoryCharting | `[internal dataset path]` | `[source checksum]` | `[source checksum]`; secondary audit: `respchartid, patientunitstayid, respchartoffset, respchartentryoffset, respcharttypecat, respchartvaluelabel, respchartvalue` |
 | vitalPeriodic | `[internal dataset path]` | `[source checksum]` | `[source checksum]`; parent finite fields at `observationoffset`: `temperature, sao2, heartrate, respiration, systemicmean` |
-| vitalAperiodic | `[internal dataset path]` | `[source checksum]` | `ec550ba2669622867740af0eb3020931302471b3f52cc05c9b66495bf282089e6`; parent finite `noninvasivemean` and inherited fields at `observationoffset` |
+| vitalAperiodic | `[internal dataset path]` | `[source checksum]` | `[source checksum]`; parent finite `noninvasivemean` and inherited fields at `observationoffset` |
 | hospital | `[internal dataset path]` | `[source checksum]` | `[source checksum]`; `hospitalid, numbedscategory, teachingstatus, region` |
 | carePlanEOL | `[internal dataset path]` | `[source checksum]` | `[source checksum]`; `cpleolsaveoffset, cpleoldiscussionoffset` |
 | apachePatientResult | `[internal dataset path]` | `[source checksum]` | `[source checksum]`; `actualicumortality, apachescore, predictedicumortality, apacheversion` for audit only |

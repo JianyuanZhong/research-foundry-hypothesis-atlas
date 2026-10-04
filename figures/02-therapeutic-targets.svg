@@ -1,39 +1,192 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1190" height="683" viewBox="0 0 1190 683" role="img" aria-label="Therapeutic Target Prioritization hypothesis lineage">
-<rect width="1190" height="683" fill="#101512"/>
-<text x="35" y="45" fill="#eef2e5" font-family="Georgia" font-size="29">Therapeutic Target Prioritization</text>
-<text x="36" y="73" fill="#abbc9b" font-family="sans-serif" font-size="13">16 hypotheses and starting questions · actual parent links · anonymous review view</text>
-<text x="35" y="132.0" fill="#b9cca9" font-family="sans-serif" font-size="12">E-MTAB-8316 + E-MTAB-8873 + E-MTAB-8322</text>
-<text x="35" y="252.0" fill="#b9cca9" font-family="sans-serif" font-size="12">GSE95588 + E-MTAB-8316</text>
-<text x="35" y="484.0" fill="#b9cca9" font-family="sans-serif" font-size="12">Multi-study: E-MTAB-8316, E-MTAB-8322, E-MTAB-8873, GSE95588</text>
-<path d="M239.0,306.0 C315.0,306.0 145.0,524.0 221.0,524.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M239.0,151.0 C315.0,151.0 145.0,524.0 221.0,524.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M239.0,524.0 C315.0,524.0 335.0,524.0 411.0,524.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M429.0,524.0 C505.0,524.0 525.0,524.0 601.0,524.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M619.0,524.0 C695.0,524.0 715.0,545.0 791.0,545.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M619.0,524.0 C695.0,524.0 715.0,503.0 791.0,503.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M809.0,545.0 C885.0,545.0 905.0,531.0 981.0,531.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M809.0,545.0 C885.0,545.0 905.0,559.0 981.0,559.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M239.0,306.0 C315.0,306.0 335.0,271.0 411.0,271.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M239.0,306.0 C315.0,306.0 335.0,341.0 411.0,341.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M429.0,341.0 C505.0,341.0 525.0,341.0 601.0,341.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M619.0,341.0 C695.0,341.0 715.0,299.0 791.0,299.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M619.0,341.0 C695.0,341.0 715.0,383.0 791.0,383.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M619.0,341.0 C695.0,341.0 715.0,327.0 791.0,327.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<path d="M619.0,341.0 C695.0,341.0 715.0,355.0 791.0,355.0" fill="none" stroke="#5d7558" stroke-width="1.1"/>
-<g><title>D2-195C7DE527 · Protective versus pathogenic states</title><circle cx="230.0" cy="151.0" r="8" fill="#c8e2a9"/><text x="245.0" y="155.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-195C7DE527</text></g>
-<g><title>D2-28C2BC3620 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="420.0" cy="271.0" r="8" fill="#c8e2a9"/><text x="435.0" y="275.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-28C2BC3620</text></g>
-<g><title>D2-145A4673E7 · MerTK remission signal: cell state or macrophage-state composition?</title><circle cx="800.0" cy="299.0" r="8" fill="#c8e2a9"/><text x="815.0" y="303.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-145A4673E7</text></g>
-<g><title>D2-1927BBAC60 · Context-specific intervention response</title><circle cx="230.0" cy="306.0" r="8" fill="#c8e2a9"/><text x="245.0" y="310.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-1927BBAC60</text></g>
-<g><title>D2-1724BBCD62 · MerTK remission signal: cell state or macrophage-state composition?</title><circle cx="800.0" cy="327.0" r="8" fill="#c8e2a9"/><text x="815.0" y="331.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-1724BBCD62</text></g>
-<g><title>D2-766FDF0EA7 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="420.0" cy="341.0" r="8" fill="#c8e2a9"/><text x="435.0" y="345.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-766FDF0EA7</text></g>
-<g><title>D2-E38C911CE3 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="610.0" cy="341.0" r="8" fill="#c8e2a9"/><text x="625.0" y="345.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-E38C911CE3</text></g>
-<g><title>D2-2F6E9698AB · MerTK inhibitor response: target-specific signal or assay-compatible alternatives?</title><circle cx="800.0" cy="355.0" r="8" fill="#c8e2a9"/><text x="815.0" y="359.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-2F6E9698AB</text></g>
-<g><title>D2-6CD0A26615 · MerTK remission signal: cell state or macrophage-state composition?</title><circle cx="800.0" cy="383.0" r="8" fill="#c8e2a9"/><text x="815.0" y="387.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-6CD0A26615</text></g>
-<g><title>D2-5300D67F55 · Independent, source-specific triangulation of context-selective MerTK harm</title><circle cx="800.0" cy="503.0" r="8" fill="#c8e2a9"/><text x="815.0" y="507.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-5300D67F55</text></g>
-<g><title>D2-4ADC9FDA91 · Context-specific MerTK target prioritization in rheumatoid-arthritis synovial coculture</title><circle cx="230.0" cy="524.0" r="8" fill="#c8e2a9"/><text x="245.0" y="528.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-4ADC9FDA91</text></g>
-<g><title>D2-3CF12384D2 · Donor-aware identifiability of context-selective MerTK harm in RA synovial coculture</title><circle cx="420.0" cy="524.0" r="8" fill="#c8e2a9"/><text x="435.0" y="528.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-3CF12384D2</text></g>
-<g><title>D2-8F30DB23A7 · Donor-aware identifiability of context-selective MerTK harm in RA synovial coculture</title><circle cx="610.0" cy="524.0" r="8" fill="#c8e2a9"/><text x="625.0" y="528.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-8F30DB23A7</text></g>
-<g><title>D2-BD06531C2E · Source-local benefit–harm gate for context-selective MerTK prioritization</title><circle cx="990.0" cy="531.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="535.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-BD06531C2E</text></g>
-<g><title>D2-AF14627657 · Independent transferability of context-selective MerTK perturbation</title><circle cx="800.0" cy="545.0" r="8" fill="#c8e2a9"/><text x="815.0" y="549.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-AF14627657</text></g>
-<g><title>D2-E22FBC2FE8 · A benefit-axis identifiability gate for context-selective MerTK perturbation</title><circle cx="990.0" cy="559.0" r="8" fill="#c8e2a9"/><text x="1005.0" y="563.0" fill="#dce8d5" font-family="monospace" font-size="10">D2-E22FBC2FE8</text></g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1110" height="642" viewBox="0 0 1110 642" role="img" aria-label="Therapeutic Target Prioritization — complete recorded forest"><rect width="100%" height="100%" fill="#111a21"/>
+<text x="30" y="40" fill="#e5edf2" font-family="Arial,sans-serif" font-size="27" >Therapeutic Target Prioritization</text>
+<text x="30" y="68" fill="#aec1ce" font-family="Arial,sans-serif" font-size="15" >47 nodes · 46 recorded parent links · download and open SVG for clickable IDs</text>
+<text x="30" y="110" fill="#80cec4" font-family="Arial,sans-serif" font-size="21" >GEO / ArrayExpress</text>
+<path d="M215.00,459.00 C300.00,459.00 300.00,536.14 385.00,536.14" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M555.00,553.50 C640.00,553.50 640.00,495.00 725.00,495.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M45.00,243.00 C130.00,243.00 130.00,459.00 215.00,459.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M45.00,459.00 C130.00,459.00 130.00,459.00 215.00,459.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M725.00,543.00 C810.00,543.00 810.00,474.43 895.00,474.43" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,536.14 C470.00,536.14 470.00,553.50 555.00,553.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M725.00,543.00 C810.00,543.00 810.00,536.14 895.00,536.14" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M555.00,553.50 C640.00,553.50 640.00,543.00 725.00,543.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M725.00,303.00 C810.00,303.00 810.00,227.57 895.00,227.57" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M555.00,229.50 C640.00,229.50 640.00,207.00 725.00,207.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M555.00,283.50 C640.00,283.50 640.00,351.00 725.00,351.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M725.00,303.00 C810.00,303.00 810.00,165.86 895.00,165.86" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,165.86 C470.00,165.86 470.00,283.50 555.00,283.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,165.86 C470.00,165.86 470.00,229.50 555.00,229.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,165.86 C470.00,165.86 470.00,256.50 555.00,256.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M555.00,229.50 C640.00,229.50 640.00,303.00 725.00,303.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M215.00,243.00 C300.00,243.00 300.00,165.86 385.00,165.86" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M45.00,459.00 C130.00,459.00 130.00,531.00 215.00,531.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,165.86 C470.00,165.86 470.00,175.50 555.00,175.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,165.86 C470.00,165.86 470.00,148.50 555.00,148.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M555.00,229.50 C640.00,229.50 640.00,255.00 725.00,255.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,165.86 C470.00,165.86 470.00,202.50 555.00,202.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M45.00,243.00 C130.00,243.00 130.00,243.00 215.00,243.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M555.00,229.50 C640.00,229.50 640.00,159.00 725.00,159.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M45.00,243.00 C130.00,243.00 130.00,171.00 215.00,171.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M555.00,526.50 C640.00,526.50 640.00,447.00 725.00,447.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M555.00,526.50 C640.00,526.50 640.00,399.00 725.00,399.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M45.00,243.00 C130.00,243.00 130.00,387.00 215.00,387.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M45.00,243.00 C130.00,243.00 130.00,315.00 215.00,315.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M215.00,315.00 C300.00,315.00 300.00,474.43 385.00,474.43" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,227.57 C470.00,227.57 470.00,310.50 555.00,310.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M215.00,315.00 C300.00,315.00 300.00,351.00 385.00,351.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,351.00 C470.00,351.00 470.00,526.50 555.00,526.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M215.00,315.00 C300.00,315.00 300.00,227.57 385.00,227.57" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M725.00,447.00 C810.00,447.00 810.00,351.00 895.00,351.00" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,227.57 C470.00,227.57 470.00,445.50 555.00,445.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,351.00 C470.00,351.00 470.00,499.50 555.00,499.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M725.00,447.00 C810.00,447.00 810.00,289.29 895.00,289.29" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,227.57 C470.00,227.57 470.00,418.50 555.00,418.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M215.00,315.00 C300.00,315.00 300.00,289.29 385.00,289.29" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,227.57 C470.00,227.57 470.00,391.50 555.00,391.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,227.57 C470.00,227.57 470.00,364.50 555.00,364.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M725.00,447.00 C810.00,447.00 810.00,412.71 895.00,412.71" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,227.57 C470.00,227.57 470.00,337.50 555.00,337.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M385.00,227.57 C470.00,227.57 470.00,472.50 555.00,472.50" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<path d="M215.00,315.00 C300.00,315.00 300.00,412.71 385.00,412.71" fill="none" stroke="#627787" stroke-opacity="0.65" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3CF12384D2.md"><title>D2-3CF12384D2 · Donor-aware identifiability of context-selective MerTK harm in RA synovial coculture</title><circle cx="385.00" cy="536.14" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="393.0" y="540.1428571428571" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-3CF12384D2</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-5300D67F55.md"><title>D2-5300D67F55 · Independent, source-specific triangulation of context-selective MerTK harm</title><circle cx="725.00" cy="495.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="733.0" y="499.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-5300D67F55</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1927BBAC60.md"><title>D2-1927BBAC60 · Context-specific intervention response</title><circle cx="45.00" cy="243.00" r="4" fill="#111a21" stroke="#80cec4" stroke-width="1"/>
+<text x="53.0" y="247.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-1927BBAC60</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4ADC9FDA91.md"><title>D2-4ADC9FDA91 · Context-specific MerTK target prioritization in rheumatoid-arthritis synovial coculture</title><circle cx="215.00" cy="459.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="223.0" y="463.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-4ADC9FDA91</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-BD06531C2E.md"><title>D2-BD06531C2E · Source-local benefit–harm gate for context-selective MerTK prioritization</title><circle cx="895.00" cy="474.43" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="903.0" y="478.42857142857144" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-BD06531C2E</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-8F30DB23A7.md"><title>D2-8F30DB23A7 · Donor-aware identifiability of context-selective MerTK harm in RA synovial coculture</title><circle cx="555.00" cy="553.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="557.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-8F30DB23A7</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-195C7DE527.md"><title>D2-195C7DE527 · Protective versus pathogenic states</title><circle cx="45.00" cy="459.00" r="4" fill="#111a21" stroke="#80cec4" stroke-width="1"/>
+<text x="53.0" y="463.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-195C7DE527</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E22FBC2FE8.md"><title>D2-E22FBC2FE8 · A benefit-axis identifiability gate for context-selective MerTK perturbation</title><circle cx="895.00" cy="536.14" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="903.0" y="540.1428571428571" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-E22FBC2FE8</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-AF14627657.md"><title>D2-AF14627657 · Independent transferability of context-selective MerTK perturbation</title><circle cx="725.00" cy="543.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="733.0" y="547.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-AF14627657</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A6210CD5E9.md"><title>D2-A6210CD5E9 · MERTK archival evidence integrity: a target-development gate</title><circle cx="895.00" cy="227.57" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="903.0" y="231.57142857142856" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-A6210CD5E9</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A2044D850B.md"><title>D2-A2044D850B · MerTK cell-context therapeutic-window hypothesis — episode 7 donor-aware revision</title><circle cx="725.00" cy="207.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="733.0" y="211.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-A2044D850B</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-B9B2FF38EF.md"><title>D2-B9B2FF38EF · Is remission-associated MERTK mostly a macrophage-state mixture signal?</title><circle cx="725.00" cy="351.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="733.0" y="355.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-B9B2FF38EF</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-370247F262.md"><title>D2-370247F262 · MERTK archival evidence integrity and target-development gate</title><circle cx="895.00" cy="165.86" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="903.0" y="169.85714285714286" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-370247F262</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-6CD0A26615.md"><title>D2-6CD0A26615 · MerTK remission signal: cell state or macrophage-state composition?</title><circle cx="555.00" cy="283.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="287.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-6CD0A26615</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-41580D9269.md"><title>D2-41580D9269 · MerTK cell-context therapeutic-window hypothesis</title><circle cx="555.00" cy="229.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="233.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-41580D9269</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4E7E400F14.md"><title>D2-4E7E400F14 · MerTK cell-context therapeutic-window experiment</title><circle cx="555.00" cy="256.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="260.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-4E7E400F14</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E2882432BA.md"><title>D2-E2882432BA · MERTK cell-context therapeutic-window hypothesis: archival RNA update</title><circle cx="725.00" cy="303.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="733.0" y="307.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-E2882432BA</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E38C911CE3.md"><title>D2-E38C911CE3 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="385.00" cy="165.86" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="393.0" y="169.85714285714286" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-E38C911CE3</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-438CF334BE.md"><title>D2-438CF334BE · Cell-compartment-specific MERTK target value in rheumatoid synovium</title><circle cx="215.00" cy="531.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="223.0" y="535.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-438CF334BE</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1724BBCD62.md"><title>D2-1724BBCD62 · MerTK remission signal: cell state or macrophage-state composition?</title><circle cx="555.00" cy="175.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="179.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-1724BBCD62</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-145A4673E7.md"><title>D2-145A4673E7 · MerTK remission signal: cell state or macrophage-state composition?</title><circle cx="555.00" cy="148.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="152.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-145A4673E7</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-BDF122FD8A.md"><title>D2-BDF122FD8A · MerTK cell-context therapeutic-window hypothesis — episode 7 donor-aware revision</title><circle cx="725.00" cy="255.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="733.0" y="259.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-BDF122FD8A</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-2F6E9698AB.md"><title>D2-2F6E9698AB · MerTK inhibitor response: target-specific signal or assay-compatible alternatives?</title><circle cx="555.00" cy="202.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="206.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-2F6E9698AB</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-766FDF0EA7.md"><title>D2-766FDF0EA7 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="215.00" cy="243.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="223.0" y="247.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-766FDF0EA7</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3655D2EA30.md"><title>D2-3655D2EA30 · MerTK cell-context therapeutic-window hypothesis — episode 6 method refinement</title><circle cx="725.00" cy="159.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="733.0" y="163.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-3655D2EA30</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-28C2BC3620.md"><title>D2-28C2BC3620 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="215.00" cy="171.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="223.0" y="175.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-28C2BC3620</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-913D8DC610.md"><title>D2-913D8DC610 · Episode 9 repaired hypothesis: donor-aware intervention-by-macrophage-context interaction in E-MTAB-8316</title><circle cx="725.00" cy="447.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="733.0" y="451.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-913D8DC610</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-88E25FA5B9.md"><title>D2-88E25FA5B9 · Episode 9 provisional hypothesis</title><circle cx="725.00" cy="399.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="733.0" y="403.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-88E25FA5B9</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D942E8688A.md"><title>D2-D942E8688A · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="215.00" cy="387.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="223.0" y="391.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-D942E8688A</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-89AB1AC190.md"><title>D2-89AB1AC190 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="215.00" cy="315.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="223.0" y="319.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-89AB1AC190</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-FAC00B7C0F.md"><title>D2-FAC00B7C0F · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="385.00" cy="474.43" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="393.0" y="478.42857142857144" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-FAC00B7C0F</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-066138D885.md"><title>D2-066138D885 · Provisional hypothesis: macrophage context modifies the intervention-associated FLS transcript response</title><circle cx="555.00" cy="310.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="314.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-066138D885</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4A197D80D9.md"><title>D2-4A197D80D9 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="385.00" cy="351.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="393.0" y="355.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-4A197D80D9</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3F76467BEA.md"><title>D2-3F76467BEA · Provisional successor: donor-aware intervention-by-macrophage-context interaction in E-MTAB-8316</title><circle cx="555.00" cy="526.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="530.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-3F76467BEA</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-0293C6731F.md"><title>D2-0293C6731F · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="385.00" cy="227.57" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="393.0" y="231.57142857142856" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-0293C6731F</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-097F881166.md"><title>D2-097F881166 · Provisional hypothesis: macrophage context modifies the intervention-associated FLS transcript response</title><circle cx="895.00" cy="351.00" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="903.0" y="355.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-097F881166</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-9DCA8B1817.md"><title>D2-9DCA8B1817 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="555.00" cy="445.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="449.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-9DCA8B1817</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1F9C29FC6E.md"><title>D2-1F9C29FC6E · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated FLS transcript response</title><circle cx="555.00" cy="499.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="503.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-1F9C29FC6E</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-078DEE7AD8.md"><title>D2-078DEE7AD8 · Provisional hypothesis: macrophage context modifies the intervention-associated FLS transcript response</title><circle cx="895.00" cy="289.29" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="903.0" y="293.2857142857143" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-078DEE7AD8</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-760E0CAB49.md"><title>D2-760E0CAB49 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="555.00" cy="418.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="422.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-760E0CAB49</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1A6DC0D38A.md"><title>D2-1A6DC0D38A · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="385.00" cy="289.29" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="393.0" y="293.2857142857143" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-1A6DC0D38A</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-566CA781C4.md"><title>D2-566CA781C4 · Provisional successor: donor-aware MerTK-inhibitor interaction in E-MTAB-8873</title><circle cx="555.00" cy="391.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="395.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-566CA781C4</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-25E7802EA2.md"><title>D2-25E7802EA2 · Provisional hypothesis: macrophage context modifies the intervention-associated FLS transcript response</title><circle cx="555.00" cy="364.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="368.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-25E7802EA2</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-C4EA5E1713.md"><title>D2-C4EA5E1713 · Provisional hypothesis: macrophage context modifies the intervention-associated FLS transcript response</title><circle cx="895.00" cy="412.71" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="903.0" y="416.7142857142857" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-C4EA5E1713</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1D26FF197C.md"><title>D2-1D26FF197C · Provisional rival-focused hypothesis (D2-T1)</title><circle cx="555.00" cy="337.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="341.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-1D26FF197C</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-DD1E2594AA.md"><title>D2-DD1E2594AA · Provisional successor hypothesis: macrophage-context-dependent intervention response in RA FLS</title><circle cx="555.00" cy="472.50" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="563.0" y="476.5" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-DD1E2594AA</text>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E003E17F36.md"><title>D2-E003E17F36 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="385.00" cy="412.71" r="4" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<text x="393.0" y="416.7142857142857" fill="#80cec4" font-family="Arial,sans-serif" font-size="10" >D2-E003E17F36</text>
+</a>
 </svg>

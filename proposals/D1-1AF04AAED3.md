@@ -1,0 +1,148 @@
+# Durable recorded recovery after ICU support withdrawal
+
+## Scientific deliverable
+
+The future solver must newly construct and audit a leakage-safe adult first-ICU-discharge cohort; quantify domain-specific *recorded-support-free buffers* before ICU outtime; estimate ICU return, in-hospital death and observed alive hospital discharge as mutually exclusive competing first events; fit the locked cause-specific baseline and duration-aware latent alternative on the same inputs; and produce held-out prognostic estimates with uncertainty and falsification diagnostics.
+
+Completion requires these concrete workspace outputs:
+
+1. `cohort_audit.parquet`: one row per eligible hospitalization/first ICU stay with inclusion/exclusion flags, `subject_id,hadm_id,stay_id`, landmark `outtime`, temporal-integrity checks and counts of missing/contradictory times.
+2. `hourly_features.parquet`: one row per stay-hour in `[outtime-12h,outtime)`, with chart-time physiology, source-specific masks, valid support intervals/markers, and no post-landmark field.
+3. `support_buffer_audit.parquet`: domain-specific last-evidence times, capped recorded buffers, active/recent/durable/discordant classifications, endpoint-validity flags, source and channel counts, and coverage.
+4. `outcomes_competing.csv`: first event type/time and follow-up for ICU return, death, alive discharge or administrative 48-hour censoring, including tie-resolution and observability flags.
+5. `baseline_test_predictions.parquet` and `latent_test_predictions.parquet`: locked patient-level test risks/CIFs at 6, 24 and 48 hours for all three causes, model version and split seed.
+6. `cif_associations.csv`: unadjusted Aalen–Johansen CIFs, absolute recent-versus-durable contrasts, cause-specific associations, and standardized prognostic CIFs with 95% intervals.
+7. `calibration_brier.csv` and `bootstrap_intervals.csv`: calibration intercept/slope, time-dependent and integrated/IPCW Brier scores, and subject-level bootstrap intervals across the three fixed split seeds.
+8. `latent_state_diagnostics.csv`: emission/mask diagnostics, posterior state occupancy, transition order, dwell-time and convergence/identifiability checks.
+9. `falsification_results.csv`: every prespecified coding, order, mask, channel, threshold/window and discharge-process sensitivity with its estimand and uncertainty.
+10. `interpretation.md`: a row-level conclusion-to-output map stating which claims are computationally supported, which are not, and whether results are supportive, adverse or inconclusive.
+
+No discovery probe, packaging/readiness result or uncomputed model result is a clinical conclusion.
+
+## Remaining ambiguity and clinical importance
+
+The selected parent correctly repaired the major follow-up problem: alive hospital discharge is informative and must be an observed competing event rather than ordinary censoring. It still groups two clinically different meanings of low final burden:
+
+- support is active at outtime or has only just ended; versus
+- support has been absent for a sustained interval before outtime.
+
+It also allows a sparse procedure row to contribute to a support label even though that row is not a continuous ventilation record. If these meanings are pooled, an apparent “support-dependent normalization” association could instead be a duration effect, a documentation artifact, or a mixture of respiratory and vasoactive processes. This matters because a retrospective risk marker can only inform closer observation or validation if its signal is stable under a clinically intelligible definition. The study will not decide whether a patient is ready for ICU discharge.
+
+## Evidence-supported versus untested claims
+
+Available evidence supports only that the frozen MIMIC-IV 3.1 snapshot contains dated ICU outtimes and later ICU stays, hospital discharge/death times, charted physiology, vasoactive input intervals and recorded respiratory procedures. The catalog and a bounded archive check verified the relevant members and the locked dictionary concepts; no clinical outcome or model was computed here.
+
+The unresolved, falsifiable claim is:
+
+> Among adults discharged alive from a first ICU stay with low final physiologic burden and adequate observation, a short recorded-support-free buffer before outtime identifies higher 6/24/48-hour cumulative incidence of ICU return and/or in-hospital death, and delayed/lower observed alive-hospital-discharge incidence, than a durable recorded-off buffer, after prespecified case-mix adjustment; and a duration-aware state model captures reproducible information about the transition beyond the snapshot baseline.
+
+This is prognostic association. It is not a treatment effect, a claim that support withdrawal causes failure, a claim that ICU return is unplanned, or a bedside discharge rule.
+
+## Population, landmark and competing-event estimands
+
+Use MIMIC-IV 3.1 adults with `hosp/patients.anchor_age >= 18` (retain MIMIC's age >89 representation), the earliest `icu/icustays.intime` within each `subject_id,hadm_id`, and an eligible ICU discharge with:
+
+- non-null ordered `intime < outtime < admissions.dischtime`;
+- no `admissions.deathtime <= outtime`; and
+- an auditable join to `hosp/admissions` and `hosp/patients`.
+
+The landmark is `icu/icustays.outtime`. No feature, support interval, note or transfer record with source time after outtime may enter the exposure. The feature window is `[outtime-12h,outtime)`, split into `[outtime-12h,outtime-6h)` and `[outtime-6h,outtime)`; chart measurements are binned by `chartevents.charttime), never `storetime).
+
+Follow each eligible stay to `min(outtime+48 hours, admissions.dischtime)`. The first mutually exclusive event is:
+
+1. ICU return: the earliest later `icustays.intime > outtime` for the same `subject_id,hadm_id` within 48 hours.
+2. In-hospital death: `admissions.deathtime > outtime` within 48 hours, before ICU return.
+3. Alive hospital discharge: `admissions.dischtime > outtime` before the other two and before 48 hours.
+
+Require `dischtime` for the competing-discharge analysis and report missing-disposition exclusions. If event times tie, apply a locked timestamp tolerance sensitivity; primary precedence is death, then ICU return, then alive discharge. If none occurs by 48 hours, administrative censoring applies. Do not infer death timing from `hospital_expire_flag`, and never call an ICU return “unplanned.” The primary estimands are group-specific and adjusted prognostic CIFs and absolute CIF differences at 6, 24 and 48 hours, with cause-specific hazards as secondary associations. The discharge cause is interpreted as observed disposition timing, not benefit.
+
+A secondary analysis treats alive discharge as censoring solely to quantify the estimand change; it cannot replace the competing-event primary analysis. Post-discharge death, readmission and care are unobserved.
+
+## Exact read-only MIMIC-IV bindings
+
+Read-only source: `[internal dataset path]`, [source checksum], snapshot `[source checksum]`.
+
+The full catalog is `datasets/README.md`; MIMIC index is `datasets/mimic/README.md`; schema metadata are the named JSON files below. The archive probe verified member presence and the dictionary labels/units listed here. All source files remain read-only.
+
+- `mimic-iv-3.1/icu/icustays.csv.gz`, table `icu/icustays`, `datasets/mimic/table-7d5c8feb0fb0dbd4.json`: `subject_id,hadm_id,stay_id,first_careunit,last_careunit,intime,outtime,los`. Select first stay per `subject_id,hadm_id`; identify later ICU returns using the same subject/hospital keys and later `intime`.
+- `mimic-iv-3.1/hosp/admissions.csv.gz`, table `hosp/admissions`, `datasets/mimic/table-e8ec3e6e4c428559.json`: `subject_id,hadm_id,admittime,dischtime,deathtime,admission_type,admission_location,discharge_location,insurance,language,marital_status,race,edregtime,edouttime,hospital_expire_flag`. Join on `subject_id,hadm_id`; use `dischtime`/`deathtime` for outcomes and admission fields for prespecified adjustment. `discharge_location` is outcome-process description only, never a pre-outtime feature.
+- `mimic-iv-3.1/hosp/patients.csv.gz`, table `hosp/patients`, `datasets/mimic/table-9154f8c46cade9af.json`: `subject_id,gender,anchor_age,anchor_year,anchor_year_group,dod`. Join on `subject_id); use `gender,anchor_age`, not `dod`.
+- `mimic-iv-3.1/icu/chartevents.csv.gz`, table `icu/chartevents`, `datasets/mimic/table-8208609a785ea7e8.json`: `subject_id,hadm_id,stay_id,caregiver_id,charttime,storetime,itemid,value,valuenum,valueuom,warning`. Join and assert `stay_id` plus subject/hospital keys; order by `charttime`. Dictionary `icu/d_items`, `datasets/mimic/table-d1023acc404fd1d4.json`, has `itemid,label,abbreviation,linksto,category,unitname,param_type,lownormalvalue,highnormalvalue`. Use verified item IDs HR 220045, arterial MAP 220052, NIBP MAP 220181, RR 220210, SpO2 220277, O2 flow 223834, FiO2 223835, PEEP 220339, temperature C/F 223762/223761, creatinine 220615 and hemoglobin 220228. Keep arterial/NIBP MAP and FiO2/O2-flow as separate channels.
+- `mimic-iv-3.1/icu/inputevents.csv.gz`, table `icu/inputevents`, `datasets/mimic/table-d193e854c19eb4ba.json`: `subject_id,hadm_id,stay_id,caregiver_id,starttime,endtime,storetime,itemid,amount,amountuom,rate,rateuom,orderid,linkorderid,ordercategoryname,secondaryordercategoryname,ordercomponenttypedescription,ordercategorydescription,patientweight,totalamount,totalamountuom,isopenbag,continueinnextdept,statusdescription,originalamount,originalrate`. Join on `stay_id` and assert subject/hospital keys; use `starttime,endtime`, not `storetime`. Vasoactive IDs are norepinephrine 221906; epinephrine 221289/229617; dopamine 221662; phenylephrine 221749/229630/229631/229632; vasopressin 222315. Preserve item identity and units, exclude only explicitly invalid/cancelled records under a locked rule, and never combine dose scales.
+- `mimic-iv-3.1/icu/procedureevents.csv.gz`, table `icu/procedureevents`, `datasets/mimic/table-f6493e8403a0abe7.json`: `subject_id,hadm_id,stay_id,caregiver_id,starttime,endtime,storetime,itemid,value,valueuom,location,locationcategory,orderid,linkorderid,ordercategoryname,ordercategorydescription,patientweight,isopenbag,continueinnextdept,statusdescription,originalamount,originalrate`. Join on `stay_id`, assert keys, use `starttime,endtime`. IDs are intubation 224385, extubation 227194 and NIV 225794. Use these only as event/transition corroboration; do not interpret a procedure row as continuous ventilation.
+- `mimic-iv-3.1/hosp/transfers.csv.gz`, table `hosp/transfers`, `datasets/mimic/table-685b6b74d0d7c547.json`: `subject_id,hadm_id,transfer_id,eventtype,careunit,intime,outtime`. Join on `subject_id,hadm_id`. It is a post-landmark process-audit source only: summarize the first non-ICU transfer after outtime and transfer pathways in descriptive/sensitivity tables; never use post-outtime transfer fields as predictors or as proof of planned/unplanned return.
+- Optional `mimic-iv-3.1/icu/datetimeevents.csv.gz`, table `icu/datetimeevents`, `datasets/mimic/table-b88dd677d1c84a2d.json`, is not a primary ventilation timeline and remains sensitivity-only.
+- `mimic-iv-3.1/note/discharge.csv.gz`, table `note/discharge`, `datasets/mimic/table-69be322e2b58015b.json`: available as `note/discharge.csv.gz`, columns `note_id,subject_id,hadm_id,note_type,note_seq,charttime,storetime,text`. Exclude from primary features because it lacks a validated ICU-outtime readiness label and can leak post-index disposition language. It is a deferred adjudication source, not a feature.
+
+## Feature construction and exposure strata
+
+For numeric chart streams, use one-hour medians and explicit masks; never treat missing as normal. Hemodynamic burden is the fraction of observed MAP bins below 65 mmHg, preserving arterial and NIBP source. Respiratory burden is the fraction of observed bins with FiO2 >=0.40 or O2 flow >=4 L/min, preserving native channels. PEEP, RR, SpO2 and temperature are secondary; creatinine and hemoglobin are optional prespecified descriptive covariates only if their measurement timing and coverage are adequate. Do not use any post-outtime measurement.
+
+Require at least two observed MAP bins and two observed respiratory bins in each six-hour half-window for the primary low-final-burden comparison. Define low final burden as MAP-burden <1/3 and respiratory-burden <1/3 in the final six-hour window. Retain inadequate coverage, residual burden and contradictory evidence as explicit strata; do not silently complete them.
+
+### Recorded support and buffer
+
+Use separate domain/source ledgers before deriving a combined label.
+
+- Vasoactive evidence: a locked vasoactive item in `inputevents` with non-null `starttime,endtime), `starttime < endtime), and a non-invalid status. Clip valid intervals to the feature window for exposure construction. Active support is overlap with the final six hours. The vasoactive recorded buffer is time from the latest valid interval end to outtime; if an interval is active at outtime, buffer is zero.
+- Charted respiratory evidence: a qualifying FiO2/O2-flow/PEEP observation in `chartevents` at `charttime) within the feature window. Do not carry a value forward beyond its one-hour bin. The charted respiratory recorded buffer is time since the latest qualifying charttime; it is explicitly not proof of continuous support-free time.
+- Procedure corroboration: use intubation, extubation and NIV `procedureevents` intervals only as ordered transition markers when endpoints are non-null, non-negative and temporally ordered. Report procedure-derived buffers separately and repeat the primary analysis excluding them. A procedure row never creates a continuous ventilation interval by itself.
+
+For each domain, classify final-window evidence as active, recent-only, durable-off or unavailable. Define the primary combined exposure among low-final-burden, adequately observed stays using the minimum of domain-specific recorded buffers, with a cap at 12 hours and a source-discordance flag:
+
+1. durable recorded-off: no qualifying evidence in the final six hours and minimum recorded buffer >=6 hours (or no qualifying evidence in the full 12-hour window);
+2. recent recorded withdrawal: no qualifying evidence in the final six hours, qualifying evidence in the preceding six hours, and minimum buffer 0 to <6 hours;
+3. active recorded support: qualifying vasoactive or charted respiratory evidence in the final six hours;
+4. domain-discordant: one domain active/recent while the other is durable-off or unavailable;
+5. residual physiology/insufficient: low-burden criteria fail or either required coverage rule fails.
+
+The primary contrast is recent versus durable within the low-final-burden, non-discordant, adequately observed subset. Active, discordant and residual/insufficient strata are reported, not collapsed. Domain-specific vasoactive-only and respiratory-only contrasts are secondary. The word “recorded” must appear in tables and interpretation; the exposure is not a clinical adjudication of actual support cessation.
+
+## Baseline, alternative, splits and uncertainty
+
+Use patient-level splits by `subject_id) so repeated hospitalizations cannot cross partitions; stratify approximately by event availability and primary exposure after cohort construction. Use fixed seeds [17, 29, 43], 70/15/15 train/validation/test. Fit all thresholds, interval-validity handling, normalization, covariate encoding, model parameters, state restrictions and hyperparameters without test outcomes.
+
+The baseline is two cause-specific Cox models for ICU return and death and one for alive discharge, with the recorded-buffer exposure plus the prespecified final/preceding burdens, change, masks, age, gender, ICU LOS, first/last careunit, admission type and limited admission covariates. A nested snapshot baseline omits duration/buffer information and uses only final values, masks, support presence and case mix. Report both because the scientific question is whether duration resolves meaning beyond a last snapshot.
+
+The substantive alternative is a four-state hidden semi-Markov hourly model using exactly the same hourly physiology, masks, support-source flags and competing outcomes. States are constrained to durable recorded-off/low burden, recent withdrawal/low burden, active recorded support and residual/discordant burden. Use sparse transitions, explicit dwell-time distributions and cause-specific discrete hazards over eight six-hour post-index bins; fit only on training data by documented EM or Bayesian optimization, validate state restrictions on validation, and lock test predictions. Propagate posterior states rather than hard labels. Compare at identical horizons with held-out CIF calibration, integrated/IPCW Brier scores, CIF error/separation, and bootstrap intervals. State diagnostics must test whether duration/order is recovered reproducibly, not merely whether flexible prediction improves.
+
+Declare a clinically meaningful absolute CIF margin before outcome inspection. If no clinician-approved margin is available, do not issue a binary “clinically important” or “safe” conclusion; report estimates, intervals, calibration and feasibility only. A model improvement alone cannot establish clinical utility.
+
+## Falsification and process checks
+
+Predeclare and run:
+
+- shuffle hourly physiology/support order within stay while preserving marginal values and masks;
+- compare mask-only, mask-removed, physiology-only and support-removed models;
+- replace charttime with storetime and interval overlap with last-value coding;
+- exclude procedureevents entirely, then use procedure markers only as corroboration;
+- separate arterial versus NIBP MAP and FiO2 versus O2-flow/PEEP;
+- perturb the 6-hour buffer threshold and 6/12-hour windows;
+- test joint versus domain-specific buffers and report discordance;
+- stratify by first/last careunit and admission type;
+- use a pre-index pseudo-landmark negative-control horizon, where no post-landmark outcome is attributed to the pseudo-transition;
+- report primary competing-discharge results beside the discharge-as-censoring sensitivity;
+- audit `hosp/transfers` and `admissions.discharge_location` descriptively for discharge pathways, without using post-landmark fields as predictors or labeling ICU return planned/unplanned; and
+- report positivity/coverage, invalid interval counts, missing disposition/death times, and the fraction whose exposure changes under each source definition.
+
+Supportive results require adequate coverage/positivity; a reproducible recent-versus-durable separation for ICU return and/or death with stable discharge CIF; calibrated held-out predictions; and duration/state diagnostics that survive order, mask, source, threshold and discharge-process falsifications. This supports a retrospective prognostic marker worth external and clinician-adjudicated validation. It does not justify continuing support, delaying ICU discharge, or treatment selection.
+
+Adverse results are null/reversed contrasts, disappearance after documentation controls, strong dependence on censoring choice, unstable source-specific buffers, no calibration, or latent non-identifiability. These weaken or falsify the operationalized durability hypothesis.
+
+Inconclusive results are rare strata/events, non-positivity, inadequate coverage, contradictory endpoints, wide intervals crossing the predeclared margin, sensitivity instability, or disagreement between chart and procedure evidence. Report no clinical rule.
+
+## Clinical evidence limits
+
+MIMIC cannot adjudicate actual work of breathing, unrecorded support between observations, continuous ventilator settings, clinician intent, goals of care, treatment limitations, staffing, discharge rationale, bedside readiness, or whether ICU return was planned. `hosp/transfers` and `discharge_location` describe administrative pathways; they do not repair these missing labels. Post-discharge death, readmission and care are not observed in this hospitalization window. Raw waveforms and MIMIC-CXR images are absent. External validation in eICU or another hospital, clinician adjudication of support transition/readiness, and a prospective or causal study are required before policy.
+
+## Demonstrations, seeds and deferred methods
+
+The inspected research-ambition methods guide supports dated sequence comparisons and longitudinal latent-state adaptations, but the demonstration author-reported compute is not a runtime guarantee. This is a bounded MIMIC adaptation, not reproduction: UK Biobank/Danish validation, genetic inputs and Oncoformer images are unavailable. The main Oncoformer article and full STAR Methods were not available; its supplement is not treated as a substitute.
+
+Expert MIMIC seed 10 (residual instability before ICU discharge) is the upstream parent question. Seeds 1–9 remain deferred, not disproven: their strongest versions require concepts not validly adjudicated here or causal assumptions beyond this prognostic study, including measured GFR, ischemia, congestion, sedation depth, source control, transfusion indication and treatment-emulation data. No seed is used as evidence of the present hypothesis.
+
+A masked GRU/TCN is deferred because it would add flexible sequence fitting without a new clinical estimand; revisit if the semi-Markov diagnostics show stable order information that the constrained state model cannot represent. A neural model is not excluded categorically. A GPU is not required for the proposed compact tabular/latent fit; the hardware guide and `inputs.json` report 8 A100-SXM4 80-GB devices, but no GPU allocation or discovery model fit was used. Future solver planning envelope is <=16 CPUs, 262144 MiB RAM, up to 8 GPUs and 28800 seconds; expected CPU cost above is unverified and distinct from the 7200-second discovery budget.
+
+## Exact conclusion gate
+
+The solver must map every conclusion to one or more rows in `cif_associations.csv`, `calibration_brier.csv`, `latent_state_diagnostics.csv` or `falsification_results.csv`, quote estimates and uncertainty, and label it as supportive, adverse or inconclusive. Computational outputs can establish cohort construction, event ordering, exposure coverage, prognostic associations, calibration, uncertainty and sensitivity consistency. They cannot establish causality, preventability, bedside readiness, intended disposition, unplanned return, post-discharge safety or clinical utility without adjudication or another study.

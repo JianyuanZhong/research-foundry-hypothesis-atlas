@@ -28,7 +28,7 @@ where F is component-specific Aalen–Johansen cumulative incidence in the same 
 
 ## Exact read-only sources and bindings
 
-All structured tables below are from [internal dataset path], [source checksum], snapshot 5126591f768df4f9d981d97d94329fd65f78a1a0e1eb7cab0332454f888ab8b. The catalog, binding-template mapping, linked schema JSONs, and the supplied archive dictionary inspection are retained as pre-exposure binding evidence. Readiness must recheck archive headers and hashes before any cohort scan; no source rows are copied or altered. No source rows are copied or altered.
+All structured tables below are from [internal dataset path], [source checksum], snapshot [source checksum]. The catalog, binding-template mapping, linked schema JSONs, and the supplied archive dictionary inspection are retained as pre-exposure binding evidence. Readiness must recheck archive headers and hashes before any cohort scan; no source rows are copied or altered. No source rows are copied or altered.
 
 | table | archive member; schema JSON; schema hash | exact bound fields / time / join |
 |---|---|---|
@@ -41,7 +41,7 @@ All structured tables below are from [internal dataset path], [source checksum],
 | icu/inputevents | mimic-iv-3.1/icu/inputevents.csv.gz; table-d193e854c19eb4ba.json; [source checksum] | keys; starttime,endtime,storetime,itemid,amount,amountuom,totalamount,totalamountuom,rate,rateuom; categories/status |
 | icu/chartevents | mimic-iv-3.1/icu/chartevents.csv.gz; table-8208609a785ea7e8.json; [source checksum] | keys; charttime,storetime,itemid,value,valuenum,valueuom,warning |
 | icu/d_items | mimic-iv-3.1/icu/d_items.csv.gz; table-d1023acc404fd1d4.json; [source checksum] | itemid,label,abbreviation,linksto,category,unitname,param_type,lownormalvalue,highnormalvalue |
-| icu/procedureevents | mimic-iv-3.1/icu/procedureevents.csv.gz; table-f6493e8403a0abe7.json; 0cbde2f8800a06ba4b2c5057ae6f640fddfc06099929d29aa1fc11ae4f83efe | keys; starttime,endtime,storetime,itemid,value,valueuom,ordercategoryname,statusdescription |
+| icu/procedureevents | mimic-iv-3.1/icu/procedureevents.csv.gz; table-f6493e8403a0abe7.json; [source checksum] | keys; starttime,endtime,storetime,itemid,value,valueuom,ordercategoryname,statusdescription |
 | hosp/transfers | mimic-iv-3.1/hosp/transfers.csv.gz; table-685b6b74d0d7c547.json; [source checksum] | subject_id,hadm_id,eventtype,careunit,intime,outtime; movement sensitivity |
 
 The full MIMIC catalog confirms these members, fields, source identifiers and hashes. Note/discharge, note/discharge_detail, note/radiology and note/radiology_detail are available but not needed. HCC, EICU and UKB remain accessible read-only and are not joined.

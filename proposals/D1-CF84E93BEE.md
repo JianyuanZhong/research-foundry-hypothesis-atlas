@@ -1,6 +1,6 @@
 # Hyperoxia exposure
 
-Seed ID: `expert-20260913-eicu-04`
+Seed ID: `[starting question]`
 Dataset: eICU
 Original number: 4 (identifier, not rank)
 Source: `研究选题.xlsx`, `研究选题!A25:I25`

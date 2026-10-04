@@ -1,6 +1,6 @@
 # Acute glucose elevation relative to chronic glycemia
 
-Seed ID: `expert-20260913-mimic-05`
+Seed ID: `[starting question]`
 Dataset: MIMIC-IV
 Original number: 5 (identifier, not rank)
 Source: `研究选题.xlsx`, `研究选题!A16:I16`

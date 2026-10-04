@@ -18,7 +18,7 @@ The solver must newly produce a frozen cohort flow and label-readiness audit; he
 
 ## Population, boundaries, joins, and censoring
 
-Use only the read-only eICU 2.0 snapshot 896e1fb70d4e2d1a59c9fd87c64735dcfaff476e89543643c08b7df637a15ec and catalog [source checksum]. The catalog is datasets/eicu/README.md, with full metadata in datasets/eicu/metadata.json and relevant schemas in datasets/eicu/table-*.json. The source directory is [internal dataset path] 库/EICU 2.0数据/. Source archives are gzip files with ordinary CSV members.
+Use only the read-only eICU 2.0 snapshot [source checksum] and catalog [source checksum]. The catalog is datasets/eicu/README.md, with full metadata in datasets/eicu/metadata.json and relevant schemas in datasets/eicu/table-*.json. The source directory is [internal dataset path] 库/EICU 2.0数据/. Source archives are gzip files with ordinary CSV members.
 
 Join only on patientunitstayid; use uniquepid only to select the first ICU stay and keep all stays for one uniquepid in one split. Select lowest unitvisitnumber, then earliest unitadmittime24 as tie-break. Adults are numeric age >=18; preserve the >89 category and run a documented age-90 sensitivity. ICU admission is time zero; offsets are minutes relative to admission. There is no unitadmitoffset field.
 
@@ -40,7 +40,7 @@ All bindings use the cataloged source path, archive member, table, key, time fie
 - lab.csv.gz / table lab / member lab.csv / [source checksum]. Key patientunitstayid; times labresultoffset and labresultrevisedoffset; fields labname, labresult, labresulttext, labmeasurenamesystem, labmeasurenameinterface.
 - infusionDrug.csv.gz / table infusionDrug / member infusionDrug.csv / [source checksum]. Key patientunitstayid; time infusionoffset; fields drugname, drugrate, infusionrate, drugamount, volumeoffluid, patientweight.
 - hospital.csv.gz / table hospital / member hospital.csv / [source checksum]. Key hospitalid; fields numbedscategory, teachingstatus, region.
-- carePlanEOL.csv.gz / table carePlanEOL / member carePlanEOL.csv / SHA-256 8c776d15fd944507c0b57e3e7974db03ad87ac435d27b3f406b3d1afd046b0. Key patientunitstayid; times cpleolsaveoffset and cpleoldiscussionoffset; field activeupondischarge.
+- carePlanEOL.csv.gz / table carePlanEOL / member carePlanEOL.csv / SHA-256 [source checksum]. Key patientunitstayid; times cpleolsaveoffset and cpleoldiscussionoffset; field activeupondischarge.
 - apacheApsVar.csv.gz / table apacheApsVar / member apacheApsVar.csv / [source checksum]. Key patientunitstayid; fields creatinine, dialysis, urine, meanbp, heartrate, vent, intubated. No time field: adjustment sensitivity only.
 - intakeOutput.csv.gz / table intakeOutput / member intakeOutput.csv / [source checksum]. Key patientunitstayid; times intakeoutputoffset and intakeoutputentryoffset; fields outputtotal, dialysistotal, nettotal, cellpath, celllabel, cellvaluenumeric, cellvaluetext. Use only after label/unit/timing adjudication.
 

@@ -1,0 +1,91 @@
+# Episode 48: compiler-closed protocol for the 12-hour extubation-ordered loop policy
+
+Parents: `[prior hypothesis]` (clean branch-rule repair), ultimately `[prior hypothesis]`
+
+## Substantive repair and precedence
+
+This child preserves the parent's clinically consequential question, frozen first hour-48 opportunity, 12-hour initiate-while-still-ventilated versus avoid policy, treatment-before-airway event ordering, hospital-observed airway endpoint, record-defined renal and terminal harms, overlap clone-censor estimand, five-percentage-point respiratory margin, and noncausal boundary. It repairs the scientific definitions that stopped compilation. The selected proposal repeatedly invoked inherited item ledgers, clock rules, linkage tolerances, date brackets, harm windows, covariates, negative controls, model fallbacks, and “material reversal,” but neither it nor its immediate parent supplied those definitions. A compiler choosing them would silently change the population, primary outcome, estimates, or result branch.
+
+The complete machine-readable protocol is `analysis/episode48_frozen_protocol_v2.json` ([source checksum]). This v2 differs from the repairable v1 only by adding the already-declared true-mortality lower-bound harm criterion to the final adverse branch. It is part of this candidate, has precedence over every undefined or conflicting inherited clause, and is not optional guidance. The source audit `analysis/protocol_definition_audit.json` ([source checksum]) checked 12 exact archive members and all required headers, found no missing required columns, and found none of the 84 ICU or seven laboratory dictionary item IDs missing. Its script is `analysis/protocol_definition_audit.py` ([source checksum]). This establishes source availability and compilation feasibility, not cohort feasibility or a treatment effect.
+
+## Unresolved question, strongest supported claim, and hypothesis
+
+After vasopressor-treated shock has resolved, should a markedly fluid-positive adult who remains invasively ventilated at ICU hour 48 and has adequate MAP, urine output, and potassium follow a policy of starting or restarting an ICU-input-system recorded furosemide or bumetanide delivery during the next 12 hours while ventilation continues, or avoid such recorded delivery during that interval?
+
+The question matters because clinicians must trade possible earlier airway liberation against kidney injury, dialysis, death, and unfavorable disposition. Positive fluid balance is associated with poor outcomes, but that association does not establish that active removal helps. Passages inspected from the frozen full XML of Kuriyama et al. 2026 (PMCID `PMC13476641`, DOI `10.1016/j.aicoj.2026.100120`, source `[source checksum]`) report 26 randomized trials and 1,652 participants, with clinically heterogeneous comparisons, largely heart-failure and post-cardiovascular-surgery populations, and mostly low or very-low certainty evidence. The XML abstract says the optimal diuretic strategy remains uncertain and does not establish the effect of starting a loop after resolved shock. Passages inspected from Bircher et al. 2026 (PMCID `PMC13154636`, DOI `10.1016/j.aicoj.2026.100075`, source `[source checksum]`) describe ongoing uncertainty about fluid-removal timing and individualized practice. Passages from Hansford et al. 2026 (PMCID `PMC12927355`, DOI `10.1136/bmjmed-2024-001280`, source `[source checksum]`) support explicit alignment of eligibility, assignment, and follow-up; target-trial emulation does not erase confounding. I inspected relevant frozen XML passages, not every supplementary method. The three research-ambition papers are methodological demonstrations, not evidence for loop benefit; no unavailable cancer-paper body is claimed as read.
+
+The strongest existing claim supported here is therefore that fluid overload is clinically important and diuretic-strategy evidence is heterogeneous and uncertain. The unresolved, falsifiable claim is narrower and record-defined:
+
+> In the prespecified measured-overlap discovery population, assignment-compatible follow-up under the A12 policy increases the lower bound of five-day hospital-observed 48-hour extubation success by more than 0.05 versus B12, while the upper confidence limits for record-defined 48-hour creatinine rise, observed RRT7, and recorded terminal/hospice/acute-transfer harm remain below +0.03, +0.05, and +0.03 respectively.
+
+This tests a dynamic policy association. It is not a pharmacologic effect among recipients, proof of renal safety, or a recommendation.
+
+## Exact source and population
+
+All four configured datasets remain directly accessible read-only under `datasets/README.md`; the experiment uses MIMIC because it alone supplies linked minute-level ICU delivery, ventilation, physiology, and same-admission outcomes. The source is the read-only MIMIC-IV 3.1 archive:
+
+`[internal dataset path]`
+
+Archive SHA-256 is `[source checksum]`; snapshot is `[source checksum]`; catalog SHA-256 is `[source checksum]`. Sources stay read-only and every derived file remains in the workspace.
+
+Before eligibility, compute
+`SHA256("ehr-hypothesis-discovery-v1" + NUL + "mimic" + NUL + canonical_subject_id) mod 100`; use buckets 0–79 and never inspect 80–99. Freeze each subject's earliest broad adult hour-48 opportunity, ordered by `(icu/icustays.intime,stay_id)`, before phenotype or washout gates. Set `t0=intime+48h`; never reopen a later stay.
+
+The exact tables, members, columns, keys, and time fields are frozen in the JSON. Core joins are:
+
+- `icu/icustays` member `mimic-iv-3.1/icu/icustays.csv.gz`, using `subject_id,hadm_id,stay_id,first_careunit,last_careunit,intime,outtime`;
+- `hosp/admissions` and `hosp/patients`, using `subject_id,hadm_id,admittime,dischtime,deathtime,discharge_location,hospital_expire_flag,anchor_age,anchor_year,dod`;
+- `icu/inputevents`, `outputevents`, `chartevents`, and `procedureevents` on all `subject_id,hadm_id,stay_id`, with their clinical and `storetime` clocks;
+- `hosp/labevents` on `subject_id,hadm_id` and `itemid`, retaining `labevent_id,charttime,storetime,valuenum,valueuom`;
+- `hosp/procedures_icd` on `subject_id,hadm_id`, joined to `d_icd_procedures` by `icd_code,icd_version`;
+- `hosp/emar_detail` to `hosp/emar` only by `subject_id,emar_id,emar_seq`; eMAR is a contamination diagnostic and never defines primary exposure;
+- `icu/d_items` and `hosp/d_labitems` by `itemid`.
+
+Eligibility is now fully frozen. Baseline ventilation is the masked retrospective Boolean for accepted item 225792 crossing t0. Prior pressor delivery uses items 221289/229617, 221662, 221749/229630/229631/229632, 221906, and 222315: at least one valid segment before t0−6h and none, including ambiguous intervals, intersecting the final six hours. MAP uses items 220052/225312 preferentially, otherwise 220181, in the final three hours, with chart and store time available by t0, valid mmHg 20–200, and median at least 65. Weight uses decision-available 226512 then 224639, 30–300 kg. Potassium uses 50971 then 52610 in the final 12 hours, latest by the frozen tie rule, at least 3.0 mmol/L or mEq/L. Urine uses the 12 exact non-irrigant output items in the JSON and must exceed 0.1 mL/kg/h in six hours. Active RRT uses 225441/225802/225803/225805/225809/225955; ECMO uses the exact procedure/flow items in the protocol.
+
+Cumulative balance is the unit-safe sum of decision-available delivered mL/L inputs minus output/drain mL/L from ICU entry to t0, divided by weight, and must be at least +50 mL/kg. The protocol fixes accepted statuses, crossing-interval allocation, irrigant/pre-admission exclusions, output categories, eight six-hour coverage bins, and +30/+100 sensitivities. The 12-hour loop washout excludes every qualifying or ambiguous interval or linked course intersecting `(t0−12h,t0]`, including exact-t0 boundaries.
+
+These rules select a record-defined post-shock, fluid-positive population. Whether the patient was clinically ready for deresuscitation remains an adjudication question.
+
+## Strategies and temporal state machine
+
+Primary loop items are inputevents 221794 furosemide, 228340 concentrated furosemide, and 229639 bumetanide. A qualifying segment has consistent encounter keys, positive duration, accepted final status `FinishedRunning`, `ChangeDose/Rate`, or `Stopped`, and positive mg amount or mg/hour rate. Linked segments form a course, but effective onset is the first qualifying `starttime`; later `storetime`, final amount, or status never shifts biological onset or becomes an earlier predictor. Unknown units, nonpositive/contradictory rows, Paused, Bolus, cancellations, and exact loop/airway ties are ambiguous.
+
+At t0, clone each participant to:
+
+- A12: initiate a qualifying recorded loop in `(t0,t0+12h]`, strictly before first accepted airway cessation and before merged-ICU or terminal closure.
+- B12: avoid a qualifying recorded loop until airway cessation, merged-ICU/terminal closure, or t0+12h.
+
+A strictly earlier loop satisfies A and artificially censors B. First accepted extubation freezes both still-compatible clones; later loop cannot relabel the airway event. Death is retained as failure in both. A verified ventilation end without accepted extubation is ambiguity. Positive-gap ICU exit closes both symmetrically. Exact loop/extubation tie is primary ambiguity. Six- and corrected 24-hour policies are fixed sensitivities, not outcome-selected substitutes.
+
+## Outcomes and exact previously missing rules
+
+The primary HA-E48-D5 outcome uses item 227194 `Extubation` with `FinishedRunning` and `starttime X` in `(t0,t0+5d]`. It is not called planned extubation. The previously unspecified primary linkage is now two hours: the same admission must have accepted item 225792 with `ventilation.starttime<=X<=ventilation.endtime+2h`. Multiple matches use the deterministic closest-end/latest-start/order-ID rule in the protocol. Zero- and 12-hour links are sensitivities. Explicitly unplanned items 225468/225477 never count as success; prior tracheostomy 225448/226237 blocks success; a ventilation interval extending more than six hours after X makes the state unknown.
+
+Definite success is the earliest linked X followed by 48 hours alive in the same open admission with no ICU-recorded intubation 224385, new ventilation 225792, unplanned extubation, or tracheostomy across any same-admission ICU stay. Ward time is permitted only because the endpoint is named absence of recorded ICU airway failure during hospital observation; it does not prove complete ward capture. Death or observed airway failure is definite failure. Alive discharge before maturation, observation gaps without sufficient ICU evidence, unresolved linkage, and conflicts are `[0,1]`. Continuous-ICU durability, 72 hours, seven days, NIV 225794, and linkage variants are mandatory sensitivities.
+
+RCR48 uses blood-chemistry creatinine 50912 in mg/dL. Baseline is the last `(t0−48h,t0]` result stored by t0. Follow-up is `(t0,t0+48h]` stored by t0+72h. A ≥0.3 mg/dL or ≥1.5-fold rise is definite positive. Definite recorded negative requires a baseline and a non-threshold specimen in each 24-hour follow-up bin; otherwise it is unknown. This is not complete KDIGO AKI.
+
+Observed RRT7 unions exact ICU procedure times with delivered-dialysis ICD-9 3995/5498 and ICD-10 5A1D00Z/5A1D60Z/5A1D70Z/5A1D80Z/5A1D90Z. The missing date brackets are frozen: lower-bound date evidence requires the full `[chartdate,chartdate+1d)` interval to lie inside `(t0,t0+7d]`; upper-bound evidence requires any intersection. Early live discharge remains unknown for absence of RRT.
+
+Recorded terminal/hospice/acute-transfer harm by day 28 includes in-hospital death or discharge to `DIED`, `HOSPICE`, `CHRONIC/LONG TERM ACUTE CARE`, or `ACUTE HOSPITAL`, margin +0.03. Alive non-hospice/non-acute discharge by day 28 uses exactly `HOME`, `HOME HEALTH CARE`, `SKILLED NURSING FACILITY`, `REHAB`, or `ASSISTED LIVING`; an upper confidence limit at or below −0.05 is adverse. Other destinations are unknown for that outcome. True mortality bounds using exact death timestamps and date-only DOD are mandatory limitations but do not gate a supportive recorded branch; missing post-discharge status is never imputed alive.
+
+## Frozen analysis, diagnostics, and falsification
+
+The primary estimand is the overlap-population A12-minus-B12 HA-E48-D5 risk-difference interval. Five subject-level folds use a fixed namespaced SHA256. The protocol freezes every baseline variable and lookback: demographics and utilization; prior diagnosis tokens; unit-safe fluid/urine, renal, electrolyte, lactate, MAP/pressor, FiO2/PEEP/SpO2/mode trajectories; exact sedative, crystalloid, and albumin item sets; training-fold imputation; and forbidden future information.
+
+The factual A12 probability uses cross-fitted L2 logistic regression with fixed solver, penalty, tolerance, and preprocessing. Retain only `e0 in [0.10,0.90]` and apply the same `e0(1−e0)` tilt to both clones. Arm-specific hourly pooled-logistic compatibility models use only history available at the start of each of 12 hours; stabilized inverse-probability weights are clipped and truncated exactly as specified. The primary estimator is the normalized Hajek weighted mean of individual lower and upper states. Report crude, overlap-only, and overlap-plus-censor estimates, with `DeltaL=pA_L−pB_U` and `DeltaU=pA_U−pB_L`.
+
+Run 500 subject bootstraps with fixed PCG64 seed 480048, rerunning folds, preprocessing, models, overlap, truncation, and bounds. One-sided 95% limits are the 0.05 and 0.95 empirical quantiles. The only fallback is the same model with stronger fixed L2 penalty; a second failure is infeasible, not permission to search models.
+
+Hard gates now have numbers: eligible n≥200; A satisfactions and B completions/shared closures each ≥100; definite primary events ≥100; ESS≥75 per arm; no more than 10% extreme person-hour probabilities; all final weighted baseline SMDs ≤0.10; decile calibration error ≤0.10 and Brier score ≤0.25; ambiguity ≤1%; shared early extubation ≤15%; ICU-exit closures ≤25%; primary unknownness ≤40% per arm; RCR48 unknownness ≤15% per arm and arm imbalance ≤5 points; eMAR contamination ≤5%; and the exact confirmation-lag gate in the protocol. MAP, urine, and creatinine pre-t0 slopes are negative-control outcomes; any absolute SMD >0.10 or Holm-adjusted p<0.05 is inconclusive. A sensitivity is a material reversal if it changes the branch, moves either effect bound by at least 0.05, or reverses midpoint sign with both magnitudes at least 0.02.
+
+These gates falsify more than the favored result. Supportive recorded evidence requires the one-sided lower limit for `DeltaL_HA` to exceed +0.05 and upper limits for RCR48, both RRT brackets, and terminal/hospice/acute-transfer harm to remain below their margins, with no adverse destination result and every diagnostic passing. Adverse is declared for an airway upper limit ≤0, a renal, recorded-terminal, or true-mortality lower limit crossing its harm margin, or an alive-disposition upper limit ≤−0.05. Margin-falsified means the airway upper limit is ≤+0.05 without an adverse branch. Every other estimable result is inconclusive; failed execution gates are infeasible. Null is never equivalence or safety.
+
+## Interpretation and verification boundary
+
+Supportive results would justify only: in the measured-overlap discovery cohort, assignment-compatible follow-up under the 12-hour recorded-loop policy was associated with at least a five-point increase in this record-defined hospital-observed airway outcome without crossing the prespecified recorded harm margins. Shared early extubations were not effects of loop receipt. Adverse results would identify a record-defined safety or respiratory concern, not prove toxicity. Margin-falsified results reject the five-point endpoint margin, not every physiologic benefit. Inconclusive results mean the data, overlap, observation, uncertainty, diagnostics, or sensitivities did not resolve the question.
+
+The verifier can check source hashes and headers, item IDs and dictionary labels, partition, opportunity, units, clocks, ties, closures, clone transitions, two-hour linkage, all lower/upper states, folds, models, weights, uncertainty, gates, and whether prose matches computed outputs. Fixtures must reject correct computation paired with causal or treatment-recommendation claims, supportive labeling of adverse numbers, safety/equivalence claims from wide bounds, treating early discharge as matured airway success, or collapsing an RRT date bracket.
+
+Automation cannot establish actual route or receipt, complete all-route nonreceipt, clinical shock recovery or congestion, extubation intent/readiness, complete ward airway capture, true AKI or renal safety, goals of care, discharge appropriateness, exchangeability, causality, transportability, or a treatment recommendation. Those require blinded clinician/nephrology review of records, validated MAR/airway linkage, external post-discharge outcomes, replication, and preferably randomization.

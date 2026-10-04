@@ -1,0 +1,193 @@
+# Episode 23 alternative repair: decision-available baseline and auditable recorded exposure
+
+**Parent:** `[prior hypothesis]`
+
+## Repair in one sentence
+
+Keep the parent’s first broad hour-48 opportunity, post-shock phenotype, source-symmetric ICU `inputevents` strategies, competing ICU/terminal closures, overlap clone-censor analysis, bounded outcomes, and noncausal boundary, but make the primary cohort genuinely decision-available at `t0`: every eligibility field, including weight, must have a clinical timestamp and `storetime<=t0`; any `intime+24h` weight is retrospective sensitivity evidence only. Treat exposure as a retrospective, source-defined recorded-delivery state, and add prespecified lag, cross-source contamination, and transport-panel diagnostics rather than calling it actual all-route treatment.
+
+This is a substantive population/observability repair for the Lead. It is not a compiler repair and it does not claim a completed full-cohort attrition scan.
+
+## Clinical question and evidence boundary
+
+The clinically important question remains whether, in an adult who reaches the first broad hour-48 opportunity after shock and invasive ventilation with positive fluid balance but preserved recorded urine output, early loop-diuretic initiation is associated with a clinically meaningful improvement in the chance of alive, non-hospice, non-acute discharge by day 28 without an unacceptable increase in recorded treatment harms.
+
+The parent’s literature evidence supports only the feasibility of protocolized conservative-fluid/active-deresuscitation management and no detected biomarker-harm difference in a modest trial; it does not isolate loop initiation, establish mortality/renal/respiratory benefit, or establish safety in this MIMIC phenotype. The unavailable main article and full STAR Methods of the cancer demonstration are not used. No demonstration paper is treated as evidence for this MIMIC effect.
+
+The untested, falsifiable claim is narrower:
+
+> In the discovery partition, among adults’ earliest broad hour-48 ventilated ICU opportunity who satisfy the frozen decision-available post-shock, fluid, urine, potassium, ECMO, RRT, and prebaseline loop-free gates, the overlap-population A-minus-B difference in ANHATD28 for initiating a qualifying ICU-recorded furosemide/bumetanide delivery before decision closure exceeds +0.05 percentage points, while the conservative upper bounds for recorded hospice/death and observed RRT7 remain below +0.03 and +0.05, respectively.
+
+A qualifying event is an ICU-recorded delivery, not “a medication was actually given,” not IV treatment, and not treatment through every route. Strategy B means no qualifying event in this ICU input-system until closure; it never means untreated or loop-free.
+
+A supportive result would justify validating the phenotype and exposure capture and prioritizing a pragmatic or randomized evaluation. It would not justify a bedside prescription or a causal claim. A null or adverse result can be clinically useful; a documentation failure is inconclusive rather than a negative treatment finding.
+
+## Frozen population and temporal repair
+
+Use only subject buckets 0–79 from:
+
+`bucket = int(SHA256("ehr-hypothesis-discovery-v1" + NUL + "mimic" + NUL + canonical_base10(subject_id)),16) mod 100`.
+
+Do not inspect buckets 80–99. Order each subject’s ICU stays by `(icu/icustays.intime,stay_id)`. Select the earliest stay with:
+
+- nonmissing `intime,outtime`;
+- `intime <= t0 < outtime`, where `t0=intime+48 hours`;
+- a valid-key invasive-ventilation interval from `icu/procedureevents`, `itemid=225792`, with `starttime<tendtime`, `starttime<=t0<endtime`, nonmissing `starttime,endtime,storetime`, and final `statusdescription in {FinishedRunning,Stopped}`.
+
+Retain only the crossing Boolean for this ventilation exception. Do not use the future end time, duration, later status, or store lag as a predictor, eligibility field, weight, effect modifier, or outcome. Report the stricter `storetime<=t0` ventilation version separately. A failed first broad opportunity cannot be replaced by a later stay. Emit all broad opportunities, the earliest-opportunity selection, multiple opportunities, and later-only qualifiers. No repeated-opportunity search may reopen eligibility.
+
+Require the single selected stay to link to exactly one `hosp/admissions` row by `(subject_id,hadm_id)`, with `admittime<t0<dischtime`. Require adult age:
+
+`anchor_age + year(admittime) - anchor_year >= 18`
+
+from `hosp/patients` joined on `subject_id`. Resolve invalid duplicate keys, subject mismatches, impossible event/stay times, and missing terminal endpoints as diagnostics or ineligibility; do not silently repair them.
+
+### New primary decision-availability rule
+
+For every non-ventilation eligibility variable and every baseline predictor used in the primary model, require both:
+
+1. clinical time at or before its decision boundary; and
+2. nonmissing `storetime <= t0`.
+
+The primary weight must be the earliest confirmed kilogram weight with clinical time in `[intime-6 hours,t0]`, from `icu/chartevents` `itemid=226512` first and `224639` second, with unit confirmation. Use `226531` only after confirming pounds and convert by 2.20462. A value recorded after `t0`, including the parent’s `intime+24h` extension, cannot establish eligibility or enter the primary model. `inputevents.patientweight` is a sensitivity only.
+
+The parent’s broader earliest-weight window `[intime-6h,intime+24h]` becomes an explicitly labeled retrospective-availability sensitivity. Its use may quantify how many otherwise eligible records rely on later weight, but it cannot replace the primary or be called decision-available. This is the central repair: it prevents a future measurement from defining whether a patient was ready for the hour-48 decision.
+
+Keep the following gates and source rules unchanged, except that every included value must meet the new decision-time rule:
+
+- Positive delivered vasopressor before `t0-6h` and none overlapping `(t0-6h,t0]` from `icu/inputevents` IDs 221289/229617, 221662, 221749/229630/229631/229632, 221906, and 222315.
+- Median MAP at least 65 mmHg in `(t0-3h,t0]` from `icu/chartevents` IDs 220052, 220181, and 225312.
+- Weight 30–300 kg as above.
+- Cumulative positive fluid balance at least +50 mL/kg from ICU `intime` through `t0`, with positive delivered `icu/inputevents.amount` in mL or L×1000 only; never convert drug mass/dose, units, mEq, mmol, unknown units, or `totalamount` to fluid. Accept statuses `FinishedRunning,ChangeDose/Rate,Stopped,Paused,Bolus)`, deduplicating only within `orderid/linkorderid`.
+- Positive `icu/outputevents.value` in mL or L×1000 only, with `charttime,storetime<=t0`, dictionary-confirmed output items 226559, 226560, 226627, 226631, and 226713 only when it has a confirmed numeric mL interpretation. Exclude mixed urine/irrigant 226566 and 227489; treat positive-mL 227488 as input. Require at least one valid input and output and no adjacent gap greater than six hours after inserting `intime` and `t0`; report terminal-six-hour sensitivity and item/unit ledger.
+- Urine output greater than 0.1 mL/kg/hour in `(t0-6h,t0]`.
+- Latest numeric potassium `icu/hosp/labevents.valuenum`, IDs 50971 or 52610, in `(t0-12h,t0]`, at least 3.0 mmol/L, with `storetime<=t0`; link dictionary through `hosp/d_labitems`.
+- No decision-available active ECMO: positive L/min `icu/chartevents.valuenum`/unit-confirmed value, IDs 224660, 229270, or 229842, in `(t0-2h,t0]`, `storetime<=t0`; six-hour sensitivity.
+- No delivered RRT crossing `t0`: `icu/procedureevents` IDs 225441, 225802, 225803, 225805, 225809, 225955, with `starttime<=t0<endtime`, final status `FinishedRunning/Stopped`, and `storetime<=t0`; retrospective-final-state sensitivity.
+- No qualifying loop event in `(t0-12h,t0]` under the same source-symmetric classifier below.
+
+Record sequential attrition from the broad first opportunity through each gate, separately identifying missing clinical time, late `storetime`, unit rejection, malformed status/key, and impossible joins. The full clinical attrition and effect scan is an execution requirement, not an already completed result.
+
+## Exact sources, members, fields, joins, and clocks
+
+The frozen MIMIC-IV 3.1 archive is:
+
+- source path `[internal dataset path]`;
+- archive [source checksum];
+- snapshot `[source checksum]`;
+- core members under `mimic-iv-3.1/`;
+- catalog [source checksum].
+
+Required archive members and fields are:
+
+- `hosp/patients.csv.gz`: `subject_id,gender,anchor_age,anchor_year,anchor_year_group,dod`.
+- `hosp/admissions.csv.gz`: `subject_id,hadm_id,admittime,dischtime,deathtime,admission_type,discharge_location,hospital_expire_flag`.
+- `icu/icustays.csv.gz`: `subject_id,hadm_id,stay_id,first_careunit,last_careunit,intime,outtime`.
+- `icu/inputevents.csv.gz`: `subject_id,hadm_id,stay_id,starttime,endtime,storetime,itemid,amount,amountuom,rate,rateuom,orderid,linkorderid,patientweight,statusdescription,totalamount,totalamountuom`.
+- `icu/outputevents.csv.gz`: `subject_id,hadm_id,stay_id,charttime,storetime,itemid,value,valueuom`.
+- `icu/chartevents.csv.gz`: `subject_id,hadm_id,stay_id,charttime,storetime,itemid,value,valuenum,valueuom,warning`.
+- `icu/procedureevents.csv.gz`: `subject_id,hadm_id,stay_id,starttime,endtime,storetime,itemid,statusdescription,continueinnextdept,orderid,linkorderid`.
+- `icu/d_items.csv.gz`: `itemid,label,abbreviation,linksto,category,unitname`.
+- `hosp/labevents.csv.gz`: `labevent_id,subject_id,hadm_id,itemid,charttime,storetime,valuenum,valueuom,flag`.
+- `hosp/d_labitems.csv.gz`: `itemid,label,fluid,category`.
+- `hosp/emar.csv.gz`: `subject_id,hadm_id,emar_id,emar_seq,charttime,medication,event_txt,scheduletime,storetime`.
+- `hosp/emar_detail.csv.gz`: `subject_id,emar_id,emar_seq,parent_field_ordinal,administration_type,complete_dose_not_given,dose_given,dose_given_unit,product_amount_given,product_unit,product_description,route`.
+- `hosp/procedures_icd.csv.gz`: `subject_id,hadm_id,seq_num,chartdate,icd_code,icd_version`.
+- `hosp/services.csv.gz`: `subject_id,hadm_id,transfertime,prev_service,curr_service`.
+- `hosp/transfers.csv.gz`: `subject_id,hadm_id,transfer_id,eventtype,careunit,intime,outtime`.
+
+Join `patients.subject_id=admissions.subject_id`; `icustays.(subject_id,hadm_id)` to admissions; all ICU events on `(subject_id,hadm_id,stay_id)`; dictionaries on `itemid`; labs to `d_labitems.itemid`; eMAR details to eMAR on `(subject_id,emar_id,emar_seq)`, retaining `parent_field_ordinal`; and diagnoses, procedures, services, and transfers on their stated subject/admission keys. Assert unique `hadm_id` per admission, unique `stay_id`, subject agreement, and compatible event/stay times. These assertions are outputs, not silent fixes.
+
+The completed source-header audit read the above archive members. It verified, among other mappings, that 221794/228340/229639 are `inputevents`, category Medications, unit mg; 225792 is `procedureevents` Invasive Ventilation; 224660/229270/229842 are `chartevents` ECMO flow items; 226559/226560/226627/226631 are mL urine/output items; 226713 is an estimated void text item and therefore needs the frozen numeric interpretation rule; 227488 is GU irrigant input; 227489 is GU irrigant/urine output; and 50971/52610 are blood potassium in `hosp/d_labitems`. Audit output: [`source_schema_audit.txt`](source_schema_audit.txt), [source checksum]. This is a schema/dictionary audit, not a cohort result.
+
+## Recorded exposure and observability contract
+
+Let `G=t0+24h`, `E=icustays.outtime`, and `T` be the parent’s admissions-only terminal resolver. Set `D=min(G,E,T)`.
+
+A qualifying recorded-delivery candidate is an `icu/inputevents` row with:
+
+- `itemid in {221794,228340,229639}`;
+- matching `subject_id,hadm_id,stay_id`;
+- `t0<starttime<=G`, `starttime<T`, `starttime<E`;
+- nonmissing start/end/store times and `starttime<=endtime`;
+- final `statusdescription in {FinishedRunning,ChangeDose/Rate,Stopped}`;
+- positive `amount` with normalized `amountuom=mg`, or positive `rate` with normalized mg/hour and `endtime>starttime`.
+
+`Paused` is sensitivity. Orders, canceled/not-started rows, unknown/non-mg units, nonpositive values, and rows with unresolved keys/times/status are not delivery. Never use `totalamount` as a substitute. There is no route column in `icu/inputevents`; do not label the exposure IV or all-route.
+
+Use the parent’s exact transition order: T/E first closes both; a qualifying loop first satisfies A and censors B; an ambiguous candidate censors both unsatisfied clones; G completes B and censors unsatisfied A. Treatment-first ties are sensitivity. A new stay cannot reopen assignment. Death, discharge, and ICU exit are competing closure states in both clones, not exclusions.
+
+The primary exposure is intentionally retrospective in one limited sense: final `statusdescription`, valid units, and delivery amount/rate may be confirmed after the clinical `starttime`. To expose rather than hide this limitation, emit for every candidate:
+
+- `starttime`, `endtime`, `storetime`, `store_lag_hours=storetime-starttime`, and whether `storetime<=starttime`, `<=endtime`, `<=t0+6h`, or `<=D`;
+- missing/contradictory key, time, unit, amount/rate, and status flags;
+- item-specific furosemide versus bumetanide counts;
+- first-candidate and first-qualifying-event state transitions.
+
+A secondary “timely-record” sensitivity may restrict to candidates with `storetime<=endtime` and valid final fields by the end of delivery. It is not the primary estimand and cannot solve unrecorded administrations. If the primary and timely-record estimates materially reverse, interpretation is inconclusive.
+
+eMAR is a triangulation diagnostic only. Scan `hosp/emar` in baseline `admittime<=charttime<=t0, storetime<=t0` and grace `t0<charttime<=min(G,T)`; join all `hosp/emar_detail` siblings on the three-key event key and retain `parent_field_ordinal`. Report any row, detail-joined row, administered-positive row, route/missing-route, event text, and six-hour-bin continuity, by era and arm. Positive administration requires the frozen positive event-text rule plus positive `dose_given` or `product_amount_given`, with `complete_dose_not_given` not affirmative. eMAR absence is never B, never non-use, and never a future-selected treatment variable.
+
+Define B contamination flags only after clone assignment for reporting: positive eMAR loop evidence in the B-compatible closure window, or a qualifying ICU input delivery appearing after a B closure due to a late source record. Do not reassign the primary. If B contamination exceeds 5% of B completions/compatible closures, or late candidate confirmation exceeds 1% of eligible opportunities or differs by more than 5 percentage points by arm/era, classify the experiment inconclusive.
+
+## Analysis, transport interpretation, and outcomes
+
+Keep the parent’s primary overlap estimand: cross-fitted `e0(X0)` for a qualifying event before `G,T,E`; retain `e0 in [0.10,0.90]`; apply common tilt `e0(1-e0)`; use only baseline variables available by `t0` under the new store-time rule. Fit arm-specific subject-cross-fitted pooled-logistic artificial-censoring hazards, baseline-only numerator, stabilized weights, 1st/99th percentile truncation and untruncated sensitivity. T/E remain competing closures. Bootstrap at the subject level (at least 500 replicates), rerunning folds, overlap, models, truncation, and outcomes.
+
+Report crude recorded strategies, overlap clone risks without censor weights, overlap-plus-censor risks, stochastic observed-odds multipliers 0.5/0.75/1/1.33/2, balance, calibration, weight tails, ESS, closure proportions, and ambiguity/store-lag diagnostics.
+
+The primary result is transportable only as a description of how this *record-defined* strategy behaves among a phenotype whose baseline inputs are observable by an hour-48 decision time, and only to settings with validated equivalent medication and outcome capture. It is not a deployable treatment recommendation. Do not transport from the MIMIC discovery partition to the reserved buckets, other hospitals, or another dataset as if they were external validation. The MIMIC metadata states that timestamps are subject-specific shifted dates preserving within-subject intervals, so cross-subject calendar-time alignment is not valid. Era and unit/service comparisons are documentation/practice heterogeneity diagnostics, not proof of transportability.
+
+Decision-available fields are: `admittime,dischtime,deathtime,hospital_expire_flag`; `intime,outtime,first_careunit,last_careunit`; pre-`t0` clinical times and `storetime` for `chartevents`, `outputevents`, `labevents`, and `inputevents`; and the primary weight under the corrected window. Retrospective-only or potentially delayed fields include final procedure/input status, late `storetime`, future weight, future eMAR confirmation, discharge destination, `dod`, and all post-`t0` responses. Diagnoses/procedures from completed prior admissions may be baseline covariates; later diagnoses, notes, future eMAR, destination, and future response may not be predictors or selectors. Goals of care, intent/readiness, congestion, true route, actual all-route non-use, functional recovery, external death/readmission/dialysis, and hospice appropriateness are not established by these fields.
+
+Use the parent’s bounded outcomes unchanged:
+
+- `ANHATD28`: alive, non-hospice, non-acute discharge by H28 under the admissions resolver.
+- `RTHD28`: lower bound recorded index death or exact hospice; upper bound adds invalid/discordant.
+- `ALDL7`: bounded accepted extubation/continuous observation/non-reintubation outcome using procedureevents.
+- `Observed RRT7`: ICU procedureevents RRT IDs 225441/225802/225803/225805/225809/225955 plus `hosp/procedures_icd` ICD-9 3995/5498 and ICD-10 5A1D00Z/5A1D60Z/5A1D70Z/5A1D80Z/5A1D90Z, with chartdate day-interval brackets.
+
+For each binary endpoint report arm pL/pU, `DeltaL=pA_L-pB_U`, `DeltaU=pA_U-pB_L`, and one-sided bootstrap limits. Discharge is not recovery, function, or survival; observed RRT is not new RRT or AKI; no mortality-safety claim is permitted.
+
+## Explicit decision rules
+
+Supportive requires all of:
+
+- lower one-sided 95% ANHATD28 RD limit > +0.05;
+- conservative upper RTHD28 effect limit < +0.03;
+- conservative observed-RRT upper effect limit < +0.05;
+- no ALDL7 adverse trigger or destination reversal;
+- decision-time weight repair does not create material baseline imbalance or arm reversal;
+- timely-record sensitivity, six/twelve-hour grace, Paused, treatment-first ties, and era/service/unit diagnostics do not materially reverse the direction;
+- B eMAR contamination <=5%, late confirmation <=1% with no material arm/era differential, ambiguity/contradictions <=1%, ESS >=75 per arm, and all state/bound arithmetic reconciles.
+
+Support means only that this record-defined association is sufficiently stable for a validation/pragmatic-trial priority decision.
+
+Margin-falsified means the ANHATD28 upper one-sided limit is <= +0.05. It rejects the prespecified clinically meaningful margin for this record-defined estimand; it does not prove no biological benefit or harm.
+
+Adverse means ANHATD28 upper limit <=0, RTHD28 lower limit >=+0.03, observed-RRT lower-effect limit >=+0.05 under both date brackets, or ALDL7 DeltaU <=−0.05. These are adverse recorded outcomes, not causal toxicity findings.
+
+Inconclusive includes any other estimable result, including a precise +0.02; wide outcome bounds; eligible n<200; qualifying A<100; B completions/compatible closures<100; ESS<75; denominator probability outside [.01,.99] for >10% person-hours; >1% ambiguous candidate or key/time/status contradictions; >5% B eMAR contamination; >1% late confirmation or >5-point differential lag; material reversal under timely-record, weight-window, six/twelve-hour, Paused, tie, era/service/unit, destination, or bias-grid sensitivity; >25% E-first compatible closures; failed negative-control trends; or unreconciled clone/bound arithmetic. A failed capture diagnostic is not evidence for either clinical branch.
+
+## What the verifier can and cannot establish
+
+The verifier can check the archive/catalog hashes, exact headers and dictionary links, discovery partition, first broad opportunity, no later-stay reopening, corrected weight clock, source-symmetric item/status/unit rules, candidate transitions, closure ordering, no eMAR eligibility, baseline store-time discipline, lag/contamination arithmetic, overlap/weights/ESS, outcome bounds, bootstrap reproducibility, and whether the reported branch follows the computed thresholds.
+
+It cannot establish that ICU `inputevents` capture every administration, that B patients received no loop by another route, that a loop was IV, that clinicians intended or were ready to diurese, that exchangeability or positivity holds, that the association is causal, that outcomes are complete outside the recorded hospital, that hospice/discharge represents recovery or appropriateness, or that the result transports to another hospital. Those claims require validated linked MAR and outcomes, chart/clinical adjudication, expert review, external validation, and preferably randomization.
+
+## Required outputs
+
+Emit:
+
+- partition proof and all broad opportunities;
+- earliest first-opportunity selection, repeated-opportunity and later-only audit;
+- sequential attrition with decision-time missingness and late-store reasons;
+- ventilation raw/masked and strict-store audits;
+- fluid/weight item-unit ledger, explicitly separating `<=t0` primary from `+24h` retrospective sensitivity;
+- eMAR/detail coverage and route/missingness diagnostics;
+- loop dictionary/classifier, candidate latency and ambiguity ledger;
+- T/E resolver and subject/clone/event/hour states;
+- overlap, models, weights, calibration, balance, ESS and 500-subject bootstrap;
+- bounded outcomes, date brackets, sensitivities, bias grid, gates, and final branch.
+
+No final clinical recommendation or causal/safety/transportability claim may be emitted from this experiment alone.

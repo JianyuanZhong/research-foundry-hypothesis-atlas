@@ -2,7 +2,7 @@
 
 Status: candidate-ready scientific design; no cohort scan, model fit, or study result was run.
 
-Parent/seed: expert-20260913-mimic-10, imported as [prior hypothesis]. This is an independent discharge-instability direction, not an extension of the selected AKI-recovery branch.
+Parent/seed: [starting question], imported as [prior hypothesis]. This is an independent discharge-instability direction, not an extension of the selected AKI-recovery branch.
 
 ## Scientific opening and falsifiable hypothesis
 
@@ -114,7 +114,7 @@ Required archive members and bindings:
 | support/procedures | icu/procedureevents; mimic-iv-3.1/icu/procedureevents.csv.gz | subject_id, hadm_id, stay_id, starttime, endtime, storetime, itemid, value, valueuom, ordercategoryname, ordercategorydescription, statusdescription |
 | observation opportunity | icu/inputevents; mimic-iv-3.1/icu/inputevents.csv.gz | subject_id, hadm_id, stay_id, starttime, endtime, storetime, itemid, amount, amountuom, rate, rateuom, totalamount, totalamountuom, statusdescription |
 | urine/opportunity | icu/outputevents; mimic-iv-3.1/icu/outputevents.csv.gz | subject_id, hadm_id, stay_id, charttime, storetime, itemid, value, valueuom |
-| treatment evidence boundary | note/discharge; [internal dataset path] | SHA-256 c194a975571df5e1c2486c094a52fef7cb3e183b03556cff0c23cea55878578; note_id, subject_id, hadm_id, note_type, note_seq, charttime, storetime, text; excluded from primary predictors |
+| treatment evidence boundary | note/discharge; [internal dataset path] | SHA-256 [source checksum]; note_id, subject_id, hadm_id, note_type, note_seq, charttime, storetime, text; excluded from primary predictors |
 | note detail | note/discharge_detail; [internal dataset path] | [source checksum]; note_id, subject_id, field_name, field_value, field_ordinal |
 
 The catalog verifies these schemas and provenance. Final readiness must still read the actual item dictionary rows. Source data are read-only and no archive payload is copied into this branch.
