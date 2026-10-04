@@ -15,7 +15,7 @@
 
 ## What is included
 
-This refresh adds the Pure Qwen draft-first run, the completed Codex campaign, and 11 historical Sol runs across HCC, eICU, MIMIC-IV, and UK Biobank. Earlier atlas material is retained. The Codex campaign closed 80/80 episodes; Pure Qwen stopped at 58/60 and registered 114 drafts. Inclusion does not mean a proposal was selected, experimentally validated, or independently replicated. See [snapshot coverage](COVERAGE.md).
+**Discovery RSI is our in-house model, built for iterative scientific hypothesis discovery.** This refresh adds its draft-first run, the completed Codex campaign, and 11 historical Sol runs across HCC, eICU, MIMIC-IV, and UK Biobank. Earlier atlas material is retained. The Codex campaign closed 80/80 episodes; Discovery RSI stopped at 58/60 and registered 114 drafts. Inclusion does not mean a proposal was selected, experimentally validated, or independently replicated. See [snapshot coverage](COVERAGE.md).
 
 ## Review a hypothesis
 

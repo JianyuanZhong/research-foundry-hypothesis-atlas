@@ -9,11 +9,15 @@ The October 5, 2026 refresh contains **2,582 nodes: 2,455 generated versions and
 | Addition | Generated versions added | Notes |
 |---|---:|---|
 | Completed Codex campaign | 27 | Now 67 generated versions in total; 80/80 episodes closed. |
-| Pure Qwen draft-first campaign | 114 | Stopped at 58/60 episodes; all registered drafts included, regardless of selection. |
+| Discovery RSI draft-first campaign | 114 | Stopped at 58/60 episodes; all registered drafts included, regardless of selection. |
 | Historical Sol campaigns | 2,008 | Eleven runs covering HCC, eICU, MIMIC-IV, and UK Biobank. |
 | Historical starting questions | — | 30 additional seed records; repeated imports of the same seed are deduplicated. |
 
-This is an archive of recorded scientific proposals, not a collection restricted to successful or selected outputs. The Qwen selection replay does not add new hypotheses and is not counted as new research.
+This is an archive of recorded scientific proposals, not a collection restricted to successful or selected outputs. The Discovery RSI selection replay does not add new hypotheses and is not counted as new research.
+
+## Model provenance
+
+**Discovery RSI** is the public-facing name of our in-house research model. The campaign in this snapshot used our fine-tuned Qwen 3.8 27B model. Earlier atlas wording called this the “Pure Qwen” draft-first campaign; it is the same run, with unchanged hypotheses, counts, and lineage.
 
 ## Source inventory
 
@@ -24,7 +28,7 @@ The table identifies campaign families for coverage auditing. Individual proposa
 | Earlier Luna clinical / population campaign | 225 | 86 |
 | Earlier four-domain Luna campaign | 41 | 28 |
 | Completed four-domain Codex campaign | 67 | 80 |
-| Pure Qwen draft-first campaign | 114 | 58 |
+| Discovery RSI draft-first campaign | 114 | 58 |
 | Sol, September 9, Codex time-bounded run | 14 | 1 |
 | Sol, September 9, Claude-hosted episode campaign and continuations | 667 | 356 |
 | Sol, September 9, Codex-hosted episode campaign and continuations | 575 | 387 |
