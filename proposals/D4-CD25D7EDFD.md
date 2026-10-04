@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Repaired UKB seed 23: repeated CBC discordance and cancer-site risk
 
 Status: planned study design; counts marked “observed feasibility” are bounded source audits, not hypothesis-test results. Parent: [prior hypothesis]. Seed origin: [starting question].

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 48: compiler-closed protocol for the 12-hour extubation-ordered loop policy
 
 Parents: `[prior hypothesis]` (clean branch-rule repair), ultimately `[prior hypothesis]`

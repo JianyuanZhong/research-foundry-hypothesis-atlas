@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Baseline cystatin-C/creatinine discordance and repeat biomarker status: a fail-closed actionability-boundary successor
 
 ## Lineage and substantive change

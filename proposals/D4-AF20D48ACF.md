@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # UKB-07 repaired: CRP-discordant GlycA, persistent inflammation and future infection
 
 ## Scientific deliverable

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Prompt FiO2 de-escalation after sustained high SpO2 in invasively ventilated adults: a multicenter eICU target-trial emulation
 
 ## Decision, question, and falsifiable hypothesis

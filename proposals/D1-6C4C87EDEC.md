@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Dynamic fitness-for-use of carePlanGeneral Ventilation states
 
 ## Scientific question and clinical importance

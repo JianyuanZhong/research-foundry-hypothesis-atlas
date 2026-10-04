@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Observation-gated emulation of earlier versus later postoperative adjuvant TACE after HCC resection with microvascular invasion
 
 ## Decision question and substantive advance
@@ -55,8 +57,8 @@ The HCC source supplies only part of this evidence. Missing outside imaging, a d
 Use the earliest observed qualifying liver resection for each participant as index day 0. Include participants who:
 
 1. are age 18 years or older at the index encounter;
-2. have an index procedure name consistent with liver resection (`肝.*切除`, `半肝切除`, `肝叶切除`, or `肝段切除`) and not merely cholecystectomy, transplant, biopsy, radiofrequency ablation, or microwave ablation;
-3. have pathology linked to the same `患者主索引` and `就诊号` with HCC and affirmative MVI evidence after phenotype validation;
+2. have an index procedure name consistent with liver resection (`liver.*resection`, `hemihepatectomy`, `hepatic lobectomy`, or `hepatic segmentectomy`) and not merely cholecystectomy, transplant, biopsy, radiofrequency ablation, or microwave ablation;
+3. have pathology linked to the same `Patient Master Index` and `encounter number` with HCC and affirmative MVI evidence after phenotype validation;
 4. have no recorded institutional TACE, liver ablation, or liver transplant during days −180 through −1;
 5. have first post-index strict TACE during days 1–84;
 6. have no adjudicated residual/recurrent tumor before or on day 84;
@@ -68,12 +70,12 @@ Because no dependable death endpoint exists in the source, criterion 7 cannot be
 
 ### Exposure strategies
 
-Primary exposure uses the first qualifying postoperative procedure `开始时间`:
+Primary exposure uses the first qualifying postoperative procedure `Start Time`:
 
 - earlier TACE: day 1 through day 42 inclusive;
 - later TACE: day 43 through day 84 inclusive.
 
-Strict qualifying TACE requires explicit `TACE` or co-occurring chemotherapy and embolization wording (`化疗...栓塞` or `栓塞...化疗`) in `手术`. Generic hepatic artery embolization is not primary. The broad parent expression is prohibited because source auditing found broad-only splenic and bronchial embolization, angiography/infusion combinations, bland hepatic embolization, and radioisotope combinations. Generic hepatic-artery embolization is evaluated only after blinded procedure-dictionary review and, if accepted, as a sensitivity analysis.
+Strict qualifying TACE requires explicit `TACE` or co-occurring chemotherapy and embolization wording (`chemo...embolization` or `embolization...chemo`) in `Surgery`. Generic hepatic artery embolization is not primary. The broad parent expression is prohibited because source auditing found broad-only splenic and bronchial embolization, angiography/infusion combinations, bland hepatic embolization, and radioisotope combinations. Generic hepatic-artery embolization is evaluated only after blinded procedure-dictionary review and, if accepted, as a sensitivity analysis.
 
 The boundary is prespecified from the parent question, but timing density must be plotted in aggregate and analyzed continuously as a secondary noncausal dose-timing description because feasibility data show heaping around day 42. Results that appear only under the dichotomy and not under nearby cutoffs (35/49 and 28/56 days) are fragile.
 
@@ -87,7 +89,7 @@ A secondary estimand is the restricted mean recurrence-free time difference over
 
 ### Primary outcome: adjudicated imaging-anchored recurrence
 
-A candidate event must have a dated qualifying liver examination on days 85–365 and report text in `检查所见` or `检查诊断` indicating a new or recurrent lesion after resection (for example, liver/operative-bed text near `复发`, `新发病灶`, or `新发结节`). A blinded panel of two clinicians independently reviews the longitudinal record, including the examination name, findings, diagnosis, relevant pre-landmark and prior surveillance reports, pathology, diagnoses, treatment-course notes, and subsequent management. Disagreement is resolved by a third adjudicator.
+A candidate event must have a dated qualifying liver examination on days 85–365 and report text in `examination findings` or `examination diagnosis` indicating a new or recurrent lesion after resection (for example, liver/operative-bed text near `recurrence`, `new lesion`, or `new nodule`). A blinded panel of two clinicians independently reviews the longitudinal record, including the examination name, findings, diagnosis, relevant pre-landmark and prior surveillance reports, pathology, diagnoses, treatment-course notes, and subsequent management. Disagreement is resolved by a third adjudicator.
 
 Adjudicators are masked to the earlier/later category and receive relative day intervals rather than exposure labels. They classify:
 
@@ -219,53 +221,53 @@ Failure of imaging coverage, adjudication, event, overlap, observation-weight, o
 
 Snapshot provenance is the HCC snapshot recorded in `datasets/hcc/metadata.json` (`[source checksum]`). Source files remain read-only; derived relative intervals and aggregate outputs belong in the workspace. Never release direct identifiers or exact dates.
 
-Join across tables by `患者主索引`; join encounter-specific records by `患者主索引` plus `就诊号`.
+Join across tables by `patient master index`; join encounter-specific records by `patient master index` plus `encounter number`.
 
 1. **Procedures**
    - Source: `[internal dataset path]`
    - Catalog: `datasets/hcc/table-d5eae16f8f8093d9.json`
-   - Columns: `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源`.
+   - Columns: `patient master index`, `encounter number`, `surgery`, `start_time`, `end_time`, `surgery source`.
    - Uses: index resection, first strict TACE, prior treatment, repeat-treatment process outcomes. Derive only within-participant days relative to index/TACE.
 
 2. **Pathology**
    - Source: `[internal dataset path]`
    - Catalog: `datasets/hcc/table-0a4ee86a446c605c.json`
-   - Columns: `患者主索引`, `就诊号`, `病理`, `检查所见`, `检查诊断`, `机器型号`.
+   - Columns: `patient master index`, `encounter number`, `pathology`, `examination findings`, `examination diagnosis`, `machine model`.
    - Uses: lexical HCC/MVI candidate phenotype and manual adjudication. There is no independent pathology sign-out time; do not infer treatment eligibility date from this table.
 
 3. **Encounters/basic information**
    - Source: `[internal dataset path]`
    - Catalog: `datasets/hcc/table-b743286cb1249287.json`
-   - Columns: `患者主索引`, `就诊号`, `年龄`, `性别`, `身高`, `体重`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`.
+   - Columns: `patient master index`, `encounter number`, `age`, `sex`, `height`, `weight`, `encounter time`, `admission time`, `discharge time`, `encounter department`.
    - Uses: age/sex, encounter timing, department, index stay, observation-process measures. Encounter after day 84 does not establish survival or disease-free status. Direct identifiers in this table are prohibited from outputs.
 
 4. **Examinations**
    - Source: `[internal dataset path]`
    - Catalog: `datasets/hcc/table-fd016d2731b9d6c6.json`
-   - Columns: `患者主索引`, `就诊号`, `检查`, `检查所见`, `检查诊断`, `开始时间`, `机器型号`, `检查号`.
+   - Columns: `Patient Master Index`, `Encounter Number`, `Examination`, `Examination Findings`, `Examination Diagnosis`, `Start Time`, `Machine Model`, `Examination Number`.
    - Uses: qualifying liver-imaging denominator, candidate recurrence reports, and adjudicated event date. Text extraction is unvalidated; no recurrence is assigned without review.
 
 5. **Diagnoses**
    - Source: `[internal dataset path]`
    - Catalog: `datasets/hcc/table-12710723c3df0c99.json`
-   - Columns: `患者主索引`, `就诊号`, `诊断名称`, `诊断类型`.
+   - Columns: `Patient master index`, `encounter number`, `diagnosis name`, `diagnosis type`.
    - Uses: corroboration, baseline conditions, negative controls. No diagnosis-level timestamp exists; inherit encounter time only and label that limitation.
 
 6. **Laboratory tests**
    - Source: `[internal dataset path]`
    - Catalog: `datasets/hcc/table-38aad8c54471332f.json`
-   - Columns: `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`.
+   - Columns: `Patient Master Index`, `Encounter Number`, `Test`, `Qualitative Result`, `Quantitative Result`, `Specimen Type`, `Test Time`.
    - Uses: exact-assay baseline covariates and exploratory post-TACE safety. There is no separate unit column; do not pool different assay labels or assume common units.
 
 7. **Clinical documents**
    - Source and archive member as bound in `datasets/hcc/metadata.json` and `datasets/hcc/table-66afca58512c2fca.json` (clinical-document table).
-   - Columns include `患者主索引`, `就诊号`, narrative admission/history/diagnosis/treatment-course/discharge/operation fields, and `入院诊断__duplicate_2`.
+   - Columns include `Patient master index`, `encounter number`, narrative admission/history/diagnosis/treatment-course/discharge/operation fields, and `admission diagnosis__duplicate_2`.
    - Uses: manual adjudication of indication, postoperative recovery, complications, residual disease, and recurrence corroboration. Documents lack a native document timestamp; inherit encounter context and never treat text as independently dated.
 
 8. **Orders and medications**
    - Catalogs: `datasets/hcc/table-6b93dcf0ea823702.json` and `datasets/hcc/table-4f6ecaeb6e8f69c2.json`, with exact source paths/archive members bound in `datasets/hcc/metadata.json`.
-   - Orders columns: `患者主索引`, `就诊号`, `医嘱(非药品)`, `开立时间`, `开始时间`, `结束时间`, `医嘱期限`, `医嘱状态`, `频次`.
-   - Medication columns: `患者主索引`, `就诊号`, `用药`, `单次用药计量`, `单次用药计量单位`, `频次`, `开始时间`, `结束时间`, `用药方式`, `药品类型`.
+   - Orders columns: `Patient Master Index`, `encounter number`, `orders (non-medication)`, `order time`, `start time`, `end time`, `order duration`, `order status`, `frequency`.
+   - Medication columns: `Patient Master Index`, `Visit Number`, `Medication`, `Single-dose Medication Amount`, `Single-dose Medication Amount Unit`, `Frequency`, `Start Time`, `End Time`, `Route of Administration`, `Drug Type`.
    - Uses: corroborating adjuvant intent, chemotherapy exposure, and complications; not sufficient alone to define TACE.
 
 Vitals, transfers, and front-page sources are identifier-only in this snapshot and add no clinical variables. Imaging pixels, dependable death data, and complete external follow-up are unavailable.

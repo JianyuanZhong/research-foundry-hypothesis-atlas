@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 87 successor: does repeat-lactate status require its own local calibration?
 
 ## Unresolved question, clinical importance, and substantive advance
@@ -42,11 +44,11 @@ Secondary audit: p_pool adds one constant within each target hospital and must p
 
 Use the EICU snapshot [source checksum]. All five sources are read-only ordinary gzip CSV files with archive member ordinary file; read complete files, using chunks only for memory:
 
-- patient: [internal dataset path] 2.0数据/patient.csv.gz, [source checksum], schema datasets/eicu/table-ab037c09d7df9a3c.json. Required columns: patientunitstayid, patienthealthsystemstayid, uniquepid, gender, age, hospitalid, hospitaldischargeoffset, hospitaldischargestatus.
-- infusionDrug: [internal dataset path] 2.0数据/infusionDrug.csv.gz, [source checksum], schema datasets/eicu/table-18e1a8caaa91eb44.json. Required columns: infusiondrugid, patientunitstayid, infusionoffset, drugname.
-- lab: [internal dataset path] 2.0数据/lab.csv.gz, [source checksum], schema datasets/eicu/table-79bdb33275339b1a.json. Required columns: labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset.
-- vitalPeriodic: [internal dataset path] 2.0数据/vitalPeriodic.csv.gz, [source checksum], schema datasets/eicu/table-a22c6d6981a32279.json. Required columns: vitalperiodicid, patientunitstayid, observationoffset, heartrate, respiration, sao2.
-- hospital: [internal dataset path] 2.0数据/hospital.csv.gz, [source checksum], schema datasets/eicu/table-811df7b2ef435e12.json. Required columns: hospitalid, numbedscategory, teachingstatus, region; descriptive only and never a predictor.
+- patient: [internal dataset path] 2.0 data/patient.csv.gz, [source checksum], schema datasets/eicu/table-ab037c09d7df9a3c.json. Required columns: patientunitstayid, patienthealthsystemstayid, uniquepid, gender, age, hospitalid, hospitaldischargeoffset, hospitaldischargestatus.
+- infusionDrug: [internal dataset path] 2.0 data/infusionDrug.csv.gz, [source checksum], schema datasets/eicu/table-18e1a8caaa91eb44.json. Required columns: infusiondrugid, patientunitstayid, infusionoffset, drugname.
+- lab: [internal dataset path] 2.0 data/lab.csv.gz, [source checksum], schema datasets/eicu/table-79bdb33275339b1a.json. Required columns: labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset.
+- vitalPeriodic: [internal dataset path] 2.0 data/vitalPeriodic.csv.gz, [source checksum], schema datasets/eicu/table-a22c6d6981a32279.json. Required columns: vitalperiodicid, patientunitstayid, observationoffset, heartrate, respiration, sao2.
+- hospital: [internal dataset path] 2.0 dataset/hospital.csv.gz, [source checksum], schema datasets/eicu/table-811df7b2ef435e12.json. Required columns: hospitalid, numbedscategory, teachingstatus, region; descriptive only and never a predictor.
 
 Join every clinical table to patient on patientunitstayid. Use uniquepid only to retain the lexicographically smallest (t0,patientunitstayid) stay per person. Use hospitalid for practice strata, directed folds, held-out calibration, queues, deletion and bootstrap units; retain patienthealthsystemstayid only for audit. All offsets are ICU-relative minutes.
 

@@ -1,6 +1,6 @@
 # Clinical & Population Health Research
 
-[← All domains](../README.md) · [Expert review guide](../REVIEW.md)
+[← Blinded review index](../REVIEW.md)
 
 **1,916 nodes · 1,856 generated versions · 2,223 recorded parent links.**
 

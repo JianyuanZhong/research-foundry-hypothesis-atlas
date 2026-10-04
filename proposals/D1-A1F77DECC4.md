@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Detection-aware first-day monitored invasive-MAP burden and subsequent creatinine-defined AKI
 
 ## Status, fixed design, and actual deliverable

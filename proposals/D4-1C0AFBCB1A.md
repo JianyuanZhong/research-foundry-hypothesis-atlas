@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 68: non-rescuing H1-to-N18 clinical-validity qualification of the frozen AG1-versus-AF1 experiment
 
 ## Decision and unchanged parent design

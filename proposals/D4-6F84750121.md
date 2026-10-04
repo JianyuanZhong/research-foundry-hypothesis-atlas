@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Five-year renal-vulnerability interaction from creatinine–cystatin C discordance and grip
 
 ## Successor decision and unresolved claim

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 63: outcome-blind incremental handgrip value for fixed-capacity cystatin-C testing
 
 ## Lead decision and relation to the assigned parent

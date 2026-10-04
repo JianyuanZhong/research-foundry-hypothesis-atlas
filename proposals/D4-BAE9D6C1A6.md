@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Visit-index transport gate for the capacity-declared UACR-first cystatin referral rule
 
 ## Episode-16 controlling scientific extension

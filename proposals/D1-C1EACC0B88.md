@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Is hospital variation in strict post-rise renal-support documentation source-concordant?
 
 ## Scientific deliverable and substantive advance

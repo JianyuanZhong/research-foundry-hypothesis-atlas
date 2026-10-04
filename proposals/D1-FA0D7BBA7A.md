@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Provisional discordant AKI recovery hypothesis
 
 Status: provisional, evidence repair checkpoint. This preserves the assigned question and does not claim cohort results, clinical conclusions, or completion of the reference contract.

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Proposal: selection-aware transport of post-TACE trajectory information
 
 ## Parent and substantive repair
@@ -22,11 +24,11 @@ The primary falsifiable hypothesis is that, on a locked temporal test, adding th
 
 Use one index per patient.
 
-- Join child tables to `encounters` only after aggregating each child table to (`患者主索引`, `就诊号`); never form many-to-many joins.
-- Group procedure rows whose parsed `开始时间` values are within 24 hours into episodes, retaining raw names, source, start/end times, encounter key, row count, family hits, missing-time flags and composite status. Missing `开始时间` rows cannot define event time and are reported.
-- Index = earliest episode containing literal `TACE`, a name containing `动脉化疗栓塞`, or both `肝动脉` and `栓塞`.
-- Require age >=18 and nonmissing `性别` on the index encounter.
-- Require a diagnosis name containing `肝细胞癌` on a joined encounter from 180 days before through 7 days after index; diagnosis has no time field and inherits the encounter time only for this cohort criterion.
+- Join child tables to `encounters` only after aggregating each child table to (`Patient Master Index`, `Encounter Number`); never form many-to-many joins.
+- Group procedure rows whose parsed `start time` values are within 24 hours into episodes, retaining raw names, source, start/end times, encounter key, row count, family hits, missing-time flags and composite status. Missing `start time` rows cannot define event time and are reported.
+- Index = earliest episode containing literal `TACE`, a name containing `transarterial chemoembolization`, or both `hepatic artery` and `embolization`.
+- Require age >=18 and nonmissing `sex` on the index encounter.
+- Require a diagnosis name containing `hepatocellular carcinoma` on a joined encounter from 180 days before through 7 days after index; diagnosis has no time field and inherits the encounter time only for this cohort criterion.
 - Include index dates through 2025-01-01, giving a nominal one-year local horizon.
 - Exclude/report any post-index liver-directed therapeutic episode after the first 24 hours through day 45 from the primary day-45 risk set; report these early pathways separately.
 - Stop all predictors at day 45. Follow-up is days 46–365.
@@ -70,13 +72,13 @@ Supportive evidence requires the prespecified 10-point anchored alert reduction 
 
 All sources are ordinary unarchived CSV files in HCC snapshot `[source checksum]`. Full catalog is `[internal dataset path]`, [source checksum]. Every solver output must record source and schema hashes.
 
-- `encounters`, schema `datasets/hcc/table-b743286cb1249287.json`, source `[internal dataset path]`, [source checksum]; keys `患者主索引, 就诊号`; fields `年龄, 性别, 就诊时间, 入院时间, 出院时间, 就诊科室`.
-- `procedures`, schema `datasets/hcc/table-d5eae16f8f8093d9.json`, source `[internal dataset path]`, [source checksum]; fields `手术, 开始时间, 结束时间, 手术来源`.
-- `diagnoses), schema `datasets/hcc/table-12710723c3df0c99.json`, source `[internal dataset path]`, [source checksum]; fields `诊断名称, 诊断类型`; no diagnosis timestamp.
-- `labs`, schema `datasets/hcc/table-38aad8c54471332f.json`, source `[internal dataset path]`, [source checksum]; fields `检验, 定性结果, 定量结果, 标本类型, 检验时间`; no unit column.
-- `examinations`, schema `datasets/hcc/table-fd016d2731b9d6c6.json`, source `[internal dataset path]`, [source checksum]; fields `检查, 检查所见, 检查诊断, 开始时间, 机器型号, 检查号`; use only `开始时间` for dated opportunities.
-- `orders`, schema `datasets/hcc/table-6b93dcf0ea823702.json`, source `[internal dataset path]`, [source checksum]; fields `医嘱(非药品), 开立时间, 开始时间, 结束时间, 医嘱状态, 频次`; sensitivity only.
-- `medications`, schema `datasets/hcc/table-4f6ecaeb6e8f69c2.json`, source `[internal dataset path]`, [source checksum]; fields `用药, 单次用药剂量, 单次用药剂量单位, 频次, 开始时间, 结束时间, 用药方式, 药品类型`; may be descriptive only because regimen semantics are unverified.
+- `encounters`, schema `datasets/hcc/table-b743286cb1249287.json`, source `[internal dataset path]`, [source checksum]; keys `Patient Master Index, Visit Number`; fields `Age, Sex, Visit Time, Admission Time, Discharge Time, Visit Department`.
+- `procedures`, schema `datasets/hcc/table-d5eae16f8f8093d9.json`, source `[internal dataset path]`, [source checksum]; fields `surgery, start time, end time, surgery source`.
+- `diagnoses), schema `datasets/hcc/table-12710723c3df0c99.json`, source `[internal dataset path]`, [source checksum]; fields `diagnosis name, diagnosis type`; no diagnosis timestamp.
+- `labs`, schema `datasets/hcc/table-38aad8c54471332f.json`, source `[internal dataset path]`, [source checksum]; fields `Test, Qualitative Result, Quantitative Result, Specimen Type, Test Time`; no unit column.
+- `examinations`, schema `datasets/hcc/table-fd016d2731b9d6c6.json`, source `[internal dataset path]`, [source checksum]; fields `examination, examination findings, examination diagnosis, start time, model, examination number`; use only `start time` for dated opportunities.
+- `orders`, schema `datasets/hcc/table-6b93dcf0ea823702.json`, source `[internal dataset path]`, [source checksum]; fields `Orders (non-drug), Order time, Start time, End time, Order status, Frequency`; sensitivity only.
+- `medications`, schema `datasets/hcc/table-4f6ecaeb6e8f69c2.json`, source `[internal dataset path]`, [source checksum]; fields `Medication, Single Dose, Single Dose Unit, Frequency, Start Time, End Time, Route of Administration, Medication Type`; may be descriptive only because regimen semantics are unverified.
 - `clinical_documents), schema `datasets/hcc/table-66afca58512c2fca.json`, source `[internal dataset path]`; no usable temporal column, so excluded from time-valid prediction.
 - `pathology), schema `datasets/hcc/table-0a4ee86a446c605c.json`, source `[internal dataset path]`; no usable temporal column, so excluded from time-valid prediction.
 - `vitals`, `transfers), and `front_page` are identifier-only under their catalog schemas; HCC contains no image or waveform files.

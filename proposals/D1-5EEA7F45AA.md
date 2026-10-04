@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 Title: Positive-control reproducibility and documentation-measurement falsification for the eICU ventilated landmark cohort
 
 Scientific question

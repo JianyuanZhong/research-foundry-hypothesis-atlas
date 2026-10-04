@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # CBC cancer-type ordering boundary after delayed entry
 
 Status: planned Harbor experiment; no model, event estimate, cohort count, or hypothesis result has been executed in this branch. This is an independent substantive alternative to parent [prior hypothesis]. It retains the inherited UKB CBC cancer-type question but changes the primary deliverable from a coefficient contrast to a calibrated, absolute risk-ordering boundary.

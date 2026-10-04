@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Assay content beyond documentation intensity for the next 72-hour recorded transition after an HCC-coded admission
 
 ## Decision and scientific deliverable
@@ -28,7 +30,7 @@ Completion is the audit, labels, locked estimates, uncertainty, robustness and i
 
 ## Evidence-supported and unresolved claims
 
-The verified HCC snapshot supports only that encounters have native admission/discharge times; labs, procedures, orders and medications have native timestamps and payload fields; and rows can be joined by the pair (`患者主索引`, `就诊号`). Diagnoses can define a record-coded cohort but have no diagnosis time. A direct read-only scan of the procedure source verified 338,040 rows, 7,781 distinct procedure strings, 179 blank procedure names and two source values; representative rows include TACE and the sources `病案手术` and `手麻系统`. These are source-availability facts, not cohort prevalence or prediction results.
+The verified HCC snapshot supports only that encounters have native admission/discharge times; labs, procedures, orders and medications have native timestamps and payload fields; and rows can be joined by the pair (`patient master index`, `encounter number`). Diagnoses can define a record-coded cohort but have no diagnosis time. A direct read-only scan of the procedure source verified 338,040 rows, 7,781 distinct procedure strings, 179 blank procedure names and two source values; representative rows include TACE and the sources `medical records surgery` and `anesthesia information system`. These are source-availability facts, not cohort prevalence or prediction results.
 
 The parent’s provisional counts—42,692 provisional first-patient admissions, 146,703 linked procedure rows, 86,025 midnight starts, 9,077 missing/unparseable starts, 25,527 valid starts in [0,24) and 51,332 in [24,72)—remain provisional and must be recomputed. They are not evidence of the hypothesis.
 
@@ -40,9 +42,9 @@ The unresolved statement is the assay-content increment above Q. It is falsified
 
 Use HCC snapshot `[source checksum]`, catalog [source checksum]. All source files are ordinary read-only files; no archive member is used.
 
-Normalize Unicode and whitespace in keys and diagnosis text. Join `diagnoses` to `encounters` on exactly (`患者主索引`, `就诊号`). Define HCC-coded as normalized `肝细胞癌` or a case-insensitive substring `hepatocellular carcinoma` in `诊断名称`; print the regex, every matched string, diagnosis-type overlap, duplicate keys and unmatched keys before fitting. This is not an active-HCC label.
+Normalize Unicode and whitespace in keys and diagnosis text. Join `diagnoses` to `encounters` on exactly (`Patient master index`, `Encounter number`). Define HCC-coded as normalized `Hepatocellular carcinoma` or a case-insensitive substring `hepatocellular carcinoma` in `Diagnosis name`; print the regex, every matched string, diagnosis-type overlap, duplicate keys and unmatched keys before fitting. This is not an active-HCC label.
 
-Require age >=18, parseable native `入院时间` and `出院时间`, nonnegative stay, and encounter date in [2011-01-01, 2026-01-01). Retain the earliest eligible HCC-coded encounter per `患者主索引`, ordered by native `入院时间` then `就诊号`; do not substitute a later record for an invalid earliest record. Let `t_0 = 入院时间`. Keep every eligible anchor admission, including early discharge, early procedure and unresolved-time cases. Exclude direct identifiers (`姓名`, `身份证号`, `手机号`, `医保/就诊卡号`, `住院号`) from features.
+Require age >=18, parseable native `Admission Time` and `Discharge Time`, nonnegative stay, and encounter date in [2011-01-01, 2026-01-01). Retain the earliest eligible HCC-coded encounter per `Patient Master Index`, ordered by native `Admission Time` then `Encounter Number`; do not substitute a later record for an invalid earliest record. Let `t_0 = Admission Time`. Keep every eligible anchor admission, including early discharge, early procedure and unresolved-time cases. Exclude direct identifiers (`Name`, `National ID Number`, `Mobile Phone Number`, `Medical Insurance/Encounter Card Number`, `Inpatient Number`) from features.
 
 Use half-open elapsed-time intervals:
 
@@ -51,11 +53,11 @@ Use half-open elapsed-time intervals:
 - early outcome: [t_0, t_0 + 24 hours);
 - later outcome: [t_0 + 24 hours, t_0 + 72 hours).
 
-A history row is eligible only when its native event time is strictly less than t_0, even if linked to the anchor encounter. Prefer prior rows linked to an encounter whose native `入院时间 < t_0`; audit, rather than silently use, any anchor-linked row with a pre-anchor timestamp. Count left truncation when an encounter begins before t_0 - 730 days. Unparseable timestamps are counted by source/window and excluded from primary features, never treated as absence. Print row counts, duplicate/multiplicity and unmatched-key audits, invalid-time counts, boundary/tie counts, prior/current counts and patients with no prior record.
+A history row is eligible only when its native event time is strictly less than t_0, even if linked to the anchor encounter. Prefer prior rows linked to an encounter whose native `admission time < t_0`; audit, rather than silently use, any anchor-linked row with a pre-anchor timestamp. Count left truncation when an encounter begins before t_0 - 730 days. Unparseable timestamps are counted by source/window and excluded from primary features, never treated as absence. Print row counts, duplicate/multiplicity and unmatched-key audits, invalid-time counts, boundary/tie counts, prior/current counts and patients with no prior record.
 
 ## Unchanged all-admission endpoint
 
-The primary endpoint is copied from the incumbent and uses only procedure presence and native `procedures.开始时间` for label timing. Discharge wins exact ties.
+The primary endpoint is copied from the incumbent and uses only procedure presence and native `procedures.Start Time` for label timing. Discharge wins exact ties.
 
 For every anchor admission:
 
@@ -77,28 +79,28 @@ The endpoint means a locally recorded procedural transition. It does not mean a 
 
 ### Procedure-family interpretability audit
 
-To make the recorded endpoint more clinically legible without replacing it, label each eligible timed procedure row using a frozen, deterministic multi-label map over `手术`:
+To make the recorded endpoint more clinically legible without replacing it, label each eligible timed procedure row using a frozen, deterministic multi-label map over `surgery`: 
 
-- arterial embolization/TACE: `TACE`, `栓塞`, `化疗栓塞`;
-- resection/transplant: `切除`, `移植`;
-- ablation: `消融`, `射频`, `微波`, `无水酒精`;
-- systemic/infusion-coded: `化疗`, `靶向`, `免疫治疗`, `灌注`;
-- diagnostic/access-coded: `造影`, `穿刺`, `活检`, `引流`, `置管`;
+- arterial embolization/TACE: `TACE`, `embolization`, `chemoembolization`;
+- resection/transplant: `resection`, `transplant`;
+- ablation: `ablation`, `radiofrequency`, `microwave`, `absolute ethanol`;
+- systemic/infusion-coded: `chemotherapy`, `targeted therapy`, `immunotherapy`, `perfusion`;
+- diagnostic/access-coded: `angiography`, `puncture`, `biopsy`, `drainage`, `catheter placement`;
 - otherwise `other`; preserve multiple matches and unmatched/ambiguous strings.
 
-Report family flags nested within P0/P1 and by `手术来源`, including `病案手术` and `手麻系统` where present. This is a lexical description of recorded names, not a validated procedure adjudication. Family outputs are secondary; D/N/U admissions remain in the primary seven-state estimand.
+Report family flags nested within P0/P1 and by `procedure source`, including `medical-record surgery` and `anesthesia system` where present. This is a lexical description of recorded names, not a validated procedure adjudication. Family outputs are secondary; D/N/U admissions remain in the primary seven-state estimand.
 
 ## Information sets and observation-intensity repair
 
 All models use the same admissions, labels, patient split, fit-only preprocessing and target. Fit A/L/Q/E/H with the same regularized sequential multinomial-logistic heads for the early distribution and the R24-conditional later distribution, then marginalize to the complete seven-state vector; an additive generalized-linear sensitivity may be reported but cannot replace this transparent baseline.
 
-A includes age, sex, admitting department `就诊科室`, calendar era, admission time-of-day and missingness indicators.
+A includes age, sex, admitting department `visiting department`, calendar era, admission time-of-day and missingness indicators.
 
-L adds current-admission labs in [0,12) using `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`. For each assay, use first/last valid numeric value, change, elapsed time, count, density/missingness, and slope only with at least two distinct native timestamps; qualitative values remain assay-specific categorical indicators. No [12,24) lab is permitted.
+L adds current-admission labs in [0,12) using `Test`, `Qualitative Result`, `Quantitative Result`, `Specimen Type`, `Test Time`. For each assay, use first/last valid numeric value, change, elapsed time, count, density/missingness, and slope only with at least two distinct native timestamps; qualitative values remain assay-specific categorical indicators. No [12,24) lab is permitted.
 
 Q is the documentation/capture comparator. It adds only pre-admission [(t_0-730 days),t_0) event-source/time features: number and duration of prior encounters, days active, days since last event/encounter, row counts and distinct linked encounters separately for labs, procedures, orders and medications, observed source-type count, missing-time counts, left truncation and no-history indicators. It does not use any assay identity/value/result, procedure/order/medication name, dose, route, frequency, status or text. These variables are not a causal adjustment and cannot prove complete capture.
 
-E adds to Q the prior laboratory content and trajectory from `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`: assay-specific identity, numeric/qualitative observations, first/last value, within-assay change/slope where supported, recency, span, count and missingness. Units are absent, so do not pool numeric values across assays or create physiologic scores.
+E adds to Q the prior laboratory content and trajectory from `Test`, `Qualitative Result`, `Quantitative Result`, `Specimen Type`, `Test Time`: assay-specific identity, numeric/qualitative observations, first/last value, within-assay change/slope where supported, recency, span, count and missingness. Units are absent, so do not pool numeric values across assays or create physiologic scores.
 
 H is the incumbent transparent history summary rerun exactly: Q-like encounter/source features, assay-specific prior laboratory summaries, prior procedure occurrence counts/recency/gaps, and order/medication process counts/recency/gaps. Procedure/order/medication names are not interpreted as treatment or intent. The prespecified source-ablation table removes orders/medications and then procedures from H.
 
@@ -116,7 +118,7 @@ Fit `S_Q` with assay values/results removed but source/type/time and capture fea
 
 ## Split, analysis and uncertainty
 
-Assign every patient by SHA-256 of normalized `患者主索引` modulo 100:
+Assign every patient by SHA-256 of normalized `Patient Master Index` modulo 100:
 
 - 0–59: fit;
 - 60–69: preprocessing, hyperparameter, regularization and fit-only calibration selection;
@@ -139,7 +141,7 @@ Freeze these before locked evaluation:
 4. Reverse pre-admission chronological order for S. An order-sensitive increment should attenuate; Q and order-insensitive H summaries should be unchanged except recency features.
 5. Fit Q alone and report whether it reproduces H/L or E/L. If it does, classify the apparent gain as documentation/capture intensity rather than assay content.
 6. Stratify or coarsened-match on fit-derived Q intensity and repeat E-versus-Q. A result only in one capture stratum is not a general history claim.
-7. Source-ablate orders/medications and procedures, and report `手术来源` strata. This tests whether one documentation subsystem drives the result.
+7. Source-ablate orders/medications and procedures, and report `Procedure Source` strata. This tests whether one documentation subsystem drives the result.
 8. Enforce no native row at or after t_0 in history, no current [12,24) assay, no post-discharge row and no outcome-derived feature. A forbidden-window sentinel using current [12,24) labs to predict an already-started [0,24) endpoint must not improve; any gain invalidates the affected result.
 9. Repeat 30-, 180- and 730-day histories and report left truncation. A result dependent on observation-start artifacts is unstable.
 10. Repeat exact-boundary, discharge/procedure tie, midnight-start and unresolved-time rules. Material reversals make the transition analysis inconclusive.
@@ -158,19 +160,19 @@ Inconclusive evidence includes dominant U0/U1 states, too few procedure-family o
 
 ## Exact HCC bindings, source paths and availability
 
-All usable rows join to the selected encounter by normalized (`患者主索引`, `就诊号`) with duplicate, multiplicity and unmatched audits. Each source is an ordinary file; archive member is `ordinary file`.
+All usable rows join to the selected encounter by normalized (`patient master index`, `encounter number`) with duplicate, multiplicity and unmatched audits. Each source is an ordinary file; archive member is `ordinary file`.
 
 | Table / schema | Exact read-only source | Required columns and role |
 |---|---|---|
-| encounters / `datasets/hcc/table-b743286cb1249287.json` | `[internal dataset path]` | keys; `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`; anchor/context/prior times |
-| diagnoses / `datasets/hcc/table-12710723c3df0c99.json` | `[internal dataset path]` | keys; `诊断名称`, `诊断类型`; HCC-coded cohort only, no native time |
-| labs / `datasets/hcc/table-38aad8c54471332f.json` | `[internal dataset path]` | keys; `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`; current/prior assay content |
-| procedures / `datasets/hcc/table-d5eae16f8f8093d9.json` | `[internal dataset path]` | keys; `手术`, `开始时间`, `结束时间`, `手术来源`; primary endpoint, prior process and secondary family map |
-| orders / `datasets/hcc/table-6b93dcf0ea823702.json` | `[internal dataset path]` | keys; `医嘱(非药品)`, `开立时间`, `开始时间`, `结束时间`, `医嘱期限`, `医嘱状态`, `频次`; Q/H process timing/counts only |
-| medications / `datasets/hcc/table-4f6ecaeb6e8f69c2.json` | `[internal dataset path]` | keys; `用药`, dose/unit, `频次`, `开始时间`, `结束时间`, `用药方式`, `药品类型`; Q/H process timing/counts only |
-| examinations / `datasets/hcc/table-fd016d2731b9d6c6.json` | `[internal dataset path]` | keys; `检查`, `检查所见`, `检查诊断`, `开始时间`, `检查号`; auditable availability only, not primary history |
-| clinical_documents / `datasets/hcc/table-66afca58512c2fca.json` | `[internal dataset path]` | keys; narrative columns including `主诉`, `现病史`, `既往史`, `入院诊断`, `诊疗经过`, `出院诊断`, `手术经过`; no native time, excluded from primary history |
-| pathology / `datasets/hcc/table-0a4ee86a446c605c.json` | `[internal dataset path]` | keys; `病理`, `检查所见`, `检查诊断`, `机器型号`; no native time, excluded from primary history |
+| encounters / `datasets/hcc/table-b743286cb1249287.json` | `[internal dataset path]` | keys; `age`, `sex`, `visit time`, `admission time`, `discharge time`, `visit department`; anchor/context/prior times |
+| diagnoses / `datasets/hcc/table-12710723c3df0c99.json` | `[internal dataset path]` | keys; `Diagnosis Name`, `Diagnosis Type`; HCC-coded cohort only, no native time |
+| labs / `datasets/hcc/table-38aad8c54471332f.json` | `[internal dataset path]` | keys; `Test`, `Qualitative Result`, `Quantitative Result`, `Specimen Type`, `Test Time`; current/prior assay content |
+| procedures / `datasets/hcc/table-d5eae16f8f8093d9.json` | `[internal dataset path]` | keys; `Surgery`, `Start time`, `End time`, `Surgery source`; primary endpoint, prior process and secondary family map |
+| orders / `datasets/hcc/table-6b93dcf0ea823702.json` | `[internal dataset path]` | keys; `Orders (non-drug)`, `Order time`, `Start time`, `End time`, `Order duration`, `Order status`, `Frequency`; Q/H process timing/counts only |
+| medications / `datasets/hcc/table-4f6ecaeb6e8f69c2.json` | `[internal dataset path]` | keys; `Medication`, dose/unit, `Frequency`, `Start time`, `End time`, `Medication administration method`, `Medication type`; Q/H process timing/counts only |
+| examinations / `datasets/hcc/table-fd016d2731b9d6c6.json` | `[internal dataset path]` | keys; `Examination`, `Examination Findings`, `Examination Diagnosis`, `Start Time`, `Examination Number`; auditable availability only, not primary history |
+| clinical_documents / `datasets/hcc/table-66afca58512c2fca.json` | `[internal dataset path]` | keys; narrative columns including `Chief Complaint`, `History of Present Illness`, `Past Medical History`, `Admission Diagnosis`, `Clinical Course`, `Discharge Diagnosis`, `Operative Course`; no native time, excluded from primary history |
+| pathology / `datasets/hcc/table-0a4ee86a446c605c.json` | `[internal dataset path]` | keys; `Pathology`, `Examination Findings`, `Examination Diagnosis`, `Machine Model`; no native time, excluded from primary history |
 | vitals / `datasets/hcc/table-8436de9cba74b8ca.json` | `[internal dataset path]` | keys only; identifier-only, no payload/time |
 | transfers / `datasets/hcc/table-320c20f732e71789.json` | `[internal dataset path]` | keys only; identifier-only, no payload/time |
 | front_page / `datasets/hcc/table-38b3224239acc33f.json` | `[internal dataset path]` | keys only; nominal/identifier-only, no primary history |

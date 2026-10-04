@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 21 child — stable hospital monitoring regime versus patient-linked dynamic opportunity
 
 Status: complete planned experiment; no cohort count, fitted parameter, prediction, metric, confidence interval, or scientific result is claimed. Child of `[prior hypothesis]`. The proposal preserves the parent’s adult first-ICU/S6 population, strict documented respiratoryCare endpoint, all-eligible continuation audit, hospital-held-out outcome estimand, timing controls, and matched baseline/temporal alternative. The substantive advance is an outcome-blind decomposition of observation opportunity into a stable hospital component and a within-stay dynamic residual.

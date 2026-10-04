@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Support-dependent normalization and early failure after ICU discharge
 
 ## Scientific deliverable

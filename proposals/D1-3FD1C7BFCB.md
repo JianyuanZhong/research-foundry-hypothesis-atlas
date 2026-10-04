@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Evolution audit: pre-exposure severity and informative ICU-exit repair
 
 Status: design-only child of [prior hypothesis]. No cohort scan, model fit, Harbor execution, or clinical result was run.

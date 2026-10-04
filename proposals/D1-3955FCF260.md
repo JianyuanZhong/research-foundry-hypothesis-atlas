@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Candidate: Is pH-conditioned hidden hyperoxemia reproducible across EICU hospitals?
 
 ## Unresolved question, clinical importance, and advance

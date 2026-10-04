@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 18: observable safety contract for post-shock delivered-loop initiation
 
 **Parent:** `[prior hypothesis]`

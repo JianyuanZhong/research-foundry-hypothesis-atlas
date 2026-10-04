@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Observed creatinine/Foley recovery discordance at 72 hours — episode 8 executable successor
 
 ## Decision, unresolved claim and scientific deliverable

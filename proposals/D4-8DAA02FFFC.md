@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Fold-aware null repair for the frozen UKB localization experiment
 
 ## Purpose and lineage

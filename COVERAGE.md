@@ -2,6 +2,8 @@
 
 [← Trees and expert review](README.md)
 
+**For blinded review:** complete your independent assessment from the current [review copies](REVIEW.md) before consulting this aggregate campaign inventory. This page provides no node-to-producer mapping.
+
 The October 5, 2026 refresh contains **2,582 nodes: 2,455 generated versions and 127 starting questions**, with **2,932 recorded parent links**. The previous 403 nodes retain their public IDs and original scientific source text; public redactions may improve between editions.
 
 ## Additions since the previous edition
@@ -52,3 +54,7 @@ Counts use committed candidate records and non-null episode closure timestamps a
 - UK Biobank is grouped under Population Multi-omics & Disease Targets for continuity. This includes clinical and epidemiological work that does not itself use multi-omics.
 
 The public graph contains only review IDs, domain and dataset labels, titles, seed flags, parent links, and paths to redacted proposals. Exact source exports, hashes, source-to-review mappings, and originals remain in the private archive. Source datasets and run databases were accessed read-only; this refresh launched no model rollouts, training, or new experiments.
+
+## English review edition
+
+An editorial translation and blinding pass on October 5, 2026 changes presentation only. Counts and lineage are unchanged. Individual proposals omit producer and execution attribution; see [edition notes](TRANSLATION.md).

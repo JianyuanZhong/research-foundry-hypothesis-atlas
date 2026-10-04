@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Compiler-complete H120 recorded-topology experiment after first eligible hour-48 opportunity
 
 Parents: `[prior hypothesis]` and `[prior hypothesis]`.

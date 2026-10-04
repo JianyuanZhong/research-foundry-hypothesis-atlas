@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # When a ventilation care-plan label is a warning signal: a fail-closed test of near-term respiratory deterioration
 
 ## Status, unresolved claim, and clinical importance

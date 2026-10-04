@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Do remission-associated macrophage averages reflect captured state representation?
 
 ## Question, hypothesis, and deliverable

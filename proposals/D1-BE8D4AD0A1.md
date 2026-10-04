@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Comparator-closed fixed-capacity stability of clean report semantics for documentary-M2 capture
 
 ## Targeted repair and clinical importance
@@ -28,7 +30,7 @@ Procedure clocks, competing episodes, imaging windows, years and prior-treatment
 
 Possibility-based chronology quarantine is unchanged: anyone eligible in any 2020/2021 world is in `U_T` and excluded from fitting/tuning; among the remainder, any 2019-eligible patient is in `U_V`; among the remainder, any 2015–2018-eligible patient is in `U_D`. Development is 2015–2018, 2019 locks all choices, 2020 and 2021 are separate untouched tests, and 2022 onward is audit-only.
 
-Radiology unit `u=(患者主索引,就诊号,检查号)` contains all exact-deduplicated components in raw order with immutable byte/field boundaries. Blank `检查号` cannot supply primary semantics. Only reversible canonical-text `V` bytes can support spans; markup/attributes `A`, parse-error lineage `E`, nonreversible or context-contaminated units cause one whole-unit unavailable block, never phrase deletion or patient removal. Pathology object `v=(患者主索引,就诊号,composite_hash)` serializes every exact-deduplicated `病理/检查所见/检查诊断` field in raw-row/field order. All rows in an encounter form one indivisible documentary composite; no row is assigned to a resection specimen.
+Radiology unit `u=(Patient Master Index,Encounter Number,Examination Number)` contains all exact-deduplicated components in raw order with immutable byte/field boundaries. Blank `Examination Number` cannot supply primary semantics. Only reversible canonical-text `V` bytes can support spans; markup/attributes `A`, parse-error lineage `E`, nonreversible or context-contaminated units cause one whole-unit unavailable block, never phrase deletion or patient removal. Pathology object `v=(Patient Master Index,Encounter Number,composite_hash)` serializes every exact-deduplicated `Pathology/Findings/Examination Diagnosis` field in raw-row/field order. All rows in an encounter form one indivisible documentary composite; no row is assigned to a resection specimen.
 
 Before outcome, split or score exposure, freeze complete forms from the same two qualified Chinese-reading abdominal radiologists plus a complete radiology adjudicator, and the same two qualified Chinese-reading hepatobiliary pathologists plus a complete pathology adjudicator, for every reachable item. Missing forms, provenance or qualification makes the experiment globally inconclusive and cannot shrink the cohort. Freeze radiology books `R1,R2,RA`, pathology books `P1,P2,PA`, and exactly nine global pairs. One pair applies across all patients, years, stages, models, capacities and deletions; no itemwise or post-result mosaic is admissible.
 
@@ -36,7 +38,7 @@ Each pathology form indivisibly contains HCC-frame judgment, conditional grade, 
 
 ## Models, fixed capacity and estimands
 
-Retain `B(Z)`, `R_clean(Z,S,Q)`, `G_clean(Z,S,Q,X_clean)`, and `Gclean_mask`, which is the locked `G_clean` after each complete semantic block is replaced by its training-defined unavailable block without refit, recalibration or threshold change. `Z` is age, sex, CT/MRI/unit availability, eligible-unit count, recency, component/accession ambiguity and development-grouped `机器型号`; `S` is only raw/canonical/markup surface quantity; `Q` is reason-free whole-block availability; `X_clean` comes from the selected complete radiology book. Pathology, outcome, reader identity/agreement, hashes, identifiers, form time, ambiguity width, unrestricted tokens, labs, interactions, splines and test-derived features remain forbidden predictors.
+Retain `B(Z)`, `R_clean(Z,S,Q)`, `G_clean(Z,S,Q,X_clean)`, and `Gclean_mask`, which is the locked `G_clean` after each complete semantic block is replaced by its training-defined unavailable block without refit, recalibration or threshold change. `Z` is age, sex, CT/MRI/unit availability, eligible-unit count, recency, component/accession ambiguity and development-grouped `Machine Model`; `S` is only raw/canonical/markup surface quantity; `Q` is reason-free whole-block availability; `X_clean` comes from the selected complete radiology book. Pathology, outcome, reader identity/agreement, hashes, identifiers, form time, ambiguity width, unrestricted tokens, labs, interactions, splines and test-derived features remain forbidden predictors.
 
 Use the parent's one patient-balanced outcome-blind preprocessing map, additive logistic models, robust zero-slope grids, normalized minimax fitting over all nine global books/source/terminal states, exact cutting-plane/Dinkelbach certificates, and independent 2019 worst-state tuning. Test forms/outcomes remain sealed until preprocessing, hyperparameters, coefficients, `N_ref` and budgets are frozen.
 
@@ -68,20 +70,20 @@ The controlling catalog is `[internal dataset path]` ([source checksum]). Every 
 
 | Table | Exact source path | Required columns / role |
 |---|---|---|
-| `encounters` | `[internal dataset path]` | `患者主索引,就诊号` joins; `年龄,性别` Z; `就诊时间,入院时间,出院时间` audit |
-| `procedures` | `[internal dataset path]` | keys; `手术,开始时间,结束时间,手术来源` episode/clock/prior procedure |
-| `examinations` | `[internal dataset path]` | keys; `检查号` unit; `检查` modality; `检查所见,检查诊断` text/surface/concepts; `开始时间` acquisition; `机器型号` Z |
-| `pathology` | `[internal dataset path]` | keys; `病理,检查所见,检查诊断` whole composite/HCC frame/Y; `机器型号` provenance; no time/specimen/accession |
-| `medications` | `[internal dataset path]` | keys; `用药,药品类型,开始时间,结束时间` prior systemic treatment |
-| `orders` | `[internal dataset path]` | keys; `医嘱(非药品),开立时间,开始时间,结束时间,医嘱状态` prior local/radiotherapy evidence |
-| `diagnoses` | `[internal dataset path]` | keys; `诊断名称,诊断类型` untimed corroboration only |
-| `labs` | `[internal dataset path]` | keys; `检验,定性结果,定量结果,标本类型,检验时间` zero-predictor-lineage audit only |
+| `encounters` | `[internal dataset path]` | `patient master index,encounter number` joins; `age,sex` Z; `encounter time,admission time,discharge time` audit |
+| `procedures` | `[internal dataset path]` | keys; `Surgery,Start Time,End Time,Surgery Source` episode/clock/prior procedure |
+| `examinations` | `[internal dataset path]` | keys; `Examination Number` unit; `Examination` modality; `Examination Findings,Examination Diagnosis` text/surface/concepts; `Start Time` acquisition; `Machine Model` Z |
+| `pathology` | `[internal dataset path]` | keys; `Pathology,Examination Findings,Examination Diagnosis` whole composite/HCC frame/Y; `Machine Model` provenance; no time/specimen/accession |
+| `medications` | `[internal dataset path]` | keys; `medication,drug type,start time,end time` prior systemic treatment |
+| `orders` | `[internal dataset path]` | keys; `orders (non-medication), order time, start time, end time, order status` prior local/radiotherapy evidence |
+| `diagnoses` | `[internal dataset path]` | keys; `diagnosis name,diagnosis type` untimed corroboration only |
+| `labs` | `[internal dataset path]` | keys; `Test,Qualitative Result,Quantitative Result,Specimen Type,Test Time` zero-predictor-lineage audit only |
 | `clinical_documents` | `[internal dataset path]` | keys and narratives, audit only; no reliable time/version |
 | `vitals` | `[internal dataset path]` | identifier-only; forbidden predictor |
 | `transfers` | `[internal dataset path]` | identifier-only; forbidden predictor |
 | `front_page` | `[internal dataset path]` | header-only identifiers; forbidden predictor |
 
-Same-encounter joins are exactly `(患者主索引,就诊号)`; examination grouping adds `检查号`; prior-treatment retrieval joins patient-wide on `患者主索引` before time filtering. Retain raw ordinal, source hash and backpointer throughout. MIMIC (5/5 sources), eICU (31/31) and UKB (8/8) remain directly accessible read-only but have no patient crosswalk or matching Chinese HCC documentary estimand and are not pooled.
+Same-encounter joins are exactly `(patient master index,visit number)`; examination grouping adds `examination number`; prior-treatment retrieval joins patient-wide on `patient master index` before time filtering. Retain raw ordinal, source hash and backpointer throughout. MIMIC (5/5 sources), eICU (31/31) and UKB (8/8) remain directly accessible read-only but have no patient crosswalk or matching Chinese HCC documentary estimand and are not pooled.
 
 ## Computation and verification
 

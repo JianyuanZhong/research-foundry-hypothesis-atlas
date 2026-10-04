@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Source-concordant renal-support documentation after a recorded creatinine rise
 
 ## Scientific deliverable and substantive advance
@@ -132,13 +134,13 @@ Computationally checkable claims include source hashes and headers, exact string
 
 Catalog: [internal dataset path]; catalog [source checksum]. eICU snapshot: [source checksum]. The full eICU guide lists 31 tables; every source is a read-only gzip ordinary file with no internal archive member.
 
-- Patient/index and exits: [internal dataset path] 2.0数据/patient.csv.gz, SHA [source checksum]; schema datasets/eicu/table-ab037c09d7df9a3c.json, SHA [source checksum]. Join patientunitstayid; use age, gender, ethnicity, hospitalid, unitadmitsource, unittype, unitdischargeoffset, unitdischargelocation, unitdischargestatus, uniquepid.
-- Periodic MAP: [internal dataset path] 2.0数据/vitalPeriodic.csv.gz, SHA [source checksum]; schema datasets/eicu/table-a22c6d6981a32279.json, SHA [source checksum]. Use vitalperiodicid, patientunitstayid, observationoffset, systemicmean.
-- Creatinine: [internal dataset path] 2.0数据/lab.csv.gz, SHA [source checksum]; schema datasets/eicu/table-79bdb33275339b1a.json, SHA [source checksum]. Use labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labmeasurenameinterface, labresultrevisedoffset; labtypeid is retained for audit, not assumed assay identity.
-- Treatment source: [internal dataset path] 2.0数据/treatment.csv.gz, SHA [source checksum]; schema datasets/eicu/table-5461361964176606.json, SHA [source checksum]. Join patientunitstayid; use treatmentid, treatmentoffset, treatmentstring, activeupondischarge.
-- Flowsheet source: [internal dataset path] 2.0数据/intakeOutput.csv.gz, SHA [source checksum]; schema datasets/eicu/table-ebba5dc91b1d37e7.json, SHA [source checksum]. Join patientunitstayid; use intakeoutputid, intakeoutputoffset, intakeoutputentryoffset, dialysistotal, cellpath, celllabel, cellvaluenumeric, cellvaluetext.
-- Severity/APACHE: [internal dataset path] 2.0数据/apacheApsVar.csv.gz, SHA [source checksum]; schema datasets/eicu/table-67711a86e012835e.json, SHA [source checksum]; join patientunitstayid and use admission severity descriptors. [internal dataset path] 2.0数据/apachePatientResult.csv.gz, SHA [source checksum]; schema datasets/eicu/table-754bebf64d3d9909.json, SHA [source checksum]; join patientunitstayid and use acutephysiologyscore, apachescore, predictedicumortality only. Never use actual outcomes as predictors.
-- Hospital context: [internal dataset path] 2.0数据/hospital.csv.gz, SHA [source checksum]; schema datasets/eicu/table-811df7b2ef435e12.json, SHA [source checksum]; join hospitalid; use numbedscategory, teachingstatus, region.
+- Patient/index and exits: [internal dataset path] 2.0 data/patient.csv.gz, SHA [source checksum]; schema datasets/eicu/table-ab037c09d7df9a3c.json, SHA [source checksum]. Join patientunitstayid; use age, gender, ethnicity, hospitalid, unitadmitsource, unittype, unitdischargeoffset, unitdischargelocation, unitdischargestatus, uniquepid.
+- Periodic MAP: [internal dataset path] 2.0 data/vitalPeriodic.csv.gz, SHA [source checksum]; schema datasets/eicu/table-a22c6d6981a32279.json, SHA [source checksum]. Use vitalperiodicid, patientunitstayid, observationoffset, systemicmean.
+- Creatinine: [internal dataset path] 2.0 data/lab.csv.gz, SHA [source checksum]; schema datasets/eicu/table-79bdb33275339b1a.json, SHA [source checksum]. Use labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labmeasurenameinterface, labresultrevisedoffset; labtypeid is retained for audit, not assumed assay identity.
+- Treatment source: [internal dataset path] 2.0 dataset/treatment.csv.gz, SHA [source checksum]; schema datasets/eicu/table-5461361964176606.json, SHA [source checksum]. Join patientunitstayid; use treatmentid, treatmentoffset, treatmentstring, activeupondischarge.
+- Flowsheet source: [internal dataset path] 2.0 data/intakeOutput.csv.gz, SHA [source checksum]; schema datasets/eicu/table-ebba5dc91b1d37e7.json, SHA [source checksum]. Join patientunitstayid; use intakeoutputid, intakeoutputoffset, intakeoutputentryoffset, dialysistotal, cellpath, celllabel, cellvaluenumeric, cellvaluetext.
+- Severity/APACHE: [internal dataset path] 2.0 data/apacheApsVar.csv.gz, SHA [source checksum]; schema datasets/eicu/table-67711a86e012835e.json, SHA [source checksum]; join patientunitstayid and use admission severity descriptors. [internal dataset path] 2.0 data/apachePatientResult.csv.gz, SHA [source checksum]; schema datasets/eicu/table-754bebf64d3d9909.json, SHA [source checksum]; join patientunitstayid and use acutephysiologyscore, apachescore, predictedicumortality only. Never use actual outcomes as predictors.
+- Hospital context: [internal dataset path] 2.0 data/hospital.csv.gz, SHA [source checksum]; schema datasets/eicu/table-811df7b2ef435e12.json, SHA [source checksum]; join hospitalid; use numbedscategory, teachingstatus, region.
 
 The source files are ordinary files, not archives; no archive member is applicable. Narrative notes, diagnosis rows, generic medication rows and incomplete urine labels do not supply validated renal adjudication or treatment receipt.
 

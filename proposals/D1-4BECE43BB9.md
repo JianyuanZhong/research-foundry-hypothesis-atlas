@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Outcome-blind identifiability audit of the all-hour eICU excess-FiO2 crossover
 
 ## Status and scientific decision

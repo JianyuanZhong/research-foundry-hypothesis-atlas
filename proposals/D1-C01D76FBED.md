@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 eICU provenance-checked denominator reconstruction: what can and cannot be learned about target-label receipt
 
 Status and substantive advance
@@ -40,7 +42,7 @@ The anchored frame is selection-conditioned. All 74 hospitals necessarily entere
 
 Exact source and time binding
 
-The source snapshot is eICU 2.0 [source checksum]; catalog [source checksum]. Each is a read-only gzip CSV with archive member convention ordinary file under [internal dataset path] 2.0数据/.
+The source snapshot is eICU 2.0 [source checksum]; catalog [source checksum]. Each is a read-only gzip CSV with archive member convention ordinary file under [internal dataset path] 2.0 data/.
 
 patient.csv.gz (patientunitstayid, uniquepid, hospitalid, age, unitvisitnumber, unitdischargeoffset, unitdischargestatus, unitdischargelocation) supplies adult, stay, hospital, first-stay, and discharge fields. carePlanGeneral.csv.gz (patientunitstayid, cplitemoffset, cplgroup, cplitemvalue) supplies target labels, D, ventilation states, and target-window classification. carePlanEOL.csv.gz (patientunitstayid, cpleoldiscussionoffset) supplies the pre-L EOL exclusion. respiratoryCharting.csv.gz (patientunitstayid, respchartoffset, respchartvaluelabel, respchartvalue) supplies FiO2, PEEP, and RT Vent On/Off evidence. respiratoryCare.csv.gz (patientunitstayid, respcarestatusoffset, airwaytype) supplies latest pre-L airway evidence. vitalPeriodic.csv.gz (patientunitstayid, observationoffset, sao2, respiration, systemicmean) and vitalAperiodic.csv.gz (patientunitstayid, observationoffset, noninvasivemean) supply strict physiologic windows. All joins are through patientunitstayid; event times are the named offset fields and all offsets are relative to ICU admission.
 

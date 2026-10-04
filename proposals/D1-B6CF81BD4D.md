@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # A 24-hour mortality-review queue: late-lactate value versus the measurement process
 
 ## Substantive repair and clinical question
@@ -118,13 +120,13 @@ EICU snapshot: [source checksum].
 
 All four inputs are read-only ordinary gzip CSVs, no archive member. Join key is patientunitstayid; uniquepid is only for one-person selection; hospitalid defines gate, folds, bootstrap clusters, and deletions. Offsets are ICU-relative minutes.
 
-1. patient.csv.gz, table patient, source [internal dataset path] 2.0数据/patient.csv.gz, [source checksum]. Required columns patientunitstayid, patienthealthsystemstayid, uniquepid, age, gender, hospitalid, hospitaldischargeoffset, hospitaldischargestatus; relevant time fields hospitaldischargeoffset and ICU-relative offsets.
+1. patient.csv.gz, table patient, source [internal dataset path] 2.0 data/patient.csv.gz, [source checksum]. Required columns patientunitstayid, patienthealthsystemstayid, uniquepid, age, gender, hospitalid, hospitaldischargeoffset, hospitaldischargestatus; relevant time fields hospitaldischargeoffset and ICU-relative offsets.
 
-2. infusionDrug.csv.gz, table infusionDrug, source [internal dataset path] 2.0数据/infusionDrug.csv.gz, [source checksum]. Required columns infusiondrugid, patientunitstayid, infusionoffset, drugname; time field infusionoffset.
+2. infusionDrug.csv.gz, table infusionDrug, source [internal dataset path] 2.0 data/infusionDrug.csv.gz, [source checksum]. Required columns infusiondrugid, patientunitstayid, infusionoffset, drugname; time field infusionoffset.
 
-3. lab.csv.gz, table lab, source [internal dataset path] 2.0数据/lab.csv.gz, [source checksum]. Required columns labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset; time fields labresultoffset and labresultrevisedoffset.
+3. lab.csv.gz, table lab, source [internal dataset path] 2.0 data/lab.csv.gz, [source checksum]. Required columns labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset; time fields labresultoffset and labresultrevisedoffset.
 
-4. vitalPeriodic.csv.gz, table vitalPeriodic, source [internal dataset path] 2.0数据/vitalPeriodic.csv.gz, [source checksum]. Required columns vitalperiodicid, patientunitstayid, observationoffset, sao2, heartrate, respiration; time field observationoffset. No entry, validation, display, or bedside-view timestamp exists.
+4. vitalPeriodic.csv.gz, table vitalPeriodic, source [internal dataset path] 2.0data/vitalPeriodic.csv.gz, [source checksum]. Required columns vitalperiodicid, patientunitstayid, observationoffset, sao2, heartrate, respiration; time field observationoffset. No entry, validation, display, or bedside-view timestamp exists.
 
 The executable must resolve this exact catalog path and fail rather than substitute a similar Unicode path. Other EICU tables and HCC/MIMIC/UKB are not pooled: their presence does not supply a validated mortality-review action, utility, or causal treatment record.
 

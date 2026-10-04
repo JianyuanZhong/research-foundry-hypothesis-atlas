@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 17: does the first acidemic PaO2 category add prognostic information beyond SpO2?
 
 ## Unresolved question, clinical importance, and substantive advance

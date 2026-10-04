@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Candidate proposal: timing of CRRT for severe ICU AKI
 
 ## Hypothesis and clinical importance

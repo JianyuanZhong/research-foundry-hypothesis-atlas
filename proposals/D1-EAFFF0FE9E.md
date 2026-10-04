@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # A deterministic source-identity anchor audit for pulmonary discharge handoff
 
 ## Successor purpose and preserved scientific contract

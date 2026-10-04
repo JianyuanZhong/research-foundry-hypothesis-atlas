@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # eICU laboratory-testing signals and hospital transport of ICU mortality prediction
 
 **Status:** proposed study; no final-cohort outcome-model results have been run. The configured source data are read-only. All four configured datasets remain available; this study uses only eICU.

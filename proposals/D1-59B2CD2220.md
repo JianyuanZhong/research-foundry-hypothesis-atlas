@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 18 branch: a falsifiable temporal boundary test for ICU-discharge instability
 
 Status: design-only branch proposal. No cohort scan, row-count estimate, feature materialization, fitted model, Harbor execution, or clinical result was run.

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 47: nonrescuing nine-year prognosis qualification of nested grip after FFM
 
 ## Decision, unresolved weakness, and one child hypothesis

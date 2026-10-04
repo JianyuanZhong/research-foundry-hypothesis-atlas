@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 79 successor: is numeric repeat-lactate value useful across a fixed capacity curve?
 
 ## Unresolved clinical question and substantive advance
@@ -30,11 +32,11 @@ Use the complete EICU source snapshot [source checksum], with no person sampling
 
 The five source files used are ordinary gzip-compressed CSV files; the archive member is the ordinary file itself:
 
-- patient table, schema datasets/eicu/table-ab037c09d7df9a3c.json, source [internal dataset path] 库/EICU 2.0数据/patient.csv.gz, [source checksum]. Required columns: patientunitstayid, patienthealthsystemstayid, uniquepid, gender, age, hospitalid, hospitaldischargeoffset, hospitaldischargestatus.
-- infusionDrug table, schema datasets/eicu/table-18e1a8caaa91eb44.json, source [internal dataset path] 库/EICU 2.0数据/infusionDrug.csv.gz, [source checksum]. Required columns: infusiondrugid, patientunitstayid, infusionoffset, drugname.
-- lab table, schema datasets/eicu/table-79bdb33275339b1a.json, source [internal dataset path] 库/EICU 2.0数据/lab.csv.gz, [source checksum]. Required columns: labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset.
-- vitalPeriodic table, schema datasets/eicu/table-a22c6d6981a32279.json, source [internal dataset path] 库/EICU 2.0数据/vitalPeriodic.csv.gz, [source checksum]. Required columns: vitalperiodicid, patientunitstayid, observationoffset, heartrate, respiration, sao2.
-- hospital table, schema datasets/eicu/table-811df7b2ef435e12.json, source [internal dataset path] 库/EICU 2.0数据/hospital.csv.gz, [source checksum]. Required columns: hospitalid, numbedscategory, teachingstatus, region. It is an audit/description lookup only; no hospital-level predictor enters models.
+- patient table, schema datasets/eicu/table-ab037c09d7df9a3c.json, source [internal dataset path] Library/EICU 2.0 Data/patient.csv.gz, [source checksum]. Required columns: patientunitstayid, patienthealthsystemstayid, uniquepid, gender, age, hospitalid, hospitaldischargeoffset, hospitaldischargestatus.
+- infusionDrug table, schema datasets/eicu/table-18e1a8caaa91eb44.json, source [internal dataset path] Library/EICU 2.0 data/infusionDrug.csv.gz, [source checksum]. Required columns: infusiondrugid, patientunitstayid, infusionoffset, drugname.
+- lab table, schema datasets/eicu/table-79bdb33275339b1a.json, source [internal dataset path] library/EICU 2.0 data/lab.csv.gz, [source checksum]. Required columns: labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset.
+- vitalPeriodic table, schema datasets/eicu/table-a22c6d6981a32279.json, source [internal dataset path] library/EICU 2.0 dataset/vitalPeriodic.csv.gz, [source checksum]. Required columns: vitalperiodicid, patientunitstayid, observationoffset, heartrate, respiration, sao2.
+- hospital table, schema datasets/eicu/table-811df7b2ef435e12.json, source [internal dataset path] database/EICU 2.0 data/hospital.csv.gz, [source checksum]. Required columns: hospitalid, numbedscategory, teachingstatus, region. It is an audit/description lookup only; no hospital-level predictor enters models.
 
 The catalog and EICU metadata bind all longitudinal joins to patientunitstayid; independent-person selection is by uniquepid, not ICU-stay row. Exact paths, archive/member descriptions, full schemas, relationship map, snapshot identifier, and source hashes are in datasets/README.md, datasets/eicu/README.md, datasets/eicu/metadata.json, and the five linked table JSON files.
 

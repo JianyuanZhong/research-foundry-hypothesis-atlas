@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Compiler-ready, overlap-audited and cluster-valid successor for the frozen eICU respiratory-label experiment
 
 ## Status, frozen question, and bounded advance

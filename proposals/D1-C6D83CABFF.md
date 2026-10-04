@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Residual instability before ICU-to-ward transfer: trajectory-state discordance test
 
 Status: proposed substantive child of `[prior hypothesis]`. No outcome model has been fit and no discordance hypothesis result is claimed. This child preserves the frozen 49,157-transfer cohort, `t0`, final-24-hour strict decision-time inputs, raw 48-hour endpoint, adjudicated first-transition extension, pooled and temporal transport analyses, opening sequence, and exact source bindings. It adds a pre-specified test of whether recent direction changes risk and fixed-capacity ranking specifically when endpoint state and direction disagree.

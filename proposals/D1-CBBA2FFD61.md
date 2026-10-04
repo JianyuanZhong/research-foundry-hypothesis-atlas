@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Target-specific interval semantics with observation-process calibration for departure-status validity
 
 ## Decision question and substantive repair

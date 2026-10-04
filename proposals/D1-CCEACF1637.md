@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 58 v3: explicit measurement-time boundary for the recent-pressor design
 
 Parent: [prior hypothesis].

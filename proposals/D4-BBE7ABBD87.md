@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 title: "Can a sparse CBC trajectory identify colorectal cancer early enough to improve fixed-capacity diagnostic prioritisation?"
 
 parent_and_advance:

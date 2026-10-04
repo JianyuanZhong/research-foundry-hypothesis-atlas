@@ -1,9 +1,11 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Metabolic deterioration and multimorbidity
 
 Seed ID: `[starting question]`
 Dataset: UK Biobank
 Original number: 9 (identifier, not rank)
-Source: `研究选题.xlsx`, `研究选题!A10:I10`
+Source: `Research Topics.xlsx`, `Research Topics!A10:I10`
 Workbook [source checksum]
 
 Status: expert-proposed, untested hypothesis; data bindings, novelty and feasibility have not been validated.

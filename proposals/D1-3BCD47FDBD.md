@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Provisional HCC hypothesis: post-hepatectomy laboratory trajectory and 30-day deterioration
 
 Status: provisional checkpoint for episode 10. This is a proposed relationship and experiment, not a completed analysis or clinical conclusion.

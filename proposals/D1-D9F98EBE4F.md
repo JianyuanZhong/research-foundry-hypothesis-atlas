@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Final locked repair: HCC laboratory trajectories after first strict repeat TACE
 
 ## Scope and immutable inherited design
@@ -19,11 +21,11 @@ The question remains noncausal: in the selected repeat-event cohort with observe
 
 Read-only sources and ordinary-file table bindings are unchanged:
 
-- `HCC/data_基本信息_2500296761891079109.csv`, `encounters`: `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`; composite join (`患者主索引`,`就诊号`).
-- `HCC/data_诊断_7504718184492840569.csv`, `diagnoses`: `患者主索引`, `就诊号`, `诊断名称`, `诊断类型`; composite encounter join, with diagnosis time inherited from the encounter because no native diagnosis time exists.
-- `HCC/data_手术_8024330590283626027.csv`, `procedures`: `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源`; `开始时间` is the procedure clock.
-- `HCC/data_用药_5693407050835159466.csv`, `medications`: `患者主索引`, `就诊号`, `用药`, `开始时间`; medication records are orders/records, not verified administrations.
-- `HCC/data_检验_609065997844652188.csv`, `labs`: `患者主索引`, `就诊号`, `检验`, `定量结果`, `定性结果`, `标本类型`, `检验时间`; exact assay labels are `白蛋白` and `总胆红素`. Numeric parsing remains a signed decimal/scientific number with optional leading `<`, `>`, `≤`, or `≥`, retaining the numeric component and inequality flag. There is no unit field, so assays are never pooled on their raw scales and no unit-dependent clinical threshold is inferred.
+- `HCC/data_Basic Information_2500296761891079109.csv`, `encounters`: `Patient Master Index`, `Encounter Number`, `Age`, `Sex`, `Encounter Time`, `Admission Time`, `Discharge Time`, `Encounter Department`; composite join (`Patient Master Index`,`Encounter Number`).
+- `HCC/data_diagnoses_7504718184492840569.csv`, `diagnoses`: `Patient master index`, `Encounter number`, `Diagnosis name`, `Diagnosis type`; composite encounter join, with diagnosis time inherited from the encounter because no native diagnosis time exists.
+- `HCC/data_surgery_8024330590283626027.csv`, `procedures`: `patient master index`, `visit number`, `procedure`, `start time`, `end time`, `procedure source`; `start time` is the procedure clock.
+- `HCC/data_medication_5693407050835159466.csv`, `medications`: `patient master index`, `encounter number`, `medication`, `start time`; medication records are orders/records, not verified administrations.
+- `HCC/data_lab_test_609065997844652188.csv`, `labs`: `patient master index`, `encounter number`, `test`, `quantitative result`, `qualitative result`, `specimen type`, `test time`; exact assay labels are `albumin` and `total bilirubin`. Numeric parsing remains a signed decimal/scientific number with optional leading `<`, `>`, `≤`, or `≥`, retaining the numeric component and inequality flag. There is no unit field, so assays are never pooled on their raw scales and no unit-dependent clinical threshold is inferred.
 
 Strict TACE matching, earliest adjacent 14–180-day pair selection, adult/HCC/2018–2024/day-14 observation criteria, prior-systemic exclusions, inherited exact systemic-medication ontology and ambiguity exclusions, and first strict day-15–90 repeat-event selection are unchanged from the parent. The inherited pathway includes lenvatinib, sorafenib, regorafenib, donafenib, apatinib, sintilimab, tislelizumab, camrelizumab, atezolizumab, pembrolizumab, nivolumab, bevacizumab and their frozen Chinese-name strings, with the inherited bevacizumab-only and generic-procedure ambiguity exclusions. No later pair or event may be substituted.
 

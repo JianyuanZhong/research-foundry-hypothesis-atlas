@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Candidate: A transportable, time-safe test of pH-conditioned hidden hyperoxemia
 
 ## Unresolved question and clinical advance

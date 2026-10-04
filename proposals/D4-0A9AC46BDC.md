@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Source-concordant absolute CBC cancer-type contrast
 
 Status: planned Harbor experiment; no hypothesis fit or participant-level result has been executed in this branch.

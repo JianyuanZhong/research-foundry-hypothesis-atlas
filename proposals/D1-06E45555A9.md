@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 19 generation: unknown-aware ICU-discharge instability with a preserved temporal boundary
 
 Status: design-only successor of [prior hypothesis]. No cohort scan, feature materialization, model fit, Harbor execution, or clinical result was run.

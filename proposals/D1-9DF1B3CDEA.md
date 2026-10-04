@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Decision-relevant partial identification of recovery-pattern signal after first ICU discharge
 
 ## Scientific deliverable

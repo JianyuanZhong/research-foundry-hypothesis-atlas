@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Pathway-specific early laboratory trajectories and competing liver-directed transitions in HCC
 
 ## Scientific deliverable and falsifiable hypothesis
@@ -16,11 +18,11 @@ The strongest supported claim before the study is only feasibility: the snapshot
 
 Use only configured participant buckets 0–79: fitting 0–59, selection 60–69, locked internal test 70–79. Do not claim access to or validate on buckets 80–99 or externally.
 
-Read encounters and diagnoses, normalize only whitespace/encoding, and freeze the HCC lexical rule before modelling. An eligible encounter has age `年龄 >= 18`, parseable native `入院时间` and `出院时间`, `出院时间 >= 入院时间`, admission on/after 2011-01-01, discharge before 2026-01-01, and a diagnosis joined on the exact identity pair whose `诊断名称` matches the frozen rule (initial provisional audit used `肝细胞癌` or `肝癌`). Select the earliest eligible HCC-coded encounter per `患者主索引`, sorting by native admission time then `就诊号`. Report earlier HCC-coded rows, invalid/ongoing discharges, diagnosis multiplicity/types, duplicate keys and overlaps; this is a first observed HCC-coded admission, not a validated incident diagnosis.
+Read encounters and diagnoses, normalize only whitespace/encoding, and freeze the HCC lexical rule before modelling. An eligible encounter has age `age >= 18`, parseable native `admission time` and `discharge time`, `discharge time >= admission time`, admission on/after 2011-01-01, discharge before 2026-01-01, and a diagnosis joined on the exact identity pair whose `diagnosis name` matches the frozen rule (initial provisional audit used `hepatocellular carcinoma` or `liver cancer`). Select the earliest eligible HCC-coded encounter per `patient master index`, sorting by native admission time then `encounter number`. Report earlier HCC-coded rows, invalid/ongoing discharges, diagnosis multiplicity/types, duplicate keys and overlaps; this is a first observed HCC-coded admission, not a validated incident diagnosis.
 
-The index cohort excludes any member of the frozen liver-directed dictionary with valid procedure `开始时间` in `0 <= start - 入院时间 < 48` hours. Missing/invalid procedure time is not evidence of absence and is reported separately. The prediction landmark is admission plus 48 hours.
+The index cohort excludes any member of the frozen liver-directed dictionary with valid procedure `start time` in `0 <= start - admission time < 48` hours. Missing/invalid procedure time is not evidence of absence and is reported separately. The prediction landmark is admission plus 48 hours.
 
-Define a mutually exclusive first-event outcome over `48 <= procedure start - 入院时间 < 120` hours, requiring exact linkage on (`患者主索引`, `就诊号`) and valid native `开始时间`:
+Define a mutually exclusive first-event outcome over `48 <= procedure start - Admission Time < 120` hours, requiring exact linkage on (`Patient Master Index`, `Encounter Number`) and valid native `Start Time`:
 
 * cause 1: first interventional embolization/TACE-family procedure;
 * cause 2: first resection/ablation-family procedure;
@@ -34,18 +36,18 @@ No procedure after discharge is eligible. Retain procedure end time and source o
 
 All sources are ordinary files in HCC snapshot `[source checksum]`.
 
-* **encounters**, schema `datasets/hcc/table-b743286cb1249287.json`, source `[internal dataset path]`. Required columns: `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`. The first two are the join key; admission/discharge define the cohort, landmark and censoring.
-* **diagnoses**, schema `datasets/hcc/table-12710723c3df0c99.json`, source `[internal dataset path]`. Required `患者主索引`, `就诊号`, `诊断名称`, `诊断类型`; no diagnosis timestamp exists.
-* **labs**, schema `datasets/hcc/table-38aad8c54471332f.json`, source `[internal dataset path]`. Required `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`. Parse numeric `定量结果` only; preserve qualitative result and specimen type; use native `检验时间`. Candidate exact assay channels are albumin `白蛋白`, total bilirubin `总胆红素`, creatinine `肌酐`, platelets `血小板`, and a coagulation/prothrombin assay only if an audit establishes stable exact semantics. There is no unit/reference-range column, so channels are never pooled and external cutoffs are prohibited.
-* **procedures**, schema `datasets/hcc/table-d5eae16f8f8093d9.json`, source `[internal dataset path]`. Required `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源`. Freeze exact included strings and family assignment before outcome modelling; report all included strings, excluded near-matches, counts, multiplicity, same-time duplicates and mixed-family records.
+* **encounters**, schema `datasets/hcc/table-b743286cb1249287.json`, source `[internal dataset path]`. Required columns: `Patient Master Index`, `Encounter Number`, `Age`, `Sex`, `Encounter Time`, `Admission Time`, `Discharge Time`, `Encounter Department`. The first two are the join key; admission/discharge define the cohort, landmark and censoring.
+* **diagnoses**, schema `datasets/hcc/table-12710723c3df0c99.json`, source `[internal dataset path]`. Required `Patient master index`, `Encounter number`, `Diagnosis name`, `Diagnosis type`; no diagnosis timestamp exists.
+* **labs**, schema `datasets/hcc/table-38aad8c54471332f.json`, source `[internal dataset path]`. Required `Patient Master Index`, `Encounter Number`, `Test`, `Qualitative Result`, `Quantitative Result`, `Specimen Type`, `Test Time`. Parse numeric `Quantitative Result` only; preserve qualitative result and specimen type; use native `Test Time`. Candidate exact assay channels are albumin `Albumin`, total bilirubin `Total Bilirubin`, creatinine `Creatinine`, platelets `Platelets`, and a coagulation/prothrombin assay only if an audit establishes stable exact semantics. There is no unit/reference-range column, so channels are never pooled and external cutoffs are prohibited.
+* **procedures**, schema `datasets/hcc/table-d5eae16f8f8093d9.json`, source `[internal dataset path]`. Required `Patient Master Index`, `Visit Number`, `Surgery`, `Start Time`, `End Time`, `Surgery Source`. Freeze exact included strings and family assignment before outcome modelling; report all included strings, excluded near-matches, counts, multiplicity, same-time duplicates and mixed-family records.
 * **clinical_documents**, schema `datasets/hcc/table-66afca58512c2fca.json`, source `[internal dataset path]`, is joinable on the same key but has no native time and duplicate admission-diagnosis columns. It is excluded from primary time-respecting prediction; the local lexical detector is not validated.
 * **pathology**, schema `datasets/hcc/table-0a4ee86a446c605c.json`, source `[internal dataset path]`, has narrative payload but no native pathology timestamp. It is not a temporally valid confirmation endpoint.
-* **examinations**, schema `datasets/hcc/table-fd016d2731b9d6c6.json`, source `[internal dataset path]`, has native `开始时间` but narrative findings are not validated stage/response labels and are excluded from the primary model.
+* **examinations**, schema `datasets/hcc/table-fd016d2731b9d6c6.json`, source `[internal dataset path]`, has native `Start Time` but narrative findings are not validated stage/response labels and are excluded from the primary model.
 * **medications**, schema `datasets/hcc/table-4f6ecaeb6e8f69c2.json`, source `[internal dataset path]`, has native start/end times and dose units but no validated indication; exclude from the primary predictor set.
 * **orders**, schema `datasets/hcc/table-6b93dcf0ea823702.json`, source `[internal dataset path]`, has native times but no validated intent; exclude from primary prediction.
 * **vitals**, schema `datasets/hcc/table-8436de9cba74b8ca.json`, and **transfers**, schema `datasets/hcc/table-320c20f732e71789.json`, are identifier-only payloads and add no physiologic/movement measurements. **front_page**, schema `datasets/hcc/table-38b3224239acc33f.json`, is also identifier-only.
 
-Pre-admission features use only labs in [admission minus 90 days, admission) and prior encounter/procedure counts in that interval. Early labs use only native `检验时间` in [admission, admission plus 48 hours], including the exact landmark and excluding invalid times. No primary predictor may use post-landmark procedures, orders, medications, examinations, documents, pathology, discharge, or length of stay. Keep raw same-timestamp duplicates for audit, then use a frozen within-assay/time aggregation rule.
+Pre-admission features use only labs in [admission minus 90 days, admission) and prior encounter/procedure counts in that interval. Early labs use only native `Test Time` in [admission, admission plus 48 hours], including the exact landmark and excluding invalid times. No primary predictor may use post-landmark procedures, orders, medications, examinations, documents, pathology, discharge, or length of stay. Keep raw same-timestamp duplicates for audit, then use a frozen within-assay/time aggregation rule.
 
 ## Baseline and substantive alternative
 

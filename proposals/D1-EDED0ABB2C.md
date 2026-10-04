@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Does sustained inspired-oxygen excess after adequate oxygenation carry different subsequent risk in acute pulmonary injury?
 
 ## Status, opening, and scientific deliverable

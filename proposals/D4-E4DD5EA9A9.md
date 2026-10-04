@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 77: temporal biological-validity qualification of the frozen AG1-versus-AF1 experiment
 
 ## Decision question and one new hypothesis

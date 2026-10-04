@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Prospective-silent bridge with separate documentation and actionability estimands
 
 ## Status, parentage, and scope

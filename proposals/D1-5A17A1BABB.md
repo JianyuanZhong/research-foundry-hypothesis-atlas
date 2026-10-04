@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 95 successor: one label-free deployment margin for a fixed-capacity L24 mortality-review queue
 
 ## Decision and unresolved question

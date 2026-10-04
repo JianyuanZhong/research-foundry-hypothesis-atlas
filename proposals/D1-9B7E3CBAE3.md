@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Proposal: post-TACE biomarker trajectories with time-aligned examination proxies
 
 ## Scientific question, evidence boundary, and hypothesis
@@ -27,16 +29,16 @@ Completion requires locked-test predictions, calibrated uncertainty, the action/
 
 ## Population and temporal boundaries
 
-Use one index per patient: the earliest procedure episode satisfying the TACE-like rule, with the procedure’s 开始时间. Collapse same-patient procedure rows within 24 hours into one episode, retain all original 手术 names, and do not select the index using any future outcome.
+Use one index per patient: the earliest procedure episode satisfying the TACE-like rule, with the procedure’s Start Time. Collapse same-patient procedure rows within 24 hours into one episode, retain all original Surgery names, and do not select the index using any future outcome.
 
 Require:
 
-- age >=18 and nonmissing 性别 at the index encounter;
-- a structured diagnosis name containing the literal 肝细胞癌 on an encounter from 180 days before through 7 days after index;
+- age >=18 and nonmissing sex at the index encounter;
+- a structured diagnosis name containing the literal Hepatocellular Carcinoma on an encounter from 180 days before through 7 days after index;
 - a usable index procedure time and an exact procedure-to-encounter join;
 - index date on or before 2025-01-01, allowing a nominal 365-day window within the local snapshot.
 
-A TACE-like procedure name is selected before outcome inspection if 手术 contains TACE, 动脉化疗栓塞, or both 肝动脉 and 栓塞. The primary action outcome is any later TACE-like episode with 45 < days after index <=365. A secondary action outcome is any later liver-directed procedure whose 手术 contains 切除, 消融, 射频, 微波, or the TACE rule.
+A TACE-like procedure name is selected before outcome inspection if surgery contains TACE, transarterial chemoembolization, or both hepatic artery and embolization. The primary action outcome is any later TACE-like episode with 45 < days after index <=365. A secondary action outcome is any later liver-directed procedure whose surgery contains resection, ablation, radiofrequency, microwave, or the TACE rule.
 
 The landmark is day 45. No laboratory or examination information after day 45 enters a predictive feature. The primary biomarker estimand is the complete-pair population with a parseable numeric AFP in both days -30 to -1 and 7 to 45. An all-eligible analysis with explicit missingness indicators is secondary and must not treat absent testing as a biologic response.
 
@@ -44,13 +46,13 @@ For the primary examination proxy, use only records dated 46 to 180 days after i
 
 ## Exact HCC data bindings
 
-The source is read-only HCC snapshot [source checksum]; the full catalog is [internal dataset path] All joins use the exact identity pair 患者主索引, 就诊号.
+The source is read-only HCC snapshot [source checksum]; the full catalog is [internal dataset path] All joins use the exact identity pair patient master index, encounter number.
 
-- encounters, schema datasets/hcc/table-b743286cb1249287.json, source [internal dataset path] Use 年龄, 性别, and 入院时间; fall back to 就诊时间 only when 入院时间 is missing. 出院时间 is descriptive follow-up only. Do not use names, identity-card numbers, phone numbers, insurance numbers, or other direct identifiers.
-- procedures, schema datasets/hcc/table-d5eae16f8f8093d9.json, source [internal dataset path] Use 手术, 开始时间, 结束时间, and 手术来源; index and outcome time are 开始时间 joined by the same two keys. A fallback to encounter time is permitted only when a procedure start is absent and must be counted separately; the primary analysis requires a usable procedure start.
-- labs, schema datasets/hcc/table-38aad8c54471332f.json, source [internal dataset path] Use 检验, 定性结果, 定量结果, 标本类型, and 检验时间; window on 检验时间. Exact assay names are 甲胎蛋白, 白蛋白, 总胆红素, 国际标准化比值, and 血小板计数. Parse numeric 定量结果, preserve 定性结果 inequalities as flags/censored values, and never pool values across assays. There is no lab unit column, so do not compute ALBI, MELD, or cross-assay ratios.
-- diagnoses, schema datasets/hcc/table-12710723c3df0c99.json, source [internal dataset path] Use 诊断名称 and 诊断类型; bind to encounters by the same two keys and use the joined encounter admission time for the +/-180-to-+7 diagnosis window. The literal substring rule is a reproducible structured-label rule, not NLP.
-- examinations, schema datasets/hcc/table-fd016d2731b9d6c6.json, source [internal dataset path] Use 检查, 检查所见, 检查诊断, 开始时间, 机器型号, and 检查号; window on 开始时间, join/provenance by the same two keys. 检查所见 and 检查诊断 are narrative text and may contain HTML/template duplication.
+- encounters, schema datasets/hcc/table-b743286cb1249287.json, source [internal dataset path] Use age, sex, and admission time; fall back to encounter time only when admission time is missing. Discharge time is descriptive follow-up only. Do not use names, identity-card numbers, phone numbers, insurance numbers, or other direct identifiers.
+- procedures, schema datasets/hcc/table-d5eae16f8f8093d9.json, source [internal dataset path] Use procedure, start time, end time, and procedure source; index and outcome time are start time joined by the same two keys. A fallback to encounter time is permitted only when a procedure start is absent and must be counted separately; the primary analysis requires a usable procedure start.
+- labs, schema datasets/hcc/table-38aad8c54471332f.json, source [internal dataset path] Use test, qualitative result, quantitative result, specimen type, and test time; window on test time. Exact assay names are alpha-fetoprotein, albumin, total bilirubin, international normalized ratio, and platelet count. Parse numeric quantitative result, preserve qualitative result inequalities as flags/censored values, and never pool values across assays. There is no lab unit column, so do not compute ALBI, MELD, or cross-assay ratios.
+- diagnoses, schema datasets/hcc/table-12710723c3df0c99.json, source [internal dataset path] Use Diagnosis Name and Diagnosis Type; bind to encounters by the same two keys and use the joined encounter admission time for the +/-180-to-+7 diagnosis window. The literal substring rule is a reproducible structured-label rule, not NLP.
+- examinations, schema datasets/hcc/table-fd016d2731b9d6c6.json, source [internal dataset path] Use Examination, Examination Findings, Examination Diagnosis, Start Time, Machine Model, and Examination Number; window on Start Time, join/provenance by the same two keys. Examination Findings and Examination Diagnosis are narrative text and may contain HTML/template duplication.
 - clinical_documents, schema datasets/hcc/table-66afca58512c2fca.json, source [internal dataset path], is not a primary source: it has no document time field and its lexical detector is not validated for comprehensive diagnosis extraction. It may be used only for a separately labeled clinician-review sample, if expert review is actually supplied.
 
 The HCC catalog also confirms that images and raw waveforms are unavailable; vitals, transfers, and front_page are identifier-only for this purpose. The other configured dataset islands remain directly accessible, but this child intentionally uses only HCC and does not import MIMIC, eICU, or UKB variables.
@@ -61,11 +63,11 @@ A bounded read-only scan of all 419,996 examination rows found nonempty payload 
 
 Freeze the following transparent proxy rule before fitting and report every matched name and original text hash:
 
-1. An eligible name contains one of 肝, 腹部, 腹腔, 上腹, 肝胆, or PET/CT.
-2. Exclude names containing 病理, 标本, 组织, 心脏, 心动图, 胸部, 肺功能, 骨, 下肢, 胃镜, 肾上腺, or 穿刺.
-3. Strip HTML only for matching; retain the raw fields. A row is “concerning wording” only if the combined 检查诊断 plus 检查所见 contains at least one lesion/tumor term (病灶, 占位, 肿块, 结节, 肿瘤, 癌, 转移, 复发, 残留, 强化, or 坏死) and at least one concerning term (复发, 残留, 进展, 转移, 新发, 活动性, 活性病灶, 恶化, 可疑恶性, or 异常强化).
-4. Separately flag explicit response/stability wording if it contains 缩小, 消退, 消失, 稳定, 未见异常强化, 未见明显强化, 坏死, or 治疗后未见. These categories are descriptive and may overlap; no flag is treated as a validated label. Rows with only generic findings, unrelated anatomy, or no eligible name are other/not classified.
-5. Deduplicate exact repeated patient/检查号/time/text rows. If reports are repeated under several names on the same patient and date, retain a report hash and row count, and use patient-level any concern only once.
+1. An eligible name contains one of liver, abdomen, abdominal cavity, upper abdomen, hepatobiliary, or PET/CT.
+2. Exclude names containing pathology, specimen, tissue, heart, echocardiogram, chest, pulmonary function, bone, lower limb, gastroscopy, adrenal gland, or puncture.
+3. Strip HTML only for matching; retain the raw fields. A row is “concerning wording” only if the combined examination diagnosis plus examination findings contains at least one lesion/tumor term (lesion, space-occupying lesion, mass, nodule, tumor, cancer, metastasis, recurrence, residual, enhancement, or necrosis) and at least one concerning term (recurrence, residual, progression, metastasis, new onset, active, active lesion, worsening, suspicious for malignancy, or abnormal enhancement).
+4. Separately flag explicit response/stability wording if it contains shrinkage, resolution, disappearance, stable, no abnormal enhancement seen, no obvious enhancement seen, necrosis, or not seen after treatment. These categories are descriptive and may overlap; no flag is treated as a validated label. Rows with only generic findings, unrelated anatomy, or no eligible name are other/not classified.
+5. Deduplicate exact repeated patient/examination number/time/text rows. If reports are repeated under several names on the same patient and date, retain a report hash and row count, and use patient-level any concern only once.
 
 Because negation, historical comparison, copied-forward reports, and anatomic scope are not reliably resolved by this lexical rule, the primary term is concerning examination wording proxy. The solver must not call it progression, response, viable tumor, or radiologic adjudication. If a clinical reviewer later labels a stratified report sample, that adjudication is a separate sensitivity analysis and must report reviewer count and agreement; it cannot be fabricated by the solver.
 
@@ -74,7 +76,7 @@ Create separate indicators for:
 - any eligible examination in days 7 to 45 (early measurement availability);
 - any eligible examination in days 46 to 180 and 46 to 365 (follow-up availability);
 - concerning, response/stable, and other classified wording among available eligible reports;
-- number and timing of eligible examinations, report duplication, and 检查 name family.
+- number and timing of eligible examinations, report duplication, and examination name family.
 
 Model follow-up examination availability as its own post-landmark observation outcome using only day-45-available features. For the wording association, report the complete observed-report analysis and an inverse-probability-of-observation sensitivity model fit without future outcomes. Never code no examination as no concern.
 
@@ -83,7 +85,7 @@ Model follow-up examination availability as its own post-landmark observation ou
 The transparent baseline is regularized logistic regression, separately for repeat TACE and the examination proxy:
 
 - age, sex, index year, and index procedure-name family;
-- prior 180-day structured diagnosis indicators/counts for 肝硬化, 门静脉, 肝内转移, 肺转移, 骨转移, and 腹腔积液;
+- prior 180-day structured diagnosis indicators/counts for Liver Cirrhosis, Portal Vein, Intrahepatic Metastasis, Lung Metastasis, Bone Metastasis, and Ascites;
 - prior liver-directed procedure count and prior TACE/resection/ablation indicator;
 - last pre-index-window AFP, albumin, total bilirubin, INR, platelet count, plus assay missingness;
 - for the day-45 prediction comparison, no post-landmark outcome or report text; an early-examination-presence indicator is added only in a prespecified observation-process sensitivity.
@@ -110,7 +112,7 @@ The action/proxy artifact check is a prespecified four-cell table among patients
 
 Supportive evidence requires all of the following:
 
-- the favorable phenotype has an adjusted association below the null with repeat TACE, its 95% interval excludes 1, and the direction is stable under literal TACE/动脉化疗栓塞 naming and 90-/180-day action windows;
+- the favorable phenotype has an adjusted association below the null with repeat TACE, its 95% interval excludes 1, and the direction is stable under literal TACE/arterial chemoembolization naming and 90-/180-day action windows;
 - the same phenotype is directionally associated with fewer concerning-wording proxy reports, with the complete-report and observation-weighted analyses not materially contradictory;
 - the joint model improves locked-test log score by more than 0.01 nats/patient over the baseline for at least one prespecified outcome, with uncertainty excluding that negligible margin, without a calibration deterioration;
 - the action association does not disappear after adjustment/stratification for prior examination utilization, early measurement presence, procedure-name family, index year, and index encounter department where available.

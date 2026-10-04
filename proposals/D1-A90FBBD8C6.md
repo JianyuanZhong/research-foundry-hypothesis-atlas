@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Residual physiologic instability in the final ICU day and failed transition
 
 Parent: [prior hypothesis] (repaired imported expert seed `[starting question]`)

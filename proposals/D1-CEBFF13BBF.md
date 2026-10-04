@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Certified two-part report-coverage contract for patient-complete documentary-M2 allocation
 
 ## 1. Successor, audit finding, and substantive repair
@@ -49,7 +51,7 @@ The three demonstrations in \`references/research-ambition/README.md\` were trea
 
 Use HCC snapshot \`[source checksum]\) and catalog \`[internal dataset path]`, catalog SHA-256 \`[source checksum]\`.
 
-For each coupled source world, include adults at their earliest source-documented eligible hepatobiliary resection under a preregistered clinician-adjudicated procedure dictionary, requiring same-\((患者主索引,就诊号)\) pathology support for the documentary frame. Exclude a patient if that world records an earlier qualifying resection, transplant, TACE/embolization, ablation, radiotherapy, targeted therapy, or immunotherapy in \([t_{\rm op}-365\text{ d},t_{\rm op})\). Candidate CT/MRI acquisition intervals must lie wholly within \([t_{\rm op}-90\text{ d},t_{\rm op}-d)\), with \(d\in\{72,48,24,12\}\) hours.
+For each coupled source world, include adults at their earliest source-documented eligible hepatobiliary resection under a preregistered clinician-adjudicated procedure dictionary, requiring same-\(patient master index, encounter number\) pathology support for the documentary frame. Exclude a patient if that world records an earlier qualifying resection, transplant, TACE/embolization, ablation, radiotherapy, targeted therapy, or immunotherapy in \([t_{\rm op}-365\text{ d},t_{\rm op})\). Candidate CT/MRI acquisition intervals must lie wholly within \([t_{\rm op}-90\text{ d},t_{\rm op}-d)\), with \(d\in\{72,48,24,12\}\) hours.
 
 Use validated operation times. Date-only or midnight-like operation values are intervals \([{\rm date},{\rm date}+24\text{ h})\), and interval logic must be declared before outcomes or scores are inspected. Competing operation, episode, calendar-year, treatment, modality, imaging-window, and source interpretations remain coupled worlds. Possible 2020/2021 cases cannot enter development or 2019 lock, and possible 2019 cases cannot enter testing. Roles remain patient-disjoint: 2015–2018 development, 2019 preprocessing/hyperparameter/K lock, separate 2020 and 2021 tests, and 2022 onward audit-only.
 
@@ -61,12 +63,12 @@ All HCC sources are ordinary CSV files; there are no HCC archive members. The co
 
 The bound HCC files and required fields are:
 
-- \`encounters\`: \`[internal dataset path]`; key \((患者主索引,就诊号)\); \`年龄\`, \`性别\`, \`就诊时间\`, \`入院时间\`, \`出院时间\`.
-- \`procedures\`: \`[internal dataset path]`; key \((患者主索引,就诊号)\); \`手术\`, \`开始时间\`, \`结束时间\`, \`手术来源\`.
-- \`examinations\`: \`[internal dataset path]`; encounter key \((患者主索引,就诊号)\), whole-accession key \((患者主索引,就诊号,检查号)\); \`检查\`, \`检查所见\`, \`检查诊断\`, \`开始时间\`, \`机器型号\`, \`检查号\`. The only temporal column is the acquisition-like \`开始时间\`.
-- \`pathology\`: \`[internal dataset path]`; key \((患者主索引,就诊号)\); \`病理\`, \`检查所见\`, \`检查诊断\`, \`机器型号\`; no specimen, slide, accession, or time field.
-- \`medications\`: \`[internal dataset path]`; patient-wide temporal join before episode restriction; \`用药\`, \`药品类型\`, \`开始时间\`, \`结束时间\`.
-- \`orders\`: \`[internal dataset path]`; patient-wide temporal join; \`医嘱(非药品)\`, \`开立时间\`, \`开始时间\`, \`结束时间\`, \`医嘱状态\`.
+- \`encounters\`: \`[internal dataset path]`; key \((patient master index, encounter number)\); \`age\`, \`sex\`, \`encounter time\`, \`admission time\`, \`discharge time\`.
+- \`procedures\`: \`[internal dataset path]`; key \((Patient Master Index,Encounter Number)\); \`Surgery\`, \`Start Time\`, \`End Time\`, \`Surgery Source\`.
+- \`examinations\`: \`[internal dataset path]`; encounter key \((Patient Master Index,Encounter Number)\), whole-accession key \((Patient Master Index,Encounter Number,Examination Number)\); \`Examination\`, \`Examination Findings\`, \`Examination Diagnosis\`, \`Start Time\`, \`Machine Model\`, \`Examination Number\`. The only temporal column is the acquisition-like \`Start Time\`.
+- \`pathology\`: \`[internal dataset path]`; key \((patient master index,encounter number)\); \`pathology\`, \`examination findings\`, \`examination diagnosis\`, \`machine model\`; no specimen, slide, accession, or time field.
+- \`medications\`: \`[internal dataset path]`; patient-wide temporal join before episode restriction; \`medication\`, \`drug type\`, \`start time\`, \`end time\`.
+- \`orders\`: \`[internal dataset path]`; patient-wide temporal join; \`Non-medication orders\`, \`Order time\`, \`Start time\`, \`End time\`, \`Order status\`.
 - \`diagnoses\`: \`[internal dataset path]`; encounter key; untimed corroboration only.
 - \`clinical_documents\`: \`[internal dataset path]`; audit-only because it has no usable preoperative exposure time.
 - \`labs\`: \`[internal dataset path]`; leakage audit only because the catalog documents no safe common assay-unit harmonization.
@@ -74,7 +76,7 @@ The bound HCC files and required fields are:
 - \`transfers\`: \`[internal dataset path]`; identifier-only for this design.
 - \`front_page\`: \`[internal dataset path]`; identifier-only for this design.
 
-The BOM-aware raw-header audit confirms the examination header is exactly \((患者主索引,就诊号,检查,检查所见,检查诊断,开始时间,机器型号,检查号)\), procedures contain \((患者主索引,就诊号,手术,开始时间,结束时间,手术来源)\), pathology contains \((患者主索引,就诊号,病理,检查所见,检查诊断,机器型号)\), and encounters contain the stated demographic and encounter-time columns. Read all rows of each bound HCC file; retain source SHA-256, schema hash, parser version, BOM handling, raw ordinal, raw bytes, reversible backpointer, and every deterministic inclusion/exclusion reason. Source files remain read-only.
+The BOM-aware raw-header audit confirms the examination header is exactly \((Patient Master Index, Encounter Number, Examination, Examination Findings, Examination Diagnosis, Start Time, Machine Model, Examination Number)\), procedures contain \((Patient Master Index, Encounter Number, Surgery, Start Time, End Time, Surgery Source)\), pathology contains \((Patient Master Index, Encounter Number, Pathology, Examination Findings, Examination Diagnosis, Machine Model)\), and encounters contain the stated demographic and encounter-time columns. Read all rows of each bound HCC file; retain source SHA-256, schema hash, parser version, BOM handling, raw ordinal, raw bytes, reversible backpointer, and every deterministic inclusion/exclusion reason. Source files remain read-only.
 
 For completeness, retain direct access and provenance for:
 
@@ -86,7 +88,7 @@ These datasets are not silently treated as negative evidence; they are retained 
 
 ## 6. Coupled whole-accession onset and exposure
 
-For patient \(i\), source/operation world \(\omega\), cutoff \(d\), and nonblank whole accession \(u\), define \(E_{i\omega d u}=1\) only when operation state, accession identity, CT/MRI membership, and the acquisition interval from examinations.\`开始时间\` are all valid and the interval lies wholly in \([t_{i\omega}-90\text{ d},t_{i\omega}-d)\). Blank identifiers, component disagreement, ambiguous modality/context, nonreversible parsing, treatment/pathology/MVI leakage, unresolved identity, or invalid hashes make the entire accession unavailable.
+For patient \(i\), source/operation world \(\omega\), cutoff \(d\), and nonblank whole accession \(u\), define \(E_{i\omega d u}=1\) only when operation state, accession identity, CT/MRI membership, and the acquisition interval from examinations.\`Start time\` are all valid and the interval lies wholly in \([t_{i\omega}-90\text{ d},t_{i\omega}-d)\). Blank identifiers, component disagreement, ambiguous modality/context, nonreversible parsing, treatment/pathology/MVI leakage, unresolved identity, or invalid hashes make the entire accession unavailable.
 
 Assign one onset category to each source-clean eligible accession version:
 
@@ -179,7 +181,7 @@ The 12/48/72-hour analyses use the same onset assignments and emit the same \((N
 
 A future report-archive audit may establish the conditional contract only if it is linked to the frozen HCC world. It must provide, for every audited HCC patient and every HCC-derived eligible accession:
 
-- exact \((患者主索引,就诊号,检查号)\) crosswalk, source row ordinals, hashes, and complete-version hashes;
+- exact \((Patient master index,encounter number,examination number)\) crosswalk, source row ordinals, hashes, and complete-version hashes;
 - immutable report version and predecessor/amendment/retraction identifiers;
 - authored, finalized, released, ingested, retrievable, readable, and retracted timestamps with timezone and clock provenance;
 - operation-clock validation and the locked scoring-pipeline input hash;

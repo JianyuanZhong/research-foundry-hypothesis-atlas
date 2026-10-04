@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Outcome-blind overlap transport sensitivity for sparse-calendar HCC validation
 
 ## Targeted evolution and unresolved question
@@ -12,13 +14,13 @@ All inherited rules remain immutable. Use HCC snapshot `[source checksum]`, with
 
 Required read-only source files and exact schema bindings are:
 
-- `encounters`, `[internal dataset path]`, schema `[internal dataset path]`; keys `患者主索引`,`就诊号`; time fields `就诊时间`,`入院时间`,`出院时间`; covariates `年龄`,`性别`.
-- `diagnoses`, `[internal dataset path]`, schema `...[internal dataset path]sets/hcc/table-12710723c3df0c99.json`; keys `患者主索引`,`就诊号`; require literal `肝细胞癌` in `诊断名称`, with timing inherited from the linked encounter because the table has no native time.
-- `procedures`, `[internal dataset path]`, schema `...[internal dataset path]sets/hcc/table-d5eae16f8f8093d9.json`; keys `患者主索引`,`就诊号`; procedure `手术`, clocks `开始时间`,`结束时间`; identify TACE/化疗栓塞 and apply the inherited duplicate-day collapse and adjacent-pair/strict-repeat rules.
-- `medications`, `[internal dataset path]`, schema `...[internal dataset path]sets/hcc/table-4f6ecaeb6e8f69c2.json`; keys `患者主索引`,`就诊号`; clocks `开始时间`,`结束时间`; apply the inherited days 1–14 systemic-record ontology and exclusions. Medication records are not verified administrations.
-- `labs`, `[internal dataset path]`, schema `...[internal dataset path]sets/hcc/table-38aad8c54471332f.json`; keys `患者主索引`,`就诊号`; assay `检验`, numeric value `定量结果`, qualitative/censoring field `定性结果`, specimen `标本类型`, assay clock `检验时间`. Require exact `白蛋白` or `总胆红素`, valid uncensored numeric values, and retain the frozen assay selection.
+- `encounters`, `[internal dataset path]`, schema `[internal dataset path]`; keys `patient master index`,`encounter number`; time fields `encounter time`,`admission time`,`discharge time`; covariates `age`,`sex`.
+- `diagnoses`, `[internal dataset path]`, schema `...[internal dataset path]sets/hcc/table-12710723c3df0c99.json`; keys `Patient Master Index`,`Encounter Number`; require literal `hepatocellular carcinoma` in `Diagnosis Name`, with timing inherited from the linked encounter because the table has no native time.
+- `procedures`, `[internal dataset path]`, schema `...[internal dataset path]sets/hcc/table-d5eae16f8f8093d9.json`; keys `patient master index`,`encounter number`; procedure `procedure`, clocks `start time`,`end time`; identify TACE/chemoembolization and apply the inherited duplicate-day collapse and adjacent-pair/strict-repeat rules.
+- `medications`, `[internal dataset path]`, schema `...[internal dataset path]sets/hcc/table-4f6ecaeb6e8f69c2.json`; keys `Patient master index`,`Encounter number`; clocks `Start time`,`End time`; apply the inherited days 1–14 systemic-record ontology and exclusions. Medication records are not verified administrations.
+- `labs`, `[internal dataset path]`, schema `...[internal dataset path]sets/hcc/table-38aad8c54471332f.json`; keys `Patient Master Index`,`Encounter Number`; assay `Test`, numeric value `Quantitative Result`, qualitative/censoring field `Qualitative Result`, specimen `Specimen Type`, assay clock `Test Time`. Require exact `Albumin` or `Total bilirubin`, valid uncensored numeric values, and retain the frozen assay selection.
 
-Composite joins use (`患者主索引`,`就诊号`) and patient sequencing uses `患者主索引` only where inherited. Preserve the exact clocks: `B` is the latest valid assay in TACE2 day −30 through −1; `P` is the latest valid assay in the selected repeat encounter in `[event_time−72 hours,event_time)`; `Y` is the selected assay in `(event_time,event_time+72 hours]`, nearest +24 hours. Require `B_time < P_time < event_time < Y_time`, positive P lead, one patient-assay row, and no outcome-informed event selection.
+Composite joins use (`patient primary index`,`encounter number`) and patient sequencing uses `patient primary index` only where inherited. Preserve the exact clocks: `B` is the latest valid assay in TACE2 day −30 through −1; `P` is the latest valid assay in the selected repeat encounter in `[event_time−72 hours,event_time)`; `Y` is the selected assay in `(event_time,event_time+72 hours]`, nearest +24 hours. Require `B_time < P_time < event_time < Y_time`, positive P lead, one patient-assay row, and no outcome-informed event selection.
 
 The primary estimand remains the parent’s **unweighted, assay-specific held-out standardized RMSE gain**, `RMSE(M0)−RMSE(M1)` divided by test `SD(Y)`, with nested models:
 

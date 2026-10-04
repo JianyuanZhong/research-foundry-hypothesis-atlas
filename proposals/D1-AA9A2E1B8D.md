@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Joint radiology–pathology reader-envelope robustness of documentary-M2 capture
 
 ## 1. Targeted successor and clinical decision
@@ -12,7 +14,7 @@ The selected parent asks whether clean concepts interpreted from eventual stored
 
 ### Strongest claim supported before the experiment
 
-Direct schema and full-file inspection establishes that the HCC snapshot contains patient/encounter-linked procedures, CT/MRI acquisition-like times and eventual report bodies, and untimed pathology narratives. The pathology source has exactly the six observed columns `患者主索引,就诊号,病理,检查所见,检查诊断,机器型号`; it has no pathology time, specimen/accession, slide, block, section, distance, or sampling-protocol field. An Episode-51 unfiltered read of all 46,395 pathology rows found 32,386 patient-encounters, 8,932 encounters with multiple rows (maximum 14), and 16 exact duplicate rows after the first. No sampling or clinical filter was applied. Rough M0/M1/M2 token counts are feasibility summaries only, not labels.
+Direct schema and full-file inspection establishes that the HCC snapshot contains patient/encounter-linked procedures, CT/MRI acquisition-like times and eventual report bodies, and untimed pathology narratives. The pathology source has exactly the six observed columns `Patient Primary Index,Encounter Number,Pathology,Examination Findings,Examination Diagnosis,Machine Model`; it has no pathology time, specimen/accession, slide, block, section, distance, or sampling-protocol field. An Episode-51 unfiltered read of all 46,395 pathology rows found 32,386 patient-encounters, 8,932 encounters with multiple rows (maximum 14), and 16 exact duplicate rows after the first. No sampling or clinical filter was applied. Rough M0/M1/M2 token counts are feasibility summaries only, not labels.
 
 Cong et al.'s complete Europe PMC article XML was acquired and inspected (DOI `10.3748/wjg.v22.i42.9279`; PMID `27895416`; PMCID `PMC5107692`; frozen source `[source checksum]`, [source checksum]). It motivates a seven-point tissue-sampling protocol and grades MVI by number and distance. It cannot establish that this CSV followed that protocol. The text's “<5” M1 and “>5 or >1 cm” M2 wording does not assign exactly five in the cited sentence; the present study therefore never resolves count=5 by inference. These facts support a report-interpretation study, not biological MVI ascertainment.
 
@@ -36,7 +38,7 @@ Radiology units, canonicalization, concepts, annotation roster, complete two-ind
 
 ### 4.1 Pre-analysis roster and encounter composite
 
-Before any pathology interpretation, model score, top-K roster, event count, or result is available, create a structural roster of every patient-encounter pathology composite reachable from any provisional resection state without filtering on pathology content. Exact-deduplicate complete pathology rows, but retain every duplicate ordinal and hash in the audit. For each `(患者主索引,就诊号)`, concatenate all remaining `病理,检查所见,检查诊断` fields in raw-row and field order with immutable boundaries; preserve raw bytes, source ordinals, and hashes. Multiple rows are one encounter-level interpretation item because no specimen/accession or pathology time can separate them. `机器型号` is provenance only.
+Before any pathology interpretation, model score, top-K roster, event count, or result is available, create a structural roster of every patient-encounter pathology composite reachable from any provisional resection state without filtering on pathology content. Exact-deduplicate complete pathology rows, but retain every duplicate ordinal and hash in the audit. For each `(Patient master index,Encounter number)`, concatenate all remaining `Pathology,Examination findings,Examination diagnosis` fields in raw-row and field order with immutable boundaries; preserve raw bytes, source ordinals, and hashes. Multiple rows are one encounter-level interpretation item because no specimen/accession or pathology time can separate them. `Machine model` is provenance only.
 
 Two qualified Chinese-reading liver pathologists independently review every roster item. A third qualified pathologist sees the two signed forms and submits one adjudicated complete form with reasons for changes. Screens show only the deidentified whole encounter composite and field/row boundaries; they hide radiology, procedure dictionaries, age/sex, dates/year role, diagnoses, treatment history, model outputs, top-K membership, and other readers during independent review. Pathology readers necessarily see the outcome text they label; “blinding” here means independence from predictors and analysis results, not the impossible claim of outcome blinding.
 
@@ -113,18 +115,18 @@ Controlling catalog: `[internal dataset path]`, [source checksum]; HCC snapshot 
 
 | Table | Exact path | Required columns and role |
 |---|---|---|
-| `encounters` | `[internal dataset path]` | `患者主索引,就诊号` join; `年龄,性别` Z; `就诊时间,入院时间,出院时间` audit |
-| `procedures` | `[internal dataset path]` | keys; `手术,开始时间,结束时间,手术来源` episode/clock/prior-treatment states |
-| `examinations` | `[internal dataset path]` | keys plus `检查号` whole-unit identity; `检查` modality; `检查所见,检查诊断` raw V/A/E, surface/context/reader concepts; `开始时间` acquisition; `机器型号` Z |
-| `pathology` | `[internal dataset path]` | keys; `病理,检查所见,检查诊断` complete encounter pathology item/HCC-frame/Y; `机器型号` provenance; no time/specimen field |
-| `medications` | `[internal dataset path]` | keys; `用药,药品类型,开始时间,结束时间` prior systemic therapy |
-| `orders` | `[internal dataset path]` | keys; `医嘱(非药品),开立时间,开始时间,结束时间,医嘱状态` prior local/radiotherapy evidence |
-| `diagnoses` | `[internal dataset path]` | keys; `诊断名称,诊断类型` untimed corroboration only |
-| `labs` | `[internal dataset path]` | keys; `检验,定性结果,定量结果,标本类型,检验时间` zero-predictor-lineage audit only |
+| `encounters` | `[internal dataset path]` | `patient master index,encounter number` join; `age,sex` Z; `encounter time,admission time,discharge time` audit |
+| `procedures` | `[internal dataset path]` | keys; `surgery,start time,end time,surgery source` episode/clock/prior-treatment states |
+| `examinations` | `[internal dataset path]` | keys plus `Examination Number` whole-unit identity; `Examination` modality; `Examination Findings,Examination Diagnosis` raw V/A/E, surface/context/reader concepts; `Start Time` acquisition; `Machine Model` Z |
+| `pathology` | `[internal dataset path]` | keys; `Pathology,Examination Findings,Examination Diagnosis` complete encounter pathology item/HCC-frame/Y; `Machine Model` provenance; no time/specimen field |
+| `medications` | `[internal dataset path]` | keys; `medication, drug type, start time, end time` prior systemic therapy |
+| `orders` | `[internal dataset path]` | keys; `orders (non-medication), order time, start time, end time, order status` prior local/radiotherapy evidence |
+| `diagnoses` | `[internal dataset path]` | keys; `diagnosis name,diagnosis type` untimed corroboration only |
+| `labs` | `[internal dataset path]` | keys; `Test,Qualitative Result,Quantitative Result,Specimen Type,Test Time` zero-predictor-lineage audit only |
 | `clinical_documents` | `[internal dataset path]` | keys/narratives audit only; no reliable document time/version |
 | `vitals,transfers,front_page` | corresponding catalog paths | identifier-only/header-only; no predictors |
 
-Same-encounter joins use exactly `(患者主索引,就诊号)`; examination grouping adds `检查号`; treatment lookup joins patient-wide on `患者主索引` then applies intervals. Every derivation retains source ordinal/backpointer. Direct identifiers, untimed diagnoses/documents, labs, post-cutoff acquisitions, and identifier-only tables are forbidden predictors.
+Same-encounter joins use exactly `(Patient master index,Encounter number)`; examination grouping adds `Examination number`; treatment lookup joins patient-wide on `Patient master index` then applies intervals. Every derivation retains source ordinal/backpointer. Direct identifiers, untimed diagnoses/documents, labs, post-cutoff acquisitions, and identifier-only tables are forbidden predictors.
 
 Required new workspace outputs are `derived/pathology_annotation_roster.parquet`, `derived/pathology_forms.parquet`, `derived/pathology_domains.parquet`, and `derived/joint_reader_states.parquet` with the form/domain/state fields above plus hashes/backpointers. They do not yet exist and are required experimental evidence. Sources remain read-only. Episode-51 supporting audits are `episode51_pathology_source_audit.json`, `episode51_pathology_reader_evidence.md`, and `episode51_guideline_detail.md`.
 

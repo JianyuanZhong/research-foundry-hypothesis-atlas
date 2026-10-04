@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Certificate-bound threshold triage and selection audit for baseline cystatin-C discordance
 
 ## Lineage and substantive advance

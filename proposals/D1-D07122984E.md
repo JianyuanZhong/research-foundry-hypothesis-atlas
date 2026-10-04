@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 19 selection-boundary evolution — landmark physiology versus operational transition
 
 Status: proposed substantive child of `[prior hypothesis]`. No cohort count, fitted coefficient, performance, confidence interval, or clinical result has been observed or is asserted.

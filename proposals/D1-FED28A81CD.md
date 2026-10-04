@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Compiler-ready source reconstruction and endpoint computation for the frozen eICU respiratory-label experiment
 
 ## Status and substantive change

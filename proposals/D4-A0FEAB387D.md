@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Fixed-combined-eGFR profiles and commensurable broad first-code falsification
 
 Status: prospective substantive child of [prior hypothesis]. No P−/P0 association has been estimated. This child preserves the parent's age-40–69 population, fixed-combined-eGFR profiles, day-30 origin, common N17/N18-free risk set, 10-year competing-transition estimand D, profile-support and matching gates, censoring hard gate, uncertainty, and clinical limits. The change is confined to the strongest remaining interpretation threat: broad post-index first-code outcomes are redesigned so depletion of unseen codes, competing death, and different family risk subsets cannot masquerade as renal specificity.

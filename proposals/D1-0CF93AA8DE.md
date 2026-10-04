@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Observation-process-standardized and competing-exit-aware test of the frozen eICU respiratory-label proxy
 
 ## Status, evidence boundary, and substantive advance

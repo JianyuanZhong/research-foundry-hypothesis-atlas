@@ -1,6 +1,6 @@
 # Research hypothesis atlas
 
-**Explore the aggregated hypothesis trees below.** Each node is a recorded hypothesis version or starting question; every line is a recorded parent link. These are AI-generated research proposals for expert review, not confirmed findings.
+**Explore the aggregated hypothesis trees below.** For independent assessment, start with the [blinded review guide](REVIEW.md). Each node is a recorded hypothesis version or starting question; every line is a recorded parent link. These are AI-generated research proposals for expert review, not confirmed findings.
 
 ![All four aggregated hypothesis trees](figures/overview.svg)
 
@@ -33,6 +33,6 @@ UK Biobank hypotheses are grouped under Population Multi-omics & Disease Targets
 
 ## Public review edition
 
-Proposal text is retained with internal paths, run references, source checksums, and incidental individual record references redacted. The public repository excludes source datasets, raw execution traces, private research packages, and credentials. Exact originals and source provenance are retained privately. The review catalogs do not display model scores or campaign labels next to hypotheses.
+Proposal text is retained with internal paths, run references, source checksums, and incidental individual record references redacted. The public repository excludes source datasets, raw execution traces, private research packages, and credentials. Exact originals and source provenance are retained privately. Individual review copies and tree labels omit producer names, provider names, campaign identifiers, authoring dates, and individual provenance links. Aggregate campaign information is reported separately. Chinese passages are presented in English; see the [translation and blinding notes](TRANSLATION.md).
 
 The [machine-readable graph](data/atlas.json) supports independent inspection. Rebuild all trees and catalogs with `python3 scripts/build_trees.py`; no model calls or private datasets are required.

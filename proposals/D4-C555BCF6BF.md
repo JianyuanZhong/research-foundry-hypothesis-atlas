@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Physiological reserve before incident cancer and five-year post-cancer heart failure
 
 Parent: `[prior hypothesis]` (assessed repairable UKB-08 seed).  

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 21 evolution-b — respiratory-specific recording acceleration versus generic observation
 
 Status: proposed substantive child of assessed-valid `[prior hypothesis]`. This is a computable design, not an executed analysis. No cohort count, fitted coefficient, prediction, metric, confidence interval, or hypothesis result is claimed.

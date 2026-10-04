@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Corrected UKB cancer-type hypothesis with metabolic/liver restart audit
 
 Status: proposed substantive child of `[prior hypothesis]`; no hypothesis test or full solver fit has been executed. This branch audits the expert-seed metabolic/liver restart and corrects an inherited source-binding error before preserving the CBC direction as the better-supported delivery hypothesis.

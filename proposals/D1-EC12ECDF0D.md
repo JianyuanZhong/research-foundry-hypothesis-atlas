@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Does laboratory observation behavior change ICU escalation decisions across hospitals?
 
 ## Scientific deliverable and substantive advance
@@ -43,15 +45,15 @@ This is a documented ICU-unit-exit outcome, not exact biological death, post-ICU
 
 Use the eICU snapshot [source checksum], with catalog [internal dataset path], catalog [source checksum]. All source files are read-only ordinary gzip files; the archive member is the ordinary file, not a nested archive.
 
-- Patient source: [internal dataset path] 2.0数据/patient.csv.gz, source [source checksum]. Table patient, schema datasets/eicu/table-ab037c09d7df9a3c.json, schema [source checksum]. Join key patientunitstayid. Use gender, age, ethnicity, hospitalid, hospitaladmitsource, admissionweight, unittype, unitvisitnumber, unitdischargeoffset, unitdischargestatus and uniquepid; use no hospital-discharge field as a substitute for the ICU boundary.
+- Patient source: [internal dataset path] 2.0 data/patient.csv.gz, source [source checksum]. Table patient, schema datasets/eicu/table-ab037c09d7df9a3c.json, schema [source checksum]. Join key patientunitstayid. Use gender, age, ethnicity, hospitalid, hospitaladmitsource, admissionweight, unittype, unitvisitnumber, unitdischargeoffset, unitdischargestatus and uniquepid; use no hospital-discharge field as a substitute for the ICU boundary.
 
-- Laboratory source: [internal dataset path] 2.0数据/lab.csv.gz, source [source checksum]. Table lab, schema datasets/eicu/table-79bdb33275339b1a.json, schema [source checksum]. Join patientunitstayid. Use labid, labresultoffset, labtypeid, labname, numeric labresult, labresulttext only for audit, labmeasurenamesystem, labmeasurenameinterface and labresultrevisedoffset.
+- Laboratory source: [internal dataset path] 2.0 data/lab.csv.gz, source [source checksum]. Table lab, schema datasets/eicu/table-79bdb33275339b1a.json, schema [source checksum]. Join patientunitstayid. Use labid, labresultoffset, labtypeid, labname, numeric labresult, labresulttext only for audit, labmeasurenamesystem, labmeasurenameinterface and labresultrevisedoffset.
 
-- Periodic physiology source: [internal dataset path] 2.0数据/vitalPeriodic.csv.gz, source [source checksum]. Table vitalPeriodic, schema datasets/eicu/table-a22c6d6981a32279.json, schema [source checksum]. Join patientunitstayid. Use vitalperiodicid, observationoffset, temperature, sao2, heartrate, respiration and systemicmean; deduplicate exact vitalperiodicid before aggregation.
+- Periodic physiology source: [internal dataset path] 2.0 data/vitalPeriodic.csv.gz, source [source checksum]. Table vitalPeriodic, schema datasets/eicu/table-a22c6d6981a32279.json, schema [source checksum]. Join patientunitstayid. Use vitalperiodicid, observationoffset, temperature, sao2, heartrate, respiration and systemicmean; deduplicate exact vitalperiodicid before aggregation.
 
-- Admission severity source: [internal dataset path] 2.0数据/apachePatientResult.csv.gz, source [source checksum]. Table apachePatientResult, schema datasets/eicu/table-754bebf64d3d9909.json, schema [source checksum]. Join patientunitstayid. Use acutephysiologyscore, apachescore, predictedicumortality and predictediculos as admission covariates. Every actual* column is a label/audit and forbidden as a predictor.
+- Admission severity source: [internal dataset path] 2.0 data/apachePatientResult.csv.gz, source [source checksum]. Table apachePatientResult, schema datasets/eicu/table-754bebf64d3d9909.json, schema [source checksum]. Join patientunitstayid. Use acutephysiologyscore, apachescore, predictedicumortality and predictediculos as admission covariates. Every actual* column is a label/audit and forbidden as a predictor.
 
-- Hospital context source: [internal dataset path] 2.0数据/hospital.csv.gz, source [source checksum]. Table hospital, schema datasets/eicu/table-811df7b2ef435e12.json, schema [source checksum]. Join hospitalid. Use numbedscategory, teachingstatus and region only for split descriptions and transport tables, never as a patient predictor.
+- Hospital context source: [internal dataset path] 2.0 data/hospital.csv.gz, source [source checksum]. Table hospital, schema datasets/eicu/table-811df7b2ef435e12.json, schema [source checksum]. Join hospitalid. Use numbedscategory, teachingstatus and region only for split descriptions and transport tables, never as a patient predictor.
 
 The dataset metadata specifies offsets in minutes from ICU admission; patient-level grouping uses uniquepid, not ICU-stay rows. The public release has no images or raw waveforms; vitalPeriodic is a five-minute summary of monitor observations. Narrative portions are removed and retained note fields are not needed for this question. The full source catalog and these table schemas, rather than a paper, establish availability.
 

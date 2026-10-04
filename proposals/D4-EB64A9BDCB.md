@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Grip-selected replacement for cystatin-C testing in preserved creatinine eGFR
 
 ## What changed from the parent

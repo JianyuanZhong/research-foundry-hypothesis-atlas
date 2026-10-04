@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Is remission-associated MERTK mostly a macrophage-state mixture signal?
 
 **Episode 11 evolution of `[prior hypothesis]`; proposal only.** No analysis/model fit has been run and no biological result is claimed. This is a bounded reanalysis of published source data, not independent replication.

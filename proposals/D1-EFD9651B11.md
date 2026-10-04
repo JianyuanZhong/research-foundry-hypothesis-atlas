@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # A pre-registered, label-independent control universe for target-linked pulmonary discharge handoff
 
 ## Parent, purpose, and scope of this repair

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Direct all-offered comparison of intention-to-obtain-UACR-first versus immediate UACR-free cystatin-C allocation
 
 ## Clinical decision, evidence boundary, and advance

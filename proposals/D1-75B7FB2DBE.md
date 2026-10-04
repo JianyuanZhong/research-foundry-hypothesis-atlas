@@ -1,6 +1,8 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # B-beyond-P repeat-TACE execution repair
 
-This targeted child preserves the frozen assay-specific experiment from `[prior hypothesis]`: adults with an independently selected first repeat-TACE event, complete assay-specific remote B / pre-repeat P / next observed same-assay Y values, and the fixed compact decision-time core. The exact five read-only HCC CSV sources, joins on (`患者主索引`,`就诊号`), pathway/event ontology, 2018–2024 observation boundary, 14–180 day repeat-TACE gap, 15–90 day event window, B/P/Y clocks, and noncausal interpretation limits are unchanged.
+This targeted child preserves the frozen assay-specific experiment from `[prior hypothesis]`: adults with an independently selected first repeat-TACE event, complete assay-specific remote B / pre-repeat P / next observed same-assay Y values, and the fixed compact decision-time core. The exact five read-only HCC CSV sources, joins on (`patient master index`,`encounter number`), pathway/event ontology, 2018–2024 observation boundary, 14–180 day repeat-TACE gap, 15–90 day event window, B/P/Y clocks, and noncausal interpretation limits are unchanged.
 
 ## Mechanical repair
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Prospective translation of the conservative pulmonary-nodule handoff gate: silent validation followed, only after lane-specific gates, by a governed route-stratified workflow trial
 
 ## Decision question and substantive advance

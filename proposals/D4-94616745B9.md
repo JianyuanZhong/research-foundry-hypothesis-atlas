@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 2 clinical translation: CBC discordance, timing, and repeat-measurement selection
 
 ## Revised hypothesis and scientific deliverable

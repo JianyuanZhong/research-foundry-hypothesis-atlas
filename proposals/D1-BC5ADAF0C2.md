@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 83 integration: first-opportunity, null-safe H120 recorded-topology experiment
 
 Parents: `[prior hypothesis]` and `[prior hypothesis]`.

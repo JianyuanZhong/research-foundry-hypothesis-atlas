@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Opportunity-conditional target-link documentation experiment
 
 ## Purpose and targeted repair

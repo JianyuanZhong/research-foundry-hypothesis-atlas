@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Canonical namespaced repeat-TACE episode table and locked Delta-Brier contrasts
 
 ## Assigned repair and clinical question
@@ -8,7 +10,7 @@ The question remains whether two leakage-safe intermediate-to-current direction 
 
 ## Frozen data binding and reconstruction targets
 
-The complete-source experiment is bound to HCC snapshot `[source checksum]` and these five ordinary read-only CSVs: encounters `[internal dataset path]` (`患者主索引`,`就诊号`,`年龄`,`性别`,`就诊时间`,`入院时间`,`出院时间`,`就诊科室`); diagnoses `[internal dataset path]` (`患者主索引`,`就诊号`,`诊断名称`,`诊断类型`); procedures `[internal dataset path]` (`患者主索引`,`就诊号`,`手术`,`开始时间`,`结束时间`,`手术来源`); medications `[internal dataset path]` (`患者主索引`,`就诊号`,`用药`,`开始时间`); and labs `[internal dataset path]` (`患者主索引`,`就诊号`,`检验`,`定量结果`,`定性结果`,`标本类型`,`检验时间`). Their catalog hashes are, respectively, `[source checksum]`, `[source checksum]`, `[source checksum]`, `[source checksum]`, and `[source checksum]`.
+The complete-source experiment is bound to HCC snapshot `[source checksum]` and these five ordinary read-only CSVs: encounters `[internal dataset path]` (`patient master index`,`encounter number`,`age`,`sex`,`encounter time`,`admission time`,`discharge time`,`encounter department`); diagnoses `[internal dataset path]` (`patient master index`,`encounter number`,`diagnosis name`,`diagnosis type`); procedures `[internal dataset path]` (`patient master index`,`encounter number`,`surgery`,`start time`,`end time`,`procedure source`); medications `[internal dataset path]` (`patient master index`,`encounter number`,`medication`,`start time`); and labs `[internal dataset path]` (`patient master index`,`encounter number`,`test`,`quantitative result`,`qualitative result`,`specimen type`,`test time`). Their catalog hashes are, respectively, `[source checksum]`, `[source checksum]`, `[source checksum]`, `[source checksum]`, and `[source checksum]`.
 
 The frozen no-sampling reconstruction targets are 319 systemic-record and 1,491 comparator pathways; 159 and 526 independently selected repeat events; 28,159,928 laboratory rows; 476,846 exact target-assay rows; 476,820 valid uncensored numeric-time rows; seven duplicate timestamp groups and zero discordant groups; 55/187 both-B-and-P episodes; and 34/97 observed common post panels. The observation denominator is 242 and the outcome denominator is 131 (86 events, 45 non-events). Histories are assay-specific in the 242 denominator, with one process mismatch, and shared clocks agree in the 131 outcome episodes.
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Provisional hypothesis: discordant AKI recovery after an ICU landmark
 
 Status: provisional draft for registration; no computed results are claimed.

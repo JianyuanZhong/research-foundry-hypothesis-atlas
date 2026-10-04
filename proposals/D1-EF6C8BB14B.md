@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 TITLE
 Cross-hospital and cross-landmark semantic invariance audit of the two exact eICU ventilation care-plan labels
 

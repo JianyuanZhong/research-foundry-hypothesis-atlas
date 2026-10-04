@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Renal–nutrition vulnerability during measurable insulin infusion
 
 ## Scientific deliverable
@@ -110,7 +112,7 @@ Dataset: eICU snapshot `[source checksum]`, source catalog [source checksum]. Of
 
 Primary source bindings:
 
-- `patient`, table JSON `datasets/eicu/table-ab037c09d7df9a3c.json`, source `baidu_downloads/eicu_mimic/eicu数据库/EICU 2.0数据/patient.csv.gz`; keys `patientunitstayid`, `uniquepid`; fields `age`, `hospitalid`, `unitadmitoffset`, `unitdischargeoffset`, `unitstaytype`, `unittype`, `unitvisitnumber`, `admissionweight`, `hospitaladmitsource`, `unitadmitsource`.
+- `patient`, table JSON `datasets/eicu/table-ab037c09d7df9a3c.json`, source `baidu_downloads/eicu_mimic/eicu database/EICU 2.0 data/patient.csv.gz`; keys `patientunitstayid`, `uniquepid`; fields `age`, `hospitalid`, `unitadmitoffset`, `unitdischargeoffset`, `unitstaytype`, `unittype`, `unitvisitnumber`, `admissionweight`, `hospitaladmitsource`, `unitadmitsource`.
 - `hospital`, table JSON `datasets/eicu/table-811df7b2ef435e12.json`, source `.../hospital.csv.gz`; join `hospitalid`; fields `numbedscategory`, `teachingstatus`, `region`.
 - `infusionDrug`, table JSON `datasets/eicu/table-18e1a8caaa91eb44.json`, source `.../infusionDrug.csv.gz`; fields `patientunitstayid`, `infusionoffset`, `drugname`, `drugrate`, `infusionrate`, `drugamount`, `volumeoffluid`, `patientweight`.
 - `medication`, table JSON `datasets/eicu/table-d31d6bb023397bc2.json`, source `.../medication.csv.gz`; fields `patientunitstayid`, `drugorderoffset`, `drugstartoffset`, `drugstopoffset`, `drugname`, `dosage`, `routeadmin`, `frequency`, `drugordercancelled`, `prn`.

@@ -1,9 +1,11 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Hypoglycemia after insulin
 
 Seed ID: `[starting question]`
 Dataset: eICU
 Original number: 9 (identifier, not rank)
-Source: `研究选题.xlsx`, `研究选题!A30:I30`
+Source: `Research Topics.xlsx`, `Research Topics!A30:I30`
 Workbook [source checksum]
 
 Status: expert-proposed, untested hypothesis; data bindings, novelty and feasibility have not been validated.

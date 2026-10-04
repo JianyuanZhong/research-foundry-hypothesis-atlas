@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode-12 observable-outcome successor: competing-risk live index-hospital discharge after post-shock IV-loop initiation
 
 **Parent:** `[prior hypothesis]`

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Proposal: separating disease-linked escalation from care-capture intensity after TACE
 
 ## Episode, parent, and actual deliverable
@@ -21,14 +23,14 @@ The estimand is an adjusted prognostic association with recorded care, not a cau
 
 ## Population, time, exposure, and outcomes
 
-Use one index per patient. In procedures, identify the earliest row with case-insensitive 'TACE', '动脉化疗栓塞', or both '肝动脉' and '栓塞' in 手术. Collapse qualifying rows for one patient within 24 hours into one index episode, retaining the raw procedure vocabulary and counts. Anchor on 开始时间; the parent audit reports no missing procedure start. Require age >=18 and nonmissing sex from the joined index encounter, a 诊断名称 containing literal 肝细胞癌 joined to an encounter between 180 days before and 7 days after index, index date no later than 2025-01-01, and sufficient local ascertainment through day 365. Unknown follow-up is excluded from the primary denominator and reported, never coded as no event.
+Use one index per patient. In procedures, identify the earliest row with case-insensitive 'TACE', 'arterial chemoembolization', or both 'hepatic artery' and 'embolization' in procedure. Collapse qualifying rows for one patient within 24 hours into one index episode, retaining the raw procedure vocabulary and counts. Anchor on start time; the parent audit reports no missing procedure start. Require age >=18 and nonmissing sex from the joined index encounter, a diagnosis name containing literal hepatocellular carcinoma joined to an encounter between 180 days before and 7 days after index, index date no later than 2025-01-01, and sufficient local ascertainment through day 365. Unknown follow-up is excluded from the primary denominator and reported, never coded as no event.
 
 The single prediction landmark is day 45 after index. No post-day-45 record enters features. Require the primary paired cohort to have the last parseable AFP in days -30 to -1 and the first in days 7–45. Set z=log1p(AFP), define improvement as z_post <= 0.5*z_pre, and retain continuous change, missingness and inequality flags. For each of albumin, total bilirubin, the coagulation-ratio proxy and platelet count, use the last pre and first early-post value; define non-deterioration as early >= pre for albumin/platelets and early <= pre for bilirubin/coagulation ratio. The joint phenotype is AFP improvement plus non-deterioration in at least two of these four assays. The assay is not called INR, no ALBI/MELD or unit-dependent cutoff is computed, and the source has no unit column.
 
 From days 46–365 classify the first subsequent procedure into mutually exclusive categories:
 
 - repeat TACE-like, using the same frozen TACE rule;
-- alternate liver-directed: name contains 切除, 消融, 射频, or 微波, but not TACE-like;
+- alternate liver-directed: name contains Resection, Ablation, Radiofrequency, or Microwave, but not TACE-like;
 - non-liver capture control: first procedure in neither category.
 
 Report repeat TACE and alternate liver-directed separately, the combined liver-directed category, and the non-liver control as competing first actions. Include literal-name and 90-/180-day sensitivities. No non-event means treatment success.
@@ -39,17 +41,17 @@ The pre-index negative-control exposure repeats the trajectory construction in d
 
 All sources are read-only. HCC snapshot is [source checksum]. Every source is an ordinary CSV; there are no archive members. Full schema files are in datasets/hcc/.
 
-- encounters, datasets/hcc/table-b743286cb1249287.json, source [internal dataset path], [source checksum]. Join key is (患者主索引, 就诊号). Use 年龄, 性别, 就诊时间, 入院时间, 出院时间, and optionally 就诊科室; use admission time, falling back to visit time, for index anchoring and discharge only for ascertainment.
+- encounters, datasets/hcc/table-b743286cb1249287.json, source [internal dataset path], [source checksum]. Join key is (patient master index, encounter number). Use age, sex, visit time, admission time, discharge time, and optionally department; use admission time, falling back to visit time, for index anchoring and discharge only for ascertainment.
 
-- procedures, datasets/hcc/table-d5eae16f8f8093d9.json, source [internal dataset path], [source checksum]. Join on the same two keys. Use 手术, 开始时间, 结束时间, 手术来源; use start time for index and outcome dates.
+- procedures, datasets/hcc/table-d5eae16f8f8093d9.json, source [internal dataset path], [source checksum]. Join on the same two keys. Use Surgery, Start Time, End Time, Surgery Source; use start time for index and outcome dates.
 
-- diagnoses, datasets/hcc/table-12710723c3df0c99.json, source [internal dataset path], [source checksum]. Use 诊断名称 and 诊断类型, join to encounters on the two keys, and assign diagnosis time from the joined encounter. Diagnosis text cannot adjudicate stage or recurrence.
+- diagnoses, datasets/hcc/table-12710723c3df0c99.json, source [internal dataset path], [source checksum]. Use Diagnosis Name and Diagnosis Type, join to encounters on the two keys, and assign diagnosis time from the joined encounter. Diagnosis text cannot adjudicate stage or recurrence.
 
-- labs, datasets/hcc/table-38aad8c54471332f.json, source [internal dataset path], [source checksum]. Use 检验, 定性结果, 定量结果, 标本类型, 检验时间; exact assay names are 甲胎蛋白, 白蛋白, 总胆红素, 凝血酶原时间比值, and 血小板计数. Parse numeric values deterministically, preserve inequalities/qualitative flags, and do not pool across assays or units.
+- labs, datasets/hcc/table-38aad8c54471332f.json, source [internal dataset path], [source checksum]. Use Test, Qualitative Result, Quantitative Result, Specimen Type, Test Time; exact assay names are alpha-fetoprotein, albumin, total bilirubin, prothrombin time ratio, and platelet count. Parse numeric values deterministically, preserve inequalities/qualitative flags, and do not pool across assays or units.
 
-- examinations, datasets/hcc/table-fd016d2731b9d6c6.json, source [internal dataset path], [source checksum]. Use 检查, 检查所见, 检查诊断, 开始时间, 机器型号, 检查号, joining on the same keys. Deduplicate exact rows and retain counts. A frozen opportunity screen requires a liver/abdomen term (肝, 腹部, 上腹, 肝动脉, 门静脉, PET/CT) and an imaging term (CT/MRI/磁共振/增强/造影/超声/PET), excluding biopsy/puncture/drainage/catheter/surgery/ablation/intervention terms. This is recording opportunity only; report language is unvalidated.
+- examinations, datasets/hcc/table-fd016d2731b9d6c6.json, source [internal dataset path], [source checksum]. Use examination, examination findings, examination diagnosis, start time, machine model, examination number, joining on the same keys. Deduplicate exact rows and retain counts. A frozen opportunity screen requires a liver/abdomen term (liver, abdomen, upper abdomen, hepatic artery, portal vein, PET/CT) and an imaging term (CT/MRI/MRI/contrast/angiography/ultrasound/PET), excluding biopsy/puncture/drainage/catheter/surgery/ablation/intervention terms. This is recording opportunity only; report language is unvalidated.
 
-Optional orders, schema datasets/hcc/table-6b93dcf0ea823702.json, source data_医嘱(非药品)_2062526727266216118.csv, can supply pre-index or day-45-known order-family/capture features using 开立时间, 开始时间, 结束时间; an order is not completion. Medications can supply pre-index history or capture only, never administration or intent. clinical_documents and pathology have no temporal columns and cannot enter dated prediction. vitals, transfers, and front_page are identifier-only and add no clinical payload.
+Optional orders, schema datasets/hcc/table-6b93dcf0ea823702.json, source data_Orders (non-medication)_2062526727266216118.csv, can supply pre-index or day-45-known order-family/capture features using order time, start time, and end time; an order is not completion. Medications can supply pre-index history or capture only, never administration or intent. clinical_documents and pathology have no temporal columns and cannot enter dated prediction. vitals, transfers, and front_page are identifier-only and add no clinical payload.
 
 ## Models and scientifically substantive method comparison
 

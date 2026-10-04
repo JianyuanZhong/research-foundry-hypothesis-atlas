@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 13: does a lower observed SpO2 band improve the acidemic PaO2 mapping balance?
 
 ## Unresolved bedside question and advance

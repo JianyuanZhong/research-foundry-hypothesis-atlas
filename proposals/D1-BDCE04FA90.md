@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Support- and observation-robust forecast relevance for the frozen HCC repeat-TACE P-beyond-B experiment
 
 ## Purpose and scope
@@ -14,18 +16,18 @@ No new HCC empirical result is claimed. The retained executed audit supports at 
 
 ## Exact dataset and source bindings
 
-Use HCC snapshot `[source checksum]` and catalog `[internal dataset path]` with [source checksum]. Every source is an ordinary file, not an archive member. Read all source files read-only. Every linkage uses a deduplicated existence join on (`患者主索引`,`就诊号`); audit duplicate composite keys first, retain one Boolean/payload record per key as appropriate, and prohibit many-to-many multiplication. Emit only aggregate/de-identified output; never emit identifiers, names, identity numbers, phone/card numbers, raw text, or clinical notes.
+Use HCC snapshot `[source checksum]` and catalog `[internal dataset path]` with [source checksum]. Every source is an ordinary file, not an archive member. Read all source files read-only. Every linkage uses a deduplicated existence join on (`Patient Master Index`,`Visit Number`); audit duplicate composite keys first, retain one Boolean/payload record per key as appropriate, and prohibit many-to-many multiplication. Emit only aggregate/de-identified output; never emit identifiers, names, identity numbers, phone/card numbers, raw text, or clinical notes.
 
 The exact files and fields are:
 
-* `encounters`, table `table-b743286cb1249287.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use `患者主索引`,`就诊号`,`年龄`,`性别`,`就诊时间`,`入院时间`,`出院时间`,`就诊科室`.
-* `diagnoses`, table `table-12710723c3df0c99.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use `患者主索引`,`就诊号`,`诊断名称`, requiring exact `诊断名称 == 肝细胞癌`. This table has no time; inherit linked encounter time.
-* `procedures`, table `table-d5eae16f8f8093d9.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use `患者主索引`,`就诊号`,`手术`,`开始时间`,`结束时间`,`手术来源`, the inherited case-insensitive `TACE` or literal `化疗栓塞` rule, valid `开始时间`, same-calendar-day collapse, first adjacent 14–180-day TACE1/TACE2 pair, and first strict 15–90-day repeat event.
-* `medications`, table `table-4f6ecaeb6e8f69c2.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use `患者主索引`,`就诊号`,`用药`,`开始时间`,`结束时间`,`药品类型` for the inherited days-1–14 recorded systemic-record ontology and its placebo/prior-exposure/bevacizumab-only/generic-procedure exclusions. These are recorded orders, not verified administration or intent.
-* `labs`, table `table-38aad8c54471332f.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use `患者主索引`,`就诊号`,`检验`,`定性结果`,`定量结果`,`标本类型`,`检验时间`. Analyze exact assays `白蛋白` and `总胆红素` separately, with finite uncensored numeric `定量结果`; there is no unit or reference-range field.
-* `examinations`, table `table-fd016d2731b9d6c6.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use same-patient/same-encounter row presence and valid `开始时间` in the outcome-blind opportunity window only. Do not text-mine `检查所见` or `检查诊断`.
-* `clinical_documents`, table `table-66afca58512c2fca.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use linked composite-key nonempty-row presence only, with duplicate header represented as `入院诊断__duplicate_2`. It has no native time and cannot be assigned to a Y window.
-* `orders`, table `table-6b93dcf0ea823702.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; if retained in the inherited opportunity audit, use only recorded presence/timing from `患者主索引`,`就诊号`,`医嘱(非药品)`,`开立时间`,`开始时间`,`结束时间`,`医嘱期限`,`医嘱状态`,`频次`, never as proof an intervention occurred.
+* `encounters`, table `table-b743286cb1249287.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use `Patient master index`,`Visit number`,`Age`,`Sex`,`Encounter time`,`Admission time`,`Discharge time`,`Encounter department`.
+* `diagnoses`, table `table-12710723c3df0c99.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use `Patient Master Index`,`Encounter Number`,`Diagnosis Name`, requiring exact `Diagnosis Name == Hepatocellular Carcinoma`. This table has no time; inherit linked encounter time.
+* `procedures`, table `table-d5eae16f8f8093d9.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use `patient master index`,`encounter number`,`procedure`,`start time`,`end time`,`procedure source`, the inherited case-insensitive `TACE` or literal `chemoembolization` rule, valid `start time`, same-calendar-day collapse, first adjacent 14–180-day TACE1/TACE2 pair, and first strict 15–90-day repeat event.
+* `medications`, table `table-4f6ecaeb6e8f69c2.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use `patient master index`,`encounter number`,`medication`,`start time`,`end time`,`drug type` for the inherited days-1–14 recorded systemic-record ontology and its placebo/prior-exposure/bevacizumab-only/generic-procedure exclusions. These are recorded orders, not verified administration or intent.
+* `labs`, table `table-38aad8c54471332f.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use `Patient Master Index`,`Encounter Number`,`Test`,`Qualitative Result`,`Quantitative Result`,`Specimen Type`,`Test Time`. Analyze exact assays `Albumin` and `Total Bilirubin` separately, with finite uncensored numeric `Quantitative Result`; there is no unit or reference-range field.
+* `examinations`, table `table-fd016d2731b9d6c6.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use same-patient/same-encounter row presence and valid `Start time` in the outcome-blind opportunity window only. Do not text-mine `Examination findings` or `Examination diagnosis`.
+* `clinical_documents`, table `table-66afca58512c2fca.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; use linked composite-key nonempty-row presence only, with duplicate header represented as `Admission Diagnosis__duplicate_2`. It has no native time and cannot be assigned to a Y window.
+* `orders`, table `table-6b93dcf0ea823702.json`, schema [source checksum], source `[internal dataset path]`, source [source checksum]; if retained in the inherited opportunity audit, use only recorded presence/timing from `patient master index`,`encounter number`,`non-drug orders`,`order issue time`,`start time`,`end time`,`order duration`,`order status`,`frequency`, never as proof an intervention occurred.
 
 `vitals` (`table-8436de9cba74b8ca.json`, source `[internal dataset path]`) and `transfers` (`table-320c20f732e71789.json`, source `[internal dataset path]`) are identifier-only and supply no covariates. They may be used only for duplicate-key audit. `front_page` is likewise nominal/identifier-only. No images or validated clinical reference ranges are available.
 
@@ -95,7 +97,7 @@ Define a **support-robust forecast-relevance status** only when the all-BP resul
 
 Before reading Y, carry forward the mutually exclusive outcome-blind recording-opportunity categories from the parent:
 
-* `exam+follow-up`: an examination with valid `开始时间` in (event_time,event_time+72h] and an additional distinct encounter with valid `就诊时间` in that interval;
+* `exam+follow-up`: an examination with valid `Start Time` in (event_time,event_time+72h] and an additional distinct encounter with valid `Encounter Time` in that interval;
 * `exam only`;
 * `follow-up only`;
 * `document-only` when neither timed indicator is present but the selected encounter has a nonempty linked clinical-document row;
@@ -132,7 +134,7 @@ The compiler and verifier must execute or fixture-test the following without cha
 2. **Restricted P-linkage placebo.** Within each training/future partition, permute raw P only within inherited arm and broad calendar block, keeping B, core, Y, row membership, patient folds, event dates, and observation pattern fixed. Recompute the nested pipeline and all secondary outputs. A placebo as favorable as the real signal is adverse to P attribution; this is not exact conditional randomization.
 3. **Timing placebo.** Use the prior eligible assay or explicit missing P, never a post-event value, for descriptive movement only. Failure to define a valid prior assay is inconclusive.
 4. **Support-mask fixture.** Synthetic rows exactly at 1st/99th boundaries must be retained; rows just outside excluded; future Y must never alter the mask. Missing age and an unseen sex category must be status-labelled, not median-reassigned into continuous support.
-5. **Opportunity fixture.** Synthetic timestamps exactly at event, +72 hours, +7 days, and +10 days must follow open/closed boundaries. Untimed documents cannot enter a timed window. An additional encounter must have a distinct `就诊号`; duplicate source rows must not inflate opportunity counts.
+5. **Opportunity fixture.** Synthetic timestamps exactly at event, +72 hours, +7 days, and +10 days must follow open/closed boundaries. Untimed documents cannot enter a timed window. An additional encounter must have a distinct `Visit ID`; duplicate source rows must not inflate opportunity counts.
 6. **Bound arithmetic fixture.** Test positive and negative affine slopes, endpoint reversal, all-observed, all-missing, and outside-training-range cases. Verify support-mask denominators are fixed within their declared conditional analysis and never substituted into the primary endpoint. Verify common-displacement tipping remains piecewise linear.
 7. **Calendar and arm leave-outs.** Remove each calendar block or arm only as a descriptive sensitivity. A result found only in one unsupported/sparse arm or one block cannot receive a robust label.
 8. **Assay separation.** Albumin and total bilirubin have independent parsers, model fits, `SD_train`, quantiles, masks, bounds, and outputs. Any pooling or shared cutpoint is a hard failure.

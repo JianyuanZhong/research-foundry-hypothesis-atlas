@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # HCC repeat-TACE P-beyond-B: observation-robustness and decision-resolution successor
 
 ## Targeted successor and unchanged scientific claim
@@ -12,15 +14,15 @@ The strongest available evidence remains the parent's executed outcome-blind aud
 
 Use HCC snapshot `[source checksum]`, catalog `[internal dataset path]` ([source checksum]), and scan all rows of the ordinary, read-only CSV files named below. Archive member for every source is `ordinary file`.
 
-* `encounters`, table schema `table-b743286cb1249287.json`, source `[internal dataset path]`, [source checksum]; use `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`.
-* `diagnoses`, `table-12710723c3df0c99.json`, source `[internal dataset path]`, [source checksum]; use `患者主索引`, `就诊号`, `诊断名称`, `诊断类型`; select `诊断名称 == 肝细胞癌`, inheriting linked encounter timing because diagnoses has no native timestamp.
-* `procedures`, `table-d5eae16f8f8093d9.json`, source `[internal dataset path]`, [source checksum]; use `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源`; identify case-insensitive `TACE` or literal `化疗栓塞`, require valid `开始时间`, collapse same-patient same-calendar-day duplicates, and retain the parent's first adjacent 14–180-day TACE1/TACE2 pair and first strict event 15–90 days after TACE2.
+* `encounters`, table schema `table-b743286cb1249287.json`, source `[internal dataset path]`, [source checksum]; use `Patient master index`, `Visit number`, `Age`, `Sex`, `Visit time`, `Admission time`, `Discharge time`, `Visit department`.
+* `diagnoses`, `table-12710723c3df0c99.json`, source `[internal dataset path]`, [source checksum]; use `Patient Master Index`, `Encounter Number`, `Diagnosis Name`, `Diagnosis Type`; select `Diagnosis Name == Hepatocellular Carcinoma`, inheriting linked encounter timing because diagnoses has no native timestamp.
+* `procedures`, `table-d5eae16f8f8093d9.json`, source `[internal dataset path]`, [source checksum]; use `patient master index`, `encounter number`, `procedure`, `start time`, `end time`, `procedure source`; identify case-insensitive `TACE` or literal `chemoembolization`, require valid `start time`, collapse same-patient same-calendar-day duplicates, and retain the parent's first adjacent 14–180-day TACE1/TACE2 pair and first strict event 15–90 days after TACE2.
 * `medications`, `table-4f6ecaeb6e8f69c2.json`, source `[internal dataset path]`, [source checksum]; apply the inherited days 1–14 systemic-record ontology and all placebo, prior-exposure, bevacizumab-only, and generic-procedure ambiguity exclusions. These are recorded orders, not verified administration.
-* `labs`, `table-38aad8c54471332f.json`, source `[internal dataset path]`, [source checksum]; use `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`; exact assays `白蛋白` and `总胆红素`, finite uncensored `定量结果`, and native `检验时间`. There is no unit or reference-range column, so never pool assays and do not infer clinical thresholds.
-* `examinations`, `table-fd016d2731b9d6c6.json`, source `[internal dataset path]`, [source checksum]; use only valid `开始时间` and linked-row presence; never text-mine `检查所见` or `检查诊断`.
-* `clinical_documents`, `table-66afca58512c2fca.json`, source `[internal dataset path]`, [source checksum]; use nonempty linked-row presence only. The duplicate header is `入院诊断__duplicate_2`; this table has no time and cannot supply a Y-window timestamp.
+* `labs`, `table-38aad8c54471332f.json`, source `[internal dataset path]`, [source checksum]; use `patient master index`, `encounter number`, `test`, `qualitative result`, `quantitative result`, `specimen type`, `test time`; exact assays `albumin` and `total bilirubin`, finite uncensored `quantitative result`, and native `test time`. There is no unit or reference-range column, so never pool assays and do not infer clinical thresholds.
+* `examinations`, `table-fd016d2731b9d6c6.json`, source `[internal dataset path]`, [source checksum]; use only valid `Start time` and linked-row presence; never text-mine `Examination findings` or `Examination diagnosis`.
+* `clinical_documents`, `table-66afca58512c2fca.json`, source `[internal dataset path]`, [source checksum]; use nonempty linked-row presence only. The duplicate header is `Admission Diagnosis__duplicate_2`; this table has no time and cannot supply a Y-window timestamp.
 
-All linked tables use a deduplicated existence join on (`患者主索引`,`就诊号`), with duplicate composite-key counts reported before joining and no many-to-many multiplication. Patient-level sequencing uses `患者主索引` only under the inherited rules.
+All linked tables use a deduplicated existence join on (`patient master index`,`encounter number`), with duplicate composite-key counts reported before joining and no many-to-many multiplication. Patient-level sequencing uses `patient master index` only under the inherited rules.
 
 ## Frozen population, clocks, models, and primary analysis
 
@@ -46,7 +48,7 @@ Retain training-only age median plus missingness indicator, sex coding, variance
 
 ## New repair A: ascertainment-regime robustness decomposition
 
-The parent's opportunity categories are retained and made analytically consequential without treating them as completed care. For every assay, origin, arm, and future block, assign every BP-eligible row exactly one pre-Y category using valid examination `开始时间` in (event,event+72h], an additional distinct encounter with valid `就诊时间` in that interval, and nonempty linked clinical-document row for the selected encounter, with the inherited precedence: `exam+follow-up`, `exam only`, `follow-up only`, `document-only` when neither timed indicator is present, and `none`. A document has no timestamp and never enters the Y window. Cells under five are descriptive/suppressed, not pooled silently.
+The parent's opportunity categories are retained and made analytically consequential without treating them as completed care. For every assay, origin, arm, and future block, assign every BP-eligible row exactly one pre-Y category using valid examination `Start Time` in (event,event+72h], an additional distinct encounter with valid `Visit Time` in that interval, and nonempty linked clinical-document row for the selected encounter, with the inherited precedence: `exam+follow-up`, `exam only`, `follow-up only`, `document-only` when neither timed indicator is present, and `none`. A document has no timestamp and never enters the Y window. Cells under five are descriptive/suppressed, not pooled silently.
 
 Before reading Y, create an immutable row ledger containing category, assay, arm, calendar block, B/P covariates, prediction inputs, and category membership. For each category with at least 10 BP-eligible rows overall and at least 5 in each relevant arm when arm-specific reporting is requested, report N, Y-observed fraction, Wilson interval, observed-versus-missing SMDs, complete-triplet RMSE gain, and the parent's fixed-prediction missing-Y contrast interval with the category's BP-eligible denominator. Fit models only once under the frozen primary design; these are fixed-prediction diagnostic strata, not refitted subgroup estimands.
 

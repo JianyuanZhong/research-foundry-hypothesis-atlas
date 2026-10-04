@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 79 successor: is numeric repeat-lactate queue value robust across review capacity?
 
 ## Unresolved question, importance, and advance
@@ -75,11 +77,11 @@ A positive average with one capacity interval spanning zero is inconclusive, not
 
 Catalog: [internal dataset path], [source checksum]. All selected files are ordinary gzip CSV files (catalog member null/ordinary file); live headers and schemas were inspected.
 
-- patient table: [internal dataset path] 2.0数据/patient.csv.gz; [source checksum]; schema datasets/eicu/table-ab037c09d7df9a3c.json. Required patientunitstayid, patienthealthsystemstayid, uniquepid, gender, age, hospitalid, hospitaldischargeoffset, hospitaldischargestatus.
-- infusionDrug table: [internal dataset path] 2.0数据/infusionDrug.csv.gz; [source checksum]; schema datasets/eicu/table-18e1a8caaa91eb44.json. Required infusiondrugid, patientunitstayid, infusionoffset, drugname.
-- lab table: [internal dataset path] 2.0数据/lab.csv.gz; [source checksum]; schema datasets/eicu/table-79bdb33275339b1a.json. Required labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset.
-- vitalPeriodic table: [internal dataset path] 2.0数据/vitalPeriodic.csv.gz; [source checksum]; schema datasets/eicu/table-a22c6d6981a32279.json. Required vitalperiodicid, patientunitstayid, observationoffset, heartrate, respiration, sao2.
-- optional hospital table: [internal dataset path] 2.0数据/hospital.csv.gz; [source checksum]; schema datasets/eicu/table-811df7b2ef435e12.json. Required hospitalid, numbedscategory, teachingstatus, region; no hospital descriptor enters prediction.
+- patient table: [internal dataset path] 2.0 data/patient.csv.gz; [source checksum]; schema datasets/eicu/table-ab037c09d7df9a3c.json. Required patientunitstayid, patienthealthsystemstayid, uniquepid, gender, age, hospitalid, hospitaldischargeoffset, hospitaldischargestatus.
+- infusionDrug table: [internal dataset path] 2.0 data/infusionDrug.csv.gz; [source checksum]; schema datasets/eicu/table-18e1a8caaa91eb44.json. Required infusiondrugid, patientunitstayid, infusionoffset, drugname.
+- lab table: [internal dataset path] 2.0Data/lab.csv.gz; [source checksum]; schema datasets/eicu/table-79bdb33275339b1a.json. Required labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset.
+- vitalPeriodic table: [internal dataset path] 2.0 dataset/vitalPeriodic.csv.gz; [source checksum]; schema datasets/eicu/table-a22c6d6981a32279.json. Required vitalperiodicid, patientunitstayid, observationoffset, heartrate, respiration, sao2.
+- optional hospital table: [internal dataset path] 2.0 data/hospital.csv.gz; [source checksum]; schema datasets/eicu/table-811df7b2ef435e12.json. Required hospitalid, numbedscategory, teachingstatus, region; no hospital descriptor enters prediction.
 
 All clinical joins use patientunitstayid; uniquepid defines one-person selection; hospitalid defines folds, quotas, strata, bootstrap groups, and deletion units. Offsets are ICU-relative minutes. The other configured HCC, MIMIC, UKB, and remaining EICU files remain read-only and directly accessible but are not pooled because no validated cross-dataset key or harmonization exists for this pressor-entry/L24/revision-aware estimand.
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # HCC repeat-TACE P-beyond-B validation with an explicit three-layer laboratory interpretation contract
 
 ## Successor, unresolved question, and substantive repair
@@ -10,8 +12,8 @@ The unchanged primary question is:
 
 The remaining clinically material gap is not another prediction model. A finite number in the laboratory table establishes only that a numeric result was recorded. It does not establish that the specimen was valid, that the result was reported in a comparable unit or reference system, or that a three-value numeric sequence is a clinically interpretable HCC trajectory. This successor adds an executable three-layer laboratory interpretation and adjudication contract around the unchanged estimand:
 
-1. **Recorded assay observation**: an exact-assay row with linked identifiers, valid `检验时间`, and finite uncensored `定量结果` under the inherited parser.
-2. **Structured result-quality evidence**: auditable specimen/result metadata and duplicate/conflict checks using only `标本类型`, `定性结果`, `定量结果`, keys, and time. This is evidence about data structure, not proof of specimen or assay validity.
+1. **Recorded assay observation**: an exact-assay row with linked identifiers, valid `assay time`, and finite uncensored `quantitative result` under the inherited parser.
+2. **Structured result-quality evidence**: auditable specimen/result metadata and duplicate/conflict checks using only `specimen type`, `qualitative result`, `quantitative result`, keys, and time. This is evidence about data structure, not proof of specimen or assay validity.
 3. **Clinical trajectory interpretability**: a separate status. Because the HCC source has no unit, reference-range, specimen-collection/accession, assay-platform, or adjudicated validity fields, clinical interpretability is not establishable from this dataset. A B/P/Y numeric sequence may therefore be reported only as a recorded numeric assay trajectory, never as hepatic improvement, deterioration, treatment response, toxicity, or patient-important HCC change.
 
 The added layer is a repair of interpretation, not a change to cohort, clocks, models, estimand, bounds, horizons, or causal scope. It makes a falsifiable distinction between what the computation can check and what requires clinical adjudication.
@@ -28,19 +30,19 @@ A clinical claim that the trajectory is valid or interpretable requires adjudica
 
 ## Frozen source and exact data bindings
 
-Use HCC snapshot `[source checksum]`, catalog `[internal dataset path]` ([source checksum]), and the read-only ordinary CSV sources listed in `[internal dataset path]`. Scan every source row; do not sample source data. Verify source and schema hashes and required headers before reconstruction. Before every existence join, report duplicate composite-key counts on (`患者主索引`,`就诊号`); deduplicate existence joins and never permit many-to-many multiplication.
+Use HCC snapshot `[source checksum]`, catalog `[internal dataset path]` ([source checksum]), and the read-only ordinary CSV sources listed in `[internal dataset path]`. Scan every source row; do not sample source data. Verify source and schema hashes and required headers before reconstruction. Before every existence join, report duplicate composite-key counts on (`patient master index`,`visit number`); deduplicate existence joins and never permit many-to-many multiplication.
 
 Required bindings are:
 
-* `encounters`, schema `datasets/hcc/table-b743286cb1249287.json`, source `HCC/data_基本信息_2500296761891079109.csv`, columns `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`. `出院时间` is only an encounter-close recording.
-* `diagnoses`, schema `datasets/hcc/table-12710723c3df0c99.json`, source `HCC/data_诊断_7504718184492840569.csv`, exact `诊断名称 == 肝细胞癌`; it has no native time, so timing is inherited only from the linked encounter.
-* `procedures`, schema `datasets/hcc/table-d5eae16f8f8093d9.json`, source `HCC/data_手术_8024330590283626027.csv`, columns `手术`, `开始时间`, `结束时间`, `手术来源`; case-insensitive `TACE` or literal `化疗栓塞`, valid `开始时间`, same-patient same-calendar-day collapse, inherited first adjacent 14–180-day pair and first strict 15–90-day repeat event.
-* `medications`, schema `datasets/hcc/table-4f6ecaeb6e8f69c2.json`, source `HCC/data_用药_5693407050835159466.csv`; retain the inherited systemic-record ontology and exclusions. Medication times are recorded orders, not administrations.
-* `labs`, schema `datasets/hcc/table-38aad8c54471332f.json`, source `HCC/data_检验_609065997844652188.csv`, columns exactly `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`. Exact assays are `检验 == 白蛋白` and `检验 == 总胆红素`, analyzed separately. No unit, reference-range, collection/accession, rejection, platform, or validity column exists.
-* `examinations`, schema `datasets/hcc/table-fd016d2731b9d6c6.json`, source `HCC/data_检查_4203595081195465282.csv`, valid `开始时间` and linked keys only for observation opportunity/horizon; never read `检查所见` or `检查诊断`.
-* `clinical_documents`, schema `datasets/hcc/table-66afca58512c2fca.json`, source `HCC/data_病历文书_8434587325530196878.csv`, duplicate header represented as `入院诊断__duplicate_2`; use nonempty linked-row presence only, optionally timed by linked encounter `就诊时间`, never narrative text.
-* `orders`, schema `datasets/hcc/table-6b93dcf0ea823702.json`, source `HCC/data_医嘱(非药品)_2062526727266216118.csv`, fixed first-valid precedence over `开立时间`, `开始时间`, `结束时间`; recorded order only.
-* `transfers`, schema `datasets/hcc/table-320c20f732e71789.json`, source `HCC/data_出入转_7369490831683459252.csv`, identifier-only (`患者主索引`,`就诊号`), no temporal or destination payload.
+* `encounters`, schema `datasets/hcc/table-b743286cb1249287.json`, source `HCC/data_basic_information_2500296761891079109.csv`, columns `patient master index`, `encounter number`, `age`, `sex`, `encounter time`, `admission time`, `discharge time`, `encounter department`. `Discharge time` is only an encounter-close recording.
+* `diagnoses`, schema `datasets/hcc/table-12710723c3df0c99.json`, source `HCC/data_diagnosis_7504718184492840569.csv`, exact `diagnosis name == hepatocellular carcinoma`; it has no native time, so timing is inherited only from the linked encounter.
+* `procedures`, schema `datasets/hcc/table-d5eae16f8f8093d9.json`, source `HCC/data_surgery_8024330590283626027.csv`, columns `surgery`, `start time`, `end time`, `surgery source`; case-insensitive `TACE` or literal `chemoembolization`, valid `start time`, same-patient same-calendar-day collapse, inherited first adjacent 14–180-day pair and first strict 15–90-day repeat event.
+* `medications`, schema `datasets/hcc/table-4f6ecaeb6e8f69c2.json`, source `HCC/data_Medication_5693407050835159466.csv`; retain the inherited systemic-record ontology and exclusions. Medication times are recorded orders, not administrations.
+* `labs`, schema `datasets/hcc/table-38aad8c54471332f.json`, source `HCC/data_Test_609065997844652188.csv`, columns exactly `Patient Master Index`, `Encounter Number`, `Test`, `Qualitative Result`, `Quantitative Result`, `Specimen Type`, `Test Time`. Exact assays are `Test == Albumin` and `Test == Total bilirubin`, analyzed separately. No unit, reference-range, collection/accession, rejection, platform, or validity column exists.
+* `examinations`, schema `datasets/hcc/table-fd016d2731b9d6c6.json`, source `HCC/data_examination_4203595081195465282.csv`, valid `Start Time` and linked keys only for observation opportunity/horizon; never read `Examination Findings` or `Examination Diagnosis`.
+* `clinical_documents`, schema `datasets/hcc/table-66afca58512c2fca.json`, source `HCC/data_medical_records_8434587325530196878.csv`, duplicate header represented as `Admission Diagnosis__duplicate_2`; use nonempty linked-row presence only, optionally timed by linked encounter `Encounter Time`, never narrative text.
+* `orders`, schema `datasets/hcc/table-6b93dcf0ea823702.json`, source `HCC/data_Non-drug order_2062526727266216118.csv`, fixed first-valid precedence over `Order time`, `Start time`, `End time`; recorded order only.
+* `transfers`, schema `datasets/hcc/table-320c20f732e71789.json`, source `HCC/data_Transfers_7369490831683459252.csv`, identifier-only (`Patient master index`,`Visit number`), no temporal or destination payload.
 * `vitals`, schema `datasets/hcc/table-8436de9cba74b8ca.json`, and `front_page`, schema `datasets/hcc/table-38b3224239acc33f.json`, identifier-only/nominal; neither is a physiologic or outcome source.
 
 Pathology is not required for the frozen design and its narrative fields must not be used to adjudicate laboratory validity. No HCC source supplies the missing laboratory unit/reference/collection/quality fields.
@@ -73,22 +75,22 @@ Preserve the assay-separated training-range affine missing-Y bounds, global all-
 
 ### Layer 1: recorded assay observation
 
-For every raw lab row and for selected B, P, and Y candidates, emit a mechanical audit record containing patient and encounter keys, exact assay string, raw `检验时间`, parsed time validity, raw `定量结果`, finite numeric parser result, censor/non-numeric status, raw `标本类型` presence, raw `定性结果` presence, and source-row multiplicity. The only Layer-1 pass used by the frozen clocks is:
+For every raw lab row and for selected B, P, and Y candidates, emit a mechanical audit record containing patient and encounter keys, exact assay string, raw `test time`, parsed time validity, raw `quantitative result`, finite numeric parser result, censor/non-numeric status, raw `specimen type` presence, raw `qualitative result` presence, and source-row multiplicity. The only Layer-1 pass used by the frozen clocks is:
 
-`exact_assay = 1 AND valid检验时间 = 1 AND finite_uncensored定量结果 = 1 AND linked composite key = 1`.
+`exact_assay = 1 AND valid test time = 1 AND finite_uncensored quantitative result = 1 AND linked composite key = 1`.
 
 This means **recorded_numeric_observation**, not specimen validity and not clinical validity. Preserve the inherited clock parser and tie handling exactly; the new audit must not discard or replace a Layer-1 row in the primary analysis.
 
-A source row with finite `定量结果` but missing `标本类型` is still a Layer-1 recorded numeric observation under the frozen contract and receives `specimen_metadata_missing=1`. A nonfinite, censored, malformed, wrong-assay, or untimed row is not a Layer-1 candidate, exactly as before.
+A source row with finite `quantitative result` but missing `specimen type` is still a Layer-1 recorded numeric observation under the frozen contract and receives `specimen_metadata_missing=1`. A nonfinite, censored, malformed, wrong-assay, or untimed row is not a Layer-1 candidate, exactly as before.
 
 ### Layer 2: structured result-quality evidence
 
 For every selected B/P/Y row and every competing exact-assay row at the same patient/encounter/time, calculate these fields without using narrative text:
 
-* `specimen_type_present`: `1` iff trimmed `标本类型` is nonempty, else `0`.
+* `specimen_type_present`: `1` iff trimmed `specimen type` is nonempty, else `0`.
 * `specimen_type_conflict`: `1` iff selected/tied rows for the same patient, exact assay, encounter and timestamp have more than one nonempty specimen-type value; `0` iff all nonempty values agree; `not_evaluable` if no nonempty value exists.
 * `numeric_result_conflict`: `1` iff tied duplicate rows for the same patient, exact assay, encounter and timestamp have two or more distinct finite numeric values; `0` iff all finite numeric values agree; `not_evaluable` if no finite duplicate comparison exists.
-* `qualitative_present`: `1` iff trimmed `定性结果` is nonempty. It is descriptive only.
+* `qualitative_present`: `1` iff trimmed `qualitative result` is nonempty. It is descriptive only.
 * `qualitative_numeric_consistency`: always `not_evaluable` unless an externally supplied, assay-specific validated mapping is present. No mapping is present in HCC; do not infer that a qualitative label agrees or disagrees with a numeric value.
 * `unit_present`, `reference_range_present`, `collection_time_present`, `accession_present`, `rejection/quality_flag_present`, and `assay_platform_present`: `0` globally from the verified HCC schema, not row-level missing values.
 
@@ -101,7 +103,7 @@ When duplicate rows disagree, retain the inherited deterministic selected value 
 For each assay-specific B/P/Y triplet emit:
 
 * `recorded_numeric_trajectory = 1` iff B, P, and Y all pass Layer 1 and satisfy the frozen temporal clocks.
-* `metadata_consistent_candidate = 1` iff all three rows have nonempty, mutually equal `标本类型`, no specimen/numeric duplicate conflict, and no unresolved tie conflict. This is a candidate comparability flag only.
+* `metadata_consistent_candidate = 1` iff all three rows have nonempty, mutually equal `specimen type`, no specimen/numeric duplicate conflict, and no unresolved tie conflict. This is a candidate comparability flag only.
 * `clinical_trajectory_interpretable = unavailable` for every episode under this HCC snapshot, because units, reference ranges, collection/accession status, assay platform, rejection/hemolysis/dilution flags, and adjudicated specimen validity are absent. Do not convert this global unavailability into a numerical missingness value.
 * `adjudication_needed = 1` whenever `clinical_trajectory_interpretable=unavailable`; additionally flag missing/conflicting specimen metadata, numeric duplicate conflict, or a non-evaluable qualitative/numeric relationship.
 * `trajectory_language = recorded_numeric_only` for all computable triplets. Prohibited replacements include improved/worsened liver function, hepatic failure, response, progression, toxicity, safety, or patient benefit.
@@ -127,15 +129,15 @@ Because P may be biologically correlated with earlier measurements, the negative
 
 For every assay, block, arm, and Y-observed state, report N and fractions for: Layer-1 recorded numeric status; specimen metadata present; specimen metadata conflict; numeric duplicate conflict; metadata-consistent candidate; and global clinical interpretability unavailable. A cell with fewer than five episodes is suppressed/marked; formal contrasts require at least ten BP rows. If any required adjudication field is absent (as it is here), emit `adjudication_needed/unavailable` rather than treating absence as a pass.
 
-A future study may adjudicate a sample by linking each result to specimen accession/collection, unit, reference interval, assay platform, rejection/quality flags, and clinical context. Only after such adjudication could a clinically interpretable trajectory estimand be defined. The present experiment must not backfill those facts from `标本类型`, `定性结果`, encounter type, discharge, examination presence, or document text.
+A future study may adjudicate a sample by linking each result to specimen accession/collection, unit, reference interval, assay platform, rejection/quality flags, and clinical context. Only after such adjudication could a clinically interpretable trajectory estimand be defined. The present experiment must not backfill those facts from `specimen type`, `qualitative result`, encounter type, discharge, examination presence, or document text.
 
 ## Outcome-blind opportunity and event/source horizons
 
-Retain the mature outcome-blind and source-horizon contract unchanged. For each BP row define `D_y = event_time +72 hours`; before reading target Y or any source rows after `D_y`, freeze mutually exclusive strata: `exam+followup`, `exam_only`, `followup_only`, `document_only`, `none`, using valid examination `开始时间`, additional encounter `就诊时间`, and nonempty linked clinical-document presence exactly as in the selected parent. Documents have no native timestamp and may be called encounter-timed only through linked encounter time.
+Retain the mature outcome-blind and source-horizon contract unchanged. For each BP row define `D_y = event_time +72 hours`; before reading target Y or any source rows after `D_y`, freeze mutually exclusive strata: `exam+followup`, `exam_only`, `followup_only`, `document_only`, `none`, using valid examination `Start Time`, additional encounter `Encounter Time`, and nonempty linked clinical-document presence exactly as in the selected parent. Documents have no native timestamp and may be called encounter-timed only through linked encounter time.
 
-For the selected encounter, classify valid `出院时间` as before: `< event`, `== event`, `(event,D_y]`, `>D_y`, or missing/invalid. It is not disposition, survival, transfer, completed follow-up, or proof of absent Y. Emit `death_status=unavailable` globally. A transfers key match is only `nominal_transfer_key_present`; transfer payload is unavailable.
+For the selected encounter, classify valid `discharge time` as before: `< event`, `== event`, `(event,D_y]`, `>D_y`, or missing/invalid. It is not disposition, survival, transfer, completed follow-up, or proof of absent Y. Emit `death_status=unavailable` globally. A transfers key match is only `nominal_transfer_key_present`; transfer payload is unavailable.
 
-For every BP event, assay, origin/block, source, and requested window, compute patient-event-specific source horizons from valid independent timestamps. Use encounters `就诊时间` (excluding selected event encounter), labs `检验时间` (excluding Y and all B/P/clock-defining rows as anchors), examinations `开始时间`, orders under fixed timestamp precedence, medications/procedures valid recorded times, and encounter-timed documents. Transfers, vitals, and front_page have no usable temporal payload. For D1 `(event+72h,event+7d)` require an independent anchor at or beyond day 7; for D2 `[event+7d,event+30d]` require an anchor at or beyond day 30. Never substitute a snapshot-global maximum. Incomplete source horizons are `administratively_incomplete`, not no-care.
+For every BP event, assay, origin/block, source, and requested window, compute patient-event-specific source horizons from valid independent timestamps. Use encounters `encounter time` (excluding selected event encounter), labs `test time` (excluding Y and all B/P/clock-defining rows as anchors), examinations `start time`, orders under fixed timestamp precedence, medications/procedures valid recorded times, and encounter-timed documents. Transfers, vitals, and front_page have no usable temporal payload. For D1 `(event+72h,event+7d)` require an independent anchor at or beyond day 7; for D2 `[event+7d,event+30d]` require an anchor at or beyond day 30. Never substitute a snapshot-global maximum. Incomplete source horizons are `administratively_incomplete`, not no-care.
 
 These opportunity and horizon variables remain descriptive recording diagnostics. They cannot enter primary models, the three laboratory status layers, bounds, or bootstrap denominators, and they do not establish specimen completion or clinical follow-up.
 

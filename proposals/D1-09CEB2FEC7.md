@@ -1,10 +1,12 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Bundle-valid modality-pattern access requirements for documentary-M2 review
 
 ## Unresolved clinical question and substantive advance
 
 The consequential but bounded question is whether, 24 hours before an adult patient's first eligible HCC resection, semantics in routine CT/MRI reports can add clinically material value to a laboratory-independent flag for multidisciplinary review of pathology-documented high-grade microvascular invasion (M2). The flag is not a recommendation for resection extent, transplant, systemic or locoregional treatment, adjuvant therapy, or surveillance.
 
-**Strongest claim supported now.** Direct catalog, schema, header, and aggregate source inspection establishes that this HCC snapshot contains operation starts, examination acquisition starts, eventual CT/MRI report bodies, and untimed same-encounter pathology text. It does not contain report authored/final/release/view times or version history, pathology times or specimen identifiers, raw images/slides, sampling protocols, recurrence, survival, clinician response, treatment benefit, harms, or costs. The laboratory table has one ambiguous `检验时间` and no collection, result-entry, finalization, release/view, accession/panel, or unit field, so all laboratory fields and process derivatives have zero primary lineage. These are source facts, not evidence that any model works or that eventual report text was available at the decision time.
+**Strongest claim supported now.** Direct catalog, schema, header, and aggregate source inspection establishes that this HCC snapshot contains operation starts, examination acquisition starts, eventual CT/MRI report bodies, and untimed same-encounter pathology text. It does not contain report authored/final/release/view times or version history, pathology times or specimen identifiers, raw images/slides, sampling protocols, recurrence, survival, clinician response, treatment benefit, harms, or costs. The laboratory table has one ambiguous `Test time` and no collection, result-entry, finalization, release/view, accession/panel, or unit field, so all laboratory fields and process derivatives have zero primary lineage. These are source facts, not evidence that any model works or that eventual report text was available at the decision time.
 
 The full XML of Li et al. (2025; DOI `10.1111/jcmm.70746`, PMCID `PMC12309289`, frozen source `[source checksum]`, [source checksum]) supports that MVI is pathology-defined, prognostically relevant, and unavailable directly for preoperative decisions, while prediction and management evidence remains limited. The full HTML of Huang et al. (2026; DOI `10.3389/fonc.2026.1821034`, frozen source `[source checksum]`, [source checksum]) reports a binary-MVI CT-margin/AFP model in 487 development and 256 external-validation patients (AUC 0.740/0.781), with complete-data eligibility, blinded raw-image review, and defined pathology sampling. Neither source validates M2 extraction from this snapshot, routine report semantics, report visibility, or treatment benefit.
 
@@ -20,24 +22,24 @@ This advances the selected bundle-valid design by replacing a pooled patient-any
 
 Snapshot: `[source checksum]`.
 
-A full aggregate scan of all 419,996 examination rows found 393,468 nonblank keys on `(患者主索引,就诊号,检查号,开始时间)`, 16,099 multirow keys (maximum 12 rows), 16,086 keys with multiple normalized `检查` labels, and 72 blank-`检查号` rows. A broad lexical diagnostic found no CT/MR-conflicted key but recovered no MRI from `检查` labels alone; it is not a clinical dictionary or cohort prevalence estimate. The inherited broad 2015–2021 audit found component multiplicities through 10 and 5,038 frame patients without a selected nonempty report. These diagnostics establish source grain and motivate the fixed no-report stratum; final execution must emit its own frozen-dictionary attrition.
+A full aggregate scan of all 419,996 examination rows found 393,468 nonblank keys on `(Patient master index,Encounter number,Examination number,Start time)`, 16,099 multirow keys (maximum 12 rows), 16,086 keys with multiple normalized `Examination` labels, and 72 blank-`Examination number` rows. A broad lexical diagnostic found no CT/MR-conflicted key but recovered no MRI from `Examination` labels alone; it is not a clinical dictionary or cohort prevalence estimate. The inherited broad 2015–2021 audit found component multiplicities through 10 and 5,038 frame patients without a selected nonempty report. These diagnostics establish source grain and motivate the fixed no-report stratum; final execution must emit its own frozen-dictionary attrition.
 
 1. Deduplicate exact examination rows on all eight columns.
-2. With nonblank `检查号`, bundle all rows sharing `(患者主索引,就诊号,检查号,开始时间)` before modality filtering or text extraction. Never split component rows into visibility units.
-3. Two blinded abdominal radiologists freeze a development-only map using all normalized bundle `检查` values and `机器型号`, assigning exactly one of CT, MRI, non-target, or unresolved/conflicted. A bundle cannot be copied into both CT and MRI. Unresolved/conflicted bundles remain in audit counts and acquisition diagnostics but cannot provide primary report-body features or establish a pattern claim. Require >=0.95 agreement and <=1% unresolved among candidate target bundles for pattern support; otherwise T is inconclusive.
+2. With nonblank `examination number`, bundle all rows sharing `(patient master index,encounter number,examination number,start time)` before modality filtering or text extraction. Never split component rows into visibility units.
+3. Two blinded abdominal radiologists freeze a development-only map using all normalized bundle `examination` values and `machine model`, assigning exactly one of CT, MRI, non-target, or unresolved/conflicted. A bundle cannot be copied into both CT and MRI. Unresolved/conflicted bundles remain in audit counts and acquisition diagnostics but cannot provide primary report-body features or establish a pattern claim. Require >=0.95 agreement and <=1% unresolved among candidate target bundles for pattern support; otherwise T is inconclusive.
 4. Blank-ID rows are logged but are not primary semantic bundles. A singleton sensitivity is descriptive and cannot support report-level availability.
-5. For each modality select at most the latest eligible bundle in `[t_dec-90 days,t_dec)`, tie-breaking by valid `开始时间`, normalized nonempty `检查号`, then normalized bundle label. Concatenate all component `检查所见` and `检查诊断` fields in deterministic source order before extraction. Expose or mask the entire bundle.
+5. For each modality select at most the latest eligible bundle in `[t_dec-90 days,t_dec)`, tie-breaking by valid `Start Time`, normalized nonempty `Examination Number`, then normalized bundle label. Concatenate all component `Findings` and `Diagnostic Impression` fields in deterministic source order before extraction. Expose or mask the entire bundle.
 6. Let `E_ij=1` only when selected bundle j has a nonempty eventual body. Empty bundles remain acquisition facts but have no exposed-content state.
 
 Report counts, exact duplicates, blank IDs, invalid clocks, component multiplicity, modality assignments/disagreements, selected/discarded bundles, ties, empty text, and final pattern counts by year before reading test outcomes.
 
 ## Population and temporal boundaries
 
-The unit is one patient (`患者主索引`) and one first eligible index resection.
+The unit is one patient (`Patient Master Index`) and one first eligible index resection.
 
-- In `procedures`, select the earliest valid `开始时间` whose normalized exact `手术` is in a clinically reviewed dictionary of partial, segmental, hemihepatic, or liver-tumor resections. Exclude transplant, biopsy/puncture, ablation-only, gallbladder-only, metastatic-organ surgery, and explicit repeat/recurrence procedures. Break exact-time ties by `就诊号` and normalized `手术`; output every raw value/frequency and exclusion.
+- In `procedures`, select the earliest valid `start time` whose normalized exact `surgery` is in a clinically reviewed dictionary of partial, segmental, hemihepatic, or liver-tumor resections. Exclude transplant, biopsy/puncture, ablation-only, gallbladder-only, metastatic-organ surgery, and explicit repeat/recurrence procedures. Break exact-time ties by `encounter number` and normalized `surgery`; output every raw value/frequency and exclusion.
 - Require age >=18 from a uniquely resolved same-encounter `encounters` row and same-encounter pathology text explicitly identifying HCC. This is a retrospectively resected, pathology-confirmed frame, not preoperative diagnostic certainty, curative intent, resectability, or biological treatment-naivety.
-- Define `t_dec=procedures.开始时间-24 hours`. No content at or after it predicts. Repeat fixed 12-, 48-, and 72-hour buffers as sensitivities.
+- Define `t_dec=procedures.Start Time-24 hours`. No content at or after it predicts. Repeat fixed 12-, 48-, and 72-hour buffers as sensitivities.
 - Exclude recorded prior HCC resection, transplant, TACE, ablation, radiotherapy, targeted therapy, or immunotherapy in `[t_dec-365 days,t_dec)` from reviewed `procedures`, `medications`, and `orders` dictionaries using valid source clocks. Analyze recorded prior treatment separately.
 - Use 2015–2018 for development, 2019 only for penalty selection and recalibration, and untouched 2020–2021 for primary test. Exclude 2013–2014. Use 2022–snapshot end only for template/extraction/ascertainment drift audits; make no current performance claim.
 - Retain every target-frame patient, including those with no selected nonempty report and uncertain MVI grade. Freeze all dictionaries, parser rules, bundle/modality rules, features, preprocessing, robust loss, solver, thresholds, bootstrap family, pattern grid, and gates before test outcomes are accessed.
@@ -46,7 +48,7 @@ The unit is one patient (`患者主索引`) and one first eligible index resecti
 
 `Y=1` only when a frozen position-aware parser plus blinded adjudication assign explicit M2 to the index resection pathology. `Y=0` for explicit M0/M1. Let `V=1` denote a trustworthy assignment. Missing grade, binary-positive ungraded MVI, conflict, uncertain specimen linkage, or inadequate documented sampling is `V=0` with `Y in {0,1}`; never exclude or impute it.
 
-Only the immediate selected value after a frozen anchor such as `MVI提示风险分级[:：]`, stopping before definitions, history, or another specimen section, or a reviewed synonymous selected-value construction may assign grade. Unanchored M2 and boilerplate cannot. Two independent parser implementations must agree. Two qualified Chinese-reading pathologists blinded to predictors and scores review every parsed M2, every conflict, every locked-test V=0, and at least 150 sampled M0 plus 150 M1 stratified by year/template; a third resolves disagreement. Require class PPV >=0.98, sensitivity >=0.95, kappa >=0.90, and parser disagreement <=5%.
+Only the immediate selected value after a frozen anchor such as `MVI risk grade indication[:：]`, stopping before definitions, history, or another specimen section, or a reviewed synonymous selected-value construction may assign grade. Unanchored M2 and boilerplate cannot. Two independent parser implementations must agree. Two qualified Chinese-reading pathologists blinded to predictors and scores review every parsed M2, every conflict, every locked-test V=0, and at least 150 sampled M0 plus 150 M1 stratified by year/template; a third resolves disagreement. Require class PPV >=0.98, sensitivity >=0.95, kappa >=0.90, and parser disagreement <=5%.
 
 Raw slides, specimen IDs, block counts, vessel distances, and sampling protocols are absent. The outcome is documentary M2, not latent biological M2.
 
@@ -116,16 +118,16 @@ No computation can establish Chinese semantic correctness, reviewer credentials,
 
 ## Exact read-only source bindings
 
-All are ordinary CSVs, archive member none; same-encounter joins use `(患者主索引,就诊号)` after exact-row deduplication and report multiplicity. Longitudinal history joins by `患者主索引` plus valid clocks.
+All are ordinary CSVs, archive member none; same-encounter joins use `(patient master index,encounter number)` after exact-row deduplication and report multiplicity. Longitudinal history joins by `patient master index` plus valid clocks.
 
-- `encounters`: `[internal dataset path]`; keys; `年龄,性别`; `就诊时间,入院时间,出院时间`.
-- `procedures`: `[internal dataset path]`; keys; `手术,手术来源,开始时间,结束时间` for index, `t_dec`, ties, and prior treatment.
-- `examinations`: `[internal dataset path]`; keys; `检查,检查所见,检查诊断,开始时间,机器型号,检查号` for bundle/modality, acquisition lock, bodies, states, and provenance. It has no report/version clock.
-- `pathology`: `[internal dataset path]`; keys; `病理,检查所见,检查诊断,机器型号` for HCC frame, Y/V, conflict/linkage review, and dedup audit. It has no time/specimen/slide/sampling fields.
-- `medications`: `[internal dataset path]`; keys; `用药,药品类型,开始时间,结束时间` for prior systemic-treatment exclusion only.
-- `orders`: `[internal dataset path]`; keys; `医嘱(非药品),开立时间,开始时间,结束时间,医嘱状态` for prior local/radiotherapy exclusion only.
-- `diagnoses`: `[internal dataset path]`; keys; `诊断名称,诊断类型` for untimed HCC corroboration only, never prediction.
-- `labs`: `[internal dataset path]`; keys; `检验,定性结果,定量结果,标本类型,检验时间` for segregated diagnostics only; zero primary lineage.
+- `encounters`: `[internal dataset path]`; keys; `Age,Sex`; `Encounter Time,Admission Time,Discharge Time`.
+- `procedures`: `[internal dataset path]`; keys; `Surgery, surgery source, start time, end time` for index, `t_dec`, ties, and prior treatment.
+- `examinations`: `[internal dataset path]`; keys; `examination,examination findings,examination diagnosis,start time,machine model,examination number` for bundle/modality, acquisition lock, bodies, states, and provenance. It has no report/version clock.
+- `pathology`: `[internal dataset path]`; keys; `Pathology,Examination findings,Examination diagnosis,Machine model` for HCC frame, Y/V, conflict/linkage review, and dedup audit. It has no time/specimen/slide/sampling fields.
+- `medications`: `[internal dataset path]`; keys; `Medication, medication type, start time, end time` for prior systemic-treatment exclusion only.
+- `orders`: `[internal dataset path]`; keys; `non-drug orders,order time,start time,end time,order status` for prior local/radiotherapy exclusion only.
+- `diagnoses`: `[internal dataset path]`; keys; `Diagnosis Name,Diagnosis Type` for untimed HCC corroboration only, never prediction.
+- `labs`: `[internal dataset path]`; keys; `Tests, Qualitative Result, Quantitative Result, Specimen Type, Test Time` for segregated diagnostics only; zero primary lineage.
 
 Untimed diagnoses/documents, direct identifiers, post-cutoff content, nominal identifier-only vitals/transfers/front page, and all lab derivatives are excluded from predictors. MIMIC, eICU, and UKB remain directly accessible via configured read-only sources but do not identify this institutional documentary-M2 estimand and are not pooled.
 

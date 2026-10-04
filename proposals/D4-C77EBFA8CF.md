@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # UKB-36 repaired: pre-diagnostic host reserve and competing mortality after incident colorectal cancer
 
 ## Deliverable and falsifiable claim

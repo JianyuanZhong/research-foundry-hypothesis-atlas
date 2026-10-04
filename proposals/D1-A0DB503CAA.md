@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Proposal: a capture-calibrated reassessment boundary after TACE
 
 ## Episode, parent, and actual scientific deliverable
@@ -28,9 +30,9 @@ A secondary model-information hypothesis asks whether M3’s asynchronous latent
 
 ## Population, index, landmark, and outcomes
 
-Use one index per patient. A TACE-like procedure is a procedure name matching case-insensitive `TACE`, containing `动脉化疗栓塞`, or containing both `肝动脉` and `栓塞`. Collapse qualifying rows within 24 hours and anchor the earliest `开始时间`. Require age >=18 and nonmissing `性别` in the joined encounter. Require a diagnosis name containing the literal `肝细胞癌` in a joined encounter from 180 days before through 7 days after index. Include indices through 2025-01-01 so that a full 365-day horizon is possible.
+Use one index per patient. A TACE-like procedure is a procedure name matching case-insensitive `TACE`, containing `transarterial chemoembolization`, or containing both `hepatic artery` and `embolization`. Collapse qualifying rows within 24 hours and anchor the earliest `start time`. Require age >=18 and nonmissing `sex` in the joined encounter. Require a diagnosis name containing the literal `hepatocellular carcinoma` in a joined encounter from 180 days before through 7 days after index. Include indices through 2025-01-01 so that a full 365-day horizon is possible.
 
-The day-45 landmark cohort excludes a procedure after index + 24 hours through day 45 if its name is repeat-TACE-like or alternate liver-directed. Report those early procedures separately; they are not non-events or evidence of response. Alternate liver-directed names contain `切除`, `消融`, `射频`, or `微波`, excluding TACE-like procedures.
+The day-45 landmark cohort excludes a procedure after index + 24 hours through day 45 if its name is repeat-TACE-like or alternate liver-directed. Report those early procedures separately; they are not non-events or evidence of response. Alternate liver-directed names contain `resection`, `ablation`, `radiofrequency`, or `microwave`, excluding TACE-like procedures.
 
 From index day 46 through day 365, define the first recorded competing outcome as:
 
@@ -44,13 +46,13 @@ If liver-directed and non-liver procedures have exactly the same first timestamp
 
 ## Prespecified trajectory and observation process
 
-For AFP, use the last parseable numeric value in days -30 through -1 and the first in days 7 through 45. Define z = log1p(AFP), AFP improvement as z_post <= 0.5*z_pre, and retain continuous change, assay/qualitative flags and missingness. For albumin, total bilirubin, 凝血酶原时间比值, and platelets, use the last pre-index and first early-post value. Non-deterioration means early >= pre for albumin/platelets and early <= pre for bilirubin/coagulation ratio. Do not call the coagulation measure INR, pool assays, compute ALBI or MELD, or use cross-assay units: the local lab schema has no separate unit column.
+For AFP, use the last parseable numeric value in days -30 through -1 and the first in days 7 through 45. Define z = log1p(AFP), AFP improvement as z_post <= 0.5*z_pre, and retain continuous change, assay/qualitative flags and missingness. For albumin, total bilirubin, prothrombin time ratio, and platelets, use the last pre-index and first early-post value. Non-deterioration means early >= pre for albumin/platelets and early <= pre for bilirubin/coagulation ratio. Do not call the coagulation measure INR, pool assays, compute ALBI or MELD, or use cross-assay units: the local lab schema has no separate unit column.
 
 The primary trajectory category is AFP improvement plus non-deterioration in at least two hepatic proxies. Continuous changes and each component are secondary outputs. The solver must retain a complete paired-trajectory indicator rather than imputing an absent post-index biological response.
 
-Observation features known by day 45 include number and timing of joined encounters, laboratory row/day counts, assay availability, examination row counts and timing, non-liver procedure counts, and (optionally, in a declared sensitivity) dated order counts from `开立时间`, `开始时间`, and `结束时间`. An order is not completion. Examination narrative text is excluded from the primary model; its use as an unvalidated lexical sensitivity must be separately audited and cannot be interpreted as radiology adjudication.
+Observation features known by day 45 include number and timing of joined encounters, laboratory row/day counts, assay availability, examination row counts and timing, non-liver procedure counts, and (optionally, in a declared sensitivity) dated order counts from `Order Time`, `Start Time`, and `End Time`. An order is not completion. Examination narrative text is excluded from the primary model; its use as an unvalidated lexical sensitivity must be separately audited and cannot be interpreted as radiology adjudication.
 
-Define local observation time as the latest dated joined encounter among `就诊时间`, `入院时间`, and `出院时间`. Censor at the first day after the last observed local contact or day 365, whichever comes first, unless an outcome occurs first. Fit censoring weights on training data only and report overlap, truncation and calibration. Repeat the boundary analysis in a stable-ascertainment subset with an encounter on or after day 365. No death or outside-care event is imputed.
+Define local observation time as the latest dated joined encounter among `visit time`, `admission time`, and `discharge time`. Censor at the first day after the last observed local contact or day 365, whichever comes first, unless an outcome occurs first. Fit censoring weights on training data only and report overlap, truncation and calibration. Repeat the boundary analysis in a stable-ascertainment subset with an encounter on or after day 365. No death or outside-care event is imputed.
 
 The paired estimand is the boundary and risk contrast among complete paired-trajectory, eligible day-45 landmark patients. The full-index estimand reports trajectory availability/missingness and observation opportunity for every eligible index patient reaching day 45; it does not call an availability contrast a transported response effect. A full-index stabilized inverse-probability sensitivity is reported only if positivity, weight overlap and calibration pass.
 
@@ -58,14 +60,14 @@ The paired estimand is the boundary and risk contrast among complete paired-traj
 
 All source data are read-only, HCC snapshot `[source checksum]`; every listed source is an ordinary CSV with no archive member.
 
-- `encounters`: `datasets/hcc/table-b743286cb1249287.json`; source `[internal dataset path]`; [source checksum]; schema [source checksum]. Required columns: `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`.
-- `procedures`: `datasets/hcc/table-d5eae16f8f8093d9.json`; source `[internal dataset path]`; [source checksum]; schema [source checksum]. Required columns: `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源`.
-- `diagnoses`: `datasets/hcc/table-12710723c3df0c99.json`; source `[internal dataset path]`; [source checksum]; schema [source checksum]. Required columns: `患者主索引`, `就诊号`, `诊断名称`, `诊断类型`; diagnosis time comes only from the joined encounter.
-- `labs`: `datasets/hcc/table-38aad8c54471332f.json`; source `[internal dataset path]`; [source checksum]; schema [source checksum]. Required columns: `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`.
-- `examinations`: `datasets/hcc/table-fd016d2731b9d6c6.json`; source `[internal dataset path]`; [source checksum]; schema [source checksum]. Required columns for primary use: `患者主索引`, `就诊号`, `开始时间`, `检查`, `检查号`; `检查所见` and `检查诊断` are narrative and excluded from the primary model.
-- Optional `orders`: `datasets/hcc/table-6b93dcf0ea823702.json`; source `[internal dataset path]`; required columns `患者主索引`, `就诊号`, `开立时间`, `开始时间`, `结束时间`; use only dated capture features.
+- `encounters`: `datasets/hcc/table-b743286cb1249287.json`; source `[internal dataset path]`; [source checksum]; schema [source checksum]. Required columns: `Patient Master Index`, `Encounter Number`, `Age`, `Sex`, `Encounter Time`, `Admission Time`, `Discharge Time`, `Encounter Department`.
+- `procedures`: `datasets/hcc/table-d5eae16f8f8093d9.json`; source `[internal dataset path]`; [source checksum]; schema [source checksum]. Required columns: `Patient Master Index`, `Encounter Number`, `Surgery`, `Start Time`, `End Time`, `Surgery Source`.
+- `diagnoses`: `datasets/hcc/table-12710723c3df0c99.json`; source `[internal dataset path]`; [source checksum]; schema [source checksum]. Required columns: `Patient Master Index`, `Encounter Number`, `Diagnosis Name`, `Diagnosis Type`; diagnosis time comes only from the joined encounter.
+- `labs`: `datasets/hcc/table-38aad8c54471332f.json`; source `[internal dataset path]`; [source checksum]; schema [source checksum]. Required columns: `patient master index`, `encounter number`, `test`, `qualitative result`, `quantitative result`, `specimen type`, `test time`.
+- `examinations`: `datasets/hcc/table-fd016d2731b9d6c6.json`; source `[internal dataset path]`; [source checksum]; schema [source checksum]. Required columns for primary use: `patient master index`, `encounter number`, `start time`, `examination`, `examination number`; `examination findings` and `examination diagnosis` are narrative and excluded from the primary model.
+- Optional `orders`: `datasets/hcc/table-6b93dcf0ea823702.json`; source `[internal dataset path]`; required columns `patient master index`, `encounter number`, `order time`, `start time`, `end time`; use only dated capture features.
 
-Join every child table to encounters on (`患者主索引`, `就诊号`), verify duplicate behavior before aggregation, and preserve raw procedure/lab vocabulary audits. The diagnosis is not independently timed. Clinical documents and pathology are excluded from dated prediction because their schemas have no temporal columns. Vitals, transfers and front_page are identifier-only in the catalog and add no payload. Medication rows are not needed for the primary question.
+Join every child table to encounters on (`patient master index`, `visit number`), verify duplicate behavior before aggregation, and preserve raw procedure/lab vocabulary audits. The diagnosis is not independently timed. Clinical documents and pathology are excluded from dated prediction because their schemas have no temporal columns. Vitals, transfers and front_page are identifier-only in the catalog and add no payload. Medication rows are not needed for the primary question.
 
 The catalog is `[internal dataset path]` ([source checksum]). The catalog's participant hash partition is not an external validation set; any reserved inaccessible buckets must not be described as independent validation.
 

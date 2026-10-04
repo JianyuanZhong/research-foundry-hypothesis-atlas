@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # A minimax support-atlas audit for domain-safe pulmonary-nodule admission routing
 
 ## Decision bottleneck and targeted advance

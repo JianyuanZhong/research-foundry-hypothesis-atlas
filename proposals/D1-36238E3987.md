@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Lagged component-specific AKI discordance: support-ordered competing risks with a matched temporal comparison
 
 Status: proposed design only. No cohort scan, model fit, Harbor execution, or clinical result was run in this branch.

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Provisional successor hypothesis: macrophage context changes FLS state beyond donor composition
 
 ## Proposed relationship

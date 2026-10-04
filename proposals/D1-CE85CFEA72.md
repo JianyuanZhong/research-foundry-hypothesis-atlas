@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # HCC process-conditioned assay innovation after day-42 TACE
 
 Status: design-only substantive child of `[prior hypothesis]`. No cohort fit, model result, or favorable clinical finding is claimed. The parent’s landmark, endpoint, temporal split, channel ablations, support gates, and source bindings are retained. This child adds one bounded representation test: whether assay content not explained by the recorded pre-assay observation/care process adds held-out information for the same operational event.
@@ -31,7 +33,7 @@ Completion is these outputs plus an honest supportive, adverse, or inconclusive 
 
 ## Population, outcome, and temporal boundaries (unchanged)
 
-Index is the first row in the supplied HCC snapshot for which Unicode-case-folded, trimmed `手术` equals exactly `tace`, with nonmissing `患者主索引`, `就诊号`, and `开始时间`. “First” means first in this snapshot, not first-ever TACE. Exact duplicate patient/start rows are collapsed for event counting and retained in a duplicate audit. Other procedure strings are not primary TACE events; strict-code rows with missing `开始时间` are audited but excluded from timed analyses.
+Index is the first row in the supplied HCC snapshot for which Unicode-case-folded, trimmed `surgery` equals exactly `tace`, with nonmissing `patient master index`, `encounter number`, and `start time`. “First” means first in this snapshot, not first-ever TACE. Exact duplicate patient/start rows are collapsed for event counting and retained in a duplicate audit. Other procedure strings are not primary TACE events; strict-code rows with missing `start time` are audited but excluded from timed analyses.
 
 Exclude any later strict-code TACE with `0 < Delta < 43` days. Require all-source observation through `index_start + 42 days`. The primary outcome is the first later unique patient/start strict-code TACE with `43 <= Delta < 181` days. Follow-up ends at that event, all-source `obs_end`, or day 181. An untimed repeat is not a timed negative. Integer hazard bins are [43,90] and [91,180]. Fixed sensitivities are [43,90), [91,181), day-28 process truncation, removal of the last seven feature days, alternate valid `obs_end`, and the parent’s undated-history audit. No predictor uses `obs_end`, future event rows/counts, post-index exact-code TACE, or the outcome.
 
@@ -43,13 +45,13 @@ The authoritative catalog is `[internal dataset path]`, [source checksum]. The H
 
 | Catalog table and schema | Read-only source, source SHA-256 | Required fields, join and time use |
 |---|---|---|
-| `procedures`, `datasets/hcc/table-d5eae16f8f8093d9.json` | `[internal dataset path]`, `[source checksum]` | `患者主索引, 就诊号, 手术, 开始时间, 结束时间` and `手术来源`; `开始时间` defines index/events and valid `结束时间` contributes to `obs_end`. Exact TACE rows never enter predictors; non-TACE dated rows are `P_care`. |
-| `encounters`, `datasets/hcc/table-b743286cb1249287.json` | `[internal dataset path]`, `[source checksum]` | Join all child tables on `(患者主索引, 就诊号)`; use `年龄, 性别, 就诊时间, 入院时间, 出院时间, 就诊科室` for `M0`, `P_obs`, `P_care`, and `obs_end`. Names, identity numbers, phone, insurance/card and other direct identifiers are excluded. |
-| `examinations`, `datasets/hcc/table-fd016d2731b9d6c6.json` | `[internal dataset path]`, `[source checksum]` | Use `患者主索引, 就诊号, 检查, 开始时间` as timed observation/opportunity marks. `检查所见` and `检查诊断` are non-adjudicated narrative text and are not response labels or PCAS inputs. `检查号` and machine number are not used as clinical state. |
-| `labs`, `datasets/hcc/table-38aad8c54471332f.json` | `[internal dataset path]`, `[source checksum]` | Use `患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间`. `检验时间` is assay time. The eight exact labels are 甲胎蛋白, 白蛋白, 前白蛋白, 总胆红素, 直接胆红素, 丙氨酸氨基转移酶, 血小板, 血小板计数. Preserve numeric, qualitative and inequality/censoring information; there is no unit or reference-range column. |
-| `medications`, `datasets/hcc/table-4f6ecaeb6e8f69c2.json` | `[internal dataset path]`, `[source checksum]` | Use `患者主索引, 就诊号, 用药, 开始时间, 结束时间, 用药方式, 药品类型`; valid starts/ends are dated care-process marks and contribute to `obs_end`. |
-| `orders`, `datasets/hcc/table-6b93dcf0ea823702.json` | `[internal dataset path]`, `[source checksum]` | Use `患者主索引, 就诊号, 医嘱(非药品), 开立时间, 开始时间, 结束时间, 医嘱状态, 频次`. `开立时间` is order availability; other times count only if no later than the feature cutoff. Orders are process/opportunity inputs, not assay values. |
-| `diagnoses`, `datasets/hcc/table-12710723c3df0c99.json` | `[internal dataset path]`, `[source checksum]` | Use `患者主索引, 就诊号, 诊断名称, 诊断类型`; there is no event-time field. Use only matched-encounter pre-index counts for `M0`; never define follow-up or a post-index event from this table. |
+| `procedures`, `datasets/hcc/table-d5eae16f8f8093d9.json` | `[internal dataset path]`, `[source checksum]` | `patient master index, encounter number, procedure, start time, end time` and `procedure source`; `start time` defines index/events and valid `end time` contributes to `obs_end`. Exact TACE rows never enter predictors; non-TACE dated rows are `P_care`. |
+| `encounters`, `datasets/hcc/table-b743286cb1249287.json` | `[internal dataset path]`, `[source checksum]` | Join all child tables on `(patient master index, encounter number)`; use `age, sex, encounter time, admission time, discharge time, encounter department` for `M0`, `P_obs`, `P_care`, and `obs_end`. Names, identity numbers, phone, insurance/card and other direct identifiers are excluded. |
+| `examinations`, `datasets/hcc/table-fd016d2731b9d6c6.json` | `[internal dataset path]`, `[source checksum]` | Use `patient master index, visit number, examination, start time` as timed observation/opportunity marks. `examination findings` and `examination diagnosis` are non-adjudicated narrative text and are not response labels or PCAS inputs. `examination number` and machine number are not used as clinical state. |
+| `labs`, `datasets/hcc/table-38aad8c54471332f.json` | `[internal dataset path]`, `[source checksum]` | Use `Patient Master Index, Encounter Number, Test, Qualitative Result, Quantitative Result, Specimen Type, Test Time`. `Test Time` is assay time. The eight exact labels are alpha-fetoprotein, albumin, prealbumin, total bilirubin, direct bilirubin, alanine aminotransferase, platelets, platelet count. Preserve numeric, qualitative and inequality/censoring information; there is no unit or reference-range column. |
+| `medications`, `datasets/hcc/table-4f6ecaeb6e8f69c2.json` | `[internal dataset path]`, `[source checksum]` | Use `Patient master index, Encounter number, Medication, Start time, End time, Medication route, Drug type`; valid starts/ends are dated care-process marks and contribute to `obs_end`. |
+| `orders`, `datasets/hcc/table-6b93dcf0ea823702.json` | `[internal dataset path]`, `[source checksum]` | Use `Patient Master Index, Visit Number, Non-medication Order, Order Time, Start Time, End Time, Order Status, Frequency`. `Order Time` is order availability; other times count only if no later than the feature cutoff. Orders are process/opportunity inputs, not assay values. |
+| `diagnoses`, `datasets/hcc/table-12710723c3df0c99.json` | `[internal dataset path]`, `[source checksum]` | Use `patient master index, encounter number, diagnosis name, diagnosis type`; there is no event-time field. Use only matched-encounter pre-index counts for `M0`; never define follow-up or a post-index event from this table. |
 | excluded longitudinal tables | `[internal dataset path]`, SHA `[source checksum]`; `[internal dataset path]`, SHA `[source checksum]` | No valid event time, so no time imputation. Identifier-only vitals, transfers, and front-page tables contain no usable payload for this question. Images, waveforms, units, reference ranges and outside-care data are unavailable. |
 
 The composite patient/visit join is used only to assign child records to an encounter; modeling and bootstrap units are patients. Duplicate counts, missing times, label exactness, numeric-scale/calendar drift, and row availability are audited before fitting. No private row or clinical note is sent to public search.
@@ -70,7 +72,7 @@ Fit `M0`, `M0+S`, `M0+P_obs`, `M0+P_care`, `A`, and `B` first. The parent’s ov
 
 ### Exact assay target and cutoff
 
-For patient i and index start `t0`, the assay cutoff is exactly `c=t0+42 days`; the admissible assay window is strictly `t0 < 检验时间 <= c`. For each of the eight exact `检验` labels j:
+For patient i and index start `t0`, the assay cutoff is exactly `c=t0+42 days`; the admissible assay window is strictly `t0 < Test Time <= c`. For each of the eight exact `Test` labels j:
 
 1. collapse exact duplicate rows with the same patient, visit, label, timestamp, result fields and specimen type, retaining a duplicate audit;
 2. select the latest valid timestamp `t_{ij}` in the window;
@@ -85,11 +87,11 @@ For every selected assay record j at time `t_{ij}`, define `P_{ij}(t^-)` from in
 
 - `M0), elapsed time from index, prior assay-label counts and prior dated assay opportunities, but never the current assay’s value/result;
 - encounters: department, age/sex where already part of `M0`, visit/admission/discharge times, distinct visits and gaps;
-- examinations: exact `检查` tokens and `开始时间` strictly before t, as opportunity marks only; no free-text findings/diagnosis;
-- orders: exact non-drug order token, `开立时间`, and valid start/end times strictly before t;
+- examinations: exact `examination` tokens and `start time` strictly before t, as opportunity marks only; no free-text findings/diagnosis;
+- orders: exact non-drug order token, `order time`, and valid start/end times strictly before t;
 - medications: exact medication/type/route token and valid start/end times strictly before t;
-- procedures: non-TACE `手术` and valid start/end times strictly before t; the index and any later exact-code TACE are excluded;
-- labs: prior label/opportunity/specimen/time marks with `检验时间 < t`, but no numeric, qualitative or inequality result from any assay at or after t;
+- procedures: non-TACE `surgery` and valid start/end times strictly before t; the index and any later exact-code TACE are excluded;
+- labs: prior label/opportunity/specimen/time marks with `Test Time < t`, but no numeric, qualitative or inequality result from any assay at or after t;
 - diagnoses only through matched-encounter pre-index counts because the table has no valid event time.
 
 A current lab row, any same-timestamp assay row, any future process mark, `obs_end`, repeat-TACE information, censoring outcome, or post-cutoff row is prohibited in `P_{ij}(t^-)`. A feature-leakage report must enumerate every field and its timestamp rule.
@@ -157,7 +159,7 @@ The clinically consequential next decision is data acquisition: proceed to imagi
 - Deferred compact GRU: retained as a matched sensitivity because ordered trajectories may reveal information summaries lose, but deferred from the decision until PCAS and artifact checks are complete.
 - Not chosen larger transformers or continuous-time point-process models: they add timing flexibility without an independent observation/intent label and would make the central rival harder to audit.
 - Not chosen causal treatment-policy, mediation, or response modeling: intent, imaging, outside-care and valid treatment timing are unavailable. Additional complexity cannot repair those missing dependencies.
-- Not chosen free-text examination modeling: `检查所见`/`检查诊断` lack validated adjudication and could import response-label leakage.
+- Not chosen free-text examination modeling: `Examination Findings`/`Examination Diagnosis` lack validated adjudication and could import response-label leakage.
 
 Revisit the learned model if PCAS has complete support and the GRU can be run inside the approved envelope; revisit imaging/intent linkage if PCAS is positive and falsification controls are null-like; revise toward workflow measurement if PCAS is null but raw state is positive; abandon this direction if adequately supported process-only and permutation controls match raw and PCAS state repeatedly.
 

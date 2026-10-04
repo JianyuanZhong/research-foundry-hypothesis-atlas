@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # A fixed-workload minimax domain envelope for the sealed pulmonary-nodule routing audit
 
 ## Decision bottleneck and targeted repair

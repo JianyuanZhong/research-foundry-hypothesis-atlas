@@ -1,44 +1,46 @@
-# UKB 15: 乳腺癌遗传风险与绝经后激素背景
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# UKB 15: Breast cancer genetic risk and the postmenopausal hormonal background
 
 Admission: feasibility_required. Verify participant overlap, measurement dates, missingness and event support before committing this design.
 
-## 待检验假说
+## Hypotheses to Be Tested
 
-绝经后女性中，乳腺癌PRS与发病风险的关联在低SHBG和高脂肪负荷者中更强。
+Among postmenopausal women, the association between breast cancer PRS and disease risk is stronger in those with low SHBG and high adiposity.
 
-## 研究对象及主要数据
+## Study population and key data
 
-无乳腺癌的绝经后女性；标准BC PRS、SHBG、性激素、体脂、HRT史及癌症登记。
+Postmenopausal women without breast cancer; standard BC PRS, SHBG, sex hormones, body fat, HRT history, and cancer registry.
 
-## 基本做法
+## Basic Approach
 
-预设PRS与SHBG及脂肪的少数交互，从采血日随访，按自然绝经和HRT使用分层。
+Prespecify a small number of interactions between PRS and SHBG and fat, follow up from the blood draw date, and stratify by natural menopause and HRT use.
 
-## 研究意义
+## Significance of the Research
 
-检验遗传易感是否在不同内分泌背景下表达不同。
+Test whether genetic susceptibility is expressed differently in different endocrine contexts.
 
-## 主要难点
+## Main Challenges
 
-激素单次测量且低值可能受检测限影响；不能推断HRT效果或受体亚型。
+Hormones were measured only once, and low values may be affected by the detection limit; HRT effects or receptor subtypes cannot be inferred.
 
-## 参考资料
+## References
 
-相关背景或数据说明，非假说成立或新颖性证明：https://www.nature.com/articles/s41467-025-60058-z；字段定义：https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26200；https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26220；https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=22009
+Relevant background or data description, not evidence that the hypothesis is valid or novel: https://www.nature.com/articles/s41467-025-60058-z; field definitions: https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26200; https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26220; https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=22009
 
-## 生命科学方向
+## Life Sciences
 
-遗传风险与保护性表型
+Genetic Risk and Protective Phenotypes
 
-## 竞争解释
+## Competing Explanations
 
-BMI、HRT选择及筛查频率共同解释关联。
+BMI, HRT selection, and screening frequency may jointly explain the association.
 
-## 最小验证与否定条件
+## Minimal validation and falsification criteria
 
-先审计绝经状态、检测限和HRT；若连续交互在独立子集中不稳定，不支持放大效应。
+First audit menopausal status, detection limits, and HRT; if the continuous interaction is unstable in an independent subset, this does not support an amplification effect.
 
-## 字典字段依据
+## Basis for Dictionary Fields
 
 26200 In UK Biobank PRS Release Testing subgroup；26220 Standard PRS for breast cancer (BC)；22009 Genetic principal components；2724 Had menopause；3581 Age at menopause (last menstrual period)；30830 SHBG；30800 Oestradiol；23099 Body fat percentage；3536 Age started hormone-replacement therapy (HRT)；3546 Age last used hormone-replacement therapy (HRT)；40005 Date of cancer diagnosis；40006 Type of cancer: ICD10
 

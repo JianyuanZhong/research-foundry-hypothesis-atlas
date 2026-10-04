@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Absolute-risk CBC cancer-type contrast under generic burden and source ascertainment
 
 Status: substantive child of `[prior hypothesis]`. This is a planned Harbor experiment; no hypothesis fit or participant-level result has been run here.

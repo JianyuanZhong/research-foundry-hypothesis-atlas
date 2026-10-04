@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 20 restart: does persistent hyperlactatemia matter after pressure recovery?
 
 ## Unresolved question, clinical importance, and advance

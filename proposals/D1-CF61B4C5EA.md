@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Pre-repeat assay state adds prediction beyond remote baseline after repeat TACE
 
 ## Target and advance
@@ -10,13 +12,13 @@ The strongest available evidence before this child was feasibility: a no-samplin
 
 Use HCC snapshot `[source checksum]`, scanning every source row without sampling. Reconstruct the inherited adult/HCC/2018–2024 cohort from:
 
-- `encounters` in `[internal dataset path]`, columns `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`;
-- `diagnoses` in `[internal dataset path]`, columns `患者主索引`, `就诊号`, `诊断名称`, `诊断类型`, requiring literal `肝细胞癌` and inheriting linked encounter time;
-- `procedures` in `[internal dataset path]`, columns `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源`, using case-insensitive `TACE` or literal `化疗栓塞`, valid `开始时间`, calendar-day collapse, and earliest adjacent 14–180-day pair;
-- `medications` in `[internal dataset path]`, columns `患者主索引`, `就诊号`, `用药`, `开始时间` (plus medication fields if needed), applying only the inherited days 1–14 systemic-record ontology and ambiguity exclusions; records are not administration;
-- `labs` in `[internal dataset path]`, columns `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`, restricting to exact `白蛋白` and `总胆红素`. Parse only signed decimal/scientific numeric strings with optional `<`, `>`, `≤`, `≥`; primary analysis uses uncensored numeric values, retaining specimen type and markers. There is no unit field.
+- `encounters` in `[internal dataset path]`, columns `patient master index`, `visit number`, `age`, `sex`, `visit time`, `admission time`, `discharge time`, `visit department`;
+- `diagnoses` in `[internal dataset path]`, columns `Patient Master Index`, `Encounter Number`, `Diagnosis Name`, `Diagnosis Type`, requiring literal `hepatocellular carcinoma` and inheriting linked encounter time;
+- `procedures` in `[internal dataset path]`, columns `patient master index`, `encounter number`, `surgery`, `start time`, `end time`, `surgery source`, using case-insensitive `TACE` or literal `chemoembolization`, valid `start time`, calendar-day collapse, and earliest adjacent 14–180-day pair;
+- `medications` in `[internal dataset path]`, columns `Patient Master Index`, `Encounter Number`, `Medication`, `Start Time` (plus medication fields if needed), applying only the inherited days 1–14 systemic-record ontology and ambiguity exclusions; records are not administration;
+- `labs` in `[internal dataset path]`, columns `patient master index`, `visit number`, `test`, `qualitative result`, `quantitative result`, `specimen type`, `test time`, restricting to exact `albumin` and `total bilirubin`. Parse only signed decimal/scientific numeric strings with optional `<`, `>`, `≤`, `≥`; primary analysis uses uncensored numeric values, retaining specimen type and markers. There is no unit field.
 
-All joins use composite (`患者主索引`,`就诊号`) keys with duplicate-key audits and no many-to-many multiplication. Preserve the exact frozen pathway counts of 319 systemic-record and 1,491 comparator patients and the independently selected first repeat event on TACE2 calendar days 15–90, 159 and 526 respectively. Event time is the earliest valid procedure `开始时间` for that selected repeat event and event selection must not inspect laboratory values.
+All joins use composite (`patient master index`,`encounter number`) keys with duplicate-key audits and no many-to-many multiplication. Preserve the exact frozen pathway counts of 319 systemic-record and 1,491 comparator patients and the independently selected first repeat event on TACE2 calendar days 15–90, 159 and 526 respectively. Event time is the earliest valid procedure `start time` for that selected repeat event and event selection must not inspect laboratory values.
 
 For each assay separately, select `B` as the latest valid value on TACE2 days −30 through −1; `P` as the latest valid value in the selected repeat encounter during `[event−72h,event)`; and `Y` as the value in that same encounter during `(event,event+72h]` nearest +24h, resolving exact distance ties by earlier timestamp. Require `B_time < P_time < event_time < Y_time` and positive P lead. Expected complete triplets are albumin 40 systemic / 118 comparator and bilirubin 41 / 119 comparator. Report source-row counts, invalid/missing clocks, parser attrition, duplicate groups and discordance, unmatched encounter keys, assay availability, and exact panel-to-event hours. Do not publish dates or patient identifiers.
 

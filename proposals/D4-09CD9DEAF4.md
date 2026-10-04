@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 67: baseline-eGFR qualification of the frozen AG1-versus-AF1 kidney allocation contrast
 
 ## Decision question and substantive advance

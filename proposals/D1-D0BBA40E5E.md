@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 19: falsification and stopping result for the late acidemic SpO2 mortality hypothesis
 
 ## Resolution, clinical importance, and advance

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 22 evolution: an earlier competing-observation check for the HCC assay-change question
 
 Status: independent substantive child of [prior hypothesis]. Design only. No cohort count, fitted parameter, effect estimate, prevalence, clinical adjudication, or clinical conclusion is claimed.
@@ -74,7 +76,7 @@ The solver must also report the direct empirical/modeled N versus L versus R com
 
 ## Population, timing and endpoint rules
 
-Use the first row in procedures with Unicode-normalized, trimmed, case-folded 手术 equal to TACE, nonmissing 患者主索引 and 就诊号, and parseable 开始时间; call its start t0. Collapse exact duplicate patient/start records only under a deterministic audit. Group patients only by 患者主索引. Every visit-level join is exactly (患者主索引, 就诊号). No names, identity-card numbers, phones, insurance cards, hospital numbers, file order, or cross-dataset identifiers are allowed.
+Use the first row in procedures with Unicode-normalized, trimmed, case-folded Surgery equal to TACE, nonmissing Patient Master Index and Encounter Number, and parseable Start Time; call its start t0. Collapse exact duplicate patient/start records only under a deterministic audit. Group patients only by Patient Master Index. Every visit-level join is exactly (Patient Master Index, Encounter Number). No names, identity-card numbers, phones, insurance cards, hospital numbers, file order, or cross-dataset identifiers are allowed.
 
 The index feature history is [t0-365,t0). L14 is [t0,t0+14], with the endpoint at t0+14 included only for the earlier snapshot/trajectory; L42 is [t0,t0+42]. No row after t0+42 is a predictor. The later risk window is [t0+43,t0+181), with fixed bins [43,57), [57,71), [71,85), [85,99), [99,113), [113,127), [127,141), [141,155), [155,169), [169,181). Follow-up ends at first qualifying event, inherited obs_end, or day 181; [43,90] and [91,181) are fixed sensitivities.
 
@@ -82,8 +84,8 @@ Retain the inherited operational hierarchy:
 - O0: first later unique literal-code TACE in the risk window.
 - O1: O0 plus the frozen semantic hepatic-arterial procedure predicate, valid procedure time, same-patient/same-visit timed examination or order corroboration.
 - O2: O1 plus the frozen same-visit medication corroboration.
-- O3: O2 plus a qualifying examination, order or medication row on the exact visit key with valid event/start time strictly after tp and no later than tp+72 hours; orders require nonblank 医嘱状态 and exclude normalized cancellation tokens 取消, 作废, 撤销 and 停用.
-- O4: O3 plus parseable same-row 结束时间 te with 0 <= te-tp <=72 hours. Missing, malformed, negative or longer closure is closure_unknown, not a negative clinical event.
+- O3: O2 plus a qualifying examination, order or medication row on the exact visit key with valid event/start time strictly after tp and no later than tp+72 hours; orders require nonblank Order Status and exclude normalized cancellation tokens Cancelled, Voided, Revoked and Discontinued.
+- O4: O3 plus parseable same-row end time te with 0 <= te-tp <=72 hours. Missing, malformed, negative or longer closure is closure_unknown, not a negative clinical event.
 - capture-adequate: inherited indicator based on encounter discharge >= tp+72 hours or a valid-time non-procedure row in (tp,tp+72 hours]; this is not proof of complete capture.
 - O_planproxy_cap: inherited pre-opened-order process control, retaining O4 overlap, unknown_provenance, O3-only, closure_unknown and capture_unknown flags.
 
@@ -95,18 +97,18 @@ Frozen HCC snapshot: [source checksum]. Catalog: [internal dataset path]; catalo
 
 | table | exact source path and SHA-256 | required columns, time and role |
 |---|---|---|
-| procedures | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 手术, 开始时间, 结束时间, 手术来源; t0, early TACE, O0-O4, non-TACE procedure signal |
-| encounters | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 年龄, 性别, 就诊时间, 入院时间, 出院时间, 就诊科室; joins, M0, obs_end and N/L/R timing |
-| examinations | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 检查, 检查所见, 检查诊断, 开始时间, 检查号; O1/O3 corroboration, operational N, timing audit; narrative is not a validated response label |
-| orders | [internal dataset path](非药品)_2062526727266216118.csv; [source checksum] | 患者主索引, 就诊号, 医嘱(非药品), 开立时间, 开始时间, 结束时间, 医嘱状态, 频次; O1/O3, pre-open audit, operational N and cancellation/time audit |
-| medications | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 用药, 单次用药计量, 单次用药计量单位, 频次, 开始时间, 结束时间, 用药方式, 药品类型; O2/O3, operational N and capture clock |
-| labs | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间; B0, S14/S42, Delta14/Delta42, assay opportunity and operational N |
-| diagnoses | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 诊断名称, 诊断类型; matched-visit context only, no validated event time |
-| pathology | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 病理, 检查所见, 检查诊断, 诊断; context/review only, no validated event time |
-| clinical_documents | [internal dataset path]; [source checksum] | 患者主索引, 就诊号 and narrative fields; coverage/context audit only, no validated event-time predictor |
-| vitals | [internal dataset path]; [source checksum] | 患者主索引, 就诊号; identifier/catalog audit only, no validated time/content |
-| transfers | [internal dataset path]; [source checksum] | 患者主索引, 就诊号; identifier/catalog audit only, no cross-table time/content |
-| front_page | [internal dataset path]; [source checksum] | 患者主索引, 就诊号; identifier/catalog audit only, no predictor |
+| procedures | [internal dataset path]; [source checksum] | Patient master index, encounter number, surgery, start time, end time, surgery source; t0, early TACE, O0-O4, non-TACE procedure signal |
+| encounters | [internal dataset path]; [source checksum] | Patient Master Index, Encounter Number, Age, Sex, Encounter Time, Admission Time, Discharge Time, Clinical Department; joins, M0, obs_end and N/L/R timing |
+| examinations | [internal dataset path]; [source checksum] | Patient master index, visit number, examination, examination findings, examination diagnosis, start time, examination number; O1/O3 corroboration, operational N, timing audit; narrative is not a validated response label |
+| orders | [internal dataset path](non-medication)_2062526727266216118.csv; [source checksum] | Patient master index, Encounter number, Non-medication order, Order time, Start time, End time, Order status, Frequency; O1/O3, pre-open audit, operational N and cancellation/time audit |
+| medications | [internal dataset path]; [source checksum] | patient master index, encounter number, medication, single-dose medication amount, single-dose medication amount unit, frequency, start time, end time, route of administration, medication type; O2/O3, operational N and capture clock |
+| labs | [internal dataset path]; [source checksum] | Patient Master Index, Encounter Number, Test, Qualitative Result, Quantitative Result, Specimen Type, Test Time; B0, S14/S42, Delta14/Delta42, assay opportunity and operational N |
+| diagnoses | [internal dataset path]; [source checksum] | Patient Master Index, Encounter Number, Diagnosis Name, Diagnosis Type; matched-visit context only, no validated event time |
+| pathology | [internal dataset path]; [source checksum] | patient master index, encounter number, pathology, examination findings, examination diagnosis, diagnosis; context/review only, no validated event time |
+| clinical_documents | [internal dataset path]; [source checksum] | Patient Master Index, Encounter Number and narrative fields; coverage/context audit only, no validated event-time predictor |
+| vitals | [internal dataset path]; [source checksum] | Patient Master Index, Encounter Number; identifier/catalog audit only, no validated time/content |
+| transfers | [internal dataset path]; [source checksum] | Patient Master Index, Encounter Number; identifier/catalog audit only, no cross-table time/content |
+| front_page | [internal dataset path]; [source checksum] | Patient master index, Encounter number; identifier/catalog audit only, no predictor |
 
 All required joins are on the documented patient or composite visit keys. The experiment uses only validated event times from procedures, encounters, examinations, orders, medications and labs. It does not infer dates from diagnoses, pathology, documents, vitals, transfers or front-page rows. HCC lacks reliable death status, outside-care capture, imaging/raw images, assay units/reference ranges, validated narrative temporality, technical TACE dose/intent, treatment response/progression, toxicity, survival, utility and patient-important outcomes. Clinical adjudication or a prospective/imaging-linked study is required for those claims.
 

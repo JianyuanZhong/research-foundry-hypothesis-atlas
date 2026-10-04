@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Threshold-calibrated patient-sufficiency test for documentary-M2 review
 
 ## Targeted successor and unresolved clinical question
@@ -37,7 +39,7 @@ Before reading outcomes, reader forms, scores or test counts, quarantine any pat
 
 ## Reports, readers and outcome
 
-A report unit is the complete exact-deduplicated examination group u=(患者主索引,就诊号,检查号), retaining every component row in original order, immutable raw ordinals, exact bytes and backpointers. Group by this three-field key before modality assignment. A blank 检查号 row is a forced-zero pseudo-unit keyed by its raw ordinal for the patient-sufficiency denominator; it cannot supply report semantics or be text-merged. No component may be selectively deleted. A reversible parser separates visible bytes, markup/attributes and parse errors. Nonreversible, contaminated or unresolved units are source-unavailable and forced to the masked state.
+A report unit is the complete exact-deduplicated examination group u=(Patient Master Index,Encounter Number,Examination Number), retaining every component row in original order, immutable raw ordinals, exact bytes and backpointers. Group by this three-field key before modality assignment. A blank Examination Number row is a forced-zero pseudo-unit keyed by its raw ordinal for the patient-sufficiency denominator; it cannot supply report semantics or be text-merged. No component may be selectively deleted. A reversible parser separates visible bytes, markup/attributes and parse errors. Nonreversible, contaminated or unresolved units are source-unavailable and forced to the masked state.
 
 Before outcomes or scores are exposed, two qualified Chinese-reading abdominal radiologists and one adjudicator read the complete radiology roster, and two qualified hepatobiliary pathologists and one adjudicator read the complete pathology roster. Freeze three radiology books and three pathology books, yielding exactly nine corpus-wide global pairs. No patient-, year-, outcome-, mask-, model- or deletion-specific reader switching is allowed. Radiology concepts are lesion burden, capsule, margin, enhancement/washout, peritumoral features, satellites, venous tumor thrombus, cirrhosis and ascites, with present/absent/uncertain/not-mentioned/source-unavailable terminals. Pathology terminals are OUT, IN0-A, IN1-A, IN0-U and IN1-U; IN1 is encounter-documentary M2. Untimed pathology and missing specimen/sampling data make this documentary, not biological, M2.
 
@@ -98,20 +100,20 @@ Supportive means the historical source reconstruction shows both a fixed-quota d
 
 Controlling catalog: `[internal dataset path]`, [source checksum]. HCC snapshot: `[source checksum]`. All HCC sources are ordinary read-only CSVs; there are no archive members.
 
-- `encounters`: `[internal dataset path]`; table schema `datasets/hcc/table-b743286cb1249287.json`; columns 患者主索引, 就诊号, 年龄, 性别, 就诊时间, 入院时间, 出院时间. Join key (患者主索引,就诊号); age/sex predictors and encounter times/audit.
-- `procedures`: `[internal dataset path]`; schema `table-d5eae16f8f8093d9.json`; 手术, 开始时间, 结束时间, 手术来源. Same encounter key; source-reconciled episode clocks and prior procedures.
-- `examinations`: `[internal dataset path]`; schema `table-fd016d2731b9d6c6.json`; 检查, 检查所见, 检查诊断, 开始时间, 机器型号, 检查号. Group key adds 检查号; acquisition window, report surface and frozen semantic concepts.
-- `pathology`: `[internal dataset path]`; schema `table-0a4ee86a446c605c.json`; 病理, 检查所见, 检查诊断, 机器型号. Same encounter key; all rows form an indivisible untimed documentary endpoint composite.
-- `medications`: `[internal dataset path]`; schema `table-4f6ecaeb6e8f69c2.json`; 用药, 药品类型, 开始时间, 结束时间 plus dose/frequency fields. Patient-wide source-reconciled recorded-prior-treatment history.
-- `orders`: `[internal dataset path]`; schema `table-6b93dcf0ea823702.json`; 医嘱(非药品), 开立时间, 开始时间, 结束时间, 医嘱状态, 频次. Patient-wide recorded local/radiotherapy treatment history.
-- `diagnoses`: `[internal dataset path]`; schema `table-12710723c3df0c99.json`; 诊断名称, 诊断类型. Untimed corroboration only, never a predictor or time filter.
-- `labs`: `[internal dataset path]`; schema `table-38aad8c54471332f.json`; 检验, 定性结果, 定量结果, 标本类型, 检验时间. Descriptive/lineage audit only: no unit column and forbidden from cohort, features, masks, model, endpoints and inference.
-- `clinical_documents`: `[internal dataset path]`; schema `table-66afca58512c2fca.json`; all listed narrative fields including 主诉,现病史,既往史,入院诊断,入院情况,诊疗经过,出院情况,手术经过. Untimed leakage audit only; never a predictor.
-- `vitals`: `[internal dataset path]`; schema `table-8436de9cba74b8ca.json`; identifier-only (患者主索引,就诊号), not usable payload.
+- `encounters`: `[internal dataset path]`; table schema `datasets/hcc/table-b743286cb1249287.json`; columns Patient Master Index, Visit Number, Age, Sex, Visit Time, Admission Time, Discharge Time. Join key (Patient Master Index,Visit Number); age/sex predictors and encounter times/audit.
+- `procedures`: `[internal dataset path]`; schema `table-d5eae16f8f8093d9.json`; Procedure, Start Time, End Time, Procedure Source. Same encounter key; source-reconciled episode clocks and prior procedures.
+- `examinations`: `[internal dataset path]`; schema `table-fd016d2731b9d6c6.json`; Examination, Examination findings, Examination diagnosis, Start time, Machine model, Examination number. Group key adds Examination number; acquisition window, report surface and frozen semantic concepts.
+- `pathology`: `[internal dataset path]`; schema `table-0a4ee86a446c605c.json`; Pathology, Examination findings, Examination diagnosis, Machine model. Same encounter key; all rows form an indivisible untimed documentary endpoint composite.
+- `medications`: `[internal dataset path]`; schema `table-4f6ecaeb6e8f69c2.json`; Medication, Drug type, Start time, End time plus dose/frequency fields. Patient-wide source-reconciled recorded-prior-treatment history.
+- `orders`: `[internal dataset path]`; schema `table-6b93dcf0ea823702.json`; Non-drug orders, Order time, Start time, End time, Order status, Frequency. Patient-wide recorded local/radiotherapy treatment history.
+- `diagnoses`: `[internal dataset path]`; schema `table-12710723c3df0c99.json`; Diagnosis Name, Diagnosis Type. Untimed corroboration only, never a predictor or time filter.
+- `labs`: `[internal dataset path]`; schema `table-38aad8c54471332f.json`; Test, Qualitative Result, Quantitative Result, Specimen Type, Test Time. Descriptive/lineage audit only: no unit column and forbidden from cohort, features, masks, model, endpoints and inference.
+- `clinical_documents`: `[internal dataset path]`; schema `table-66afca58512c2fca.json`; all listed narrative fields including Chief Complaint, History of Present Illness, Past History, Admission Diagnosis, Admission Status, Course of Diagnosis and Treatment, Discharge Status, and Surgical Procedure. Untimed leakage audit only; never a predictor.
+- `vitals`: `[internal dataset path]`; schema `table-8436de9cba74b8ca.json`; identifier-only (patient master index, visit number), not usable payload.
 - `transfers`: `[internal dataset path]`; schema `table-320c20f732e71789.json`; identifier-only, no transfer timestamps.
 - `front_page`: `[internal dataset path]`; schema `table-38b3224239acc33f.json`; 30-byte identifier-only/header-only source.
 
-Verify all source hashes against the guide/metadata and retain raw row ordinals, exact field bytes and table schema hashes. Same-encounter joins are exact on (患者主索引,就诊号); examinations additionally group on 检查号; longitudinal treatment joins use patient plus valid source times before interval restriction. Do not pool the other three datasets. The full no-sampling audit previously inspected 419,996 examination rows, finding 419,986 exact-unique rows and 392,854 nonblank patient-encounter-accession units among 42,205 patients, with 39,610 patients having multiple units and maximum 205; these counts establish why patient-distributed missingness is nontrivial, not cohort event counts.
+Verify all source hashes against the guide/metadata and retain raw row ordinals, exact field bytes and table schema hashes. Same-encounter joins are exact on (patient master index, encounter number); examinations additionally group on examination number; longitudinal treatment joins use patient plus valid source times before interval restriction. Do not pool the other three datasets. The full no-sampling audit previously inspected 419,996 examination rows, finding 419,986 exact-unique rows and 392,854 nonblank patient-encounter-accession units among 42,205 patients, with 39,610 patients having multiple units and maximum 205; these counts establish why patient-distributed missingness is nontrivial, not cohort event counts.
 
 ## Required artifacts, verification and external evidence
 

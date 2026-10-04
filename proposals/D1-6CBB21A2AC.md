@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Audit-compatible whole-accession visibility frontier for documentary-M2 review
 
 ## 1. Targeted repair and preserved design
@@ -14,13 +16,13 @@ This is a targeted successor to assessed-valid `[prior hypothesis]`. It preserve
 
 The parent's whole-accession release frontier is computationally coherent, but its external decision bridge is not yet audit-identifiable. It says a later audit should compare a lower report-coverage bound with `c*`, without freezing the denominator that must be reconstructed across population/clock worlds, distinguishing accession from patient availability, handling within-patient multi-accession dependence, or proving that a pre-cutoff report version is the same body the locked model scored.
 
-The exact HCC source demonstrates that this matters. A full read of all 419,996 examination rows found 392,854 nonblank `(患者主索引,就诊号,检查号)` units, 16,534 multirow units, 66,534 multi-accession encounters, and 39,610 multi-accession patients. A coarse CT/MR lexical scan, not a cohort count, still found 7,647 patients with multiple candidate units. Thus patient, accession, and component denominators are not interchangeable.
+The exact HCC source demonstrates that this matters. A full read of all 419,996 examination rows found 392,854 nonblank `(patient master index,encounter number,examination number)` units, 16,534 multirow units, 66,534 multi-accession encounters, and 39,610 multi-accession patients. A coarse CT/MR lexical scan, not a cohort count, still found 7,647 patients with multiple candidate units. Thus patient, accession, and component denominators are not interchangeable.
 
 This child repairs one issue: it freezes an audit-compatible denominator and version/time mapping for the computed frontier. It does not add unavailable timestamps or relax the parent's robustness claim.
 
 ## 2. Evidence-supported claim and unresolved hypothesis
 
-The strongest evidence currently supported is limited to source structure. HCC examinations contains patient and encounter keys, an explicit `检查号`, modality text, eventual `检查所见/检查诊断` bodies, acquisition-like `开始时间`, and `机器型号`. It has no report-author, version, signature, finalization, release, amendment, or clinician-view field. One accession can contain multiple rows and one patient can contain multiple accessions. Pathology remains untimed and lacks specimen/accession/slide/block/sampling linkage. These facts support computing a finite stored-content missing-report stress test, not historical decision-time availability.
+The strongest evidence currently supported is limited to source structure. HCC examinations contains patient and encounter keys, an explicit `Examination Number`, modality text, eventual `Examination Findings/Examination Diagnosis` bodies, acquisition-like `Start Time`, and `Machine Model`. It has no report-author, version, signature, finalization, release, amendment, or clinician-view field. One accession can contain multiple rows and one patient can contain multiple accessions. Pathology remains untimed and lacks specimen/accession/slide/block/sampling linkage. These facts support computing a finite stored-content missing-report stress test, not historical decision-time availability.
 
 The unresolved Harbor hypothesis remains:
 
@@ -39,8 +41,8 @@ Harbor computes and can falsify the first claim and the internal audit-mapping c
 For each test year `a`, admissible world `omega`, primary cutoff `c_24`, and singleton deletion state `j` (including undeleted `j=none`), define:
 
 - `E_{a,omega,j}`: all eligible patients after the frozen parent population logic and, when applicable, deletion of patient `j`.
-- `U_{p,a,omega,j}`: every nonblank, source-eligible CT/MRI examination unit on `u=(患者主索引,就诊号,检查号)` that the locked pipeline is permitted to read for patient `p`, whose entire acquisition interval is in `[c_24-90d,c_24)`. All exact-deduplicated source rows sharing the key are one unit.
-- `A_{a,omega,j}`: units in the union of `U_p` that pass the parent's reversible clean-source/releasable gate. Blank `检查号`, non-CT/MRI units, out-of-window units, corrupt/nonreversible/contaminated units, and units never consumed by the locked pipeline are not denominator members. They remain on the ledger with exclusion reason; they may not inflate coverage.
+- `U_{p,a,omega,j}`: every nonblank, source-eligible CT/MRI examination unit on `u=(patient master index,encounter number,examination number)` that the locked pipeline is permitted to read for patient `p`, whose entire acquisition interval is in `[c_24-90d,c_24)`. All exact-deduplicated source rows sharing the key are one unit.
+- `A_{a,omega,j}`: units in the union of `U_p` that pass the parent's reversible clean-source/releasable gate. Blank `Examination Number`, non-CT/MRI units, out-of-window units, corrupt/nonreversible/contaminated units, and units never consumed by the locked pipeline are not denominator members. They remain on the ledger with exclusion reason; they may not inflate coverage.
 - `n_p=|A_p|`: the number of releasable units per eligible patient.
 - `P^0={p in E:n_p=0}`: eligible patients with no releasable clean unit.
 - `P^+={p in E:n_p>0}`: eligible patients represented in the accession denominator.
@@ -81,7 +83,7 @@ Computational gates remain zero integer gap, numerical feasibility and transform
 
 A later audit must be accession-linked and version-linked. For every frozen denominator unit it must supply, at minimum:
 
-- exact source-system accession key crosswalk to `(患者主索引,就诊号,检查号)`, with audited collision/orphan rates;
+- exact source-system accession key crosswalk to `(Patient Master Index,Encounter Number,Examination Number)`, with audited collision/orphan rates;
 - modality and component roster;
 - every report version identifier and immutable report-body hash;
 - authored, signed/finalized, released, amended, and preferably authenticated clinician-view timestamps, with timezone and timestamp semantics;
@@ -94,7 +96,7 @@ At cutoff `c_d`, define separate bits:
 - `r_u^R=1` only if it was released into the clinically relevant system no later than `c_d`;
 - `r_u^V=1` only if an eligible clinical viewer event occurred no later than `c_d`.
 
-Missing, impossible, or ambiguous event semantics map to zero in the lower-bound analysis. Acquisition `开始时间` never substitutes. If source rows/components for one accession do not all map to the same complete pre-cutoff version, its whole-unit bit is zero. If the pre-cutoff body differs from the eventual frozen body, the parent score cannot be credited: the different body must be frozen, parsed, independently read under the same form protocol, and rescored as a new prespecified audit study.
+Missing, impossible, or ambiguous event semantics map to zero in the lower-bound analysis. Acquisition `start time` never substitutes. If source rows/components for one accession do not all map to the same complete pre-cutoff version, its whole-unit bit is zero. If the pre-cutoff body differs from the eventual frozen body, the parent score cannot be credited: the different body must be frozen, parsed, independently read under the same form protocol, and rescored as a new prespecified audit study.
 
 The audit must reproduce `A_{a,omega,none}` separately for every admissible 2020 and 2021 primary-cutoff world and report the minimum coverage over worlds. It must also report exact numerator/denominator counts by year and modality, `|P^0|`, `n_p` distribution, `C_Pany`, and `C_Pall`. Pooled years, pooled modalities, or patient percentages do not satisfy an accession threshold.
 
@@ -129,18 +131,18 @@ The parent's full exact binding table is inherited. The fields central to this r
 
 | Table | Source path | Required columns / role |
 |---|---|---|
-| examinations | `[internal dataset path]` | `患者主索引,就诊号,检查号` unit and join; `检查` frozen CT/MRI classification; `检查所见,检查诊断` complete body; `开始时间` acquisition only; `机器型号` provenance. No report final/release/view/version field exists. |
-| procedures | `[internal dataset path]` | keys; `手术,开始时间,结束时间,手术来源` episode and cutoff states. |
-| encounters | `[internal dataset path]` | keys; `年龄,性别`; `就诊时间,入院时间,出院时间` chronology audit. |
-| pathology | `[internal dataset path]` | keys; `病理,检查所见,检查诊断,机器型号`; no time, specimen, or accession. |
-| medications | `[internal dataset path]` | keys; `用药,药品类型,开始时间,结束时间` prior recorded systemic treatment. |
-| orders | `[internal dataset path]` | keys; `医嘱(非药品),开立时间,开始时间,结束时间,医嘱状态` prior local/radiotherapy evidence. |
-| diagnoses | `[internal dataset path]` | keys; `诊断名称,诊断类型` untimed corroboration only. |
-| labs | `[internal dataset path]` | keys; `检验,定性结果,定量结果,标本类型,检验时间` forbidden-predictor lineage audit only. |
-| clinical_documents | `[internal dataset path]` | keys and narratives audit only; duplicate raw `入院诊断` header and no document time. |
+| examinations | `[internal dataset path]` | `Patient Master Index,Encounter Number,Examination Number` unit and join; `Examination` frozen CT/MRI classification; `Examination Findings,Examination Diagnosis` complete body; `Start Time` acquisition only; `Machine Model` provenance. No report final/release/view/version field exists. |
+| procedures | `[internal dataset path]` | keys; `surgery,start time,end time,surgery source` episode and cutoff states. |
+| encounters | `[internal dataset path]` | keys; `Age,Sex`; `Encounter Time,Admission Time,Discharge Time` chronology audit. |
+| pathology | `[internal dataset path]` | keys; `Pathology, Examination Findings, Examination Diagnosis, Machine Model`; no time, specimen, or accession. |
+| medications | `[internal dataset path]` | keys; `Medication,Drug Type,Start Time,End Time` prior recorded systemic treatment. |
+| orders | `[internal dataset path]` | keys; `orders (non-drug), order time, start time, end time, order status` prior local/radiotherapy evidence. |
+| diagnoses | `[internal dataset path]` | keys; `diagnosis name,diagnosis type` untimed corroboration only. |
+| labs | `[internal dataset path]` | keys; `test,qualitative result,quantitative result,specimen type,test time` forbidden-predictor lineage audit only. |
+| clinical_documents | `[internal dataset path]` | keys and narratives audit only; duplicate raw `admission diagnosis` header and no document time. |
 | vitals / transfers / front_page | exact paths in parent and HCC README | identifier-only, no predictor or report-audit role. |
 
-Same-encounter joins are exact on `(患者主索引,就诊号)`; report grouping adds nonblank `检查号`. Patient-wide prior-treatment retrieval joins on `患者主索引` before interval filtering. Preserve raw ordinal, exact bytes, hashes, and backpointers. Never use direct identifiers as predictors or export clinical rows.
+Same-encounter joins are exact on `(patient master index,encounter number)`; report grouping adds nonblank `examination number`. Patient-wide prior-treatment retrieval joins on `patient master index` before interval filtering. Preserve raw ordinal, exact bytes, hashes, and backpointers. Never use direct identifiers as predictors or export clinical rows.
 
 Required new artifacts:
 

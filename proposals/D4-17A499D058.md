@@ -1,46 +1,48 @@
-# UKB 30: 夜间噪声与睡眠脆弱性共同指向房颤
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# UKB 30: Nighttime noise and sleep vulnerability jointly point to atrial fibrillation
 
 Admission: feasibility_required. Verify participant overlap, measurement dates, missingness and event support before committing this design.
 
-## 待检验假说
+## Hypotheses to Be Tested
 
-夜间噪声与后续房颤的关联在失眠或睡眠不规律者中更强，且不能完全由空气污染解释。
+The association between nighttime noise and subsequent atrial fibrillation is stronger among people with insomnia or irregular sleep and cannot be fully explained by air pollution.
 
-## 研究对象及主要数据
+## Study population and key data
 
-有居住地噪声、睡眠问卷或加速度计及房颤随访者。
+Individuals with residential noise data, sleep questionnaires or accelerometry, and atrial fibrillation follow-up.
 
-## 基本做法
+## Basic Approach
 
-以联合暴露可确定时为起点，预设噪声与睡眠交互，联合调整空气污染并进行搬迁敏感性分析。
+Use the point when joint exposure can be determined as the starting point, prespecify noise–sleep interaction, jointly adjust for air pollution, and conduct a residential-move sensitivity analysis.
 
-## 研究意义
+## Significance of the Research
 
-区分夜间环境干扰与一般交通暴露的线索。
+Clues that distinguish nighttime environmental interference from general traffic exposure.
 
-## 主要难点
+## Main Challenges
 
-暴露年份需一致；不能用一次睡眠测量代表长期机制。
+Exposure years must be consistent; a single sleep measurement cannot represent a long-term mechanism.
 
-## 参考资料
+## References
 
-相关背景或数据说明，非假说成立或新颖性证明：https://www.nature.com/articles/s41591-024-03483-9；字段定义：https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=24022；https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=24006；https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=1200
+Relevant background or data description, not proof that the hypothesis is valid or novel: https://www.nature.com/articles/s41591-024-03483-9; field definitions: https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=24022; https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=24006; https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=1200
 
-## 生命科学方向
+## Life Sciences
 
-环境、行为与生物学易感性
+Environment, behavior, and biological susceptibility
 
-## 竞争解释
+## Competing Explanations
 
-交通污染、社会经济状况或就医频率解释关联。
+Traffic pollution, socioeconomic status, or healthcare utilization may explain the association.
 
-## 最小验证与否定条件
+## Minimal validation and falsification criteria
 
-先检查噪声与污染的共线性及独立变化支持；无法分开时只报告联合暴露。
+First assess collinearity between noise and pollution and whether there is support for independent variation; if they cannot be disentangled, report only the joint exposure.
 
-## 字典字段依据
+## Basis for Dictionary Fields
 
-24022 Average night-time sound level of noise pollution；24006 Particulate matter air pollution (pm2.5); 2010；1200 Sleeplessness / insomnia；1160 Sleep duration；90001 Acceleration data - cwa format；41270 Diagnoses - ICD10；41280 Date of first in-patient diagnosis - ICD10；53 Date of attending assessment centre。睡眠规律及活动片段需从原始加速度推导
+24022 Average night-time sound level of noise pollution；24006 Particulate matter air pollution (pm2.5); 2010；1200 Sleeplessness / insomnia；1160 Sleep duration；90001 Acceleration data - cwa format；41270 Diagnoses - ICD10；41280 Date of first in-patient diagnosis - ICD10；53 Date of attending assessment centre。Sleep regularity and activity segments need to be derived from the raw acceleration data.
 
 ## Bound source groups
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Clinically interpretable trajectory instability before live ICU discharge
 
 ## Scientific deliverable and substantive evolution

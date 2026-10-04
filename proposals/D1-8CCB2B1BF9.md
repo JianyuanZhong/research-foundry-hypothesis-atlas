@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Does documented vasopressor-rescue timing change the interpretation of early hypotension burden?
 
 ## Scientific deliverable and unresolved claim
@@ -72,7 +74,7 @@ All contrasts use the development-set burden 25th and 75th percentiles, standard
 
 The catalog is `[internal dataset path]`, catalog [source checksum]. Each source below is a gzip ordinary file; there is no internal archive member. Source data are read-only. The complete eICU catalog contains 31 tables; these are the required bindings.
 
-- Source `[internal dataset path]` (the catalog path has the exact directory spelling `eicu数据库/EICU 2.0数据`), table `patient`, schema `datasets/eicu/table-ab037c09d7df9a3c.json`, schema [source checksum], source [source checksum]. Join on `patientunitstayid`. Use `uniquepid`, `hospitalid`, `wardid`, `age`, `gender`, `ethnicity`, `hospitaladmitsource`, `unitadmitsource`, `unittype`, `unitstaytype`, `unitvisitnumber`, `unitdischargeoffset`, `unitdischargestatus`, and `unitdischargelocation`.
+- Source `[internal dataset path]` (the catalog path has the exact directory spelling `eicu database/EICU 2.0 data`), table `patient`, schema `datasets/eicu/table-ab037c09d7df9a3c.json`, schema [source checksum], source [source checksum]. Join on `patientunitstayid`. Use `uniquepid`, `hospitalid`, `wardid`, `age`, `gender`, `ethnicity`, `hospitaladmitsource`, `unitadmitsource`, `unittype`, `unitstaytype`, `unitvisitnumber`, `unitdischargeoffset`, `unitdischargestatus`, and `unitdischargelocation`.
 
 - Source `[internal dataset path]`, table `vitalPeriodic`, schema `datasets/eicu/table-a22c6d6981a32279.json`, schema [source checksum], source [source checksum]. Join on `patientunitstayid`; use `observationoffset` and `systemicmean` (and `vitalperiodicid` for duplicate audit).
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # UKB two-panel metabolic change: source-audited coordinated burden versus marker discordance
 
 ## Episode-25 successor and scientific deliverable

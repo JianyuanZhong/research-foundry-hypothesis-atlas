@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Recent vasoactive withdrawal and synchronous versus discordant recorded organ recovery after first ICU discharge
 
 ## Scientific deliverable

@@ -1,6 +1,6 @@
 # Disease Mechanisms & Pathway Hypotheses
 
-[← All domains](../README.md) · [Expert review guide](../REVIEW.md)
+[← Blinded review index](../REVIEW.md)
 
 **37 nodes · 34 generated versions · 33 recorded parent links.**
 

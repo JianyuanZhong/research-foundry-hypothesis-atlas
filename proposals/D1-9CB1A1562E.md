@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # A nested two-phase probability validation of actionability and supersession with all-unit fail-closed routing
 
 ## Decision question and targeted advance

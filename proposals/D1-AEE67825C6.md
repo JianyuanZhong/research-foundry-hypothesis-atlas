@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Dynamic child: lab-observed instability followed by a monitoring gap
 
 Status: proposed substantive child of `[prior hypothesis]`. No fitted study result is claimed.

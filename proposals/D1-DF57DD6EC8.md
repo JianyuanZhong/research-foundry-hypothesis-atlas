@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 20: eMAR-observable post-shock loop initiation with a single terminal-state resolver
 
 **Parent:** `[prior hypothesis]`

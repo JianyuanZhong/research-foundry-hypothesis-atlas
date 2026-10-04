@@ -22,7 +22,7 @@ for n in ns:
  assert f'### {n["id"]} · ' in all_catalogs
  assert f'<a id="{n["id"].lower()}"></a>' in all_catalogs
  assert (ROOT/n['proposal']).stat().st_size>0
-for p in list((ROOT/'domains').glob('*.md'))+[ROOT/'README.md',ROOT/'COVERAGE.md',ROOT/'REVIEW.md']:
+for p in list((ROOT/'domains').glob('*.md'))+[ROOT/'README.md',ROOT/'COVERAGE.md',ROOT/'REVIEW.md',ROOT/'TRANSLATION.md']:
  s=p.read_text()
  for target in re.findall(r'\]\(([^)]+)\)',s):
   if target.startswith(('https:','http:')):continue
@@ -43,3 +43,15 @@ for p in list((ROOT/'proposals').glob('*.md'))+[ROOT/'data/atlas.json']:
  s=p.read_text()
  for i,pattern in enumerate(compiled):assert not pattern.search(s),(p.name,'public policy check',i)
 print(json.dumps({'nodes':len(ns),'generated':sum(not n['seed'] for n in ns),'edges':sum(len(n['parents']) for n in ns),'domains':dict(collections.Counter(n['domain'] for n in ns)),'lineage':'valid DAG','proposal_links':'complete','svg_coverage':'all nodes and edges','public_export_checks':'passed'},indent=2))
+
+# Reviewer-facing surfaces must not carry explicit producer attribution.
+producer=re.compile(r"(?i)\b(?:codex|qwen[\w.-]*|claude[\w.-]*|novita|openai|anthropic|deepseek[\w.-]*|polo|luna|discovery\s+rsi|gpt[- ]?(?:5|6)[\w.-]*)\b")
+for p in list((ROOT/'proposals').glob('*.md'))+list((ROOT/'domains').glob('*.md'))+list((ROOT/'figures').glob('*.svg'))+[ROOT/'data/atlas.json',ROOT/'REVIEW.md',ROOT/'TRANSLATION.md']:
+ s=p.read_text()
+ assert not re.search('[\u3400-\u4dbf\u4e00-\u9fff]',s),(p.name,'untranslated Chinese')
+ assert not producer.search(s),(p.name,'producer attribution')
+ if p.parent.name=='proposals':
+  assert s.startswith('> **Anonymous English review copy.**'),p.name
+  assert not re.search(r'https://github\.com/[^\s)]+/blob/[0-9a-f]{7,40}/',s),(p.name,'individual provenance link')
+  assert not re.search(r'^Date:\s*2026-',s,re.M),(p.name,'authoring date')
+print('English-only review surfaces and explicit-attribution blinding: passed')

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 15 evolution alternative — temporal transition corroboration from treatment records
 
 Status: proposed competing substantive child of `[prior hypothesis]`. Design only. No cohort count, treatment prevalence, fitted coefficient, prediction, metric, interval, or scientific result is claimed.

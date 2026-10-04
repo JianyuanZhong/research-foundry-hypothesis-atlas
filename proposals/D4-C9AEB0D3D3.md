@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 28 specificity qualification: kidney-code enrichment versus general inpatient coding
 
 ## Parent and unresolved clinical question

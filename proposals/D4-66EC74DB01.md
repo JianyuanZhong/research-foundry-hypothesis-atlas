@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # UKB17 repair — prospective thigh MFI and falls/function
 
 **Status: working repair; no outcome analysis run, no row-overlap estimate, no literature added.** The source headers/catalog establish that fields are represented, but not how many participants have all fields or follow-up. The cached Assessment Center Parquet probe specifically failed when asked for MRI fields: the Arrow schema lacked `22407-2.0` and reported only assessment measures despite the full source-header catalog listing those columns. Do not treat the Parquet as a valid joint exposure/outcome derivative without reconciling this discrepancy.

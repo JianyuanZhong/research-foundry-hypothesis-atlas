@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Residual instability before ICU-to-ward transfer: coupling-resolved trajectory-state discordance
 
 Status: proposed substantive child of `[prior hypothesis]`. No outcome model has been fit and no trajectory-discordance result is claimed. This child preserves the parent's frozen 49,157-transfer population, `t0`, outcomes, pooled subject split, approximate-era roles and opening order, exact source bindings, parent S0/T1 and M0/M1 analyses, endpoint state `C`, raw direction `G`, and the primary endpoint-state-by-direction question. It adds the smallest controls needed to decide whether the apparent interaction is more than mathematical coupling, regression to the mean, or treatment/measurement dynamics.

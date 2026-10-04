@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 67 repaired protocol audit
 
 This targeted child preserves [prior hypothesis]'s frozen scientific schema: the first-eligible adult, one-admission-per-subject MIMIC pulmonary-opportunity population; pre-discharge chronology and canonical DS; exact atom `g=(E, terminal curr_service, W)`; route-concealed component panels; all-unit adverse precedence; finite-population two-phase whole-admission estimand; and the noncausal conclusion ceiling. MIMIC text can support only a stored-text measurement and, if all gates pass, nomination of a separately governed prospective silent workflow bridge. It cannot establish actual workflow, clinical truth, appropriateness, responsibility, safety, benefit, or causality.

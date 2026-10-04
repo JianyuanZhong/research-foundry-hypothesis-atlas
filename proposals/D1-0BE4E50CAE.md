@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 77 successor: a landmark-correct, uncensored seven-day queue with an eventual-death no-tradeoff guard
 
 ## Clinical decision, unresolved claim, and advance

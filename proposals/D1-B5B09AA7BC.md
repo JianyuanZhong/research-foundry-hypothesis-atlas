@@ -1,9 +1,11 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Duration of hypotension
 
 Seed ID: `[starting question]`
 Dataset: eICU
 Original number: 3 (identifier, not rank)
-Source: `研究选题.xlsx`, `研究选题!A24:I24`
+Source: `Research Topics.xlsx`, `Research Topics!A24:I24`
 Workbook [source checksum]
 
 Status: expert-proposed, untested hypothesis; data bindings, novelty and feasibility have not been validated.

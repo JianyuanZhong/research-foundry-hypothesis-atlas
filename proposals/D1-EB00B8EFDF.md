@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Does arrival measurement opportunity explain transfer-source risk after a valid minute-60 landmark?
 
 ## Scientific deliverable and substantive repair

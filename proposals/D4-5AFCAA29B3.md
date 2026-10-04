@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 27 targeted executable freeze: incremental grip value after UACR
 
 ## Controlling parent and exact repair

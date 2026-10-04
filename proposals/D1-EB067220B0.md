@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 19 method-alternative child: assay content versus a competing observation process
 
 Status: design only. No cohort count, fitted parameter, prediction, effect, or clinical conclusion is claimed.
@@ -16,15 +18,15 @@ The leading explanation predicts a larger trajectory increment for O3 than for p
 
 ## Fixed population, time, endpoints, and estimand
 
-Use the first row in `procedures` for each patient whose Unicode-normalized, trimmed, case-folded `手术` equals `TACE`, with nonmissing `患者主索引`, `就诊号`, and `开始时间`. Call the time `t0`. Exclude malformed dates, deterministic parent-defined duplicate/alias failures, and patients without all-source observation through `t0+42 days` from the R42 arm. Retain the parent R28 arm and early-repeat exclusions. Patient-held-out grouping is only `患者主索引`; every table join is exactly (`患者主索引`, `就诊号`). No personal identity field, file order, or cross-namespace join is permitted.
+Use the first row in `procedures` for each patient whose Unicode-normalized, trimmed, case-folded `Surgery` equals `TACE`, with nonmissing `Patient Master Index`, `Visit Number`, and `Start Time`. Call the time `t0`. Exclude malformed dates, deterministic parent-defined duplicate/alias failures, and patients without all-source observation through `t0+42 days` from the R42 arm. Retain the parent R28 arm and early-repeat exclusions. Patient-held-out grouping is only `Patient Master Index`; every table join is exactly (`Patient Master Index`, `Visit Number`). No personal identity field, file order, or cross-namespace join is permitted.
 
-Later candidates must have a valid procedure `开始时间 tp` in [`t0+43 days`, `t0+181 days`). Keep the parent’s first-event estimands and 14-day risk bins [43,57), [57,71), …, [169,181):
+Later candidates must have a valid procedure `Start time tp` in [`t0+43 days`, `t0+181 days`). Keep the parent’s first-event estimands and 14-day risk bins [43,57), [57,71), …, [169,181):
 
 - O0: first later unique literal-code TACE.
 - O1: O0’s parent semantic hepatic-arterial procedure plus valid same-patient/same-visit examination or order corroboration.
 - O2: O1 plus the parent’s same-visit medication corroboration.
-- O3: first later candidate satisfying O2 and at least one same-patient/same-visit corroborator with nonmissing event/start time `u` strictly after `tp` and no later than `tp+72 hours`. Qualifying families are `examinations.开始时间`, `orders.开始时间` with nonblank status not containing normalized `取消`, `作废`, `撤销`, or `停用`, and `medications.开始时间`. This direction-of-time rule is provenance only, not proof of completed treatment.
-- O_preplanned: first later literal TACE candidate with an `orders.开立时间` in [`tp-7 days`,`tp`), no qualifying post-procedure source in (`tp`,`tp+72 hours`], and valid order status/time. A candidate satisfying O3 is classified O3, not planned-only. Missing status/time is `unresolved_provenance`, never planned-only.
+- O3: first later candidate satisfying O2 and at least one same-patient/same-visit corroborator with nonmissing event/start time `u` strictly after `tp` and no later than `tp+72 hours`. Qualifying families are `examinations.Start Time`, `orders.Start Time` with nonblank status not containing normalized `Cancelled`, `Voided`, `Revoked`, or `Discontinued`, and `medications.Start Time`. This direction-of-time rule is provenance only, not proof of completed treatment.
+- O_preplanned: first later literal TACE candidate with an `orders.Order Time` in [`tp-7 days`,`tp`), no qualifying post-procedure source in (`tp`,`tp+72 hours`], and valid order status/time. A candidate satisfying O3 is classified O3, not planned-only. Missing status/time is `unresolved_provenance`, never planned-only.
 
 The primary contrast remains the paired patient-level held-out incremental predictive loss
 
@@ -38,12 +40,12 @@ Snapshot: `[source checksum]`. All HCC members are ordinary CSV files; no archiv
 
 | table | exact read-only source and SHA-256 | required columns in this child |
 |---|---|---|
-| procedures | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源` for index, later candidates, `tp`, and provenance audit |
-| encounters | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室` for M0, opportunity, and care-process features |
-| examinations | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `检查`, `检查所见`, `检查诊断`, `开始时间`, `检查号` for O1/O3 and generic capture |
-| orders | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `医嘱(非药品)`, `开立时间`, `开始时间`, `结束时间`, `医嘱状态`, `频次` for O1/O3/O_preplanned and capture |
-| medications | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `用药`, `单次用药剂量`, `单次用药剂量单位`, `频次`, `开始时间`, `结束时间`, `用药方式`, `药品类型` for O2/O3 and capture |
-| labs | `[internal dataset path]`; `[source checksum]` | `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间` for the eight assay labels, B0/S42/T42, opportunity, and trajectory |
+| procedures | `[internal dataset path]`; `[source checksum]` | `Patient master index`, `Encounter number`, `Surgery`, `Start time`, `End time`, `Surgery source` for index, later candidates, `tp`, and provenance audit |
+| encounters | `[internal dataset path]`; `[source checksum]` | `Patient master index`, `Encounter number`, `Encounter time`, `Admission time`, `Discharge time`, `Department` for M0, opportunity, and care-process features |
+| examinations | `[internal dataset path]`; `[source checksum]` | `patient master index`, `encounter number`, `examination`, `examination findings`, `examination diagnosis`, `start time`, `examination number` for O1/O3 and generic capture |
+| orders | `[internal dataset path]`; `[source checksum]` | `Patient Master Index`, `Encounter Number`, `Non-drug Order`, `Order Time`, `Start Time`, `End Time`, `Order Status`, `Frequency` for O1/O3/O_preplanned and capture |
+| medications | `[internal dataset path]`; `[source checksum]` | `Patient Master Index`, `Encounter Number`, `Medication`, `Single Medication Dose`, `Single Medication Dose Unit`, `Frequency`, `Start Time`, `End Time`, `Administration Route`, `Drug Type` for O2/O3 and capture |
+| labs | `[internal dataset path]`; `[source checksum]` | `Patient Master Index`, `Encounter Number`, `Test`, `Qualitative Result`, `Quantitative Result`, `Specimen Type`, `Test Time` for the eight assay labels, B0/S42/T42, opportunity, and trajectory |
 | clinical_documents, diagnoses, pathology | exact paths and hashes in `datasets/hcc/README.md` and `metadata.json` | coverage/context audit only; their event-time limitations prevent them from being an O3, planned, or generic-capture label |
 
 The schemas document many-to-one relationships to encounters on the same composite key; duplicate audits precede joins. Local dates support within-participant intervals but exact calendar dates are not released. Lab units/reference ranges are absent. Images, raw waveforms, validated narrative temporality, outside-care capture, and an independent scheduling/intent registry are unavailable.

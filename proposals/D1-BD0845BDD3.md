@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Proposal: observed-trajectory specificity versus measurement-selection after TACE
 
 ## Episode, parent, and scientific deliverable
@@ -18,11 +20,11 @@ These are prognostic associations with recorded care. A recorded action is not r
 
 ## Population, exposure, outcomes, and time
 
-Use one index per patient. In the procedures table, define a TACE-like row as case-insensitive TACE, a name containing 动脉化疗栓塞, or a name containing both 肝动脉 and 栓塞; collapse qualifying rows within 24 hours and anchor the earliest 开始时间. Join encounters and diagnoses on (患者主索引, 就诊号), require age >=18 and nonmissing sex, and require 诊断名称 containing literal 肝细胞癌 in a joined encounter from 180 days before through 7 days after index. Use index dates through 2025-01-01 for the one-year horizon.
+Use one index per patient. In the procedures table, define a TACE-like row as case-insensitive TACE, a name containing transarterial chemoembolization, or a name containing both hepatic artery and embolization; collapse qualifying rows within 24 hours and anchor the earliest Start Time. Join encounters and diagnoses on (Patient Master Index, Encounter Number), require age >=18 and nonmissing sex, and require Diagnosis Name containing literal hepatocellular carcinoma in a joined encounter from 180 days before through 7 days after index. Use index dates through 2025-01-01 for the one-year horizon.
 
-A day-45 risk set excludes a procedure after index+24 hours through day 45 whose name is repeat-TACE-like or alternate liver-directed. The early pathway is reported separately, not silently labeled a later non-event. Alternate liver-directed names contain 切除, 消融, 射频, or 微波, excluding TACE-like. The competing 46–365 outcomes are first repeat TACE-like, first alternate liver-directed procedure, and first non-liver procedure as a capture control. Report each category, combined liver-directed action, and cumulative incidence. A non-event is never called treatment success.
+A day-45 risk set excludes a procedure after index+24 hours through day 45 whose name is repeat-TACE-like or alternate liver-directed. The early pathway is reported separately, not silently labeled a later non-event. Alternate liver-directed names contain resection, ablation, radiofrequency, or microwave, excluding TACE-like. The competing 46–365 outcomes are first repeat TACE-like, first alternate liver-directed procedure, and first non-liver procedure as a capture control. Report each category, combined liver-directed action, and cumulative incidence. A non-event is never called treatment success.
 
-For AFP use the last parseable numeric value in days -30 to -1 and the first in days 7–45; define z=log1p(AFP) and AFP improvement as z_post <= 0.5*z_pre, retaining continuous change, qualitative/assay flags and missingness. For albumin, total bilirubin, 凝血酶原时间比值, and platelets use last pre-index and first early-post values. Non-deterioration is early >= pre for albumin/platelets and early <= pre for bilirubin/coagulation ratio. Do not call the observed assay INR, pool assays, compute ALBI/MELD, or use units, because no lab-unit field is available.
+For AFP use the last parseable numeric value in days -30 to -1 and the first in days 7–45; define z=log1p(AFP) and AFP improvement as z_post <= 0.5*z_pre, retaining continuous change, qualitative/assay flags and missingness. For albumin, total bilirubin, prothrombin time ratio, and platelets use last pre-index and first early-post values. Non-deterioration is early >= pre for albumin/platelets and early <= pre for bilirubin/coagulation ratio. Do not call the observed assay INR, pool assays, compute ALBI/MELD, or use units, because no lab-unit field is available.
 
 The paired estimand is H1 among the complete prespecified paired trajectory and landmark population. The full-index estimand includes every eligible index patient who reaches the day-45 landmark: model trajectory-availability indicators, counts and timing of assay/encounter opportunity, and an explicit missing-trajectory category; do not impute an unobserved biological response and do not call the full-index missingness contrast a transported response effect. A training-only stabilized inverse-probability analysis may estimate a transported observed-trajectory contrast only if positivity, weight overlap and calibration diagnostics pass; otherwise report transport as inconclusive.
 
@@ -34,12 +36,12 @@ Use the same pre-index placebo windows (days -120 to -91 and -90 to -46), withou
 
 All source data are read-only, ordinary CSV files in HCC snapshot [source checksum]; no archive member is used.
 
-- encounters, datasets/hcc/table-b743286cb1249287.json, source [internal dataset path], [source checksum]. Required: 患者主索引, 就诊号, 年龄, 性别, 就诊时间, 入院时间, 出院时间, 就诊科室.
-- procedures, datasets/hcc/table-d5eae16f8f8093d9.json, source [internal dataset path], [source checksum]. Required: 患者主索引, 就诊号, 手术, 开始时间, 结束时间, 手术来源.
-- diagnoses, datasets/hcc/table-12710723c3df0c99.json, source [internal dataset path], [source checksum]. Required: 患者主索引, 就诊号, 诊断名称, 诊断类型; diagnosis time comes only from joined encounter.
-- labs, datasets/hcc/table-38aad8c54471332f.json, source [internal dataset path], [source checksum]. Required: 患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间.
-- examinations, datasets/hcc/table-fd016d2731b9d6c6.json, source [internal dataset path], [source checksum]. Required: 患者主索引, 就诊号, 检查, 检查所见, 检查诊断, 开始时间, 检查号. Use timing/counts/opportunity only; narrative lexical findings are an unvalidated sensitivity.
-- Optional orders, datasets/hcc/table-6b93dcf0ea823702.json, source [internal dataset path](非药品)_2062526727266216118.csv: use only dated order/capture features from 开立时间, 开始时间, 结束时间; an order is not completion.
+- encounters, datasets/hcc/table-b743286cb1249287.json, source [internal dataset path], [source checksum]. Required: Patient master index, Encounter number, Age, Sex, Encounter time, Admission time, Discharge time, Department.
+- procedures, datasets/hcc/table-d5eae16f8f8093d9.json, source [internal dataset path], [source checksum]. Required: patient master index, encounter number, surgery, start time, end time, surgery source.
+- diagnoses, datasets/hcc/table-12710723c3df0c99.json, source [internal dataset path], [source checksum]. Required: patient master index, encounter number, diagnosis name, diagnosis type; diagnosis time comes only from joined encounter.
+- labs, datasets/hcc/table-38aad8c54471332f.json, source [internal dataset path], [source checksum]. Required: patient master index, encounter number, test, qualitative result, quantitative result, specimen type, test time.
+- examinations, datasets/hcc/table-fd016d2731b9d6c6.json, source [internal dataset path], [source checksum]. Required: patient master index, visit number, examination, examination findings, examination diagnosis, start time, examination number. Use timing/counts/opportunity only; narrative lexical findings are an unvalidated sensitivity.
+- Optional orders, datasets/hcc/table-6b93dcf0ea823702.json, source [internal dataset path](Non-Drug)_2062526727266216118.csv: use only dated order/capture features from Order Time, Start Time, End Time; an order is not completion.
 - clinical_documents and pathology have no temporal columns and are excluded from dated prediction. Identifier-only vitals, transfers, and front_page add no payload.
 
 The solver must verify all hashes/schema hashes at runtime and preserve filtering counts, vocabulary audit, and raw-name audit.

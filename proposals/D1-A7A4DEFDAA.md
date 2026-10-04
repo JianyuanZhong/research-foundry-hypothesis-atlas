@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Proposal: Which vasopressor should be stopped first after dual-agent shock stabilizes?
 
 ## Actionable question and hypothesis

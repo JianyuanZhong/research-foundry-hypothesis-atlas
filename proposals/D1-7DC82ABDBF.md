@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Proposal: capture- and episode-history-standardized directional concordance after a first local TACE-like episode
 
 ## Episode, parent, and substantive repair
@@ -7,7 +9,7 @@ This is a substantive Episode-30 child of assessed-valid parent \`[prior hypothe
 The next ambiguity is not solved by adding another generic capture covariate. Three facts need to be tested as part of the estimand and measurement logic:
 
 1. The first local strict TACE-like episode makes prior *local strict TACE* history structurally empty by construction. A claim about prior TACE history would therefore be false. Only prior timed broad/ambiguous liver-directed episodes and the amount of observable local history can be used, with an explicit history-unobserved stratum.
-2. The parent’s procedure-plus-order endpoint allows an order entered after the procedure to corroborate it. Such a record may be retrospective documentation or an automatically generated workflow artifact. Orders contain \`开立时间\`, \`开始时间\`, \`结束时间\`, and \`医嘱状态\`, so the direction of the order/procedure timestamps can be tested.
+2. The parent’s procedure-plus-order endpoint allows an order entered after the procedure to corroborate it. Such a record may be retrospective documentation or an automatically generated workflow artifact. Orders contain \`Order Entry Time\`, \`Start Time\`, \`End Time\`, and \`Order Status\`, so the direction of the order/procedure timestamps can be tested.
 3. Pre-index capture adjustment and an absorbing observation-loss state do not by themselves show whether the profile contrast is stable under a common local-observation regime. The solver must estimate a distinct capture-standardized recorded-care contrast, while retaining the all-index contrast as the main population target.
 
 The repair therefore changes both the estimand and the falsification hierarchy:
@@ -22,7 +24,7 @@ This is a measurement and transportability repair, not a causal treatment analys
 
 ## Strongest supported claim, unresolved claim, and hypothesis
 
-The strongest supported claim is operational only. The frozen HCC snapshot contains dated procedure, encounter, order, examination, and laboratory rows that can be joined by \`(患者主索引, 就诊号)\`. It contains no adjudicated treatment completion, radiologic response, mortality, outside-care record, or row-level time in clinical documents/pathology. The exploratory all-row audit found 338,040 procedure rows, 322,166 valid procedure start times, 16,730,319 order rows with valid order-entry dates, 419,996 examination rows (419,714 valid start times), 28,159,928 laboratory rows (28,158,196 valid times), and encounter dates from 2010-07-27 through 2026-01-01. These establish measurable local records, not their clinical meaning. A separate exploratory token screen found repeated strict-token procedure rows in many patients; because the exact parent vocabulary and episode aggregation are frozen only in the solver, these counts are audit evidence, not endpoint definitions.
+The strongest supported claim is operational only. The frozen HCC snapshot contains dated procedure, encounter, order, examination, and laboratory rows that can be joined by \`(patient master index, encounter number)\`. It contains no adjudicated treatment completion, radiologic response, mortality, outside-care record, or row-level time in clinical documents/pathology. The exploratory all-row audit found 338,040 procedure rows, 322,166 valid procedure start times, 16,730,319 order rows with valid order-entry dates, 419,996 examination rows (419,714 valid start times), 28,159,928 laboratory rows (28,158,196 valid times), and encounter dates from 2010-07-27 through 2026-01-01. These establish measurable local records, not their clinical meaning. A separate exploratory token screen found repeated strict-token procedure rows in many patients; because the exact parent vocabulary and episode aggregation are frozen only in the solver, these counts are audit evidence, not endpoint definitions.
 
 The unresolved question is:
 
@@ -40,12 +42,12 @@ Clinical importance: if a profile association survives a prospective timing chec
 
 Use one first-index episode per patient.
 
-1. Aggregate procedure rows into 24-hour within-patient/within-encounter episodes using \`手术开始时间\`; preserve all member rows, labels, source values, valid-time flags, and source-row identifiers. The candidate index is the earliest valid timed episode containing the training-frozen strict screen: literal \`TACE\`, \`动脉化疗栓塞\`, or both \`肝动脉\` and \`栓塞\`. Hepatic angiography alone is not the index. Missing/invalid procedure times remain in an audit and cannot define t0.
-2. Require age >=18 and nonmissing sex from the linked encounter, and a linked diagnosis with \`诊断名称\` containing \`肝细胞癌\` on an encounter with \`就诊时间\` in [t0-180 days, t0+7 days]. Diagnosis has no native timestamp; linked encounter time is an ascertainment proxy, not onset.
+1. Aggregate procedure rows into 24-hour within-patient/within-encounter episodes using \`surgery start time\`; preserve all member rows, labels, source values, valid-time flags, and source-row identifiers. The candidate index is the earliest valid timed episode containing the training-frozen strict screen: literal \`TACE\`, \`arterial chemoembolization\`, or both \`hepatic artery\` and \`embolization\`. Hepatic angiography alone is not the index. Missing/invalid procedure times remain in an audit and cannot define t0.
+2. Require age >=18 and nonmissing sex from the linked encounter, and a linked diagnosis with \`Diagnosis Name\` containing \`hepatocellular carcinoma\` on an encounter with \`Encounter Time\` in [t0-180 days, t0+7 days]. Diagnosis has no native timestamp; linked encounter time is an ascertainment proxy, not onset.
 3. Require t0 <= 2025-01-01. Do not use the later source maximum as a clinical follow-up guarantee.
 4. Retain every eligible first-index patient: early procedures, incomplete paired labs, no post-index record, and observation loss all remain in the all-index manifest. Early states are not excluded from the primary population.
 5. Preserve the parent’s day-45 continuity cohort (no primary-ontology liver-directed therapeutic episode in (t0,t0+45]) only as a parent-comparison sensitivity. The primary analysis keeps early events as absorbing states.
-6. Define L=14 and L=45 exactly as the parent: last eligible pre-index observation and first numeric value in days 7-14 or 7-45 for each of AFP \`甲胎蛋白\`, albumin \`白蛋白\`, and total bilirubin \`总胆红素\`. Freeze assay-name rules, qualitative/inequality handling, profile thresholds, and common-support rules on training only. There is no laboratory unit column, so do not call the profile ALBI/MELD or pool undocumented units.
+6. Define L=14 and L=45 exactly as the parent: last eligible pre-index observation and first numeric value in days 7-14 or 7-45 for each of AFP `alpha-fetoprotein`, albumin `albumin`, and total bilirubin `total bilirubin`. Freeze assay-name rules, qualitative/inequality handling, profile thresholds, and common-support rules on training only. There is no laboratory unit column, so do not call the profile ALBI/MELD or pool undocumented units.
 
 All predictors stop at L. The primary post-boundary window is (L, 365 days after t0], with cumulative-incidence reports at 30, 90, and 320 days after t0 where defined. The all-index multi-state analysis models first transitions from t0 through day 45, including therapeutic, diagnostic/technical, non-liver, and observation-loss states. \`C2_pre\` and \`C2_bi\` after L are not retrospectively used as predictors.
 
@@ -57,7 +59,7 @@ Because t0 is the first *local strict* TACE-like episode, prior local strict TAC
 
 For the 365 days before t0, define:
 
-- H0: at least one encounter with valid \`就诊时间\` in [t0-365,t0), no timed broad/ambiguous liver-directed episode;
+- H0: at least one encounter with valid \`encounter time\` in [t0-365,t0), no timed broad/ambiguous liver-directed episode;
 - H1: at least one such encounter and at least one timed broad/ambiguous liver-directed episode;
 - HU: no valid local encounter in the lookback, or insufficient valid procedure time to classify the lookback.
 
@@ -67,11 +69,11 @@ H1 is prior *locally recorded broad/ambiguous liver-directed care*, not prior tr
 
 Define a non-endpoint local contact as a valid timestamp in any of:
 
-- \`encounters.就诊时间\`;
-- \`labs.检验时间\` for any laboratory row;
-- \`examinations.开始时间\` for any examination row;
-- \`medications.开始时间\`;
-- \`orders.开立时间\` or \`orders.开始时间\` for an order whose name does not pass any C2/order endpoint vocabulary.
+- \`encounters.Encounter time\`;
+- \`labs.test time\` for any laboratory row;
+- \`examinations.Start Time\` for any examination row;
+- \`medications.start time\`;
+- \`orders.Order Time\` or \`orders.Start Time\` for an order whose name does not pass any C2/order endpoint vocabulary.
 
 Do not count procedures, strict TACE-like orders, C2-contributing orders, or the outcome itself as a contact for its own observation weight. This avoids making the endpoint observable by definition. For every patient, report pre-index contact count, distinct contact days, time since last contact, modality-specific availability, and whether any contact is present in the prior 365 days.
 
@@ -93,28 +95,28 @@ with the same pre-index standardization as the parent and explicit early/observa
 
 Construct mutually exclusive first post-boundary states, with the parent’s hierarchy retained.
 
-- C2_bi: strict timed procedure episode plus a TACE-like non-drug order linked by patient and encounter keys, with the order’s \`开立时间\` or \`开始时间\` in [-24,+24] hours of the earliest procedure time. This is the parent-compatible bidirectional concordance tier.
-- C2_pre (new primary measurement tier): C2_bi with valid \`orders.开立时间\` in [-24,0] hours relative to the earliest procedure time, and, when \`开始时间\` is present, \`开始时间\` in [-24,+24] hours. If \`开立时间\` or the required time is invalid, it cannot be C2_pre. This says only that a relevant order was entered before the recorded procedure; it does not establish intent or completion.
-- C2_post (new falsification comparator): a strict procedure with a same-encounter TACE-like order satisfying C2_bi but whose valid \`开立时间\` is >0 and <=24 hours after the procedure, with no qualifying pre-procedure order. C2_post is retrospective-only concordance. If both pre and post orders exist, classify as C2_pre and retain both timestamps in the audit.
+- C2_bi: strict timed procedure episode plus a TACE-like non-drug order linked by patient and encounter keys, with the order’s \`Order time\` or \`Start time\` in [-24,+24] hours of the earliest procedure time. This is the parent-compatible bidirectional concordance tier.
+- C2_pre (new primary measurement tier): C2_bi with valid `orders.Order Time` in [-24,0] hours relative to the earliest procedure time, and, when `Start Time` is present, `Start Time` in [-24,+24] hours. If `Order Time` or the required time is invalid, it cannot be C2_pre. This says only that a relevant order was entered before the recorded procedure; it does not establish intent or completion.
+- C2_post (new falsification comparator): a strict procedure with a same-encounter TACE-like order satisfying C2_bi but whose valid \`Order Time\` is >0 and <=24 hours after the procedure, with no qualifying pre-procedure order. C2_post is retrospective-only concordance. If both pre and post orders exist, classify as C2_pre and retain both timestamps in the audit.
 - C1: strict procedure-only episode not meeting C2_bi.
 - C0: timed broad/ambiguous/mixed liver-directed episode that is not C1/C2.
 - diagnostic/technical-only, non-liver, and administrative observation-loss states remain competing states.
 
-All order matches are same patient/same encounter in the primary definition. Cross-encounter matches and ±6/±24/±72-hour windows are sensitivities. Preserve \`医嘱状态\` exactly; report exact-status and canceled/terminal-status sensitivities without inventing a universal status dictionary. Never use an order supplying a C2 endpoint as a predictor or plan covariate for that endpoint. A secondary examination-workflow tier may use \`examinations.检查\` and \`开始时间\` in the preceding 30 days; \`检查所见\` and \`检查诊断\` are narrative sensitivity evidence only, not imaging adjudication.
+All order matches are same patient/same encounter in the primary definition. Cross-encounter matches and ±6/±24/±72-hour windows are sensitivities. Preserve \`order status\` exactly; report exact-status and canceled/terminal-status sensitivities without inventing a universal status dictionary. Never use an order supplying a C2 endpoint as a predictor or plan covariate for that endpoint. A secondary examination-workflow tier may use \`examinations.examination\` and \`start time\` in the preceding 30 days; \`examination findings\` and \`examination diagnosis\` are narrative sensitivity evidence only, not imaging adjudication.
 
 ## Exact HCC data bindings and availability
 
-Frozen snapshot: \`[source checksum]\`. Every HCC source is an ordinary file (no archive member); sources are read-only. Aggregate each child table before joining to \`encounters\` on exactly (\`患者主索引\`, \`就诊号\`) to prevent many-to-many expansion.
+Frozen snapshot: \`[source checksum]\`. Every HCC source is an ordinary file (no archive member); sources are read-only. Aggregate each child table before joining to \`encounters\` on exactly (\`patient master index\`, \`visit number\`) to prevent many-to-many expansion.
 
-- \`encounters\`, schema \`datasets/hcc/table-b743286cb1249287.json\`, source \`[internal dataset path]`: required \`患者主索引\`, \`就诊号\`, \`年龄\`, \`性别\`, \`就诊时间\`, \`入院时间\`, \`出院时间\`, \`就诊科室\`. \`就诊时间\` anchors eligibility, history visibility, local contact, and index linkage; admission/discharge/department are recorded covariates only.
-- \`procedures\`, schema \`datasets/hcc/table-d5eae16f8f8093d9.json\`, source \`[internal dataset path]`: required \`患者主索引\`, \`就诊号\`, \`手术\`, \`开始时间\`, \`结束时间\`, \`手术来源\`. \`开始时间\` anchors episodes and all outcome timing; \`结束时间\` and \`手术来源\` are sensitivities/audit fields.
-- \`diagnoses\`, schema \`datasets/hcc/table-12710723c3df0c99.json\`, source \`[internal dataset path]`: required \`患者主索引\`, \`就诊号\`, \`诊断名称\`, \`诊断类型\`; no native time, so linked encounter time is only ascertainment.
-- \`labs\`, schema \`datasets/hcc/table-38aad8c54471332f.json\`, source \`[internal dataset path]`: required \`患者主索引\`, \`就诊号\`, \`检验\`, \`定性结果\`, \`定量结果\`, \`标本类型\`, \`检验时间\`. Use exact training-frozen assay names \`甲胎蛋白\`, \`白蛋白\`, \`总胆红素\`; retain numeric/qualitative/inequality/specimen/time/count/missingness.
-- \`orders\`, schema \`datasets/hcc/table-6b93dcf0ea823702.json\`, source \`[internal dataset path]`: required \`患者主索引\`, \`就诊号\`, \`医嘱(非药品)\`, \`开立时间\`, \`开始时间\`, \`结束时间\`, \`医嘱期限\`, \`医嘱状态\`, \`频次\`. \`开立时间\` supplies the new direction check; \`开始时间\` supplies concordance; \`结束时间\`, duration, frequency, and status are measurement sensitivities.
-- \`examinations\`, schema \`datasets/hcc/table-fd016d2731b9d6c6.json\`, source \`[internal dataset path]`: required \`患者主索引\`, \`就诊号\`, \`检查\`, \`检查所见\`, \`检查诊断\`, \`开始时间\`, \`机器型号\`, \`检查号\`. Primary workflow contact uses \`检查\`/\`开始时间\`; narrative fields are sensitivity-only.
-- \`medications\`, schema \`datasets/hcc/table-4f6ecaeb6e8f69c2.json\`, source \`[internal dataset path]`: required \`患者主索引\`, \`就诊号\`, \`用药\`, \`单次用药剂量\`, \`单次用药剂量单位\`, \`频次\`, \`开始时间\`, \`结束时间\`, \`用药方式\`, \`药品类型\`. \`开始时间\` is an optional capture contact; medication is never used to infer TACE intent/completion.
-- \`clinical_documents\`, schema \`datasets/hcc/table-66afca58512c2fca.json\`, source \`[internal dataset path]`: identifier keys and \`既往史\`, \`诊疗经过\`, \`手术名称\`, \`手术经过\` among narrative fields, but no usable row-level time. Use only descriptive coding/history sensitivity; it cannot define H0/H1, C2, or timed outcomes.
-- \`pathology\`, schema \`datasets/hcc/table-0a4ee86a446c605c.json\`, source \`[internal dataset path]`: identifier keys plus \`病理\`, \`检查所见\`, \`检查诊断\`, \`机器型号\`; no time. Descriptive only, not an outcome or prior-history timestamp.
+- \`encounters\`, schema \`datasets/hcc/table-b743286cb1249287.json\`, source \`[internal dataset path]\`: required \`patient master index\`, \`visit number\`, \`age\`, \`sex\`, \`visit time\`, \`admission time\`, \`discharge time\`, \`visit department\`. \`visit time\` anchors eligibility, history visibility, local contact, and index linkage; admission/discharge/department are recorded covariates only.
+- \`procedures\`, schema \`datasets/hcc/table-d5eae16f8f8093d9.json\`, source \`[internal dataset path]`: required \`Patient Master Index\`, \`Encounter Number\`, \`Surgery\`, \`Start Time\`, \`End Time\`, \`Surgery Source\`. \`Start Time\` anchors episodes and all outcome timing; \`End Time\` and \`Surgery Source\` are sensitivities/audit fields.
+- \`diagnoses\`, schema \`datasets/hcc/table-12710723c3df0c99.json\`, source \`[internal dataset path]`: required \`Patient Master Index\`, \`Encounter Number\`, \`Diagnosis Name\`, \`Diagnosis Type\`; no native time, so linked encounter time is only ascertainment.
+- \`labs\`, schema \`datasets/hcc/table-38aad8c54471332f.json\`, source \`[internal dataset path]`: required \`Patient Master Index\`, \`Encounter Number\`, \`Test\`, \`Qualitative Result\`, \`Quantitative Result\`, \`Specimen Type\`, \`Test Time\`. Use exact training-frozen assay names \`Alpha-fetoprotein\`, \`Albumin\`, \`Total Bilirubin\`; retain numeric/qualitative/inequality/specimen/time/count/missingness.
+- \`orders\`, schema \`datasets/hcc/table-6b93dcf0ea823702.json\`, source \`[internal dataset path]`: required \`Patient Master Index\`, \`Visit Number\`, \`Non-drug Medical Order\`, \`Order Time\`, \`Start Time\`, \`End Time\`, \`Order Duration\`, \`Order Status\`, \`Frequency\`. \`Order Time\` supplies the new direction check; \`Start Time\` supplies concordance; \`End Time\`, duration, frequency, and status are measurement sensitivities.
+- \`examinations\`, schema \`datasets/hcc/table-fd016d2731b9d6c6.json\`, source \`[internal dataset path]`: required \`patient master index\`, \`encounter number\`, \`examination\`, \`examination findings\`, \`examination diagnosis\`, \`start time\`, \`machine model\`, \`examination number\`. Primary workflow contact uses \`examination\`/\`start time\`; narrative fields are sensitivity-only.
+- \`medications\`, schema \`datasets/hcc/table-4f6ecaeb6e8f69c2.json\`, source \`[internal dataset path]`: required \`Patient Master Index\`, \`Encounter Number\`, \`Medication\`, \`Single Dose\`, \`Single Dose Unit\`, \`Frequency\`, \`Start Time\`, \`End Time\`, \`Administration Route\`, \`Drug Type\`. \`Start Time\` is an optional capture contact; medication is never used to infer TACE intent/completion.
+- \`clinical_documents\`, schema \`datasets/hcc/table-66afca58512c2fca.json\`, source \`[internal dataset path]\`: identifier keys and \`medical history\`, \`clinical course\`, \`surgery name\`, \`operative course\` among narrative fields, but no usable row-level time. Use only descriptive coding/history sensitivity; it cannot define H0/H1, C2, or timed outcomes.
+- \`pathology\`, schema \`datasets/hcc/table-0a4ee86a446c605c.json\`, source \`[internal dataset path]`: identifier keys plus \`Pathology\`, \`Examination findings\`, \`Examination diagnosis\`, \`Machine model\`; no time. Descriptive only, not an outcome or prior-history timestamp.
 - \`vitals\`, schema \`datasets/hcc/table-8436de9cba74b8ca.json\`, source \`[internal dataset path]`, and \`transfers\`, schema \`datasets/hcc/table-320c20f732e71789.json\`, source \`[internal dataset path]`: identifier-only with no usable payload or time; do not represent them as contact measurements.
 - \`front_page\`, schema \`datasets/hcc/table-38b3224239acc33f.json\`, source \`[internal dataset path]`: identifier-only and 30 bytes in the catalog; no usable payload.
 
@@ -147,7 +149,7 @@ CPU is the default. The discovery metadata scan over the five dated streams used
 Required checks:
 
 1. **All-index and parent continuity:** reproduce the parent’s early-transition vector and day-45 procedure-only continuity contrast. Any discrepancy is a construction failure, not evidence for C2_pre.
-2. **Directional measurement check:** compare C2_pre, C2_bi, and C2_post. A contrast present only in C2_post is adverse to interpreting concordance as prospectively corroborated recorded care. C2_pre sparsity or missing \`开立时间\` is inconclusive, not a null.
+2. **Directional measurement check:** compare C2_pre, C2_bi, and C2_post. A contrast present only in C2_post is adverse to interpreting concordance as prospectively corroborated recorded care. C2_pre sparsity or missing \`Order Time\` is inconclusive, not a null.
 3. **Capture specificity:** compare full-index and \`Delta_cap\`; compare B2 capture-only with B3 profile-plus-capture. A large attenuation after capture standardization, or similar profile contrasts for local-contact/observation-loss outcomes, supports a workflow/capture explanation.
 4. **History transport:** report \`Delta_{k,H0}\`, \`Delta_{k,H1}\`, and \`Delta_{k,HU}\`, interaction and overlap. Strong marginal association driven by HU or one narrow H stratum is not stable transport across local episode histories.
 5. **Source and time sensitivity:** same-encounter versus cross-encounter; ±6/24/72-hour windows; exact order-status and terminal/canceled sensitivities; order-entry lag bins; and a permutation of order times within patient preserving names, encounters, and source counts. A similar signal after permutation is adverse.
@@ -156,7 +158,7 @@ Required checks:
 8. **Selection and observation:** retain all early states through day 45; compare L=14/L=45, weighted/unweighted capture analyses, complete paired values, and qualitative/inequality-as-missing versions. Never report a day-45-only result as the all-index result.
 9. **Latent-model integrity:** require convergence, posterior predictive checks, held-out source metrics, and prior-sensitivity intervals. Nonconvergence, prior domination, or no improvement is inconclusive and cannot be repaired by preferring the latent model.
 
-Supportive evidence requires: parent continuity; sufficient C2_pre cells and valid \`开立时间\`; directionally compatible C2_pre contrasts at L=14 and L=45; practical contrast meeting the 3-point design margin with an interval excluding zero; persistence after capture standardization and across H0/H1 (with HU reported); weaker C2_post, negative-endpoint, and permutation contrasts; overlap/calibration; and a converged M_joint-history-capture with prior-stable contrasts. This supports only a robust association with a prospective-direction, locally recorded evidence tier and motivates external adjudication.
+Supportive evidence requires: parent continuity; sufficient C2_pre cells and valid \`order time\`; directionally compatible C2_pre contrasts at L=14 and L=45; practical contrast meeting the 3-point design margin with an interval excluding zero; persistence after capture standardization and across H0/H1 (with HU reported); weaker C2_post, negative-endpoint, and permutation contrasts; overlap/calibration; and a converged M_joint-history-capture with prior-stable contrasts. This supports only a robust association with a prospective-direction, locally recorded evidence tier and motivates external adjudication.
 
 Adverse evidence includes: C2_pre null/reversal with C2_post or C1 persisting; attenuation under capture weighting; concentration in HU/high-contact or one history stratum; similar non-liver/observation-loss/placebo contrasts; order-window/status instability; poor overlap/calibration; or latent-model source/capture instability. These favor documentation, local workflow, history selection, or measurement explanations.
 

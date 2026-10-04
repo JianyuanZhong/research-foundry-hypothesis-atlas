@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Provisional repair: discordant AKI recovery in MIMIC-IV
 
 Status: provisional child of [prior hypothesis]. No cohort counts, model results, or clinical conclusions are claimed.

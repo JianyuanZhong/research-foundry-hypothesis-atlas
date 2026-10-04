@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # A benefit-axis identifiability gate for context-selective MerTK perturbation
 
 Status: substantive evolution of `[prior hypothesis]`; planned Harbor experiment only. No molecular screening, model fitting, or scientific result has been executed in this episode.

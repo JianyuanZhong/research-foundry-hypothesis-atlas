@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 9: an overlap-matched challenge to the concurrent pH-conditioned SpO2 blind spot
 
 ## Question, evidence boundary, and clinical advance

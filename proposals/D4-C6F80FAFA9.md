@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 TITLE
 Direction-specific cross-marker eGFR threshold reclassification after a true baseline non-event restriction
 

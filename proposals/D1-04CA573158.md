@@ -1,9 +1,11 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Hyperoxia exposure
 
 Seed ID: `[starting question]`
 Dataset: eICU
 Original number: 4 (identifier, not rank)
-Source: `研究选题.xlsx`, `研究选题!A25:I25`
+Source: `Research Topics.xlsx`, `Research Topics!A25:I25`
 Workbook [source checksum]
 
 Status: expert-proposed, untested hypothesis; data bindings, novelty and feasibility have not been validated.

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Compiler-ready repair: deterministic eICU respiratory trajectory experiment
 
 ## Scope and preserved estimand

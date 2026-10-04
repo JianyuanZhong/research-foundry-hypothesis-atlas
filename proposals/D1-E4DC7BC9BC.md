@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Cutoff-anchored archive and operational replay bridge for the HCC q_dec queue
 
 ## 1. Targeted successor and unresolved question
@@ -28,7 +30,7 @@ This hypothesis does not assert that a clinician viewed a report, acted on it, c
 
 Use HCC snapshot `[source checksum]` and catalog `[internal dataset path]`, catalog [source checksum].
 
-Within every coupled source/operation world, include adults (age >=18 in the frozen encounter row) at the earliest source-documented eligible hepatobiliary resection under a pre-analysis clinician-adjudicated procedure dictionary. Require same-(患者主索引, 就诊号) pathology support. Exclude a prior qualifying resection, transplant, TACE/embolization, ablation, radiotherapy, targeted therapy or immunotherapy in [t_op-365 days,t_op). CT/MRI accessions must lie wholly in [t_op-90 days,t_op-d), with d in {72,48,24,12} hours; d=24 is confirmatory and the others are non-vetoing sensitivities.
+Within every coupled source/operation world, include adults (age >=18 in the frozen encounter row) at the earliest source-documented eligible hepatobiliary resection under a pre-analysis clinician-adjudicated procedure dictionary. Require same-(Patient ID, Encounter ID) pathology support. Exclude a prior qualifying resection, transplant, TACE/embolization, ablation, radiotherapy, targeted therapy or immunotherapy in [t_op-365 days,t_op). CT/MRI accessions must lie wholly in [t_op-90 days,t_op-d), with d in {72,48,24,12} hours; d=24 is confirmatory and the others are non-vetoing sensitivities.
 
 An exact operation timestamp is used as an instant. A date-only or midnight-like operation value is the interval [date,date+24 hours), never an inferred hour. Missing, contradictory, invalid or ambiguous operation clocks remain compatible unavailable states. A cutoff claim is valid only for every compatible operation time; equivalently, the packet must be valid by the earliest possible deadline t_op^- - 24h. Source, operation, identity, onset, archive, reader, pathology, year and deletion alternatives remain coupled.
 
@@ -53,26 +55,26 @@ All HCC sources are ordinary files with no archive members. Sources remain read-
 
 | table | exact source path | join key | required columns and role |
 |---|---|---|---|
-| encounters | `[internal dataset path]` | (患者主索引, 就诊号) | 年龄, 性别, 就诊时间, 入院时间, 出院时间; demographics and chronology |
-| procedures | `[internal dataset path]` | (患者主索引, 就诊号) | 手术, 开始时间, 结束时间, 手术来源; index operation, clock and prior-treatment exclusions |
-| examinations | `[internal dataset path]` | whole accession (患者主索引, 就诊号, 检查号), with encounter prefix | 检查, 检查所见, 检查诊断, 开始时间, 机器型号, 检查号; CT/MRI eligibility and complete report bundle |
-| pathology | `[internal dataset path]` | (患者主索引, 就诊号) | 病理, 检查所见, 检查诊断, 机器型号; documentary endpoint adjudication only |
-| medications | `[internal dataset path]` | patient-wide temporal join then episode restriction | 用药, 药品类型, 开始时间, 结束时间; prior systemic-treatment exclusion |
-| orders | `[internal dataset path]` | patient-wide temporal join | 医嘱(非药品), 开立时间, 开始时间, 结束时间, 医嘱状态; prior local/radiotherapy exclusion |
-| diagnoses | `[internal dataset path]` | (患者主索引, 就诊号) | 诊断名称, 诊断类型; untimed HCC corroboration only |
-| clinical_documents | `[internal dataset path]` | (患者主索引, 就诊号) | all narrative fields; audit-only because no safe preoperative exposure clock |
-| labs | `[internal dataset path]` | (患者主索引, 就诊号) | 检验, 定性结果, 定量结果, 标本类型, 检验时间; leakage audit only, no primary lineage |
-| vitals | `[internal dataset path]` | (患者主索引, 就诊号) | identifiers only; no usable payload/time |
-| transfers | `[internal dataset path]` | (患者主索引, 就诊号) | identifiers only; no usable payload/time |
-| front_page | `[internal dataset path]` | (患者主索引, 就诊号) | identifiers only; no usable payload/time |
+| encounters | `[internal dataset path]` | (patient master index, encounter number) | age, sex, encounter time, admission time, discharge time; demographics and chronology |
+| procedures | `[internal dataset path]` | (patient master index, encounter number) | surgery, start time, end time, surgical source; index operation, clock and prior-treatment exclusions |
+| examinations | `[internal dataset path]` | whole accession (Patient Master Index, Encounter Number, Examination Number), with encounter prefix | Examination, Examination Findings, Examination Diagnosis, Start Time, Machine Model, Examination Number; CT/MRI eligibility and complete report bundle |
+| pathology | `[internal dataset path]` | (Patient Master Index, encounter number) | pathology, examination findings, examination diagnosis, machine model; documentary endpoint adjudication only |
+| medications | `[internal dataset path]` | patient-wide temporal join then episode restriction | Medication, Drug Type, Start Time, End Time; prior systemic-treatment exclusion |
+| orders | `[internal dataset path]` | patient-wide temporal join | non-medication order, order time, start time, end time, order status; prior local/radiotherapy exclusion |
+| diagnoses | `[internal dataset path]` | (patient master index, encounter number) | diagnosis name, diagnosis type; untimed HCC corroboration only |
+| clinical_documents | `[internal dataset path]` | (Patient master index, encounter number) | all narrative fields; audit-only because no safe preoperative exposure clock |
+| labs | `[internal dataset path]` | (Patient Master Index, encounter number) | test, qualitative result, quantitative result, specimen type, test time; leakage audit only, no primary lineage |
+| vitals | `[internal dataset path]` | (Patient master index, encounter number) | identifiers only; no usable payload/time |
+| transfers | `[internal dataset path]` | (patient master index, encounter number) | identifiers only; no usable payload/time |
+| front_page | `[internal dataset path]` | (patient master index, visit number) | identifiers only; no usable payload/time |
 
-Group every examination row by the complete nonblank accession key in raw ordinal order. Never choose a representative row or deduplicate repeated text. The source audit reports 419,996 examination rows, 72 blank 检查号 rows, 392,854 distinct nonblank keys, 16,534 multirow keys and at most 12 rows/key. Any blank key, component disagreement, ambiguous modality or non-reversible parse makes that whole accession unavailable. The procedure file has 338,040 rows and 42,117 missing start/end cells; retain exact/date-interval/missing/invalid categories.
+Group every examination row by the complete nonblank accession key in raw ordinal order. Never choose a representative row or deduplicate repeated text. The source audit reports 419,996 examination rows, 72 blank examination-number rows, 392,854 distinct nonblank keys, 16,534 multirow keys and at most 12 rows/key. Any blank key, component disagreement, ambiguous modality or non-reversible parse makes that whole accession unavailable. The procedure file has 338,040 rows and 42,117 missing start/end cells; retain exact/date-interval/missing/invalid categories.
 
 The other configured datasets remain directly accessible and read-only but are not pooled: MIMIC ordinary files plus archive `[internal dataset path]`, including member `mimic-iv-3.1/hosp/admissions.csv.gz`, and ordinary `note/radiology.csv.gz` and `note/radiology_detail.csv.gz`; eICU ordinary `*.csv.gz` under `[internal dataset path]`, including `patient.csv.gz`, `diagnosis.csv.gz`, `treatment.csv.gz` and `note.csv.gz`; UKB ordinary files under `[internal dataset path]`, including `ukb672073.csv` and `ukb672073_Health_Related_Outcomes.csv`. No compatible HCC crosswalk or documentary-M2 endpoint exists for pooling, so no cross-dataset estimate is made.
 
 ## 5. Whole-accession stored-content and q_dec computation
 
-For each patient i, source world omega, cutoff d and accession u, define E_iomega d u=1 only when operation state, accession identity, CT/MRI membership and examination 开始时间 are valid and the acquisition interval is wholly in the preregistered window. The unit is the indivisible complete accession.
+For each patient i, source world omega, cutoff d and accession u, define E_iomega d u=1 only when operation state, accession identity, CT/MRI membership and examination start time are valid and the acquisition interval is wholly in the preregistered window. The unit is the indivisible complete accession.
 
 Assign each clean eligible accession coupled onset O=0 if eligible by 72h, O=1 if first eligible in (72,48], O=2 if first eligible in (48,24], O=3 if first eligible in (24,12], and O=4 if not eligible by 12h or only later/never. Use V(O)=(1{O=0},1{O<=1},1{O<=2},1{O<=3}) in 72/48/24/12 order. M=E*V is a hypothetical stored-content exposure state, never an imputed release or viewing time.
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # HCC repeat-TACE episode validity: a decision-facing adjudication gate
 
 Status: substantive Episode 11 successor to [prior hypothesis]. Design only; no cohort fit, model result, prevalence estimate, or clinical conclusion is claimed.
@@ -26,21 +28,21 @@ The advance over existing evidence is a decision rule connecting endpoint robust
 
 All of the following are frozen from the parent.
 
-1. Index is the first dated procedures row with Unicode-normalized, trimmed, case-folded 手术 equal to TACE, with nonmissing 患者主索引, 就诊号 and 开始时间.
+1. Index is the first dated procedures row with Unicode-normalized, trimmed, case-folded Surgery equal to TACE, with nonmissing Patient Master Index, Encounter Number and Start Time.
 2. Collapse exact duplicate patient/start rows for event counting but retain duplicate counts and raw-label hashes in the audit.
 3. Require all-source observation end at least 42 days after index start.
 4. Exclude any later literal-code TACE with 0 < elapsed days < 43.
 5. O0 is the first later unique patient/start literal-code TACE with 43 <= elapsed days < 181.
 6. Follow-up ends at the event, all-source obs_end, or day 181; [43,90] and [91,181) remain fixed sensitivities.
 7. Untimed procedure rows are neither timed negatives nor imputed events. A dated procedure with a blank end time is valid for event timing; its end-time deficiency is audited for observation/censoring.
-8. Patient joins use 患者主索引. Visit joins use (患者主索引, 就诊号). No incompatible identifier namespace, names, identity numbers, phones, insurance/hospital numbers or file order is used.
+8. Patient joins use the patient master index. Visit joins use (patient master index, visit number). No incompatible identifier namespace, names, identity numbers, phones, insurance/hospital numbers or file order is used.
 9. The day-42 feature cutoff, parent observation/censoring construction, leakage exclusions and all-source obs_end are unchanged. O0/O1/O2 evidence after the feature cutoff is outcome evidence only.
 
 O1 remains the first later procedure p satisfying semantic procedure predicate P, valid procedure start t, a same-patient/same-visit encounter link, and at least one timed same-visit corroborator:
 
 - P is exact normalized TACE or a label containing hepatic-artery plus embolization and at least one chemotherapy or infusion term, excluding radiofrequency, microwave, ablation, biopsy, puncture and drainage terms.
-- An encounter link is valid if encounter 就诊时间 is within two elapsed days of t, or valid 入院时间 <= t <= 出院时间. Missing discharge makes the second route false.
-- The timed examination/order corroborator is an examination type or non-drug order type matching the frozen liver/arterial/upper-abdomen plus contrast/enhancement/CT/MRI/ultrasound dictionary, or the frozen hepatic-arterial/TACE order dictionary, with examination 开始时间 or order 开立时间 in [t-42,t+7].
+- An encounter link is valid if encounter Encounter Time is within two elapsed days of t, or valid Admission Time <= t <= Discharge Time. Missing discharge makes the second route false.
+- The timed examination/order corroborator is an examination type or non-drug order type matching the frozen liver/arterial/upper-abdomen plus contrast/enhancement/CT/MRI/ultrasound dictionary, or the frozen hepatic-arterial/TACE order dictionary, with examination start time or order time in [t-42,t+7].
 - Event time is the qualifying procedure start t, never the earlier corroborator.
 - A qualifying procedure lacking corroboration is a timed negative for O1/O2 only when its follow-up window is observed; it remains a near-miss audit row.
 - O2 is O1 plus same-visit medication predicate M in [t-1,t+1]. M uses only the frozen medication-name dictionary and timing; dose, unit, route and drug class are audited but do not establish intent.
@@ -53,16 +55,16 @@ The immutable dataset catalog is [internal dataset path], [source checksum]. Dat
 
 | table | exact source path and source SHA-256 | required columns and use |
 |---|---|---|
-| procedures | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 手术, 开始时间, 结束时间, 手术来源. P/O0/O1 time, duplicate audit and obs_end. |
-| encounters | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 年龄, 性别, 就诊时间, 入院时间, 出院时间, 就诊科室. Visit join, encounter route, timing and obs_end. |
-| examinations | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 检查, 检查所见, 检查诊断, 开始时间, 机器型号, 检查号. Only 检查 and 开始时间 enter timed O1; narrative is retained for later expert review and never auto-scored as response. |
-| orders | [internal dataset path](非药品)_2062526727266216118.csv; [source checksum] | 患者主索引, 就诊号, 医嘱(非药品), 开立时间, 开始时间, 结束时间, 医嘱期限, 医嘱状态, 频次. Order type, availability and timing corroboration; not intent. |
-| medications | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 用药, 单次用药计量, 单次用药计量单位, 频次, 开始时间, 结束时间, 用药方式, 药品类型. M timing/name and completeness audit; drug indication is not inferred. |
-| labs | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间. Inherited eight exact parent assay labels and missingness/measurement-opportunity channels; no cross-assay unit interpretation because no unit/reference-range column. |
-| pathology | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 病理, 检查所见, 检查诊断, 机器型号. Same-visit coverage flag and expert-review context only. No event-time field. |
-| diagnoses | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 诊断名称, 诊断类型. Same-visit coverage flag and expert-review context only. No event-time field. |
-| clinical_documents | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, narrative fields including 诊疗经过, 出院情况, 手术名称, 手术经过. Expert-review context only because no event-time field. |
-| vitals/transfers/front_page | exact HCC files bound in datasets/hcc/README.md; schemas are identifier-only | 患者主索引, 就诊号 only. Read for relationship/audit if needed; no payload or timing, never used as corroboration. |
+| procedures | [internal dataset path]; [source checksum] | patient master index, encounter number, surgery, start time, end time, surgery source. P/O0/O1 time, duplicate audit and obs_end. |
+| encounters | [internal dataset path]; [source checksum] | Patient master index, Encounter number, Age, Sex, Encounter time, Admission time, Discharge time, Encounter department. Visit join, encounter route, timing and obs_end. |
+| examinations | [internal dataset path]; [source checksum] | Patient master index, encounter number, examination, examination findings, examination diagnosis, start time, machine model, examination number. Only examination and start time enter timed O1; narrative is retained for later expert review and never auto-scored as response. |
+| orders | [internal dataset path](non-medication)_2062526727266216118.csv; [source checksum] | patient master index, encounter number, order (non-medication), order time, start time, end time, order duration, order status, frequency. Order type, availability and timing corroboration; not intent. |
+| medications | [internal dataset path]; [source checksum] | Patient master index, Visit number, Medication, Single-dose amount, Single-dose amount unit, Frequency, Start time, End time, Route of administration, Drug type. M timing/name and completeness audit; drug indication is not inferred. |
+| labs | [internal dataset path]; [source checksum] | patient master index, encounter number, test, qualitative result, quantitative result, specimen type, test time. Inherited eight exact parent assay labels and missingness/measurement-opportunity channels; no cross-assay unit interpretation because no unit/reference-range column. |
+| pathology | [internal dataset path]; [source checksum] | Patient master index, visit number, pathology, examination findings, examination diagnosis, machine model. Same-visit coverage flag and expert-review context only. No event-time field. |
+| diagnoses | [internal dataset path]; [source checksum] | patient master index, encounter number, diagnosis name, diagnosis type. Same-visit coverage flag and expert-review context only. No event-time field. |
+| clinical_documents | [internal dataset path]; [source checksum] | patient master index, encounter number, narrative fields including treatment course, discharge status, procedure name, procedure details. Expert-review context only because no event-time field. |
+| vitals/transfers/front_page | exact HCC files bound in datasets/hcc/README.md; schemas are identifier-only | patient master index, visit number only. Read for relationship/audit if needed; no payload or timing, never used as corroboration. |
 
 The complete field audit is in hcc-field-audit.md. It records actual header/first-two-row sampling, schema availability and the source limitations. Pathology and diagnoses do contain clinically suggestive text fields, but the absence of event time means a same-visit join cannot establish temporal order. Neither is allowed to rescue O1/O2 or to label intent, response, or an operational episode.
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Target-linked handoff falsification child of [prior hypothesis]
 
 ## What is inherited and locked

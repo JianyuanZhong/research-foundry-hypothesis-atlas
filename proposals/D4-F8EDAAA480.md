@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Proposal: Repeat-assessment weight loss as a near-term occult-cancer signal in UK Biobank
 
 ## Clinically important unresolved question

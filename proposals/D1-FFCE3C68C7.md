@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Does hypotension burden survive trajectory and ascertainment adjustment? A dynamic, observation-aware eICU study
 
 ## Scientific deliverable and unresolved claim

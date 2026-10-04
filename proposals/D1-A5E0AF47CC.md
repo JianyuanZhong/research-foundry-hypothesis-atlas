@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Patient-sufficiency 80/80 stress test for documentary-M2 review
 
 ## Targeted successor and the unresolved clinical question
@@ -16,7 +18,7 @@ This is an exact counterfactual stored-corpus stress test. It asks whether a mod
 
 ## What evidence supports now, what remains unresolved, and why it matters
 
-The strongest currently supported claim is structural. I inspected `inputs.json`, the research-ambition availability README, the HCC guide and metadata, the relevant table schemas, and the actual headers of all 12 HCC CSVs. Snapshot `[source checksum]` contains patient/encounter-linked procedure rows, CT/MRI examination rows with an acquisition-like start, accession-like `检查号`, eventual narrative fields, and untimed same-encounter pathology narrative. It does not contain radiology report authorship, version, finalization, release, amendment, retraction, ingestion, service-readability or view time; raw images; pathology time, specimen identity, slides, blocks or sampling adequacy; real multidisciplinary-review capacity; recurrence; survival; response; harm; cost; or benefit.
+The strongest currently supported claim is structural. I inspected `inputs.json`, the research-ambition availability README, the HCC guide and metadata, the relevant table schemas, and the actual headers of all 12 HCC CSVs. Snapshot `[source checksum]` contains patient/encounter-linked procedure rows, CT/MRI examination rows with an acquisition-like start, accession-like `examination number`, eventual narrative fields, and untimed same-encounter pathology narrative. It does not contain radiology report authorship, version, finalization, release, amendment, retraction, ingestion, service-readability or view time; raw images; pathology time, specimen identity, slides, blocks or sampling adequacy; real multidisciplinary-review capacity; recurrence; survival; response; harm; cost; or benefit.
 
 The episode-66 no-sampling audit (job `[research job]`; output [source checksum]) read all 419,996 examination rows, found 419,986 exact-unique rows and 392,854 nonblank patient-encounter-accession units among 42,205 patients, with 39,610 patients having multiple units and a maximum of 205. Its broad text-bearing CT/MR lexical screen is explicitly unvalidated and will not define modality, population or eligibility. The verified source-grain counts establish that the distribution of report units across patients is not a theoretical detail: accession-weighted, mean-fraction, patient-sufficiency and complete-packet availability can differ.
 
@@ -41,11 +43,11 @@ Before outcomes, reader forms, fitting or test inspection, possibility-quarantin
 
 ## Whole source objects, readers and documentary outcome
 
-A nonblank radiology unit is `u=(患者主索引,就诊号,检查号)` and contains every exact-deduplicated component row in original order with immutable byte, field and raw-row backpointers. A reversible parser separates visible text, markup/attributes and parse errors. Semantic spans may arise only from reversible visible bytes. Nonreversibility, treatment/pathology/specimen/MVI-grade contamination or unresolved context makes the whole unit semantic-source-unavailable; no phrase is selectively removed and no patient is dropped.
+A nonblank radiology unit is `u=(Patient Master Index,Encounter Number,Examination Number)` and contains every exact-deduplicated component row in original order with immutable byte, field and raw-row backpointers. A reversible parser separates visible text, markup/attributes and parse errors. Semantic spans may arise only from reversible visible bytes. Nonreversibility, treatment/pathology/specimen/MVI-grade contamination or unresolved context makes the whole unit semantic-source-unavailable; no phrase is selectively removed and no patient is dropped.
 
-For the sufficiency denominator only, each eligible exact-deduplicated CT/MRI row with blank `检查号` becomes a forced-zero pseudo-unit `u0=(患者主索引,就诊号,raw_ordinal)`. It supplies no semantics and cannot be merged by text similarity. This prevents an additional uncrosswalkable report row from disappearing from a patient's denominator.
+For the sufficiency denominator only, each eligible exact-deduplicated CT/MRI row with blank `examination number` becomes a forced-zero pseudo-unit `u0=(patient master index,encounter number,raw_ordinal)`. It supplies no semantics and cannot be merged by text similarity. This prevents an additional uncrosswalkable report row from disappearing from a patient's denominator.
 
-A pathology object serializes every exact-deduplicated same-encounter `病理/检查所见/检查诊断` field in row and field order. It remains one indivisible documentary composite because the source has no pathology time or specimen identifier.
+A pathology object serializes every exact-deduplicated same-encounter `Pathology/Examination Findings/Examination Diagnosis` field in row and field order. It remains one indivisible documentary composite because the source has no pathology time or specimen identifier.
 
 Before outcomes or scores are exposed, two qualified Chinese-reading abdominal radiologists plus one complete adjudicator read the complete radiology roster, and two qualified Chinese-reading hepatobiliary pathologists plus one complete adjudicator read the complete pathology roster. Freeze radiology books R1/R2/RA and pathology books P1/P2/PA. Exactly nine global book pairs apply corpus-wide; patient-, item-, year-, model-, outcome-, mask- or deletion-specific reader switching is forbidden.
 
@@ -76,7 +78,7 @@ For every eligible nonblank accession, freeze
 
 `H_HCC(u)=SHA256(schema_version || parser_version || length-delimited ordered tuples(source_row_ordinal,field_name,exact_raw_bytes,V/A/E_lineage))`
 
-over all exact-deduplicated `检查所见` and `检查诊断` components. This commits to component count and order, field and empty boundaries, parser lineage and exact bytes. Similar wording, impression-only equality, edit distance, equal score or reader judgment cannot substitute.
+over all exact-deduplicated `Examination Findings` and `Examination Diagnosis` components. This commits to component count and order, field and empty boundaries, parser lineage and exact bytes. Similar wording, impression-only equality, edit distance, equal score or reader judgment cannot substitute.
 
 For the HCC-computable stored-content experiment, binary `r_u=1` exposes that exact whole eventual report input; `r_u=0` replaces every body-derived S/Q/X block in R, G and Gmask by its development-defined unavailable block. B and acquisition-only Z stay fixed. Blank, nonreversible, contaminated and adjudicated source-unavailable units have `r_u=0` forced. Other r bits are counterfactual stress-test choices, not observations of historical availability.
 
@@ -142,26 +144,26 @@ Controlling catalog: `[internal dataset path]`, [source checksum]. All HCC sourc
 
 | Table | Exact source path | Required columns and role |
 |---|---|---|
-| encounters | `[internal dataset path]` | `患者主索引,就诊号` joins; `年龄,性别` Z; `就诊时间,入院时间,出院时间` audit |
-| procedures | `[internal dataset path]` | keys; `手术,开始时间,结束时间,手术来源` episode, clock and prior-operation evidence |
-| examinations | `[internal dataset path]` | keys; `检查号` accession and blank-unit audit; `检查` modality; `检查所见,检查诊断` S/Q/X and exact hash; `开始时间` acquisition only; `机器型号` Z/provenance |
-| pathology | `[internal dataset path]` | keys; `病理,检查所见,检查诊断` HCC frame/documentary-M2 composite; `机器型号` provenance; no time/specimen |
-| medications | `[internal dataset path]` | keys; `用药,药品类型,开始时间,结束时间` prior systemic-treatment evidence |
-| orders | `[internal dataset path]` | keys; `医嘱(非药品),开立时间,开始时间,结束时间,医嘱状态` prior local/radiotherapy evidence |
-| diagnoses | `[internal dataset path]` | keys; `诊断名称,诊断类型` untimed corroboration only |
-| labs | `[internal dataset path]` | keys; `检验,定性结果,定量结果,标本类型,检验时间` forbidden-predictor audit only |
+| encounters | `[internal dataset path]` | `patient master index,encounter number` joins; `age,sex` Z; `encounter time,admission time,discharge time` audit |
+| procedures | `[internal dataset path]` | keys; `surgery, start time, end time, surgery source` episode, clock and prior-operation evidence |
+| examinations | `[internal dataset path]` | keys; `examination number` accession and blank-unit audit; `examination` modality; `examination findings, examination diagnosis` S/Q/X and exact hash; `start time` acquisition only; `machine model` Z/provenance |
+| pathology | `[internal dataset path]` | keys; `pathology, examination findings, examination diagnosis` HCC frame/documentary-M2 composite; `machine model` provenance; no time/specimen |
+| medications | `[internal dataset path]` | keys; `Medication,Drug Type,Start Time,End Time` prior systemic-treatment evidence |
+| orders | `[internal dataset path]` | keys; `Orders (non-drug), order time, start time, end time, order status` prior local/radiotherapy evidence |
+| diagnoses | `[internal dataset path]` | keys; `Diagnosis Name, Diagnosis Type` untimed corroboration only |
+| labs | `[internal dataset path]` | keys; `test,qualitative result,quantitative result,specimen type,test time` forbidden-predictor audit only |
 | clinical_documents | `[internal dataset path]` | keys and narratives for leakage audit only; no usable document time |
 | vitals | `[internal dataset path]` | identifier-only keys |
 | transfers | `[internal dataset path]` | identifier-only keys |
 | front_page | `[internal dataset path]` | 30-byte identifier-only header |
 
-Same-encounter joins are exact on `(患者主索引,就诊号)`; examination grouping adds `检查号`. Patient-wide history joins on `患者主索引` before time filtering. Preserve raw ordinal, exact bytes/hash and backpointer. Direct identifiers, post-cutoff content, laboratory values, untimed diagnoses/documents and identifier-only tables are forbidden predictors.
+Same-encounter joins are exact on `(Patient Master Index,Encounter Number)`; examination grouping adds `Examination Number`. Patient-wide history joins on `Patient Master Index` before time filtering. Preserve raw ordinal, exact bytes/hash and backpointer. Direct identifiers, post-cutoff content, laboratory values, untimed diagnoses/documents and identifier-only tables are forbidden predictors.
 
 MIMIC, eICU and UKB remain directly readable through their configured guides and catalog paths. They are not pooled because there is no patient crosswalk or compatible first-resection, eventual-Chinese-report, untimed-pathology documentary-M2 frame.
 
 ## Missing evidence and operational bridge
 
-The automatic HCC experiment can test stored-content robustness because each free r bit exposes an exact eventual source object. It cannot determine historical or deployable availability. Any operational bridge requires a complete same-snapshot accession/version census with protected `检查号` crosswalk; all version IDs and predecessors; exact full pipeline-input hashes; authored, final, release, amendment, retraction and ingestion times; intended-service readability; validated operation clocks; and the same complete patient/accession denominator. Clinician-view timestamps are additionally required to claim that a clinician saw content.
+The automatic HCC experiment can test stored-content robustness because each free r bit exposes an exact eventual source object. It cannot determine historical or deployable availability. Any operational bridge requires a complete same-snapshot accession/version census with protected `Examination ID` crosswalk; all version IDs and predecessors; exact full pipeline-input hashes; authored, final, release, amendment, retraction and ingestion times; intended-service readability; validated operation clocks; and the same complete patient/accession denominator. Clinician-view timestamps are additionally required to claim that a clinician saw content.
 
 The bridge must classify every unit as exact-precutoff-readable, proven absent, or unresolved and replay the observed mask. Missing archive evidence is unknown, not zero. Until census completeness and hash crosswalk pass, emit `operational_80_80_status=not_estimable_from_HCC`; do not relabel this as structural infeasibility. Actual review slots, reviewer-hours, duration, abandonment, completion, clinician action, treatment, recurrence, survival, harms, cost and benefit require workflow data, expert/stakeholder review, an external cohort or another study.
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Does a physiology-only six-hour risk summary transport better than one that learns laboratory practice?
 
 ## Decision question and falsifiable hypothesis
@@ -52,17 +54,17 @@ The catalog is [internal dataset path] (catalog [source checksum]). The eICU gui
 
 All longitudinal tables join to patient by patientunitstayid. The only hospital join is hospital.hospitalid = patient.hospitalid. No cross-dataset join is used.
 
-- Patient/stay source: [internal dataset path] 2.0数据/patient.csv.gz, table patient, catalog schema datasets/eicu/table-ab037c09d7df9a3c.json. Required columns are patientunitstayid, uniquepid, age, gender, ethnicity, hospitalid, hospitaladmitsource, unittype, unitstaytype, unitdischargeoffset, unitdischargestatus, and unitdischargelocation. ICU-relative admission is represented by offsets; calendar/time-of-day fields are not exposures.
+- Patient/stay source: [internal dataset path] 2.0 data/patient.csv.gz, table patient, catalog schema datasets/eicu/table-ab037c09d7df9a3c.json. Required columns are patientunitstayid, uniquepid, age, gender, ethnicity, hospitalid, hospitaladmitsource, unittype, unitstaytype, unitdischargeoffset, unitdischargestatus, and unitdischargelocation. ICU-relative admission is represented by offsets; calendar/time-of-day fields are not exposures.
 
-- Hospital source: [internal dataset path] 2.0数据/hospital.csv.gz, table hospital, schema datasets/eicu/table-811df7b2ef435e12.json. Required columns are hospitalid, numbedscategory, teachingstatus, and region. Hospital is a grouping/transport stratum, not a treatment instrument or quality ranking variable.
+- Hospital source: [internal dataset path] 2.0 data/hospital.csv.gz, table hospital, schema datasets/eicu/table-811df7b2ef435e12.json. Required columns are hospitalid, numbedscategory, teachingstatus, and region. Hospital is a grouping/transport stratum, not a treatment instrument or quality ranking variable.
 
-- Primary physiology source: [internal dataset path] 2.0数据/vitalAperiodic.csv.gz, table vitalAperiodic, schema datasets/eicu/table-72ace5b89971196b.json. Required columns are vitalaperiodicid, patientunitstayid, observationoffset, and noninvasivemean.
+- Primary physiology source: [internal dataset path] 2.0 data/vitalAperiodic.csv.gz, table vitalAperiodic, schema datasets/eicu/table-72ace5b89971196b.json. Required columns are vitalaperiodicid, patientunitstayid, observationoffset, and noninvasivemean.
 
-- Additional structured physiology source: [internal dataset path] 2.0数据/vitalPeriodic.csv.gz, table vitalPeriodic, schema datasets/eicu/table-a22c6d6981a32279.json. Required columns are vitalperiodicid, patientunitstayid, observationoffset, temperature, sao2, heartrate, respiration, systemicmean, and pamean. The catalog metadata identifies this as five-minute summary observations, not raw waveforms.
+- Additional structured physiology source: [internal dataset path] 2.0 data/vitalPeriodic.csv.gz, table vitalPeriodic, schema datasets/eicu/table-a22c6d6981a32279.json. Required columns are vitalperiodicid, patientunitstayid, observationoffset, temperature, sao2, heartrate, respiration, systemicmean, and pamean. The catalog metadata identifies this as five-minute summary observations, not raw waveforms.
 
-- Laboratory source: [internal dataset path] 2.0数据/lab.csv.gz, table lab, schema datasets/eicu/table-79bdb33275339b1a.json. Required columns are labid, patientunitstayid, labresultoffset, labname, labresult, labresulttext, labmeasurenamesystem, labmeasurenameinterface, and labresultrevisedoffset. The raw header and sample rows were inspected. labresultoffset, not the revised offset, defines availability for the six-hour predictors and outcome.
+- Laboratory source: [internal dataset path] 2.0 Data/lab.csv.gz, table lab, schema datasets/eicu/table-79bdb33275339b1a.json. Required columns are labid, patientunitstayid, labresultoffset, labname, labresult, labresulttext, labmeasurenamesystem, labmeasurenameinterface, and labresultrevisedoffset. The raw header and sample rows were inspected. labresultoffset, not the revised offset, defines availability for the six-hour predictors and outcome.
 
-- End-of-life sensitivity source: [internal dataset path] 2.0数据/carePlanEOL.csv.gz, table carePlanEOL, schema datasets/eicu/table-4a60395475cf75e7.json, with patientunitstayid, cpleolsaveoffset, cpleoldiscussionoffset, and activeupondischarge. Use only for a prespecified sensitivity exclusion/stratification when an EOL record is documented by minute 360. Absence of a row is not evidence that treatment limitations were absent.
+- End-of-life sensitivity source: [internal dataset path] 2.0 data/carePlanEOL.csv.gz, table carePlanEOL, schema datasets/eicu/table-4a60395475cf75e7.json, with patientunitstayid, cpleolsaveoffset, cpleoldiscussionoffset, and activeupondischarge. Use only for a prespecified sensitivity exclusion/stratification when an EOL record is documented by minute 360. Absence of a row is not evidence that treatment limitations were absent.
 
 intakeOutput is not used to construct the primary endpoint: its dialysistotal, outputtotal, celllabel, and cellvaluenumeric fields do not provide complete, validated KDIGO urine-output or dialysis adjudication. Apache aggregate tables are excluded from primary predictors because their timing/first-24-hour aggregation can overlap the landmark or outcome; they may be used only in a labeled leakage sensitivity.
 

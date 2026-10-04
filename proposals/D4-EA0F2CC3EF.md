@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 
 # Resource-aligned repair for the fixed-capacity UKB cystatin-C allocation experiment
 

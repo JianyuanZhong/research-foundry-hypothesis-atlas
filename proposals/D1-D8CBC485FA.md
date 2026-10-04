@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # ICU-recorded IV furosemide or bumetanide after post-shock stabilization: partition- and RRT-repaired proposal
 
 ## Unresolved question, evidence boundary, and clinical advance

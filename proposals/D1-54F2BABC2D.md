@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Admission-anchored early physiology and a later recorded procedural transition in HCC
 
 ## Scientific deliverable
@@ -28,17 +30,17 @@ The advance is not a small predictive refinement. The primary result remains mea
 
 Use HCC snapshot [source checksum]. The catalog is [internal dataset path] with [source checksum].
 
-Join encounters to diagnoses exactly on (患者主索引, 就诊号), after whitespace/encoding normalization only. Include age >=18; valid native 入院时间 and 出院时间; nonnegative stay; admission in [2011-01-01, 2026-01-01); discharge before 2026-01-01; and at least one frozen lexical HCC rule reviewed in fitting/selection data. Because diagnoses has no diagnosis time, this is an encounter-level eligibility label, not onset or confirmation. Select the earliest eligible encounter per 患者主索引, ordered by native 入院时间 and then 就诊号; do not replace an invalid earliest encounter by a later one.
+Join encounters to diagnoses exactly on (patient master index, visit number), after whitespace/encoding normalization only. Include age >=18; valid native admission time and discharge time; nonnegative stay; admission in [2011-01-01, 2026-01-01); discharge before 2026-01-01; and at least one frozen lexical HCC rule reviewed in fitting/selection data. Because diagnoses has no diagnosis time, this is an encounter-level eligibility label, not onset or confirmation. Select the earliest eligible encounter per patient master index, ordered by native admission time and then visit number; do not replace an invalid earliest encounter by a later one.
 
 Every eligible admission remains in the primary risk set. Do not condition on discharge after 24/72 hours, a later row being present, a qualifying order, a liver-directed family, or a procedure being early. Report duplicate encounter keys, multiple diagnosis joins, unmatched joins, invalid/ongoing times, overlapping encounters, HCC lexical rule counts and cohort flow. Direct identifiers in encounters (name, ID number, phone, insurance/card and inpatient number) are excluded from derived features.
 
 ## Primary admission-anchored terminal outcome
 
-Use procedures.开始时间 only when it parses as a native timestamp and can be compared with admission and discharge. Define mutually exclusive states, with the earliest demonstrable state taking priority:
+Use procedures.Start time only when it parses as a native timestamp and can be compared with admission and discharge. Define mutually exclusive states, with the earliest demonstrable state taking priority:
 
 - P0: a time-orderable procedure row starts in [0,24) hours after admission and before discharge.
 - P1: no P0, and the first time-orderable procedure row starts in [24,72) hours after admission and before discharge.
-- Uproc: no established P0/P1, but a procedure row has a missing/invalid 开始时间 that could change the [0,72) ordering, or an unresolved same-time/order conflict.
+- Uproc: no established P0/P1, but a procedure row has a missing/invalid Start time that could change the [0,72) ordering, or an unresolved same-time/order conflict.
 - D0: no P0/P1/Uproc and discharge occurs before 72 hours.
 - N0: no P0/P1/Uproc, discharge is not before 72 hours, and no procedure row starts by 72 hours.
 
@@ -50,28 +52,28 @@ The primary estimand is the standardized locked-test probability of P1 and the f
 
 Only in fitting/selection data, freeze a versioned clinician-reviewable exact-string procedure dictionary for descriptive families: E (therapeutic hepatic-artery embolization/interventional, potentially including exact TACE terms), A (liver-lesion ablation), S (liver resection), and X (mixed, transplant/other liver-directed-looking or unassignable). Preserve every exact string and exclusion. If the dictionary cannot be reviewed or a family is too sparse, the secondary analysis is inconclusive; the primary outcome is unchanged.
 
-Use orders.开立时间—not 开始时间—to establish only that a matching order row was recorded before the relevant window. In [admission, admission+24) define K when exactly one E/A/S family has qualifying exact order evidence, M for multiple families or potentially therapeutic but unassignable evidence, N for no qualifying family, and U for potentially qualifying text with missing/invalid 开立时间. 医嘱状态, 医嘱期限, 频次, 开始时间 and 结束时间 are audit/sensitivity fields only; none proves intent, scheduling, completion or treatment.
+Use orders.Order-entry time—not Start time—to establish only that a matching order row was recorded before the relevant window. In [admission, admission+24) define K when exactly one E/A/S family has qualifying exact order evidence, M for multiple families or potentially therapeutic but unassignable evidence, N for no qualifying family, and U for potentially qualifying text with missing/invalid Order-entry time. Medical order status, Medical order duration, Frequency, Start time and End time are audit/sensitivity fields only; none proves intent, scheduling, completion or treatment.
 
 For a time-orderable [24,72) family event, C is family equal to a K proxy and Q is family unequal to it. Keep X, M, N and U separate. The plan-adjusted secondary models add the frozen K/M/N/U proxy to otherwise identical B0/B1 inputs; H is the difference between B1-minus-B0 standardized event probability for Q and C. The primary all-admission result is never replaced by this selected or dictionary-dependent analysis. Report exact terms, order status/timing distributions, duplicate and missing-time rates, K/M/N/U support and all family counts before interpretation.
 
 ## Exact HCC data bindings
 
-All source files are ordinary CSVs with archive member ordinary file; there are no archive members to unpack. All joins use (患者主索引, 就诊号) and duplicate/unmatched behavior must be reported.
+All source files are ordinary CSVs with archive member ordinary file; there are no archive members to unpack. All joins use (Patient Master Index, Encounter Number) and duplicate/unmatched behavior must be reported.
 
 Primary inputs:
 
-- encounters, schema datasets/hcc/table-b743286cb1249287.json, source [internal dataset path] 患者主索引, 就诊号, 年龄, 性别, 身高, 体重, 就诊时间, 入院时间, 出院时间, 就诊科室. Use age, sex, admitting department, admission/era descriptors and valid admission/discharge times; exclude direct identifiers.
-- diagnoses, schema datasets/hcc/table-12710723c3df0c99.json, source [internal dataset path] 患者主索引, 就诊号, 诊断名称, 诊断类型. Use for frozen encounter-level HCC eligibility and diagnosis-type descriptors; there is no diagnosis time.
-- labs, schema datasets/hcc/table-38aad8c54471332f.json, source [internal dataset path] 患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间. Use numeric 定量结果 and native 检验时间 in [admission, admission+24h), grouped by exact 检验 and retained with 标本类型.
-- procedures, schema datasets/hcc/table-d5eae16f8f8093d9.json, source [internal dataset path] 患者主索引, 就诊号, 手术, 开始时间, 结束时间, 手术来源. Use only native 开始时间 for primary ordering; retain 手术, 结束时间 and 手术来源 for secondary audit and missing-time bounds.
-- orders, schema datasets/hcc/table-6b93dcf0ea823702.json, source [internal dataset path](非药品)_2062526727266216118.csv: 患者主索引, 就诊号, 医嘱(非药品), 开立时间, 开始时间, 结束时间, 医嘱期限, 医嘱状态, 频次. Use 医嘱(非药品) and 开立时间 only for the secondary recorded-evidence tier.
+- encounters, schema datasets/hcc/table-b743286cb1249287.json, source [internal dataset path] patient master index, visit number, age, sex, height, weight, visit time, admission time, discharge time, department. Use age, sex, admitting department, admission/era descriptors and valid admission/discharge times; exclude direct identifiers.
+- diagnoses, schema datasets/hcc/table-12710723c3df0c99.json, source [internal dataset path] patient master index, encounter number, diagnosis name, diagnosis type. Use for frozen encounter-level HCC eligibility and diagnosis-type descriptors; there is no diagnosis time.
+- labs, schema datasets/hcc/table-38aad8c54471332f.json, source [internal dataset path] Patient master index, encounter number, test, qualitative result, quantitative result, specimen type, test time. Use numeric quantitative results and native test time in [admission, admission+24h), grouped by exact test and retained with specimen type.
+- procedures, schema datasets/hcc/table-d5eae16f8f8093d9.json, source [internal dataset path] Patient Master Index, Visit Number, Surgery, Start Time, End Time, Surgery Source. Use only native Start Time for primary ordering; retain Surgery, End Time and Surgery Source for secondary audit and missing-time bounds.
+- orders, schema datasets/hcc/table-6b93dcf0ea823702.json, source [internal dataset path](Non-drug)_2062526727266216118.csv: Patient Master Index, Visit Number, Order (Non-drug), Order Time, Start Time, End Time, Order Duration, Order Status, Frequency. Use Order (Non-drug) and Order Time only for the secondary recorded-evidence tier.
 
 Complete-catalog audit and exclusion reporting must also inspect, without promoting them into the primary endpoint:
 
-- examinations, schema datasets/hcc/table-fd016d2731b9d6c6.json, source [internal dataset path], columns 患者主索引, 就诊号, 检查, 检查所见, 检查诊断, 开始时间, 机器型号, 检查号. It has a time field but no validated stage, burden, indication or resectability label.
-- clinical_documents, schema datasets/hcc/table-66afca58512c2fca.json, source [internal dataset path], columns 患者主索引, 就诊号, 主诉, 现病史, 既往史, 个人史, 月经史, 婚育史, 家族史, 入院诊断, 入院情况, 入院诊断__duplicate_2, 诊疗经过, 出院情况, 出院诊断, 手术名称, 手术经过. It has no native time and its lexical detector is not validated for diagnosis, intent or plan.
-- pathology, schema datasets/hcc/table-0a4ee86a446c605c.json, source [internal dataset path], columns 患者主索引, 就诊号, 病理, 检查所见, 检查诊断, 机器型号. It has no temporal field and cannot time-align confirmation.
-- medications, schema datasets/hcc/table-4f6ecaeb6e8f69c2.json, source [internal dataset path], columns 患者主索引, 就诊号, 用药, 单次用药计量, 单次用药计量单位, 频次, 开始时间, 结束时间, 用药方式, 药品类型. Native times exist, but indication is unvalidated; audit only.
+- examinations, schema datasets/hcc/table-fd016d2731b9d6c6.json, source [internal dataset path], columns Patient Master Index, Encounter Number, Examination, Examination Findings, Examination Diagnosis, Start Time, Machine Model, Examination Number. It has a time field but no validated stage, burden, indication or resectability label.
+- clinical_documents, schema datasets/hcc/table-66afca58512c2fca.json, source [internal dataset path], columns Patient Master Index, Visit Number, Chief Complaint, History of Present Illness, Past Medical History, Personal History, Menstrual History, Marriage and Childbearing History, Family History, Admission Diagnosis, Admission Status, Admission Diagnosis__duplicate_2, Treatment Course, Discharge Status, Discharge Diagnosis, Procedure Name, Procedure Course. It has no native time and its lexical detector is not validated for diagnosis, intent or plan.
+- pathology, schema datasets/hcc/table-0a4ee86a446c605c.json, source [internal dataset path], columns patient master index, encounter number, pathology, examination findings, examination diagnosis, machine model. It has no temporal field and cannot time-align confirmation.
+- medications, schema datasets/hcc/table-4f6ecaeb6e8f69c2.json, source [internal dataset path], columns Patient Master Index, Visit Number, Medication, Single Dose, Single-Dose Unit, Frequency, Start Time, End Time, Administration Route, Drug Type. Native times exist, but indication is unvalidated; audit only.
 - vitals, schema datasets/hcc/table-8436de9cba74b8ca.json, source [internal dataset path], and transfers, schema datasets/hcc/table-320c20f732e71789.json, source [internal dataset path], each contain only the identity pair and are identifier-only.
 - front_page, schema datasets/hcc/table-38b3224239acc33f.json, source [internal dataset path], contains only the identity pair and is identifier-only.
 
@@ -79,7 +81,7 @@ HCC metadata datasets/hcc/metadata.json records the many-to-one relationships to
 
 ## Early laboratory inputs and matched alternatives
 
-The exact assay set is albumin (白蛋白), total bilirubin (总胆红素), creatinine (肌酐), platelets (血小板) and one coagulation/prothrombin assay selected only after exact-name support review. Do not merge unlike assay strings, treat 定性结果 as numeric, or compute a validated liver score because units and reference ranges are absent.
+The exact assay set is albumin (albumin), total bilirubin (total bilirubin), creatinine (creatinine), platelets (platelets) and one coagulation/prothrombin assay selected only after exact-name support review. Do not merge unlike assay strings, treat qualitative result as numeric, or compute a validated liver score because units and reference ranges are absent.
 
 B0 uses no early laboratory values. It includes age, sex, admitting department, admission-era descriptors, diagnosis-type descriptors, pre-admission encounter/procedure summaries ending before the index admission, and non-semantic opportunity covariates defined before 24 hours (counts of valid/invalid lab timestamps and total recorded order rows, with missingness explicit). It does not use order/procedure text, P0/P1/Uproc labels, discharge as a predictor, post-24 labs, post-24 orders/procedures, medications or narrative outcome fields.
 
@@ -95,7 +97,7 @@ Report locked-test multiclass log loss, multiclass Brier score, per-state calibr
 
 ## Falsification and leakage tests
 
-1. Emit a row-level timestamp proof that every primary laboratory value is in [0,24), every P0/P1 procedure state uses native 开始时间 before discharge, and no discharge, post-24 observation, outcome label or later order enters a primary predictor.
+1. Emit a row-level timestamp proof that every primary laboratory value is in [0,24), every P0/P1 procedure state uses native Start Time before discharge, and no discharge, post-24 observation, outcome label or later order enters a primary predictor.
 2. Permute within-patient exact-assay laboratory timestamps while preserving values, assay identity, counts and missingness; additionally permute values within assay. A physiology-specific increment should attenuate.
 3. Permute primary terminal labels within admitting-department/admission-era strata, preserving state frequencies; outcome-linked gain should disappear.
 4. Remove/add pre-24 lab/order opportunity variables, valid-time fractions, gap and density terms. Strong attenuation identifies observation opportunity rather than physiology.

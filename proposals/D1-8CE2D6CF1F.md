@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Frozen-calendar transport of assay payload versus the local observation process in HCC
 
 ## Scientific deliverable
@@ -20,10 +22,10 @@ What is currently supported is only data feasibility and provenance: the frozen 
 
 Use HCC snapshot `[source checksum]`, catalog [source checksum], and the ordinary read-only CSV paths bound below. Normalize Unicode/whitespace in the two join keys for audit while retaining raw values and reporting unmatched and multiplicity counts.
 
-1. Join diagnoses to encounters on the exact two-key pair (`患者主索引`, `就诊号`). A record is HCC-keyed when normalized `诊断名称` contains `肝细胞癌` or case-insensitive “hepatocellular carcinoma”. Report matched strings and `诊断类型`; diagnoses has no native time and is cohort selection only.
-2. Include age >=18, parseable nonnegative native `入院时间` and `出院时间`, and anchor admission in [2012-01-01, 2026-01-01). Retain the earliest eligible HCC-keyed encounter per normalized patient ordered by `入院时间`, then `就诊号`. Do not silently replace an invalid earliest record with a later one. Set t0 to `入院时间` and td to `出院时间`; require td+90 days < 2026-01-01.
+1. Join diagnoses to encounters on the exact two-key pair (`patient master index`, `encounter number`). A record is HCC-keyed when normalized `diagnosis name` contains `hepatocellular carcinoma` or case-insensitive “hepatocellular carcinoma”. Report matched strings and `diagnosis type`; diagnoses has no native time and is cohort selection only.
+2. Include age >=18, parseable nonnegative native `Admission Time` and `Discharge Time`, and anchor admission in [2012-01-01, 2026-01-01). Retain the earliest eligible HCC-keyed encounter per normalized patient ordered by `Admission Time`, then `Visit Number`. Do not silently replace an invalid earliest record with a later one. Set t0 to `Admission Time` and td to `Discharge Time`; require td+90 days < 2026-01-01.
 3. Define the exhaustive post-discharge observed-transition label Y90:
-   - R30: the earliest other same-patient encounter with parseable `入院时间` in [td, td+30 days), requiring admission >=td;
+   - R30: the earliest other same-patient encounter with parseable `admission time` in [td, td+30 days), requiring admission >=td;
    - O90: no R30 and at least one other same-patient encounter beginning in [td+30 days, td+90 days);
    - U90: neither R30 nor O90 is observed locally.
 
@@ -40,13 +42,13 @@ The 2019–2020 bridge is therefore quarantine data for the secondary sensitivit
 
 ## Information sets and observation-process controls
 
-All information sets stop strictly before t0. Primary prior-history rows must be linked by the two-key pair to a non-anchor encounter with parseable native admission and discharge, linked discharge < t0, and linked admission < t0. Their source-native event/availability time must be parseable and in [t0-730 days,t0): labs use `检验时间`; procedures `开始时间`; orders `开立时间`; medications `开始时间`; examinations `开始时间`. Anchor-linked rows are excluded from the primary history even if their event timestamp precedes admission. Publish invalid/missing-time, missing-linked-discharge, overlap, anchor-linked, post-t0, duplicate, unmatched-join and row-inflation counts. This is an availability attribution rule, not proof that a clinician saw a result at that time.
+All information sets stop strictly before t0. Primary prior-history rows must be linked by the two-key pair to a non-anchor encounter with parseable native admission and discharge, linked discharge < t0, and linked admission < t0. Their source-native event/availability time must be parseable and in [t0-730 days,t0): labs use `Test time`; procedures `Start time`; orders `Order placement time`; medications `Start time`; examinations `Start time`. Anchor-linked rows are excluded from the primary history even if their event timestamp precedes admission. Publish invalid/missing-time, missing-linked-discharge, overlap, anchor-linked, post-t0, duplicate, unmatched-join and row-inflation counts. This is an availability attribution rule, not proof that a clinician saw a result at that time.
 
-Exclude direct identifiers such as `姓名`, `身份证号`, `手机号码`, `医保/就诊卡号` and `住院号`.
+Exclude direct identifiers such as `name`, `ID card number`, `mobile phone number`, `medical insurance/visit card number` and `inpatient number`.
 
 - Q (strict capture/process): age, sex, department, admission calendar era and time-of-day; count/duration/recency of prior completed encounters; source-specific prior row counts and distinct linked-encounter counts for labs, procedures, orders, medications and examinations; number of source types; invalid/excluded-time counts; left-truncation and no-history flags. Q contains no assay identity, assay result or procedure/order content.
-- M (assay menu/sampling): prior laboratory `检验` identity, assay-specific counts and distinct encounters, recency/span, sampling-time count, `标本类型` availability/missingness and result-missingness indicators. Rare assay handling and vocabulary are fit-only in 2012–2018 and frozen before any later scoring.
-- P (assay payload): assay-specific `定性结果`, valid assay-specific `定量结果`, `标本类型`, and within-assay change/slope only when at least two distinct valid `检验时间` values exist. Numeric parsing and impossible-value rules are frozen from 2012–2018 before all locked predictions. Values are never pooled across assays because the catalog says there is no separate lab-unit column; missing results remain explicit missingness features.
+- M (assay menu/sampling): prior laboratory `test` identity, assay-specific counts and distinct encounters, recency/span, sampling-time count, `specimen type` availability/missingness and result-missingness indicators. Rare assay handling and vocabulary are fit-only in 2012–2018 and frozen before any later scoring.
+- P (assay payload): assay-specific `qualitative result`, valid assay-specific `quantitative result`, `specimen type`, and within-assay change/slope only when at least two distinct valid `test time` values exist. Numeric parsing and impossible-value rules are frozen from 2012–2018 before all locked predictions. Values are never pooled across assays because the catalog says there is no separate lab-unit column; missing results remain explicit missingness features.
 
 The mandatory measurement-process negative control is not a claim that future observations are clinically irrelevant. Among R30 nonreturns, define O90 from future encounters and additionally report future documentation intensity in [td+30,td+90): encounter count and, separately, timestamp-valid row counts for labs, procedures, orders, medications and examinations. These are held-out observation-process outcomes, never predictors. If P-minus-M is strong for O90/intensity but not R30, the most defensible explanation is documentation/monitoring selection rather than a return-specific assay payload. A process-only Q-to-M model and an assay-identity-permuted P model are mandatory controls.
 
@@ -92,22 +94,22 @@ Inconclusive evidence includes sparse later-era events/assays, dominant U90, wid
 
 ## Exact HCC source bindings
 
-All longitudinal joins use normalized (`患者主索引`, `就诊号`) with multiplicity and unmatched audits. All are ordinary files; no archive member is used.
+All longitudinal joins use normalized (`Patient Master Index`, `Encounter Number`) with multiplicity and unmatched audits. All are ordinary files; no archive member is used.
 
 | table / schema record | exact read-only source path | required columns | native time and role |
 |---|---|---|---|
-| encounters / `datasets/hcc/table-b743286cb1249287.json` | `[internal dataset path]` | `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室` | `入院时间`, `出院时间`; anchor, history, endpoint |
-| diagnoses / `datasets/hcc/table-12710723c3df0c99.json` | `[internal dataset path]` | `患者主索引`, `就诊号`, `诊断名称`, `诊断类型` | no native time; cohort selection only |
-| labs / `datasets/hcc/table-38aad8c54471332f.json` | `[internal dataset path]` | `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间` | `检验时间`; M/P history and future process count |
-| procedures / `datasets/hcc/table-d5eae16f8f8093d9.json` | `[internal dataset path]` | `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源` | `开始时间`; Q history and future process count |
-| orders / `datasets/hcc/table-6b93dcf0ea823702.json` | `[internal dataset path]` | `患者主索引`, `就诊号`, `医嘱(非药品)`, `开立时间`, `开始时间`, `结束时间`, `医嘱期限`, `医嘱状态`, `频次` | primary `开立时间`; Q history and future process count; no treatment-intent interpretation |
-| medications / `datasets/hcc/table-4f6ecaeb6e8f69c2.json` | `[internal dataset path]` | `患者主索引`, `就诊号`, `用药`, `单次用药剂量`, `单次用药剂量单位`, `频次`, `开始时间`, `结束时间`, `用药方式`, `药品类型` | `开始时间`; Q history and future process count only |
-| examinations / `datasets/hcc/table-fd016d2731b9d6c6.json` | `[internal dataset path]` | `患者主索引`, `就诊号`, `检查`, `检查所见`, `检查诊断`, `开始时间`, `机器型号`, `检查号` | `开始时间`; Q history and future process count; text not primary payload |
-| vitals / `datasets/hcc/table-8436de9cba74b8ca.json` | `[internal dataset path]` | `患者主索引`, `就诊号` | no usable fields beyond identifiers; audit only |
-| transfers / `datasets/hcc/table-320c20f732e71789.json` | `[internal dataset path]` | `患者主索引`, `就诊号` | identifier-only; cannot establish outside transfer/death |
-| clinical_documents / `datasets/hcc/table-66afca58512c2fca.json` | `[internal dataset path]` | identifiers and narrative fields including `主诉`, `现病史`, `既往史`, `入院情况`, `诊疗经过`, `出院情况`, `手术经过` | no native time; excluded from primary timed inputs |
-| pathology / `datasets/hcc/table-0a4ee86a446c605c.json` | `[internal dataset path]` | `患者主索引`, `就诊号`, `病理`, `检查所见`, `检查诊断`, `机器型号` | no native time; excluded from primary timed inputs |
-| front_page / `datasets/hcc/table-38b3224239acc33f.json` | `[internal dataset path]` | `患者主索引`, `就诊号` | identifier-only; audit only |
+| encounters / `datasets/hcc/table-b743286cb1249287.json` | `[internal dataset path]` | `Patient master index`, `Encounter number`, `Age`, `Sex`, `Encounter time`, `Admission time`, `Discharge time`, `Encounter department` | `Admission time`, `Discharge time`; anchor, history, endpoint |
+| diagnoses / `datasets/hcc/table-12710723c3df0c99.json` | `[internal dataset path]` | `Patient master index`, `Encounter number`, `Diagnosis name`, `Diagnosis type` | no native time; cohort selection only |
+| labs / `datasets/hcc/table-38aad8c54471332f.json` | `[internal dataset path]` | `Patient Master Index`, `Encounter Number`, `Test`, `Qualitative Result`, `Quantitative Result`, `Specimen Type`, `Test Time` | `Test Time`; M/P history and future process count |
+| procedures / `datasets/hcc/table-d5eae16f8f8093d9.json` | `[internal dataset path]` | `Patient master index`, `Visit number`, `Surgery`, `Start time`, `End time`, `Surgery source` | `Start time`; Q history and future process count |
+| orders / `datasets/hcc/table-6b93dcf0ea823702.json` | `[internal dataset path]` | `patient master index`, `visit number`, `non-drug orders`, `order time`, `start time`, `end time`, `order duration`, `order status`, `frequency` | primary `order time`; Q history and future process count; no treatment-intent interpretation |
+| medications / `datasets/hcc/table-4f6ecaeb6e8f69c2.json` | `[internal dataset path]` | `patient master index`, `visit number`, `medication`, `single-dose medication amount`, `single-dose medication amount unit`, `frequency`, `start time`, `end time`, `route of administration`, `drug type` | `start time`; Q history and future process count only |
+| examinations / `datasets/hcc/table-fd016d2731b9d6c6.json` | `[internal dataset path]` | `Patient master index`, `Encounter number`, `Examination`, `Examination findings`, `Examination diagnosis`, `Start time`, `Machine model`, `Examination number` | `Start time`; Q history and future process count; text not primary payload |
+| vitals / `datasets/hcc/table-8436de9cba74b8ca.json` | `[internal dataset path]` | `patient master index`, `encounter number` | no usable fields beyond identifiers; audit only |
+| transfers / `datasets/hcc/table-320c20f732e71789.json` | `[internal dataset path]` | `Patient master index`, `Encounter number` | identifier-only; cannot establish outside transfer/death |
+| clinical_documents / `datasets/hcc/table-66afca58512c2fca.json` | `[internal dataset path]` | identifiers and narrative fields including `Chief Complaint`, `History of Present Illness`, `Past Medical History`, `Admission Status`, `Treatment Course`, `Discharge Status`, `Operative Course` | no native time; excluded from primary timed inputs |
+| pathology / `datasets/hcc/table-0a4ee86a446c605c.json` | `[internal dataset path]` | `Patient Master Index`, `Encounter Number`, `Pathology`, `Examination Findings`, `Examination Diagnosis`, `Machine Model` | no native time; excluded from primary timed inputs |
+| front_page / `datasets/hcc/table-38b3224239acc33f.json` | `[internal dataset path]` | `patient master index`, `encounter number` | identifier-only; audit only |
 
 The HCC metadata records no separate laboratory unit column; height/weight units are unverified. The local text-extraction detector is explicitly unsupported for comprehensive diagnosis extraction and other concepts. No HCC images or waveforms are available.
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Successor: calibrated late-lactate review value under nested hospital-held-out validation
 
 ## Decision and unresolved claim

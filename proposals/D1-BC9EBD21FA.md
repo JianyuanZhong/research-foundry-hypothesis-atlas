@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 19 method exploration: decision-profile repair
 
 Parent anchor: [prior hypothesis]. This note records the alternative comparison and the substantive repair; it does not report a fitted result.

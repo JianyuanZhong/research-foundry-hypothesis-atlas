@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Same-current-level HbA1c trajectory history and transition to cardiometabolic multimorbidity
 
 Parent: `[prior hypothesis]`  

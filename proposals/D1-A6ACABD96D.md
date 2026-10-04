@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Preoperative HCC microvascular-invasion signal in longitudinal routine care
 
 Status: new restart proposal with no scientific parent. The postoperative biomarker-surveillance branch is transition context only. Two bounded source audits were executed; no hypothesis model has been fitted and no predictive claim is yet supported.
@@ -20,7 +22,7 @@ The substantive advance over inspected work is not another static nomogram. It i
 
 The audit scripts and aggregate JSON are attached. Observed results, not model results:
 
-- The pathology table has 46,395 rows. The parser found 12,350 HCC rows with an explicit first grade following `MVI提示风险分级:`; after encounter aggregation there were 12,193 nonconflicting explicit-grade encounters and 38 grade-conflict encounters.
+- The pathology table has 46,395 rows. The parser found 12,350 HCC rows with an explicit first grade following `MVI risk grade indicated:`; after encounter aggregation there were 12,193 nonconflicting explicit-grade encounters and 38 grade-conflict encounters.
 - Linking explicit-grade encounters to a dated liver resection and retaining the earliest linked event per adult produced 10,808 patients in the broad audit: 6,940 M0, 2,400 M1, and 1,468 M2. A later check showed 455 had an earlier recorded qualifying resection, motivating the first-recorded-resection primary rule.
 - In the broad cohort, 10,768 had at least one strict numeric laboratory result in days −90 through −1; 5,839 had values on at least two distinct days. Of the latter, 2,060 were M1/M2. The final strict calendar-day rerun, after requiring the first recorded qualifying resection and excluding recorded HCC-directed treatment in days −180 through −1, yielded 10,171 adults overall and 5,204 with at least two preoperative measurement days, including 1,950 M1/M2.
 - Static measurement support is high: AFP was observed in 10,219 broad-cohort patients, PIVKA-II in 8,266, platelets in 9,565, albumin and bilirubin in about 7,830. There were 1,025,415 strict numeric preoperative rows.
@@ -32,7 +34,7 @@ These counts establish usable outcomes and event density. They do not validate t
 
 ## Population, clocks, and outcomes
 
-Index time is the earliest recorded qualifying liver resection start timestamp per patient that is in the same `(患者主索引, 就诊号)` encounter as pathology text explicitly stating HCC and exactly one parseable MVI grade. A qualifying resection name contains liver and resection, excluding transplant/donor, biopsy/puncture, drainage, abscess/cyst, and isolated cholecystectomy terms. Duplicate procedure rows are collapsed before choosing the index.
+Index time is the earliest recorded qualifying liver resection start timestamp per patient that is in the same `(patient master index, encounter number)` encounter as pathology text explicitly stating HCC and exactly one parseable MVI grade. A qualifying resection name contains liver and resection, excluding transplant/donor, biopsy/puncture, drainage, abscess/cyst, and isolated cholecystectomy terms. Duplicate procedure rows are collapsed before choosing the index.
 
 Include age ≥18 and index years 2014–2021 for primary development/evaluation. Exclude missing procedure timestamp; encounter-level conflicting grades; no explicit MVI grade; any earlier recorded qualifying liver resection; and recorded embolization/intervention, ablation/radiofrequency/microwave, infusion/chemotherapy/radiotherapy, or targeted systemic treatment during calendar days −180 through −1. “No recorded prior treatment” is limited to these institutional files and is not lifetime treatment-naïve. Sensitivities exclude any such treatment at any prior recorded time and restrict to patients with no treatment language in blinded clinical review.
 
@@ -90,15 +92,15 @@ Support would establish internally and temporally held-out predictive utility of
 
 ## Exact source bindings
 
-Sources are read-only ordinary CSVs under snapshot `[source checksum]`. Join within encounter on `(患者主索引, 就诊号)`; link longitudinally on `患者主索引`; prefer native event timestamps. Derived files go only to the workspace.
+Sources are read-only ordinary CSVs under snapshot `[source checksum]`. Join within encounter on `(Patient Master Index, Encounter Number)`; link longitudinally on `Patient Master Index`; prefer native event timestamps. Derived files go only to the workspace.
 
-- `pathology`: `[internal dataset path]`; columns `患者主索引, 就诊号, 病理, 检查所见, 检查诊断, 机器型号`. No native time. Supplies only same-encounter HCC confirmation and explicit first MVI grade after `MVI提示风险分级:`; it is never an input.
-- `procedures`: `[internal dataset path]`; `患者主索引, 就诊号, 手术, 开始时间, 结束时间, 手术来源`. Supplies index, prior resection, and recorded locoregional treatment.
-- `encounters`: `[internal dataset path]`; `患者主索引, 就诊号, 年龄, 性别, 就诊时间, 入院时间, 出院时间, 就诊科室`. Supplies age, sex, service; names and direct identifiers are prohibited.
-- `labs`: `[internal dataset path]`; `患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间`. Supplies exact-label sequence. No unit/platform/reference-range column exists.
-- `examinations`: `[internal dataset path]`; `患者主索引, 就诊号, 检查, 检查所见, 检查诊断, 开始时间, 机器型号, 检查号`. Supplies only pre-cutoff report-derived tumor burden/margin/modality; raw images are unavailable.
-- `medications`: `[internal dataset path]`; `患者主索引, 就诊号, 用药, 单次用药计量, 单次用药计量单位, 频次, 开始时间, 结束时间, 用药方式, 药品类型`. Adds systemic-treatment exclusion/sensitivity; indication is unavailable.
-- `diagnoses`: `[internal dataset path]`; `患者主索引, 就诊号, 诊断名称, 诊断类型`. No native time; audit only, never temporal input.
+- `pathology`: `[internal dataset path]`; columns `Patient Master Index, Visit Number, Pathology, Examination Findings, Examination Diagnosis, Machine Model`. No native time. Supplies only same-encounter HCC confirmation and explicit first MVI grade after `MVI Risk Classification:`; it is never an input.
+- `procedures`: `[internal dataset path]`; `Patient Master Index, Encounter Number, Surgery, Start Time, End Time, Surgery Source`. Supplies index, prior resection, and recorded locoregional treatment.
+- `encounters`: `[internal dataset path]`; `Patient Master Index, Encounter Number, Age, Sex, Encounter Time, Admission Time, Discharge Time, Encounter Department`. Supplies age, sex, service; names and direct identifiers are prohibited.
+- `labs`: `[internal dataset path]`; `Patient Master Index, Encounter Number, Test, Qualitative Result, Quantitative Result, Specimen Type, Test Time`. Supplies exact-label sequence. No unit/platform/reference-range column exists.
+- `examinations`: `[internal dataset path]`; `patient master index, encounter number, examination, examination findings, examination diagnosis, start time, machine model, examination number`. Supplies only pre-cutoff report-derived tumor burden/margin/modality; raw images are unavailable.
+- `medications`: `[internal dataset path]`; `Patient master index, Visit number, Medication, Single-dose medication quantity, Single-dose medication quantity unit, Frequency, Start time, End time, Medication administration method, Medication type`. Adds systemic-treatment exclusion/sensitivity; indication is unavailable.
+- `diagnoses`: `[internal dataset path]`; `Patient master index, Encounter number, Diagnosis name, Diagnosis type`. No native time; audit only, never temporal input.
 - `clinical_documents`: `[internal dataset path]`; encounter keys plus complaint/history/admission/course/discharge/procedure text. Used only for blinded treatment/selection review, not automatic truth.
 
 Mortality, recurrence, outside treatment, complete treatment intent, assay units/platform, raw images, pathology block count, and specimen sampling protocol are unavailable. The nominal vitals, transfers, and front-page tables have no usable payload for this question. All four configured datasets remain directly accessible and read-only through `datasets/README.md`; only HCC is analyzed.

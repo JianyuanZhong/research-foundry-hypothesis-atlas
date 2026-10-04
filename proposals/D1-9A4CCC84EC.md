@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Conditional observation intensity and mortality-model transport across eICU hospitals
 
 ## Status and actual scientific deliverable
@@ -36,7 +38,7 @@ Primary outcome: hospitaldischargestatus="Expired" and 1440<hospitaldischargeoff
 
 ## Exact read-only bindings
 
-Snapshot: [source checksum]. Each source is an ordinary gzip CSV, not an archive member, under [internal dataset path] 2.0数据/. Sources remain read-only; all derived artifacts go in the workspace.
+Snapshot: [source checksum]. Each source is an ordinary gzip CSV, not an archive member, under [internal dataset path] 2.0 data/. Sources remain read-only; all derived artifacts go in the workspace.
 
 1. patient.csv.gz, table patient, [source checksum]. Primary key/join patientunitstayid; person grouping uniquepid and patienthealthsystemstayid; split key hospitalid. Required columns: age, gender, ethnicity, unitvisitnumber, unittype, unitadmitsource, unitstaytype, apacheadmissiondx, unitdischargeoffset, unitdischargestatus, unitdischargelocation, hospitaldischargeoffset, hospitaldischargestatus, hospitaldischargelocation.
 

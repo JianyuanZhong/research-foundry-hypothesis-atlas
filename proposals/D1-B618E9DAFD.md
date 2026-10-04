@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 15: does the apparent acidemic PaO2 60–89 gain survive a 70-mm Hg lower boundary?
 
 ## Unresolved question, clinical importance, and substantive advance

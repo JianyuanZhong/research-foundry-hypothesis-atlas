@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Sparse CBC trajectories with an ascertainment-safe recorded-case CRC fallback (corrected field semantics)
 
 ## Repair and scientific advance

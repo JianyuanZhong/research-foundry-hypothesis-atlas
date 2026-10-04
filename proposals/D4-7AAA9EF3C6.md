@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Fixed-combined-eGFR profiles: separating stable first-recording propensity, discovery-day frequency, and same-day coding density
 
 Status: prospective substantive child of [prior hypothesis]. No creatinine/cystatin profile–outcome association has been inspected or fitted. This child preserves the parent's renal population, P−/P0 profiles, day-30 origin, common N17/N18-free risk set, 10-year marginal estimand, competing-death analysis, support/matching/censoring gates, and clinical limits. It revises the observation-process test because UKB supplies first-appearance dates, not encounters.

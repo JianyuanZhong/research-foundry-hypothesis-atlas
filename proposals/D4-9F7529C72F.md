@@ -1,44 +1,46 @@
-# UKB 13: 房颤遗传风险与左房结构的不同组合
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# UKB 13: Different combinations of atrial fibrillation genetic risk and left atrial structure
 
 Admission: feasibility_required. Verify participant overlap, measurement dates, missingness and event support before committing this design.
 
-## 待检验假说
+## Hypotheses to Be Tested
 
-房颤PRS高但左房容积和功能保留者，其未来房颤风险低于同PRS且左房异常者，但仍高于低PRS结构正常者。
+Among individuals with high AF PRS but preserved left atrial volume and function, future AF risk is lower than in those with the same PRS and left atrial abnormalities, but remains higher than in those with low PRS and normal cardiac structure.
 
-## 研究对象及主要数据
+## Study population and key data
 
-影像时无房颤者；标准AF PRS、心脏MRI和血压。
+Individuals without atrial fibrillation at imaging; standard AF PRS, cardiac MRI, and blood pressure.
 
-## 基本做法
+## Basic Approach
 
-从心脏MRI起随访，比较PRS与左房指标的交互，控制体型与血压，并在重复影像子集核对稳定性。
+Follow up from cardiac MRI, compare the interaction between PRS and left atrial measures, control for body size and blood pressure, and check stability in the repeat-imaging subset.
 
-## 研究意义
+## Significance of the Research
 
-区分电生理易感性与结构性负荷的组合。
+Distinguish combinations of electrophysiological susceptibility and structural burden.
 
-## 主要难点
+## Main Challenges
 
-不能把左房正常视为保护机制；未诊断房颤也可能已改变左房。
+A normal left atrium cannot be regarded as a protective mechanism; undiagnosed atrial fibrillation may already have altered the left atrium.
 
-## 参考资料
+## References
 
-相关背景或数据说明，非假说成立或新颖性证明：https://www.nature.com/articles/s41467-026-74715-4；字段定义：https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26200；https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26212；https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=22009
+Relevant background or data description, not evidence that the hypothesis is valid or novel: https://www.nature.com/articles/s41467-026-74715-4; field definitions: https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26200; https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26212; https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=22009
 
-## 生命科学方向
+## Life Sciences
 
-遗传风险与保护性表型
+Genetic Risk and Protective Phenotypes
 
-## 竞争解释
+## Competing Explanations
 
-隐匿房颤或血压累积暴露产生结构差异。
+Structural differences arising from occult atrial fibrillation or cumulative blood pressure exposure.
 
-## 最小验证与否定条件
+## Minimal validation and falsification criteria
 
-排除影像后早期房颤后复核；若差异只集中于近期，不支持稳定的前驱分层。
+Recheck after excluding early atrial fibrillation following imaging; if the difference is concentrated only in the recent period, this does not support stable antecedent stratification.
 
-## 字典字段依据
+## Basis for Dictionary Fields
 
 26200 In UK Biobank PRS Release Testing subgroup；26212 Standard PRS for atrial fibrillation (AF)；22009 Genetic principal components；24110 LA maximum volume；24111 LA minimum volume；24113 LA ejection fraction；4080 Systolic blood pressure, automated reading；4079 Diastolic blood pressure, automated reading；41270 Diagnoses - ICD10；41280 Date of first in-patient diagnosis - ICD10；53 Date of attending assessment centre
 

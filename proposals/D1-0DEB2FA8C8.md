@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Negative feasibility: the fixed early post-repeat-TACE albumin-down/bilirubin-up signal cannot be tested against a high-specificity 30-day decompensation endpoint in this HCC snapshot
 
 ## Clinical question and decision relevance
@@ -48,9 +50,9 @@ A valid test of the clinical hypothesis requires, at minimum, native event times
 
 No population, pathway, event, assay parser, observation selector, or signal definition is changed from `[prior hypothesis]`.
 
-1. Qualify a procedure only when `手术` contains literal case-insensitive `TACE` or literal `化疗栓塞` and `开始时间` parses. Collapse qualifying rows to the earliest deterministic row per patient-calendar-day. Select the earliest adjacent pair 14–180 calendar days apart; the second is TACE2 and its earliest exact `开始时间` is `tace2_time`.
+1. Qualify a procedure only when `procedure` contains literal case-insensitive `TACE` or literal `chemoembolization` and `start time` parses. Collapse qualifying rows to the earliest deterministic row per patient-calendar-day. Select the earliest adjacent pair 14–180 calendar days apart; the second is TACE2 and its earliest exact `start time` is `tace2_time`.
 2. Preserve the parent's adult HCC, calendar, institutional-observation, systemic-record/comparator medication ontology, and prior-record/placebo/bevacizumab-only/generic-treatment ambiguity exclusions exactly.
-3. Independently select the first strict repeat-TACE patient-day on TACE2 days 15–90; its earliest valid procedure start is `event_time` and its `就诊号` is `event_encounter`.
+3. Independently select the first strict repeat-TACE patient-day on TACE2 days 15–90; its earliest valid procedure start is `event_time` and its `visit number` is `event_encounter`.
 4. Preserve the strict laboratory parser, exact-timestamp duplicate rule, `B`, `P`, and leakage-safe intermediate-history clocks. Require both albumin and total bilirubin at `B` and `P` and at one common exact timestamp in `event_encounter` in inclusive `[12h,36h]`; select the timestamp nearest +24 hours, with the earlier timestamp winning a tie.
 5. Define `landmark` as that selected panel timestamp, not repeat-TACE time. Define `signal=1` only if selected albumin is strictly below `P` albumin and selected total bilirubin is strictly above `P` bilirubin. Equality is signal-negative.
 
@@ -60,35 +62,35 @@ Reconstruction must reproduce 319/1,491 pathways, 159/526 selected events, 34/97
 
 The fixed horizon is `(landmark, landmark+30 days]`; `(landmark, landmark+7 days]` is descriptive only. A record at or before the patient-specific landmark cannot be an outcome. A record carrying `event_encounter` cannot be an outcome even if its native timestamp is later than the landmark. These rules prevent use of the same peri-procedural episode to define both predictor and outcome and prevent immortal-time assignment from repeat-TACE time to the later selected panel.
 
-A later encounter is a different `就诊号` whose start is `入院时间`, otherwise `就诊时间`, otherwise the encounter key's available time, strictly after landmark and no later than 30 days. Later-encounter occurrence is audit-only because scheduled cancer care contaminates it.
+A later encounter is a different `visit number` whose start is `admission time`, otherwise `visit time`, otherwise the encounter key's available time, strictly after landmark and no later than 30 days. Later-encounter occurrence is audit-only because scheduled cancer care contaminates it.
 
 The intended high-specificity recorded diagnosis endpoint is a new family-level match on a different later encounter, absent on every exact-key-linked encounter at or before landmark:
 
-- hepatic failure: `肝功能衰竭|肝衰竭|急性肝功能不全`;
-- hepatic encephalopathy: `肝性脑病|肝昏迷`;
-- decompensated cirrhosis: `失代偿期肝硬化|肝硬化失代偿`;
-- specific variceal hemorrhage: an esophageal/gastric-variceal phrase with rupture or bleeding, or `静脉曲张破裂出血`;
-- spontaneous bacterial peritonitis: `自发性` within four characters of `腹膜炎`;
-- hepatorenal syndrome: `肝肾综合征`.
+- hepatic failure: `hepatic function failure|liver failure|acute hepatic insufficiency`;
+- hepatic encephalopathy: `hepatic encephalopathy|hepatic coma`;
+- decompensated cirrhosis: `decompensated cirrhosis|cirrhosis decompensation`;
+- specific variceal hemorrhage: an esophageal/gastric-variceal phrase with rupture or bleeding, or `variceal rupture and bleeding`;
+- spontaneous bacterial peritonitis: `spontaneous` within four characters of `peritonitis`;
+- hepatorenal syndrome: `hepatorenal syndrome`.
 
-`急性肝损伤`, generic `肝功能不全/异常`, isolated ascites, and generic gastrointestinal bleeding are excluded from the high-specificity endpoint. The audit deliberately removed `急性肝损伤` from the primary hepatic-failure expression because it is not equivalent to clinical hepatic failure. Diagnosis rows have no native date: they inherit only the start of an exact (`患者主索引`,`就诊号`) encounter match. Unmatched diagnosis rows are never dated or used.
+`Acute liver injury`, generic `liver insufficiency/abnormality`, isolated ascites, and generic gastrointestinal bleeding are excluded from the high-specificity endpoint. The audit deliberately removed `acute liver injury` from the primary hepatic-failure expression because it is not equivalent to clinical hepatic failure. Diagnosis rows have no native date: they inherit only the start of an exact (`patient master index`,`encounter number`) encounter match. Unmatched diagnosis rows are never dated or used.
 
 Clinical-document matches use the same concept families only in a distinct later encounter. They are corroboration, not outcomes, because documents lack native timestamps and lexical matching cannot resolve negation, history, or diagnostic uncertainty.
 
-Major escalation audits use native `开始时间`, otherwise `开立时间`, and require a different encounter plus a time in the locked horizon. They separately search critical-care/ICU/`病危`/resuscitation, artificial liver/plasma exchange, CRRT/dialysis, ventilation/intubation, and paracentesis/ascites drainage. Medication audits use native `开始时间` and separately search vasopressin/somatostatin-class bleeding rescue, encephalopathy-directed drugs, albumin, diuretics, and antibiotics. Orders are not proof of execution and medication rows are not proof of administration; broad critical-care phrases and supportive drugs cannot be promoted to a hepatic-decompensation endpoint without record adjudication.
+Major escalation audits use native `Start Time`, otherwise `Order Time`, and require a different encounter plus a time in the locked horizon. They separately search critical-care/ICU/`critical condition`/resuscitation, artificial liver/plasma exchange, CRRT/dialysis, ventilation/intubation, and paracentesis/ascites drainage. Medication audits use native `Start Time` and separately search vasopressin/somatostatin-class bleeding rescue, encephalopathy-directed drugs, albumin, diuretics, and antibiotics. Orders are not proof of execution and medication rows are not proof of administration; broad critical-care phrases and supportive drugs cannot be promoted to a hepatic-decompensation endpoint without record adjudication.
 
 ## Exact source bindings and actual filtering
 
-All sources are read-only ordinary CSV files, not archive members. Catalog SHA-256 is `[source checksum]`; HCC snapshot is as stated above. Rows are linked on the composite (`患者主索引`,`就诊号`) unless attaching the already frozen patient-level event/landmark map to longitudinal rows.
+All sources are read-only ordinary CSV files, not archive members. Catalog SHA-256 is `[source checksum]`; HCC snapshot is as stated above. Rows are linked on the composite (`patient master index`,`encounter number`) unless attaching the already frozen patient-level event/landmark map to longitudinal rows.
 
-- `encounters`: `[internal dataset path]`, [source checksum], table `encounters`, schema `[internal dataset path]`. Audit read 105,044 rows. Required columns are `患者主索引`,`就诊号`,`年龄`,`性别`,`就诊时间`,`入院时间`,`出院时间`,`就诊科室`.
-- `diagnoses`: `[internal dataset path]`, [source checksum], table `diagnoses`, schema `[internal dataset path]`. Audit read all 1,810,646 rows, retained the 131 landmark patients for matching, and used `患者主索引`,`就诊号`,`诊断名称`,`诊断类型`. There is no native diagnosis time.
-- `procedures`: `[internal dataset path]`, [source checksum], table `procedures`, schema `[internal dataset path]`. Use `患者主索引`,`就诊号`,`手术`,`开始时间`,`结束时间`,`手术来源`; only parsed `开始时间` defines procedure clocks.
-- `labs`: `[internal dataset path]`, [source checksum], table `labs`, schema `[internal dataset path]`. Use `患者主索引`,`就诊号`,`检验`,`定量结果`,`定性结果`,`标本类型`,`检验时间`; exact assays are `白蛋白`,`总胆红素`. The frozen target-assay frame had 476,813 rows after duplicate resolution, from the 476,820 valid numeric-time source rows.
-- `clinical_documents`: `[internal dataset path]`, [source checksum], table `clinical_documents`, schema `[internal dataset path]`. Audit read all 105,044 rows and used `患者主索引`,`就诊号`,`主诉`,`现病史`,`既往史`,`入院诊断`, the second physical `入院诊断` column read by pandas as `入院诊断.1` (catalogued as `入院诊断__duplicate_2`), `入院情况`,`诊疗经过`,`出院情况`,`出院诊断`,`手术名称`,`手术经过`. The source has no document timestamp.
-- `orders`: `[internal dataset path]`, [source checksum], table `orders`, schema `[internal dataset path]`. Audit streamed all 16,730,319 rows and used `患者主索引`,`就诊号`,`医嘱(非药品)`,`开立时间`,`开始时间`,`结束时间`,`医嘱状态`.
-- `medications`: `[internal dataset path]`, [source checksum], table `medications`, schema `[internal dataset path]`. Audit streamed all 4,097,517 rows and used `患者主索引`,`就诊号`,`用药`,`开始时间`,`结束时间`,`用药方式`,`药品类型`.
-- `transfers`: `[internal dataset path]`, [source checksum], table `transfers`, schema `[internal dataset path]`. Its complete schema contains only `患者主索引`,`就诊号`; it has no transfer time, origin, destination, unit, or disposition and therefore cannot define ICU transfer or escalation. No outcome rows can legitimately be derived from it.
+- `encounters`: `[internal dataset path]`, [source checksum], table `encounters`, schema `[internal dataset path]`. Audit read 105,044 rows. Required columns are `Patient Master Index`,`Encounter Number`,`Age`,`Sex`,`Encounter Time`,`Admission Time`,`Discharge Time`,`Encounter Department`.
+- `diagnoses`: `[internal dataset path]`, [source checksum], table `diagnoses`, schema `[internal dataset path]`. Audit read all 1,810,646 rows, retained the 131 landmark patients for matching, and used `Patient Master Index`,`Visit Number`,`Diagnosis Name`,`Diagnosis Type`. There is no native diagnosis time.
+- `procedures`: `[internal dataset path]`, [source checksum], table `procedures`, schema `[internal dataset path]`. Use `Patient Master Index`,`Encounter Number`,`Procedure`,`Start Time`,`End Time`,`Procedure Source`; only parsed `Start Time` defines procedure clocks.
+- `labs`: `[internal dataset path]`, [source checksum], table `labs`, schema `[internal dataset path]`. Use `Patient Master Index`,`Encounter Number`,`Test`,`Quantitative Result`,`Qualitative Result`,`Specimen Type`,`Test Time`; exact assays are `Albumin`,`Total Bilirubin`. The frozen target-assay frame had 476,813 rows after duplicate resolution, from the 476,820 valid numeric-time source rows.
+- `clinical_documents`: `[internal dataset path]`, [source checksum], table `clinical_documents`, schema `[internal dataset path]`. Audit read all 105,044 rows and used `Patient Master Index`,`Encounter Number`,`Chief Complaint`,`History of Present Illness`,`Past Medical History`,`Admission Diagnosis`, the second physical `Admission Diagnosis` column read by pandas as `Admission Diagnosis.1` (catalogued as `Admission Diagnosis__duplicate_2`),`Admission Status`,`Clinical Course`,`Discharge Status`,`Discharge Diagnosis`,`Surgery Name`,`Surgical Procedure`. The source has no document timestamp.
+- `orders`: `[internal dataset path]`, [source checksum], table `orders`, schema `[internal dataset path]`. Audit streamed all 16,730,319 rows and used `patient master index`,`encounter number`,`order (non-medication)`,`order time`,`start time`,`end time`,`order status`.
+- `medications`: `[internal dataset path]`, [source checksum], table `medications`, schema `[internal dataset path]`. Audit streamed all 4,097,517 rows and used `Patient master index`,`Visit number`,`Medication`,`Start time`,`End time`,`Route of administration`,`Drug type`.
+- `transfers`: `[internal dataset path]`, [source checksum], table `transfers`, schema `[internal dataset path]`. Its complete schema contains only `Patient Master Index`,`Encounter Number`; it has no transfer time, origin, destination, unit, or disposition and therefore cannot define ICU transfer or escalation. No outcome rows can legitimately be derived from it.
 
 The implementation and aggregate output are `[internal dataset path]` (executed [source checksum]) and `[internal dataset path]` ([source checksum]). Resource-managed job `[research job]` completed successfully. Only aggregate counts and timing quantiles were written; no identifiers or dates were released.
 

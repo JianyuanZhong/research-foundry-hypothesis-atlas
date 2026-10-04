@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # UKB17 repair: posterior-thigh MFI and later falls report
 
 ## Question and clinical importance

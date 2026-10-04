@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Audited frozen three-group CBC experiment: global non-rejection is supported; pairwise branch remains uncertified
 
 ## Purpose and lineage

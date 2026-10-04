@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 
 # Episode 97 successor: decision-time content-identity frontier for findings-only HCC review allocation
 
@@ -15,13 +17,13 @@ The advance is to separate eventual stored text, source-attributed findings-only
 
 ## Hypothesis and estimands
 
-Let G be the inherited frozen semantic score. Partition the locked 2019 feature manifest into PF (every source field exactly examinations.检查所见), PD (every source field exactly examinations.检查诊断), and PX (mixed, other, missing, or unresolved provenance). GF is a no-refit replay retaining PF and replacing PD/PX with the exact frozen unavailable block. GD retains only PD for diagnostic attribution; it cannot select a threshold or rescue GF.
+Let G be the inherited frozen semantic score. Partition the locked 2019 feature manifest into PF (every source field exactly examinations.findings), PD (every source field exactly examinations.diagnosis), and PX (mixed, other, missing, or unresolved provenance). GF is a no-refit replay retaining PF and replacing PD/PX with the exact frozen unavailable block. GD retains only PD for diagnostic attribution; it cannot select a threshold or rescue GF.
 
 For patient state z, pathology-reader book p, source/onset world omega, capacity ledger ell in {U,R,T}, and comparator C in {B,R,Gmask}, define the exact integer contrast:
 D(F,C,ell,z) = 100 times [H(GF,ell,z) - H(C,ell,z)] / K.
 H is the documentary-M2 count in a fixed top-K queue. All patient-slot, whole-accession, raw-component, and component-plus-text ledgers are evaluated.
 
-For each eligible whole accession u=(患者主索引,就诊号,检查号), define a hypothetical bit ru. ru=1 means the stored report block is treated as available and content-identical to the version used by the frozen score; ru=0 masks all body-derived report features with the frozen unavailable block while retaining acquisition-only variables. This is a potential-data intervention, not observed availability. At fixed breakpoints c, require the full roster to have at least ceil(c times the number of clean eligible accessions) exposed units. After deleting patient j, restrict the same full-roster mask to survivors; never choose a new mask or reduced quota.
+For each eligible whole accession u=(patient master index, encounter number, examination number), define a hypothetical bit ru. ru=1 means the stored report block is treated as available and content-identical to the version used by the frozen score; ru=0 masks all body-derived report features with the frozen unavailable block while retaining acquisition-only variables. This is a potential-data intervention, not observed availability. At fixed breakpoints c, require the full roster to have at least ceil(c times the number of clean eligible accessions) exposed units. After deleting patient j, restrict the same full-roster mask to survivors; never choose a new mask or reduced quota.
 
 Primary hypothesis: there exists c* <= 0.80 for which GF passes every inherited gate and every coupled lower endpoint of D(F,C,ell,z) is strictly above 5 percentage points in both 2020 and untouched 2021 tests, under the same full-roster mask and anchored singleton deletion. The .80 value is fixed before outcomes and is a robustness benchmark, not an estimate of actual report-release probability.
 
@@ -33,9 +35,9 @@ Nested labels:
 
 ## Population and time
 
-Use the first source-documented eligible hepatobiliary resection per patient: age at least 18; a prespecified dictionary independently reviewed by hepatobiliary surgeons; no earlier qualifying resection; and no recorded transplant, TACE/embolization, ablation, radiotherapy, targeted therapy, or immunotherapy in [t_op-365 days,t_op). Episode key is (患者主索引,就诊号); patient-wide medication/order searches retain encounter keys.
+Use the first source-documented eligible hepatobiliary resection per patient: age at least 18; a prespecified dictionary independently reviewed by hepatobiliary surgeons; no earlier qualifying resection; and no recorded transplant, TACE/embolization, ablation, radiotherapy, targeted therapy, or immunotherapy in [t_op-365 days,t_op). Episode key is (patient master index, encounter number); patient-wide medication/order searches retain encounter keys.
 
-Use procedures.开始时间 for t_op only under the frozen source rule. A linked exact clock may be used only if clinically supported; date-like or midnight case-record values are represented as [date,date+24 hours), never as exact instants. Missing or competing clocks create coherent member/nonmember states, not favorable exclusion. Set t_dec=t_op-24 hours. An examination accession is eligible only when its 检查开始时间 interval is wholly within [t_op-90 days,t_dec). The primary cutoff is 24 hours; 12/48/72-hour onset worlds are descriptive sensitivities and cannot tune q*, K, c*, or the model.
+Use procedures.Start time for t_op only under the frozen source rule. A linked exact clock may be used only if clinically supported; date-like or midnight case-record values are represented as [date,date+24 hours), never as exact instants. Missing or competing clocks create coherent member/nonmember states, not favorable exclusion. Set t_dec=t_op-24 hours. An examination accession is eligible only when its Examination start time interval is wholly within [t_op-90 days,t_dec). The primary cutoff is 24 hours; 12/48/72-hour onset worlds are descriptive sensitivities and cannot tune q*, K, c*, or the model.
 
 Use patient-disjoint roles: 2015-2018 development; 2019 locks dictionary, preprocessing, feature/provenance manifest, models, reader books, ledgers, capacities, ties and seeds; 2020 threshold selection under the inherited protocol; 2021 untouched temporal confirmation; 2022 onward audit-only. GF and the frontier replay at inherited q* with no refitting, recalibration, feature reordering, or threshold change.
 
@@ -48,24 +50,24 @@ All sources are read-only ordinary CSVs; no archive member is used. Catalog:
 with [source checksum].
 HCC snapshot is [source checksum].
 
-- encounters: [internal dataset path]; join (患者主索引,就诊号); 年龄,性别; 就诊时间,入院时间,出院时间.
-- procedures: [internal dataset path]; same keys; 手术,手术来源; 开始时间,结束时间.
-- examinations: [internal dataset path]; same keys plus 检查号 for whole-accession grain; 检查 modality; 检查所见 and 检查诊断 semantic fields; 开始时间 acquisition; 机器型号 audit. Preserve raw bytes, CSV ordinals, row multiplicity, payload digests and 检查号 bundles.
-- pathology: [internal dataset path]; same keys; 病理,检查所见,检查诊断,机器型号 for documentary-M2 reader books only; no usable pathology time/specimen/accession.
-- medications: [internal dataset path]; patient-wide 患者主索引 search, retaining 就诊号; 用药,药品类型,开始时间,结束时间 for prior-treatment exclusion only.
-- orders: [internal dataset path](非药品)_2062526727266216118.csv; prior-treatment audit; 医嘱(非药品),医嘱状态,开立时间,开始时间,结束时间.
-- diagnoses: [internal dataset path]; 诊断名称,诊断类型 for untimed corroboration/leakage audit only.
-- clinical_documents: [internal dataset path]; narrative fields including 入院诊断__duplicate_2 for leakage audit only; no document time.
-- labs: [internal dataset path]; 检验,定性结果,定量结果,标本类型,检验时间 for forbidden-predictor audit only; no separate unit column, so no cross-assay predictor.
-- vitals: [internal dataset path]; only 患者主索引,就诊号; identifier-only.
-- transfers: [internal dataset path]; only 患者主索引,就诊号; identifier-only.
-- front_page: [internal dataset path]; 30-byte identifier-only file with 患者主索引,就诊号.
+- encounters: [internal dataset path]; join (Patient Master Index, Encounter Number); Age, Sex; Encounter Time, Admission Time, Discharge Time.
+- procedures: [internal dataset path]; same keys; Surgery, Surgery Source; Start Time, End Time.
+- examinations: [internal dataset path]; same keys plus Examination Number for whole-accession grain; Examination modality; Examination Findings and Examination Diagnosis semantic fields; Start Time acquisition; Machine Model audit. Preserve raw bytes, CSV ordinals, row multiplicity, payload digests and Examination Number bundles.
+- pathology: [internal dataset path]; same keys; pathology, examination findings, examination diagnosis, machine model for documentary-M2 reader books only; no usable pathology time/specimen/accession.
+- medications: [internal dataset path]; patient-wide patient master index search, retaining encounter number; medication, drug type, start time, end time for prior-treatment exclusion only.
+- orders: [internal dataset path](non-drug)_2062526727266216118.csv; prior-treatment audit; non-drug medical order, order status, order time, start time, end time.
+- diagnoses: [internal dataset path]; diagnosis name, diagnosis type for untimed corroboration/leakage audit only.
+- clinical_documents: [internal dataset path]; narrative fields including Admission diagnosis__duplicate_2 for leakage audit only; no document time.
+- labs: [internal dataset path]; Test,Qualitative Result,Quantitative Result,Specimen Type,Test Time for forbidden-predictor audit only; no separate unit column, so no cross-assay predictor.
+- vitals: [internal dataset path]; only Patient Master Index,Encounter Number; identifier-only.
+- transfers: [internal dataset path]; only Patient Master Index, Encounter Number; identifier-only.
+- front_page: [internal dataset path]; 30-byte identifier-only file with patient master index, encounter number.
 
-Same-encounter joins are exact on (患者主索引,就诊号). Examination grouping adds 检查号. Prior treatment is patient-wide before t_op. MIMIC, eICU, and UKB remain directly accessible read-only but are not pooled because there is no compatible HCC first-resection/eventual-Chinese-report/untimed-pathology-M2 frame or patient crosswalk.
+Same-encounter joins are exact on (patient master index,visit number). Examination grouping adds examination number. Prior treatment is patient-wide before t_op. MIMIC, eICU, and UKB remain directly accessible read-only but are not pooled because there is no compatible HCC first-resection/eventual-Chinese-report/untimed-pathology-M2 frame or patient crosswalk.
 
 ## Computation and uncertainty
 
-The compiler reads the inherited 2019 feature manifest, model, source audit, reader books, ledgers, threshold, tie key and hashes. Each feature must record model block/position/hash, exact table/field, accession and row ordinals, raw-byte digest, parser/tokenizer version and output digest, aggregation and missing block. PF is assigned only to features whose every contributing field is exactly examinations.检查所见. Mixed or absent provenance is masked. No clinical_documents, pathology, diagnoses, labs, identifiers, post-cutoff rows, reader labels or outcomes may enter the semantic predictor.
+The compiler reads the inherited 2019 feature manifest, model, source audit, reader books, ledgers, threshold, tie key and hashes. Each feature must record model block/position/hash, exact table/field, accession and row ordinals, raw-byte digest, parser/tokenizer version and output digest, aggregation and missing block. PF is assigned only to features whose every contributing field is exactly examinations.Findings. Mixed or absent provenance is masked. No clinical_documents, pathology, diagnoses, labs, identifiers, post-cutoff rows, reader labels or outcomes may enter the semantic predictor.
 
 Compute inherited B,R,G,Gmask,GSA and then GF and diagnostic GD with byte-identical coefficients, feature order, scores, K, CU/CR/CT, ties, EMPTY positions, coupled states, 256 hash-random permutations and anchored deletions. For every year, source/onset world, reader/pathology book, ledger and c breakpoint, enumerate or certify exact extrema over full-roster masks. Require zero integer gap, residual <=1e-8, all tied maximizers, raw/quotient replay, and brute-force agreement on fixtures through 12 patients and real shards through 20. A sampled mask, timeout, favorable incumbent, state cap, missing witness or replay mismatch is inconclusive. Bootstrap is diagnostic only and cannot replace the exact finite-corpus estimand.
 

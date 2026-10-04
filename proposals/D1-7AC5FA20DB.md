@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Can pulmonary-phenotype and oxygen-recording error create or erase the post-adequacy hyperoxia interaction?
 
 ## Status, opening, and fixed scientific question

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # POD3 recovery asynchrony and delayed discharge after HCC resection
 
 ## Clinical opening and hypothesis
@@ -12,8 +14,8 @@ This is prognostic, not causal. The leading explanation is nonparallel physiolog
 
 ## Population, clock, and outcomes
 
-1. In procedures, require dated 开始时间 and procedure text matching liver resection: 肝.{0,6}(部分|段|叶|半肝|肿瘤).{0,6}切除, 部分肝切除, 半肝切除, or 肝切除术. Exclude 供肝, 病肝切取, 移植, 活检, 穿刺, 切开, 引流, 囊肿, 脓肿, 复发, 再次.
-2. Require age at least 18, nonmissing discharge, procedure time within admission minus/plus 24 hours, and same-encounter non-uncertain HCC diagnosis matching 肝细胞癌, 原发性肝癌, or 肝癌 but not 待排, 疑似, 可能, 除外, 复发, or 术后.
+1. In procedures, require a dated start time and procedure text matching liver resection: liver.{0,6}(partial|segmental|lobar|hemihepatic|tumor).{0,6}resection, partial hepatectomy, hemihepatectomy, or hepatectomy. Exclude donor liver, diseased liver harvesting, transplantation, biopsy, puncture, incision, drainage, cyst, abscess, recurrence, and repeat procedures.
+2. Require age at least 18, nonmissing discharge, procedure time within admission minus/plus 24 hours, and same-encounter non-uncertain HCC diagnosis matching hepatocellular carcinoma, primary liver cancer, or liver cancer but not rule out, suspected, possible, excluded, recurrence, or postoperative.
 3. Collapse duplicates and select each patient's earliest qualifying operation ordered by patient, start time, encounter, procedure.
 4. Landmark at procedure start +72 hours. Include only patients discharged after the landmark, so all have an identical exposure window.
 5. Primary outcome: recorded index discharge after procedure start +168 hours (POD7). This is delayed recorded discharge, not complication, readiness, mortality, or avoidable stay.
@@ -23,14 +25,14 @@ No post-hour-72 event enters predictors. Do not condition on future testing or c
 
 ## Exact bindings
 
-Snapshot: [source checksum]. Join within encounter on (患者主索引, 就诊号), across encounters on 患者主索引.
+Snapshot: [source checksum]. Join within encounter on (Patient Master Index, Encounter Number), across encounters on Patient Master Index.
 
-- encounters: [internal dataset path] Required columns 患者主索引, 就诊号, 年龄, 性别, 身高, 体重, 就诊时间, 入院时间, 出院时间, 就诊科室. Supplies cohort, endpoint, service, local return. Direct identifiers other than private linkage keys are never features or outputs.
-- procedures: [internal dataset path] Columns 患者主索引, 就诊号, 手术, 开始时间, 结束时间, 手术来源. Supplies index time, duration, source, and train-frozen laparoscopic/open and extent indicators.
-- diagnoses: [internal dataset path] Columns 患者主索引, 就诊号, 诊断名称, 诊断类型. Supplies eligibility and baseline cirrhosis/portal-hypertension/comorbidity flags. It has no native time and cannot be a postoperative event.
-- labs: [internal dataset path] Columns 患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间. Use plain numeric exact labels 丙氨酸氨基转移酶 (ALT), 门冬氨酸氨基转移酶 (AST), 总胆红素 (TBIL), 白蛋白 (ALB), 国际标准化比值 (INR), 肌酐 (CREA), 血小板计数 (PLT), from -30d to <0 for baseline and [0,72h] for dynamics. Do not pool emergency-suffixed labels. Units/reference ranges are absent; use train-only robust transforms and make no threshold diagnosis.
-- orders: [internal dataset path](非药品)_2062526727266216118.csv. Columns 患者主索引, 就诊号, 医嘱(非药品), 开立时间, 开始时间, 结束时间, 医嘱期限, 医嘱状态, 频次. Before landmark derive 12-hour new/active counts, unique labels, train-frozen support groups, and observation masks.
-- medications: [internal dataset path] Columns 患者主索引, 就诊号, 用药, 单次用药剂量, 单次用药剂量单位, 频次, 开始时间, 结束时间, 用药方式, 药品类型. Before landmark derive new/active counts, unique names/routes, and train-frozen albumin-product, diuretic, antimicrobial, vasopressor-label, and analgesic groups. These are treatment/workflow proxies, not administered treatments or indications.
+- encounters: [internal dataset path] Required columns patient master index, encounter number, age, sex, height, weight, encounter time, admission time, discharge time, encounter department. Supplies cohort, endpoint, service, local return. Direct identifiers other than private linkage keys are never features or outputs.
+- procedures: [internal dataset path] Columns Patient master index, Visit number, Surgery, Start time, End time, Surgery source. Supplies index time, duration, source, and train-frozen laparoscopic/open and extent indicators.
+- diagnoses: [internal dataset path] Columns Patient Master Index, Encounter Number, Diagnosis Name, Diagnosis Type. Supplies eligibility and baseline cirrhosis/portal-hypertension/comorbidity flags. It has no native time and cannot be a postoperative event.
+- labs: [internal dataset path] Columns Patient Master Index, Encounter Number, Test, Qualitative Result, Quantitative Result, Specimen Type, Laboratory Time. Use plain numeric exact labels Alanine Aminotransferase (ALT), Aspartate Aminotransferase (AST), Total Bilirubin (TBIL), Albumin (ALB), International Normalized Ratio (INR), Creatinine (CREA), Platelet Count (PLT), from -30d to <0 for baseline and [0,72h] for dynamics. Do not pool emergency-suffixed labels. Units/reference ranges are absent; use train-only robust transforms and make no threshold diagnosis.
+- orders: [internal dataset path](Non-drug)_2062526727266216118.csv. Columns Patient Master Index, Visit Number, Non-drug Order, Order Time, Start Time, End Time, Order Duration, Order Status, Frequency. Before landmark derive 12-hour new/active counts, unique labels, train-frozen support groups, and observation masks.
+- medications: [internal dataset path] Columns patient master index, encounter number, medication, single-dose amount, single-dose unit, frequency, start time, end time, route of administration, drug type. Before landmark derive new/active counts, unique names/routes, and train-frozen albumin-product, diuretic, antimicrobial, vasopressor-label, and analgesic groups. These are treatment/workflow proxies, not administered treatments or indications.
 - clinical_documents, pathology, and examinations are not inputs: documents/pathology lack native timestamps and can leak discharge knowledge; examinations add no needed endpoint data. Vitals, transfers, and front_page are identifier-only.
 
 All four configured datasets remain read-only and directly accessible; this experiment uses HCC only.

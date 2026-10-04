@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Post-TACE liver-reserve trajectory and near-term hepatic decompensation in HCC
 
 ## Scientific question and hypothesis
@@ -20,21 +22,21 @@ A positive result would justify prospective validation and clinical adjudication
 
 Use only the HCC source snapshot [source checksum].
 
-1. Read HCC/data_诊断_7504718184492840569.csv (diagnoses) and define HCC history by diagnosis names containing 肝细胞癌 or 肝癌, excluding names containing 疑似/待查 where applicable. Require a patient-level HCC diagnosis on or before the index encounter.
-2. Read HCC/data_手术_8024330590283626027.csv (procedures). Define TACE as a procedure name containing TACE or the prespecified Chinese terms 经导管肝动脉栓塞术, 肝动脉化疗栓塞, 肝动脉栓塞化疗, or their parenthesized catheter variants. The index is the earliest recorded qualifying procedure start time per 患者主索引; exclude patients with a prior qualifying TACE in the available record. Keep the procedure's 就诊号 and 开始时间, and use 结束时间 when present.
-3. Join encounters from HCC/data_基本信息_2500296761891079109.csv by (患者主索引, 就诊号) to obtain age, sex, admission/discharge timestamps and department. The patient is the unit of analysis; repeated TACE episodes are not independent.
-4. Require at least one usable measurement in the baseline window [index start −14 days, index start] and at least one usable measurement in the post-treatment window [index start +3 days, index start +14 days] for each core trajectory component, with a prespecified complete-case primary analysis and a missingness-indicator sensitivity analysis. Measurements are matched by 患者主索引, 就诊号; laboratory time is 检验时间.
-5. The primary core reserve vector is albumin (白蛋白), total bilirubin (总胆红素), INR (国际标准化比值) or PT (凝血酶原时间), platelet count (血小板计数), creatinine (肌酐) and sodium (钠). Do not pool assays with different names or units. Use the first value nearest each landmark per assay; if duplicate same-time values exist, retain the value according to a deterministic rule recorded in code. Numeric parsing must reject nonnumeric values and impossible sentinels rather than silently coerce them.
+1. Read HCC/data_Diagnosis_7504718184492840569.csv (diagnoses) and define HCC history by diagnosis names containing hepatocellular carcinoma or liver cancer, excluding names containing suspected/pending workup where applicable. Require a patient-level HCC diagnosis on or before the index encounter.
+2. Read HCC/data_surgery_8024330590283626027.csv (procedures). Define TACE as a procedure name containing TACE or the prespecified Chinese terms transcatheter hepatic artery embolization, hepatic artery chemoembolization, hepatic artery chemoembolization, or their parenthesized catheter variants. The index is the earliest recorded qualifying procedure start time per patient master index; exclude patients with a prior qualifying TACE in the available record. Keep the procedure's encounter number and start time, and use end time when present.
+3. Join encounters from HCC/data_basic_information_2500296761891079109.csv by (patient master index, encounter number) to obtain age, sex, admission/discharge timestamps and department. The patient is the unit of analysis; repeated TACE episodes are not independent.
+4. Require at least one usable measurement in the baseline window [index start −14 days, index start] and at least one usable measurement in the post-treatment window [index start +3 days, index start +14 days] for each core trajectory component, with a prespecified complete-case primary analysis and a missingness-indicator sensitivity analysis. Measurements are matched by patient master index, encounter number; laboratory time is test time.
+5. The primary core reserve vector is albumin (Albumin), total bilirubin (Total Bilirubin), INR (International Normalized Ratio) or PT (Prothrombin Time), platelet count (Platelet Count), creatinine (Creatinine) and sodium (Sodium). Do not pool assays with different names or units. Use the first value nearest each landmark per assay; if duplicate same-time values exist, retain the value according to a deterministic rule recorded in code. Numeric parsing must reject nonnumeric values and impossible sentinels rather than silently coerce them.
 6. Follow-up starts at index start +14 days. Do not use any lab, diagnosis, medication or procedure after this landmark as a predictor. Follow to index +90 days or the last available encounter date, whichever comes first. The index treatment encounter and days 0–14 are excluded from outcome ascertainment.
 
 ## Outcome and evidence limits
 
 Primary outcome: a new qualifying diagnosis on an encounter whose encounter/admission time is strictly after index +14 days and no later than index +90 days, using exact diagnosis-name matching after normalization:
 
-- 腹腔积液 (including specified parenthetical variants);
-- 肝性脑病;
-- 肝衰竭 or 慢性肝衰竭/急性肝衰竭;
-- 上消化道出血 or 消化道出血.
+- ascites (including specified parenthetical variants);
+- Hepatic encephalopathy;
+- liver failure or chronic liver failure/acute liver failure;
+- upper gastrointestinal bleeding or gastrointestinal bleeding.
 
 A qualifying label must be absent from all diagnosis records on or before index +14 days for that patient, to target incident recorded decompensation. Report each component separately and the composite. A secondary broader outcome may include a new post-landmark inpatient encounter, but it is utilization, not decompensation, and must not replace the primary outcome.
 
@@ -63,7 +65,7 @@ Primary analysis:
 - use inverse-frequency weighting or precision-recall metrics for imbalance, but do not overinterpret AUROC;
 - assess calibration plots, calibration intercept/slope, Brier score, bootstrap optimism, and decision curves;
 - repeat with (a) 30-day and 90-day windows, (b) 0–30-day and 15–90-day outcome definitions, (c) index-encounter labs excluded from post measurements, (d) broader/narrower diagnosis matching, and (e) missingness indicators;
-- cluster uncertainty by patient (one index row) and use hospital/site effects only if a reliable site identifier is discovered; 就诊科室 is a department, not a hospital.
+- cluster uncertainty by patient (one index row) and use hospital/site effects only if a reliable site identifier is discovered; Visit Department is a department, not a hospital.
 
 The scientific deliverable is newly fitted, locked baseline and learned trajectory models, an estimated association of each reserve trajectory with the composite and its components, and a complete uncertainty/transportability report. Completion requires saved design matrix counts, fitted coefficients/model artifact, locked test predictions, calibration/Brier/AUROC/AUPRC/decision-curve tables, bootstrap intervals, feature-attribution summary, and falsification checks. A schema audit or a reference execution alone is not completion.
 
@@ -80,11 +82,11 @@ Automatic verification can check joins, temporal exclusion, one-row-per-patient 
 ## Exact data bindings and unavailable tables
 
 Used:
-- encounters: [internal dataset path]; columns 患者主索引, 就诊号, 年龄, 性别, 就诊时间, 入院时间, 出院时间, 就诊科室.
-- diagnoses: [internal dataset path]; columns 患者主索引, 就诊号, 诊断名称, 诊断类型.
-- procedures: [internal dataset path]; columns 患者主索引, 就诊号, 手术, 开始时间, 结束时间, 手术来源.
-- labs: [internal dataset path]; columns 患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间.
-- Optional sensitivity covariates: medications at [internal dataset path], columns 患者主索引, 就诊号, 用药, 开始时间, 结束时间, 用药方式, 药品类型; and clinical_documents at [internal dataset path], columns 患者主索引, 就诊号, 入院诊断, 入院情况, 诊疗经过, 出院情况, 出院诊断, 手术名称, 手术经过. Text is sensitivity-only because the guide documents an unvalidated lexical-context detector and no validated diagnosis extraction.
+- encounters: [internal dataset path]; columns patient master index, encounter number, age, sex, visit time, admission time, discharge time, clinical department.
+- diagnoses: [internal dataset path]; columns Patient Master Index, Encounter Number, Diagnosis Name, Diagnosis Type.
+- procedures: [internal dataset path]; columns patient master index, visit number, surgery, start time, end time, surgery source.
+- labs: [internal dataset path]; columns patient master index, visit number, test, qualitative result, quantitative result, specimen type, test time.
+- Optional sensitivity covariates: medications at [internal dataset path], columns Patient Master Index, Encounter Number, Medication, Start Time, End Time, Route of Administration, Medication Type; and clinical_documents at [internal dataset path], columns Patient Master Index, Encounter Number, Admission Diagnosis, Admission Status, Course of Diagnosis and Treatment, Discharge Status, Discharge Diagnosis, Procedure Name, Procedure Course. Text is sensitivity-only because the guide documents an unvalidated lexical-context detector and no validated diagnosis extraction.
 
 Not usable as clinical payload:
 - vitals [internal dataset path], transfers [internal dataset path], and front_page [internal dataset path] contain only the identifier pair in this snapshot. They may be used only for identifier-consistency audits.

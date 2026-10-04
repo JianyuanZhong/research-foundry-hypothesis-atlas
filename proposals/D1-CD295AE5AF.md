@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Fail-closed operational review-prioritization validation of the frozen eICU respiratory-label trajectory
 
 ## Parentage, goal, and substantive change

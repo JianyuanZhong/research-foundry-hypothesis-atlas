@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Context-specific MerTK target prioritization in rheumatoid-arthritis synovial coculture
 
 Status: Lead design, planned experiment; no scientific screening result has been executed. Episode 1, crossover of D2-T1 and D2-T2.

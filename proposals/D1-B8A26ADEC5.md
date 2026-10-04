@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Provisional hypothesis: discordant AKI recovery in MIMIC-IV
 
 Status: provisional repair draft. No cohort counts, model fits, or clinical results are claimed.

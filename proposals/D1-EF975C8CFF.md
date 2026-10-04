@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Separate strategy performance, endpoint measurement, and implementation in an all-randomized vasopressor validation trial
 
 ## Decision question and targeted repair

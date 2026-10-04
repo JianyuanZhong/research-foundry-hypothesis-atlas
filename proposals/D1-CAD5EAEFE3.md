@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Nested two-phase probability validation of pulmonary actionability, with admission-level fail-closed routing
 
 ## Purpose and substantive repair

@@ -1,6 +1,6 @@
-# Persistent hyperlactatemia, perfusion trajectory, and the next crystalloid decision
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
 
-Date: 2026-09-24
+# Persistent hyperlactatemia, perfusion trajectory, and the next crystalloid decision
 Parent: `[prior hypothesis]`
 Status: reference-complete experiment proposal. Only outcome-blind support diagnostics have run; no outcome contrast or treatment effect has been estimated.
 

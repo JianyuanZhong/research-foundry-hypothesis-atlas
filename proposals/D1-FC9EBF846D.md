@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 48: source-adjacent extubation and an honest recorded-airway endpoint
 
 Parent: [prior hypothesis]

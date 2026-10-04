@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Loss-weight frontier and robust policy dominance for pulmonary-opportunity routing
 
 ## Decision question and targeted repair

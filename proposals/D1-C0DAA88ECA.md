@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 9: observed renal-recovery discordance with a source-prioritized exact census
 
 ## Decision and unresolved clinical claim

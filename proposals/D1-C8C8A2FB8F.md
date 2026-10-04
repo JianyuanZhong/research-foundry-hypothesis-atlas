@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Coverage-gated prognostic meaning of persistent hyperlactatemia under improving versus worsening measured perfusion
 
 ## Selection-ready scientific deliverable

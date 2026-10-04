@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Deterministic route-blinded documentation-to-actionability bridge
 
 ## Status, parent, and unchanged scientific schema

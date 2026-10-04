@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Compiler-ready successor: bounded missing-Y stress test for the frozen HCC repeat-TACE P-beyond-B experiment
 
 ## Change and clinical question
@@ -20,13 +22,13 @@ The new test will determine whether a locked prognostic error contrast is sign-r
 
 Use HCC snapshot `[source checksum]`. All source files are read-only. The exact five required files and schema bindings are:
 
-* Encounters table `encounters`, schema `[internal dataset path]`, source `[internal dataset path]`, [source checksum]. Read `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`.
-* Diagnoses table `diagnoses`, schema `[internal dataset path]`, source `[internal dataset path]`, [source checksum]. Read `患者主索引`, `就诊号`, `诊断名称`, `诊断类型`; require literal `肝细胞癌`. Diagnosis timing is inherited only from its linked encounter.
-* Procedures table `procedures`, schema `[internal dataset path]`, source `[internal dataset path]`, [source checksum]. Read `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源`; case-insensitive `TACE` or literal `化疗栓塞`, valid `开始时间`.
-* Medications table `medications`, schema `[internal dataset path]`, source `[internal dataset path]`, [source checksum]. Read `患者主索引`, `就诊号`, `用药`, `开始时间`, `结束时间`, `单次用药计量`, `单次用药计量单位`, `频次`, `用药方式`, `药品类型`; retain the inherited days 1–14 systemic-record ontology and placebo, prior-exposure, bevacizumab-only, and generic-procedure ambiguity exclusions. These are recorded orders, not verified administrations.
-* Labs table `labs`, schema `[internal dataset path]`, source `[internal dataset path]`, [source checksum]. Read `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`; retain exact assays `白蛋白` and `总胆红素`, valid uncensored numeric `定量结果`, and `检验时间`.
+* Encounters table `encounters`, schema `[internal dataset path]`, source `[internal dataset path]`, [source checksum]. Read `patient master index`, `encounter number`, `age`, `sex`, `encounter time`, `admission time`, `discharge time`, `encounter department`.
+* Diagnoses table `diagnoses`, schema `[internal dataset path]`, source `[internal dataset path]`, [source checksum]. Read `Patient Master Index`, `Visit Number`, `Diagnosis Name`, `Diagnosis Type`; require literal `Hepatocellular carcinoma`. Diagnosis timing is inherited only from its linked encounter.
+* Procedures table `procedures`, schema `[internal dataset path]`, source `[internal dataset path]`, [source checksum]. Read `Patient Master Index`, `Encounter Number`, `Surgery`, `Start Time`, `End Time`, `Surgery Source`; case-insensitive `TACE` or literal `Chemoembolization`, valid `Start Time`.
+* Medications table `medications`, schema `[internal dataset path]`, source `[internal dataset path]`, [source checksum]. Read `Patient Master Index`, `Visit Number`, `Medication`, `Start Time`, `End Time`, `Single Dose`, `Single Dose Unit`, `Frequency`, `Administration Route`, `Medication Type`; retain the inherited days 1–14 systemic-record ontology and placebo, prior-exposure, bevacizumab-only, and generic-procedure ambiguity exclusions. These are recorded orders, not verified administrations.
+* Labs table `labs`, schema `[internal dataset path]`, source `[internal dataset path]`, [source checksum]. Read `Patient Master Index`, `Encounter Number`, `Test`, `Qualitative Result`, `Quantitative Result`, `Specimen Type`, `Test Time`; retain exact assays `Albumin` and `Total Bilirubin`, valid uncensored numeric `Quantitative Result`, and `Test Time`.
 
-Join every child table to encounters on (`患者主索引`,`就诊号`), verify duplicate composite keys before joining, and prevent many-to-many multiplication. Sequence procedures by `患者主索引` only after same-patient same-calendar-day duplicate collapse. Scan every row in all five files; do not sample, project away required fields, or use clinical notes/free text. The other HCC files are not needed for this experiment. No source row, identifier, note, or raw lab value may appear in a published output.
+Join every child table to encounters on (`Patient Master Index`,`Encounter Number`), verify duplicate composite keys before joining, and prevent many-to-many multiplication. Sequence procedures by `Patient Master Index` only after same-patient same-calendar-day duplicate collapse. Scan every row in all five files; do not sample, project away required fields, or use clinical notes/free text. The other HCC files are not needed for this experiment. No source row, identifier, note, or raw lab value may appear in a published output.
 
 ## Frozen population, clocks, and primary analysis
 

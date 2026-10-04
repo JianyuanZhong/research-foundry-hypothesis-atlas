@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Provisional repair draft: discordant AKI recovery
 
 Status: provisional child of [prior hypothesis]. This is a hypothesis and design checkpoint, not a completed analysis or selection.

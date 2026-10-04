@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Retention-separated postoperative HCC surveillance selection
 
 Status: substantive child of [prior hypothesis]. A bounded aggregate audit exposed two consequential limits in the parent: 10,685/15,575 patients (68.6%) have no new encounter entry after day 60, and the laboratory target/control pair is nearly nested (3,125 LM+NL weeks, 777 NL-only, only 86 LM-only). Late-period marks remain supported and the imaging discordant cells are balanced. The design therefore keeps the outcome-independent full grid but separates local return, laboratory panel add-on, and imaging routing rather than treating two heterogeneous controls as interchangeable. No hypothesis model has been fitted.
@@ -14,11 +16,11 @@ The advance is a falsifiable decomposition on one outcome-independent risk set: 
 
 ## Population, time, and frozen split
 
-Retain the exact audited cohort. Include age ≥18; earliest dated liver resection in 2012–2023 within 30 days of a linked encounter date and in the same encounter as non-uncertain “肝细胞癌” or “原发性肝癌.” Exclude transplant/donor, biopsy/puncture, cyst/abscess, explicit recurrent/repeat wording, and duplicate index-encounter procedure rows. Exclude recorded TACE/embolization, ablation, transplant, separate repeat resection, or strict-dictionary systemic HCC therapy during index+1 through day 60. Prior recorded treatment in days −180:−1 is a measured covariate. Repeat under the broader cytotoxic medication dictionary.
+Retain the exact audited cohort. Include age ≥18; earliest dated liver resection in 2012–2023 within 30 days of a linked encounter date and in the same encounter as non-uncertain “hepatocellular carcinoma” or “primary liver cancer.” Exclude transplant/donor, biopsy/puncture, cyst/abscess, explicit recurrent/repeat wording, and duplicate index-encounter procedure rows. Exclude recorded TACE/embolization, ablation, transplant, separate repeat resection, or strict-dictionary systemic HCC therapy during index+1 through day 60. Prior recorded treatment in days −180:−1 is a measured covariate. Repeat under the broader cytotoxic medication dictionary.
 
 Predictors span day −90 through day 60. Outcomes span day 61 through day 365 in 44 bins (final bin clipped to day 365). Every eligible patient contributes all 44 weeks; no outcome, future encounter, last contact, or mark censors eligibility. No mark means “not recorded in these local sources,” not alive, disease-free, untreated, or absent from care.
 
-Split by `int(SHA256(患者主索引)[:8],16) mod 100`: 0–59 train, 60–69 validation, 70–79 locked test, 80–99 untouched reserve. Freeze cohort, dictionaries, transformations, strata, gates, and model choices before locked-test access.
+Split by `int(SHA256(Patient Master Index)[:8],16) mod 100`: 0–59 train, 60–69 validation, 70–79 locked test, 80–99 untouched reserve. Freeze cohort, dictionaries, transformations, strata, gates, and model choices before locked-test access.
 
 ## Variables and estimands
 
@@ -52,17 +54,17 @@ The encounters source extends through 2026-01-01, while index surgery ends in 20
 
 ## Exact HCC bindings
 
-All sources are read-only ordinary CSVs with no archive members. Join within encounter on `(患者主索引, 就诊号)`, across encounters on `患者主索引`, audit duplicate keys, and write only aggregate/derived outputs.
+All sources are read-only ordinary CSVs with no archive members. Join within encounter on `(Patient Master Index, Visit Number)`, across encounters on `Patient Master Index`, audit duplicate keys, and write only aggregate/derived outputs.
 
-- **encounters:** `[internal dataset path]`; `患者主索引, 就诊号, 年龄, 性别, 就诊时间, 入院时间, 出院时间, 就诊科室`. Sole source of A/A0, encounter return, age, sex, service, index LOS, and the day1–60 additional-encounter proxy. Start is admission, else visit, else discharge; end is valid discharge ≥start, else start.
-- **procedures:** `[internal dataset path]`; `患者主索引, 就诊号, 手术, 开始时间, 结束时间, 手术来源`. Index resection, locoregional T, transplant, repeat resection.
-- **diagnoses:** `[internal dataset path]`; `患者主索引, 就诊号, 诊断名称, 诊断类型`. No native time; inherit encounter start only for baseline HCC support and prespecified comorbidity proxies.
-- **pathology:** `[internal dataset path]`; `患者主索引, 就诊号, 病理, 检查所见, 检查诊断, 机器型号`. No native time; baseline margin, vascular invasion, satellite, cirrhosis, grade, and burden proxies require label review.
-- **labs:** `[internal dataset path]`; `患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间`. LM exact labels: `甲胎蛋白, 异常凝血酶原, 甲胎蛋白异质体`; LI: `丙氨酸氨基转移酶, 门冬氨酸氨基转移酶, 总胆红素, 白蛋白, 国际标准化比值, 血小板计数`; NL: `钠, 肌酐, 血红蛋白`. No unit/platform field.
-- **examinations:** `[internal dataset path]`; `患者主索引, 就诊号, 检查, 检查所见, 检查诊断, 开始时间, 机器型号, 检查号`. Frozen CT/MR title rules define S/NI; images are unavailable and report text is not recurrence truth.
-- **medications:** `[internal dataset path]`; `患者主索引, 就诊号, 用药, 单次用药计量, 单次用药计量单位, 频次, 开始时间, 结束时间, 用药方式, 药品类型`. Start, else end, else encounter start for systemic T and PIVKA-interference flags; indication unavailable.
-- **clinical_documents:** `[internal dataset path]`; `患者主索引, 就诊号, 主诉, 现病史, 既往史, 个人史, 月经史, 婚育史, 家族史, 入院诊断, 入院情况, 入院诊断.1, 诊疗经过, 出院情况, 出院诊断, 手术名称, 手术经过`. Use only for blinded treatment/complication adjudication, never automated recurrence.
-- **orders (deferred sensitivity):** `[internal dataset path]`; required fields `患者主索引, 就诊号, 医嘱(非药品), 开立时间, 开始时间, 结束时间, 医嘱期限, 医嘱状态, 频次`. Orders never open primary A unless status/purpose are independently adjudicated.
+- **encounters:** `[internal dataset path]`; `patient master index, visit number, age, sex, visit time, admission time, discharge time, visit department`. Sole source of A/A0, encounter return, age, sex, service, index LOS, and the day1–60 additional-encounter proxy. Start is admission, else visit, else discharge; end is valid discharge ≥start, else start.
+- **procedures:** `[internal dataset path]`; `Patient Master Index, Encounter Number, Surgery, Start Time, End Time, Procedure Source`. Index resection, locoregional T, transplant, repeat resection.
+- **diagnoses:** `[internal dataset path]`; `Patient Master Index, Encounter Number, Diagnosis Name, Diagnosis Type`. No native time; inherit encounter start only for baseline HCC support and prespecified comorbidity proxies.
+- **pathology:** `[internal dataset path]`; `Patient Master Index, Encounter Number, Pathology, Examination Findings, Examination Diagnosis, Machine Model`. No native time; baseline margin, vascular invasion, satellite, cirrhosis, grade, and burden proxies require label review.
+- **labs:** `[internal dataset path]`; `Patient Master Index, Encounter Number, Test, Qualitative Result, Quantitative Result, Specimen Type, Test Time`. LM exact labels: `Alpha-fetoprotein, Des-gamma-carboxy prothrombin, Alpha-fetoprotein heterogeneity`; LI: `Alanine aminotransferase, Aspartate aminotransferase, Total bilirubin, Albumin, International normalized ratio, Platelet count`; NL: `Sodium, Creatinine, Hemoglobin`. No unit/platform field.
+- **examinations:** `[internal dataset path]`; `Patient master index, Visit number, Examination, Examination findings, Examination diagnosis, Start time, Machine model, Examination number`. Frozen CT/MR title rules define S/NI; images are unavailable and report text is not recurrence truth.
+- **medications:** `[internal dataset path]`; `Patient Master Index, Encounter Number, Medication, Single Medication Dose, Single Medication Dose Unit, Frequency, Start Time, End Time, Administration Route, Medication Type`. Start, else end, else encounter start for systemic T and PIVKA-interference flags; indication unavailable.
+- **clinical_documents:** `[internal dataset path]`; `Patient Master Index, Encounter Number, Chief Complaint, History of Present Illness, Past Medical History, Personal History, Menstrual History, Marital and Reproductive History, Family History, Admission Diagnosis, Admission Status, Admission Diagnosis.1, Clinical Course, Discharge Status, Discharge Diagnosis, Surgery Name, Surgical Procedure`. Use only for blinded treatment/complication adjudication, never automated recurrence.
+- **orders (deferred sensitivity):** `[internal dataset path]`; required fields `Patient Master Index, Encounter Number, Non-medication Order, Order Time, Start Time, End Time, Order Duration, Order Status, Frequency`. Orders never open primary A unless status/purpose are independently adjudicated.
 
 Vitals and transfers are identifier-only; the front-page file is unusable. Images, mortality, enrollment, claims/outside care, assay units/platform, scheduled appointments, and treatment indication are unavailable.
 

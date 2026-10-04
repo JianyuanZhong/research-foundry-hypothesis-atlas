@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # MerTK cell-context therapeutic-window hypothesis — episode 7 donor-aware revision
 
 **Status: proposed and untested.** No Harbor analysis, model fit, or wet-lab intervention has been executed. The clinically important hypothesis remains that MERTK inhibition may reduce inflammatory macrophage-to-fibroblast-like synoviocyte (FLS) signaling in an inflammatory context while harming MerTK-associated resolution functions (including efferocytosis and FLS repair) in another context. A context-specific functional window could motivate cell-restricted preclinical development; it does not justify broad systemic inhibition or clinical use.

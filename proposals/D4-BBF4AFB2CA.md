@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Baseline-only action estimand for repeat kidney testing: assumption-indexed threshold curves and fixed-capacity ranking
 
 ## Proposal status and lineage

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Working proposal: separating early tumor-marker persistence from postoperative liver injury after HCC resection
 
 Status: data-bound, reference-complete proposal; no outcome model has been fitted. The source audit and feasibility counts below are observed. All effect estimates and model performance are planned.
@@ -42,16 +44,16 @@ All inputs are ordinary read-only CSV files from HCC snapshot `[source checksum]
 
 | Table | Exact source path | Required columns | Join/time use |
 |---|---|---|---|
-| `encounters` | `[internal dataset path]` | `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室` | Participant/encounter spine; encounter date is `入院时间`, else `就诊时间`, else `出院时间`. |
-| `procedures` | `[internal dataset path]` | `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源` | Index resection, prior treatment and post-landmark retreatment; index time is `开始时间`. |
-| `diagnoses` | `[internal dataset path]` | `患者主索引`, `就诊号`, `诊断名称`, `诊断类型` | Definitive HCC and explicit recurrence terms; inherits encounter time because this table has no date. |
-| `pathology` | `[internal dataset path]` | `患者主索引`, `就诊号`, `病理`, `检查所见`, `检查诊断`, `机器型号` | Pathology-supported HCC and text-derived tumor burden features; inherits encounter time. |
-| `labs` | `[internal dataset path]` | `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间` | Irregular trajectories. Exact labels include `甲胎蛋白` (total AFP), `异常凝血酶原` (PIVKA-II), `甲胎蛋白异质体`, `丙氨酸氨基转移酶`, `门冬氨酸氨基转移酶`, `总胆红素`, `白蛋白`, `国际标准化比值`, and `血小板计数`. |
-| `examinations` | `[internal dataset path]` | `患者主索引`, `就诊号`, `检查`, `检查所见`, `检查诊断`, `开始时间`, `机器型号`, `检查号` | Cross-sectional surveillance opportunity and candidate recurrence reports, dated by `开始时间`. |
-| `clinical_documents` | `[internal dataset path]` | `患者主索引`, `就诊号`, `现病史`, `既往史`, `入院诊断`, `诊疗经过`, `出院诊断`, `手术名称`, `手术经过` | Adjudication context and treatment history; inherits encounter dates. Duplicate `入院诊断` is represented as `入院诊断__duplicate_2` in the catalog. |
-| `medications` | `[internal dataset path]` | `患者主索引`, `就诊号`, `用药`, `开始时间`, `结束时间`, `用药方式`, `药品类型` | Sensitivity flag for postoperative systemic therapy; no causal drug-effect estimate. |
+| `encounters` | `[internal dataset path]` | `patient master index`, `encounter number`, `age`, `sex`, `encounter time`, `admission time`, `discharge time`, `encounter department` | Participant/encounter spine; encounter date is `admission time`, else `encounter time`, else `discharge time`. |
+| `procedures` | `[internal dataset path]` | `Patient Master Index`, `Visit Number`, `Surgery`, `Start Time`, `End Time`, `Surgery Source` | Index resection, prior treatment and post-landmark retreatment; index time is `Start Time`. |
+| `diagnoses` | `[internal dataset path]` | `Patient Master Index`, `Encounter Number`, `Diagnosis Name`, `Diagnosis Type` | Definitive HCC and explicit recurrence terms; inherits encounter time because this table has no date. |
+| `pathology` | `[internal dataset path]` | `Patient master index`, `Visit number`, `Pathology`, `Examination findings`, `Examination diagnosis`, `Machine model` | Pathology-supported HCC and text-derived tumor burden features; inherits encounter time. |
+| `labs` | `[internal dataset path]` | `Patient Master Index`, `Visit Number`, `Test`, `Qualitative Result`, `Quantitative Result`, `Specimen Type`, `Test Time` | Irregular trajectories. Exact labels include `alpha-fetoprotein` (total AFP), `abnormal prothrombin` (PIVKA-II), `alpha-fetoprotein heterogeneity`, `alanine aminotransferase`, `aspartate aminotransferase`, `total bilirubin`, `albumin`, `international normalized ratio`, and `platelet count`. |
+| `examinations` | `[internal dataset path]` | `Patient Master Index`, `Encounter Number`, `Examination`, `Examination Findings`, `Examination Diagnosis`, `Start Time`, `Machine Model`, `Examination Number` | Cross-sectional surveillance opportunity and candidate recurrence reports, dated by `Start Time`. |
+| `clinical_documents` | `[internal dataset path]` | `Patient Master Index`, `Visit Number`, `History of Present Illness`, `Past Medical History`, `Admission Diagnosis`, `Diagnosis and Treatment Course`, `Discharge Diagnosis`, `Surgery Name`, `Surgical Procedure` | Adjudication context and treatment history; inherits encounter dates. Duplicate `Admission Diagnosis` is represented as `Admission Diagnosis__duplicate_2` in the catalog. |
+| `medications` | `[internal dataset path]` | `Patient Master Index`, `Encounter Number`, `Medication`, `Start Time`, `End Time`, `Route of Administration`, `Drug Type` | Sensitivity flag for postoperative systemic therapy; no causal drug-effect estimate. |
 
-Every modality joins first on the composite `患者主索引` + `就诊号`; longitudinal linkage across encounters uses `患者主索引` only after encounter-level duplicate checks. Identifiers and exact dates never leave the workspace.
+Every modality joins first on the composite `patient master index` + `encounter number`; longitudinal linkage across encounters uses `patient master index` only after encounter-level duplicate checks. Identifiers and exact dates never leave the workspace.
 
 The catalog explicitly states that lab numeric results lack a separate unit column. Therefore absolute clinical cutoffs are not pooled. Primary features use exact assay names, numeric parse checks, within-person preoperative normalization, calendar-year strata and robust scaling; values from unlike labels are never merged. A sensitivity analysis requires internally consistent repeated values for one exact label. If longitudinal comparability cannot be established, the corresponding marker is removed rather than relabeled.
 
@@ -60,7 +62,7 @@ The catalog explicitly states that lab numeric results lack a separate unit colu
 Primary cohort:
 
 - age at least 18 years;
-- earliest encounter with a definitive `诊断名称` containing `肝细胞癌` or `原发性肝癌`, excluding uncertainty terms, plus a same-encounter curative-intent liver-resection label;
+- earliest encounter with a definitive `Diagnosis Name` containing `hepatocellular carcinoma` or `primary liver cancer`, excluding uncertainty terms, plus a same-encounter curative-intent liver-resection label;
 - resection labels require liver plus resection terms and exclude transplant, donor surgery, biopsy/puncture, cyst surgery, and explicitly recurrent repeat resection;
 - primary analysis excludes HCC-directed TACE/embolization, ablation, systemic treatment, transplant or prior liver resection in days -180 to -1; an all-resection adjusted cohort is secondary;
 - pathology text supporting HCC is required for the primary clinical cohort and is a sensitivity restriction if it reduces event support below the feasibility gate;
@@ -72,7 +74,7 @@ Index is surgery start. The exposure window is day -90 through day +60. Predicti
 
 ## Variables
 
-Baseline covariates available before or at surgery: age, sex, calendar year, prior encounter/testing intensity, procedure approach/extent from `手术`, cirrhosis and hepatitis text indicators, and pathology features including margin, vascular invasion, satellite lesions, capsule and cirrhosis. Text features are lexical flags and must be reported as unvalidated proxies; they are not clinical staging.
+Baseline covariates available before or at surgery: age, sex, calendar year, prior encounter/testing intensity, procedure approach/extent from `surgery`, cirrhosis and hepatitis text indicators, and pathology features including margin, vascular invasion, satellite lesions, capsule and cirrhosis. Text features are lexical flags and must be reported as unvalidated proxies; they are not clinical staging.
 
 Longitudinal values are log-transformed after marker-specific censor-string parsing and normalized to each participant’s preoperative median. Tumor-marker inputs are total AFP; PIVKA-II and AFP-L3 are optional secondary channels, never required for cohort membership. Injury inputs are ALT, AST, total bilirubin, albumin, INR and platelet count. Measurement times, missingness masks and test counts are inputs because ordering intensity is informative.
 
@@ -120,7 +122,7 @@ Fit by variational inference in PyTorch with constrained parameters, three rando
 
 ## Split, evaluation and uncertainty
 
-Use the catalog’s participant hash and only discovery buckets 0–79: buckets 0–59 train, 60–69 validation, 70–79 locked internal test. All encounters for one `患者主索引` remain in one split. Buckets 80–99 are reserved and not used in discovery. Report a secondary temporal-generalization slice for surgeries in the latest two complete calendar years represented in the locked test set.
+Use the catalog’s participant hash and only discovery buckets 0–79: buckets 0–59 train, 60–69 validation, 70–79 locked internal test. All encounters for one `patient master index` remain in one split. Buckets 80–99 are reserved and not used in discovery. Report a secondary temporal-generalization slice for surgeries in the latest two complete calendar years represented in the locked test set.
 
 Primary evaluation:
 

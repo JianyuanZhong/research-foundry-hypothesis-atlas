@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Red-cell transfusion under observed oxygen-supply/demand stress: a noncausal MIMIC-IV experiment
 
 ## Status and deliverable

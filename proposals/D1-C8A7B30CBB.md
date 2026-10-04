@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Early lactate trajectory and short-term mortality across ICU admission types
 
 ## Why this question, and what it is not

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Frozen-calendar assay result content versus measurement opportunity for subsequent HCC local encounters
 
 ## Scientific deliverable and substantive advance
@@ -28,8 +30,8 @@ Support would mean recorded assay values contain incremental, calibrated informa
 
 Use HCC snapshot `[source checksum]` and catalog [source checksum]. All sources are ordinary read-only CSV files; no archive member is used.
 
-1. Normalize Unicode and whitespace in `患 者主索引` and `就诊号` for audit while retaining raw keys. Join diagnoses to encounters on that exact pair. An HCC-coded encounter has normalized `诊断名称` containing `肝细胞癌` or case-insensitive “hepatocellular carcinoma”; report matched strings and `诊断类型`. Diagnoses have no native time and select the cohort only.
-2. Include age >=18, parseable nonnegative `入院时间` and `出院时间`, and index admission in [2012-01-01, 2026-01-01). Select the earliest eligible HCC-coded encounter per normalized patient by admission time then `就诊号`; do not replace an invalid earliest candidate with a later record. Set t0=`入院时间`, td=`出院时间`, and require td+90 days < 2026-01-01 for the primary label.
+1. Normalize Unicode and whitespace in `patient master index` and `encounter number` for audit while retaining raw keys. Join diagnoses to encounters on that exact pair. An HCC-coded encounter has normalized `diagnosis name` containing `hepatocellular carcinoma` or case-insensitive “hepatocellular carcinoma”; report matched strings and `diagnosis type`. Diagnoses have no native time and select the cohort only.
+2. Include age >=18, parseable nonnegative `Admission Time` and `Discharge Time`, and index admission in [2012-01-01, 2026-01-01). Select the earliest eligible HCC-coded encounter per normalized patient by admission time then `Encounter Number`; do not replace an invalid earliest candidate with a later record. Set t0=`Admission Time`, td=`Discharge Time`, and require td+90 days < 2026-01-01 for the primary label.
 3. Encounter identity is the normalized two-key pair. Audit exact duplicate rows before collapsing them. Keep distinct encounter keys distinct. A candidate subsequent encounter must have a distinct key, parseable admission, and admission >= td; a row with admission < td is not a return even if its discharge is later. Report same-time distinct-key ties and deterministic tie handling.
 4. Define the exhaustive endpoint Y90:
    - R30: at least one distinct subsequent local encounter with admission in [td, td+30 days);
@@ -53,11 +55,11 @@ The bridge can show local recalibration need; it cannot upgrade a failed strict-
 
 All predictors stop strictly before t0. A primary history row must join, via the two-key pair, to a non-index encounter with parseable admission and discharge, linked admission < t0 and linked discharge < t0, and have its native event/availability time in [t0-730d,t0):
 
-- labs: `检验时间`;
-- procedures: `开始时间`;
-- orders: `开立时间`;
-- medications: `开始时间`;
-- examinations: `开始时间`.
+- labs: `Test time`;
+- procedures: `Start time`;
+- orders: `order time`;
+- medications: `Start time`;
+- examinations: `start time`.
 
 Exclude index-linked rows even when their event time precedes admission. Publish invalid/missing-time, missing-linked-discharge, overlap, index-linked, post-t0, duplicate, unmatched-join and row-inflation counts. This is a conservative availability rule, not proof of result release or clinician awareness. Exclude direct identifiers.
 
@@ -65,7 +67,7 @@ Q contains general capture/process only: age, sex, department, admission time-of
 
 M contains measurement opportunity only: assay identity, assay-specific counts and distinct encounters, sampling-time count, recency/span, specimen type, result-present/missingness flags, invalid numeric/qualitative parse flags and assay-specific availability patterns. M contains no value magnitude or qualitative result content.
 
-P contains only observed assay result content: valid assay-specific quantitative values and valid assay-specific qualitative values, plus within-assay change/slope only when at least two distinct valid `检验时间` values exist. P contains no specimen type, assay count, sampling count, result-present flag, parse-validity flag or missingness indicator. Values are never pooled across assays because no lab-unit/reference-range column exists; units are not inferred. Any missing-value representation must not reconstruct M. P-minus-Q may be reported as a continuity contrast, but P-minus-M is the result-content estimand.
+P contains only observed assay result content: valid assay-specific quantitative values and valid assay-specific qualitative values, plus within-assay change/slope only when at least two distinct valid `Test time` values exist. P contains no specimen type, assay count, sampling count, result-present flag, parse-validity flag or missingness indicator. Values are never pooled across assays because no lab-unit/reference-range column exists; units are not inferred. Any missing-value representation must not reconstruct M. P-minus-Q may be reported as a continuity contrast, but P-minus-M is the result-content estimand.
 
 ## Matched baseline and substantive alternative
 
@@ -105,21 +107,21 @@ Adverse gates are null/harmful later P-minus-M, material sign reversal, process-
 
 ## Exact HCC source bindings
 
-All joins use normalized (`患者主索引`, `就诊号`) with raw-key, unmatched, multiplicity and duplicate audits. Paths are exact read-only ordinary files.
+All joins use normalized (`Patient Master Index`, `Encounter Number`) with raw-key, unmatched, multiplicity and duplicate audits. Paths are exact read-only ordinary files.
 
 | table / schema | exact source path | required fields; native time and role |
 |---|---|---|
-| encounters / `table-b743286cb1249287` | `[internal dataset path]` | `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`; admission/discharge define cohort, history and endpoint |
-| diagnoses / `table-12710723c3df0c99` | `[internal dataset path]` | `患者主索引`, `就诊号`, `诊断名称`, `诊断类型`; no native time, cohort selection |
-| labs / `table-38aad8c54471332f` | `[internal dataset path]` | `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`; native lab time, M/P history and future process audit |
-| procedures / `table-d5eae16f8f8093d9` | `[internal dataset path]` | `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源`; native start time, Q history/process |
-| orders / `table-6b93dcf0ea823702` | `[internal dataset path]` | `患者主索引`, `就诊号`, `医嘱(非药品)`, `开立时间`, `开始时间`, `结束时间`, `医嘱时限`, `医嘱状态`, `频次`; use order time for Q, no intent claim |
-| medications / `table-4f6ecaeb6e8f69c2` | `[internal dataset path]` | `患者主索引`, `就诊号`, `用药`, `单次用药计量`, `单次用药计量单位`, `频次`, `开始时间`, `结束时间`, `用药方式`, `药品类型`; native start time, Q history/process only |
-| examinations / `table-fd016d2731b9d6c6` | `[internal dataset path]` | `患者主索引`, `就诊号`, `检查`, `检查所见`, `检查诊断`, `开始时间`, `机器型号`, `检查号`; native start time, Q process only |
+| encounters / `table-b743286cb1249287` | `[internal dataset path]` | `Patient Master Index`, `Encounter Number`, `Age`, `Sex`, `Encounter Time`, `Admission Time`, `Discharge Time`, `Encounter Department`; admission/discharge define cohort, history and endpoint |
+| diagnoses / `table-12710723c3df0c99` | `[internal dataset path]` | `patient master index`, `encounter number`, `diagnosis name`, `diagnosis type`; no native time, cohort selection |
+| labs / `table-38aad8c54471332f` | `[internal dataset path]` | `Patient master index`, `Visit number`, `Laboratory test`, `Qualitative result`, `Quantitative result`, `Specimen type`, `Test time`; native lab time, M/P history and future process audit |
+| procedures / `table-d5eae16f8f8093d9` | `[internal dataset path]` | `Patient master index`, `Encounter number`, `Surgery`, `Start time`, `End time`, `Surgery source`; native start time, Q history/process |
+| orders / `table-6b93dcf0ea823702` | `[internal dataset path]` | `Patient Master Index`, `Encounter Number`, `Non-drug Order`, `Order Time`, `Start Time`, `End Time`, `Order Duration`, `Order Status`, `Frequency`; use order time for Q, no intent claim |
+| medications / `table-4f6ecaeb6e8f69c2` | `[internal dataset path]` | `Patient master index`, `Visit number`, `Medication`, `Single-dose amount`, `Single-dose amount unit`, `Frequency`, `Start time`, `End time`, `Route of administration`, `Drug type`; native start time, Q history/process only |
+| examinations / `table-fd016d2731b9d6c6` | `[internal dataset path]` | `patient master index`, `encounter number`, `examination`, `examination findings`, `examination diagnosis`, `start time`, `machine model`, `examination number`; native start time, Q process only |
 | vitals / `table-8436de9cba74b8ca` | `[internal dataset path]` | keys only; identifier-only, audit not usable payload |
 | transfers / `table-320c20f732e71789` | `[internal dataset path]` | keys only; identifier-only, cannot establish outside transfer |
-| clinical_documents / `table-66afca58512c2fca` | `[internal dataset path]` | keys plus `主诉`, `现病史`, `既往史`, `入院情况`, `诊疗经过`, `出院情况`, `手术经过`; no native event time, excluded from time-safe primary inputs |
-| pathology / `table-0a4ee86a446c605c` | `[internal dataset path]` | `患者主索引`, `就诊号`, `病理`, `检查所见`, `检查诊断`, `机器型号`; no native event time, excluded from time-safe primary inputs |
+| clinical_documents / `table-66afca58512c2fca` | `[internal dataset path]` | keys plus `Chief Complaint`, `History of Present Illness`, `Past Medical History`, `Admission Condition`, `Clinical Course`, `Discharge Condition`, `Procedure Course`; no native event time, excluded from time-safe primary inputs |
+| pathology / `table-0a4ee86a446c605c` | `[internal dataset path]` | `Patient master index`, `Visit number`, `Pathology`, `Examination findings`, `Examination diagnosis`, `Machine model`; no native event time, excluded from time-safe primary inputs |
 | front_page / `table-38b3224239acc33f` | `[internal dataset path]` | keys only; identifier-only, audit not usable payload |
 
 ## Clinical evidence gates and limitations

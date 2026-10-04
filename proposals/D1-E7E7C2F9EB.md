@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Residual instability before ICU-to-ward transfer: sealed opening and informative order-null contract
 
 Status: proposed substantive child of `[prior hypothesis]`. No post-transfer association, outcome model result, order-null contrast, or clinical effect is claimed. This child preserves the frozen 49,157-transfer population, landmark, outcomes, C/G/G-perp/G-pre estimands, temporal roles, thresholds, and clinical question. It closes two execution gaps: the uninstantiated pooled split and the lack of a nonadaptive criterion for whether endpoint-fixed shams actually perturb direction enough to support attribution.

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 17: bound-coherent safety and grace-period repair of post-shock delivered-loop initiation
 
 **Parent:** `[prior hypothesis]`
@@ -28,7 +30,7 @@ Resolution would advance existing knowledge from bundle-level fluid-balance evid
 The configured dataset is MIMIC-IV 3.1 snapshot `[source checksum]`. The primary read-only source is:
 
 `[internal dataset path]`
-(source ID `baidu_downloads/eicu_mimic/mimic数据库/mimic-iv-3.1.zip`, [source checksum]).
+(source ID `baidu_downloads/eicu_mimic/mimic database/mimic-iv-3.1.zip`, [source checksum]).
 
 Use only discovery subjects:
 `bucket = int(SHA256("ehr-hypothesis-discovery-v1" + NUL + "mimic" + NUL + canonical_base10(subject_id))) mod 100`; retain 0–79 and never inspect 80–99. Emit namespace, canonical ID, digest, bucket, and catalog checksum. Select the first chronological qualifying ICU stay per subject; all resampling is by subject.

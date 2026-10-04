@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Residual instability before ICU-to-ward transfer: adjudicated first-transition prioritization
 
 Status: proposed substantive child of `[prior hypothesis]`. No outcome model has been fit, no prediction result is claimed, and the fixed scientific question is unchanged. This child repairs the meaning of live discharge, selects a first-transition landmark estimand over recurrent-state alternatives, and defines the exact monitoring-prioritization claim the event-time extension can and cannot support.

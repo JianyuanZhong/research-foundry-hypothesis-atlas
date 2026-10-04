@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Structural-weight uncertainty grid for HCC documentary-M2 allocation
 
 Parent anchors: `[prior hypothesis]` (accession/raw-row/text burden envelope) and `[prior hypothesis]` (semantic feature attribution and no-refit shadow).
@@ -8,18 +10,18 @@ The residual defect is point-ledger fragility. The structural parent tests three
 
 This child repairs only that defect. It retains the exact same raw examination units and adds a finite, prelocked structural-weight uncertainty grid containing \(U,R,T\) as exact corners. It does not attempt to infer report lifecycle, minutes, or clinical action from HCC. Those remain external evidence requirements.
 
-The complete read-only examination source contains 419,996 rows and 392,854 nonblank \((患者主索引,就诊号,检查号)\) accessions. A direct all-row audit found 16,534 multirow accessions; raw rows per accession had median 1, 90th percentile 1, 99th percentile 3, and maximum 12. The UTF-8 narrative term defined below had median 2, 90th percentile 22, 99th percentile 50, and maximum 154 512-byte chunks. These are whole-source structural counts, not cohort prevalence, reports, image series, or reader time.
+The complete read-only examination source contains 419,996 rows and 392,854 nonblank \((patient primary index,encounter number,examination number)\) accessions. A direct all-row audit found 16,534 multirow accessions; raw rows per accession had median 1, 90th percentile 1, 99th percentile 3, and maximum 12. The UTF-8 narrative term defined below had median 2, 90th percentile 22, 99th percentile 50, and maximum 154 512-byte chunks. These are whole-source structural counts, not cohort prevalence, reports, image series, or reader time.
 
 ## 2. Repair and falsifiable hypothesis
 
-For each eligible nonblank whole accession \(u=(患者主索引,就诊号,检查号)\), preserve every raw examination row, including byte-identical duplicates and conflicting components. Define:
+For each eligible nonblank whole accession \(u=(patient master index,visit number,examination number)\), preserve every raw examination row, including byte-identical duplicates and conflicting components. Define:
 
 \[
 n_u=\text{number of raw examination rows in }u,
 \]
 
 \[
-b_u=\sum_{j\in u}\sum_{x\in\{\text{检查},\text{检查所见},\text{检查诊断}\}}
+b_u=\sum_{j\in u}\sum_{x\in\{\text{Examination},\text{Examination Findings},\text{Examination Diagnosis}\}}
 \operatorname{len}(\operatorname{UTF8}(x_j)),
 \]
 
@@ -57,10 +59,10 @@ The 25-ledger grid, byte encoding, field list, divisor, duplicate rule, coeffici
 Available evidence supports these claims before Harbor execution:
 
 - HCC snapshot is `[source checksum]`.
-- The examination source is an ordinary read-only CSV with the exact header `患者主索引`, `就诊号`, `检查`, `检查所见`, `检查诊断`, `开始时间`, `机器型号`, `检查号`.
+- The examination source is an ordinary read-only CSV with the exact header `Patient Master Index`, `Encounter Number`, `Examination`, `Examination Findings`, `Examination Diagnosis`, `Start Time`, `Machine Model`, `Examination Number`.
 - The source supports exact whole-accession keys, raw row multiplicity, field-bounded UTF-8 byte lengths, source ordinals, acquisition-like dates, and deterministic replay of all 25 structural costs.
 - The source has heterogeneous row and text structure as quantified above.
-- Examinations have only `开始时间` as a temporal field. There is no finalization, release, ingestion, retrieval, view, author, report-status, or review-duration field.
+- Examinations have only `start time` as a temporal field. There is no finalization, release, ingestion, retrieval, view, author, report-status, or review-duration field.
 - Pathology has narrative payload but no time, specimen, block, slide, or examination-accession key.
 - No HCC image files are available.
 
@@ -72,9 +74,9 @@ For the external bridge, I inspected Brady, “Measuring Consultant Radiologist 
 
 ## 4. Population, temporal boundaries, and quarantine
 
-Use the first eligible source-documented hepatobiliary resection episode per patient. Include age \(\ge18\) and a procedure matching a hepatobiliary-resection dictionary frozen after independent hepatobiliary-surgeon review. Exclude an earlier qualifying resection and recorded transplant, TACE/embolization, ablation, radiotherapy, targeted therapy, or immunotherapy in \([t_{\rm op}-365\text{ days},t_{\rm op})\). The episode join is \((患者主索引,就诊号)\); patient-wide medication and order scans retain their original encounter keys.
+Use the first eligible source-documented hepatobiliary resection episode per patient. Include age \(\ge18\) and a procedure matching a hepatobiliary-resection dictionary frozen after independent hepatobiliary-surgeon review. Exclude an earlier qualifying resection and recorded transplant, TACE/embolization, ablation, radiotherapy, targeted therapy, or immunotherapy in \([t_{\rm op}-365\text{ days},t_{\rm op})\). The episode join is \((patient master index,encounter number)\); patient-wide medication and order scans retain their original encounter keys.
 
-Take \(t_{\rm op}\) from the selected procedure/anesthesia `开始时间` and define \(t_{\rm dec}=t_{\rm op}-24\) hours. Date-like values are intervals \([date,date+24\text{ h})\), never invented clock times. An examination accession is eligible only when every raw component’s `开始时间` interval is wholly inside \([t_{\rm op}-90\text{ days},t_{\rm dec})\). The inherited 12-, 48-, and 72-hour onset states are monotone descriptive sensitivities; 24 hours is confirmatory.
+Take \(t_{\rm op}\) from the selected procedure/anesthesia `start time` and define \(t_{\rm dec}=t_{\rm op}-24\) hours. Date-like values are intervals \([date,date+24\text{ h})\), never invented clock times. An examination accession is eligible only when every raw component’s `start time` interval is wholly inside \([t_{\rm op}-90\text{ days},t_{\rm dec})\). The inherited 12-, 48-, and 72-hour onset states are monotone descriptive sensitivities; 24 hours is confirmatory.
 
 Patient-disjoint roles remain:
 
@@ -92,26 +94,26 @@ The full catalog is `[internal dataset path]`, [source checksum]. All HCC source
 
 | table | exact source path | keys | required columns and role |
 |---|---|---|---|
-| `encounters` | `[internal dataset path]` | \((患者主索引,就诊号)\) | `年龄`, `性别`; `就诊时间`, `入院时间`, `出院时间` for episode/year clocks; `姓名`, `身份证号`, `手机号`, `医保/就诊卡号` for inherited identity audit only |
-| `procedures` | `[internal dataset path]` | \((患者主索引,就诊号)\) | `手术`, `手术来源`, `开始时间`, `结束时间` for first eligible resection and \(t_{\rm op}\) |
-| `examinations` | `[internal dataset path]` | episode on first two; accession on \((患者主索引,就诊号,检查号)\) | `检查`, `检查所见`, `检查诊断`, `开始时间`, `机器型号`, `检查号`; all eight fields, raw boundaries and ordinals for eligibility, onset, feature provenance, \(n_u,b_u,x_u,w^{a,b}_u\) |
-| `pathology` | `[internal dataset path]` | \((患者主索引,就诊号)\) | `病理`, `检查所见`, `检查诊断`, `机器型号` for fixed documentary-M2 books only; no time/specimen/accession linkage assumed |
-| `medications` | `[internal dataset path]` | patient-wide `患者主索引`, retain `就诊号` | `用药`, `药品类型`, `开始时间`, `结束时间` for prior-treatment exclusion |
-| `orders` | `[internal dataset path]` | patient-wide `患者主索引`, retain `就诊号` | `医嘱(非药品)`, `医嘱状态`, `开立时间`, `开始时间`, `结束时间` for prior-treatment exclusion/audit |
-| `diagnoses` | `[internal dataset path]` | \((患者主索引,就诊号)\) | `诊断名称`, `诊断类型`; untimed corroboration/audit only |
-| `clinical_documents` | `[internal dataset path]` | \((患者主索引,就诊号)\) | all narrative fields, including `入院诊断__duplicate_2`; leakage audit only because no usable document time exists |
-| `labs` | `[internal dataset path]` | \((患者主索引,就诊号)\) | `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`; leakage audit only, no unsafe unit pooling |
-| `vitals` | `[internal dataset path]` | \((患者主索引,就诊号)\) | identifier-only; no predictor, semantic source, time, or cost |
-| `transfers` | `[internal dataset path]` | \((患者主索引,就诊号)\) | identifier-only; no predictor, semantic source, time, or cost |
-| `front_page` | `[internal dataset path]` | \((患者主索引,就诊号)\) | identifier-only; no predictor, semantic source, time, or cost |
+| `encounters` | `[internal dataset path]` | \((patient master index,encounter number)\) | `age`, `sex`; `encounter time`, `admission time`, `discharge time` for episode/year clocks; `name`, `national ID number`, `mobile phone number`, `medical insurance/encounter card number` for inherited identity audit only |
+| `procedures` | `[internal dataset path]` | \((Patient Master Index,Encounter Number)\) | `Surgery`, `Surgery Source`, `Start Time`, `End Time` for first eligible resection and \(t_{\rm op}\) |
+| `examinations` | `[internal dataset path]` | episode on first two; accession on \((Patient Master Index,Visit Number,Examination Number)\) | `Examination`, `Examination Findings`, `Examination Diagnosis`, `Start Time`, `Machine Model`, `Examination Number`; all eight fields, raw boundaries and ordinals for eligibility, onset, feature provenance, \(n_u,b_u,x_u,w^{a,b}_u\) |
+| `pathology` | `[internal dataset path]` | \((patient master index, visit number)\) | `pathology`, `examination findings`, `examination diagnosis`, `machine model` for fixed documentary-M2 books only; no time/specimen/accession linkage assumed |
+| `medications` | `[internal dataset path]` | patient-wide `Patient Master Index`, retain `Encounter Number` | `Medication`, `Drug Type`, `Start Time`, `End Time` for prior-treatment exclusion |
+| `orders` | `[internal dataset path]` | patient-wide `Patient Master Index`, retain `Encounter Number` | `Non-drug Orders`, `Order Status`, `Order Time`, `Start Time`, `End Time` for prior-treatment exclusion/audit |
+| `diagnoses` | `[internal dataset path]` | \((Patient Master Index, Encounter Number)\) | `Diagnosis Name`, `Diagnosis Type`; untimed corroboration/audit only |
+| `clinical_documents` | `[internal dataset path]` | \((Patient Master Index,Encounter Number)\) | all narrative fields, including `Admission Diagnosis__duplicate_2`; leakage audit only because no usable document time exists |
+| `labs` | `[internal dataset path]` | \((patient master index, encounter number)\) | `laboratory test`, `qualitative result`, `quantitative result`, `specimen type`, `test time`; leakage audit only, no unsafe unit pooling |
+| `vitals` | `[internal dataset path]` | \((Patient Master Index,Encounter Number)\) | identifier-only; no predictor, semantic source, time, or cost |
+| `transfers` | `[internal dataset path]` | \((patient master index, encounter number)\) | identifier-only; no predictor, semantic source, time, or cost |
+| `front_page` | `[internal dataset path]` | \((Patient Master Index,Encounter Number)\) | identifier-only; no predictor, semantic source, time, or cost |
 
 Required schema hashes are encounters `[source checksum]`, procedures `[source checksum]`, examinations `[source checksum]`, pathology `[source checksum]`, medications `[source checksum]`, orders `[source checksum]`, diagnoses `[source checksum]`, clinical documents `[source checksum]`, and labs `[source checksum]`.
 
-MIMIC, eICU, and UKB remain directly accessible and read-only but are not pooled. MIMIC is `[internal dataset path]` with `mimic-iv-3.1/hosp/*.csv.gz`, `icu/*.csv.gz`, and note members; eICU uses the catalogued `EICU 2.0数据/*.csv.gz` members; UKB uses the catalogued `ukb672073*.csv` files. They have no HCC crosswalk, compatible first-resection documentary-M2 endpoint, or complete Chinese reader/pathology mapping. Their rows and notes remain available but are not inputs.
+MIMIC, eICU, and UKB remain directly accessible and read-only but are not pooled. MIMIC is `[internal dataset path]` with `mimic-iv-3.1/hosp/*.csv.gz`, `icu/*.csv.gz`, and note members; eICU uses the catalogued `EICU 2.0 data/*.csv.gz` members; UKB uses the catalogued `ukb672073*.csv` files. They have no HCC crosswalk, compatible first-resection documentary-M2 endpoint, or complete Chinese reader/pathology mapping. Their rows and notes remain available but are not inputs.
 
 ## 6. Coupled uncertainty, endpoint, models, and comparators
 
-For every world, construct episode, operation clock, CT/MRI window, whole-accession identity, raw row/text costs, treatment exclusion, source-clean status, and all 25 ledger capacities together. Blank `检查号`, cross-patient \((就诊号,检查号)\) collision, component disagreement, ambiguous modality/context, and nonreversible parse remain explicit outer states; no representative row is selected.
+For every world, construct episode, operation clock, CT/MRI window, whole-accession identity, raw row/text costs, treatment exclusion, source-clean status, and all 25 ledger capacities together. Blank `Examination Number`, cross-patient \((Encounter Number,Examination Number)\) collision, component disagreement, ambiguous modality/context, and nonreversible parse remain explicit outer states; no representative row is selected.
 
 Retain inherited onset categories \(O=0\) readable by 72 hours, \(O=1\) first readable in (72,48] hours, \(O=2\) first readable in (48,24] hours, \(O=3\) first readable in (24,12] hours, and \(O=4\) not readable by 12 hours, later/never, or unresolved. They are reader-book/onset states, not report-release evidence.
 

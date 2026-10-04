@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 82 child: separate rank transport from calibration transport
 
 ## Audit and advance
@@ -21,11 +23,11 @@ The complete-source feasibility audit supports only computability: 2,302 people,
 
 Use the complete read-only EICU snapshot [source checksum]; chunking is not sampling. Dataset catalog: datasets/README.md, [source checksum]. EICU guide: datasets/eicu/README.md. Each gzip below is an ordinary file.
 
-1. baidu_downloads/eicu_mimic/eicu数据库/EICU 2.0数据/patient.csv.gz; SHA [source checksum]; table patient, schema datasets/eicu/table-ab037c09d7df9a3c.json. Columns: patientunitstayid, patienthealthsystemstayid, uniquepid, gender, age, hospitalid, hospitaldischargeoffset, hospitaldischargestatus.
-2. baidu_downloads/eicu_mimic/eicu数据库/EICU 2.0数据/infusionDrug.csv.gz; SHA [source checksum]; table infusionDrug, schema datasets/eicu/table-18e1a8caaa91eb44.json. Columns: infusiondrugid, patientunitstayid, infusionoffset, drugname.
-3. baidu_downloads/eicu_mimic/eicu数据库/EICU 2.0数据/lab.csv.gz; SHA [source checksum]; table lab, schema datasets/eicu/table-79bdb33275339b1a.json. Columns: labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset.
-4. baidu_downloads/eicu_mimic/eicu数据库/EICU 2.0数据/vitalPeriodic.csv.gz; SHA [source checksum]; table vitalPeriodic, schema datasets/eicu/table-a22c6d6981a32279.json. Columns: vitalperiodicid, patientunitstayid, observationoffset, heartrate, respiration, sao2.
-5. baidu_downloads/eicu_mimic/eicu数据库/EICU 2.0数据/hospital.csv.gz; SHA [source checksum]; table hospital, schema datasets/eicu/table-811df7b2ef435e12.json. Columns: hospitalid, numbedscategory, teachingstatus, region; descriptive only.
+1. baidu_downloads/eicu_mimic/eicu_database/EICU 2.0 data/patient.csv.gz; SHA [source checksum]; table patient, schema datasets/eicu/table-ab037c09d7df9a3c.json. Columns: patientunitstayid, patienthealthsystemstayid, uniquepid, gender, age, hospitalid, hospitaldischargeoffset, hospitaldischargestatus.
+2. baidu_downloads/eicu_mimic/eicu database/EICU 2.0 data/infusionDrug.csv.gz; SHA [source checksum]; table infusionDrug, schema datasets/eicu/table-18e1a8caaa91eb44.json. Columns: infusiondrugid, patientunitstayid, infusionoffset, drugname.
+3. baidu_downloads/eicu_mimic/eicu database/EICU 2.0 data/lab.csv.gz; SHA [source checksum]; table lab, schema datasets/eicu/table-79bdb33275339b1a.json. Columns: labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset.
+4. baidu_downloads/eicu_mimic/eicu database/EICU 2.0 data/vitalPeriodic.csv.gz; SHA [source checksum]; table vitalPeriodic, schema datasets/eicu/table-a22c6d6981a32279.json. Columns: vitalperiodicid, patientunitstayid, observationoffset, heartrate, respiration, sao2.
+5. baidu_downloads/eicu_mimic/eicu database/EICU 2.0 data/hospital.csv.gz; SHA [source checksum]; table hospital, schema datasets/eicu/table-811df7b2ef435e12.json. Columns: hospitalid, numbedscategory, teachingstatus, region; descriptive only.
 
 Resolve paths and hashes from the catalog and fail on mismatch. Join by patientunitstayid; choose one stay per uniquepid using smallest (t0, patientunitstayid); group by hospitalid. Offsets are ICU-admission minutes. Map only literal age >89 to 90; retain age >=18. Define t0 as the smallest infusionoffset in [0,1440] where case-folded drugname contains norepinephrine or levophed. Require Alive/Expired and hospitaldischargeoffset >= L24=t0+1440.
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Successor: strict destination-neutral day-7 recorded ICU topology
 
 Parents: `[prior hypothesis]` (integrated pause-aware design) and `[prior hypothesis]` (assessed destination-neutral endpoint repair).

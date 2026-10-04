@@ -1,6 +1,6 @@
 # Population Multi-omics & Disease Targets
 
-[← All domains](../README.md) · [Expert review guide](../REVIEW.md)
+[← Blinded review index](../REVIEW.md)
 
 **582 nodes · 520 generated versions · 630 recorded parent links.**
 
@@ -112,7 +112,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-0747abfe3a"></a>
-### D4-0747ABFE3A · 绝经相关脂蛋白变化是否超出体重变化
+### D4-0747ABFE3A · Do menopause-related lipoprotein changes exceed changes in body weight?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-0747ABFE3A.md)
 
@@ -148,7 +148,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-08394fa826"></a>
-### D4-08394FA826 · 长端粒相关的肿瘤与血管风险权衡
+### D4-08394FA826 · Risk trade-off between tumors and vascular disease associated with long telomeres
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-08394FA826.md)
 
@@ -157,7 +157,7 @@
 **Type:** Starting question
 
 <a id="d4-0847ac1163"></a>
-### D4-0847AC1163 · 低睾酮与低SHBG是否代表不同男性代谢状态
+### D4-0847AC1163 · Do low testosterone and low SHBG represent distinct metabolic states in men?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-0847AC1163.md)
 
@@ -508,7 +508,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-16d206ba50"></a>
-### D4-16D206BA50 · 空气污染与肺功能遗传易感性的交互
+### D4-16D206BA50 · Interaction between air pollution and genetic susceptibility to impaired lung function
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-16D206BA50.md)
 
@@ -526,7 +526,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-17a499d058"></a>
-### D4-17A499D058 · 夜间噪声与睡眠脆弱性共同指向房颤
+### D4-17A499D058 · Nighttime noise and sleep vulnerability jointly point to atrial fibrillation
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-17A499D058.md)
 
@@ -616,7 +616,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-1e471250fb"></a>
-### D4-1E471250FB · 骨与肌肉衰退不同步的骨折路径
+### D4-1E471250FB · Fracture pathways involving asynchronous bone and muscle decline
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-1E471250FB.md)
 
@@ -625,7 +625,7 @@
 **Type:** Starting question
 
 <a id="d4-1ead2d482f"></a>
-### D4-1EAD2D482F · 肺功能下降与右心改变的先后关系
+### D4-1EAD2D482F · The temporal relationship between declining lung function and right-heart changes
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-1EAD2D482F.md)
 
@@ -643,7 +643,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-1f11c24e00"></a>
-### D4-1F11C24E00 · 内脏脂肪与肌肉浸润对应的两种风险
+### D4-1F11C24E00 · Two distinct risks associated with visceral fat and muscle infiltration
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-1F11C24E00.md)
 
@@ -688,7 +688,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-203a60b610"></a>
-### D4-203A60B610 · CRP与GlycA不一致的炎症状态
+### D4-203A60B610 · Inflammatory states with discordant CRP and GlycA
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-203A60B610.md)
 
@@ -787,7 +787,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-24313d46ca"></a>
-### D4-24313D46CA · 脂肪分布与绝经后激素相关癌症的差异
+### D4-24313D46CA · Differences in fat distribution and hormone-related cancers after menopause
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-24313D46CA.md)
 
@@ -805,7 +805,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-24a6840cd7"></a>
-### D4-24A6840CD7 · 正常血糖下胰腺体积与脂肪的不同预警信息
+### D4-24A6840CD7 · Distinct warning signals from pancreatic volume and fat in normoglycemia
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-24A6840CD7.md)
 
@@ -1039,7 +1039,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-317180cefe"></a>
-### D4-317180CEFE · 高糖尿病遗传风险下的异位脂肪差异
+### D4-317180CEFE · Differences in ectopic fat under high genetic risk of diabetes
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-317180CEFE.md)
 
@@ -1255,7 +1255,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-3b98a85d93"></a>
-### D4-3B98A85D93 · 低血脂伴低白蛋白是否提示隐匿肝病
+### D4-3B98A85D93 · Does hypolipidemia accompanied by hypoalbuminemia indicate occult liver disease?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-3B98A85D93.md)
 
@@ -1300,7 +1300,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-3d79c46556"></a>
-### D4-3D79C46556 · 早绝经与心脏重构是否独立于血压负荷
+### D4-3D79C46556 · Is early menopause associated with cardiac remodeling independently of blood pressure burden?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-3D79C46556.md)
 
@@ -1381,7 +1381,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-41a15b031f"></a>
-### D4-41A15B031F · 癌症确诊前储备与确诊后的非癌死亡
+### D4-41A15B031F · Pre-diagnosis reserve and non-cancer mortality after cancer diagnosis
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-41A15B031F.md)
 
@@ -1543,7 +1543,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-492d27a059"></a>
-### D4-492D27A059 · 绝经后骨量与脂肪增加不同步
+### D4-492D27A059 · Postmenopausal bone mass and fat accumulation change asynchronously
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-492D27A059.md)
 
@@ -1579,7 +1579,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-4a97e43953"></a>
-### D4-4A97E43953 · 脂肪分布与绝经后激素相关癌症的差异
+### D4-4A97E43953 · Differences in fat distribution and hormone-related cancers after menopause
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-4A97E43953.md)
 
@@ -1687,7 +1687,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-4e6f607eec"></a>
-### D4-4E6F607EEC · 低血脂伴低白蛋白是否提示隐匿肝病
+### D4-4E6F607EEC · Does hypolipidemia accompanied by hypoalbuminemia indicate occult liver disease?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-4E6F607EEC.md)
 
@@ -1759,7 +1759,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-5170da0390"></a>
-### D4-5170DA0390 · 相同炎症水平下的白细胞组成与感染结局
+### D4-5170DA0390 · Leukocyte composition and infection outcomes at the same level of inflammation
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-5170DA0390.md)
 
@@ -1813,7 +1813,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-5472767fc5"></a>
-### D4-5472767FC5 · 绝经后骨量与脂肪增加不同步
+### D4-5472767FC5 · Postmenopausal bone mass and fat accumulation change asynchronously
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-5472767FC5.md)
 
@@ -1822,7 +1822,7 @@
 **Type:** Starting question
 
 <a id="d4-557b47e225"></a>
-### D4-557B47E225 · 支链氨基酸变化是否早于糖代谢恶化
+### D4-557B47E225 · Do changes in branched-chain amino acids precede worsening glucose metabolism?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-557B47E225.md)
 
@@ -1975,7 +1975,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-5c93b9ba75"></a>
-### D4-5C93B9BA75 · 正常血糖下胰腺体积与脂肪的不同预警信息
+### D4-5C93B9BA75 · Distinct warning signals from pancreatic volume and fat in normoglycemia
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-5C93B9BA75.md)
 
@@ -2263,7 +2263,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-698b8efd92"></a>
-### D4-698B8EFD92 · 血糖升高伴体重下降的胰腺癌线索
+### D4-698B8EFD92 · Pancreatic cancer clue: elevated blood glucose accompanied by weight loss
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-698B8EFD92.md)
 
@@ -2434,7 +2434,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-716a28f338"></a>
-### D4-716A28F338 · 支链氨基酸变化是否早于糖代谢恶化
+### D4-716A28F338 · Do changes in branched-chain amino acids precede worsening glucose metabolism?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-716A28F338.md)
 
@@ -2506,7 +2506,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-75eadffb3d"></a>
-### D4-75EADFFB3D · 房颤遗传风险与左房结构的不同组合
+### D4-75EADFFB3D · Different combinations of genetic risk for atrial fibrillation and left atrial structure
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-75EADFFB3D.md)
 
@@ -2632,7 +2632,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-7c93eacfde"></a>
-### D4-7C93EACFDE · 肺功能下降与右心改变的先后关系
+### D4-7C93EACFDE · The temporal relationship between declining lung function and right-heart changes
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-7C93EACFDE.md)
 
@@ -2722,7 +2722,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-80df022525"></a>
-### D4-80DF022525 · 肌肉量保留但肌力下降的风险来源
+### D4-80DF022525 · Sources of risk when muscle mass is preserved but muscle strength declines
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-80DF022525.md)
 
@@ -2785,7 +2785,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-8355c8caa8"></a>
-### D4-8355C8CAA8 · 乳腺癌遗传风险与绝经后激素背景
+### D4-8355C8CAA8 · Genetic risk of breast cancer and the postmenopausal hormonal milieu
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-8355C8CAA8.md)
 
@@ -2803,7 +2803,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-854234041c"></a>
-### D4-854234041C · 肌肉量保留但肌力下降的风险来源
+### D4-854234041C · Sources of risk when muscle mass is preserved but muscle strength declines
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-854234041C.md)
 
@@ -2812,7 +2812,7 @@
 **Type:** Starting question
 
 <a id="d4-8590cc7271"></a>
-### D4-8590CC7271 · 肺功能与全身储备不一致时的感染后结局
+### D4-8590CC7271 · Post-infection outcomes when lung function and systemic reserve are discordant
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-8590CC7271.md)
 
@@ -2839,7 +2839,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-87abc18b0d"></a>
-### D4-87ABC18B0D · 冠心病遗传风险在不同脂蛋白背景下的表达
+### D4-87ABC18B0D · Expression of genetic risk for coronary heart disease across different lipoprotein backgrounds
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-87ABC18B0D.md)
 
@@ -3163,7 +3163,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-99dc272992"></a>
-### D4-99DC272992 · 内脏脂肪与肌肉浸润对应的两种风险
+### D4-99DC272992 · Two distinct risks associated with visceral fat and muscle infiltration
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-99DC272992.md)
 
@@ -3208,7 +3208,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-9d5c6e147a"></a>
-### D4-9D5C6E147A · 空气污染与肺功能遗传易感性的交互
+### D4-9D5C6E147A · Interaction between air pollution and genetic susceptibility to impaired lung function
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-9D5C6E147A.md)
 
@@ -3253,7 +3253,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-9f7529c72f"></a>
-### D4-9F7529C72F · 房颤遗传风险与左房结构的不同组合
+### D4-9F7529C72F · Different combinations of genetic risk for atrial fibrillation and left atrial structure
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-9F7529C72F.md)
 
@@ -3316,7 +3316,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-a2660746ec"></a>
-### D4-A2660746EC · CRP与GlycA不一致的炎症状态
+### D4-A2660746EC · Inflammatory states with discordant CRP and GlycA
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-A2660746EC.md)
 
@@ -3397,7 +3397,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-a571401df7"></a>
-### D4-A571401DF7 · 癌症确诊前储备与确诊后的非癌死亡
+### D4-A571401DF7 · Pre-diagnosis reserve and non-cancer mortality after cancer diagnosis
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-A571401DF7.md)
 
@@ -3505,7 +3505,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-aa177147ad"></a>
-### D4-AA177147AD · 骨与肌肉衰退不同步的骨折路径
+### D4-AA177147AD · Fracture pathways involving asynchronous bone and muscle decline
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-AA177147AD.md)
 
@@ -3514,7 +3514,7 @@
 **Type:** Starting question
 
 <a id="d4-aa3d8ba64a"></a>
-### D4-AA3D8BA64A · 早绝经与心脏重构是否独立于血压负荷
+### D4-AA3D8BA64A · Is early menopause associated with cardiac remodeling independently of blood pressure burden?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-AA3D8BA64A.md)
 
@@ -3622,7 +3622,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-b08ec6bc5a"></a>
-### D4-B08EC6BC5A · 夜间噪声与睡眠脆弱性共同指向房颤
+### D4-B08EC6BC5A · Nighttime noise and sleep vulnerability jointly point to atrial fibrillation
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-B08EC6BC5A.md)
 
@@ -4297,7 +4297,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-cf2c3a64e4"></a>
-### D4-CF2C3A64E4 · 低睾酮与低SHBG是否代表不同男性代谢状态
+### D4-CF2C3A64E4 · Do low testosterone and low SHBG represent distinct metabolic states in men?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-CF2C3A64E4.md)
 
@@ -4342,7 +4342,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-d249800b11"></a>
-### D4-D249800B11 · 肺功能与全身储备不一致时的感染后结局
+### D4-D249800B11 · Post-infection outcomes when lung function and systemic reserve are discordant
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-D249800B11.md)
 
@@ -4387,7 +4387,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-d4f9c3ca57"></a>
-### D4-D4F9C3CA57 · 肝脂肪与胰腺脂肪不一致的糖代谢走向
+### D4-D4F9C3CA57 · Glycemic trajectory when liver fat and pancreatic fat are discordant
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-D4F9C3CA57.md)
 
@@ -4396,7 +4396,7 @@
 **Type:** Starting question
 
 <a id="d4-d63136c14d"></a>
-### D4-D63136C14D · 绝经相关脂蛋白变化是否超出体重变化
+### D4-D63136C14D · Do menopause-related lipoprotein changes exceed changes in body weight?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-D63136C14D.md)
 
@@ -4441,7 +4441,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-d87f208fc5"></a>
-### D4-D87F208FC5 · 血细胞变化指向隐匿失血还是造血异常
+### D4-D87F208FC5 · Do changes in blood cells point to occult blood loss or hematopoietic abnormalities?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-D87F208FC5.md)
 
@@ -4540,7 +4540,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-dcb6810cf3"></a>
-### D4-DCB6810CF3 · 肝脂肪与胰腺脂肪不一致的糖代谢走向
+### D4-DCB6810CF3 · Glycemic trajectory when liver fat and pancreatic fat are discordant
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-DCB6810CF3.md)
 
@@ -4549,7 +4549,7 @@
 **Type:** Starting question
 
 <a id="d4-dcef26eff8"></a>
-### D4-DCEF26EFF8 · 乳腺癌遗传风险与绝经后激素背景
+### D4-DCEF26EFF8 · Genetic risk of breast cancer and the postmenopausal hormonal milieu
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-DCEF26EFF8.md)
 
@@ -4558,7 +4558,7 @@
 **Type:** Starting question
 
 <a id="d4-dcf5bd6b00"></a>
-### D4-DCF5BD6B00 · 高糖尿病遗传风险下的异位脂肪差异
+### D4-DCF5BD6B00 · Differences in ectopic fat under high genetic risk of diabetes
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-DCF5BD6B00.md)
 
@@ -4621,7 +4621,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-e153c7e676"></a>
-### D4-E153C7E676 · 冠心病遗传风险在不同脂蛋白背景下的表达
+### D4-E153C7E676 · Expression of genetic risk for coronary heart disease across different lipoprotein backgrounds
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-E153C7E676.md)
 
@@ -4954,7 +4954,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-f29e87f047"></a>
-### D4-F29E87F047 · 相同炎症水平下的白细胞组成与感染结局
+### D4-F29E87F047 · Leukocyte composition and infection outcomes at the same level of inflammation
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-F29E87F047.md)
 
@@ -4981,7 +4981,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-f3f772ed7f"></a>
-### D4-F3F772ED7F · 血糖升高伴体重下降的胰腺癌线索
+### D4-F3F772ED7F · Pancreatic cancer clue: elevated blood glucose accompanied by weight loss
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-F3F772ED7F.md)
 
@@ -5035,7 +5035,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-f78069665a"></a>
-### D4-F78069665A · 血细胞变化指向隐匿失血还是造血异常
+### D4-F78069665A · Do changes in blood cells point to occult blood loss or hematopoietic abnormalities?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-F78069665A.md)
 
@@ -5107,7 +5107,7 @@
 **Type:** Generated hypothesis version
 
 <a id="d4-fb6ab1fb5c"></a>
-### D4-FB6AB1FB5C · 长端粒相关的肿瘤与血管风险权衡
+### D4-FB6AB1FB5C · Risk trade-off between tumors and vascular disease associated with long telomeres
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-FB6AB1FB5C.md)
 

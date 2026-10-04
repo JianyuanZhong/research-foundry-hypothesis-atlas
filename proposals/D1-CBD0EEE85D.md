@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Finite-corpus HCC documentary-M2 experiment with a computable ridge/elastic-net grid
 
 ## 1. Focused child repair and preserved scientific target
@@ -60,11 +62,11 @@ A test world chooses one state per `U_T` patient. A patient ambiguous between 20
 
 ## 4. Examination units, documentary outcome, and exact information sets
 
-A nonblank whole examination unit is `(患者主索引,就诊号,检查号)`, retaining all exact-deduplicated component rows and immutable boundaries. Blank `检查号` is identity-unknown and cannot provide primary semantics. Conflicting modality, components more than 24 hours apart, and possible merged identity remain alternatives. A unit is eligible only if every retained component acquisition interval is wholly compatible with `[c_d-90d,c_d)`. Select at most the latest whole CT and latest whole MRI by latest admissible component start, raw ordinal, then frozen patient hash. Concatenate complete-unit `检查所见` and `检查诊断` in raw component order; phrase selection is forbidden.
+A nonblank whole examination unit is `(patient master index, encounter number, examination number)`, retaining all exact-deduplicated component rows and immutable boundaries. Blank `examination number` is identity-unknown and cannot provide primary semantics. Conflicting modality, components more than 24 hours apart, and possible merged identity remain alternatives. A unit is eligible only if every retained component acquisition interval is wholly compatible with `[c_d-90d,c_d)`. Select at most the latest whole CT and latest whole MRI by latest admissible component start, raw ordinal, then frozen patient hash. Concatenate complete-unit `examination findings` and `examination diagnosis` in raw component order; phrase selection is forbidden.
 
 Two blinded abdominal radiologists, with a third resolver, classify modality and annotate maximum lesion diameter, lesion count, capsule, margin, arterial hyperenhancement, washout, peritumoral enhancement/hypointensity, satellite lesion, portal/hepatic-vein tumor thrombus, cirrhosis, and ascites. Each is `present/absent/uncertain/not-mentioned/source-text-unavailable`. These are meanings in stored text, not image or biological findings.
 
-For every possible index encounter, exact-deduplicate all six-field pathology rows and concatenate all `病理`, `检查所见`, and `检查诊断` with raw row/field boundaries. Two blinded Chinese-reading pathologists and a third resolver apply the frozen rubric:
+For every possible index encounter, exact-deduplicate all six-field pathology rows and concatenate all `Pathology`, `Examination Findings`, and `Examination Diagnosis` with raw row/field boundaries. Two blinded Chinese-reading pathologists and a third resolver apply the frozen rubric:
 
 - `Y={1}`: M2 is explicitly anchored to microvascular invasion or an HCC MVI grade;
 - `Y={0}`: anchored M0/M1 excludes M2 in the relevant context;
@@ -72,7 +74,7 @@ For every possible index encounter, exact-deduplicate all six-field pathology ro
 
 Unknown is completed only inside the coupled state world and never imputed negative. Require at least 85% anchored adjudicated grade and at least 50 lower-envelope M2 events in each test year. These gates do not establish specimen linkage, sampling adequacy, or biological M2.
 
-`Z` contains age, sex, CT/MRI/other indicators, eligible-unit count, acquisition-to-cutoff recency, component count, identity/accession ambiguity, source-text-unavailable, and development-grouped `机器型号`; identifiers never enter.
+`Z` contains age, sex, CT/MRI/other indicators, eligible-unit count, acquisition-to-cutoff recency, component count, identity/accession ambiguity, source-text-unavailable, and development-grouped `Machine Model`; identifiers never enter.
 
 `S` contains only modality-specific documentation surface: untrimmed Unicode code-point length; nonblank findings/diagnosis indicators; digit, punctuation, whitespace, Han, and other-character proportions; component count; blank/conflicting accession; and separator count. It contains no token, n-gram, semantic flag, hand-picked phrase, pathology, laboratory, diagnosis, or clinical-document content.
 
@@ -167,22 +169,22 @@ A heterogeneous or all-world-adverse result falsifies the strict universal margi
 
 Controlling catalog: `[internal dataset path]`, [source checksum]. HCC snapshot: `[source checksum]`. All HCC members are ordinary read-only CSV files (catalog member `null`; no archive member).
 
-- `encounters`: `[internal dataset path]`. Exact join `患者主索引,就诊号`; `年龄,性别` supply Z; `就诊时间,入院时间,出院时间` are audits.
-- `procedures`: `[internal dataset path]`. Keys plus `手术,开始时间,结束时间,手术来源` define episode/clock and prior-treatment evidence.
-- `examinations`: `[internal dataset path]`. Keys plus `检查号` define units; `检查` modality; `检查所见,检查诊断` S/X; `开始时间` acquisition; `机器型号` Z.
-- `pathology`: `[internal dataset path]`. Keys plus `病理,检查所见,检查诊断` define HCC frame/Y; `机器型号` provenance. It has no time, specimen, or pathology-accession column.
-- `medications`: `[internal dataset path]`. Keys plus `用药,药品类型,开始时间,结束时间` supply prior systemic-treatment evidence.
-- `orders`: `[internal dataset path]`. Keys plus `医嘱(非药品),开立时间,开始时间,结束时间,医嘱状态` supply prior local/radiotherapy evidence.
-- `diagnoses`: `[internal dataset path]`; `诊断名称,诊断类型` are untimed corroboration only.
-- `labs`: `[internal dataset path]`; `检验,定性结果,定量结果,标本类型,检验时间` are lineage audit only and never predictors.
-- `clinical_documents`: `[internal dataset path]`; keys/narratives are audited but excluded because there is no document time/version; duplicate raw `入院诊断` maps to catalog `入院诊断__duplicate_2`.
-- `vitals`: `[internal dataset path]`; `患者主索引,就诊号` only.
-- `transfers`: `[internal dataset path]`; `患者主索引,就诊号` only.
+- `encounters`: `[internal dataset path]`. Exact join `patient master index,encounter number`; `age,sex` supply Z; `encounter time,admission time,discharge time` are audits.
+- `procedures`: `[internal dataset path]`. Keys plus `surgery,start time,end time,surgery source` define episode/clock and prior-treatment evidence.
+- `examinations`: `[internal dataset path]`. Keys plus `Examination Number` define units; `Examination` modality; `Examination Findings,Examination Diagnosis` S/X; `Start Time` acquisition; `Machine Model` Z.
+- `pathology`: `[internal dataset path]`. Keys plus `Pathology,Findings,Diagnostic impression` define HCC frame/Y; `Machine model` provenance. It has no time, specimen, or pathology-accession column.
+- `medications`: `[internal dataset path]`. Keys plus `medication, medication type, start time, end time` supply prior systemic-treatment evidence.
+- `orders`: `[internal dataset path]`. Keys plus `non-drug orders,order time,start time,end time,order status` supply prior local/radiotherapy evidence.
+- `diagnoses`: `[internal dataset path]`; `diagnosis name, diagnosis type` are untimed corroboration only.
+- `labs`: `[internal dataset path]`; `Test,Qualitative Result,Quantitative Result,Specimen Type,Test Time` are lineage audit only and never predictors.
+- `clinical_documents`: `[internal dataset path]`; keys/narratives are audited but excluded because there is no document time/version; duplicate raw `Admission diagnosis` maps to catalog `Admission diagnosis__duplicate_2`.
+- `vitals`: `[internal dataset path]`; `patient master index, encounter number` only.
+- `transfers`: `[internal dataset path]`; `patient master index,encounter number` only.
 - `front_page`: `[internal dataset path]`; identifier header only.
 
-Same-encounter joins are exact on `(患者主索引,就诊号)`; examination grouping adds `检查号`; treatment lookback is patient-wide on `患者主索引` followed by interval logic. Direct identifiers, untimed diagnoses/documents, post-cutoff examinations, identifier-only tables, and labs are forbidden predictors. Raw ordinals and backpointers survive every derivation.
+Same-encounter joins are exact on `(patient master index,encounter number)`; examination grouping adds `examination number`; treatment lookback is patient-wide on `patient master index` followed by interval logic. Direct identifiers, untimed diagnoses/documents, post-cutoff examinations, identifier-only tables, and labs are forbidden predictors. Raw ordinals and backpointers survive every derivation.
 
-The catalog schemas and live UTF-8-sig headers were rechecked for the six payload tables above. The parent's aggregate availability audit remains descriptive only: 105,044 encounter rows/43,815 patients, 338,040 procedure rows/43,062 patients, 419,996 examination rows/42,206 patients, and 46,395 pathology rows/28,184 patients; 419,821 examination rows had a narrative field, 419,924 had nonblank `检查号`, and all 46,395 pathology rows had an outcome-source narrative field. These are not eligible cohort or M2-event counts.
+The catalog schemas and live UTF-8-sig headers were rechecked for the six payload tables above. The parent's aggregate availability audit remains descriptive only: 105,044 encounter rows/43,815 patients, 338,040 procedure rows/43,062 patients, 419,996 examination rows/42,206 patients, and 46,395 pathology rows/28,184 patients; 419,821 examination rows had a narrative field, 419,924 had nonblank `Examination Number`, and all 46,395 pathology rows had an outcome-source narrative field. These are not eligible cohort or M2-event counts.
 
 MIMIC, eICU, and UKB remain directly readable and unmodified. MIMIC is the archive `[internal dataset path]` with members including `mimic-iv-3.1/hosp/admissions.csv.gz` and `note/radiology.csv.gz`; eICU has 31 ordinary files under `[internal dataset path]`, including `patient.csv.gz,diagnosis.csv.gz,note.csv.gz`; UKB has eight ordinary CSVs under `[internal dataset path]`, including `ukb672073.csv` and assessment/outcome/genomics/follow-up tables. They are not pooled because there is no patient crosswalk and they do not instantiate this HCC resection/eventual-report/untimed-pathology estimand. Their exclusion is scientific, not an access restriction.
 

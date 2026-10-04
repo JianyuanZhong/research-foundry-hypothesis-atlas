@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Availability-matched UACR test of grip-triggered cystatin-C allocation
 
 ## Decision, evidence boundary, and unresolved hypothesis

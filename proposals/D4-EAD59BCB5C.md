@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Resource-credit frontier: can UACR-first preserve target yield with fewer cystatin assays?
 
 ## Episode-15 controlling extension

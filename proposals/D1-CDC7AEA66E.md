@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Safety-net decision stress for fixed-capacity lactate-by-measured-perfusion prioritization
 
 ## Status, parent and scientific deliverable

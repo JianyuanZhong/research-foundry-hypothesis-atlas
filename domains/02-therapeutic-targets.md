@@ -1,6 +1,6 @@
 # Therapeutic Target Prioritization
 
-[← All domains](../README.md) · [Expert review guide](../REVIEW.md)
+[← Blinded review index](../REVIEW.md)
 
 **47 nodes · 45 generated versions · 46 recorded parent links.**
 

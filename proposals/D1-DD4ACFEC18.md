@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Asynchronous renal/respiratory recovery as a context shift for lactate-by-perfusion monitoring
 
 ## Status and scientific deliverable

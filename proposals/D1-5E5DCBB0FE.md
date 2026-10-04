@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Does mechanics-aware ventilatory burden predict delayed documented liberation beyond tidal volume?
 
 ## Status, scientific deliverable, and evidence boundary

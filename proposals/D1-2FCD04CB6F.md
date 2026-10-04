@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Day-42 HCC: recorded assay state versus a pre-outcome review-workflow proxy
 
 Status: substantive child of `[prior hypothesis]`. Design only. No cohort fit, clinical response label, or positive result is claimed.
@@ -27,7 +29,7 @@ The next clinical-data decision is therefore explicit: if a supported assay incr
 
 [K1] shows that imaging radiomics/deep learning plus clinical features can predict repeat-TACE prognosis, but its external AUCs fall and the authors note overfitting and scanner/generalization limits. It uses CT and formal mRECIST assessment unavailable here. This proposal adds a routine-EHR, patient-held-out test of whether a recorded assay state adds information after an explicit observation pathway, rather than reproducing the imaging model.
 
-[K2] establishes why a local examination row cannot be called response: HCC treatment evaluation uses modality- and criterion-specific imaging, including mRECIST/RECICL and treatment-related necrosis. The local `检查所见` and `检查诊断` fields are therefore not consumed as response labels or NLP predictors.
+[K2] establishes why a local examination row cannot be called response: HCC treatment evaluation uses modality- and criterion-specific imaging, including mRECIST/RECICL and treatment-related necrosis. The local `examination findings` and `examination diagnosis` fields are therefore not consumed as response labels or NLP predictors.
 
 [K3] shows that recorded response estimates can be altered by undocumented outcomes, imaging ascertainment, exposure classification and confounding, without identifying a comparative treatment effect. It motivates treating the repeat-TACE code as an operational event and ascertainment/workflow as a live rival.
 
@@ -43,10 +45,10 @@ They make different observable predictions. State-consistent evidence should sur
 
 All timing uses integer elapsed days from `T0=index_start`.
 
-- Index: the first dated procedures row in this supplied HCC snapshot whose trimmed Unicode-case-folded `手术` equals the exact token `tace`, with nonmissing `患者主索引`, `就诊号`, and `开始时间`. “First” means first in this snapshot, not first-ever TACE. Collapse exact duplicate patient/start rows for event counting but retain duplicate counts. Undated strict-code rows are audited and excluded from the primary timed analysis.
+- Index: the first dated procedures row in this supplied HCC snapshot whose trimmed Unicode-case-folded `procedure` equals the exact token `tace`, with nonmissing `patient master index`, `encounter number`, and `start time`. “First” means first in this snapshot, not first-ever TACE. Collapse exact duplicate patient/start rows for event counting but retain duplicate counts. Undated strict-code rows are audited and excluded from the primary timed analysis.
 - Eligibility: all-source observation reaches `T0+42 days`, using the maximum valid timestamp from bound sources as `obs_end`. Exclude later exact-code TACE rows with `0 < Delta < 43` from the primary risk set and retain them in `early_repeat_audit.csv`. An untimed repeat is not a timed negative.
 - Primary event: first later unique patient/start exact-code TACE with `43 <= Delta < 181`, i.e. the exact operational [43,181) endpoint. Follow-up ends at the first primary event, all-source `obs_end`, or day 181. Primary bins are integer days 43–90 and 91–180; complete 180-day follow-up is sensitivity only.
-- Negative-control-like event: first nonmissing-`开始时间` procedure row for the same patient with a trimmed Unicode-case-folded `手术` token not equal to exact `tace`, with `43 <= Delta < 181`. Exact-code TACE, undated procedures and duplicate patient/start rows are excluded from this secondary event. This is an administrative care event, not a clinical outcome and not assumed independent of severity.
+- Negative-control-like event: first nonmissing-`start time` procedure row for the same patient with a trimmed Unicode-case-folded `surgery` token not equal to exact `tace`, with `43 <= Delta < 181`. Exact-code TACE, undated procedures and duplicate patient/start rows are excluded from this secondary event. This is an administrative care event, not a clinical outcome and not assumed independent of severity.
 - No feature uses future event rows, future counts, `obs_end`, post-index exact-code TACE, or any record after the feature cutoff.
 
 The fixed timing controls remain: day-42 cutoff; remove all process/assay records in days 36–42; process features end at day 28; alternate valid `obs_end` definitions; and exclusion of undated strict-TACE histories. A signal present only in days 36–42 or only in the early portion of [43,181) is compatible with planned-retreatment/lead-time workflow.
@@ -57,13 +59,13 @@ The source catalog is `[internal dataset path]`, [source checksum]. The HCC snap
 
 All HCC sources are ordinary CSV files, not archive members. The bounded schema audit verified the following columns; the solver must recheck the catalog hash, source hashes and complete schemas before materialization.
 
-- `procedures`: `[internal dataset path]`, [source checksum]; columns `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源`. Use `开始时间` for index and event times and valid `结束时间` for `obs_end`; exact-code TACE rows never enter predictors.
-- `encounters`: `[internal dataset path]`, [source checksum]; columns include `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室` plus identifiers. Join only on `患者主索引`+`就诊号`; use valid encounter timestamps for `obs_end`, intensity and department marks. Never use names or identity/phone/insurance/hospital numbers.
-- `examinations`: `[internal dataset path]`, [source checksum]; columns `患者主索引`, `就诊号`, `检查`, `检查所见`, `检查诊断`, `开始时间`, `机器型号`, `检查号`. Join on `患者主索引`+`就诊号` when present. Use `检查` and valid `开始时间` only for the proxy; `检查所见` and `检查诊断` are retained only for a clinical-review inventory and are not response labels, NLP inputs, or adjudication.
-- `labs`: `[internal dataset path]`, [source checksum]; columns `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`. Use `检验时间` for assay timing and `obs_end`; preserve qualitative/inequality/censoring flags. There is no units or reference-range column, so do not impose thresholds or call a value liver function or tumor burden.
-- `medications`: `[internal dataset path]`, [source checksum]; columns `患者主索引`, `就诊号`, `用药`, `单次用药计量`, `单次用药计量单位`, `频次`, `开始时间`, `结束时间`, `用药方式`, `药品类型`. Use valid medication start/end timestamps for `obs_end` and process timing.
-- `orders`: `[internal dataset path]`, [source checksum]; columns `患者主索引`, `就诊号`, `医嘱(非药品)`, `开立时间`, `开始时间`, `结束时间`, `医嘱期限`, `医嘱状态`, `频次`. Use `开立时间` as order availability and `开始时间`/`结束时间` only when valid and no later than the feature cutoff.
-- `diagnoses`: `[internal dataset path]`, [source checksum]; columns `患者主索引`, `就诊号`, `诊断名称`, `诊断类型`. No temporal column: use only pre-index counts through matched encounters; it cannot define follow-up or a post-index event.
+- `procedures`: `[internal dataset path]`, [source checksum]; columns `Patient Master Index`, `Visit Number`, `Surgery`, `Start Time`, `End Time`, `Surgery Source`. Use `Start Time` for index and event times and valid `End Time` for `obs_end`; exact-code TACE rows never enter predictors.
+- `encounters`: `[internal dataset path]`, [source checksum]; columns include `patient master index`, `encounter number`, `age`, `sex`, `encounter time`, `admission time`, `discharge time`, `encounter department` plus identifiers. Join only on `patient master index`+`encounter number`; use valid encounter timestamps for `obs_end`, intensity and department marks. Never use names or identity/phone/insurance/hospital numbers.
+- `examinations`: `[internal dataset path]`, [source checksum]; columns `Patient Master Index`, `Encounter Number`, `Examination`, `Examination Findings`, `Examination Diagnosis`, `Start Time`, `Machine Model`, `Examination Number`. Join on `Patient Master Index`+`Encounter Number` when present. Use `Examination` and valid `Start Time` only for the proxy; `Examination Findings` and `Examination Diagnosis` are retained only for a clinical-review inventory and are not response labels, NLP inputs, or adjudication.
+- `labs`: `[internal dataset path]`, [source checksum]; columns `patient master index`, `encounter number`, `test`, `qualitative result`, `quantitative result`, `specimen type`, `test time`. Use `test time` for assay timing and `obs_end`; preserve qualitative/inequality/censoring flags. There is no units or reference-range column, so do not impose thresholds or call a value liver function or tumor burden.
+- `medications`: `[internal dataset path]`, [source checksum]; columns `Patient Master Index`, `Visit Number`, `Medication`, `Single Dose`, `Single-Dose Unit`, `Frequency`, `Start Time`, `End Time`, `Administration Route`, `Drug Type`. Use valid medication start/end timestamps for `obs_end` and process timing.
+- `orders`: `[internal dataset path]`, [source checksum]; columns `Patient Master Index`, `Visit Number`, `Non-drug Order`, `Order Time`, `Start Time`, `End Time`, `Order Duration`, `Order Status`, `Frequency`. Use `Order Time` as order availability and `Start Time`/`End Time` only when valid and no later than the feature cutoff.
+- `diagnoses`: `[internal dataset path]`, [source checksum]; columns `patient master index`, `encounter number`, `diagnosis name`, `diagnosis type`. No temporal column: use only pre-index counts through matched encounters; it cannot define follow-up or a post-index event.
 - `clinical_documents`: `[internal dataset path]`; `pathology`: `[internal dataset path]`. Exclude from primary longitudinal features because they lack valid event time. Identifier-only vitals, transfers and front_page are not measurements.
 
 Collapse exact duplicates before counts. Use no names, identity numbers, phones, insurance/hospital numbers, file order or incompatible identifier namespaces.
@@ -78,10 +80,10 @@ Define normalized strings by trim, Unicode case-fold and whitespace normalizatio
 
 For each eligible patient and each index:
 
-1. `E_any`: at least one examinations row with the same `患者主索引`+`就诊号` and valid `开始时间` in `(T0,T0+42 days]`. It means a recorded examination opportunity, not imaging response.
-2. `O_open`: at least one orders row with valid `开立时间` in that interval. It means an order became available, not that it was completed.
-3. `O_done`: an orders row with valid `结束时间` in the interval and the exact observed operational status `检查已完成`; retain all other status values as unknown/categorical audit levels rather than translating them into clinical completion.
-4. `E_order_linked`: an examination and order row joined on `患者主索引`+`就诊号`, with normalized `检查` exactly equal to normalized `医嘱(非药品)`, valid `开立时间 <= examination 开始时间`, and, when `结束时间` is valid, examination start no later than that end. If the order end is missing, it is not an order-completed link; it may contribute only to `O_open`.
+1. `E_any`: at least one examinations row with the same `Patient Master Index`+`Encounter Number` and valid `Start Time` in `(T0,T0+42 days]`. It means a recorded examination opportunity, not imaging response.
+2. `O_open`: at least one orders row with valid `Order Time` in that interval. It means an order became available, not that it was completed.
+3. `O_done`: an orders row with valid `End time` in the interval and the exact observed operational status `Examination completed`; retain all other status values as unknown/categorical audit levels rather than translating them into clinical completion.
+4. `E_order_linked`: an examination and order row joined on `Patient master index`+`Encounter number`, with normalized `Examination` exactly equal to normalized `Non-drug order`, valid `Order entry time <= examination Start time`, and, when `End time` is valid, examination start no later than that end. If the order end is missing, it is not an order-completed link; it may contribute only to `O_open`.
 5. `W_packet=1` if `E_order_linked=1` or `O_done=1` in `(T0,T0+42]`. Record packet date, order-to-exam lag when linked, counts, and whether the status was known. The proxy is a documented review/completion pathway, not a pre-outcome adjudication of response.
 
 The exact-string linked proxy is primary because it is reproducible and does not assume that a free-text finding means response. Broad `E_any`/`O_open` are named sensitivity proxies. If `W_packet` is sparse or has inadequate event support, its contrast is reported as support failure; the broad proxy cannot rescue it by post hoc substitution.

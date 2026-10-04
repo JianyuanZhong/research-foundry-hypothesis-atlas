@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # UKB CBC cancer-type contrast: same-table ascertainment bridge and selection stress test
 
 Status: proposed substantive child of [prior hypothesis]. No full solver or hypothesis test has been executed.

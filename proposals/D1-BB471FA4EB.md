@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Observable report-to-summary chronology versus discordance despite adequate storage separation in pulmonary-nodule handoff
 
 ## Clinical decision and substantive advance

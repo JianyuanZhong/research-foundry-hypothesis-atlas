@@ -1,9 +1,11 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Timing of antimicrobial de-escalation
 
 Seed ID: `[starting question]`
 Dataset: MIMIC-IV
 Original number: 7 (identifier, not rank)
-Source: `研究选题.xlsx`, `研究选题!A18:I18`
+Source: `Research Topics.xlsx`, `Research Topics!A18:I18`
 Workbook [source checksum]
 
 Status: expert-proposed, untested hypothesis; data bindings, novelty and feasibility have not been validated.

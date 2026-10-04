@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Field-certified UKB repeat kidney-status prioritization with a fail-closed audit branch
 
 ## Lineage and substantive repair

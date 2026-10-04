@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 19: retrospective baseline-state repair for post-shock delivered-loop initiation
 
 **Parent:** `[prior hypothesis]`

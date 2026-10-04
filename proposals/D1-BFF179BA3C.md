@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Residual physiologic instability before ICU discharge: a leakage-safe 48-hour MIMIC-IV test
 
 Status: candidate-ready scientific design; no cohort scan, model fit, or study result was run.

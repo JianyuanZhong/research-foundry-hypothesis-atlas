@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Does laboratory surveillance add a monitoring signal after physiologic state is measured?
 
 Status: Episode-18 substantive child of `[prior hypothesis]`. This is an observational prognostic, transportability, and measurement-process study. It is not a causal test-ordering study, a hospital-quality ranking, a treatment-effect study, or evidence that an alert improves survival.

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Compiler-ready eICU test of exact ventilation care-plan labels against a persistent respiratory-state endpoint
 
 ## Scope, evidence boundary, and substantive advance

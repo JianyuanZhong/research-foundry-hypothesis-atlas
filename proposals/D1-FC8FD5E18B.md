@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Live ICU discharge: transition-aware, observation-robust late instability
 
 ## Scientific deliverable and substantive evolution

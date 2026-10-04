@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 7 generation: residual instability at ICU discharge
 
 Status: candidate-ready competing MIMIC-IV design; no cohort scan, model fit, or scientific result was run. This is a distinct discharge-instability question, not a mechanical repair of the inherited discordant-AKI design.

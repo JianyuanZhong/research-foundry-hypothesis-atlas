@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Structural missingness is mixed rather than a single absent-opportunity mechanism
 
 ## Question and substantive advance

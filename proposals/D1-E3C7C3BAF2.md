@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Hospital-held-out quota stability of incremental repeat-lactate review
 
 ## Child purpose and preserved estimand
@@ -116,13 +118,13 @@ EICU snapshot: [source checksum].
 
 All four primary inputs are ordinary gzip CSV files with no hidden archive member:
 
-- patient.csv.gz, table patient, source [internal dataset path] 2.0数据/patient.csv.gz, [source checksum]; schema datasets/eicu/table-ab037c09d7df9a3c.json; required columns patientunitstayid, patienthealthsystemstayid, uniquepid, gender, age, hospitalid, hospitaldischargeoffset, hospitaldischargestatus; temporal field hospitaldischargeoffset; join key patientunitstayid, person key uniquepid, hospital/fold key hospitalid.
+- patient.csv.gz, table patient, source [internal dataset path] 2.0data/patient.csv.gz, [source checksum]; schema datasets/eicu/table-ab037c09d7df9a3c.json; required columns patientunitstayid, patienthealthsystemstayid, uniquepid, gender, age, hospitalid, hospitaldischargeoffset, hospitaldischargestatus; temporal field hospitaldischargeoffset; join key patientunitstayid, person key uniquepid, hospital/fold key hospitalid.
 
-- infusionDrug.csv.gz, table infusionDrug, source [internal dataset path] 2.0数据/infusionDrug.csv.gz, [source checksum]; schema datasets/eicu/table-18e1a8caaa91eb44.json; required columns infusiondrugid, patientunitstayid, infusionoffset, drugname; temporal field infusionoffset; join key patientunitstayid.
+- infusionDrug.csv.gz, table infusionDrug, source [internal dataset path] 2.0 data/infusionDrug.csv.gz, [source checksum]; schema datasets/eicu/table-18e1a8caaa91eb44.json; required columns infusiondrugid, patientunitstayid, infusionoffset, drugname; temporal field infusionoffset; join key patientunitstayid.
 
-- lab.csv.gz, table lab, source [internal dataset path] 2.0数据/lab.csv.gz, [source checksum]; schema datasets/eicu/table-79bdb33275339b1a.json; required columns labid, patientunitstayid, labresultoffset, labtypeid, labname, labresult, labresulttext, labmeasurenamesystem, labmeasurenameinterface, labresultrevisedoffset; collection/revision fields labresultoffset and labresultrevisedoffset; join key patientunitstayid.
+- lab.csv.gz, table lab, source [internal dataset path] 2.0 data/lab.csv.gz, [source checksum]; schema datasets/eicu/table-79bdb33275339b1a.json; required columns labid, patientunitstayid, labresultoffset, labtypeid, labname, labresult, labresulttext, labmeasurenamesystem, labmeasurenameinterface, labresultrevisedoffset; collection/revision fields labresultoffset and labresultrevisedoffset; join key patientunitstayid.
 
-- vitalPeriodic.csv.gz, table vitalPeriodic, source [internal dataset path] 2.0数据/vitalPeriodic.csv.gz, [source checksum]; schema datasets/eicu/table-a22c6d6981a32279.json; required columns vitalperiodicid, patientunitstayid, observationoffset, sao2, heartrate, respiration; collection field observationoffset; join key patientunitstayid.
+- vitalPeriodic.csv.gz, table vitalPeriodic, source [internal dataset path] 2.0 data/vitalPeriodic.csv.gz, [source checksum]; schema datasets/eicu/table-a22c6d6981a32279.json; required columns vitalperiodicid, patientunitstayid, observationoffset, sao2, heartrate, respiration; collection field observationoffset; join key patientunitstayid.
 
 The complete catalog confirms the four paths, schemas, columns, and ordinary-file archive status. Other EICU tables and the separately configured HCC/MIMIC/UKB datasets are not pooled: they do not contribute a validated review action, clinically elicited utility, or exchangeable time semantics.
 

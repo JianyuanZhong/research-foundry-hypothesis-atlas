@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Target-independent first-qualifying-stay audit of eICU ventilator care-plan transportability
 
 ## Scientific question and hypothesis

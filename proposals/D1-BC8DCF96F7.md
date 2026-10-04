@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 23 alternative repair: decision-available baseline and auditable recorded exposure
 
 **Parent:** `[prior hypothesis]`

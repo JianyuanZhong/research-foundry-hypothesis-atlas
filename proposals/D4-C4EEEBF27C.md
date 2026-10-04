@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 18 — posterior-thigh MFI, falls recall timing, and measured response selection
 
 ## Scientific question and clinical importance

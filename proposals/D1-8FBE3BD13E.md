@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 25: renal-reserve effect modification of post-shock loop initiation
 
 **Parent:** `[prior hypothesis]`

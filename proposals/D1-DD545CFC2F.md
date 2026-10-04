@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Residual instability before ICU-to-ward transfer: timing- and competing-state interpretation
 
 Status: substantive child of `[prior hypothesis]`. No predictor model has been fit and no hypothesis result is claimed. The adult first ICU-to-frozen-general-ward-transfer population, `t0`, final-24-hour exposure, strict decision-time availability rules, fixed 48-hour target, primary S0-versus-T1 estimand, subject split, and exact MIMIC-IV 3.1 bindings are unchanged.

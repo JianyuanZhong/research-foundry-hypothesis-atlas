@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 20 child: pre-endpoint documentation-conditioned assay contrast
 
 Status: design only. No cohort count, prevalence, fitted result, effect estimate, or clinical conclusion is claimed.
@@ -43,9 +45,9 @@ The conditioning is strictly pre-endpoint: Q_pre cannot use the later candidate 
 
 ## Population and temporal boundaries
 
-Use the first row in procedures for each patient whose Unicode-normalized, trimmed, case-folded 手术 equals TACE, with nonmissing patient index, visit number, and parseable 开始时间. Call its start t0. Apply the inherited deterministic duplicate/alias audit, malformed-date exclusions, early-repeat exclusions, and all-source observation requirement through t0+42 days for R42. Preserve the R28 pre-day-42 arm.
+Use the first row in procedures for each patient whose Unicode-normalized, trimmed, case-folded surgery equals TACE, with nonmissing patient index, visit number, and parseable start time. Call its start t0. Apply the inherited deterministic duplicate/alias audit, malformed-date exclusions, early-repeat exclusions, and all-source observation requirement through t0+42 days for R42. Preserve the R28 pre-day-42 arm.
 
-Use only 患者主索引 for patient grouping and exactly (患者主索引, 就诊号) for visit-level joins. Never join using name, identity card, phone, insurance card, file order, or an incompatible identifier namespace.
+Use only Patient Master Index for patient grouping and exactly (Patient Master Index, Visit Number) for visit-level joins. Never join using name, identity card, phone, insurance card, file order, or an incompatible identifier namespace.
 
 Each later candidate has a valid tp in [t0+43, t0+181). Use the inherited 14-day risk grid [43,57), [57,71), ..., [169,181) only for modeling. Retain first-event handling, right censoring, R42/R28 weighting, and observation boundaries exactly. Q_pre is computed before the risk grid and is not a post-index endpoint feature.
 
@@ -53,10 +55,10 @@ Each later candidate has a valid tp in [t0+43, t0+181). Use the inherited 14-day
 
 For each eligible index patient, in [t0−365,t0+42] count:
 
-1. n_enc: distinct encounter keys (患者主索引, 就诊号) in encounters with parseable 就诊时间 (the key is counted only once);
-2. n_ord: order rows in orders with nonblank parseable 开立时间, nonblank 医嘱状态, and status not containing normalized cancellation tokens 取消, 作废, 撤销, or 停用;
-3. n_exam: examination rows in examinations with parseable 开始时间;
-4. n_med: medication rows in medications with parseable 开始时间.
+1. n_enc: distinct encounter keys (patient master index, encounter number) in encounters with parseable encounter time (the key is counted only once);
+2. n_ord: order rows in orders with nonblank parseable order time, nonblank order status, and status not containing normalized cancellation tokens cancel, void, revoke, or discontinue;
+3. n_exam: examination rows in examinations with parseable Start Time;
+4. n_med: medication rows in medications with parseable start time.
 
 Do not count labs in Q_pre; labs are reserved for B0, S42, T42, assay opportunity, and the trajectory/snapshot comparison. Do not use clinical text, endpoint rows, procedure closure, or post-window sources. Counts are source-row counts after the stated validity rules; duplicate visit keys are de-duplicated only for n_enc, and all duplicate source rows are retained in the audit.
 
@@ -70,12 +72,12 @@ Retain all inherited operational classes:
 - O1: O0 satisfying the frozen semantic hepatic-arterial procedure rule plus valid same-patient/same-visit timed examination or order corroboration.
 - O2: O1 plus frozen same-visit medication corroboration.
 - O3: O2 plus at least one qualifying examination, order, or medication row on the exact visit key with nonmissing event/start time u strictly after tp and no later than tp+72 hours. Orders have nonblank status and do not contain normalized cancellation tokens.
-- O4 closed-coherent: O3 plus a valid procedure 结束时间=te from the same later procedures row, parseable with 0 ≤ te−tp ≤ 72 hours. Zero duration is allowed. Negative, missing, or longer-than-72-hour closure is closure_unknown, not a negative clinical event.
+- O4 closed-coherent: O3 plus a valid procedure End Time=te from the same later procedures row, parseable with 0 ≤ te−tp ≤ 72 hours. Zero duration is allowed. Negative, missing, or longer-than-72-hour closure is closure_unknown, not a negative clinical event.
 
 Retain the Episode-19 capture-aware process comparator exactly:
 
-- post-window capture-adequate: for the exact candidate visit key, 1 if either encounters.出院时间 is valid and at least tp+72 hours, or at least one non-procedure row with valid time in (tp,tp+72 hours] is observed in examinations.开始时间, orders.开始时间, medications.开始时间, or labs.检验时间; otherwise 0. This is observable-record evidence, not proof of complete capture.
-- O_planproxy_cap: later literal TACE candidate with a same-visit order whose 开立时间 is valid in [tp−7 days,tp), post-window capture-adequate=1, complete provenance-rule audit, no O4 classification, and no qualifying O3 post-procedure examination/order/medication. A complete audit requires every relevant post-source time and every used order status to be present and valid; orders cannot be cancellation tokens.
+- post-window capture-adequate: for the exact candidate visit key, 1 if either encounters.Discharge Time is valid and at least tp+72 hours, or at least one non-procedure row with valid time in (tp,tp+72 hours] is observed in examinations.Start Time, orders.Start Time, medications.Start Time, or labs.Test Time; otherwise 0. This is observable-record evidence, not proof of complete capture.
+- O_planproxy_cap: later literal TACE candidate with a same-visit order whose order time is valid in [tp−7 days,tp), post-window capture-adequate=1, complete provenance-rule audit, no O4 classification, and no qualifying O3 post-procedure examination/order/medication. A complete audit requires every relevant post-source time and every used order status to be present and valid; orders cannot be cancellation tokens.
 - unknown_provenance: any candidate for which post-window capture-adequate=0 and no O4/O3 evidence classifies it; missing post-source rows and missing order status/time are not planned-only evidence. If a required provenance field is missing, classify unknown rather than using another observed row to rescue it.
 - If a candidate meets O4 and the pre-opened-order rule, classify O4 and retain an overlap flag; exclude it from O_planproxy_cap. O3 without O4 is O3-only, not O_planproxy_cap. A pre-opened order with inadequate capture remains unknown.
 
@@ -87,20 +89,20 @@ Snapshot: [source checksum]. The HCC catalog lists 12 ordinary CSV files; every 
 
 | table | exact source path and SHA-256 | columns/times used |
 |---|---|---|
-| procedures | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 手术, 开始时间, 结束时间, 手术来源; t0, tp/te, O0–O4, closure audit |
-| encounters | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 就诊时间, 入院时间, 出院时间, 就诊科室; joins, M0, P_obs/P_care, n_enc, capture adequacy |
-| examinations | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 检查, 检查所见, 检查诊断, 开始时间, 检查号; O1/O3, n_exam, capture timing |
-| orders | [internal dataset path](非药品)_2062526727266216118.csv; [source checksum] | 患者主索引, 就诊号, 医嘱(非药品), 开立时间, 开始时间, 结束时间, 医嘱状态, 频次; O1/O3, n_ord, pre-open audit, status/time audit |
-| medications | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 用药, 单次用药剂量, 单次用药剂量单位, 频次, 开始时间, 结束时间, 用药方式, 药品类型; O2/O3, n_med, capture timing; no drug indication invented |
-| labs | [internal dataset path]; [source checksum] | 患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间; B0/S42/T42, assay opportunity, capture adequacy |
-| vitals | [internal dataset path]; [source checksum] | identifiers only: 患者主索引, 就诊号; coverage audit only, no payload |
-| transfers | [internal dataset path]; [source checksum] | identifiers only: 患者主索引, 就诊号; coverage audit only |
+| procedures | [internal dataset path]; [source checksum] | Patient Master Index, Encounter Number, Surgery, Start Time, End Time, Surgery Source; t0, tp/te, O0–O4, closure audit |
+| encounters | [internal dataset path]; [source checksum] | Patient Master Index, Encounter Number, Encounter Time, Admission Time, Discharge Time, Encounter Department; joins, M0, P_obs/P_care, n_enc, capture adequacy |
+| examinations | [internal dataset path]; [source checksum] | patient master index, visit number, examination, examination findings, examination diagnosis, start time, examination number; O1/O3, n_exam, capture timing |
+| orders | [internal dataset path](Non-drug)_2062526727266216118.csv; [source checksum] | Patient Master Index, Encounter Number, Non-drug Order, Order Time, Start Time, End Time, Order Status, Frequency; O1/O3, n_ord, pre-open audit, status/time audit |
+| medications | [internal dataset path]; [source checksum] | patient master index, encounter number, medication, single-dose medication dose, single-dose medication dose unit, frequency, start time, end time, administration route, medication type; O2/O3, n_med, capture timing; no drug indication invented |
+| labs | [internal dataset path]; [source checksum] | Patient Master Index, Encounter Number, Test, Qualitative Result, Quantitative Result, Specimen Type, Test Time; B0/S42/T42, assay opportunity, capture adequacy |
+| vitals | [internal dataset path]; [source checksum] | identifiers only: Patient Master Index, encounter number; coverage audit only, no payload |
+| transfers | [internal dataset path]; [source checksum] | identifiers only: patient master index, visit number; coverage audit only |
 | clinical_documents | [internal dataset path]; [source checksum] | context/coverage only; no validated event-time or intent field |
 | front_page | [internal dataset path]; [source checksum] | nominal/identifier-only table; not used as evidence |
 | pathology | [internal dataset path]; [source checksum] | context only; no validated timed response field |
 | diagnoses | [internal dataset path]; [source checksum] | context/coverage only; lexical flags are not diagnoses or temporally complete outcomes |
 
-All source tables are read-only. The catalog documents many-to-one child-table relationships to encounters on (患者主索引, 就诊号) and requires duplicate verification. HCC local encounter dates are available only as released local dates; exact dates are not released. Lab units/reference ranges are absent, and nominal vitals/transfers contain identifiers only. Images, validated procedure intent/scheduling, radiology response, outside-care capture, technical TACE detail/dose, toxicity, survival, utility, treatment benefit, and expert adjudication are unavailable. These limits prohibit biological, causal, response, failure, intent, benefit, or transport claims.
+All source tables are read-only. The catalog documents many-to-one child-table relationships to encounters on (patient master index, encounter number) and requires duplicate verification. HCC local encounter dates are available only as released local dates; exact dates are not released. Lab units/reference ranges are absent, and nominal vitals/transfers contain identifiers only. Images, validated procedure intent/scheduling, radiology response, outside-care capture, technical TACE detail/dose, toxicity, survival, utility, treatment benefit, and expert adjudication are unavailable. These limits prohibit biological, causal, response, failure, intent, benefit, or transport claims.
 
 ## Baseline and substantive learned alternative
 

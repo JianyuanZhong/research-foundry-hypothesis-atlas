@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 11 child: site-stratified transportability of the post-360 recorded-vital transition
 
 Status: proposed substantive child of `[prior hypothesis]`. This is a design and source-validation plan. It reports no fitted coefficient, event count, prediction, metric, or scientific result.

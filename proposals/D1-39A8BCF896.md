@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Can eICU hospitals be compared on sustained liberation after bounding source-dependent ascertainment?
 
 ## Status, scientific opening, and deliverable

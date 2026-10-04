@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Residual physiologic instability before live ICU discharge
 
 ## Scientific question and hypothesis

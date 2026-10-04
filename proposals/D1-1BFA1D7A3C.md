@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Capacity-response value of late lactate for a 24-hour mortality-review queue
 
 ## Unresolved question and substantive advance
@@ -86,9 +88,9 @@ Catalog: [internal dataset path], [source checksum].
 
 EICU snapshot: [source checksum]. All inputs are read-only ordinary gzip CSV files; no archive member is used.
 
-- [internal dataset path] 2.0数据/patient.csv.gz; table patient; schema datasets/eicu/table-ab037c09d7df9a3c.json; [source checksum]; required columns patientunitstayid, uniquepid, age, gender, hospitalid, hospitaldischargeoffset, hospitaldischargestatus; time fields hospitaldischargeoffset and ICU-relative offsets.
-- [internal dataset path] 2.0数据/infusionDrug.csv.gz; table infusionDrug; schema datasets/eicu/table-18e1a8caaa91eb44.json; [source checksum]; required columns infusiondrugid, patientunitstayid, infusionoffset, drugname; time field infusionoffset.
-- [internal dataset path] 2.0数据/lab.csv.gz; table lab; schema datasets/eicu/table-79bdb33275339b1a.json; [source checksum]; required columns labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset; time fields labresultoffset, labresultrevisedoffset.
-- [internal dataset path] 2.0数据/vitalPeriodic.csv.gz; table vitalPeriodic; schema datasets/eicu/table-a22c6d6981a32279.json; [source checksum]; required columns vitalperiodicid, patientunitstayid, observationoffset, sao2, heartrate, respiration; time field observationoffset.
+- [internal dataset path] 2.0 data/patient.csv.gz; table patient; schema datasets/eicu/table-ab037c09d7df9a3c.json; [source checksum]; required columns patientunitstayid, uniquepid, age, gender, hospitalid, hospitaldischargeoffset, hospitaldischargestatus; time fields hospitaldischargeoffset and ICU-relative offsets.
+- [internal dataset path] 2.0 data/infusionDrug.csv.gz; table infusionDrug; schema datasets/eicu/table-18e1a8caaa91eb44.json; [source checksum]; required columns infusiondrugid, patientunitstayid, infusionoffset, drugname; time field infusionoffset.
+- [internal dataset path] 2.0 data/lab.csv.gz; table lab; schema datasets/eicu/table-79bdb33275339b1a.json; [source checksum]; required columns labid, patientunitstayid, labresultoffset, labname, labresult, labmeasurenamesystem, labresultrevisedoffset; time fields labresultoffset, labresultrevisedoffset.
+- [internal dataset path] 2.0 data/vitalPeriodic.csv.gz; table vitalPeriodic; schema datasets/eicu/table-a22c6d6981a32279.json; [source checksum]; required columns vitalperiodicid, patientunitstayid, observationoffset, sao2, heartrate, respiration; time field observationoffset.
 
 All four tables join on patientunitstayid; uniquepid is used only for one-person selection; hospitalid defines gates, outer and inner folds, bootstrap clusters, and deletions; all offsets are minutes from ICU admission. Other configured datasets remain directly available but are not pooled because clocks, outcomes, measurement processes, and units are not harmonized. The source catalog and complete EICU metadata were inspected. The research-ambition README was inspected; its demonstrations were treated as examples rather than evidence, and the unavailable cancer main article/full STAR Methods were not claimed as read.

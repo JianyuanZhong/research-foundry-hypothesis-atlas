@@ -1,44 +1,46 @@
-# UKB 20: 肺功能下降与右心改变的先后关系
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# UKB 20: Temporal order of lung function decline and right heart changes
 
 Admission: feasibility_required. Verify participant overlap, measurement dates, missingness and event support before committing this design.
 
-## 待检验假说
+## Hypotheses to Be Tested
 
-肺功能较差者中，右心结构或功能异常与未来心衰的关联强于单纯肺功能异常。
+Among those with poorer lung function, the association of right-heart structural or functional abnormalities with future heart failure is stronger than that of lung-function abnormalities alone.
 
-## 研究对象及主要数据
+## Study population and key data
 
-有肺功能和心脏MRI者；重复测量子集、呼吸病与心衰随访。
+Individuals with lung function and cardiac MRI data; a repeated-measures subset, with respiratory disease and heart failure follow-up.
 
-## 基本做法
+## Basic Approach
 
-对齐肺功能与影像时间，区分先前肺功能和同期肺功能，比较右心、左心指标及后续结局。
+Align lung function and imaging time points, distinguish prior from concurrent lung function, and compare right- and left-heart measures and subsequent outcomes.
 
-## 研究意义
+## Significance of the Research
 
-识别肺循环负荷与全身心肺共病的不同线索。
+Identify distinct clues to pulmonary circulatory load and systemic cardiopulmonary comorbidity.
 
-## 主要难点
+## Main Challenges
 
-没有右心导管压力不能诊断肺动脉高压；重复测量时间不一定支持先后推断。
+Without right-heart catheterization pressures, pulmonary hypertension cannot be diagnosed; the timing of repeated measurements may not support inference about temporal order.
 
-## 参考资料
+## References
 
-相关背景或数据说明，非假说成立或新颖性证明：https://www.nature.com/articles/s41467-026-74715-4；字段定义：https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=20150；https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=20151；https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=24106
+Relevant background or data description, not evidence that the hypothesis is valid or novel: https://www.nature.com/articles/s41467-026-74715-4; field definitions: https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=20150; https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=20151; https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=24106
 
-## 生命科学方向
+## Life Sciences
 
-跨器官代谢与疾病分叉
+Cross-organ metabolism and disease divergence
 
-## 竞争解释
+## Competing Explanations
 
-吸烟、肥胖或左心疾病同时影响肺功能和右心。
+Smoking, obesity, or left-heart disease may affect both lung function and the right heart.
 
-## 最小验证与否定条件
+## Minimal validation and falsification criteria
 
-先检查肺功能是否确实早于MRI；若仅同期数据可用，则只报告联合表型。
+First check whether lung-function assessment clearly preceded MRI; if only concurrent data are available, report the joint phenotype only.
 
-## 字典字段依据
+## Basis for Dictionary Fields
 
 20150 Forced expiratory volume in 1-second (FEV1), Best measure；20151 Forced vital capacity (FVC), Best measure；24106 RV end diastolic volume；24107 RV end systolic volume；24109 RV ejection fraction；24103 LV ejection fraction；24105 LV myocardial mass；20116 Smoking status；41270 Diagnoses - ICD10；41280 Date of first in-patient diagnosis - ICD10；53 Date of attending assessment centre
 

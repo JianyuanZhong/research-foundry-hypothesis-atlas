@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Context robustness of lactate-by-perfusion prioritization at the first eligible live ICU exit
 
 ## Status and actual scientific deliverable

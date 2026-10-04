@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Decision-bounded monitoring value of lactate-by-perfusion at a fixed ICU landmark
 
 ## Scientific deliverable and substantive advance

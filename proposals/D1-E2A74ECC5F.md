@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Can an early ICU laboratory-observation signal support a transportable monitoring decision?
 
 Status: substantive child of `[prior hypothesis]` (episode 16). This is an observational transportability and decision-consequence study, not a causal effect of laboratory testing, a hospital quality ranking, or evidence that an alert improves care.

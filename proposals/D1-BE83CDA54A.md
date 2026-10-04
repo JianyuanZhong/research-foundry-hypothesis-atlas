@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Literal RT Vent Off versus Suspended: within-stay sequence dependence and hospital transportability audit
 
 ## Substantive child, unresolved question, and clinical importance

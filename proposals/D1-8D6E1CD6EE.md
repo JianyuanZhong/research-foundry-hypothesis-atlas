@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Patient-balanced coverage frontier with non-overlapping decision outcomes for documentary-M2 review
 
 ## Clinical question and falsifiable hypothesis
@@ -56,7 +58,7 @@ For model M in year a and world omega, T_M=100/K times the sum of Y among the ex
 
 ## Version-faithful visibility and patient-balanced frontier
 
-For each temporally eligible nonblank accession u=(患者主索引,就诊号,检查号), preserve every exact-deduplicated component row in original order with raw-byte/field backpointers. Define
+For each temporally eligible nonblank accession u=(Patient master index,Encounter number,Examination number), preserve every exact-deduplicated component row in original order with raw-byte/field backpointers. Define
 H_HCC(u)=SHA256(schema_version || parser_version || length-delimited ordered tuples(source_row_ordinal, field_name, exact raw bytes, V/A/E lineage)).
 The bit r_u=1 exposes the complete eventual report input only in an external audit state where the exact version was finalized, retrievable pre-cutoff, uniquely crosswalked, and byte-identical to H_HCC(u). In the Harbor corpus, report version/release/view is unknown; r is a hypothetical mask for a stored-content robustness experiment. Preliminary/amended/retracted/unmatched/nonidentical versions are not visible. Source-unavailable or blank-accession units remain denominator units with forced r=0.
 
@@ -97,20 +99,20 @@ These flags are not alternative conclusions. A supportive status always means on
 
 Controlling catalog: [internal dataset path], [source checksum]. HCC snapshot: [source checksum]. All HCC sources are read-only ordinary CSVs; archive member is none.
 
-- encounters: [internal dataset path]; table datasets/hcc/table-b743286cb1249287.json. Join (患者主索引,就诊号); required 年龄,性别,就诊时间,入院时间,出院时间.
-- procedures: [internal dataset path]; table datasets/hcc/table-d5eae16f8f8093d9.json. Join keys plus 手术,开始时间,结束时间,手术来源.
-- examinations: [internal dataset path]; table datasets/hcc/table-fd016d2731b9d6c6.json. Join keys plus 检查号; required 检查,检查所见,检查诊断,开始时间,机器型号,检查号.
-- pathology: [internal dataset path]; table datasets/hcc/table-0a4ee86a446c605c.json. Join keys; required 病理,检查所见,检查诊断,机器型号. No pathology time/specimen/accession field exists.
-- medications: [internal dataset path]; table datasets/hcc/table-4f6ecaeb6e8f69c2.json. Join keys; required 用药,药品类型,开始时间,结束时间.
-- orders: [internal dataset path](非药品)_2062526727266216118.csv; table datasets/hcc/table-6b93dcf0ea823702.json. Join keys; required 医嘱(非药品),开立时间,开始时间,结束时间,医嘱状态.
-- diagnoses: [internal dataset path]; table datasets/hcc/table-12710723c3df0c99.json. Join keys; 诊断名称,诊断类型; untimed corroboration only.
-- labs: [internal dataset path]; table datasets/hcc/table-38aad8c54471332f.json. Join keys; 检验,定性结果,定量结果,标本类型,检验时间. Excluded from predictors and used only for a zero-lab lineage audit.
-- clinical_documents: [internal dataset path]; table datasets/hcc/table-66afca58512c2fca.json. Duplicate 入院诊断 header; narratives audit-only and no reliable document time.
+- encounters: [internal dataset path]; table datasets/hcc/table-b743286cb1249287.json. Join (patient master index, encounter number); required age, sex, encounter time, admission time, discharge time.
+- procedures: [internal dataset path]; table datasets/hcc/table-d5eae16f8f8093d9.json. Join keys plus Surgery,start time,end time,surgery source.
+- examinations: [internal dataset path]; table datasets/hcc/table-fd016d2731b9d6c6.json. Join keys plus Examination Number; required Examination, Examination Findings, Examination Diagnosis, Start Time, Machine Model, Examination Number.
+- pathology: [internal dataset path]; table datasets/hcc/table-0a4ee86a446c605c.json. Join keys; required Pathology,Examination Findings,Examination Diagnosis,Machine Model. No pathology time/specimen/accession field exists.
+- medications: [internal dataset path]; table datasets/hcc/table-4f6ecaeb6e8f69c2.json. Join keys; required Medication,Drug Type,Start Time,End Time.
+- orders: [internal dataset path](non-medication)_2062526727266216118.csv; table datasets/hcc/table-6b93dcf0ea823702.json. Join keys; required Medical order (non-medication),Order time,Start time,End time,Order status.
+- diagnoses: [internal dataset path]; table datasets/hcc/table-12710723c3df0c99.json. Join keys; diagnosis name, diagnosis type; untimed corroboration only.
+- labs: [internal dataset path]; table datasets/hcc/table-38aad8c54471332f.json. Join keys; test, qualitative result, quantitative result, specimen type, test time. Excluded from predictors and used only for a zero-lab lineage audit.
+- clinical_documents: [internal dataset path]; table datasets/hcc/table-66afca58512c2fca.json. Duplicate Admission Diagnosis header; narratives audit-only and no reliable document time.
 - vitals: [internal dataset path]; table datasets/hcc/table-8436de9cba74b8ca.json. Identifier-only.
 - transfers: [internal dataset path]; table datasets/hcc/table-320c20f732e71789.json. Identifier-only.
 - front_page: [internal dataset path]; table datasets/hcc/table-38b3224239acc33f.json. Header-only (30 bytes) and identifiers only.
 
-Same-encounter joins are exact on (患者主索引,就诊号); examination grouping adds 检查号; prior-treatment searches join patient-wide on 患者主索引 before interval filtering. Never coerce blank keys, normalize identifiers, or join direct identifiers. Preserve source ordinal, raw bytes/hashes, and backpointers.
+Same-encounter joins are exact on (patient master index,visit number); examination grouping adds examination number; prior-treatment searches join patient-wide on patient master index before interval filtering. Never coerce blank keys, normalize identifiers, or join direct identifiers. Preserve source ordinal, raw bytes/hashes, and backpointers.
 
 MIMIC, eICU, and UKB remain directly accessible read-only under datasets/{mimic,eicu,ukb}/README.md and their catalogued files, but there is no crosswalk or compatible endpoint/estimand, so they are not pooled. This is a scientific exclusion, not an access limitation.
 

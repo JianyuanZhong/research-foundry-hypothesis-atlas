@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # A multiphase, futility-curtailed holistic audit under the fixed pulmonary-nodule workload
 
 ## Decision question and targeted repair

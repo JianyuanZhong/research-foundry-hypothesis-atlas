@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 4 branch: temporal hypotension signal versus care-process artifacts
 
 Status: proposed substantive child of [prior hypothesis]. No cohort scan, label fit, model fit, or result has been computed. This branch preserves the selected eICU question and adds a discriminating temporal/process design; it is not a reproduction of any cited paper.
@@ -18,7 +20,7 @@ The solver must newly produce a frozen cohort flow and label-readiness audit; he
 
 ## Population, boundaries, joins, and censoring
 
-Use only the read-only eICU 2.0 snapshot [source checksum] and catalog [source checksum]. The catalog is datasets/eicu/README.md, with full metadata in datasets/eicu/metadata.json and relevant schemas in datasets/eicu/table-*.json. The source directory is [internal dataset path] 库/EICU 2.0数据/. Source archives are gzip files with ordinary CSV members.
+Use only the read-only eICU 2.0 snapshot [source checksum] and catalog [source checksum]. The catalog is datasets/eicu/README.md, with full metadata in datasets/eicu/metadata.json and relevant schemas in datasets/eicu/table-*.json. The source directory is [internal dataset path] database/EICU 2.0 data/. Source archives are gzip files with ordinary CSV members.
 
 Join only on patientunitstayid; use uniquepid only to select the first ICU stay and keep all stays for one uniquepid in one split. Select lowest unitvisitnumber, then earliest unitadmittime24 as tie-break. Adults are numeric age >=18; preserve the >89 category and run a documented age-90 sensitivity. ICU admission is time zero; offsets are minutes relative to admission. There is no unitadmitoffset field.
 

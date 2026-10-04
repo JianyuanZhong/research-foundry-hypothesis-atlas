@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Prospectively separating portable laboratory-observation response from hospital templates in eICU
 
 ## Status and scientific deliverable

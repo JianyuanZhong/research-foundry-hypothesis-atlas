@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Selection-robust metabolic discordance and competing failure after first ICU discharge
 
 ## Scientific deliverable

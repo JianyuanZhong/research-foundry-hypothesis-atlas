@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Domain-discordant support recovery after ICU discharge
 
 ## Scientific deliverable

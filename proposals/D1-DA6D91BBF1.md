@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Independent first-day Apache triangulation and state/opportunity-preserving null for the frozen eICU respiratory-label experiment
 
 ## Purpose and bounded advance

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Fixed-capacity monitoring value of lactate-by-perfusion at the first eligible live ICU exit
 
 ## Status, parent and scientific deliverable

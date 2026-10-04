@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 9 successor: transfer-proximal worsening beyond current state and ascertainment
 
 Parent: `[prior hypothesis]`, assessed valid and assigned by the Lead.

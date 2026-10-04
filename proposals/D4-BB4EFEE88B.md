@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Pre-diagnosis physiologic reserve and competing mortality after colorectal cancer
 
 Status: independent delivery-ready branch from expert seed 36 and parent `[prior hypothesis]`. This is a planned Harbor experiment; no participant-level hypothesis fit or result is claimed.

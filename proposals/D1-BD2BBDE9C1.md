@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Executable two-phase actionability audit with fixed atom allocation and a closed workload ledger
 
 ## Targeted repair and unchanged scientific question

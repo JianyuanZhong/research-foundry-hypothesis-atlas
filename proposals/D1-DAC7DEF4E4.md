@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Residual instability before ICU-to-ward transfer: explicit observability and all-transfer deployment value
 
 Status: proposed substantive child of `[prior hypothesis]`. The frozen cohort, t0, predictor windows, raw/adjudicated outcomes, split, endpoint/process/value definitions, endpoint-fixed nulls, materiality thresholds, temporal transport roles, and exactly three inspected references are preserved. No E0/P1/J1 outcome result, order-null outcome contrast, worklist result, or learned outcome model has been computed.

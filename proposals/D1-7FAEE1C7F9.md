@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Value-aware temporal ventilation-state audit across airway lookbacks
 
 ## Substantive repair and clinical advance
@@ -40,10 +42,10 @@ This ordering prevents an old airway label from automatically winning against cu
 
 The source snapshot is eICU 2.0 `[source checksum]`, catalog [source checksum].
 
-* `baidu_downloads/eicu_mimic/eicu数据库/EICU 2.0数据/respiratoryCare.csv.gz`, archive member ordinary file, table `respiratoryCare`; columns `patientunitstayid`, `respcarestatusoffset`, `airwaytype`, `ventstartoffset`, `ventendoffset`, `priorventstartoffset`, `priorventendoffset`.
-* `baidu_downloads/eicu_mimic/eicu数据库/EICU 2.0数据/respiratoryCharting.csv.gz`, archive member ordinary file, table `respiratoryCharting`; columns `patientunitstayid`, `respchartoffset`, `respchartvaluelabel`, `respchartvalue`, with `respchartentryoffset` retained for provenance but not used as clinical time.
-* `baidu_downloads/eicu_mimic/eicu数据库/EICU 2.0数据/treatment.csv.gz`, archive member ordinary file, table `treatment`; columns `patientunitstayid`, `treatmentoffset`, `treatmentstring`.
-* `baidu_downloads/eicu_mimic/eicu数据库/EICU 2.0数据/note.csv.gz`, archive member ordinary file, table `note`; columns `patientunitstayid`, `noteoffset`, `notetype`; note text is not required for the primary state machine and is not exported.
+* `baidu_downloads/eicu_mimic/eicu database/EICU 2.0 data/respiratoryCare.csv.gz`, archive member ordinary file, table `respiratoryCare`; columns `patientunitstayid`, `respcarestatusoffset`, `airwaytype`, `ventstartoffset`, `ventendoffset`, `priorventstartoffset`, `priorventendoffset`.
+* `baidu_downloads/eicu_mimic/eicu database/EICU 2.0 data/respiratoryCharting.csv.gz`, archive member ordinary file, table `respiratoryCharting`; columns `patientunitstayid`, `respchartoffset`, `respchartvaluelabel`, `respchartvalue`, with `respchartentryoffset` retained for provenance but not used as clinical time.
+* `baidu_downloads/eicu_mimic/eicu database/EICU 2.0 data/treatment.csv.gz`, archive member ordinary file, table `treatment`; columns `patientunitstayid`, `treatmentoffset`, `treatmentstring`.
+* `baidu_downloads/eicu_mimic/eicu database/EICU 2.0 dataset/note.csv.gz`, archive member ordinary file, table `note`; columns `patientunitstayid`, `noteoffset`, `notetype`; note text is not required for the primary state machine and is not exported.
 * Parent denominator bindings remain those documented in the parent proposal, including `patient.csv.gz` (`patientunitstayid`, `uniquepid`, `hospitalid`, `age`, `unitvisitnumber`, `unitdischargeoffset`) and the inherited parent artifact. No private clinical record is queried publicly.
 
 All source files are read-only. Full-file scans used DuckDB `read_csv_auto(..., strict_mode=false, ignore_errors=true)` because malformed rows are known in these frozen CSVs; malformed-row counts must be quantified in a production adjudication. The computation used the full respiratoryCare, respiratoryCharting, and treatment sources, rather than a row sample.

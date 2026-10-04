@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Does laboratory observation process add transportable information after adequate ICU state adjustment?
 
 Status: episode-14 substantive child of [prior hypothesis]. This is an observational prognostic and measurement-process study, not a causal test-ordering study, a hospital quality ranking, or evidence of clinical benefit.
@@ -51,7 +53,7 @@ The primary outcome is the first patient.unitdischargestatus normalized exactly 
 
 All sources are ordinary gzip files whose archive member is ordinary file, read-only, under:
 
-[internal dataset path] 2.0数据/
+[internal dataset path] 2.0 data/
 
 The catalog and full schema references are datasets/eicu/README.md and datasets/eicu/metadata.json.
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Relative-grip cystatin C allocation: fair-capacity and frailty-control replication in UK Biobank
 
 ## Clinical decision and unresolved claim

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Concordant recorded-care pathways after a first observed HCC-coded admission
 
 ## Decision, hypothesis and substantive advance
@@ -16,9 +18,9 @@ The strongest available evidence supports only that this HCC snapshot contains e
 
 ## Population and temporal design
 
-Use HCC snapshot `[source checksum]`, catalog [source checksum], with every source read-only. Normalize Unicode and whitespace only in keys and diagnosis text. Join `diagnoses` to `encounters` on exactly (`患者主索引`, `就诊号`). Freeze and print the HCC cohort rule before locked evaluation: normalized `肝细胞癌` or case-insensitive `hepatocellular carcinoma` in `诊断名称`; report all matched strings, `诊断类型`, duplicate keys and unmatched joins. This is a record-coded cohort, not pathology-confirmed active HCC.
+Use HCC snapshot `[source checksum]`, catalog [source checksum], with every source read-only. Normalize Unicode and whitespace only in keys and diagnosis text. Join `diagnoses` to `encounters` on exactly (`patient master index`, `visit number`). Freeze and print the HCC cohort rule before locked evaluation: normalized `hepatocellular carcinoma` or case-insensitive `hepatocellular carcinoma` in `diagnosis name`; report all matched strings, `diagnosis type`, duplicate keys and unmatched joins. This is a record-coded cohort, not pathology-confirmed active HCC.
 
-Include age >=18, parseable native `入院时间` and `出院时间`, nonnegative stay, admission in [2011-01-01, 2026-01-01), and discharge before 2026-01-01. Select the earliest eligible encounter for each `患者主索引`, ordered by native admission time then `就诊号`; do not replace an invalid earliest encounter with a later record. Set t0 to `入院时间`. Exclude direct identifiers `姓名`, `身份证号`, `手机号码`, `医保/就诊卡号`, and `住院号` from predictors. Every eligible admission remains in the primary estimand, including early discharge, early procedure and unresolved-time cases.
+Include age >=18, parseable native `admission time` and `discharge time`, nonnegative stay, admission in [2011-01-01, 2026-01-01), and discharge before 2026-01-01. Select the earliest eligible encounter for each `patient master index`, ordered by native admission time then `encounter number`; do not replace an invalid earliest encounter with a later record. Set t0 to `admission time`. Exclude direct identifiers `name`, `ID number`, `mobile phone number`, `medical insurance/encounter card number`, and `inpatient number` from predictors. Every eligible admission remains in the primary estimand, including early discharge, early procedure and unresolved-time cases.
 
 Use half-open elapsed-time intervals:
 
@@ -54,30 +56,30 @@ Among R24, define the first later state in [24,72) using the same encounter key:
 
 A later order never retroactively changes a prior procedure-only state. A valid non-family procedure preceding a family episode remains O. Multiple same-time family matches remain M. A Q state is an order-documentation endpoint at the window boundary, not evidence of non-receipt. The primary all-admission estimand is the mean terminal probability vector over every eligible admission, obtained by the early-state probability multiplied by the conditional R24 later-state distribution and retaining all early states. Report the R24-conditional distribution only secondarily.
 
-The parent’s semantics-independent endpoint is a mandatory sensitivity: procedure-only P0/D0/U0/R24 followed by P1/D1/U1/N72, using procedure presence and native `开始时间` only. It must not be replaced by the concordance endpoint. If concordance is sparse or dictionary coherence fails, the parent endpoint remains computable but the clinical pathway interpretation is inconclusive.
+The parent’s semantics-independent endpoint is a mandatory sensitivity: procedure-only P0/D0/U0/R24 followed by P1/D1/U1/N72, using procedure presence and native `start time` only. It must not be replaced by the concordance endpoint. If concordance is sparse or dictionary coherence fails, the parent endpoint remains computable but the clinical pathway interpretation is inconclusive.
 
 ## Prospective semantic dictionary and endpoint adjudication boundary
 
-In buckets 0–59, with choices fixed before reading locked labels, build a clinician-reviewable dictionary from exact `手术` and `医嘱(非药品)` strings. Candidate families are:
+In buckets 0–59, with choices fixed before reading locked labels, build a clinician-reviewable dictionary from exact `surgery` and `orders (non-drug)` strings. Candidate families are:
 
-- E (embolization/interventional): explicit TACE/TAE/栓塞/化疗栓塞 language plus hepatic/liver/肝动脉 context;
-- S (resection/transplant): hepatic/liver context plus 切除/移植/resection/transplant;
-- A (ablation): hepatic/liver/tumor/lesion context plus 消融/射频/微波/冷冻/ablat;
+- E (embolization/interventional): explicit TACE/TAE/embolization/chemoembolization language plus hepatic/liver/hepatic artery context;
+- S (resection/transplant): hepatic/liver context plus resection/transplant/resection/transplant;
+- A (ablation): hepatic/liver/tumor/lesion context plus ablation/radiofrequency/microwave/cryotherapy/ablat;
 - M: more than one family matches;
 - X: therapeutic-looking but unassignable or mixed;
 - O: valid procedure matching none.
 
-The final dictionary must print normalization, positive and exclusion terms, exact strings, counts and adjudication status. Exclude diagnostic tests, routine nursing, imaging-only and administrative/cancellation language from a single-family order match; do not use `医嘱状态`, `医嘱期限` or `频次` to infer intent or execution. Orders use `开立时间` as the primary documentation time; `开始时间` and `结束时间` are audit/sensitivity fields. Procedures use `开始时间`; `结束时间` and `手术来源` are audit fields.
+The final dictionary must print normalization, positive and exclusion terms, exact strings, counts and adjudication status. Exclude diagnostic tests, routine nursing, imaging-only and administrative/cancellation language from a single-family order match; do not use `Order Status`, `Order Duration` or `Frequency` to infer intent or execution. Orders use `Order Entry Time` as the primary documentation time; `Start Time` and `End Time` are audit/sensitivity fields. Procedures use `Start Time`; `End Time` and `Surgical Source` are audit fields.
 
-A qualifying concordance requires the same normalized (`患者主索引`, `就诊号`), same family, order `开立时间` <= procedure `开始时间`, both valid, order-to-procedure gap in [0,48] hours, and procedure start before discharge and within the later window. This is a reproducible record linkage state. It does not prove a plan, intent, administration or completion. A clinician-blinded review of a stratified sample of exact family strings and C/P/Q cases is required before describing the endpoint as clinically meaningful; absent such review, report only a lexical/documentation result and mark the semantic mechanism analysis inconclusive.
+A qualifying concordance requires the same normalized (`patient master index`, `visit number`), same family, order `order opening time` <= procedure `start time`, both valid, order-to-procedure gap in [0,48] hours, and procedure start before discharge and within the later window. This is a reproducible record linkage state. It does not prove a plan, intent, administration or completion. A clinician-blinded review of a stratified sample of exact family strings and C/P/Q cases is required before describing the endpoint as clinically meaningful; absent such review, report only a lexical/documentation result and mark the semantic mechanism analysis inconclusive.
 
 ## Information sets, alternatives and split
 
-Use one patient-level split for all models: SHA-256 of normalized `患者主索引` under catalog policy, modulo 100; buckets 0–59 fit, 60–69 preprocessing/hyperparameter/regularization selection, 70–79 locked evaluation, and 80–99 inaccessible and not external validation. All rows for a patient follow the same bucket. Freeze cohort, dictionary, pairing, state precedence, assay inclusion, transformations, dimensions, hyperparameters and calibration before test labels are used.
+Use one patient-level split for all models: SHA-256 of normalized `patient master index` under catalog policy, modulo 100; buckets 0–59 fit, 60–69 preprocessing/hyperparameter/regularization selection, 70–79 locked evaluation, and 80–99 inaccessible and not external validation. All rows for a patient follow the same bucket. Freeze cohort, dictionary, pairing, state precedence, assay inclusion, transformations, dimensions, hyperparameters and calibration before test labels are used.
 
 A (transparent baseline) uses age, sex, admitting department, calendar era, admission time-of-day, pre-admission encounter count, prior assay-specific nearest/count/recency/missingness summaries, and current early process-free context. It predicts the full terminal vector with a sequential multinomial cause-specific model. It excludes current [0,12) assay values, procedure/order text, medications, documents, pathology and post-boundary data.
 
-L adds current [0,12) assay-specific history using `检验`, `定性结果`, `定量结果`, `标本类型`, and `检验时间`: first/last values, within-assay change, elapsed time, count, missingness/density and slope only with two distinct native times. Numeric and qualitative results remain assay-specific because there is no unit column.
+L adds current [0,12) assay-specific history using `laboratory_test`, `qualitative_result`, `quantitative_result`, `specimen_type`, and `test_time`: first/last values, within-assay change, elapsed time, count, missingness/density and slope only with two distinct native times. Numeric and qualitative results remain assay-specific because there is no unit column.
 
 H adds the prior 730-day transparent summary using encounter timing, assay-specific lab counts/first-last/change/recency/slope, generic procedure occurrence counts/recency/gaps, and order/medication documentation-process counts/recency/missingness. It uses no order/procedure names for the primary prediction. All transformations are fit-only; “no observation” indicators are explicit.
 
@@ -97,19 +99,19 @@ Falsifications are frozen before locked evaluation: within-patient assay/source 
 
 ## Exact read-only bindings and complete catalog audit
 
-All HCC files are ordinary CSVs; archive member is “ordinary file” for every file. Every clinical row is joined by normalized (`患者主索引`, `就诊号`) and duplicate, multiplicity and unmatched-key audits are mandatory.
+All HCC files are ordinary CSVs; archive member is “ordinary file” for every file. Every clinical row is joined by normalized (`Patient Master Index`, `Encounter Number`) and duplicate, multiplicity and unmatched-key audits are mandatory.
 
 Primary tables:
 
-- `encounters`, schema `datasets/hcc/table-b743286cb1249287.json`, source `[internal dataset path]`: `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`.
-- `diagnoses`, schema `datasets/hcc/table-12710723c3df0c99.json`, source `[internal dataset path]`: `患者主索引`, `就诊号`, `诊断名称`, `诊断类型`; no native diagnosis time.
-- `labs`, schema `datasets/hcc/table-38aad8c54471332f.json`, source `[internal dataset path]`: keys, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`.
-- `procedures`, schema `datasets/hcc/table-d5eae16f8f8093d9.json`, source `[internal dataset path]`: keys, `手术`, `开始时间`, `结束时间`, `手术来源`.
-- `orders`, schema `datasets/hcc/table-6b93dcf0ea823702.json`, source `[internal dataset path]`: keys, `医嘱(非药品)`, `开立时间`, `开始时间`, `结束时间`, `医嘱期限`, `医嘱状态`, `频次`.
-- `medications`, schema `datasets/hcc/table-4f6ecaeb6e8f69c2.json`, source `[internal dataset path]`: keys, `用药`, `单次用药计量`, `单次用药计量单位`, `频次`, `开始时间`, `结束时间`, `用药方式`, `药品类型`; process audit only, no treatment interpretation.
-- `examinations`, schema `datasets/hcc/table-fd016d2731b9d6c6.json`, source `[internal dataset path]`: keys, `检查`, `检查所见`, `检查诊断`, `开始时间`, `机器型号`, `检查号`; secondary audit only.
-- `clinical_documents`, schema `datasets/hcc/table-66afca58512c2fca.json`, source `[internal dataset path]`: keys, narrative columns including `入院诊断`, `入院情况`, `诊疗经过`, `出院情况`, `出院诊断`, `手术名称`, `手术经过`; no native time and duplicate `入院诊断` column.
-- `pathology`, schema `datasets/hcc/table-0a4ee86a446c605c.json`, source `[internal dataset path]`: keys, `病理`, `检查所见`, `检查诊断`, `机器型号`; no native time.
+- `encounters`, schema `datasets/hcc/table-b743286cb1249287.json`, source `[internal dataset path]`: `Patient master index`, `Encounter number`, `Age`, `Sex`, `Encounter time`, `Admission time`, `Discharge time`, `Department`.
+- `diagnoses`, schema `datasets/hcc/table-12710723c3df0c99.json`, source `[internal dataset path]`: `Patient Master Index`, `Encounter Number`, `Diagnosis Name`, `Diagnosis Type`; no native diagnosis time.
+- `labs`, schema `datasets/hcc/table-38aad8c54471332f.json`, source `[internal dataset path]`: keys, `test`, `qualitative result`, `quantitative result`, `specimen type`, `test time`.
+- `procedures`, schema `datasets/hcc/table-d5eae16f8f8093d9.json`, source `[internal dataset path]`: keys, `Surgery`, `Start Time`, `End Time`, `Surgery Source`.
+- `orders`, schema `datasets/hcc/table-6b93dcf0ea823702.json`, source `[internal dataset path]`: keys, `Non-drug medical order`, `Order time`, `Start time`, `End time`, `Order duration`, `Order status`, `Frequency`.
+- `medications`, schema `datasets/hcc/table-4f6ecaeb6e8f69c2.json`, source `[internal dataset path]`: keys, `Medication`, `Single-dose medication amount`, `Single-dose medication amount unit`, `Frequency`, `Start time`, `End time`, `Administration route`, `Drug type`; process audit only, no treatment interpretation.
+- `examinations`, schema `datasets/hcc/table-fd016d2731b9d6c6.json`, source `[internal dataset path]`: keys, `Examination`, `Examination Findings`, `Examination Diagnosis`, `Start Time`, `Machine Model`, `Examination Number`; secondary audit only.
+- `clinical_documents`, schema `datasets/hcc/table-66afca58512c2fca.json`, source `[internal dataset path]`: keys, narrative columns including `Admission Diagnosis`, `Admission Status`, `Diagnostic and Treatment Course`, `Discharge Status`, `Discharge Diagnosis`, `Surgery Name`, `Surgical Procedure`; no native time and duplicate `Admission Diagnosis` column.
+- `pathology`, schema `datasets/hcc/table-0a4ee86a446c605c.json`, source `[internal dataset path]`: keys, `Pathology`, `Examination Findings`, `Examination Diagnosis`, `Machine Model`; no native time.
 - `vitals`, schema `datasets/hcc/table-8436de9cba74b8ca.json`, source `[internal dataset path]`: keys only; no payload/time.
 - `transfers`, schema `datasets/hcc/table-320c20f732e71789.json`, source `[internal dataset path]`: keys only; no payload/time.
 - `front_page`, schema `datasets/hcc/table-38b3224239acc33f.json`, source `[internal dataset path]`: keys only; no payload/time.

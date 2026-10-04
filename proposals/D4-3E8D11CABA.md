@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # UKB two-panel metabolic change and cardiometabolic multimorbidity: source-binding repair
 
 ## Episode-23 successor and scientific deliverable

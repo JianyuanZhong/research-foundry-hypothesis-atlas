@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # HCC repeat-TACE P-beyond-B: executable fixed-prediction missing-Y bound pass
 
 ## Targeted successor and preserved design
@@ -12,15 +14,15 @@ The retained parent evidence remains the only empirical HCC support: a no-sampli
 
 Use snapshot `[source checksum]` and catalog `[internal dataset path]` (catalog [source checksum]). The frozen reconstruction must scan every row, without sampling, from these ordinary read-only CSVs and schemas:
 
-* `encounters`, `table-b743286cb1249287.json`, `[internal dataset path]`, columns `患者主索引`, `就诊号`, `年龄`, `性别`, `就诊时间`, `入院时间`, `出院时间`, `就诊科室`.
-* `diagnoses`, `table-12710723c3df0c99.json`, `[internal dataset path]`, exact `诊断名称 == 肝细胞癌`; time inherited from encounter.
-* `procedures`, `table-d5eae16f8f8093d9.json`, `[internal dataset path]`, `患者主索引`, `就诊号`, `手术`, `开始时间`, `结束时间`, `手术来源`; identify case-insensitive `TACE` or literal `化疗栓塞`, deduplicate same patient/calendar date, choose the first adjacent 14–180-day pair and first strict 15–90-day event.
+* `encounters`, `table-b743286cb1249287.json`, `[internal dataset path]`, columns `patient master index`, `encounter number`, `age`, `sex`, `encounter time`, `admission time`, `discharge time`, `clinical department`.
+* `diagnoses`, `table-12710723c3df0c99.json`, `[internal dataset path]`, exact `diagnosis name == hepatocellular carcinoma`; time inherited from encounter.
+* `procedures`, `table-d5eae16f8f8093d9.json`, `[internal dataset path]`, `patient master index`, `encounter number`, `procedure`, `start time`, `end time`, `procedure source`; identify case-insensitive `TACE` or literal `transarterial chemoembolization`, deduplicate same patient/calendar date, choose the first adjacent 14–180-day pair and first strict 15–90-day event.
 * `medications`, `table-4f6ecaeb6e8f69c2.json`, `[internal dataset path]`, apply the inherited days 1–14 systemic-record ontology and exclusions; recorded orders are not verified administrations.
-* `labs`, `table-38aad8c54471332f.json`, `[internal dataset path]`, columns `患者主索引`, `就诊号`, `检验`, `定性结果`, `定量结果`, `标本类型`, `检验时间`; use exact `白蛋白` and `总胆红素`, finite uncensored numeric `定量结果`, and never pool assays.
-* Outcome-blind `examinations`, `table-fd016d2731b9d6c6.json`, `[internal dataset path]`; use only valid `开始时间` and row presence, never text-mine `检查所见` or `检查诊断`.
-* Outcome-blind `clinical_documents`, `table-66afca58512c2fca.json`, `[internal dataset path]`; use nonempty linked-row presence only. `入院诊断__duplicate_2` is the duplicate header; this table has no time and cannot supply a `Y` timestamp.
+* `labs`, `table-38aad8c54471332f.json`, `[internal dataset path]`, columns `Patient Master Index`, `Visit Number`, `Test`, `Qualitative Result`, `Quantitative Result`, `Specimen Type`, `Test Time`; use exact `Albumin` and `Total Bilirubin`, finite uncensored numeric `Quantitative Result`, and never pool assays.
+* Outcome-blind `examinations`, `table-fd016d2731b9d6c6.json`, `[internal dataset path]`; use only valid `start time` and row presence, never text-mine `examination findings` or `examination diagnosis`.
+* Outcome-blind `clinical_documents`, `table-66afca58512c2fca.json`, `[internal dataset path]`; use nonempty linked-row presence only. `admission diagnosis__duplicate_2` is the duplicate header; this table has no time and cannot supply a `Y` timestamp.
 
-All encounter joins are deduplicated existence joins on (`患者主索引`,`就诊号`), with composite-key duplicate counts audited before joining. Patient-level sequencing uses `患者主索引` only where frozen. Define `B` as latest finite assay in TACE2 [day -30, day -1], `P` as latest assay in the selected repeat encounter [event -72 h, event), and `Y` as nearest valid assay to event +24 h in (event, event +72 h], using the inherited deterministic tie rule. Build `BP_eligible` before inspecting `Y`; missing `Y` stays missing. Origins are 2021-01-01 through 2024-01-01, with training event date < origin and future block `[origin, origin+365 days)`.
+All encounter joins are deduplicated existence joins on (`Patient Master Index`,`Encounter Number`), with composite-key duplicate counts audited before joining. Patient-level sequencing uses `Patient Master Index` only where frozen. Define `B` as latest finite assay in TACE2 [day -30, day -1], `P` as latest assay in the selected repeat encounter [event -72 h, event), and `Y` as nearest valid assay to event +24 h in (event, event +72 h], using the inherited deterministic tie rule. Build `BP_eligible` before inspecting `Y`; missing `Y` stays missing. Origins are 2021-01-01 through 2024-01-01, with training event date < origin and future block `[origin, origin+365 days)`.
 
 ## Fixed-prediction bound contract
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Proposal: schedule-robust component trajectories after a recorded TACE-like index
 
 ## Episode, parent, and actual scientific deliverable
@@ -33,7 +35,7 @@ models and claims no result.
 
 The strongest claim supported by the available evidence is structural: dated
 local procedure, encounter, and laboratory rows can be joined by
-\`(患者主索引, 就诊号)\`; the procedure source contains many liver-related and
+\`(patient master index, encounter number)\`; the procedure source contains many liver-related and
 compound labels; and the laboratory source contains exact-name AFP, albumin,
 and total-bilirubin rows with timestamps. A bounded full procedure audit found
 338,040 rows and 7,781 labels, including 33,332 standalone hepatic-angiography
@@ -125,13 +127,13 @@ catalog identify the HCC snapshot
 \`[source checksum]\`.
 All listed HCC sources are ordinary files, not archive members. Source files
 remain read-only. Every child table is aggregated by
-\`(患者主索引, 就诊号)\` before any join; no many-to-many join is permitted.
+\`(Patient Master Index, Encounter Number)\` before any join; no many-to-many join is permitted.
 
 1. Procedures: read
    \`[internal dataset path]`,
    table \`procedures\`, schema \`datasets/hcc/table-d5eae16f8f8093d9.json\`.
    The verified header is
-   \`患者主索引, 就诊号, 手术, 开始时间, 结束时间, 手术来源\`.
+   \`patient master index, encounter number, surgery, start time, end time, surgery source\`.
    Retain raw name, source, both timestamps, matched terms, and episode ID.
    Form the primary episode within patient and encounter using the parent’s
    24-hour temporal grouping; retain encounter-only grouping as sensitivity.
@@ -139,8 +141,8 @@ remain read-only. Every child table is aggregated by
    vocabulary audit.
 
 2. Index ontology and anchor: the first eligible timed episode whose raw
-   \`手术\` is literal \`TACE\), contains \`动脉化疗栓塞\`, or contains both
-   \`肝动脉\` and \`栓塞\` is the candidate index. Exact ties remain tied.
+   \`Surgery\` is literal \`TACE\), contains \`transarterial chemoembolization\`, or contains both
+   \`Hepatic Artery\` and \`Embolization\` is the candidate index. Exact ties remain tied.
    Hepatic angiography alone cannot define the therapeutic index. Require a
    corresponding encounter record. Let \(t_0\) be the earliest start timestamp
    among tied index rows. Relative-time rules use hours from \(t_0\), with
@@ -150,19 +152,19 @@ remain read-only. Every child table is aggregated by
 3. Encounters: read
    \`[internal dataset path]`,
    table \`encounters\`, schema \`datasets/hcc/table-b743286cb1249287.json\),
-   joined on \`患者主索引, 就诊号\`. The verified header includes
-   \`患者主索引, 就诊号, 姓名, 身份证号, 手机号, 医保/就诊卡号, 住院号,
-   年龄, 性别, 身高, 体重, 就诊时间, 入院时间, 出院时间, 就诊科室\`.
-   Require age >=18 and nonmissing sex. Use \`就诊时间\` as the local
+   joined on \`patient master index, encounter number\`. The verified header includes
+   \`Patient master index, encounter number, name, national ID number, mobile phone number, health insurance/encounter card number, inpatient number,
+   age, sex, height, weight, visit time, admission time, discharge time, visit department\`.
+   Require age >=18 and nonmissing sex. Use \`Visit Time\` as the local
    temporal anchor for diagnosis ascertainment; department, admission/
    discharge, and contact intervals are covariates, not adjudication.
 
 4. Diagnosis ascertainment: read
    \`[internal dataset path]`,
    table \`diagnoses\`, schema \`datasets/hcc/table-12710723c3df0c99.json\`,
-   joined on \`患者主索引, 就诊号\`. The verified header is
-   \`患者主索引, 就诊号, 诊断名称, 诊断类型\`. Require
-   \`诊断名称\` containing \`肝细胞癌\` on an encounter dated from 180 days
+   joined on \`Patient Master Index, Encounter Number\`. The verified header is
+   \`patient master index, visit number, diagnosis name, diagnosis type\`. Require
+   \`Diagnosis Name\` containing \`hepatocellular carcinoma\` on an encounter dated from 180 days
    before through 7 days after the index encounter. Diagnoses has no time
    column: encounter time is only a dated diagnosis proxy, never onset,
    order, or clinical adjudication.
@@ -201,7 +203,7 @@ observation/censoring state, not as death.
 - \`No recorded transition\` or administrative end of local observation.
 
 The endpoint ladder is prespecified and scientific, not endpoint shopping.
-Unclassified labels remain ambiguous; \`手术来源\` cannot be used to infer
+Unclassified labels remain ambiguous; \`surgery source\` cannot be used to infer
 intent. Diagnostic procedures are not therapeutic outcomes.
 
 ## Component exposure and the repaired schedule vector
@@ -209,15 +211,15 @@ intent. Diagnostic procedures are not therapeutic outcomes.
 Read
 \`[internal dataset path]`, table
 \`labs\`, schema \`datasets/hcc/table-38aad8c54471332f.json\`, joined on
-\`患者主索引, 就诊号\`. The verified header is
-\`患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间\`.
+\`patient master index, visit number\`. The verified header is
+\`patient master index, visit number, test, qualitative result, quantitative result, specimen type, test time\`.
 There is no units column.
 
 Freeze the assay vocabulary using fitting data only. Primary numeric candidates
-remain exact serum \`甲胎蛋白\` (AFP), serum \`白蛋白\`, and serum
-\`总胆红素\`. Exclude \`甲胎蛋白异质体\`, \`前白蛋白\`,
-\`糖化白蛋白\`, urine/body-fluid albumin, direct/indirect bilirubin, and
-generic substitutes. Treat \`白蛋白（急）\` and \`总胆红素（急）\` as
+remain exact serum \`alpha-fetoprotein\` (AFP), serum \`albumin\`, and serum
+\`total bilirubin\`. Exclude \`alpha-fetoprotein isoforms\`, \`prealbumin\`,
+\`glycated albumin\`, urine/body-fluid albumin, direct/indirect bilirubin, and
+generic substitutes. Treat \`albumin (urgent)\` and \`total bilirubin (urgent)\` as
 separate variants unless a training audit demonstrates defensible
 within-assay linkage; never pool raw values across labels. Preserve exact
 name and specimen type.
@@ -226,7 +228,7 @@ For each index and exact assay, preserve the parent’s exposure construction:
 the last eligible numeric pre-index value strictly before \(t_0\), and the
 first eligible numeric post-index value satisfying
 \(7*24 \le t-t_0 \le 45*24\) hours. Parse only numeric
-\`定量结果\`; qualitative/inequality observations stay nonnumeric. Retain
+\`Quantitative Result\`; qualitative/inequality observations stay nonnumeric. Retain
 pre/post timestamps, delays, counts, qualitative/inequality flags, assay
 name, specimen type, and missingness. Estimate robust scale and category
 tolerances from fitting data only. AFP is decrease/non-decrease/uncertain/

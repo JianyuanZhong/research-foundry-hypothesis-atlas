@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Certified baseline-only decision experiment for UKB renal-marker discordance
 
 ## Lineage, unresolved question, and substantive advance

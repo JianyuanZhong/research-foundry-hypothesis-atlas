@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 23 successor: does lactate nonclearance retain prognostic information after early organ-context adjustment?
 
 ## Unresolved question and clinical importance

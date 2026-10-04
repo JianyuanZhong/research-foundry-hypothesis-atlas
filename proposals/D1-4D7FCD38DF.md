@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Documentary-M2 patient-priority preservation under incomplete preoperative report bundles
 
 ## 1. Targeted repair and clinical question
@@ -12,7 +14,7 @@ The unresolved question is therefore: at the 24-hour preoperative boundary, can 
 
 ## 2. Evidence-supported and untested claims
 
-The strongest available dataset claim is source feasibility. The HCC snapshot \`[source checksum]\` provides encounter-linked age/recorded sex and timestamps, source-labelled procedures with start/end fields, CT/MRI-like examination accessions with acquisition-like \`开始时间\` and stored narrative fields, same-encounter pathology narrative, and dated medication/order rows. The catalog, HCC README, table metadata, BOM-preserving header checks, and inherited full scans document the columns and joins. This supports construction of the proposed retrospective documentary experiment, not correct procedure semantics, report availability, biological MVI, actual queue use, or clinical benefit.
+The strongest available dataset claim is source feasibility. The HCC snapshot \`[source checksum]\` provides encounter-linked age/recorded sex and timestamps, source-labelled procedures with start/end fields, CT/MRI-like examination accessions with acquisition-like \`Start time\` and stored narrative fields, same-encounter pathology narrative, and dated medication/order rows. The catalog, HCC README, table metadata, BOM-preserving header checks, and inherited full scans document the columns and joins. This supports construction of the proposed retrospective documentary experiment, not correct procedure semantics, report availability, biological MVI, actual queue use, or clinical benefit.
 
 The inspected Li et al. full-text XML (DOI \`10.1186/s12957-026-04229-2\`, frozen source \`[source checksum]\`, SHA-256 \`[source checksum]\`) reports prognostic associations for graded microvascular invasion after resection; it does not establish that a report-based queue improves care. The inspected systematic-review XML (DOI \`10.3390/cancers18132028\`, frozen source \`[source checksum]\`, SHA-256 \`[source checksum]\`) describes predominantly retrospective, heterogeneous early-recurrence AI studies and limited independent validation. Those sources motivate rigorous patient-level evaluation but do not answer this report-bundle priority question. The three expert-selected demonstration files were inspected as specified in the research-ambition README; the cancer main article and full STAR Methods remain unavailable, so no claim is based on reading them.
 
@@ -22,8 +24,8 @@ The tested claim is strictly computational: under the frozen HCC corpus and comp
 
 For each coupled source/operation world \`omega\`:
 
-- Include adults with age >=18 in \`encounters.年龄\` at their earliest source-documented eligible hepatobiliary resection, using a preregistered procedure dictionary reviewed by a hepatobiliary surgeon.
-- Require a same-\`(患者主索引, 就诊号)\` pathology narrative sufficient to assign the encounter to the documentary target frame under at least one complete pathology book.
+- Include adults with age >=18 in \`encounters.Age\` at their earliest source-documented eligible hepatobiliary resection, using a preregistered procedure dictionary reviewed by a hepatobiliary surgeon.
+- Require a same-\`(patient master index, encounter number)\` pathology narrative sufficient to assign the encounter to the documentary target frame under at least one complete pathology book.
 - Exclude an earlier qualifying resection and any recorded transplant, TACE/embolization, ablation, radiotherapy, targeted therapy, or immunotherapy in \`[t_op-365 days,t_op)\`, using procedures, medications, and non-medication orders. Ambiguous membership remains a separate outer source state.
 - Treat a clinically supported anaesthesia-system procedure timestamp as a point. Treat date-like midnight values as \`[date,date+24h)\`. Missing, contradictory, non-reversible, or clinically ambiguous operation times remain unavailable/alternative states. Never substitute admission or discharge time.
 - Set \`t_dec=t_op-24h\`. Candidate CT/MRI acquisition intervals must lie wholly in \`[t_op-90d,t_dec)\`. The inherited 12-, 48-, and 72-hour analyses remain non-rescuing sensitivities.
@@ -37,22 +39,22 @@ All 12 HCC inputs are ordinary read-only CSVs; HCC has no archive members. The e
 
 | Table | Exact source path | Join key | Required columns and role |
 |---|---|---|---|
-| \`encounters\` | \`[internal dataset path]` | \`(患者主索引,就诊号)\` | \`年龄,性别,就诊时间,入院时间,出院时间\`; age/recorded-sex cells and audit clocks |
-| \`procedures\` | \`[internal dataset path]` | encounter key | \`手术,开始时间,结束时间,手术来源\`; operation identity and interval clock |
-| \`examinations\` | \`[internal dataset path]` | \`(患者主索引,就诊号,检查号)\` | \`检查,检查所见,检查诊断,开始时间,机器型号,检查号\`; whole-accession modality/time/report |
-| \`pathology\` | \`[internal dataset path]` | encounter key only | \`病理,检查所见,检查诊断,机器型号\`; complete documentary endpoint book |
-| \`medications\` | \`[internal dataset path]` | patient-wide temporal join, then episode restriction | \`用药,药品类型,开始时间,结束时间\`; prior-treatment exclusion |
-| \`orders\` | \`[internal dataset path]` | patient-wide temporal join | \`医嘱(非药品),开立时间,开始时间,结束时间,医嘱状态\`; prior-treatment exclusion |
-| \`diagnoses\` | \`[internal dataset path]` | encounter key | \`诊断名称,诊断类型\`; untimed corroboration only |
-| \`clinical_documents\` | \`[internal dataset path]` | encounter key | \`主诉,现病史,既往史,入院诊断,诊疗经过,出院诊断,手术名称,手术经过\`; leakage/audit only |
-| \`labs\` | \`[internal dataset path]` | encounter key | \`检验,定性结果,定量结果,标本类型,检验时间\`; leakage audit only |
+| \`encounters\` | \`[internal dataset path]` | \`(patient master index, encounter number)\` | \`age, sex, encounter time, admission time, discharge time\`; age/recorded-sex cells and audit clocks |
+| \`procedures\` | \`[internal dataset path]` | encounter key | \`Surgery,Start Time,End Time,Surgery Source\`; operation identity and interval clock |
+| \`examinations\` | \`[internal dataset path]` | \`(patient master index,encounter number,examination number)\` | \`examination,examination findings,examination diagnosis,start time,machine model,examination number\`; whole-accession modality/time/report |
+| \`pathology\` | \`[internal dataset path]` | encounter key only | \`Pathology,Examination Findings,Examination Diagnosis,Machine Model\`; complete documentary endpoint book |
+| \`medications\` | \`[internal dataset path]` | patient-wide temporal join, then episode restriction | \`Medication, Medication type, Start time, End time\`; prior-treatment exclusion |
+| \`orders\` | \`[internal dataset path]` | patient-wide temporal join | \`Orders (non-drug), order time, start time, end time, order status\`; prior-treatment exclusion |
+| \`diagnoses\` | \`[internal dataset path]` | encounter key | \`Diagnosis Name,Diagnosis Type\`; untimed corroboration only |
+| \`clinical_documents\` | \`[internal dataset path]` | encounter key | \`Chief complaint,History of present illness,Past medical history,Admission diagnosis,Clinical course,Discharge diagnosis,Procedure name,Procedure details\`; leakage/audit only |
+| \`labs\` | \`[internal dataset path]` | encounter key | \`Test,Qualitative Result,Quantitative Result,Specimen Type,Test Time\`; leakage audit only |
 | \`vitals\` | \`[internal dataset path]` | encounter key | identifiers only; no usable payload/time |
 | \`transfers\` | \`[internal dataset path]` | encounter key | identifiers only; no usable payload/time |
 | \`front_page\` | \`[internal dataset path]` | encounter key | identifiers only; no usable payload/time |
 
 The HCC catalog metadata gives table-specific schema hashes: encounters \`8ff49f3a...\`, procedures \`e86f7a74...\`, examinations \`6963fe9f...\`, pathology \`a8e2aa9e...\`, medications \`39d1de89...\`, and orders \`e902f54d...\`; the verifier must use the complete JSON values and raw source hashes from \`datasets/hcc/README.md\` and \`datasets/hcc/metadata.json\`, not these abbreviated labels.
 
-Examinations are grouped at the complete nonblank whole-accession grain \`(患者主索引,就诊号,检查号)\). Preserve every raw row in original ordinal order and all \`检查\`, \`检查所见\`, and \`检查诊断\` boundaries; never select a representative row or deduplicate repeated text. Blank accession, component disagreement, ambiguous modality, or non-reversible parsing makes the whole accession unavailable in that state. The inherited audit found 72 blank accession IDs, 392,854 distinct nonblank whole-accession keys, 16,534 multirow keys, and at most 12 rows/key; these values must be replayed, not assumed.
+Examinations are grouped at the complete nonblank whole-accession grain \`(patient master index, encounter number, examination number)\). Preserve every raw row in original ordinal order and all \`Examination\`, \`Examination Findings\`, and \`Examination Diagnosis\` boundaries; never select a representative row or deduplicate repeated text. Blank accession, component disagreement, ambiguous modality, or non-reversible parsing makes the whole accession unavailable in that state. The inherited audit found 72 blank accession IDs, 392,854 distinct nonblank whole-accession keys, 16,534 multirow keys, and at most 12 rows/key; these values must be replayed, not assumed.
 
 MIMIC, eICU, and UKB remain accessible read-only through their catalogued paths and archive members, but are not pooled: no compatible first-resection frame, patient crosswalk, or documentary-M2 endpoint is established. MIMIC includes the archive \`[internal dataset path]`, eICU uses the ordinary gzipped files under \`[internal dataset path]`, and UKB uses ordinary files under \`[internal dataset path]`. No non-HCC rows enter this experiment.
 
@@ -74,7 +76,7 @@ For each state, retain inherited strict gates in both 2020 and 2021 and every al
 
 ## 6. Coupled exposure states and inherited frontiers
 
-For patient i, source world \`omega\), cutoff d, and whole accession u, define \`E_iomega,d,u=1\` only when operation membership/time, accession identity, CT/MRI modality, and acquisition-like \`开始时间\` are valid and the acquisition interval lies wholly in \`[t_op-90d,t_dec)\`.
+For patient i, source world \`omega\), cutoff d, and whole accession u, define \`E_iomega,d,u=1\` only when operation membership/time, accession identity, CT/MRI modality, and acquisition-like \`start time\` are valid and the acquisition interval lies wholly in \`[t_op-90d,t_dec)\`.
 
 Each source-clean eligible accession receives one coupled monotone onset state: O=0 eligible by 72h; O=1 first eligible in (72,48]h; O=2 in (48,24]h; O=3 in (24,12]h; O=4 later/never. In 72/48/24/12 order, \`V(O)=(1[O=0],1[O<=1],1[O<=2],1[O<=3])\` and \`M=E*V\). M is a hypothetical exposure of eventual stored content, never an authored/finalized/released/retrieved/viewed event.
 
@@ -87,9 +89,9 @@ Inherited frontiers are preserved exactly:
 - \`q_req\`: smallest exact threshold where all overall gates pass in every state with Q>=q.
 - \`q_M2\`: smallest threshold where inherited gates pass and \`P_max(z) subseteq S_G(z)\` in every state with Q>=q.
 - \`q_dec\`: smallest threshold additionally requiring \`S_G(z)=S_max(z)\`.
-- \`q_safe\`: smallest threshold satisfying \`DEC_PASS(q)\) plus all four fixed age-by-recorded-sex cells (18–64/65+ by recorded \`性别\`) having resolved positive events and all inherited non-harm comparator/random inequalities, in every state with Q>=q.
+- \`q_safe\`: smallest threshold satisfying \`DEC_PASS(q)\) plus all four fixed age-by-recorded-sex cells (18–64/65+ by recorded \`Sex\`) having resolved positive events and all inherited non-harm comparator/random inequalities, in every state with Q>=q.
 
-Retain exact invariants \`q_req <= q_M2 <= q_dec\` and \`q_safe >= q_dec\`; do not alter K, denominators, cells, or state coupling. Recorded \`性别\` is an administrative field, not gender identity.
+Retain exact invariants \`q_req <= q_M2 <= q_dec\` and \`q_safe >= q_dec\`; do not alter K, denominators, cells, or state coupling. Recorded \`sex\` is an administrative field, not gender identity.
 
 ## 7. New patient-level ordinal-regret contract
 

@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Final discharge-boundary experiment for incidental pulmonary-nodule recommendations
 
 ## Decision problem and substantive advance

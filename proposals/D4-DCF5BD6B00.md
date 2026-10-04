@@ -1,44 +1,46 @@
-# UKB 11: 高糖尿病遗传风险下的异位脂肪差异
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# UKB 11: Ectopic fat differences under high genetic risk of diabetes
 
 Admission: feasibility_required. Verify participant overlap, measurement dates, missingness and event support before committing this design.
 
-## 待检验假说
+## Hypotheses to Be Tested
 
-糖尿病PRS高且BMI相近者，肝脏和胰腺脂肪较低的人未来糖尿病发生较少。
+Among those with high diabetes PRS and similar BMI, individuals with lower liver and pancreatic fat have a lower future incidence of diabetes.
 
-## 研究对象及主要数据
+## Study population and key data
 
-影像时无糖尿病者；标准PRS、腹部MRI、HbA1c、代谢组。
+No diabetes at imaging; standard PRS, abdominal MRI, HbA1c, metabolomics.
 
-## 基本做法
+## Basic Approach
 
-从影像日随访，连续检验PRS与器官脂肪的交互，比较绝对风险并在保留样本复核。
+Starting from the imaging day, prospectively assess the interaction between PRS and organ fat, compare absolute risks, and validate in the retained sample.
 
-## 研究意义
+## Significance of the Research
 
-定位高遗传风险未转化为疾病的候选表型。
+Identify candidate phenotypes in which high genetic risk has not translated into disease.
 
-## 主要难点
+## Main Challenges
 
-需核对PRS训练重叠、祖源和用药；未发病不等于终身受保护。
+PRS training overlap, ancestry, and medication use need to be checked; not having developed the disease does not mean being protected for life.
 
-## 参考资料
+## References
 
-相关背景或数据说明，非假说成立或新颖性证明：https://www.nature.com/articles/s41588-022-01199-5；字段定义：https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26200；https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26285；https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=22009
+Relevant background or data description, not evidence that the hypothesis is valid or novel: https://www.nature.com/articles/s41588-022-01199-5; field definitions: https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26200; https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=26285; https://biobank.ndph.ox.ac.uk/ukb/field.cgi?id=22009
 
-## 生命科学方向
+## Life Sciences
 
-遗传风险与保护性表型
+Genetic Risk and Protective Phenotypes
 
-## 竞争解释
+## Competing Explanations
 
-影像健康选择或已经改变生活方式的人群造成表面保护。
+Selection of imaging-healthy individuals or people who have already changed their lifestyle creates an apparent protective effect.
 
-## 最小验证与否定条件
+## Minimal validation and falsification criteria
 
-先检查高PRS低脂肪交集与事件数；若只有短随访差异，不能称为稳定保护。
+First examine the intersection of high PRS and low adiposity and the event count; if the difference is present only over short follow-up, it cannot be described as stable protection.
 
-## 字典字段依据
+## Basis for Dictionary Fields
 
 26200 In UK Biobank PRS Release Testing subgroup；26285 Standard PRS for type 2 diabetes (T2D)；22009 Genetic principal components；21088 Liver PDFF (fat fraction)；21090 Pancreas PDFF (fat fraction)；21001 Body mass index (BMI)；30750 Glycated haemoglobin (HbA1c)；41270 Diagnoses - ICD10；41280 Date of first in-patient diagnosis - ICD10；53 Date of attending assessment centre
 

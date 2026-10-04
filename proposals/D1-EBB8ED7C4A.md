@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Individual documentary-M2 comparator-loss frontier for a report-robust HCC queue
 
 ## 1. Successor, unresolved question, and substantive advance
@@ -43,8 +45,8 @@ This is a stronger individual decision-safety claim than either parent. It remai
 
 Preserve the parent population exactly in every coherent source/operation world:
 
-- adults with age >=18 in encounters 年龄, at the earliest source-documented eligible hepatobiliary resection under a preregistered procedure dictionary reviewed by a hepatobiliary surgeon;
-- same-(患者主索引, 就诊号) pathology narrative sufficient for the documentary endpoint under at least one complete pathology book;
+- adults with age >=18 in encounters Age, at the earliest source-documented eligible hepatobiliary resection under a preregistered procedure dictionary reviewed by a hepatobiliary surgeon;
+- same-(Patient Master Index, Encounter Number) pathology narrative sufficient for the documentary endpoint under at least one complete pathology book;
 - no earlier qualifying resection and no recorded transplant, TACE/embolization, ablation, radiotherapy, targeted therapy, or immunotherapy in [t_op-365 days, t_op), using procedures, medications, and non-medication orders;
 - ambiguous treatment membership remains a separate outer state and is never resolved in favor of eligibility.
 
@@ -62,22 +64,22 @@ All twelve HCC sources are ordinary CSV files. There are no HCC archive members.
 
 | Table | Exact source path | Join key | Required columns and role |
 |---|---|---|---|
-| encounters | [internal dataset path] | (患者主索引,就诊号) | 年龄,性别,就诊时间,入院时间,出院时间; index demographics and audit clocks |
-| procedures | [internal dataset path] | encounter key | 手术,开始时间,结束时间,手术来源; eligible operation and prior-operation clocks |
-| examinations | [internal dataset path] | encounter key plus whole accession (患者主索引,就诊号,检查号) | 检查,检查所见,检查诊断,开始时间,机器型号,检查号; accession identity, acquisition-like time, report surface/content |
-| pathology | [internal dataset path] | encounter key only | 病理,检查所见,检查诊断,机器型号; documentary endpoint; no pathology time/specimen/accession |
-| medications | [internal dataset path] | patient-wide temporal join, then episode restriction | 用药,药品类型,开始时间,结束时间; prior-treatment exclusion |
-| orders | [internal dataset path](非药品)_2062526727266216118.csv | patient-wide temporal join | 医嘱(非药品),开立时间,开始时间,结束时间,医嘱状态; prior-treatment exclusion |
-| diagnoses | [internal dataset path] | encounter key | 诊断名称,诊断类型; untimed corroboration only |
-| clinical_documents | [internal dataset path] | encounter key | all narrative columns, including 主诉,现病史,既往史,个人史,月经史,婚育史,家族史,入院诊断,入院情况,入院诊断__duplicate_2,诊疗经过,出院诊断,手术名称,手术经过; leakage audit only |
-| labs | [internal dataset path] | encounter key | 检验,定性结果,定量结果,标本类型,检验时间; leakage audit only; no unsafe unit harmonization |
+| encounters | [internal dataset path] | (Patient master index, encounter number) | age, sex, encounter time, admission time, discharge time; index demographics and audit clocks |
+| procedures | [internal dataset path] | encounter key | Surgery, start time, end time, surgery source; eligible operation and prior-operation clocks |
+| examinations | [internal dataset path] | encounter key plus whole accession (Patient master index,Encounter number,Examination number) | Examination,Examination findings,Examination diagnosis,Start time,Machine model,Examination number; accession identity, acquisition-like time, report surface/content |
+| pathology | [internal dataset path] | encounter key only | Pathology,Examination Findings,Examination Diagnosis,Machine Model; documentary endpoint; no pathology time/specimen/accession |
+| medications | [internal dataset path] | patient-wide temporal join, then episode restriction | Medication,Drug Type,Start Time,End Time; prior-treatment exclusion |
+| orders | [internal dataset path](Non-Drug)_2062526727266216118.csv | patient-wide temporal join | Non-Drug Order,Order Placement Time,Start Time,End Time,Order Status; prior-treatment exclusion |
+| diagnoses | [internal dataset path] | encounter key | Diagnosis Name, Diagnosis Type; untimed corroboration only |
+| clinical_documents | [internal dataset path] | encounter key | all narrative columns, including chief complaint, present illness, past history, personal history, menstrual history, marriage and childbearing history, family history, admission diagnosis, admission condition, admission diagnosis__duplicate_2, course of diagnosis and treatment, discharge diagnosis, surgery name, surgery procedure; leakage audit only |
+| labs | [internal dataset path] | encounter key | test, qualitative result, quantitative result, specimen type, test time; leakage audit only; no unsafe unit harmonization |
 | vitals | [internal dataset path] | encounter key | identifiers only; no usable payload/time |
 | transfers | [internal dataset path] | encounter key | identifiers only; no usable payload/time |
 | front_page | [internal dataset path] | encounter key | identifiers only; no usable payload/time |
 
-Group examinations at the complete nonblank whole-accession key (患者主索引,就诊号,检查号). Preserve every raw row in ordinal order and every 检查, 检查所见, and 检查诊断 boundary; never choose a representative row, deduplicate repeated text, or mix fields across accessions. A blank accession, component disagreement, ambiguous modality, or non-reversible time parse makes that entire accession unavailable in that source state.
+Group examinations at the complete nonblank whole-accession key (patient master index,encounter number,examination number). Preserve every raw row in ordinal order and every examination, examination findings, and examination diagnosis boundary; never choose a representative row, deduplicate repeated text, or mix fields across accessions. A blank accession, component disagreement, ambiguous modality, or non-reversible time parse makes that entire accession unavailable in that source state.
 
-MIMIC, eICU, and UKB remain directly accessible read-only but are not pooled. MIMIC includes [internal dataset path] with archive members such as mimic-iv-3.1/hosp/admissions.csv.gz and radiology-note members; eICU consists of ordinary *.csv.gz under [internal dataset path] 2.0数据/; UKB consists of ordinary files under [internal dataset path] No cross-dataset patient identity, compatible first-resection frame, or documentary-M2 endpoint is established.
+MIMIC, eICU, and UKB remain directly accessible read-only but are not pooled. MIMIC includes [internal dataset path] with archive members such as mimic-iv-3.1/hosp/admissions.csv.gz and radiology-note members; eICU consists of ordinary *.csv.gz under [internal dataset path] 2.0 data/; UKB consists of ordinary files under [internal dataset path] No cross-dataset patient identity, compatible first-resection frame, or documentary-M2 endpoint is established.
 
 ## 5. Frozen books, models, queues, and inherited frontiers
 
@@ -155,7 +157,7 @@ For each state:
 3. Assign endpoint Y from each complete pathology book without using pathology in predictors.
 4. Replay locked B/R/G/Gmask scores, binary64 serialization, exact ties, fixed K, and no-backfill queues.
 5. Construct same-world S_max, S_G, S_B, S_R, and S_Gmask; calculate inherited H counts/gates/frontiers and D_C, L_C, L_IP.
-6. Assign the four inherited cells F18_64, F65P, M18_64, and M65P from the index encounter's recorded 性别 and 年龄: female/male and age 18-64/65+. Age exactly 65 belongs to the 65+ cell. Never infer sex or age from names, notes, diagnoses, dates, or treatment. Blank, nonnumeric, nonbinary, duplicate-discordant, or world-discordant demographic values remain resolution-inconclusive under q_safe.
+6. Assign the four inherited cells F18_64, F65P, M18_64, and M65P from the index encounter's recorded Sex and Age: female/male and age 18-64/65+. Age exactly 65 belongs to the 65+ cell. Never infer sex or age from names, notes, diagnoses, dates, or treatment. Blank, nonnumeric, nonbinary, duplicate-discordant, or world-discordant demographic values remain resolution-inconclusive under q_safe.
 7. Evaluate exact threshold monotonicity, all boundary witnesses, protected-set hashes, and the full frontier invariant.
 
 Baselines are fixed and interpreted separately:
@@ -228,7 +230,7 @@ Reference execution establishes computational feasibility and correct linkage of
 
 ## 10. Exact evidence still required for a clinical decision
 
-Before any clinical deployment claim, obtain for every HCC accession a one-to-one (患者主索引,就诊号,检查号) crosswalk and immutable report-version/amendment/retraction lineage; authored, final, release, ingestion, retrieval, parse-readability, and clinician-view events with timezone/clock provenance; exact as-of-deadline payload hashes; all nonresponders; and patient-level simultaneous bounds on no-accession/incomplete/complete states. HCC has none of these report-event fields. Therefore M=1 remains hypothetical stored-content exposure and cannot be called a real 24-hour availability guarantee.
+Before any clinical deployment claim, obtain for every HCC accession a one-to-one (Patient Master Index, Visit Number, Examination Number) crosswalk and immutable report-version/amendment/retraction lineage; authored, final, release, ingestion, retrieval, parse-readability, and clinician-view events with timezone/clock provenance; exact as-of-deadline payload hashes; all nonresponders; and patient-level simultaneous bounds on no-accession/incomplete/complete states. HCC has none of these report-event fields. Therefore M=1 remains hypothetical stored-content exposure and cannot be called a real 24-hour availability guarantee.
 
 A biological MVI claim additionally needs specimen/accession/time linkage, sampling adequacy, blocks/slides or validated structured pathology, and blinded clinical adjudication. An individual clinical-safety or benefit claim needs clinician action, patient utilities, harms, treatment/surveillance outcomes, competing workload, and prospective or interventional evidence. No such conclusion is permitted from q_IP.
 

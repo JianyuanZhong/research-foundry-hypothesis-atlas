@@ -1,9 +1,11 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Risk among interhospital transfer patients
 
 Seed ID: `[starting question]`
 Dataset: eICU
 Original number: 7 (identifier, not rank)
-Source: `研究选题.xlsx`, `研究选题!A28:I28`
+Source: `Research Topics.xlsx`, `Research Topics!A28:I28`
 Workbook [source checksum]
 
 Status: expert-proposed, untested hypothesis; data bindings, novelty and feasibility have not been validated.

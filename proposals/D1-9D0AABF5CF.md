@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Episode 86: joint patientwise documentary certification and uncertainty reserve
 
 ## Successor, unresolved question, and advance
@@ -20,9 +22,9 @@ The local natural-history demonstration was inspected and supports temporal deve
 
 ## Population and time
 
-The unit is one adult patient and the first eligible source-documented hepatobiliary resection. A surgeon-locked procedure dictionary identifies resection in `procedures.手术`; earlier qualifying resection and recorded transplant, TACE/embolization, ablation, radiotherapy, targeted therapy or immunotherapy in ([t_op-365d,t_op)) exclude the episode using patient-wide timed procedures, medications and orders. Ambiguous dictionary membership is an outer coherent state. Age and recorded sex are descriptive only.
+The unit is one adult patient and the first eligible source-documented hepatobiliary resection. A surgeon-locked procedure dictionary identifies resection in `procedures.surgery`; earlier qualifying resection and recorded transplant, TACE/embolization, ablation, radiotherapy, targeted therapy or immunotherapy in ([t_op-365d,t_op)) exclude the episode using patient-wide timed procedures, medications and orders. Ambiguous dictionary membership is an outer coherent state. Age and recorded sex are descriptive only.
 
-Join encounter-level tables on ((患者主索引,就诊号)). An explicitly supported exact procedure clock is a point; a date-like case-record clock is ([d,d+24h)); missing, contradictory and competing clocks remain coherent alternatives. Never use admission/discharge as an operation substitute. Set (t_dec=t_op-24h). An acquisition is eligible only if its interval is wholly inside ([t_op-90d,t_dec)). Report onset states are monotone: available by 72h, first in (72,48]h, (48,24]h, (24,12]h, or later/never; 24h is confirmatory and other cutoffs are sensitivities.
+Join encounter-level tables on ((Patient master index,Encounter number)). An explicitly supported exact procedure clock is a point; a date-like case-record clock is ([d,d+24h)); missing, contradictory and competing clocks remain coherent alternatives. Never use admission/discharge as an operation substitute. Set (t_dec=t_op-24h). An acquisition is eligible only if its interval is wholly inside ([t_op-90d,t_dec)). Report onset states are monotone: available by 72h, first in (72,48]h, (48,24]h, (24,12]h, or later/never; 24h is confirmatory and other cutoffs are sensitivities.
 
 Use patient-disjoint 2015–2018 development, 2019 preprocessing/hyperparameter/capacity lock, separate 2020 and 2021 tests, and 2022+ audit only. Quarantine any patient that could cross calendar roles.
 
@@ -44,7 +46,7 @@ ho=.10) primary and .05/.20 sensitivities, requiring (N_refge500,K_.05ge25,K_.10
 
 Three globally fixed Chinese-reading radiology books and three globally fixed pathology books are created before analysis. No row-wise book mixing is allowed. Pathology terminals remain OUT, IN0-A, IN1-A, IN0-U, IN1-U; every state maps its terminal to documentary (Y_i(a,b)), never a predictor.
 
-An examination unit is the indivisible whole accession ((患者主索引,就诊号,检查号)), with every component row retained in raw ordinal order. Blank accession, component disagreement, ambiguous modality or irreversible parsing makes the unit unavailable. A source-clean unit has monotone exposure (M) according to the onset state; (M) is not a claim of finalization or viewing. (S_G(s,q)) is the incomplete-content fixed-(K) queue and (S_max(s)) is the same frozen model with all source-clean eligible units exposed. Anchored deletion removes all records of one patient without refit, reranking, backfill or requota; the deleted offered slot remains EMPTY.
+An examination unit is the indivisible whole accession ((patient master index, encounter number, examination number)), with every component row retained in raw ordinal order. Blank accession, component disagreement, ambiguous modality or irreversible parsing makes the unit unavailable. A source-clean unit has monotone exposure (M) according to the onset state; (M) is not a claim of finalization or viewing. (S_G(s,q)) is the incomplete-content fixed-(K) queue and (S_max(s)) is the same frozen model with all source-clean eligible units exposed. Anchored deletion removes all records of one patient without refit, reranking, backfill or requota; the deleted offered slot remains EMPTY.
 
 For each nonpathology state (a), (U_LS(a)={i:Y_i(a,b)=1 orall b}). For current pathology book (b), (P_LS(a,b)=S_max(a,b)cap U_LS(a)), (P_M2(a,b)=S_max(a,b)cap{i:Y_i(a,b)=1}), and (P_common(a)=cap_b P_M2(a,b)). Preserve (P_commonsubseteq P_LSsubseteq P_M2subseteq S_max) when nonempty.
 
@@ -86,15 +88,15 @@ Supportive means only that a finite, retrospective, hypothetical stored-content 
 
 All are read-only ordinary CSVs; no archive members beyond ordinary files. Use the live catalog schema hashes and preserve raw headers/ordinals.
 
-- `encounters`, `table-b743286cb1249287.json`, source `[internal dataset path]`; join ((患者主索引,就诊号)); `年龄,性别,就诊时间,入院时间,出院时间`.
-- `procedures`, `table-d5eae16f8f8093d9.json`, source `[internal dataset path]`; encounter join; `手术,开始时间,结束时间,手术来源`.
-- `examinations`, `table-fd016d2731b9d6c6.json`, source `[internal dataset path]`; encounter plus `检查号`; `检查,检查所见,检查诊断,开始时间,机器型号,检查号`.
-- `pathology`, `table-0a4ee86a446c605c.json`, source `[internal dataset path]`; encounter join only; `病理,检查所见,检查诊断,机器型号`; no time/specimen/accession.
-- `medications`, `table-4f6ecaeb6e8f69c2.json`, source `[internal dataset path]`; patient-wide time join; `用药,药品类型,开始时间,结束时间`.
-- `orders`, `table-6b93dcf0ea823702.json`, source `[internal dataset path]`; patient-wide time join; `医嘱(非药品),开立时间,开始时间,结束时间,医嘱状态`.
-- `diagnoses`, `table-12710723c3df0c99.json`, source `[internal dataset path]`; encounter join; `诊断名称,诊断类型`, untimed corroboration only.
-- `clinical_documents`, `table-66afca58512c2fca.json`, source `[internal dataset path]`; encounter join; `主诉,现病史,既往史,个人史,月经史,婚育史,家族史,入院诊断,入院情况,入院诊断__duplicate_2,诊疗经过,出院情况,出院诊断,手术名称,手术经过`; leakage audit only.
-- `labs`, `table-38aad8c54471332f.json`, source `[internal dataset path]`; encounter join; `检验,定性结果,定量结果,标本类型,检验时间`; audit only, never primary predictors because units/timing are unsafe.
+- `encounters`, `table-b743286cb1249287.json`, source `[internal dataset path]`; join ((patient master index,encounter number)); `age,sex,encounter time,admission time,discharge time`.
+- `procedures`, `table-d5eae16f8f8093d9.json`, source `[internal dataset path]`; encounter join; `Surgery,Start time,End time,Surgery source`.
+- `examinations`, `table-fd016d2731b9d6c6.json`, source `[internal dataset path]`; encounter plus `examination number`; `examination,examination findings,examination diagnosis,start time,machine model,examination number`.
+- `pathology`, `table-0a4ee86a446c605c.json`, source `[internal dataset path]`; encounter join only; `pathology, examination findings, examination diagnosis, machine model`; no time/specimen/accession.
+- `medications`, `table-4f6ecaeb6e8f69c2.json`, source `[internal dataset path]`; patient-wide time join; `Medication,Drug Type,Start Time,End Time`.
+- `orders`, `table-6b93dcf0ea823702.json`, source `[internal dataset path]`; patient-wide time join; `Non-drug Orders,Order Time,Start Time,End Time,Order Status`.
+- `diagnoses`, `table-12710723c3df0c99.json`, source `[internal dataset path]`; encounter join; `Diagnosis Name,Diagnosis Type`, untimed corroboration only.
+- `clinical_documents`, `table-66afca58512c2fca.json`, source `[internal dataset path]`; encounter join; `chief complaint, history of present illness, past medical history, personal history, menstrual history, marital and childbearing history, family history, admission diagnosis, admission status, admission diagnosis__duplicate_2, treatment course, discharge status, discharge diagnosis, surgery name, surgical procedure`; leakage audit only.
+- `labs`, `table-38aad8c54471332f.json`, source `[internal dataset path]`; encounter join; `Test,Qualitative Result,Quantitative Result,Specimen Type,Test Time`; audit only, never primary predictors because units/timing are unsafe.
 - `vitals`, `table-8436de9cba74b8ca.json`; source `[internal dataset path]`; encounter identifiers only.
 - `transfers`, `table-320c20f732e71789.json`; source `[internal dataset path]`; encounter identifiers only.
 - `front_page`, `table-38b3224239acc33f.json`; source `[internal dataset path]`; encounter identifiers only.

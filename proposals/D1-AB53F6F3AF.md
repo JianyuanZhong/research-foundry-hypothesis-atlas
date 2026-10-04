@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # A governance-weight utility frontier for route-concealed pulmonary-opportunity routing
 
 ## Targeted repair and decision question

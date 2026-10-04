@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Does early laboratory documentation transport across ICUs because of workflow or acuity?
 
 Status: Lead episode-2 proposal; substantive child of `[prior hypothesis]`. This is an eICU-native adaptation of expert seed `[starting question]`, not a reproduction of an expert demonstration or paper.

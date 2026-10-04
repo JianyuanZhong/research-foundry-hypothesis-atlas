@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 {
   "title": "Early systemic treatment versus a third TACE after repeated TACE in HCC: a landmark emulation of hepatic-reserve preservation",
   "dataset": "hcc",
@@ -16,7 +18,7 @@
   "population_and_time": {
     "eligibility": [
       "Age at the second qualifying TACE is at least 18 years when age is available; report the amount missing and run an all-ages sensitivity analysis if necessary.",
-      "An HCC diagnosis name containing the exact observed term 肝细胞癌 is recorded on an encounter dated on or before the second TACE.",
+      "An HCC diagnosis name containing the exact observed term hepatocellular carcinoma is recorded on an encounter dated on or before the second TACE.",
       "The first qualifying pair is two distinct calendar-day TACE episodes for the patient, with the second 14-180 days after the first. Multiple same-day procedure rows are collapsed to one episode.",
       "No recorded medication-defined systemic HCC treatment starts before or on the second TACE. Procedure-level systemic-treatment labels are retained for a sensitivity definition.",
       "The second TACE has a valid start date and the patient has sufficient institutional observation to reach the day-90 landmark, unless death or loss of observation can be reliably ascertained in a sensitivity analysis."
@@ -33,22 +35,22 @@
   },
   "exposure_ascertainment": {
     "primary_table": "medications",
-    "primary_fields": ["患者主索引", "就诊号", "用药", "开始时间", "结束时间", "用药方式", "药品类型"],
-    "primary_time": "开始时间",
+    "primary_fields": ["patient master index", "encounter number", "medication", "start time", "end time", "medication administration route", "drug type"],
+    "primary_time": "Start time",
     "sensitivity_table": "procedures",
-    "sensitivity_fields": ["患者主索引", "就诊号", "手术", "开始时间", "结束时间", "手术来源"],
-    "sensitivity_time": "开始时间",
-    "episode_rule": "Deduplicate by 患者主索引 and local calendar day after parsing 开始时间; preserve the raw row count and matched labels for audit. The exact first qualifying TACE pair is selected by scanning chronological episode days and taking the earliest pair with an interval of 14-180 days, not simply the first three raw rows."
+    "sensitivity_fields": ["Patient Master Index", "Encounter Number", "Surgery", "Start Time", "End Time", "Surgery Source"],
+    "sensitivity_time": "start time",
+    "episode_rule": "Deduplicate by patient master index and local calendar day after parsing start time; preserve the raw row count and matched labels for audit. The exact first qualifying TACE pair is selected by scanning chronological episode days and taking the earliest pair with an interval of 14-180 days, not simply the first three raw rows."
   },
   "covariates_and_confounding": {
     "core": [
       "Age, sex, calendar year of time zero, and treating department/site proxy from encounters.",
       "Interval in days between TACE 1 and TACE 2 and recorded prior hepatic surgery, ablation, or transplantation procedures where ascertainable.",
-      "Baseline laboratory values closest to the second TACE within the window from 30 days before through 7 days after: albumin 白蛋白, total bilirubin 总胆红素, INR 国际标准化比值, platelets 血小板计数, AFP 甲胎蛋白, and, if the assay and units are validated, creatinine and sodium.",
+      "Baseline laboratory values closest to the second TACE within the window from 30 days before through 7 days after: albumin, total bilirubin, INR (international normalized ratio), platelets, AFP (alpha-fetoprotein), and, if the assay and units are validated, creatinine and sodium.",
       "Pre-time-zero diagnoses joined to encounter timing: cirrhosis, portal hypertension, ascites, hepatic encephalopathy, variceal bleeding, liver dysfunction, diabetes, hypertension, viral hepatitis, portal-vein tumor thrombus, and extrahepatic metastasis.",
       "Recent treatment intensity and encounter frequency before time zero, derived only from records dated before time zero."
     ],
-    "tumor_burden_and_response": "Use examinations joined by 患者主索引 and 就诊号, with 检查, 检查所见, 检查诊断, 开始时间, and 检查号. A prespecified lexical screen for lesion size/number, enhancement or washout, residual blood supply after TACE, portal-vein tumor thrombus, and ascites may define a sensitivity subset. It is not a validated mRECIST/RECIST extractor; clinician adjudication is required before using it as a definitive response endpoint or relying on it to remove confounding by indication.",
+    "tumor_burden_and_response": "Use examinations joined by patient master index and visit number, with examination, examination findings, examination diagnosis, start time, and examination number. A prespecified lexical screen for lesion size/number, enhancement or washout, residual blood supply after TACE, portal-vein tumor thrombus, and ascites may define a sensitivity subset. It is not a validated mRECIST/RECIST extractor; clinician adjudication is required before using it as a definitive response endpoint or relying on it to remove confounding by indication.",
     "confounding_controls": [
       "Estimate propensity scores for strategy using only pre-time-zero variables, inspect standardized mean differences and positivity, and use overlap-restricted inverse-probability or stabilized weighting.",
       "Use doubly robust outcome regression for the primary continuous endpoint and weighted cumulative-incidence/risk-difference models for binary/time-to-event endpoints.",
@@ -59,12 +61,12 @@
   "outcomes": {
     "primary": "Change in ALBI score from the baseline laboratory pair nearest the second TACE to the first post-landmark laboratory pair in days 91-270, if albumin and bilirubin assay units/scales are validated within the source. If units cannot be validated, replace ALBI with separately reported within-assay changes in albumin and total bilirubin and do not pool incompatible scales.",
     "secondary": [
-      "First incident diagnosis of hepatic decompensation after the landmark: 腹腔积液 or 腹水, 肝性脑病, variceal bleeding terms, or 肝功能不全, with the same term absent before or at the landmark.",
+      "First incident diagnosis of hepatic decompensation after the landmark: Ascites or abdominal effusion, hepatic encephalopathy, variceal bleeding terms, or hepatic insufficiency, with the same term absent before or at the landmark.",
       "First incident diagnosis of advanced disease after the landmark: portal-vein tumor thrombus terms or prespecified extrahepatic metastasis terms, with baseline presence excluded.",
       "Change in AFP using uncensored, assay-compatible quantitative values; censored results such as >60500 are not treated as ordinary numeric values and are analyzed separately or with censoring-aware methods.",
       "Subsequent treatment escalation and recorded encounter/hospitalization burden as exploratory utilization outcomes, recognizing that outside care and death are not fully observed."
     ],
-    "endpoint_timing": "Diagnosis timing is inherited from encounters using 入院时间, falling back to 就诊时间, because diagnoses has no timestamp. Laboratory timing uses 检验时间; examination timing uses 开始时间; medication/procedure timing uses 开始时间."
+    "endpoint_timing": "Diagnosis timing is inherited from encounters using admission time, falling back to encounter time, because diagnoses has no timestamp. Laboratory timing uses test time; examination timing uses start time; medication/procedure timing uses start time."
   },
   "analysis_plan": {
     "descriptive": "Create a patient-level flow diagram with exact raw and deduplicated counts, strategy counts, availability of each covariate/outcome, and balance/overlap diagnostics. Do not release identifiers or exact dates.",
@@ -90,19 +92,19 @@
     "readme": "[internal dataset path]",
     "metadata": "[internal dataset path]",
     "tables": {
-      "encounters": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["患者主索引", "就诊号"], "time_fields": ["入院时间", "就诊时间", "出院时间"]},
-      "procedures": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["患者主索引", "就诊号"], "time_fields": ["开始时间", "结束时间"], "archive_member": "ordinary file"},
-      "medications": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["患者主索引", "就诊号"], "time_fields": ["开始时间", "结束时间"], "archive_member": "ordinary file"},
-      "diagnoses": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["患者主索引", "就诊号"], "time_fields": [], "archive_member": "ordinary file"},
-      "labs": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["患者主索引", "就诊号"], "time_fields": ["检验时间"]},
-      "examinations": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["患者主索引", "就诊号"], "time_fields": ["开始时间"], "archive_member": "ordinary file"}
+      "encounters": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["Patient master index", "Encounter number"], "time_fields": ["Admission time", "Encounter time", "Discharge time"]},
+      "procedures": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["patient master index", "encounter number"], "time_fields": ["start time", "end time"], "archive_member": "ordinary file"},
+      "medications": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["patient master index", "encounter number"], "time_fields": ["start time", "end time"], "archive_member": "ordinary file"},
+      "diagnoses": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["Patient master index", "Encounter number"], "time_fields": [], "archive_member": "ordinary file"},
+      "labs": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["Patient Master Index", "Encounter Number"], "time_fields": ["Test Time"]},
+      "examinations": {"schema": "[internal dataset path]", "source": "[internal dataset path]", "keys": ["Patient master index", "Visit number"], "time_fields": ["Start time"], "archive_member": "ordinary file"}
     },
     "additional_context_tables": {
       "clinical_documents": "[internal dataset path]",
       "pathology": "[internal dataset path]",
       "orders": "[internal dataset path]"
     },
-    "join_rule": "Join every encounter-linked table to encounters on the composite key 患者主索引 + 就诊号; derive patient-level longitudinal intervals using within-patient timestamps only."
+    "join_rule": "Join every encounter-linked table to encounters on the composite key Patient master index + Visit number; derive patient-level longitudinal intervals using within-patient timestamps only."
   },
   "feasibility_evidence": {
     "catalog": "[internal dataset path]",

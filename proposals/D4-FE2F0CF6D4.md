@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # Continuous baseline cystatin-C rescue test after the adverse binary result
 
 ## Lineage, unresolved question, and substantive advance

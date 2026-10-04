@@ -1,3 +1,5 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
 # All-randomized validation with a three-state strategy-failure estimand
 
 ## Decision and substantive repair
@@ -84,7 +86,7 @@ Required adversarial verifier cases include: perfect agreement but high `S2` imp
 
 The retrospective feasibility/audit is read-only and uses the current MIMIC-IV 3.1 snapshot. Source files and hashes are fixed by `[internal dataset path]` and catalog [source checksum].
 
-* `baidu_downloads/eicu_mimic/mimic数据库/mimic-iv-3.1.zip`, archive `mimic-iv-3.1/icu/inputevents.csv.gz`: `subject_id,hadm_id,stay_id,caregiver_id,starttime,endtime,storetime,itemid,amount,amountuom,rate,rateuom,orderid,linkorderid,ordercategoryname,secondaryordercategoryname,ordercomponenttypedescription,ordercategorydescription,patientweight,totalamount,totalamountuom,isopenbag,continueinnextdept,statusdescription,originalamount,originalrate`; schema `table-d193e854c19eb4ba.json`, hash `[source checksum]`.
+* `baidu_downloads/eicu_mimic/mimic database/mimic-iv-3.1.zip`, archive `mimic-iv-3.1/icu/inputevents.csv.gz`: `subject_id,hadm_id,stay_id,caregiver_id,starttime,endtime,storetime,itemid,amount,amountuom,rate,rateuom,orderid,linkorderid,ordercategoryname,secondaryordercategoryname,ordercomponenttypedescription,ordercategorydescription,patientweight,totalamount,totalamountuom,isopenbag,continueinnextdept,statusdescription,originalamount,originalrate`; schema `table-d193e854c19eb4ba.json`, hash `[source checksum]`.
 * The corresponding `mimic-iv-3.1/icu/chartevents.csv.gz`, `d_items.csv.gz`, `datetimeevents.csv.gz`, `procedureevents.csv.gz`, and `icustays.csv.gz` members, described respectively by `table-8208609a785ea7e8.json`, `table-d1023acc404fd1d4.json`, `table-b88dd677d1c84a2d.json`, `table-f6493e8403a0abe7.json`, and `table-7d5c8feb0fb0dbd4.json`, provide the locked retrospective item dictionaries, charted observations, event times, procedures, and ICU boundaries. Joins use `stay_id`/`hadm_id`/`subject_id` as available; event times are the table's `starttime`, `endtime`, `charttime`, `storetime`, or `charttime` fields exactly as documented in each JSON, with no invented cross-clock equivalence. The source archive is never modified.
 * `mimic-iv-3.1/hosp/admissions.csv.gz` and `patients.csv.gz`, described by `table-e8ec3e6e4c428559.json` and `table-9154f8c46cade9af.json`, supply admission/discharge and deidentified patient linkage; joins are `hadm_id` and `subject_id`, and `admittime`, `dischtime`, `deathtime`, and `dod` are used only for the frozen eligibility and structural-boundary audit.
 

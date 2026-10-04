@@ -198,7 +198,7 @@
       "id": "D4-0747ABFE3A",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "绝经相关脂蛋白变化是否超出体重变化",
+      "title": "Do menopause-related lipoprotein changes exceed changes in body weight?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-0747ABFE3A.md"
@@ -271,7 +271,7 @@
       "id": "D4-317180CEFE",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "高糖尿病遗传风险下的异位脂肪差异",
+      "title": "Differences in ectopic fat under high genetic risk of diabetes",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-317180CEFE.md"
@@ -313,7 +313,7 @@
       "id": "D4-1EAD2D482F",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "肺功能下降与右心改变的先后关系",
+      "title": "The temporal relationship between declining lung function and right-heart changes",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-1EAD2D482F.md"
@@ -322,7 +322,7 @@
       "id": "D4-FB6AB1FB5C",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "长端粒相关的肿瘤与血管风险权衡",
+      "title": "Risk trade-off between tumors and vascular disease associated with long telomeres",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-FB6AB1FB5C.md"
@@ -581,7 +581,7 @@
       "id": "D4-75EADFFB3D",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "房颤遗传风险与左房结构的不同组合",
+      "title": "Different combinations of genetic risk for atrial fibrillation and left atrial structure",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-75EADFFB3D.md"
@@ -780,7 +780,7 @@
       "id": "D4-CF2C3A64E4",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "低睾酮与低SHBG是否代表不同男性代谢状态",
+      "title": "Do low testosterone and low SHBG represent distinct metabolic states in men?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-CF2C3A64E4.md"
@@ -897,7 +897,7 @@
       "id": "D4-3B98A85D93",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "低血脂伴低白蛋白是否提示隐匿肝病",
+      "title": "Does hypolipidemia accompanied by hypoalbuminemia indicate occult liver disease?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-3B98A85D93.md"
@@ -928,7 +928,7 @@
       "id": "D4-8355C8CAA8",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "乳腺癌遗传风险与绝经后激素背景",
+      "title": "Genetic risk of breast cancer and the postmenopausal hormonal milieu",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-8355C8CAA8.md"
@@ -1089,7 +1089,7 @@
       "id": "D4-1E471250FB",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "骨与肌肉衰退不同步的骨折路径",
+      "title": "Fracture pathways involving asynchronous bone and muscle decline",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-1E471250FB.md"
@@ -1354,7 +1354,7 @@
       "id": "D4-E153C7E676",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "冠心病遗传风险在不同脂蛋白背景下的表达",
+      "title": "Expression of genetic risk for coronary heart disease across different lipoprotein backgrounds",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-E153C7E676.md"
@@ -1363,7 +1363,7 @@
       "id": "D4-5C93B9BA75",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "正常血糖下胰腺体积与脂肪的不同预警信息",
+      "title": "Distinct warning signals from pancreatic volume and fat in normoglycemia",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-5C93B9BA75.md"
@@ -1482,7 +1482,7 @@
       "id": "D4-D4F9C3CA57",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "肝脂肪与胰腺脂肪不一致的糖代谢走向",
+      "title": "Glycemic trajectory when liver fat and pancreatic fat are discordant",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-D4F9C3CA57.md"
@@ -1557,7 +1557,7 @@
       "id": "D4-A2660746EC",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "CRP与GlycA不一致的炎症状态",
+      "title": "Inflammatory states with discordant CRP and GlycA",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-A2660746EC.md"
@@ -1599,7 +1599,7 @@
       "id": "D4-557B47E225",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "支链氨基酸变化是否早于糖代谢恶化",
+      "title": "Do changes in branched-chain amino acids precede worsening glucose metabolism?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-557B47E225.md"
@@ -1780,7 +1780,7 @@
       "id": "D4-5472767FC5",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "绝经后骨量与脂肪增加不同步",
+      "title": "Postmenopausal bone mass and fat accumulation change asynchronously",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-5472767FC5.md"
@@ -1855,7 +1855,7 @@
       "id": "D4-F29E87F047",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "相同炎症水平下的白细胞组成与感染结局",
+      "title": "Leukocyte composition and infection outcomes at the same level of inflammation",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-F29E87F047.md"
@@ -1970,7 +1970,7 @@
       "id": "D4-4A97E43953",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "脂肪分布与绝经后激素相关癌症的差异",
+      "title": "Differences in fat distribution and hormone-related cancers after menopause",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-4A97E43953.md"
@@ -2034,7 +2034,7 @@
       "id": "D4-B08EC6BC5A",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "夜间噪声与睡眠脆弱性共同指向房颤",
+      "title": "Nighttime noise and sleep vulnerability jointly point to atrial fibrillation",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-B08EC6BC5A.md"
@@ -2043,7 +2043,7 @@
       "id": "D4-F3F772ED7F",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "血糖升高伴体重下降的胰腺癌线索",
+      "title": "Pancreatic cancer clue: elevated blood glucose accompanied by weight loss",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-F3F772ED7F.md"
@@ -2215,7 +2215,7 @@
       "id": "D4-99DC272992",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "内脏脂肪与肌肉浸润对应的两种风险",
+      "title": "Two distinct risks associated with visceral fat and muscle infiltration",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-99DC272992.md"
@@ -2235,7 +2235,7 @@
       "id": "D4-9D5C6E147A",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "空气污染与肺功能遗传易感性的交互",
+      "title": "Interaction between air pollution and genetic susceptibility to impaired lung function",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-9D5C6E147A.md"
@@ -2471,7 +2471,7 @@
       "id": "D4-3D79C46556",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "早绝经与心脏重构是否独立于血压负荷",
+      "title": "Is early menopause associated with cardiac remodeling independently of blood pressure burden?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-3D79C46556.md"
@@ -2557,7 +2557,7 @@
       "id": "D4-F78069665A",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "血细胞变化指向隐匿失血还是造血异常",
+      "title": "Do changes in blood cells point to occult blood loss or hematopoietic abnormalities?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-F78069665A.md"
@@ -2780,7 +2780,7 @@
       "id": "D4-8590CC7271",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "肺功能与全身储备不一致时的感染后结局",
+      "title": "Post-infection outcomes when lung function and systemic reserve are discordant",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-8590CC7271.md"
@@ -2789,7 +2789,7 @@
       "id": "D4-41A15B031F",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "癌症确诊前储备与确诊后的非癌死亡",
+      "title": "Pre-diagnosis reserve and non-cancer mortality after cancer diagnosis",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-41A15B031F.md"
@@ -2864,7 +2864,7 @@
       "id": "D4-854234041C",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "肌肉量保留但肌力下降的风险来源",
+      "title": "Sources of risk when muscle mass is preserved but muscle strength declines",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-854234041C.md"
@@ -3386,7 +3386,7 @@
       "id": "D4-698B8EFD92",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "血糖升高伴体重下降的胰腺癌线索",
+      "title": "Pancreatic cancer clue: elevated blood glucose accompanied by weight loss",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-698B8EFD92.md"
@@ -3395,7 +3395,7 @@
       "id": "D4-1F11C24E00",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "内脏脂肪与肌肉浸润对应的两种风险",
+      "title": "Two distinct risks associated with visceral fat and muscle infiltration",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-1F11C24E00.md"
@@ -3404,7 +3404,7 @@
       "id": "D4-AA177147AD",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "骨与肌肉衰退不同步的骨折路径",
+      "title": "Fracture pathways involving asynchronous bone and muscle decline",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-AA177147AD.md"
@@ -3413,7 +3413,7 @@
       "id": "D4-AA3D8BA64A",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "早绝经与心脏重构是否独立于血压负荷",
+      "title": "Is early menopause associated with cardiac remodeling independently of blood pressure burden?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-AA3D8BA64A.md"
@@ -3422,7 +3422,7 @@
       "id": "D4-4E6F607EEC",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "低血脂伴低白蛋白是否提示隐匿肝病",
+      "title": "Does hypolipidemia accompanied by hypoalbuminemia indicate occult liver disease?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-4E6F607EEC.md"
@@ -3431,7 +3431,7 @@
       "id": "D4-D249800B11",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "肺功能与全身储备不一致时的感染后结局",
+      "title": "Post-infection outcomes when lung function and systemic reserve are discordant",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-D249800B11.md"
@@ -3440,7 +3440,7 @@
       "id": "D4-DCB6810CF3",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "肝脂肪与胰腺脂肪不一致的糖代谢走向",
+      "title": "Glycemic trajectory when liver fat and pancreatic fat are discordant",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-DCB6810CF3.md"
@@ -3471,7 +3471,7 @@
       "id": "D4-17A499D058",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "夜间噪声与睡眠脆弱性共同指向房颤",
+      "title": "Nighttime noise and sleep vulnerability jointly point to atrial fibrillation",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-17A499D058.md"
@@ -3480,7 +3480,7 @@
       "id": "D4-87ABC18B0D",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "冠心病遗传风险在不同脂蛋白背景下的表达",
+      "title": "Expression of genetic risk for coronary heart disease across different lipoprotein backgrounds",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-87ABC18B0D.md"
@@ -3489,7 +3489,7 @@
       "id": "D4-203A60B610",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "CRP与GlycA不一致的炎症状态",
+      "title": "Inflammatory states with discordant CRP and GlycA",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-203A60B610.md"
@@ -3498,7 +3498,7 @@
       "id": "D4-5170DA0390",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "相同炎症水平下的白细胞组成与感染结局",
+      "title": "Leukocyte composition and infection outcomes at the same level of inflammation",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-5170DA0390.md"
@@ -3507,7 +3507,7 @@
       "id": "D4-24A6840CD7",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "正常血糖下胰腺体积与脂肪的不同预警信息",
+      "title": "Distinct warning signals from pancreatic volume and fat in normoglycemia",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-24A6840CD7.md"
@@ -3516,7 +3516,7 @@
       "id": "D4-D87F208FC5",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "血细胞变化指向隐匿失血还是造血异常",
+      "title": "Do changes in blood cells point to occult blood loss or hematopoietic abnormalities?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-D87F208FC5.md"
@@ -3536,7 +3536,7 @@
       "id": "D4-08394FA826",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "长端粒相关的肿瘤与血管风险权衡",
+      "title": "Risk trade-off between tumors and vascular disease associated with long telomeres",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-08394FA826.md"
@@ -3545,7 +3545,7 @@
       "id": "D4-492D27A059",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "绝经后骨量与脂肪增加不同步",
+      "title": "Postmenopausal bone mass and fat accumulation change asynchronously",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-492D27A059.md"
@@ -3565,7 +3565,7 @@
       "id": "D4-DCF5BD6B00",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "高糖尿病遗传风险下的异位脂肪差异",
+      "title": "Differences in ectopic fat under high genetic risk of diabetes",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-DCF5BD6B00.md"
@@ -3574,7 +3574,7 @@
       "id": "D4-24313D46CA",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "脂肪分布与绝经后激素相关癌症的差异",
+      "title": "Differences in fat distribution and hormone-related cancers after menopause",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-24313D46CA.md"
@@ -3583,7 +3583,7 @@
       "id": "D4-D63136C14D",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "绝经相关脂蛋白变化是否超出体重变化",
+      "title": "Do menopause-related lipoprotein changes exceed changes in body weight?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-D63136C14D.md"
@@ -3592,7 +3592,7 @@
       "id": "D4-80DF022525",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "肌肉量保留但肌力下降的风险来源",
+      "title": "Sources of risk when muscle mass is preserved but muscle strength declines",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-80DF022525.md"
@@ -3612,7 +3612,7 @@
       "id": "D4-0847AC1163",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "低睾酮与低SHBG是否代表不同男性代谢状态",
+      "title": "Do low testosterone and low SHBG represent distinct metabolic states in men?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-0847AC1163.md"
@@ -3621,7 +3621,7 @@
       "id": "D4-DCEF26EFF8",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "乳腺癌遗传风险与绝经后激素背景",
+      "title": "Genetic risk of breast cancer and the postmenopausal hormonal milieu",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-DCEF26EFF8.md"
@@ -3630,7 +3630,7 @@
       "id": "D4-716A28F338",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "支链氨基酸变化是否早于糖代谢恶化",
+      "title": "Do changes in branched-chain amino acids precede worsening glucose metabolism?",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-716A28F338.md"
@@ -3639,7 +3639,7 @@
       "id": "D4-9F7529C72F",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "房颤遗传风险与左房结构的不同组合",
+      "title": "Different combinations of genetic risk for atrial fibrillation and left atrial structure",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-9F7529C72F.md"
@@ -3659,7 +3659,7 @@
       "id": "D4-16D206BA50",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "空气污染与肺功能遗传易感性的交互",
+      "title": "Interaction between air pollution and genetic susceptibility to impaired lung function",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-16D206BA50.md"
@@ -3679,7 +3679,7 @@
       "id": "D4-A571401DF7",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "癌症确诊前储备与确诊后的非癌死亡",
+      "title": "Pre-diagnosis reserve and non-cancer mortality after cancer diagnosis",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-A571401DF7.md"
@@ -3688,7 +3688,7 @@
       "id": "D4-7C93EACFDE",
       "domain": "population_multiomics",
       "dataset": "UK Biobank",
-      "title": "肺功能下降与右心改变的先后关系",
+      "title": "The temporal relationship between declining lung function and right-heart changes",
       "seed": true,
       "parents": [],
       "proposal": "proposals/D4-7C93EACFDE.md"
