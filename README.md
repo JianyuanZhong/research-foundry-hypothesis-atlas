@@ -13,6 +13,8 @@
 | Disease Mechanisms & Pathway Hypotheses | 37 | 34 | [Proposals](domains/03-disease-mechanisms.md) · [Full tree](figures/03-disease-mechanisms.svg) |
 | Population Multi-omics & Disease Targets | 582 | 520 | [Proposals](domains/04-population-multiomics.md) · [Full tree](figures/04-population-multiomics.svg) |
 
+**Model attribution:** [Which model generated each hypothesis?](MODEL_INDEX.md) This separate index is unblinded.
+
 ## What is included
 
 **Discovery RSI is our in-house model, built for iterative scientific hypothesis discovery.** This refresh adds its draft-first run, the completed Codex campaign, and 11 historical Sol runs across HCC, eICU, MIMIC-IV, and UK Biobank. Earlier atlas material is retained. The Codex campaign closed 80/80 episodes; Discovery RSI stopped at 58/60 and registered 114 drafts. Inclusion does not mean a proposal was selected, experimentally validated, or independently replicated. See [snapshot coverage](COVERAGE.md).
@@ -33,6 +35,6 @@ UK Biobank hypotheses are grouped under Population Multi-omics & Disease Targets
 
 ## Public review edition
 
-Proposal text is retained with internal paths, run references, source checksums, and incidental individual record references redacted. The public repository excludes source datasets, raw execution traces, private research packages, and credentials. Exact originals and source provenance are retained privately. Individual review copies and tree labels omit producer names, provider names, campaign identifiers, authoring dates, and individual provenance links. Aggregate campaign information is reported separately. Chinese passages are presented in English; see the [translation and blinding notes](TRANSLATION.md).
+Proposal text is retained with internal paths, run references, source checksums, and incidental individual record references redacted. The public repository excludes source datasets, raw execution traces, private research packages, and credentials. Exact originals and source provenance are retained privately. Individual review copies and tree labels omit producer names, provider names, campaign identifiers, authoring dates, and individual provenance links. Model attribution is available separately in the [model index](MODEL_INDEX.md). Chinese passages are presented in English; see the [translation and blinding notes](TRANSLATION.md).
 
 The [machine-readable graph](data/atlas.json) supports independent inspection. Rebuild all trees and catalogs with `python3 scripts/build_trees.py`; no model calls or private datasets are required.
