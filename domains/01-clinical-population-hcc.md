@@ -6,7 +6,7 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 ## HCC
 
-972 nodes
+978 nodes
 
 <a id="d1-00214d49c1"></a>
 ### D1-00214D49C1 · A two-clock day-28 post-TACE cohort: acute biochemical injury, continuous time since the last TACE, and postoperative bilirubin/INR decompensation after recorded HCC resection
@@ -3806,6 +3806,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-709c5d17bf"></a>
+### D1-709C5D17BF · Early post-TACE lab trajectories versus care-process and intensity rivals for 90-day non-TACE hospitalization
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-709C5D17BF.md)
+
+**Derived from:** [D1-B83582E4C2](#d1-b83582e4c2)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-70b2b5e223"></a>
 ### D1-70B2B5E223 · Outcome-blind non-overlapping calendar validation of contemporaneous P beyond remote B in frozen repeat-TACE HCC triplets
 
@@ -4859,6 +4868,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-8be8b43293"></a>
+### D1-8BE8B43293 · Early post-TACE lab trajectories versus static, latest-level, care-process, and treatment-intensity rivals for 90-day non-TACE hospitalization
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8BE8B43293.md)
+
+**Derived from:** [D1-709C5D17BF](#d1-709c5d17bf)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-8cb0c4ff88"></a>
 ### D1-8CB0C4FF88 · HCC day-42 endpoint triangulation for operational repeat-TACE transport
 
@@ -5477,6 +5495,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-A0DB503CAA.md)
 
 **Derived from:** [D1-C65EBB65EF](#d1-c65ebb65ef)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-a0f6863827"></a>
+### D1-A0F6863827 · Is the ICI-specific low-baseline HBsAg decline in HBV-related HCC a real treatment effect, or a product of treatment-dependent observation? (A pre-specified "generic therapy" hypothesis, falsified her
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A0F6863827.md)
+
+**Derived from:** [D1-CD02858B4E](#d1-cd02858b4e)
 
 **Type:** Generated hypothesis version
 
@@ -6314,6 +6341,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-B82E02C704.md)
 
 **Derived from:** [D1-F7F97BBFE0](#d1-f7f97bbfe0)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-b83582e4c2"></a>
+### D1-B83582E4C2 · Early post-TACE laboratory trajectories and 90-day non-TACE hospitalization
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-B83582E4C2.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -7160,6 +7196,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-CC99D367E8.md)
 
 **Derived from:** [D1-BE4B963429](#d1-be4b963429), [D1-63A8BFB80A](#d1-63a8bfb80a)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-cd02858b4e"></a>
+### D1-CD02858B4E · Is the low-baseline-HBsAg "functional cure" signal of checkpoint blockade in HBV-related HCC specific to checkpoint blockade, or a generic consequence of starting tumour-directed therapy?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-CD02858B4E.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -8573,6 +8618,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-F7F97BBFE0.md)
 
 **Derived from:** [D1-3C2D0A046F](#d1-3c2d0a046f)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-f86bf28830"></a>
+### D1-F86BF28830 · Is the albumin in ALBI the patient's liver, or the pharmacy?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-F86BF28830.md)
+
+**Derived from:** [D1-00D58BDEA2](#d1-00d58bdea2)
 
 **Type:** Generated hypothesis version
 

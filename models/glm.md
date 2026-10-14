@@ -4,11 +4,12 @@
 
 **Unblinded writer attribution.** Complete independent review before consulting this page.
 
-**19 generated hypothesis versions.** Labels follow the recorded hypothesis writer, including in mixed runs. Imported starting questions are excluded.
+**36 generated hypothesis versions.** Labels follow the recorded hypothesis writer, including in mixed runs. Imported starting questions are excluded.
 
 | Campaign / hypothesis links | Model version | Recorded model ID | Generated versions |
 |---|---|---|---:|
 | [GLM — research contract campaign](C23.md) | GLM 5.3 | `glm-5.3` | 19 |
+| [GLM — mixed Luna research contract campaign](C45.md) | GLM 5.3 | `glm-5.3` | 17 |
 
 ## All hypotheses
 
@@ -33,3 +34,20 @@
 | [D4-4E506A64DA](../proposals/D4-4E506A64DA.md) | UK Biobank | Rising HbA1c with concurrent weight loss as a prodromal pancreatic cancer signal: a power-aware paired-trajectory analysis in UK Biobank | GLM 5.3 |
 | [D4-93A6A3E9EA](../proposals/D4-93A6A3E9EA.md) | UK Biobank | Catabolic co-trajectory (concurrent ApoB and albumin decline) as the discriminating moderator of the HbA1c-rise-with-weight-loss prodromal pancreatic-cancer signal | GLM 5.3 |
 | [D4-D9C3F0AC34](../proposals/D4-D9C3F0AC34.md) | UK Biobank | Catabolic co-trajectory (concurrent ApoB and albumin decline) as the discriminating moderator of the HbA1c-rise-with-weight-loss prodromal pancreatic-cancer signal | GLM 5.3 |
+| [D1-0D2CC2275D](../proposals/D1-0D2CC2275D.md) | eICU | eICU landmark proposal: reduced testing during persistent instability | GLM 5.3 |
+| [D1-42152481EB](../proposals/D1-42152481EB.md) | MIMIC-IV | Administration-confirmed susceptibility-triggered de-escalation in ICU patients | GLM 5.3 |
+| [D1-709C5D17BF](../proposals/D1-709C5D17BF.md) | HCC | Early post-TACE lab trajectories versus care-process and intensity rivals for 90-day non-TACE hospitalization | GLM 5.3 |
+| [D1-7AC7A1028A](../proposals/D1-7AC7A1028A.md) | eICU | eICU landmark proposal: reduced testing during persistent instability | GLM 5.3 |
+| [D1-867ED48FFF](../proposals/D1-867ED48FFF.md) | MIMIC-IV | Administration-confirmed susceptibility-triggered antimicrobial de-escalation in ICU patients | GLM 5.3 |
+| [D1-8BE8B43293](../proposals/D1-8BE8B43293.md) | HCC | Early post-TACE lab trajectories versus static, latest-level, care-process, and treatment-intensity rivals for 90-day non-TACE hospitalization | GLM 5.3 |
+| [D1-B83582E4C2](../proposals/D1-B83582E4C2.md) | HCC | Early post-TACE laboratory trajectories and 90-day non-TACE hospitalization | GLM 5.3 |
+| [D1-BAAAAED83B](../proposals/D1-BAAAAED83B.md) | MIMIC-IV | Administration-confirmed susceptibility-triggered de-escalation in ICU patients | GLM 5.3 |
+| [D1-DDD40FDF71](../proposals/D1-DDD40FDF71.md) | MIMIC-IV | Administration-confirmed susceptibility-triggered de-escalation in ICU patients | GLM 5.3 |
+| [D1-DFEB488084](../proposals/D1-DFEB488084.md) | MIMIC-IV | Susceptibility-informed antimicrobial de-escalation after ICU culture results | GLM 5.3 |
+| [D2-0CA45E1A51](../proposals/D2-0CA45E1A51.md) | GEO / ArrayExpress | MerTK-inhibitor selectivity in RA synovial macrophage–fibroblast cocultures | GLM 5.3 |
+| [D2-2AAE53E7DB](../proposals/D2-2AAE53E7DB.md) | GEO / ArrayExpress | Evolution: MerTK-inhibitor perturbation selectivity in E-MTAB-8873 | GLM 5.3 |
+| [D2-EF5B238BEC](../proposals/D2-EF5B238BEC.md) | GEO / ArrayExpress | MerTK-inhibitor selectivity in matched RA synovial cocultures | GLM 5.3 |
+| [D2-F3E7491A4B](../proposals/D2-F3E7491A4B.md) | GEO / ArrayExpress | Evolution: MerTK-inhibitor program selectivity in E-MTAB-8873 | GLM 5.3 |
+| [D2-F6DDB9C992](../proposals/D2-F6DDB9C992.md) | GEO / ArrayExpress | Evolution: MerTK-inhibitor perturbation selectivity in E-MTAB-8873 | GLM 5.3 |
+| [D3-4CD71F91D7](../proposals/D3-4CD71F91D7.md) | GEO / ArrayExpress | Directional macrophage–FLS crosstalk in rheumatoid arthritis | GLM 5.3 |
+| [D3-72484BAA5C](../proposals/D3-72484BAA5C.md) | GEO / ArrayExpress | Donor-blocked, perturbation-anchored macrophage phenotype effects on rheumatoid arthritis FLS | GLM 5.3 |

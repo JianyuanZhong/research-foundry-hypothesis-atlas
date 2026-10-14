@@ -1,6 +1,6 @@
 {
   "schema": "hypothesis-model-attribution-v2",
-  "atlas_frozen_at": "2026-10-14T16:50:52.914393+08:00",
+  "atlas_frozen_at": "2026-10-15T00:10:31.504474+08:00",
   "campaigns": [
     {
       "id": "C01",
@@ -352,6 +352,14 @@
       "model_family": "discoveryRSI (our model)",
       "model_version": "discoveryRSI (Qwen 3.8 27B SFT)",
       "model_id": "qwen38-27b-sft-256k",
+      "harness_version": "Not recorded"
+    },
+    {
+      "id": "C45",
+      "label": "GLM — mixed Luna research contract campaign",
+      "model_id": "glm-5.3",
+      "model_family": "GLM",
+      "model_version": "GLM 5.3",
       "harness_version": "Not recorded"
     }
   ],
@@ -23464,6 +23472,141 @@
     {
       "id": "D2-4650AE45A2",
       "campaign_id": "C44",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-BAAAAED83B",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-867ED48FFF",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-42152481EB",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-B83582E4C2",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-0D2CC2275D",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-7AC7A1028A",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-709C5D17BF",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-8BE8B43293",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-DDD40FDF71",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-DFEB488084",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D3-4CD71F91D7",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D3-72484BAA5C",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D2-F6DDB9C992",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D2-2AAE53E7DB",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D2-0CA45E1A51",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D2-EF5B238BEC",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D2-F3E7491A4B",
+      "campaign_id": "C45",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-CD02858B4E",
+      "campaign_id": "C24",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-5AF3DDC61E",
+      "campaign_id": "C24",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-F86BF28830",
+      "campaign_id": "C24",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-A0F6863827",
+      "campaign_id": "C24",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-8EAB1BF9A1",
+      "campaign_id": "C24",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-0295B713EF",
+      "campaign_id": "C24",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D1-E7C8AB3E66",
+      "campaign_id": "C24",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D3-C807A05EB1",
+      "campaign_id": "C24",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D4-0508569A2B",
+      "campaign_id": "C24",
+      "attribution_basis": "author-linked attempt model at candidate creation"
+    },
+    {
+      "id": "D4-C929B111A1",
+      "campaign_id": "C24",
       "attribution_basis": "author-linked attempt model at candidate creation"
     }
   ]

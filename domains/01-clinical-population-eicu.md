@@ -6,7 +6,7 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 ## eICU
 
-1,058 nodes
+1,061 nodes
 
 <a id="d1-00230d215f"></a>
 ### D1-00230D215F · Cumulative Hypotension Burden Predicts Mortality in Mechanical Ventilation
@@ -545,6 +545,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-0D0AAF1BEC.md)
 
 **Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-0d2cc2275d"></a>
+### D1-0D2CC2275D · eICU landmark proposal: reduced testing during persistent instability
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-0D2CC2275D.md)
+
+**Derived from:** [D1-A9E95BB159](#d1-a9e95bb159)
 
 **Type:** Generated hypothesis version
 
@@ -4715,6 +4724,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-7ac7a1028a"></a>
+### D1-7AC7A1028A · eICU landmark proposal: reduced testing during persistent instability
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-7AC7A1028A.md)
+
+**Derived from:** [D1-0D2CC2275D](#d1-0d2cc2275d)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-7b307d0c0d"></a>
 ### D1-7B307D0C0D · Care-plan interface opportunity does not explain exact Ventilation-label absence in the frozen eICU cohort
 
@@ -5531,6 +5549,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-8E09DC582F.md)
 
 **Derived from:** [D1-3DD6E02297](#d1-3dd6e02297)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8eab1bf9a1"></a>
+### D1-8EAB1BF9A1 · When the feed stops and the insulin does not: how much of the glucose fall after enteral-feed interruption is insulin-attributable, and how much is the deterioration that stopped the feed?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8EAB1BF9A1.md)
+
+**Derived from:** [D1-010BC76700](#d1-010bc76700)
 
 **Type:** Generated hypothesis version
 

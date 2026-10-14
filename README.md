@@ -4,14 +4,14 @@
 
 ![All four aggregated hypothesis trees](figures/overview.svg)
 
-**Snapshot:** 2026-10-14 16:50 China time. **4,622 nodes · 4,444 generated versions.**
+**Snapshot:** 2026-10-15 00:10 China time. **4,649 nodes · 4,471 generated versions.**
 
 | Domain | Nodes | Generated versions | Explore |
 |---|---:|---:|---|
-| Clinical & Population Health Research | 3,028 | 2,948 | [Proposals](domains/01-clinical-population.md) · [Full tree](figures/01-clinical-population.svg) |
-| Therapeutic Target Prioritization | 257 | 253 | [Proposals](domains/02-therapeutic-targets.md) · [Full tree](figures/02-therapeutic-targets.svg) |
-| Disease Mechanisms & Pathway Hypotheses | 331 | 325 | [Proposals](domains/03-disease-mechanisms.md) · [Full tree](figures/03-disease-mechanisms.svg) |
-| Population Multi-omics & Disease Targets | 1,006 | 918 | [Proposals](domains/04-population-multiomics.md) · [Full tree](figures/04-population-multiomics.svg) |
+| Clinical & Population Health Research | 3,045 | 2,965 | [Proposals](domains/01-clinical-population.md) · [Full tree](figures/01-clinical-population.svg) |
+| Therapeutic Target Prioritization | 262 | 258 | [Proposals](domains/02-therapeutic-targets.md) · [Full tree](figures/02-therapeutic-targets.svg) |
+| Disease Mechanisms & Pathway Hypotheses | 334 | 328 | [Proposals](domains/03-disease-mechanisms.md) · [Full tree](figures/03-disease-mechanisms.svg) |
+| Population Multi-omics & Disease Targets | 1,008 | 920 | [Proposals](domains/04-population-multiomics.md) · [Full tree](figures/04-population-multiomics.svg) |
 
 ## Browse by hypothesis writer
 
@@ -21,9 +21,9 @@
 |---|---:|
 | [Qwen original](models/qwen-original.md) | 628 |
 | [discoveryRSI (our model)](models/discoveryrsi.md) | 1,176 |
-| [Claude](models/claude.md) | 23 |
+| [Claude](models/claude.md) | 33 |
 | [DeepSeek](models/deepseek.md) | 257 |
-| [GLM](models/glm.md) | 19 |
+| [GLM](models/glm.md) | 36 |
 | [GPT](models/gpt.md) | 2,341 |
 
 **Qwen original** identifies hypotheses written by the original Qwen checkpoints. **discoveryRSI (our model)** identifies hypotheses written by our tuned checkpoints, including SFT and RAFT variants. Mixed runs use the hypothesis writer for the label; each campaign retains its exact recorded model ID in the [model index](MODEL_INDEX.md).

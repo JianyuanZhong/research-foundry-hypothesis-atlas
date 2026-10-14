@@ -4,11 +4,11 @@
 
 **This page reveals aggregate campaign attribution.** Complete independent review from the [anonymous copies](REVIEW.md) before consulting the [model index](MODEL_INDEX.md).
 
-The **2026-10-14 16:50 China time** refresh contains **4,622 nodes: 4,444 generated versions and 178 starting questions**, with **4,508 recorded parent links**. All 2,582 previously published nodes retain their public IDs, proposal copies, and recorded lineage.
+The **2026-10-15 00:10 China time** refresh contains **4,649 nodes: 4,471 generated versions and 178 starting questions**, with **4,533 recorded parent links**. All previously published nodes retain their public IDs, proposal copies, and recorded lineage.
 
 ## Additions since October 5
 
-This refresh adds **1,989 generated hypothesis versions** and **51 starting questions**. It includes original Qwen, additional tuned discoveryRSI campaigns, Claude, DeepSeek, and GLM.
+This refresh adds **2,016 generated hypothesis versions** and no new starting questions. It includes original Qwen, additional tuned discoveryRSI campaigns, Claude, DeepSeek, and GLM, including the new mixed GLM/Luna campaign.
 
 | Hypothesis writer | Generated versions in full atlas |
 |---|---:|
@@ -16,7 +16,7 @@ This refresh adds **1,989 generated hypothesis versions** and **51 starting ques
 | discoveryRSI (our model) | 1,176 |
 | Claude | 23 |
 | DeepSeek | 257 |
-| GLM | 19 |
+| GLM | 36 |
 | GPT | 2,341 |
 
 ## Writer attribution
@@ -39,7 +39,7 @@ Counts describe the frozen records at collection. Closed episodes are observed c
 | [Qwen original — evidence iteration](models/C21.md) | Qwen original | 23 | 30 |
 | [discoveryRSI — RAFT evidence iteration](models/C22.md) | discoveryRSI (our model) | 94 | 30 |
 | [GLM — research contract campaign](models/C23.md) | GLM | 19 | 40 |
-| [Claude — four-domain campaign](models/C24.md) | Claude | 23 | 9 |
+| [Claude — four-domain campaign](models/C24.md) | Claude | 33 | 21 |
 | [Qwen original — initial 4B pilot](models/C25.md) | Qwen original | 1 | 1 |
 | [Qwen original — mixed 4B campaign v8](models/C26.md) | Qwen original | 23 | 11 |
 | [Qwen original — mixed 4B campaign v9](models/C27.md) | Qwen original | 176 | 40 |
@@ -60,6 +60,7 @@ Counts describe the frozen records at collection. Closed episodes are observed c
 | [discoveryRSI — targeted SFT campaign](models/C42.md) | discoveryRSI (our model) | 3 | 13 |
 | [discoveryRSI — fresh SFT continuation](models/C43.md) | discoveryRSI (our model) | 3 | 7 |
 | [discoveryRSI — targeted SFT continuation](models/C44.md) | discoveryRSI (our model) | 8 | 15 |
+| [GLM — mixed Luna research contract campaign](models/C45.md) | GLM | 17 | 64 |
 
 The earlier 15 campaign catalogs remain included, covering GPT and the original 114-version tuned draft-first campaign. All campaigns are listed in the [complete model index](MODEL_INDEX.md). Empty and seed-only runs add no generated material. Evaluation copies, working files, unregistered drafts, selection replays, and reviewer outputs are not new scientific nodes.
 

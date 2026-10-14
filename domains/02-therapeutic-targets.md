@@ -2,7 +2,7 @@
 
 [← Blinded review index](../REVIEW.md)
 
-**257 nodes · 253 generated versions · 248 recorded parent links.**
+**262 nodes · 258 generated versions · 253 recorded parent links.**
 
 [![Aggregated hypothesis forest](../figures/02-therapeutic-targets-preview.svg)](../figures/02-therapeutic-targets.svg)
 
@@ -10,7 +10,7 @@
 
 ## GEO / ArrayExpress
 
-257 nodes
+262 nodes
 
 <a id="d2-0293c6731f"></a>
 ### D2-0293C6731F · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response
@@ -117,6 +117,15 @@
 **Full scientific proposal:** [Read the public review copy](../proposals/D2-0BFDFEDA74.md)
 
 **Derived from:** [D2-F62E8C6F3C](#d2-f62e8c6f3c)
+
+**Type:** Generated hypothesis version
+
+<a id="d2-0ca45e1a51"></a>
+### D2-0CA45E1A51 · MerTK-inhibitor selectivity in RA synovial macrophage–fibroblast cocultures
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D2-0CA45E1A51.md)
+
+**Derived from:** [D2-195C7DE527](#d2-195c7de527)
 
 **Type:** Generated hypothesis version
 
@@ -441,6 +450,15 @@
 **Full scientific proposal:** [Read the public review copy](../proposals/D2-2A712BC002.md)
 
 **Derived from:** [D2-D71134F85B](#d2-d71134f85b)
+
+**Type:** Generated hypothesis version
+
+<a id="d2-2aae53e7db"></a>
+### D2-2AAE53E7DB · Evolution: MerTK-inhibitor perturbation selectivity in E-MTAB-8873
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D2-2AAE53E7DB.md)
+
+**Derived from:** [D2-0CA45E1A51](#d2-0ca45e1a51)
 
 **Type:** Generated hypothesis version
 
@@ -2208,6 +2226,15 @@
 
 **Type:** Generated hypothesis version
 
+<a id="d2-ef5b238bec"></a>
+### D2-EF5B238BEC · MerTK-inhibitor selectivity in matched RA synovial cocultures
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D2-EF5B238BEC.md)
+
+**Derived from:** [D2-0CA45E1A51](#d2-0ca45e1a51)
+
+**Type:** Generated hypothesis version
+
 <a id="d2-f083b6c3f5"></a>
 ### D2-F083B6C3F5 · Episode 18 working proposal: within-assay context-by-intervention repair
 
@@ -2244,6 +2271,15 @@
 
 **Type:** Generated hypothesis version
 
+<a id="d2-f3e7491a4b"></a>
+### D2-F3E7491A4B · Evolution: MerTK-inhibitor program selectivity in E-MTAB-8873
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D2-F3E7491A4B.md)
+
+**Derived from:** [D2-0CA45E1A51](#d2-0ca45e1a51)
+
+**Type:** Generated hypothesis version
+
 <a id="d2-f4e2c4ac77"></a>
 ### D2-F4E2C4AC77 · Context-dependent intervention response: does the RA drug transcriptional footprint require the macrophage-fibroblast co-culture context? (episode 20, evolve/repair of D2-T1)
 
@@ -2268,6 +2304,15 @@
 **Full scientific proposal:** [Read the public review copy](../proposals/D2-F62E8C6F3C.md)
 
 **Derived from:** [D2-4B0AF8FC57](#d2-4b0af8fc57)
+
+**Type:** Generated hypothesis version
+
+<a id="d2-f6ddb9c992"></a>
+### D2-F6DDB9C992 · Evolution: MerTK-inhibitor perturbation selectivity in E-MTAB-8873
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D2-F6DDB9C992.md)
+
+**Derived from:** [D2-0CA45E1A51](#d2-0ca45e1a51)
 
 **Type:** Generated hypothesis version
 

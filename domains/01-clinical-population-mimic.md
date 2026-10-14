@@ -6,7 +6,7 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 ## MIMIC-IV
 
-998 nodes
+1,006 nodes
 
 <a id="d1-000a6b7841"></a>
 ### D1-000A6B7841 · Discordant renal recovery after creatinine-based AKI: a multi-hospital eICU-CRD 2.0 cohort study
@@ -113,6 +113,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-026F4BD433.md)
 
 **Derived from:** [D1-40D2285779](#d1-40d2285779)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-0295b713ef"></a>
+### D1-0295B713EF · When did the clinician actually have the susceptibility result? Re-anchoring antimicrobial de-escalation in MIMIC-IV 3.1 at measured result-availability time — with a *measured-feasible* pre-result ne
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-0295B713EF.md)
+
+**Derived from:** [D1-30EA545523](#d1-30ea545523)
 
 **Type:** Generated hypothesis version
 
@@ -2438,6 +2447,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-42152481eb"></a>
+### D1-42152481EB · Administration-confirmed susceptibility-triggered de-escalation in ICU patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-42152481EB.md)
+
+**Derived from:** [D1-DFEB488084](#d1-dfeb488084)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-4236df762f"></a>
 ### D1-4236DF762F · Observed-first-stop association and a prospective gate for vasopressor discontinuation order
 
@@ -3263,6 +3281,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-5AD6D26B51.md)
 
 **Derived from:** [D1-C5C5B65EAE](#d1-c5c5b65eae)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-5af3ddc61e"></a>
+### D1-5AF3DDC61E · Episode 4 (MIMIC-IV 3.1) — Lead working design, recovery attempt
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5AF3DDC61E.md)
+
+**Derived from:** [D1-7F64DCC70B](#d1-7f64dcc70b)
 
 **Type:** Generated hypothesis version
 
@@ -4568,6 +4595,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-8650EA49A6.md)
 
 **Derived from:** [D1-3DBBE146E3](#d1-3dbbe146e3)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-867ed48fff"></a>
+### D1-867ED48FFF · Administration-confirmed susceptibility-triggered antimicrobial de-escalation in ICU patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-867ED48FFF.md)
+
+**Derived from:** [D1-BAAAAED83B](#d1-baaaaed83b)
 
 **Type:** Generated hypothesis version
 
@@ -6524,6 +6560,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-baaaaed83b"></a>
+### D1-BAAAAED83B · Administration-confirmed susceptibility-triggered de-escalation in ICU patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-BAAAAED83B.md)
+
+**Derived from:** [D1-DFEB488084](#d1-dfeb488084)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-bb36c19b20"></a>
 ### D1-BB36C19B20 · MIMIC-IV island, episode 37 (Evolution child, work/ev37)
 
@@ -7730,6 +7775,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-ddd40fdf71"></a>
+### D1-DDD40FDF71 · Administration-confirmed susceptibility-triggered de-escalation in ICU patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-DDD40FDF71.md)
+
+**Derived from:** [D1-BAAAAED83B](#d1-baaaaed83b)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-de3035c756"></a>
 ### D1-DE3035C756 · Research Proposal: Discordant Organ Recovery After Critical Illness
 
@@ -7790,6 +7844,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-DFB1411049.md)
 
 **Derived from:** [D1-282BE5C32E](#d1-282be5c32e)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-dfeb488084"></a>
+### D1-DFEB488084 · Susceptibility-informed antimicrobial de-escalation after ICU culture results
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-DFEB488084.md)
+
+**Derived from:** [D1-A6578BE3E1](#d1-a6578be3e1)
 
 **Type:** Generated hypothesis version
 
@@ -8078,6 +8141,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-E7A39E9C8F.md)
 
 **Derived from:** [D1-F4E5F59B42](#d1-f4e5f59b42), [D1-93EB508EDA](#d1-93eb508eda)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e7c8ab3e66"></a>
+### D1-E7C8AB3E66 · When did the clinician actually have the susceptibility result? Re-anchoring antimicrobial de-escalation in MIMIC-IV 3.1 at measured result-availability time — with a *measured-feasible* pre-result ne
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E7C8AB3E66.md)
+
+**Derived from:** [D1-0295B713EF](#d1-0295b713ef)
 
 **Type:** Generated hypothesis version
 

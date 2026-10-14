@@ -2,7 +2,7 @@
 
 [← Blinded review index](../REVIEW.md)
 
-**331 nodes · 325 generated versions · 317 recorded parent links.**
+**334 nodes · 328 generated versions · 321 recorded parent links.**
 
 [![Aggregated hypothesis forest](../figures/03-disease-mechanisms-preview.svg)](../figures/03-disease-mechanisms.svg)
 
@@ -10,7 +10,7 @@
 
 ## GEO / ArrayExpress
 
-331 nodes
+334 nodes
 
 <a id="d3-01a1fbd6cb"></a>
 ### D3-01A1FBD6CB · D3-M2 repair: directional macrophage–fibroblast communication in inflammatory synovial coculture
@@ -849,6 +849,15 @@
 
 **Type:** Generated hypothesis version
 
+<a id="d3-4cd71f91d7"></a>
+### D3-4CD71F91D7 · Directional macrophage–FLS crosstalk in rheumatoid arthritis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D3-4CD71F91D7.md)
+
+**Derived from:** [D3-F680DC5C21](#d3-f680dc5c21)
+
+**Type:** Generated hypothesis version
+
 <a id="d3-4f296b00da"></a>
 ### D3-4F296B00DA · Provisional hypothesis: donor-aware macrophage-to-FLS communication in E-MTAB-8873
 
@@ -1368,6 +1377,15 @@
 **Full scientific proposal:** [Read the public review copy](../proposals/D3-71D39644BE.md)
 
 **Derived from:** [D3-327B363794](#d3-327b363794)
+
+**Type:** Generated hypothesis version
+
+<a id="d3-72484baa5c"></a>
+### D3-72484BAA5C · Donor-blocked, perturbation-anchored macrophage phenotype effects on rheumatoid arthritis FLS
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D3-72484BAA5C.md)
+
+**Derived from:** [D3-4CD71F91D7](#d3-4cd71f91d7)
 
 **Type:** Generated hypothesis version
 
@@ -2457,6 +2475,15 @@
 **Full scientific proposal:** [Read the public review copy](../proposals/D3-C6C4ABA326.md)
 
 **Derived from:** [D3-F680DC5C21](#d3-f680dc5c21)
+
+**Type:** Generated hypothesis version
+
+<a id="d3-c807a05eb1"></a>
+### D3-C807A05EB1 · Does the RA remission macrophage compartment differ from active disease only in *how many* MerTK+ cells it holds, or in *what those cells are doing*?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D3-C807A05EB1.md)
+
+**Derived from:** [D3-1CEA8C9831](#d3-1cea8c9831), [D3-E2361C553A](#d3-e2361c553a)
 
 **Type:** Generated hypothesis version
 

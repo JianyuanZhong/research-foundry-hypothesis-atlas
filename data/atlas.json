@@ -1,6 +1,6 @@
 {
   "schema": "expert-hypothesis-atlas-v2",
-  "frozen_at": "2026-10-14T16:50:52.914393+08:00",
+  "frozen_at": "2026-10-15T00:10:31.504474+08:00",
   "domains": [
     {
       "id": "clinical_population",
@@ -50066,6 +50066,298 @@
         "D2-1927BBAC60"
       ],
       "proposal": "proposals/D2-4650AE45A2.md"
+    },
+    {
+      "id": "D1-BAAAAED83B",
+      "domain": "clinical_population",
+      "dataset": "MIMIC-IV",
+      "title": "Administration-confirmed susceptibility-triggered de-escalation in ICU patients",
+      "seed": false,
+      "parents": [
+        "D1-DFEB488084"
+      ],
+      "proposal": "proposals/D1-BAAAAED83B.md"
+    },
+    {
+      "id": "D1-867ED48FFF",
+      "domain": "clinical_population",
+      "dataset": "MIMIC-IV",
+      "title": "Administration-confirmed susceptibility-triggered antimicrobial de-escalation in ICU patients",
+      "seed": false,
+      "parents": [
+        "D1-BAAAAED83B"
+      ],
+      "proposal": "proposals/D1-867ED48FFF.md"
+    },
+    {
+      "id": "D1-42152481EB",
+      "domain": "clinical_population",
+      "dataset": "MIMIC-IV",
+      "title": "Administration-confirmed susceptibility-triggered de-escalation in ICU patients",
+      "seed": false,
+      "parents": [
+        "D1-DFEB488084"
+      ],
+      "proposal": "proposals/D1-42152481EB.md"
+    },
+    {
+      "id": "D1-B83582E4C2",
+      "domain": "clinical_population",
+      "dataset": "HCC",
+      "title": "Early post-TACE laboratory trajectories and 90-day non-TACE hospitalization",
+      "seed": false,
+      "parents": [],
+      "proposal": "proposals/D1-B83582E4C2.md"
+    },
+    {
+      "id": "D1-0D2CC2275D",
+      "domain": "clinical_population",
+      "dataset": "eICU",
+      "title": "eICU landmark proposal: reduced testing during persistent instability",
+      "seed": false,
+      "parents": [
+        "D1-A9E95BB159"
+      ],
+      "proposal": "proposals/D1-0D2CC2275D.md"
+    },
+    {
+      "id": "D1-7AC7A1028A",
+      "domain": "clinical_population",
+      "dataset": "eICU",
+      "title": "eICU landmark proposal: reduced testing during persistent instability",
+      "seed": false,
+      "parents": [
+        "D1-0D2CC2275D"
+      ],
+      "proposal": "proposals/D1-7AC7A1028A.md"
+    },
+    {
+      "id": "D1-709C5D17BF",
+      "domain": "clinical_population",
+      "dataset": "HCC",
+      "title": "Early post-TACE lab trajectories versus care-process and intensity rivals for 90-day non-TACE hospitalization",
+      "seed": false,
+      "parents": [
+        "D1-B83582E4C2"
+      ],
+      "proposal": "proposals/D1-709C5D17BF.md"
+    },
+    {
+      "id": "D1-8BE8B43293",
+      "domain": "clinical_population",
+      "dataset": "HCC",
+      "title": "Early post-TACE lab trajectories versus static, latest-level, care-process, and treatment-intensity rivals for 90-day non-TACE hospitalization",
+      "seed": false,
+      "parents": [
+        "D1-709C5D17BF"
+      ],
+      "proposal": "proposals/D1-8BE8B43293.md"
+    },
+    {
+      "id": "D1-DDD40FDF71",
+      "domain": "clinical_population",
+      "dataset": "MIMIC-IV",
+      "title": "Administration-confirmed susceptibility-triggered de-escalation in ICU patients",
+      "seed": false,
+      "parents": [
+        "D1-BAAAAED83B"
+      ],
+      "proposal": "proposals/D1-DDD40FDF71.md"
+    },
+    {
+      "id": "D1-DFEB488084",
+      "domain": "clinical_population",
+      "dataset": "MIMIC-IV",
+      "title": "Susceptibility-informed antimicrobial de-escalation after ICU culture results",
+      "seed": false,
+      "parents": [
+        "D1-A6578BE3E1"
+      ],
+      "proposal": "proposals/D1-DFEB488084.md"
+    },
+    {
+      "id": "D3-4CD71F91D7",
+      "domain": "disease_mechanisms",
+      "dataset": "GEO / ArrayExpress",
+      "title": "Directional macrophage–FLS crosstalk in rheumatoid arthritis",
+      "seed": false,
+      "parents": [
+        "D3-F680DC5C21"
+      ],
+      "proposal": "proposals/D3-4CD71F91D7.md"
+    },
+    {
+      "id": "D3-72484BAA5C",
+      "domain": "disease_mechanisms",
+      "dataset": "GEO / ArrayExpress",
+      "title": "Donor-blocked, perturbation-anchored macrophage phenotype effects on rheumatoid arthritis FLS",
+      "seed": false,
+      "parents": [
+        "D3-4CD71F91D7"
+      ],
+      "proposal": "proposals/D3-72484BAA5C.md"
+    },
+    {
+      "id": "D2-F6DDB9C992",
+      "domain": "therapeutic_targets",
+      "dataset": "GEO / ArrayExpress",
+      "title": "Evolution: MerTK-inhibitor perturbation selectivity in E-MTAB-8873",
+      "seed": false,
+      "parents": [
+        "D2-0CA45E1A51"
+      ],
+      "proposal": "proposals/D2-F6DDB9C992.md"
+    },
+    {
+      "id": "D2-2AAE53E7DB",
+      "domain": "therapeutic_targets",
+      "dataset": "GEO / ArrayExpress",
+      "title": "Evolution: MerTK-inhibitor perturbation selectivity in E-MTAB-8873",
+      "seed": false,
+      "parents": [
+        "D2-0CA45E1A51"
+      ],
+      "proposal": "proposals/D2-2AAE53E7DB.md"
+    },
+    {
+      "id": "D2-0CA45E1A51",
+      "domain": "therapeutic_targets",
+      "dataset": "GEO / ArrayExpress",
+      "title": "MerTK-inhibitor selectivity in RA synovial macrophage–fibroblast cocultures",
+      "seed": false,
+      "parents": [
+        "D2-195C7DE527"
+      ],
+      "proposal": "proposals/D2-0CA45E1A51.md"
+    },
+    {
+      "id": "D2-EF5B238BEC",
+      "domain": "therapeutic_targets",
+      "dataset": "GEO / ArrayExpress",
+      "title": "MerTK-inhibitor selectivity in matched RA synovial cocultures",
+      "seed": false,
+      "parents": [
+        "D2-0CA45E1A51"
+      ],
+      "proposal": "proposals/D2-EF5B238BEC.md"
+    },
+    {
+      "id": "D2-F3E7491A4B",
+      "domain": "therapeutic_targets",
+      "dataset": "GEO / ArrayExpress",
+      "title": "Evolution: MerTK-inhibitor program selectivity in E-MTAB-8873",
+      "seed": false,
+      "parents": [
+        "D2-0CA45E1A51"
+      ],
+      "proposal": "proposals/D2-F3E7491A4B.md"
+    },
+    {
+      "id": "D1-CD02858B4E",
+      "domain": "clinical_population",
+      "dataset": "HCC",
+      "title": "Is the low-baseline-HBsAg \"functional cure\" signal of checkpoint blockade in HBV-related HCC specific to checkpoint blockade, or a generic consequence of starting tumour-directed therapy?",
+      "seed": false,
+      "parents": [],
+      "proposal": "proposals/D1-CD02858B4E.md"
+    },
+    {
+      "id": "D1-5AF3DDC61E",
+      "domain": "clinical_population",
+      "dataset": "MIMIC-IV",
+      "title": "Episode 4 (MIMIC-IV 3.1) — Lead working design, recovery attempt",
+      "seed": false,
+      "parents": [
+        "D1-7F64DCC70B"
+      ],
+      "proposal": "proposals/D1-5AF3DDC61E.md"
+    },
+    {
+      "id": "D1-F86BF28830",
+      "domain": "clinical_population",
+      "dataset": "HCC",
+      "title": "Is the albumin in ALBI the patient's liver, or the pharmacy?",
+      "seed": false,
+      "parents": [
+        "D1-00D58BDEA2"
+      ],
+      "proposal": "proposals/D1-F86BF28830.md"
+    },
+    {
+      "id": "D1-A0F6863827",
+      "domain": "clinical_population",
+      "dataset": "HCC",
+      "title": "Is the ICI-specific low-baseline HBsAg decline in HBV-related HCC a real treatment effect, or a product of treatment-dependent observation? (A pre-specified \"generic therapy\" hypothesis, falsified her",
+      "seed": false,
+      "parents": [
+        "D1-CD02858B4E"
+      ],
+      "proposal": "proposals/D1-A0F6863827.md"
+    },
+    {
+      "id": "D1-8EAB1BF9A1",
+      "domain": "clinical_population",
+      "dataset": "eICU",
+      "title": "When the feed stops and the insulin does not: how much of the glucose fall after enteral-feed interruption is insulin-attributable, and how much is the deterioration that stopped the feed?",
+      "seed": false,
+      "parents": [
+        "D1-010BC76700"
+      ],
+      "proposal": "proposals/D1-8EAB1BF9A1.md"
+    },
+    {
+      "id": "D1-0295B713EF",
+      "domain": "clinical_population",
+      "dataset": "MIMIC-IV",
+      "title": "When did the clinician actually have the susceptibility result? Re-anchoring antimicrobial de-escalation in MIMIC-IV 3.1 at measured result-availability time — with a *measured-feasible* pre-result ne",
+      "seed": false,
+      "parents": [
+        "D1-30EA545523"
+      ],
+      "proposal": "proposals/D1-0295B713EF.md"
+    },
+    {
+      "id": "D1-E7C8AB3E66",
+      "domain": "clinical_population",
+      "dataset": "MIMIC-IV",
+      "title": "When did the clinician actually have the susceptibility result? Re-anchoring antimicrobial de-escalation in MIMIC-IV 3.1 at measured result-availability time — with a *measured-feasible* pre-result ne",
+      "seed": false,
+      "parents": [
+        "D1-0295B713EF"
+      ],
+      "proposal": "proposals/D1-E7C8AB3E66.md"
+    },
+    {
+      "id": "D3-C807A05EB1",
+      "domain": "disease_mechanisms",
+      "dataset": "GEO / ArrayExpress",
+      "title": "Does the RA remission macrophage compartment differ from active disease only in *how many* MerTK+ cells it holds, or in *what those cells are doing*?",
+      "seed": false,
+      "parents": [
+        "D3-1CEA8C9831",
+        "D3-E2361C553A"
+      ],
+      "proposal": "proposals/D3-C807A05EB1.md"
+    },
+    {
+      "id": "D4-0508569A2B",
+      "domain": "population_multiomics",
+      "dataset": "UK Biobank",
+      "title": "Does a below-threshold total testosterone in men mark an androgen state or an SHBG state? A prespecified two-marker dissociation test, and a test of whether calculated free testosterone adds anything",
+      "seed": false,
+      "parents": [
+        "D4-0847AC1163"
+      ],
+      "proposal": "proposals/D4-0508569A2B.md"
+    },
+    {
+      "id": "D4-C929B111A1",
+      "domain": "population_multiomics",
+      "dataset": "UK Biobank",
+      "title": "Is the creatinine/cystatin-C eGFR discordance kidney-specific filtration information, or a non-GFR body-composition/inflammation composite wearing a kidney label?",
+      "seed": false,
+      "parents": [],
+      "proposal": "proposals/D4-C929B111A1.md"
     }
   ]
 }

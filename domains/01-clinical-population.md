@@ -2,7 +2,7 @@
 
 [← Blinded review index](../REVIEW.md)
 
-**3,028 nodes · 2,948 generated versions · 3,001 recorded parent links.**
+**3,045 nodes · 2,965 generated versions · 3,016 recorded parent links.**
 
 [![Aggregated hypothesis forest](../figures/01-clinical-population-preview.svg)](../figures/01-clinical-population.svg)
 
@@ -10,9 +10,9 @@
 
 ## Dataset catalogs
 
-- [HCC: 972 hypotheses and starting questions](01-clinical-population-hcc.md)
+- [HCC: 978 hypotheses and starting questions](01-clinical-population-hcc.md)
 
-- [MIMIC-IV: 998 hypotheses and starting questions](01-clinical-population-mimic.md)
+- [MIMIC-IV: 1,006 hypotheses and starting questions](01-clinical-population-mimic.md)
 
-- [eICU: 1,058 hypotheses and starting questions](01-clinical-population-eicu.md)
+- [eICU: 1,061 hypotheses and starting questions](01-clinical-population-eicu.md)
 

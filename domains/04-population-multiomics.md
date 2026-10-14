@@ -2,7 +2,7 @@
 
 [← Blinded review index](../REVIEW.md)
 
-**1,006 nodes · 918 generated versions · 942 recorded parent links.**
+**1,008 nodes · 920 generated versions · 943 recorded parent links.**
 
 [![Aggregated hypothesis forest](../figures/04-population-multiomics-preview.svg)](../figures/04-population-multiomics.svg)
 
@@ -10,7 +10,7 @@
 
 ## UK Biobank
 
-1,006 nodes
+1,008 nodes
 
 <a id="d4-001f1e2589"></a>
 ### D4-001F1E2589 · UKB 23: Do blood-cell changes signal occult blood loss or abnormal hematopoiesis?
@@ -126,6 +126,15 @@
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-0492735356.md)
 
 **Derived from:** [D4-A0FEAB387D](#d4-a0feab387d)
+
+**Type:** Generated hypothesis version
+
+<a id="d4-0508569a2b"></a>
+### D4-0508569A2B · Does a below-threshold total testosterone in men mark an androgen state or an SHBG state? A prespecified two-marker dissociation test, and a test of whether calculated free testosterone adds anything
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D4-0508569A2B.md)
+
+**Derived from:** [D4-0847AC1163](#d4-0847ac1163)
 
 **Type:** Generated hypothesis version
 
@@ -7146,6 +7155,15 @@
 **Full scientific proposal:** [Read the public review copy](../proposals/D4-C8D9363B7D.md)
 
 **Derived from:** [D4-5B70E1474D](#d4-5b70e1474d)
+
+**Type:** Generated hypothesis version
+
+<a id="d4-c929b111a1"></a>
+### D4-C929B111A1 · Is the creatinine/cystatin-C eGFR discordance kidney-specific filtration information, or a non-GFR body-composition/inflammation composite wearing a kidney label?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D4-C929B111A1.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 

@@ -1,204 +1,204 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1160" height="820" viewBox="0 0 1160 820" role="img" aria-label="Therapeutic Target Prioritization"><rect width="100%" height="100%" fill="#111a21"/>
 <rect x="10" y="10" width="1140" height="800" rx="14" fill="#172630" stroke="#364a57"/>
 <text x="32" y="44" fill="#e5edf2" font-family="Arial,sans-serif" font-size="21" >Therapeutic Target Prioritization</text>
-<text x="32" y="69" fill="#bfd0db" font-family="Arial,sans-serif" font-size="14" >257 nodes · 253 generated versions</text>
-<text x="32" y="96.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="12" >GEO / ArrayExpress · 257</text>
-<path d="M144.30,483.16 C198.45,483.16 198.45,394.67 252.60,394.67" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<text x="32" y="69" fill="#bfd0db" font-family="Arial,sans-serif" font-size="14" >262 nodes · 258 generated versions</text>
+<text x="32" y="96.0" fill="#80cec4" font-family="Arial,sans-serif" font-size="12" >GEO / ArrayExpress · 262</text>
+<path d="M144.30,477.31 C198.45,477.31 198.45,370.36 252.60,370.36" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,458.17 C415.05,458.17 415.05,673.40 469.20,673.40" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,483.16 144.30,483.16" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,483.16 144.30,483.16" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,477.31 144.30,477.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,477.31 144.30,477.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,695.53 C523.35,695.53 523.35,662.33 577.50,662.33" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,394.67 C306.75,394.67 306.75,458.17 360.90,458.17" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,370.36 C306.75,370.36 306.75,458.17 360.90,458.17" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,695.53 C523.35,695.53 523.35,706.60 577.50,706.60" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,458.17 C415.05,458.17 415.05,695.53 469.20,695.53" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,319.27 C523.35,319.27 523.35,396.73 577.50,396.73" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,206.31 C415.05,206.31 415.05,275.00 469.20,275.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,229.21 C415.05,229.21 415.05,341.40 469.20,341.40" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,319.27 C523.35,319.27 523.35,352.47 577.50,352.47" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,147.60 C306.75,147.60 306.75,229.21 360.90,229.21" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,147.60 C306.75,147.60 306.75,206.31 360.90,206.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,147.60 C306.75,147.60 306.75,217.76 360.90,217.76" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,144.32 C306.75,144.32 306.75,229.21 360.90,229.21" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,144.32 C306.75,144.32 306.75,206.31 360.90,206.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,144.32 C306.75,144.32 306.75,217.76 360.90,217.76" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,206.31 C415.05,206.31 415.05,319.27 469.20,319.27" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,272.37 C198.45,272.37 198.45,147.60 252.60,147.60" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,525.32 144.30,525.32" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,147.60 C306.75,147.60 306.75,183.41 360.90,183.41" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,147.60 C306.75,147.60 306.75,171.97 360.90,171.97" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,269.81 C198.45,269.81 198.45,144.32 252.60,144.32" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,529.19 144.30,529.19" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,144.32 C306.75,144.32 306.75,183.41 360.90,183.41" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,144.32 C306.75,144.32 306.75,171.97 360.90,171.97" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,206.31 C415.05,206.31 415.05,297.13 469.20,297.13" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,147.60 C306.75,147.60 306.75,194.86 360.90,194.86" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,272.37 144.30,272.37" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,144.32 C306.75,144.32 306.75,194.86 360.90,194.86" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,269.81 144.30,269.81" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,206.31 C415.05,206.31 415.05,252.87 469.20,252.87" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,156.43 144.30,156.43" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,155.69 144.30,155.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,366.59 C415.05,366.59 415.05,584.87 469.20,584.87" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,366.59 C415.05,366.59 415.05,562.73 469.20,562.73" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,409.38 144.30,409.38" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,335.60 144.30,335.60" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,335.60 C198.45,335.60 198.45,317.47 252.60,317.47" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,255.70 C306.75,255.70 306.75,275.00 360.90,275.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,335.60 C198.45,335.60 198.45,286.58 252.60,286.58" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,286.58 C306.75,286.58 306.75,366.59 360.90,366.59" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,335.60 C198.45,335.60 198.45,255.70 252.60,255.70" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,404.69 144.30,404.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,332.06 144.30,332.06" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,332.06 C198.45,332.06 198.45,299.72 252.60,299.72" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,243.21 C306.75,243.21 306.75,275.00 360.90,275.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,332.06 C198.45,332.06 198.45,271.47 252.60,271.47" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,271.47 C306.75,271.47 306.75,366.59 360.90,366.59" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,332.06 C198.45,332.06 198.45,243.21 252.60,243.21" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,584.87 C523.35,584.87 523.35,573.80 577.50,573.80" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,255.70 C306.75,255.70 306.75,332.24 360.90,332.24" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,286.58 C306.75,286.58 306.75,355.14 360.90,355.14" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,243.21 C306.75,243.21 306.75,332.24 360.90,332.24" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,271.47 C306.75,271.47 306.75,355.14 360.90,355.14" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,584.87 C523.35,584.87 523.35,529.53 577.50,529.53" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,255.70 C306.75,255.70 306.75,320.79 360.90,320.79" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,335.60 C198.45,335.60 198.45,271.14 252.60,271.14" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,255.70 C306.75,255.70 306.75,309.34 360.90,309.34" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,255.70 C306.75,255.70 306.75,297.90 360.90,297.90" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,243.21 C306.75,243.21 306.75,320.79 360.90,320.79" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,332.06 C198.45,332.06 198.45,257.34 252.60,257.34" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,243.21 C306.75,243.21 306.75,309.34 360.90,309.34" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,243.21 C306.75,243.21 306.75,297.90 360.90,297.90" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,584.87 C523.35,584.87 523.35,618.07 577.50,618.07" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,255.70 C306.75,255.70 306.75,286.45 360.90,286.45" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,255.70 C306.75,255.70 306.75,343.69 360.90,343.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,335.60 C198.45,335.60 198.45,302.02 252.60,302.02" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,243.21 C306.75,243.21 306.75,286.45 360.90,286.45" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,243.21 C306.75,243.21 306.75,343.69 360.90,343.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,332.06 C198.45,332.06 198.45,285.60 252.60,285.60" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,389.48 C415.05,389.48 415.05,607.00 469.20,607.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,259.91 C90.15,259.91 90.15,683.41 144.30,683.41" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,609.63 144.30,609.63" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,533.65 C306.75,533.65 306.75,481.07 360.90,481.07" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,609.63 C198.45,609.63 198.45,533.65 252.60,533.65" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,259.91 C90.15,259.91 90.15,693.95 144.30,693.95" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,742.82 C90.15,742.82 90.15,767.73 144.30,767.73" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,348.35 C306.75,348.35 306.75,400.93 360.90,400.93" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,609.63 C198.45,609.63 198.45,549.09 252.60,549.09" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,388.30 C198.45,388.30 198.45,348.35 252.60,348.35" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,348.35 C306.75,348.35 306.75,389.48 360.90,389.48" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,332.91 C306.75,332.91 306.75,378.03 360.90,378.03" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,388.30 144.30,388.30" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,533.65 C306.75,533.65 306.75,492.52 360.90,492.52" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,388.30 C198.45,388.30 198.45,332.91 252.60,332.91" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,749.84 C306.75,749.84 306.75,744.38 360.90,744.38" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,259.91 C90.15,259.91 90.15,684.81 144.30,684.81" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,612.19 144.30,612.19" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,554.02 C306.75,554.02 306.75,481.07 360.90,481.07" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,612.19 C198.45,612.19 198.45,554.02 252.60,554.02" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,259.91 C90.15,259.91 90.15,695.19 144.30,695.19" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,742.82 C90.15,742.82 90.15,767.81 144.30,767.81" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,327.98 C306.75,327.98 306.75,400.93 360.90,400.93" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,612.19 C198.45,612.19 198.45,568.15 252.60,568.15" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,383.94 C198.45,383.94 198.45,327.98 252.60,327.98" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,327.98 C306.75,327.98 306.75,389.48 360.90,389.48" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,313.85 C306.75,313.85 306.75,378.03 360.90,378.03" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,383.94 144.30,383.94" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,554.02 C306.75,554.02 306.75,492.52 360.90,492.52" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,383.94 C198.45,383.94 198.45,313.85 252.60,313.85" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,751.81 C306.75,751.81 306.75,744.38 360.90,744.38" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,389.48 C415.05,389.48 415.05,629.13 469.20,629.13" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,749.84 C306.75,749.84 306.75,755.83 360.90,755.83" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,683.41 C198.45,683.41 198.45,749.84 252.60,749.84" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,751.81 C306.75,751.81 306.75,755.83 360.90,755.83" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,684.81 C198.45,684.81 198.45,751.81 252.60,751.81" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,263.55 C415.05,263.55 415.05,518.47 469.20,518.47" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,163.05 C306.75,163.05 306.75,263.55 360.90,263.55" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,303.98 144.30,303.98" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,158.45 C306.75,158.45 306.75,263.55 360.90,263.55" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,300.94 144.30,300.94" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,263.55 C415.05,263.55 415.05,429.93 469.20,429.93" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,303.98 C198.45,303.98 198.45,163.05 252.60,163.05" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,300.94 C198.45,300.94 198.45,158.45 252.60,158.45" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,263.55 C415.05,263.55 415.05,385.67 469.20,385.67" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,163.05 C306.75,163.05 306.75,240.66 360.90,240.66" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,158.45 C306.75,158.45 306.75,240.66 360.90,240.66" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,263.55 C415.05,263.55 415.05,407.80 469.20,407.80" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,163.05 C306.75,163.05 306.75,252.10 360.90,252.10" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,158.45 C306.75,158.45 306.75,252.10 360.90,252.10" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,263.55 C415.05,263.55 415.05,496.33 469.20,496.33" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,188.05 144.30,188.05" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,186.81 144.30,186.81" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,252.10 C415.05,252.10 415.05,363.53 469.20,363.53" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,263.55 C415.05,263.55 415.05,540.60 469.20,540.60" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,363.53 C523.35,363.53 523.35,441.00 577.50,441.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,263.55 C415.05,263.55 415.05,474.20 469.20,474.20" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,263.55 C415.05,263.55 415.05,452.07 469.20,452.07" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,363.53 C523.35,363.53 523.35,485.27 577.50,485.27" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,314.52 144.30,314.52" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,546.40 144.30,546.40" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,314.52 C198.45,314.52 198.45,209.37 252.60,209.37" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,314.52 C198.45,314.52 198.45,240.26 252.60,240.26" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,493.70 144.30,493.70" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,630.71 144.30,630.71" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,599.10 144.30,599.10" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,314.52 C198.45,314.52 198.45,178.49 252.60,178.49" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,651.79 144.30,651.79" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,314.52 C198.45,314.52 198.45,224.81 252.60,224.81" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,535.86 144.30,535.86" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,251.29 144.30,251.29" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,346.14 144.30,346.14" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,314.52 C198.45,314.52 198.45,193.93 252.60,193.93" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,430.46 144.30,430.46" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,430.46 C198.45,430.46 198.45,363.79 252.60,363.79" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,293.44 144.30,293.44" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,363.79 C306.75,363.79 306.75,423.83 360.90,423.83" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,311.31 144.30,311.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,549.94 144.30,549.94" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,311.31 C198.45,311.31 198.45,200.83 252.60,200.83" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,311.31 C198.45,311.31 198.45,229.09 252.60,229.09" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,498.06 144.30,498.06" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,632.94 144.30,632.94" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,601.81 144.30,601.81" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,311.31 C198.45,311.31 198.45,172.57 252.60,172.57" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,653.69 144.30,653.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,311.31 C198.45,311.31 198.45,214.96 252.60,214.96" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,539.56 144.30,539.56" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,249.06 144.30,249.06" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,342.44 144.30,342.44" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,311.31 C198.45,311.31 198.45,186.70 252.60,186.70" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,425.44 144.30,425.44" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,425.44 C198.45,425.44 198.45,342.11 252.60,342.11" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,290.56 144.30,290.56" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,342.11 C306.75,342.11 306.75,423.83 360.90,423.83" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,446.72 C415.05,446.72 415.05,651.27 469.20,651.27" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,419.92 144.30,419.92" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,363.79 C306.75,363.79 306.75,435.28 360.90,435.28" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,363.79 C306.75,363.79 306.75,412.38 360.90,412.38" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,430.46 C198.45,430.46 198.45,379.23 252.60,379.23" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,462.08 144.30,462.08" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,114.27 144.30,114.27" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,363.79 C306.75,363.79 306.75,446.72 360.90,446.72" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,198.59 144.30,198.59" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,356.68 144.30,356.68" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,261.83 144.30,261.83" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,672.63 C306.75,672.63 306.75,652.79 360.90,652.79" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,641.25 C198.45,641.25 198.45,610.86 252.60,610.86" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,641.25 C198.45,641.25 198.45,579.98 252.60,579.98" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,595.42 C306.75,595.42 306.75,515.41 360.90,515.41" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,595.42 C306.75,595.42 306.75,561.21 360.90,561.21" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,641.25 C198.45,641.25 198.45,718.95 252.60,718.95" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,641.25 C198.45,641.25 198.45,703.51 252.60,703.51" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,672.63 C306.75,672.63 306.75,710.03 360.90,710.03" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,641.25 C198.45,641.25 198.45,688.07 252.60,688.07" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,672.63 C306.75,672.63 306.75,675.69 360.90,675.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,641.25 C198.45,641.25 198.45,657.19 252.60,657.19" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,672.63 C306.75,672.63 306.75,721.48 360.90,721.48" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,641.25 144.30,641.25" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,610.86 C306.75,610.86 306.75,618.45 360.90,618.45" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,595.42 C306.75,595.42 306.75,526.86 360.90,526.86" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,662.33 144.30,662.33" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,672.63 C306.75,672.63 306.75,687.14 360.90,687.14" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,641.25 C198.45,641.25 198.45,564.53 252.60,564.53" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,610.86 C306.75,610.86 306.75,607.00 360.90,607.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,641.25 C198.45,641.25 198.45,672.63 252.60,672.63" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,595.42 C306.75,595.42 306.75,572.66 360.90,572.66" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,610.86 C306.75,610.86 306.75,641.34 360.90,641.34" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,672.63 C306.75,672.63 306.75,664.24 360.90,664.24" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,641.25 C198.45,641.25 198.45,595.42 252.60,595.42" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,641.25 C198.45,641.25 198.45,641.74 252.60,641.74" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,588.56 144.30,588.56" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,672.63 C306.75,672.63 306.75,698.59 360.90,698.59" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,610.86 C306.75,610.86 306.75,584.10 360.90,584.10" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,177.51 144.30,177.51" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,610.86 C306.75,610.86 306.75,595.55 360.90,595.55" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,641.25 C198.45,641.25 198.45,626.30 252.60,626.30" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,595.42 C306.75,595.42 306.75,503.97 360.90,503.97" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,595.42 C306.75,595.42 306.75,538.31 360.90,538.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,595.42 C306.75,595.42 306.75,549.76 360.90,549.76" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,610.86 C306.75,610.86 306.75,629.90 360.90,629.90" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,518.21 C306.75,518.21 306.75,469.62 360.90,469.62" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,578.02 C198.45,578.02 198.45,518.21 252.60,518.21" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,578.02 144.30,578.02" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,209.13 144.30,209.13" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,219.67 144.30,219.67" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,398.84 144.30,398.84" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,166.97 144.30,166.97" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,325.06 144.30,325.06" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,377.76 144.30,377.76" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,240.75 144.30,240.75" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,672.87 144.30,672.87" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,672.87 C198.45,672.87 198.45,734.40 252.60,734.40" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,734.40 C306.75,734.40 306.75,732.93 360.90,732.93" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,472.62 144.30,472.62" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,472.62 144.30,472.62" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,380.64 C90.15,380.64 90.15,715.03 144.30,715.03" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,620.17 144.30,620.17" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,282.90 144.30,282.90" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,556.94 C198.45,556.94 198.45,456.44 252.60,456.44" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,556.94 C198.45,556.94 198.45,502.77 252.60,502.77" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,124.81 144.30,124.81" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,556.94 C198.45,556.94 198.45,441.00 252.60,441.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,567.48 144.30,567.48" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,556.94 C198.45,556.94 198.45,471.88 252.60,471.88" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,556.94 144.30,556.94" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,556.94 C198.45,556.94 198.45,487.33 252.60,487.33" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,504.24 144.30,504.24" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,556.94 C198.45,556.94 198.45,425.56 252.60,425.56" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,415.06 144.30,415.06" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,342.11 C306.75,342.11 306.75,435.28 360.90,435.28" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,342.11 C306.75,342.11 306.75,412.38 360.90,412.38" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,425.44 C198.45,425.44 198.45,356.23 252.60,356.23" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,456.56 144.30,456.56" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,114.19 144.30,114.19" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,342.11 C306.75,342.11 306.75,446.72 360.90,446.72" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,197.19 144.30,197.19" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,352.81 144.30,352.81" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,259.44 144.30,259.44" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,681.17 C306.75,681.17 306.75,652.79 360.90,652.79" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,643.31 C198.45,643.31 198.45,624.66 252.60,624.66" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,643.31 C198.45,643.31 198.45,596.40 252.60,596.40" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,610.53 C306.75,610.53 306.75,515.41 360.90,515.41" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,610.53 C306.75,610.53 306.75,561.21 360.90,561.21" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,643.31 C198.45,643.31 198.45,723.55 252.60,723.55" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,643.31 C198.45,643.31 198.45,709.43 252.60,709.43" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,681.17 C306.75,681.17 306.75,710.03 360.90,710.03" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,643.31 C198.45,643.31 198.45,695.30 252.60,695.30" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,681.17 C306.75,681.17 306.75,675.69 360.90,675.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,643.31 C198.45,643.31 198.45,667.04 252.60,667.04" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,681.17 C306.75,681.17 306.75,721.48 360.90,721.48" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,643.31 144.30,643.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,624.66 C306.75,624.66 306.75,618.45 360.90,618.45" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,610.53 C306.75,610.53 306.75,526.86 360.90,526.86" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,664.06 144.30,664.06" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,681.17 C306.75,681.17 306.75,687.14 360.90,687.14" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,643.31 C198.45,643.31 198.45,582.28 252.60,582.28" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,624.66 C306.75,624.66 306.75,607.00 360.90,607.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,643.31 C198.45,643.31 198.45,681.17 252.60,681.17" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,610.53 C306.75,610.53 306.75,572.66 360.90,572.66" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,624.66 C306.75,624.66 306.75,641.34 360.90,641.34" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,681.17 C306.75,681.17 306.75,664.24 360.90,664.24" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,643.31 C198.45,643.31 198.45,610.53 252.60,610.53" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,643.31 C198.45,643.31 198.45,652.91 252.60,652.91" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,591.44 144.30,591.44" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,681.17 C306.75,681.17 306.75,698.59 360.90,698.59" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,624.66 C306.75,624.66 306.75,584.10 360.90,584.10" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,176.44 144.30,176.44" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,624.66 C306.75,624.66 306.75,595.55 360.90,595.55" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,643.31 C198.45,643.31 198.45,638.79 252.60,638.79" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,610.53 C306.75,610.53 306.75,503.97 360.90,503.97" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,610.53 C306.75,610.53 306.75,538.31 360.90,538.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,610.53 C306.75,610.53 306.75,549.76 360.90,549.76" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,624.66 C306.75,624.66 306.75,629.90 360.90,629.90" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,539.89 C306.75,539.89 306.75,469.62 360.90,469.62" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,581.06 C198.45,581.06 198.45,539.89 252.60,539.89" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,581.06 144.30,581.06" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,207.56 144.30,207.56" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,217.94 144.30,217.94" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,394.31 144.30,394.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,166.06 144.30,166.06" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,321.69 144.30,321.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,373.56 144.30,373.56" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,238.69 144.30,238.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,674.44 144.30,674.44" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,674.44 C198.45,674.44 198.45,737.68 252.60,737.68" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,737.68 C306.75,737.68 306.75,732.93 360.90,732.93" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,466.94 144.30,466.94" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,466.94 144.30,466.94" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,380.64 C90.15,380.64 90.15,715.94 144.30,715.94" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,622.56 144.30,622.56" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,280.19 144.30,280.19" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,560.31 C198.45,560.31 198.45,483.38 252.60,483.38" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,560.31 C198.45,560.31 198.45,525.77 252.60,525.77" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,124.56 144.30,124.56" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,560.31 C198.45,560.31 198.45,469.26 252.60,469.26" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,570.69 144.30,570.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,560.31 C198.45,560.31 198.45,497.51 252.60,497.51" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,560.31 144.30,560.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,560.31 C198.45,560.31 198.45,511.64 252.60,511.64" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,508.44 144.30,508.44" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,560.31 C198.45,560.31 198.45,455.13 252.60,455.13" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,767.28 C415.05,767.28 415.05,739.80 469.20,739.80" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,682.45 C90.15,682.45 90.15,725.57 144.30,725.57" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,682.45 C90.15,682.45 90.15,726.31 144.30,726.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,767.28 C415.05,767.28 415.05,761.93 469.20,761.93" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M577.50,750.87 C631.65,750.87 631.65,690.00 685.80,690.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,320.27 C90.15,320.27 90.15,704.49 144.30,704.49" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,765.28 C306.75,765.28 306.75,767.28 360.90,767.28" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,682.45 C90.15,682.45 90.15,746.65 144.30,746.65" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,320.27 C90.15,320.27 90.15,705.56 144.30,705.56" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,765.94 C306.75,765.94 306.75,767.28 360.90,767.28" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,682.45 C90.15,682.45 90.15,747.06 144.30,747.06" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,717.67 C523.35,717.67 523.35,750.87 577.50,750.87" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,682.45 C90.15,682.45 90.15,757.19 144.30,757.19" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,725.57 C198.45,725.57 198.45,765.28 252.60,765.28" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,682.45 C90.15,682.45 90.15,757.44 144.30,757.44" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,726.31 C198.45,726.31 198.45,765.94 252.60,765.94" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M685.80,690.00 C739.95,690.00 739.95,690.00 794.10,690.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M794.10,524.00 C848.25,524.00 848.25,690.00 902.40,690.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M685.80,524.00 C739.95,524.00 739.95,524.00 794.10,524.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M577.50,750.87 C631.65,750.87 631.65,524.00 685.80,524.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,682.45 C90.15,682.45 90.15,736.11 144.30,736.11" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,682.45 C90.15,682.45 90.15,736.69 144.30,736.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,767.28 C415.05,767.28 415.05,717.67 469.20,717.67" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,132.16 C306.75,132.16 306.75,160.52 360.90,160.52" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,514.78 C198.45,514.78 198.45,410.12 252.60,410.12" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,130.19 C306.75,130.19 306.75,160.52 360.90,160.52" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,518.81 C198.45,518.81 198.45,441.00 252.60,441.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M685.80,358.00 C739.95,358.00 739.95,192.00 794.10,192.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,667.36 1119.00,667.36" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M794.10,192.00 C848.25,192.00 848.25,358.00 902.40,358.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,132.16 C306.75,132.16 306.75,126.17 360.90,126.17" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,130.19 C306.75,130.19 306.75,126.17 360.90,126.17" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M902.40,358.00 C956.55,358.00 956.55,219.67 1010.70,219.67" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,365.55 1119.00,365.55" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,149.07 C415.05,149.07 415.05,164.33 469.20,164.33" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
@@ -210,7 +210,7 @@
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,727.73 1119.00,727.73" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,149.07 C415.05,149.07 415.05,208.60 469.20,208.60" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,516.45 1119.00,516.45" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,132.16 C306.75,132.16 306.75,137.62 360.90,137.62" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,130.19 C306.75,130.19 306.75,137.62 360.90,137.62" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,607.00 1119.00,607.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,230.73 C523.35,230.73 523.35,308.20 577.50,308.20" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M902.40,358.00 C956.55,358.00 956.55,662.33 1010.70,662.33" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
@@ -230,34 +230,39 @@
 <path d="M794.10,192.00 C848.25,192.00 848.25,192.00 902.40,192.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,757.91 1119.00,757.91" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,576.82 1119.00,576.82" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,132.16 C306.75,132.16 306.75,149.07 360.90,149.07" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M252.60,132.16 C306.75,132.16 306.75,114.72 360.90,114.72" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,130.19 C306.75,130.19 306.75,149.07 360.90,149.07" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M252.60,130.19 C306.75,130.19 306.75,114.72 360.90,114.72" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,637.18 1119.00,637.18" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,124.09 1119.00,124.09" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M685.80,358.00 C739.95,358.00 739.95,358.00 794.10,358.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,214.64 1119.00,214.64" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,456.09 1119.00,456.09" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M469.20,230.73 C523.35,230.73 523.35,219.67 577.50,219.67" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,135.35 C198.45,135.35 198.45,132.16 252.60,132.16" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,134.94 C198.45,134.94 198.45,130.19 252.60,130.19" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M360.90,149.07 C415.05,149.07 415.05,120.07 469.20,120.07" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,275.00 1119.00,275.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M144.30,135.35 C198.45,135.35 198.45,116.72 252.60,116.72" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,134.94 C198.45,134.94 198.45,116.06 252.60,116.06" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M1010.70,441.00 C1064.85,441.00 1064.85,697.55 1119.00,697.55" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,135.35 144.30,135.35" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,199.55 C90.15,199.55 90.15,514.78 144.30,514.78" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,134.94 144.30,134.94" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,518.81 144.30,518.81" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
 <path d="M577.50,263.93 C631.65,263.93 631.65,192.00 685.80,192.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,145.89 144.30,145.89" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,367.22 144.30,367.22" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,441.00 144.30,441.00" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,451.54 144.30,451.54" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<path d="M36.00,139.18 C90.15,139.18 90.15,230.21 144.30,230.21" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3CF12384D2.md"><title>D2-3CF12384D2 · Donor-aware identifiability of context-selective MerTK harm in RA synovial coculture</title><circle cx="252.60" cy="394.67" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,145.31 144.30,145.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,363.19 144.30,363.19" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,435.81 144.30,435.81" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,446.19 144.30,446.19" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,139.18 C90.15,139.18 90.15,228.31 144.30,228.31" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,487.69 C198.45,487.69 198.45,426.87 252.60,426.87" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,487.69 C198.45,487.69 198.45,384.49 252.60,384.49" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M36.00,199.55 C90.15,199.55 90.15,487.69 144.30,487.69" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,487.69 C198.45,487.69 198.45,398.62 252.60,398.62" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<path d="M144.30,487.69 C198.45,487.69 198.45,412.74 252.60,412.74" fill="none" stroke="#627787" stroke-opacity="0.3" stroke-width="0.55"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3CF12384D2.md"><title>D2-3CF12384D2 · Donor-aware identifiability of context-selective MerTK harm in RA synovial coculture</title><circle cx="252.60" cy="370.36" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-5300D67F55.md"><title>D2-5300D67F55 · Independent, source-specific triangulation of context-selective MerTK harm</title><circle cx="469.20" cy="673.40" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1927BBAC60.md"><title>D2-1927BBAC60 · Context-specific intervention response</title><circle cx="36.00" cy="139.18" r="1.9" fill="#111a21" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4ADC9FDA91.md"><title>D2-4ADC9FDA91 · Context-specific MerTK target prioritization in rheumatoid-arthritis synovial coculture</title><circle cx="144.30" cy="483.16" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4ADC9FDA91.md"><title>D2-4ADC9FDA91 · Context-specific MerTK target prioritization in rheumatoid-arthritis synovial coculture</title><circle cx="144.30" cy="477.31" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-BD06531C2E.md"><title>D2-BD06531C2E · Source-local benefit–harm gate for context-selective MerTK prioritization</title><circle cx="577.50" cy="662.33" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -285,9 +290,9 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E2882432BA.md"><title>D2-E2882432BA · MERTK cell-context therapeutic-window hypothesis: archival RNA update</title><circle cx="469.20" cy="319.27" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E38C911CE3.md"><title>D2-E38C911CE3 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="252.60" cy="147.60" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E38C911CE3.md"><title>D2-E38C911CE3 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="252.60" cy="144.32" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-438CF334BE.md"><title>D2-438CF334BE · Cell-compartment-specific MERTK target value in rheumatoid synovium</title><circle cx="144.30" cy="525.32" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-438CF334BE.md"><title>D2-438CF334BE · Cell-compartment-specific MERTK target value in rheumatoid synovium</title><circle cx="144.30" cy="529.19" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1724BBCD62.md"><title>D2-1724BBCD62 · MerTK remission signal: cell state or macrophage-state composition?</title><circle cx="360.90" cy="183.41" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -297,29 +302,29 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-2F6E9698AB.md"><title>D2-2F6E9698AB · MerTK inhibitor response: target-specific signal or assay-compatible alternatives?</title><circle cx="360.90" cy="194.86" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-766FDF0EA7.md"><title>D2-766FDF0EA7 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="144.30" cy="272.37" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-766FDF0EA7.md"><title>D2-766FDF0EA7 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="144.30" cy="269.81" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3655D2EA30.md"><title>D2-3655D2EA30 · MerTK cell-context therapeutic-window hypothesis — episode 6 method refinement</title><circle cx="469.20" cy="252.87" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-28C2BC3620.md"><title>D2-28C2BC3620 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="144.30" cy="156.43" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-28C2BC3620.md"><title>D2-28C2BC3620 · Cell-selective MerTK perturbation in rheumatoid synovium</title><circle cx="144.30" cy="155.69" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-913D8DC610.md"><title>D2-913D8DC610 · Episode 9 repaired hypothesis: donor-aware intervention-by-macrophage-context interaction in E-MTAB-8316</title><circle cx="469.20" cy="584.87" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-88E25FA5B9.md"><title>D2-88E25FA5B9 · Episode 9 provisional hypothesis</title><circle cx="469.20" cy="562.73" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D942E8688A.md"><title>D2-D942E8688A · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="144.30" cy="409.38" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D942E8688A.md"><title>D2-D942E8688A · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="144.30" cy="404.69" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-89AB1AC190.md"><title>D2-89AB1AC190 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="144.30" cy="335.60" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-89AB1AC190.md"><title>D2-89AB1AC190 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="144.30" cy="332.06" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-FAC00B7C0F.md"><title>D2-FAC00B7C0F · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="252.60" cy="317.47" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-FAC00B7C0F.md"><title>D2-FAC00B7C0F · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="252.60" cy="299.72" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-066138D885.md"><title>D2-066138D885 · Provisional hypothesis: macrophage context modifies the intervention-associated FLS transcript response</title><circle cx="360.90" cy="275.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4A197D80D9.md"><title>D2-4A197D80D9 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="252.60" cy="286.58" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4A197D80D9.md"><title>D2-4A197D80D9 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="252.60" cy="271.47" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3F76467BEA.md"><title>D2-3F76467BEA · Provisional successor: donor-aware intervention-by-macrophage-context interaction in E-MTAB-8316</title><circle cx="360.90" cy="366.59" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-0293C6731F.md"><title>D2-0293C6731F · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="252.60" cy="255.70" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-0293C6731F.md"><title>D2-0293C6731F · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="252.60" cy="243.21" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-097F881166.md"><title>D2-097F881166 · Provisional hypothesis: macrophage context modifies the intervention-associated FLS transcript response</title><circle cx="577.50" cy="573.80" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -331,7 +336,7 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-760E0CAB49.md"><title>D2-760E0CAB49 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="360.90" cy="320.79" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1A6DC0D38A.md"><title>D2-1A6DC0D38A · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="252.60" cy="271.14" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1A6DC0D38A.md"><title>D2-1A6DC0D38A · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="252.60" cy="257.34" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-566CA781C4.md"><title>D2-566CA781C4 · Provisional successor: donor-aware MerTK-inhibitor interaction in E-MTAB-8873</title><circle cx="360.90" cy="309.34" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -343,29 +348,29 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-DD1E2594AA.md"><title>D2-DD1E2594AA · Provisional successor hypothesis: macrophage-context-dependent intervention response in RA FLS</title><circle cx="360.90" cy="343.69" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E003E17F36.md"><title>D2-E003E17F36 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="252.60" cy="302.02" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E003E17F36.md"><title>D2-E003E17F36 · Provisional hypothesis: macrophage–fibroblast context modifies the intervention-associated fibroblast transcript response</title><circle cx="252.60" cy="285.60" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-B8F9DD56C2.md"><title>D2-B8F9DD56C2 · Cross-drug context-dependence test in GSE95588: the JAK/STAT context effect is a general property of the MTF context, not drug-specific</title><circle cx="469.20" cy="607.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-451A7E605C.md"><title>D2-451A7E605C · A partially distinct macrophage transcriptional program in treatment-resistant rheumatoid arthritis: a donor-aware contrast on E-MTAB-8322 with module enrichment and proper statistical inference</title><circle cx="144.30" cy="683.41" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-451A7E605C.md"><title>D2-451A7E605C · A partially distinct macrophage transcriptional program in treatment-resistant rheumatoid arthritis: a donor-aware contrast on E-MTAB-8322 with module enrichment and proper statistical inference</title><circle cx="144.30" cy="684.81" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E7E85B8E1C.md"><title>D2-E7E85B8E1C · MerTK inhibition of LPS-stimulated macrophages INCREASES the FLS inflammatory program: an adverse finding that bounds the MerTK-targeting hypothesis in rheumatoid arthritis</title><circle cx="36.00" cy="742.82" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A7DD76D502.md"><title>D2-A7DD76D502 · MerTK signaling mediates the protective macrophage-fibroblast interaction in rheumatoid arthritis</title><circle cx="144.30" cy="609.63" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A7DD76D502.md"><title>D2-A7DD76D502 · MerTK signaling mediates the protective macrophage-fibroblast interaction in rheumatoid arthritis</title><circle cx="144.30" cy="612.19" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-8683E9925E.md"><title>D2-8683E9925E · MerTK inhibitor effect on the macrophage-driven FLS program: inconsistent and non-significant attenuation in E-MTAB-8873</title><circle cx="360.90" cy="481.07" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-454974CAC0.md"><title>D2-454974CAC0 · MerTK inhibition selectively abolishes the protective FLS program while sparing the pathogenic FLS program in rheumatoid arthritis</title><circle cx="252.60" cy="533.65" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-454974CAC0.md"><title>D2-454974CAC0 · MerTK inhibition selectively abolishes the protective FLS program while sparing the pathogenic FLS program in rheumatoid arthritis</title><circle cx="252.60" cy="554.02" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-876AF3F697.md"><title>D2-876AF3F697 · A partially distinct macrophage transcriptional program in treatment-resistant rheumatoid arthritis: a donor-aware contrast on E-MTAB-8322 with module enrichment and proper statistical inference</title><circle cx="144.30" cy="693.95" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-876AF3F697.md"><title>D2-876AF3F697 · A partially distinct macrophage transcriptional program in treatment-resistant rheumatoid arthritis: a donor-aware contrast on E-MTAB-8322 with module enrichment and proper statistical inference</title><circle cx="144.30" cy="695.19" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-5918BDD815.md"><title>D2-5918BDD815 · MerTK inhibition of LPS-stimulated macrophages INCREASES the FLS inflammatory program: an adverse finding that bounds the MerTK-targeting hypothesis in rheumatoid arthritis</title><circle cx="144.30" cy="767.73" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-5918BDD815.md"><title>D2-5918BDD815 · MerTK inhibition of LPS-stimulated macrophages INCREASES the FLS inflammatory program: an adverse finding that bounds the MerTK-targeting hypothesis in rheumatoid arthritis</title><circle cx="144.30" cy="767.81" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-EBD458B68F.md"><title>D2-EBD458B68F · JAK inhibitor context-dependent transcript response: managed-job re-execution with vehicle-control sensitivity analysis and E-MTAB-8873 cross-dataset validation</title><circle cx="360.90" cy="400.93" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-78D20763DF.md"><title>D2-78D20763DF · MerTK inhibition selectively abolishes the protective FLS program while sparing the pathogenic FLS program in rheumatoid arthritis</title><circle cx="252.60" cy="549.09" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-78D20763DF.md"><title>D2-78D20763DF · MerTK inhibition selectively abolishes the protective FLS program while sparing the pathogenic FLS program in rheumatoid arthritis</title><circle cx="252.60" cy="568.15" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-ED23C5FCB1.md"><title>D2-ED23C5FCB1 · JAK inhibitor context-dependent transcript response: managed execution reveals the discovery-level signal does not survive FDR correction</title><circle cx="252.60" cy="348.35" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-ED23C5FCB1.md"><title>D2-ED23C5FCB1 · JAK inhibitor context-dependent transcript response: managed execution reveals the discovery-level signal does not survive FDR correction</title><circle cx="252.60" cy="327.98" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-202C797BEA.md"><title>D2-202C797BEA · A partially distinct macrophage transcriptional program in treatment-resistant rheumatoid arthritis: a donor-aware contrast on E-MTAB-8322</title><circle cx="36.00" cy="259.91" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -373,11 +378,11 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D037F4D215.md"><title>D2-D037F4D215 · Replication of the auranofin-specific context-dependent drug response: the previously reported effect is not reproducible</title><circle cx="360.90" cy="378.03" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-C33AB00FB3.md"><title>D2-C33AB00FB3 · Fibroblast presence modulates JAK inhibitor transcript response in synovial macrophage cocultures: context-dependent drug efficacy in rheumatoid arthritis</title><circle cx="144.30" cy="388.30" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-C33AB00FB3.md"><title>D2-C33AB00FB3 · Fibroblast presence modulates JAK inhibitor transcript response in synovial macrophage cocultures: context-dependent drug efficacy in rheumatoid arthritis</title><circle cx="144.30" cy="383.94" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F60F793CCB.md"><title>D2-F60F793CCB · MerTK inhibitor effect on the macrophage-driven FLS program: inconsistent and non-significant attenuation in E-MTAB-8873</title><circle cx="360.90" cy="492.52" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-C5A63A63D4.md"><title>D2-C5A63A63D4 · Fibroblast-induced MTF context attenuates auranofin response on the MTF-specific gene program: drug-specific context-dependent drug response in rheumatoid arthritis</title><circle cx="252.60" cy="332.91" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-C5A63A63D4.md"><title>D2-C5A63A63D4 · Fibroblast-induced MTF context attenuates auranofin response on the MTF-specific gene program: drug-specific context-dependent drug response in rheumatoid arthritis</title><circle cx="252.60" cy="313.85" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-2A712BC002.md"><title>D2-2A712BC002 · MerTK selectivity analysis executed: the protective-program premise is not supported by the data, and the inhibitor has substantial direct FLS effects</title><circle cx="360.90" cy="744.38" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -385,17 +390,17 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D5B1B20E8C.md"><title>D2-D5B1B20E8C · Macrophage state-composition decomposition of the resistant-vs-remission contrast in RA synovial tissue (E-MTAB-8322): a single-cell module-scoring test</title><circle cx="360.90" cy="755.83" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D71134F85B.md"><title>D2-D71134F85B · A partially distinct macrophage transcriptional program in treatment-resistant rheumatoid arthritis: proper normalization and donor-level permutation on E-MTAB-8322 (design_change child)</title><circle cx="252.60" cy="749.84" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D71134F85B.md"><title>D2-D71134F85B · A partially distinct macrophage transcriptional program in treatment-resistant rheumatoid arthritis: proper normalization and donor-level permutation on E-MTAB-8322 (design_change child)</title><circle cx="252.60" cy="751.81" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-998B832DA3.md"><title>D2-998B832DA3 · Episode 18 working proposal: within-assay context-by-intervention repair</title><circle cx="469.20" cy="518.47" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F083B6C3F5.md"><title>D2-F083B6C3F5 · Episode 18 working proposal: within-assay context-by-intervention repair</title><circle cx="360.90" cy="263.55" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-7B4EBC4CEA.md"><title>D2-7B4EBC4CEA · D2-T1 proposal: context-dependent intervention response</title><circle cx="144.30" cy="303.98" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-7B4EBC4CEA.md"><title>D2-7B4EBC4CEA · D2-T1 proposal: context-dependent intervention response</title><circle cx="144.30" cy="300.94" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3BBB9B68BA.md"><title>D2-3BBB9B68BA · Episode 18 working proposal: within-assay context-by-intervention repair</title><circle cx="469.20" cy="429.93" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D493260CC4.md"><title>D2-D493260CC4 · D2-T1 proposal: context-dependent intervention response</title><circle cx="252.60" cy="163.05" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D493260CC4.md"><title>D2-D493260CC4 · D2-T1 proposal: context-dependent intervention response</title><circle cx="252.60" cy="158.45" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1A3C40F353.md"><title>D2-1A3C40F353 · Episode 18 working proposal: within-assay context-by-intervention repair</title><circle cx="469.20" cy="385.67" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -407,7 +412,7 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-69915CCB26.md"><title>D2-69915CCB26 · Episode 18 working proposal: within-assay context-by-intervention repair</title><circle cx="469.20" cy="496.33" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-2A3E64501C.md"><title>D2-2A3E64501C · D2-T1 proposal: context-dependent intervention response</title><circle cx="144.30" cy="188.05" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-2A3E64501C.md"><title>D2-2A3E64501C · D2-T1 proposal: context-dependent intervention response</title><circle cx="144.30" cy="186.81" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-0751210F34.md"><title>D2-0751210F34 · D2-T1 specificity child: exact-title feasibility boundary</title><circle cx="469.20" cy="363.53" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -421,103 +426,103 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F20AF4F2BE.md"><title>D2-F20AF4F2BE · Episode 16 working checkpoint: D2-T1 exact-title repair</title><circle cx="577.50" cy="485.27" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-7CF7FED2EE.md"><title>D2-7CF7FED2EE · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="144.30" cy="314.52" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-7CF7FED2EE.md"><title>D2-7CF7FED2EE · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="144.30" cy="311.31" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-5D52896BD1.md"><title>D2-5D52896BD1 · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="546.40" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-5D52896BD1.md"><title>D2-5D52896BD1 · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="549.94" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-77E00C61AD.md"><title>D2-77E00C61AD · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="252.60" cy="209.37" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-77E00C61AD.md"><title>D2-77E00C61AD · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="252.60" cy="200.83" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D76F418295.md"><title>D2-D76F418295 · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="252.60" cy="240.26" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D76F418295.md"><title>D2-D76F418295 · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="252.60" cy="229.09" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-225F874232.md"><title>D2-225F874232 · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="493.70" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-225F874232.md"><title>D2-225F874232 · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="498.06" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-CA464A81CD.md"><title>D2-CA464A81CD · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="630.71" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-CA464A81CD.md"><title>D2-CA464A81CD · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="632.94" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-965A3DBE22.md"><title>D2-965A3DBE22 · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="599.10" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-965A3DBE22.md"><title>D2-965A3DBE22 · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="601.81" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1BA1E10467.md"><title>D2-1BA1E10467 · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="252.60" cy="178.49" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1BA1E10467.md"><title>D2-1BA1E10467 · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="252.60" cy="172.57" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D5282C417F.md"><title>D2-D5282C417F · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="651.79" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D5282C417F.md"><title>D2-D5282C417F · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="653.69" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-BA70D719F8.md"><title>D2-BA70D719F8 · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="252.60" cy="224.81" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-BA70D719F8.md"><title>D2-BA70D719F8 · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="252.60" cy="214.96" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4A3B05ABD8.md"><title>D2-4A3B05ABD8 · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="535.86" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4A3B05ABD8.md"><title>D2-4A3B05ABD8 · Selective suppression of a pathogenic fibroblast program while preserving a protective macrophage-linked state</title><circle cx="144.30" cy="539.56" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-63D2447C7F.md"><title>D2-63D2447C7F · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="144.30" cy="251.29" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-63D2447C7F.md"><title>D2-63D2447C7F · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="144.30" cy="249.06" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-8A4A67A10C.md"><title>D2-8A4A67A10C · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="144.30" cy="346.14" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-8A4A67A10C.md"><title>D2-8A4A67A10C · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="144.30" cy="342.44" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-5F923A32E5.md"><title>D2-5F923A32E5 · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="252.60" cy="193.93" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-5F923A32E5.md"><title>D2-5F923A32E5 · Context-dependent fibroblast response to macrophage conditioning</title><circle cx="252.60" cy="186.70" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E695A41E07.md"><title>D2-E695A41E07 · Context-specific intervention response</title><circle cx="144.30" cy="430.46" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E695A41E07.md"><title>D2-E695A41E07 · Context-specific intervention response</title><circle cx="144.30" cy="425.44" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1E4FDEFD2E.md"><title>D2-1E4FDEFD2E · D2-T1: Intervention-associated transcript response in macrophage–fibroblast context</title><circle cx="252.60" cy="363.79" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1E4FDEFD2E.md"><title>D2-1E4FDEFD2E · D2-T1: Intervention-associated transcript response in macrophage–fibroblast context</title><circle cx="252.60" cy="342.11" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-797598844B.md"><title>D2-797598844B · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="293.44" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-797598844B.md"><title>D2-797598844B · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="290.56" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3DCD5075FB.md"><title>D2-3DCD5075FB · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="360.90" cy="423.83" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-EDB6C6C71E.md"><title>D2-EDB6C6C71E · D2-T1: Intervention-associated transcript response in macrophage–fibroblast context</title><circle cx="469.20" cy="651.27" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E205AB1952.md"><title>D2-E205AB1952 · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="419.92" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E205AB1952.md"><title>D2-E205AB1952 · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="415.06" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-8DA4C58B3C.md"><title>D2-8DA4C58B3C · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="360.90" cy="435.28" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-2AF9E67B01.md"><title>D2-2AF9E67B01 · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="360.90" cy="412.38" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3D3183FA32.md"><title>D2-3D3183FA32 · D2-T1: Intervention-associated transcript response in macrophage–fibroblast context</title><circle cx="252.60" cy="379.23" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3D3183FA32.md"><title>D2-3D3183FA32 · D2-T1: Intervention-associated transcript response in macrophage–fibroblast context</title><circle cx="252.60" cy="356.23" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F14D4F812F.md"><title>D2-F14D4F812F · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="462.08" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F14D4F812F.md"><title>D2-F14D4F812F · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="456.56" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-051DEEED93.md"><title>D2-051DEEED93 · Context-specific intervention response</title><circle cx="144.30" cy="114.27" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-051DEEED93.md"><title>D2-051DEEED93 · Context-specific intervention response</title><circle cx="144.30" cy="114.19" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-B8EE76C1EC.md"><title>D2-B8EE76C1EC · D2-T1: Intervention-associated transcript response in macrophage–fibroblast context</title><circle cx="360.90" cy="446.72" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3EF8995B48.md"><title>D2-3EF8995B48 · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="198.59" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3EF8995B48.md"><title>D2-3EF8995B48 · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="197.19" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-9FE673466E.md"><title>D2-9FE673466E · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="356.68" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-9FE673466E.md"><title>D2-9FE673466E · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="352.81" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-69DDC94B30.md"><title>D2-69DDC94B30 · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="261.83" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-69DDC94B30.md"><title>D2-69DDC94B30 · D2-T1: Intervention-associated transcript response in macrophage-fibroblast context</title><circle cx="144.30" cy="259.44" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-05FB8D7F58.md"><title>D2-05FB8D7F58 · Intervention-specificity test for protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="652.79" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4C02681571.md"><title>D2-4C02681571 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="610.86" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4C02681571.md"><title>D2-4C02681571 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="624.66" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-23DAF761E4.md"><title>D2-23DAF761E4 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="579.98" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-23DAF761E4.md"><title>D2-23DAF761E4 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="596.40" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-42314789B3.md"><title>D2-42314789B3 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="515.41" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-92AD0C97AC.md"><title>D2-92AD0C97AC · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="561.21" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D807D91E2A.md"><title>D2-D807D91E2A · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="718.95" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D807D91E2A.md"><title>D2-D807D91E2A · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="723.55" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-B80803BEF8.md"><title>D2-B80803BEF8 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="703.51" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-B80803BEF8.md"><title>D2-B80803BEF8 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="709.43" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-873EF9534A.md"><title>D2-873EF9534A · Intervention-specific protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="710.03" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-B2E39B3950.md"><title>D2-B2E39B3950 · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="252.60" cy="688.07" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-B2E39B3950.md"><title>D2-B2E39B3950 · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="252.60" cy="695.30" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-41F73BD4CA.md"><title>D2-41F73BD4CA · Intervention-specific protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="675.69" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-9366268E7B.md"><title>D2-9366268E7B · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="657.19" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-9366268E7B.md"><title>D2-9366268E7B · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="667.04" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A4EEF95EC4.md"><title>D2-A4EEF95EC4 · Intervention-specific protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="721.48" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D1DD269D2E.md"><title>D2-D1DD269D2E · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="144.30" cy="641.25" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D1DD269D2E.md"><title>D2-D1DD269D2E · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="144.30" cy="643.31" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4566B2086C.md"><title>D2-4566B2086C · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="618.45" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-64BB7183BE.md"><title>D2-64BB7183BE · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="526.86" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D6B37B7DD2.md"><title>D2-D6B37B7DD2 · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="144.30" cy="662.33" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D6B37B7DD2.md"><title>D2-D6B37B7DD2 · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="144.30" cy="664.06" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-571C423C4E.md"><title>D2-571C423C4E · Intervention-specific protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="687.14" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-15FB910541.md"><title>D2-15FB910541 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="564.53" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-15FB910541.md"><title>D2-15FB910541 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="582.28" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-417031193D.md"><title>D2-417031193D · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="607.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A5F37D222B.md"><title>D2-A5F37D222B · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="252.60" cy="672.63" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A5F37D222B.md"><title>D2-A5F37D222B · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="252.60" cy="681.17" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-FFCE3C3C29.md"><title>D2-FFCE3C3C29 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="572.66" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -525,21 +530,21 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-297EAA9E19.md"><title>D2-297EAA9E19 · Intervention-specificity test for protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="664.24" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-24DE3D92DA.md"><title>D2-24DE3D92DA · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="595.42" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-24DE3D92DA.md"><title>D2-24DE3D92DA · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="610.53" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-8B429A9869.md"><title>D2-8B429A9869 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="641.74" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-8B429A9869.md"><title>D2-8B429A9869 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="252.60" cy="652.91" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-8A934C5737.md"><title>D2-8A934C5737 · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="144.30" cy="588.56" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-8A934C5737.md"><title>D2-8A934C5737 · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="144.30" cy="591.44" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-7C3C45C58E.md"><title>D2-7C3C45C58E · Intervention-specificity test for protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="698.59" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-14FA116D15.md"><title>D2-14FA116D15 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="584.10" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-29480E0ED2.md"><title>D2-29480E0ED2 · Context-specific macrophage–fibroblast intervention response</title><circle cx="144.30" cy="177.51" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-29480E0ED2.md"><title>D2-29480E0ED2 · Context-specific macrophage–fibroblast intervention response</title><circle cx="144.30" cy="176.44" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1B2C229A54.md"><title>D2-1B2C229A54 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="595.55" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-89FE03F051.md"><title>D2-89FE03F051 · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="252.60" cy="626.30" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-89FE03F051.md"><title>D2-89FE03F051 · Protective versus pathogenic macrophage–fibroblast target selectivity</title><circle cx="252.60" cy="638.79" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-09C2F22868.md"><title>D2-09C2F22868 · Donor-aware protective-versus-pathogenic target selectivity</title><circle cx="360.90" cy="503.97" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -551,83 +556,83 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-CF079889CC.md"><title>D2-CF079889CC · LPS Priming Abolishes the Protective FLS-Suppressive Effect of MerTK+/CD206+ Macrophages in Rheumatoid Arthritis</title><circle cx="360.90" cy="469.62" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F1E9FEC256.md"><title>D2-F1E9FEC256 · Dose-dependent suppression of the proinflammatory synovial fibroblast program by protective macrophage fraction in rheumatoid arthritis</title><circle cx="252.60" cy="518.21" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F1E9FEC256.md"><title>D2-F1E9FEC256 · Dose-dependent suppression of the proinflammatory synovial fibroblast program by protective macrophage fraction in rheumatoid arthritis</title><circle cx="252.60" cy="539.89" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-82161DC888.md"><title>D2-82161DC888 · MerTK signaling on protective macrophages mediates suppression of the proinflammatory synovial fibroblast program in rheumatoid arthritis</title><circle cx="144.30" cy="578.02" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-82161DC888.md"><title>D2-82161DC888 · MerTK signaling on protective macrophages mediates suppression of the proinflammatory synovial fibroblast program in rheumatoid arthritis</title><circle cx="144.30" cy="581.06" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-563934CBD4.md"><title>D2-563934CBD4 · MERTK Expression Loss in Synovial Macrophages Is Associated with Treatment-Resistant Rheumatoid Arthritis</title><circle cx="36.00" cy="441.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-418F111F6A.md"><title>D2-418F111F6A · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="209.13" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-418F111F6A.md"><title>D2-418F111F6A · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="207.56" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4385C78288.md"><title>D2-4385C78288 · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="219.67" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4385C78288.md"><title>D2-4385C78288 · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="217.94" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-CA76BC41F0.md"><title>D2-CA76BC41F0 · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="398.84" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-CA76BC41F0.md"><title>D2-CA76BC41F0 · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="394.31" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-291057EA78.md"><title>D2-291057EA78 · Context-specific intervention response: successor proposal (working)</title><circle cx="144.30" cy="166.97" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-291057EA78.md"><title>D2-291057EA78 · Context-specific intervention response: successor proposal (working)</title><circle cx="144.30" cy="166.06" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-81B5C5C80A.md"><title>D2-81B5C5C80A · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="325.06" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-81B5C5C80A.md"><title>D2-81B5C5C80A · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="321.69" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-B8C308EE58.md"><title>D2-B8C308EE58 · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="377.76" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-B8C308EE58.md"><title>D2-B8C308EE58 · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="373.56" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4D58842760.md"><title>D2-4D58842760 · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="240.75" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4D58842760.md"><title>D2-4D58842760 · Context-specific intervention response: working proposal</title><circle cx="144.30" cy="238.69" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-FB107090CC.md"><title>D2-FB107090CC · MerTK inhibition in the macrophage–fibroblast circuit: separating benefit from harm in RA synovial cocultures</title><circle cx="144.30" cy="672.87" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-FB107090CC.md"><title>D2-FB107090CC · MerTK inhibition in the macrophage–fibroblast circuit: separating benefit from harm in RA synovial cocultures</title><circle cx="144.30" cy="674.44" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3450CB635D.md"><title>D2-3450CB635D · Benefit-dominant or adverse-dominant? A donor-paired test of macrophage MerTK pre-inhibition in RA synovial cocultures</title><circle cx="252.60" cy="734.40" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3450CB635D.md"><title>D2-3450CB635D · Benefit-dominant or adverse-dominant? A donor-paired test of macrophage MerTK pre-inhibition in RA synovial cocultures</title><circle cx="252.60" cy="737.68" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-78844078D8.md"><title>D2-78844078D8 · Drug-level benefit/adverse dominance in the RA macrophage compartment: which therapies suppress the harmful inflammatory program without eroding the pro-resolving program?</title><circle cx="360.90" cy="732.93" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1ADF4E2182.md"><title>D2-1ADF4E2182 · Does remission-macrophage &quot;protection&quot; of RA fibroblasts buy inflammatory and protease restraint at the price of a matrix-depositing fibroblast program — and are the two separable?</title><circle cx="144.30" cy="472.62" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1ADF4E2182.md"><title>D2-1ADF4E2182 · Does remission-macrophage &quot;protection&quot; of RA fibroblasts buy inflammatory and protease restraint at the price of a matrix-depositing fibroblast program — and are the two separable?</title><circle cx="144.30" cy="466.94" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-3B871B4455.md"><title>D2-3B871B4455 · Does methotrexate failure leave a fingerprint on the synovial macrophage?</title><circle cx="36.00" cy="380.64" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-6EDFAE35F8.md"><title>D2-6EDFAE35F8 · Does methotrexate failure leave a fingerprint on the synovial macrophage?</title><circle cx="144.30" cy="715.03" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-6EDFAE35F8.md"><title>D2-6EDFAE35F8 · Does methotrexate failure leave a fingerprint on the synovial macrophage?</title><circle cx="144.30" cy="715.94" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A81AC2B023.md"><title>D2-A81AC2B023 · MerTK Inhibition Abolishes Protective-Macrophage-Mediated Suppression of the Pathogenic FLS Program in RA: A Donor-Paired Selectivity Test</title><circle cx="144.30" cy="620.17" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A81AC2B023.md"><title>D2-A81AC2B023 · MerTK Inhibition Abolishes Protective-Macrophage-Mediated Suppression of the Pathogenic FLS Program in RA: A Donor-Paired Selectivity Test</title><circle cx="144.30" cy="622.56" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-776F8166F7.md"><title>D2-776F8166F7 · Context-Dependent JAK1/2 Inhibitor Response in RA Monocytes: A Donor-Paired Test of Fibroblast-Macrophage Crosstalk</title><circle cx="144.30" cy="282.90" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-776F8166F7.md"><title>D2-776F8166F7 · Context-Dependent JAK1/2 Inhibitor Response in RA Monocytes: A Donor-Paired Test of Fibroblast-Macrophage Crosstalk</title><circle cx="144.30" cy="280.19" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-891ADB2A95.md"><title>D2-891ADB2A95 · D2-T2 evolution: donor-aware stability of the MerTK-inhibitor-associated fibroblast/macrophage pattern</title><circle cx="252.60" cy="456.44" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-891ADB2A95.md"><title>D2-891ADB2A95 · D2-T2 evolution: donor-aware stability of the MerTK-inhibitor-associated fibroblast/macrophage pattern</title><circle cx="252.60" cy="483.38" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-B346FDE60D.md"><title>D2-B346FDE60D · D2-T2: MerTK-inhibitor-associated fibroblast activation versus macrophage-linked protective state</title><circle cx="252.60" cy="502.77" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-B346FDE60D.md"><title>D2-B346FDE60D · D2-T2: MerTK-inhibitor-associated fibroblast activation versus macrophage-linked protective state</title><circle cx="252.60" cy="525.77" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-164C72549B.md"><title>D2-164C72549B · D2-T1: Context-specific intervention response in macrophage–fibroblast coculture</title><circle cx="144.30" cy="124.81" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-164C72549B.md"><title>D2-164C72549B · D2-T1: Context-specific intervention response in macrophage–fibroblast coculture</title><circle cx="144.30" cy="124.56" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-7ED0A7ED40.md"><title>D2-7ED0A7ED40 · D2-T2 evolution: donor-aware stability of the MerTK-inhibitor-associated fibroblast/macrophage pattern</title><circle cx="252.60" cy="441.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-7ED0A7ED40.md"><title>D2-7ED0A7ED40 · D2-T2 evolution: donor-aware stability of the MerTK-inhibitor-associated fibroblast/macrophage pattern</title><circle cx="252.60" cy="469.26" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-80E5EDC0CD.md"><title>D2-80E5EDC0CD · D2-T2: MerTK-inhibitor-associated fibroblast activation versus macrophage-linked protective state</title><circle cx="144.30" cy="567.48" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-80E5EDC0CD.md"><title>D2-80E5EDC0CD · D2-T2: MerTK-inhibitor-associated fibroblast activation versus macrophage-linked protective state</title><circle cx="144.30" cy="570.69" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A7268ED2AD.md"><title>D2-A7268ED2AD · D2-T2: MerTK-inhibitor-associated fibroblast activation versus macrophage-linked protective state</title><circle cx="252.60" cy="471.88" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A7268ED2AD.md"><title>D2-A7268ED2AD · D2-T2: MerTK-inhibitor-associated fibroblast activation versus macrophage-linked protective state</title><circle cx="252.60" cy="497.51" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-7DD6AE426C.md"><title>D2-7DD6AE426C · D2-T2: MerTK-inhibitor-associated fibroblast activation versus macrophage-linked protective state</title><circle cx="144.30" cy="556.94" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-7DD6AE426C.md"><title>D2-7DD6AE426C · D2-T2: MerTK-inhibitor-associated fibroblast activation versus macrophage-linked protective state</title><circle cx="144.30" cy="560.31" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-ADF616176B.md"><title>D2-ADF616176B · D2-T2 evolution: donor-aware stability of the MerTK-inhibitor-associated fibroblast/macrophage pattern</title><circle cx="252.60" cy="487.33" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-ADF616176B.md"><title>D2-ADF616176B · D2-T2 evolution: donor-aware stability of the MerTK-inhibitor-associated fibroblast/macrophage pattern</title><circle cx="252.60" cy="511.64" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-37BD61E624.md"><title>D2-37BD61E624 · D2-T2: MerTK-inhibitor-associated fibroblast activation versus macrophage-linked protective state</title><circle cx="144.30" cy="504.24" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-37BD61E624.md"><title>D2-37BD61E624 · D2-T2: MerTK-inhibitor-associated fibroblast activation versus macrophage-linked protective state</title><circle cx="144.30" cy="508.44" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-03E85F868B.md"><title>D2-03E85F868B · D2-T2 evolution: donor-aware stability of the MerTK-inhibitor-associated fibroblast/macrophage pattern</title><circle cx="252.60" cy="425.56" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-03E85F868B.md"><title>D2-03E85F868B · D2-T2 evolution: donor-aware stability of the MerTK-inhibitor-associated fibroblast/macrophage pattern</title><circle cx="252.60" cy="455.13" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-C8153A52FA.md"><title>D2-C8153A52FA · MerTK-efferocytic brake vs SPP1+/LAM state-marker: an independent human disease-spectrum falsification test (episode 14)</title><circle cx="469.20" cy="739.80" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-2BCC174B96.md"><title>D2-2BCC174B96 · MerTK-dependent macrophage control of the pathogenic FLS effector program (episode 3)</title><circle cx="144.30" cy="725.57" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-2BCC174B96.md"><title>D2-2BCC174B96 · MerTK-dependent macrophage control of the pathogenic FLS effector program (episode 3)</title><circle cx="144.30" cy="726.31" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-D752C697EE.md"><title>D2-D752C697EE · MerTK/CD206pos macrophage brake: a reproducibility-tested dose-response test (episode 17)</title><circle cx="469.20" cy="761.93" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-241CF25B9E.md"><title>D2-241CF25B9E · Graded, MerTK-dependent brake vs composition/state artifact: a cross-setting perturbation test on the MerTK/CD206pos macrophage -&gt; FLS effector axis (E-MTAB-8873 + E-MTAB-8316)</title><circle cx="685.80" cy="690.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F4E2C4AC77.md"><title>D2-F4E2C4AC77 · Context-dependent intervention response: does the RA drug transcriptional footprint require the macrophage-fibroblast co-culture context? (episode 20, evolve/repair of D2-T1)</title><circle cx="144.30" cy="704.49" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F4E2C4AC77.md"><title>D2-F4E2C4AC77 · Context-dependent intervention response: does the RA drug transcriptional footprint require the macrophage-fibroblast co-culture context? (episode 20, evolve/repair of D2-T1)</title><circle cx="144.30" cy="705.56" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E8C272AE8F.md"><title>D2-E8C272AE8F · MerTK-instructed brake vs composition/state-marker: dose dosimetry plus an orthogonal monocyte-intrinsic perturbation line (episode 12)</title><circle cx="360.90" cy="767.28" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-CDFE612FC0.md"><title>D2-CDFE612FC0 · Episode 29 (therapeutic_targets, domain 2)</title><circle cx="36.00" cy="561.73" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-DE6B646E4E.md"><title>D2-DE6B646E4E · MerTK-dependent macrophage control of the pathogenic FLS effector program (episode 3)</title><circle cx="144.30" cy="746.65" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-DE6B646E4E.md"><title>D2-DE6B646E4E · MerTK-dependent macrophage control of the pathogenic FLS effector program (episode 3)</title><circle cx="144.30" cy="747.06" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F90CF0C525.md"><title>D2-F90CF0C525 · Per-cell FLS discrimination of a graded MerTK/CD206pos brake vs a fixed composition/state artifact (E-MTAB-8873), with an explicit unmeasured-macrophage limit</title><circle cx="577.50" cy="750.87" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E5F2902AFA.md"><title>D2-E5F2902AFA · MerTK-dependent macrophage control of the pathogenic FLS effector program (episode 3)</title><circle cx="144.30" cy="757.19" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E5F2902AFA.md"><title>D2-E5F2902AFA · MerTK-dependent macrophage control of the pathogenic FLS effector program (episode 3)</title><circle cx="144.30" cy="757.44" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-9C0A01CB50.md"><title>D2-9C0A01CB50 · MerTK/CD206pos macrophage control of the FLS effector program: causal brake vs state marker (episode 11)</title><circle cx="252.60" cy="765.28" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-9C0A01CB50.md"><title>D2-9C0A01CB50 · MerTK/CD206pos macrophage control of the FLS effector program: causal brake vs state marker (episode 11)</title><circle cx="252.60" cy="765.94" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-CCD34BE3FC.md"><title>D2-CCD34BE3FC · Graded, MerTK-dependent brake vs composition/state artifact: a cross-setting perturbation test on the MerTK/CD206pos macrophage -&gt; FLS effector axis (E-MTAB-8873 + E-MTAB-8316)</title><circle cx="794.10" cy="690.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -637,7 +642,7 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-17F3A01D52.md"><title>D2-17F3A01D52 · Is the MerTK/CD206pos macrophage brake on the RA FLS effector program effector-SPECIFIC and graded, or a global composition/technical artifact? A per-FLS-cell specificity-controlled test (E-MTAB-8873)</title><circle cx="685.80" cy="524.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-8727D3F5F4.md"><title>D2-8727D3F5F4 · MerTK-dependent macrophage control of the pathogenic FLS effector program (episode 3)</title><circle cx="144.30" cy="736.11" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-8727D3F5F4.md"><title>D2-8727D3F5F4 · MerTK-dependent macrophage control of the pathogenic FLS effector program (episode 3)</title><circle cx="144.30" cy="736.69" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-ABCB1134C4.md"><title>D2-ABCB1134C4 · Episode 29 (therapeutic_targets, domain 2)</title><circle cx="36.00" cy="501.36" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -649,7 +654,7 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-893994174C.md"><title>D2-893994174C · Provisional hypothesis: assay-verified context-dependent intervention response</title><circle cx="360.90" cy="160.52" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-CE27DF3F7A.md"><title>D2-CE27DF3F7A · intervention-specific separation of protective and harmful states</title><circle cx="252.60" cy="410.12" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-CE27DF3F7A.md"><title>D2-CE27DF3F7A · intervention-specific separation of protective and harmful states</title><circle cx="252.60" cy="441.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-0E840BBCCF.md"><title>D2-0E840BBCCF · context-specific MerTK-inhibitor response in E-MTAB-8873</title><circle cx="794.10" cy="192.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
@@ -739,31 +744,41 @@
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4897B6ECC5.md"><title>D2-4897B6ECC5 · context-dependent protective versus pathogenic response in E-MTAB-8873</title><circle cx="577.50" cy="219.67" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E9C6952ACD.md"><title>D2-E9C6952ACD · Provisional hypothesis: context-dependent intervention response</title><circle cx="252.60" cy="132.16" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E9C6952ACD.md"><title>D2-E9C6952ACD · Provisional hypothesis: context-dependent intervention response</title><circle cx="252.60" cy="130.19" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-0B732425A1.md"><title>D2-0B732425A1 · Provisional hypothesis: assay-verified context-dependent intervention response</title><circle cx="469.20" cy="120.07" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-51D13FB4F4.md"><title>D2-51D13FB4F4 · Provisional hypothesis: context-specific MerTK-inhibitor response in E-MTAB-8873</title><circle cx="1119.00" cy="275.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A0AA214CB3.md"><title>D2-A0AA214CB3 · Provisional hypothesis: context-dependent intervention response</title><circle cx="252.60" cy="116.72" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-A0AA214CB3.md"><title>D2-A0AA214CB3 · Provisional hypothesis: context-dependent intervention response</title><circle cx="252.60" cy="116.06" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E6C47538FA.md"><title>D2-E6C47538FA · Provisional hypothesis: context-specific MerTK-inhibitor response in E-MTAB-8873</title><circle cx="1119.00" cy="697.55" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1936FA6AE4.md"><title>D2-1936FA6AE4 · Provisional hypothesis: context-dependent intervention response</title><circle cx="144.30" cy="135.35" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1936FA6AE4.md"><title>D2-1936FA6AE4 · Provisional hypothesis: context-dependent intervention response</title><circle cx="144.30" cy="134.94" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-42EA58C000.md"><title>D2-42EA58C000 · Provisional hypothesis: intervention-specific separation of protective and harmful states</title><circle cx="144.30" cy="514.78" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-42EA58C000.md"><title>D2-42EA58C000 · Provisional hypothesis: intervention-specific separation of protective and harmful states</title><circle cx="144.30" cy="518.81" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-99B1DD2C21.md"><title>D2-99B1DD2C21 · context-dependent protective versus pathogenic response in E-MTAB-8873</title><circle cx="685.80" cy="192.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1B68332782.md"><title>D2-1B68332782 · Context-specific MerTK blockade: does it selectively release a pathogenic FLS program?</title><circle cx="144.30" cy="145.89" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-1B68332782.md"><title>D2-1B68332782 · Context-specific MerTK blockade: does it selectively release a pathogenic FLS program?</title><circle cx="144.30" cy="145.31" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-AB762C9388.md"><title>D2-AB762C9388 · Context-specific MerTK blockade: does it selectively release a pathogenic FLS program?</title><circle cx="144.30" cy="367.22" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-AB762C9388.md"><title>D2-AB762C9388 · Context-specific MerTK blockade: does it selectively release a pathogenic FLS program?</title><circle cx="144.30" cy="363.19" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E70797006D.md"><title>D2-E70797006D · Context-specific MerTK blockade: does it selectively release a pathogenic FLS program?</title><circle cx="144.30" cy="441.00" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-E70797006D.md"><title>D2-E70797006D · Context-specific MerTK blockade: does it selectively release a pathogenic FLS program?</title><circle cx="144.30" cy="435.81" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-EE8E3265FF.md"><title>D2-EE8E3265FF · MerTK-dependent macrophage–fibroblast context hypothesis</title><circle cx="144.30" cy="451.54" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-EE8E3265FF.md"><title>D2-EE8E3265FF · MerTK-dependent macrophage–fibroblast context hypothesis</title><circle cx="144.30" cy="446.19" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
-<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4650AE45A2.md"><title>D2-4650AE45A2 · MerTK-dependent macrophage–fibroblast context hypothesis</title><circle cx="144.30" cy="230.21" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-4650AE45A2.md"><title>D2-4650AE45A2 · MerTK-dependent macrophage–fibroblast context hypothesis</title><circle cx="144.30" cy="228.31" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F6DDB9C992.md"><title>D2-F6DDB9C992 · Evolution: MerTK-inhibitor perturbation selectivity in E-MTAB-8873</title><circle cx="252.60" cy="426.87" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-2AAE53E7DB.md"><title>D2-2AAE53E7DB · Evolution: MerTK-inhibitor perturbation selectivity in E-MTAB-8873</title><circle cx="252.60" cy="384.49" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-0CA45E1A51.md"><title>D2-0CA45E1A51 · MerTK-inhibitor selectivity in RA synovial macrophage–fibroblast cocultures</title><circle cx="144.30" cy="487.69" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-EF5B238BEC.md"><title>D2-EF5B238BEC · MerTK-inhibitor selectivity in matched RA synovial cocultures</title><circle cx="252.60" cy="398.62" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
+</a>
+<a href="https://github.com/JianyuanZhong/research-foundry-hypothesis-atlas/blob/main/proposals/D2-F3E7491A4B.md"><title>D2-F3E7491A4B · Evolution: MerTK-inhibitor program selectivity in E-MTAB-8873</title><circle cx="252.60" cy="412.74" r="1.9" fill="#80cec4" stroke="#80cec4" stroke-width="1"/>
 </a>
 <text x="32" y="798" fill="#91a7b5" font-family="Arial,sans-serif" font-size="10" >Recorded derivation →</text>
 </svg>

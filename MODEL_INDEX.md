@@ -4,7 +4,7 @@
 
 **This index reveals model attribution.** For independent blinded assessment, finish reviewing the [anonymous copies](REVIEW.md) before opening the catalogs below.
 
-Atlas snapshot: **2026-10-14**. **4,444 generated hypothesis versions** are mapped to their producing model; **178 imported starting questions** are not assigned a generator.
+Atlas snapshot: **2026-10-15**. **4,471 generated hypothesis versions** are mapped to their producing model; **178 imported starting questions** are not assigned a generator.
 
 Search a hypothesis ID or title in the [complete CSV index](data/model-index.csv), or choose a campaign below for clickable proposals. The [attribution JSON](data/model-attribution.json) joins to [atlas.json](data/atlas.json) by node ID.
 
@@ -16,9 +16,9 @@ Search a hypothesis ID or title in the [complete CSV index](data/model-index.csv
 |---|---:|
 | [Qwen original](models/qwen-original.md) | 628 |
 | [discoveryRSI (our model)](models/discoveryrsi.md) | 1,176 |
-| [Claude](models/claude.md) | 23 |
+| [Claude](models/claude.md) | 33 |
 | [DeepSeek](models/deepseek.md) | 257 |
-| [GLM](models/glm.md) | 19 |
+| [GLM](models/glm.md) | 36 |
 | [GPT](models/gpt.md) | 2,341 |
 
 ## Model versions
@@ -31,8 +31,8 @@ Search a hypothesis ID or title in the [complete CSV index](data/model-index.csv
 | gpt-5.6-sol | 2,008 |
 | Qwen 3.8 27B (original) | 179 |
 | discoveryRSI (Qwen 3.8 27B RAFT R2) | 616 |
-| GLM 5.3 | 19 |
-| Claude Opus 5 | 23 |
+| GLM 5.3 | 36 |
+| Claude Opus 5 | 33 |
 | Qwen 3.5 4B (original) | 449 |
 | discoveryRSI (Qwen 3.5 4B SFT) | 97 |
 | DeepSeek V4.1 Flash | 257 |
@@ -64,7 +64,7 @@ Search a hypothesis ID or title in the [complete CSV index](data/model-index.csv
 | [Qwen original — evidence iteration](models/C21.md) | Qwen original | Qwen 3.8 27B (original) | `qwen38-27b` | Not recorded | 23 |
 | [discoveryRSI — RAFT evidence iteration](models/C22.md) | discoveryRSI (our model) | discoveryRSI (Qwen 3.8 27B RAFT R2) | `qwen38-27b-raft-r2-150` | Not recorded | 94 |
 | [GLM — research contract campaign](models/C23.md) | GLM | GLM 5.3 | `glm-5.3` | Not recorded | 19 |
-| [Claude — four-domain campaign](models/C24.md) | Claude | Claude Opus 5 | `claude-opus-5` | Not recorded | 23 |
+| [Claude — four-domain campaign](models/C24.md) | Claude | Claude Opus 5 | `claude-opus-5` | Not recorded | 33 |
 | [Qwen original — initial 4B pilot](models/C25.md) | Qwen original | Qwen 3.5 4B (original) | `qwen-original` | Not recorded | 1 |
 | [Qwen original — mixed 4B campaign v8](models/C26.md) | Qwen original | Qwen 3.5 4B (original) | `qwen-original` | Not recorded | 23 |
 | [Qwen original — mixed 4B campaign v9](models/C27.md) | Qwen original | Qwen 3.5 4B (original) | `qwen-original` | Not recorded | 176 |
@@ -85,6 +85,7 @@ Search a hypothesis ID or title in the [complete CSV index](data/model-index.csv
 | [discoveryRSI — targeted SFT campaign](models/C42.md) | discoveryRSI (our model) | discoveryRSI (Qwen 3.8 27B SFT) | `qwen38-27b-sft-256k` | Not recorded | 3 |
 | [discoveryRSI — fresh SFT continuation](models/C43.md) | discoveryRSI (our model) | discoveryRSI (Qwen 3.8 27B SFT) | `qwen38-27b-sft-256k` | Not recorded | 3 |
 | [discoveryRSI — targeted SFT continuation](models/C44.md) | discoveryRSI (our model) | discoveryRSI (Qwen 3.8 27B SFT) | `qwen38-27b-sft-256k` | Not recorded | 8 |
+| [GLM — mixed Luna research contract campaign](models/C45.md) | GLM | GLM 5.3 | `glm-5.3` | Not recorded | 17 |
 
 ## Attribution and version semantics
 
