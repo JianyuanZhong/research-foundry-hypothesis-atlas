@@ -1,0 +1,312 @@
+> **Anonymous source-language review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained. Some source passages remain in Chinese.
+
+# Ventilatory burden and prolonged mechanical ventilation: does body-size-adjusted burden add prognostic information beyond severity? (eICU)
+
+Parent: [prior hypothesis] (expert seed [internal campaign], "Ventilatory burden and liberation from ventilation").
+Dataset: eICU-CRD 2.0 snapshot [source checksum].
+Status: WORKING DRAFT v1 (episode 5). Probe results marked [measured]; design sections prespecified but not yet executed.
+
+## 1. Unresolved question and clinical importance
+
+Lung-protective ventilation (low tidal volume, low plateau pressure) is standard of care in ARDS
+after the ARDSNet RCT (Brower 2000) and the Amato 2015 mediation analysis showing driving
+pressure (VT/CRS) most strongly stratified survival among ventilation variables. Outside ARDS,
+evidence is weaker: Serpa Neto 2014 (IPD meta-analysis, 2,184 non-ARDS patients) found
+lower tidal volume (<=6 ml/kg PBW) associated with higher probability of being
+unassisted by day 28 (93.1% vs 88.6% for >=10 ml/kg, p=0.027) and no difference in sedation
+needs — but that analysis used only onset tidal volume and excluded ARDS.
+
+The unresolved question: in a large US multi-center cohort of mechanically ventilated ICU
+patients (ARDS and non-ARDS), does **early, body-size-adjusted ventilatory burden**
+(time-weighted tidal volume per kg ideal body weight and plateau pressure over the
+FIRST 72 HOURS of ventilation) carry prognostic information for **prolonged mechanical
+ventilation** (still ventilated beyond 72 h) beyond illness severity and charting
+density?
+
+Clinically this matters because (a) ventilator settings are modifiable in real time,
+(b) if high early TV/kg or plateau pressure independently predicts prolonged
+ventilation, this supports earlier adherence to lung-protective strategies in
+non-ARDS patients (where practice varies widely) and earlier escalation of
+weaning/liberation efforts in patients with high early burden, and (c) if the
+association disappears after severity adjustment, it argues that settings are a
+marker of disease state rather than an independent lever.
+
+Leading claim: high early ventilatory burden (high time-weighted TV/kg IBW and/or
+high plateau pressure in the first 72 h) is independently associated with
+prolonged mechanical ventilation (still ventilated beyond 72 h) after adjusting
+for illness severity (APACHE), demographics and charting density. Strongest
+rival: the association is an artifact of
+(a) confounding by indication (sicker patients receive different settings in
+the first 72 h), (b) anticipatory confounding (clinicians who anticipate
+prolonged ventilation set different settings early), or (c) measurement
+artifact (charting density differs by hospital and by patient state). The
+discriminating comparison is the within-hospital association of early burden
+with prolonged ventilation after severity adjustment, tested for consistency
+across hospitals, with a learned alternative (GBM) to reveal non-linear/
+threshold structure.
+
+## 2. Data bindings (verified in source files)
+
+Source root: [internal dataset path] 2.0数据/
+
+- patient.csv.gz (10.4 MB): patientunitstayid (join key), hospitalid, age, gender,
+  admissionheight [measured: 196,644/200,859 non-empty], admissionweight
+  [measured: 184,141/200,859 non-empty], unitdischargeoffset, unitdischargestatus.
+- respiratoryCharting.csv.gz (198 MB, 20,168,176 rows): respchartid,
+  patientunitstayid, respchartoffset (min), respchartentryoffset, respcharttypecat,
+  respchartvaluelabel, respchartvalue. [measured] Label counts:
+  'Tidal Volume (set)' 1,034,549; 'TV/kg IBW' 1,024,017 (all non-empty values);
+  'Plateau Pressure' 372,398; 'PEEP' 1,464,808; 'Vent Rate' 1,128,156;
+  'FiO2' 3,075,308; 'Mean Airway Pressure' 696,659; 'Compliance' 203,562.
+  Stays with any resp charting: 124,598; stays with tidal volume: 42,822;
+  stays with plateau pressure: 23,390 (17,193 with >=3 values);
+  stays with TV/kg IBW: 38,951 (29,509 with >=3 values).
+- respiratoryCare.csv.gz (9 MB, 865,381 rows): patientunitstayid,
+  respcarestatusoffset, airwaytype, ventstartoffset, ventendoffset.
+  [measured] airway types: Oral ETT 61,942; Tracheostomy 8,468; Nasal ETT 224;
+  Double-Lumen 16; Cricothyrotomy 9. NOTE: ventstartoffset/ventendoffset are
+  unreliable in this snapshot (ventendoffset=0 in most rows; priorvent* fields
+  carry history), so ventilation duration is derived from respiratoryCharting
+  evidence points, not from respiratoryCare windows.
+- apachePatientResult.csv.gz (17 MB): patientunitstayid, acutephysiology score,
+  apachescore, predictedhospitalmortality. [measured] 297,064 rows.
+- hospital.csv.gz: hospitalid (208 hospitals).
+
+Probe results [measured this episode]:
+- 200,859 unit stays; 208 hospitals.
+- 44,799 stays with >=2 vent-evidence points (TV set / TV/kg IBW / Plateau /
+  Vent Rate / PEEP) and plausible anthropometrics (height 50-220 cm, weight
+  30-250 kg); median vent span (last-first evidence offset) 35.2 h;
+  18,807 stays with span >48 h; 9,726 with span >120 h.
+- 25,107 stays with >=3 TV/kg IBW points (plausible 1-20 ml/kg), span >=6 h,
+  and computable time-weighted TV/kg. Crude association with prolonged
+  ventilation (span >72 h): LOW tertile (<=7.07) 44.4% (n=8,362, median span
+  58.5 h); MID (7.07-8.02) 40.3% (n=8,361, 51.1 h); HIGH (>=8.02) 33.5%
+  (n=8,384, 40.0 h). Direction is OPPOSITE to the VI-lung-injury hypothesis
+  (higher TV -> shorter ventilation) — consistent with confounding by
+  indication (sicker patients get lower TV and stay longer) or with the
+  Serpa Neto finding that lower TV at onset was associated with shorter
+  ventilation in non-ARDS. The adjustment question is therefore live and
+  non-trivial in this dataset.
+
+## 3. Population and temporal boundaries (prespecified)
+
+Inclusion:
+1. unitvisitnumber = 1.
+2. age >= 18.
+3. admissionheight present and 50-220 cm; admissionweight present and 30-250 kg
+   (plausibility filter; IBW computed from height and gender, weight used for
+   sensitivity).
+4. >= 3 respiratoryCharting rows with respchartvaluelabel = 'TV/kg IBW' and
+   respchartvalue parseable to 1-20 ml/kg (primary burden cohort).
+5. Vent span (max - min of all vent-evidence offsets: TV/kg IBW, Tidal Volume
+   (set), Plateau Pressure, Vent Rate, PEEP) >= 6 h.
+6. unitdischargeoffset >= 1440 min (ICU stay >= 24 h).
+
+Exposure (measured over the FIRST 72 HOURS of ventilation, i.e., all
+evidence offsets in [vent_start, vent_start + 4320 min), where
+vent_start = min vent-evidence offset; this makes the exposure window
+END before the outcome window begins, avoiding the circularity of
+measuring the exposure over the outcome period):
+- tvkg_twm: time-weighted mean TV/kg IBW in the first 72 h (trapezoid
+  over consecutive points with gap <= 720 min; gaps > 720 min break the
+  integral).
+- tvkg_max: maximum TV/kg IBW in the first 72 h.
+- pplat_twm: time-weighted mean plateau pressure in the first 72 h
+  (sub-cohort with >=3 Plateau Pressure rows in the window, values
+  15-50 cmH2O).
+- pplat_max: maximum plateau pressure in the first 72 h.
+- vent_span_h: (max - min vent-evidence offset) / 60 — the OUTCOME
+  variable, NOT a covariate (see Outcome below).
+- driving_proxy: tvkg_twm * (pplat_twm - peep_twm) when both available
+  (sensitivity only; eICU has no direct compliance in most rows — 'Compliance'
+  label exists in 203,562 rows but units are not documented, so it is NOT
+  used in the primary analysis).
+- n_pts_72h: number of vent-evidence points in the first 72 h (charting-
+  density covariate).
+
+Covariates:
+- age, gender (patient).
+- apachescore (apachePatientResult; fallback acutephysiology score).
+- icu_los_days = unitdischargeoffset/1440.
+- admissionweight.
+- n_pts_72h (charting density in the exposure window).
+- hospitalid (random effect).
+NOTE: vent_span_h is the outcome, not a covariate; it is excluded from
+the model to avoid circularity.
+
+Outcome (measured AFTER the exposure window):
+- PRIMARY: prolonged mechanical ventilation = vent_span_h > 72, where
+  vent_span_h = (max - min vent-evidence offset) / 60 computed over the
+  FULL course. Because the exposure window is the first 72 h and the
+  outcome threshold is 72 h, the outcome is determined by ventilation
+  evidence that extends BEYOND the exposure window (i.e., the patient
+  is still being ventilated at 72 h or later). This is a computable proxy
+  for liberation failure / prolonged ventilation; it is measured from
+  charting evidence, so it undercounts ventilation in stays where
+  charting is sparse (addressed by the >=3-point inclusion rule and
+  reported in the funnel). It is NOT a ventilator-free-days outcome and
+  does not capture post-ICU ventilation.
+- SECONDARY: (a) vent_span_h > 120 h (5 days); (b) continuous vent_span_h
+  (restricted cubic spline in the GBM); (c) death in ICU
+  (unitdischargestatus='Expired') as a competing-outcome check.
+- ADJUDICATION NOTE: eICU does not provide ventilator-free days, extubation
+  events, or reintubation flags. The primary outcome is a charting-derived
+  ventilation-duration proxy. Interpretation must not claim ventilator-free
+  days or causality of settings on liberation.
+
+## 4. Analysis plan
+
+1. Baseline GLMM (mixed-effects logistic, hospital random intercepts):
+   prolonged_vent ~ tvkg_twm + apachescore + age + icu_los_days + n_pts_72h
+   + (1|hospital). Primary estimand: the tvkg_twm coefficient after severity
+   and charting-density adjustment. Sub-cohort: same model with pplat_twm.
+2. Stratified analysis: within APACHE tertiles, tvkg_twm association with
+   prolonged ventilation (does the association persist in the mildest
+   severity stratum, where confounding by indication is weakest?).
+3. Hospital-level consistency: distribution of hospital-level tvkg_twm
+   coefficients; fraction of hospitals with the same sign.
+4. Learned alternative (same scientific question): gradient-boosted trees
+   (sklearn HistGradientBoosting, CPU) predicting prolonged_vent with the
+   same covariates; compare feature importances of tvkg_twm / pplat_twm vs
+   apachescore; partial dependence of tvkg_twm (and pplat_twm) to reveal
+   threshold/non-linear structure the GLMM cannot show (e.g., is the
+   association driven by TV/kg > 8-9 ml/kg only?).
+5. Evaluation: pre-specified hospital-level holdout (leave 2 hospitals out,
+   chosen by size, fixed before fitting). Report holdout AUC, calibration
+   slope, and the tvkg_twm effect in the holdout.
+
+## 5. Falsification and interpretation
+
+- Supportive: tvkg_twm (or pplat_twm) significantly associated with
+  prolonged ventilation after severity+charting-density adjustment (OR per 1 ml/kg
+  >= 1.1 or <= 0.9, p < 0.05), consistent in >= 80% of hospitals, persisting
+  in the mildest APACHE tertile, and the GBM partial dependence shows a
+  monotone or threshold relationship. Interpretation: sustained
+  body-size-adjusted ventilatory burden carries independent prognostic
+  information for prolonged ventilation; supports monitoring sustained
+  settings (not just onset) and earlier lung-protective adherence /
+  weaning escalation.
+- Adverse (hypothesis refuted): tvkg_twm and pplat_twm null after
+  adjustment (OR 0.95-1.05, p > 0.05) in both model families and holdout,
+  with the crude association fully explained by APACHE and charting density.
+  Interpretation: settings are a marker of disease state, not an
+  independent prognostic lever; no support for burden-based monitoring
+  beyond severity scores.
+- Inconclusive: association present in only one model family, inconsistent
+  across hospitals (< 60% concordance), or driven entirely by a small
+  number of high-charting-density hospitals; or the direction flips after
+  adjustment (confounding by indication). Interpretation: cannot separate
+  independent prognostic effect from confounding; requires
+  ventilator-free-days data (e.g., MIMIC-IV, which has
+  ventilator-free-day outcomes and more complete vent settings) or
+  quasi-experimental design to test the causal claim.
+
+What each result would/would not establish: a supportive result establishes
+association and cross-hospital stability, not causality (settings are
+confounded by clinician judgment and disease state; no randomization). It
+would NOT establish that changing settings shortens ventilation (that
+requires an RCT or quasi-experimental design). An adverse result argues
+against burden-based prognostication in this population. Neither result
+establishes the mechanism (VILI vs weaning difficulty vs disease severity).
+
+## 6. Method comparison (baseline vs learned alternative)
+
+Baseline: hospital-level GLMM with tvkg_twm / pplat_twm.
+Strengths: interpretable ORs, hospital random effects, direct test of the
+independent-association hypothesis. Limitations: assumes linear log-odds,
+cannot reveal threshold structure (e.g., harm only above TV/kg 8).
+Learned alternative: GBM with the same covariates. Strengths: captures
+non-linearities and interactions automatically; partial dependence shows
+WHERE the burden effect lives (which TV/kg region, which severity region).
+Limitations: less directly interpretable; hospital clustering handled by
+fitting on pooled data with hospital as a feature; no built-in random
+effects. The two test the same scientific question (does burden carry
+independent prognostic information?) with complementary sensitivity: GLMM
+for the average effect, GBM for the shape. GPU not required; tabular fits
+are minutes-scale on 16 CPU.
+
+## 7. Compute plan
+
+- Discovery probes [measured]: respiratoryCharting single pass ~30 s;
+  patient pass ~2 s; apache pass ~5 s.
+- Solver envelope (planned, per inputs.json: 16 CPU, 256 GB, 8 h, gpus=0):
+  one pass over respiratoryCharting (20M rows, extract TV/kg IBW, Plateau
+  Pressure, PEEP, vent-evidence offsets) ~2-3 min; patient + apache join
+  ~2 min; per-stay burden aggregation ~1 min; GLMM fits (< 5 min each);
+  GBM fits (< 10 min each); holdout evaluation. Total well within 8 h.
+  Estimates unverified until solver runs.
+
+## 8. Key references (to be attached with frozen receipts)
+
+[K1] Serpa Neto et al., Intensive Care Med 2014 (PMID 24811940) — closest
+prior work: IPD meta-analysis of 2,184 non-ARDS patients; lower tidal
+volume (<=6 ml/kg PBW) at onset associated with higher probability of
+unassisted breathing by day 28 (93.1% vs 88.6% for >=10 ml/kg, p=0.027);
+no difference in sedation needs. Abstract inspected via frozen Europe PMC
+metadata [measured]. Limitation: onset TV only, not sustained burden;
+excluded ARDS; no plateau pressure.
+[K2] Amato et al., NEJM 2015 (PMID 25693014) — bounds the mechanistic
+claim: in 3,562 ARDS patients from 9 RCTs, driving pressure (VT/CRS) was
+the ventilation variable most strongly associated with survival (RR 1.41
+per 1-SD, 95% CI 1.31-1.51); individual VT or PEEP changes were associated
+only via driving pressure. Abstract inspected via frozen Europe PMC
+metadata [measured]. Limitation: ARDS only; RCT mediation, not
+observational burden; no liberation outcome.
+[K3] Pollard et al., eICU-CRD v2.0 documentation (PhysioNet) — bounds what
+is measurable: respiratoryCharting has free-text respchartvaluelabel
+values (TV/kg IBW, Plateau Pressure, PEEP, etc.); no ventilator-free-days,
+no extubation/reintubation flags, no documented compliance units;
+ventstartoffset/ventendoffset unreliable. Frozen page text retrieved this
+episode [measured].
+
+## 9. Limitations and honest gaps
+
+- The primary outcome is a charting-derived ventilation-duration proxy
+  (span of vent-evidence offsets), not ventilator-free days or extubation
+  failure. It undercounts ventilation in sparse-charting stays (mitigated
+  by >=3-point inclusion) and does not capture post-ICU ventilation.
+- eICU has no documented compliance values; driving pressure cannot be
+  computed directly. The 'Compliance' label (203,562 rows) has unknown
+  units and is excluded from the primary analysis.
+- Confounding by indication is the central threat: sicker patients may
+  receive lower TV (as the crude probe suggests) and stay longer. The
+  mildest-APACHE-tertile stratification and hospital random effects
+  mitigate but do not eliminate this. The direction of the crude
+  association (higher TV -> shorter ventilation) is opposite to the
+  VILI hypothesis, so a supportive result would require the association
+  to PERSIST or REVERSE after adjustment — this is explicitly
+  prespecified to avoid post-hoc direction-chasing.
+- Circularity resolution: the exposure is measured over the FIRST 72 h of
+  ventilation and the outcome (vent_span_h > 72) is determined by
+  ventilation evidence extending beyond 72 h; the outcome variable is not
+  used as a covariate. This avoids the reverse-time/circularity problem
+  of measuring the exposure over the outcome period. Residual concern:
+  patients who are already expected to have prolonged ventilation may
+  receive different settings in the first 72 h (anticipatory confounding);
+  this cannot be fully addressed with eICU data.
+- Charting density varies by hospital and by patient state; the
+  time-weighted mean is sensitive to gaps (gap rule: >720 min breaks the
+  integral). Sensitivity: restrict to stays with >=10 evidence points.
+- Plateau pressure is available in only 23,390 stays (sub-cohort); the
+  primary analysis uses TV/kg IBW (38,951 stays) and plateau pressure is
+  a pre-specified sub-cohort.
+- Abstract-only inspection for K1/K2; full texts not read.
+
+## 10. Deliverables a future solver must produce
+
+1. Per-stay table: tvkg_twm, tvkg_max, pplat_twm (sub-cohort), pplat_max,
+   vent_span_h, covariates (apachescore, age, icu_los, admissionweight),
+   outcomes (prolonged_vent >72h, >120h, ICU death), with
+   inclusion/exclusion funnel counts.
+2. GLMM baseline fit (tvkg_twm effect overall) and stratified fits (by
+   APACHE tertile), with ORs, 95% CI, holdout AUC/calibration. Sub-cohort
+   fit with pplat_twm.
+3. Hospital-level consistency summary (distribution of hospital tvkg_twm
+   coefficients, concordance fraction).
+4. GBM: holdout AUC, calibration, feature importances, partial dependence
+   of tvkg_twm and pplat_twm (by APACHE stratum).
+5. A written conclusion classifying the result as supportive / adverse /
+   inconclusive per section 5, linked to the computed outputs, with
+   explicit statement of what the charting-derived outcome does and does
+   not establish.

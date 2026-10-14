@@ -1,0 +1,239 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# Hypothesis: Persistent Deep Sedation After Initial Stabilization Predicts Adverse Outcomes
+
+## Unresolved Question
+
+**Current knowledge gap:** While sedation guidelines recommend light sedation in ARDS and other critical illnesses to avoid adverse outcomes, the clinical reality is that deep sedation often persists after initial hemodynamic and respiratory stabilization.
+
+**What remains unknown:**
+- Does the *duration and depth* of sustained deep sedation (beyond the initial stabilization period) independently predict adverse outcomes?
+- What are the *mechanisms* through which persistent deep sedation contributes to deterioration? (e.g., delirium, prolonged recovery, immunosuppression, missed clinical events)
+- Can we identify patients at *highest risk* of developing persistent deep sedation who would benefit from early intervention?
+
+## Clinical Importance
+
+Persistent deep sedation is a widespread but poorly characterized phenomenon in ICU care. Its consequences include:
+
+1. **Delirium and cognitive impairment:** Deep sedation is a major risk factor for ICU-acquired delirium, which independently predicts prolonged ICU stay, mechanical ventilation, and mortality.
+
+2. **Prolonged recovery:** Patients who remain deeply sedated longer often require longer durations of mechanical ventilation and ICU stay, with potential permanent neurological sequelae.
+
+3. **Missed clinical events:** Deep sedation can obscure clinical deterioration, delaying recognition of new complications.
+
+4. **Immunosuppression:** Prolonged exposure to sedatives may impair immune function and increase infection risk.
+
+5. **Economic burden:** Extended ICU stays and resource utilization increase healthcare costs.
+
+Current practice relies on:
+- Single-timepoint sedation scores (e.g., admission SOFA)
+- Protocol-based sedation targets that may not account for individual patient variability
+- Reactive rather than proactive identification of patients at risk of persistent sedation
+
+This hypothesis addresses a critical gap by focusing on the *trajectory* of sedation depth after initial stabilization, which represents a distinct clinical phenomenon from initial sedation requirements.
+
+## Hypothesis Statement
+
+**Primary hypothesis:** Among patients with initial hemodynamic and respiratory stabilization, those who develop sustained deep sedation (RASS ≤ -4 for ≥24 consecutive hours after initial stabilization) have higher risks of:
+- ICU-acquired delirium
+- Prolonged mechanical ventilation (>7 days)
+- Extended ICU length of stay (>7 days)
+- ICU mortality
+
+**Mechanistic hypothesis:** The risk is mediated through multiple pathways:
+1. **Neurological:** Increased risk of delirium and cognitive impairment
+2. **Physiological:** Prolonged immune suppression and increased infection risk
+3. **Clinical:** Delayed recognition of new complications
+
+## Study Population and Main Data
+
+**Population:** Adults admitted to ICU with MIMIC-IV data (2016-2019), meeting ALL criteria:
+1. Age ≥18 years
+2. ICU stay duration ≥72 hours (to allow for stabilization period)
+3. Initial SOFA score ≤8 (indicating no severe organ dysfunction at admission)
+4. Initial RASS score ≥ -2 (not already deeply sedated at admission)
+5. Has ≥1 documented RASS measurement after day 1 of ICU stay
+6. Has ≥1 documented RASS score ≤ -4 (deep sedation) within 48 hours of admission
+
+**Exclusions:**
+- Patients with active major bleeding or coagulopathy
+- Patients with known coma or severe neurological injury at admission
+- Patients with documented withdrawal from sedation within 24 hours of admission
+
+**Main data tables:**
+- `icu/icustays`: ICU stay demographics, admission diagnoses, length of stay
+- `icu/chartevents`: Time-stamped chart events including sedation scores
+- `icu/datetimeevents`: Additional chart events and vitals
+- `hosp/d_icd_diagnoses`: Admission and discharge diagnoses (ICD-10 codes)
+- `hosp/patients`: Patient demographics
+- `note/discharge`: Discharge summaries (for delirium assessment)
+
+## Operational Definitions
+
+**Initial stabilization:** Defined as the first 48 hours of ICU stay where:
+- Mean SOFA score ≤8
+- Mean RASS ≥ -2
+- No vasopressor requirement (or mean dose <0.1 µg/kg/min for norepinephrine)
+
+**Persistent deep sedation:** Defined as ≥24 consecutive hours of RASS ≤ -4 after initial stabilization, occurring within the first 7 days of ICU stay.
+
+**Adverse outcomes:**
+1. **ICU-acquired delirium:** Documented in discharge note or chartevents (ICD-10 F01.2, F01.6, or R46.1 with sedation)
+2. **Prolonged mechanical ventilation:** Duration >7 days
+3. **Extended ICU stay:** Length of stay >7 days
+4. **ICU mortality:** Death during ICU stay
+
+**Effect modifiers:**
+- Age (continuous and categorical: <65, 65-74, ≥75)
+- Comorbidities (Charlson comorbidity index from admission diagnoses)
+- Infection status (admission sepsis vs. non-septic)
+- ARDS diagnosis (Borg criteria from imaging and clinical data)
+- Sedative type (benzodiazepine vs. propofol vs. other)
+
+## Baseline Models
+
+To establish what existing approaches can achieve, we will fit:
+
+1. **Static baseline:** Logistic regression using only admission characteristics (age, SOFA score, comorbidities, admission RASS)
+
+2. **Single-timepoint baseline:** Model using only the first RASS measurement after stabilization
+
+3. **Sustained sedation baseline:** Logistic regression using the total duration of deep sedation (in hours) as a continuous predictor
+
+These baselines represent:
+- Current clinical practice (admission risk stratification)
+- Early detection attempts (first measurement)
+- Simple temporal approaches (duration only)
+
+## Learning Alternative
+
+We will develop a **temporal deep sedation trajectory model** using:
+
+**Architecture:** A simple CNN-LSTM architecture that:
+- Takes as input: Time-stamped RASS scores, sedative doses, and SOFA scores
+- Uses a 1D CNN to extract local patterns in sedation trajectories
+- Uses an LSTM to model temporal dependencies across days
+- Outputs: Probability of adverse outcome (delirium, prolonged ventilation, extended stay, mortality)
+
+**Training approach:**
+- Training split: 70% training, 15% validation, 15% test (temporal split to prevent leakage)
+- Loss function: Binary cross-entropy for each outcome
+- Optimization: Adam optimizer with learning rate 1e-4
+- Early stopping based on validation loss
+
+**What this alternative reveals that baselines lose:**
+1. **Temporal patterns:** Whether specific *sequences* of sedation depth predict outcomes better than duration alone
+2. **Non-linear interactions:** How changes in sedation interact with physiological parameters
+3. **Individual trajectories:** Patient-specific risk patterns that may be missed by population-level models
+4. **Early warning signals:** Whether short-term changes in sedation trajectories predict longer-term outcomes
+
+## Falsification Criteria
+
+**Supportive results (hypothesis supported):**
+- Persistent deep sedation is associated with significantly higher odds of adverse outcomes (OR >1.5, p<0.001)
+- The temporal trajectory model significantly outperforms all baseline models (AUC improvement >0.05, p<0.01)
+- Delirium and prolonged ventilation are the strongest mediators of the persistent sedation-outcome relationship
+- The risk persists after adjustment for age, comorbidities, and admission severity
+
+**Adverse results (hypothesis refuted):**
+- Persistent deep sedation is NOT associated with increased risk of adverse outcomes after adjustment for confounders
+- No temporal pattern in sedation trajectories predicts outcomes better than duration alone
+- The temporal trajectory model performs no better than the static baseline (AUC difference <0.02)
+- All adverse outcomes are fully explained by admission characteristics and comorbidities
+
+**Inconclusive results (requires further investigation):**
+- Persistent deep sedation shows weak or inconsistent associations with outcomes
+- The temporal trajectory model shows marginal improvement over baselines
+- Mediation analysis shows mixed results across different outcome types
+
+## Data Availability and Bindings
+
+All required data tables are available in MIMIC-IV:
+
+1. **icu/icustays** (table-7d5c8feb0fb0dbd4.json):
+   - patient_id, stay_id, admit_time, discharge_time, length_of_stay
+   - admission_diagnoses, discharge_diagnoses
+   - ICU service type
+
+2. **icu/chartevents** (table-8208609a785ea7e8.json):
+   - item_id (includes RASS, sedative names)
+   - timestamp, numeric_value, text_value
+   - chart event type
+
+3. **icu/datetimeevents** (table-b88dd677d1c84a2d.json):
+   - Additional chart events with timestamps
+   - Vitals and medication administration records
+
+4. **hosp/d_icd_diagnoses** (table-5d9acbb282bd9261.json):
+   - admission_icd10, discharge_icd10
+   - diagnosis type (admission, discharge, procedure)
+
+5. **hosp/patients** (table-9154f8c46cade9af.json):
+   - Age, sex, race, ethnicity
+   - Admission time
+
+## Required References
+
+Three key references supporting this hypothesis:
+
+**[K1]** "Limiting sedation for patients with acute respiratory distress syndrome - time to wake up" (Shah et al., 2017)
+- Demonstrates that deep sedation is associated with increased time on mechanical ventilation, longer ICU stay, and higher mortality
+- Supports the clinical importance of minimizing deep sedation
+- DOI: 10.1097/MCC.0000000000000382
+
+**[K2]** "Correlation of Sedation Depth During Critical Care Transport and Hospitalization" (Roginski et al., 2024)
+- Shows that deep sedation during transport does not predict deep sedation in hospital, suggesting that persistent sedation is not simply carried over but may develop independently
+- DOI: 10.1177/08850666231210802
+
+**[K3]** "Learning the natural history of human disease with generative transformers" (Shmatko et al., 2025)
+- Demonstrates the value of longitudinal EHR data modeling for learning disease trajectories
+- Supports the use of temporal modeling approaches in clinical prediction
+- DOI: 10.1038/s41586-025-09529-3
+
+## Key Research Questions
+
+1. **Primary question:** Does the development of sustained deep sedation (≥24 consecutive hours of RASS ≤ -4) after initial stabilization independently predict adverse ICU outcomes?
+
+2. **Mechanistic question:** What are the primary mechanisms through which persistent deep sedation contributes to adverse outcomes? (delirium, prolonged recovery, missed events, immunosuppression)
+
+3. **Predictive question:** Can a temporal model of sedation trajectories predict adverse outcomes better than static models or duration-based approaches?
+
+4. **Intervention question:** Which patients at risk of persistent deep sedation could benefit from early intervention strategies?
+
+## Limitations
+
+1. **RASS measurement sparsity:** Sedation scores are not measured at regular intervals, which may limit the ability to detect short-term patterns.
+
+2. **Unmeasured confounding:** Residual confounding by unmeasured factors such as nursing practices, family presence, or unmeasured physiological parameters.
+
+3. **Causal inference:** Observational design limits causal conclusions; persistent sedation may be both a cause and consequence of deterioration.
+
+4. **Sedative heterogeneity:** Different sedatives may have different effects, and the data may not distinguish between them accurately.
+
+5. **Delirium measurement:** Delirium is often diagnosed retrospectively or based on limited documentation.
+
+## Clinical Translation
+
+If the hypothesis is supported, potential clinical applications include:
+
+1. **Risk stratification:** Early identification of patients at risk of developing persistent deep sedation and implementing preventive strategies.
+
+2. **Protocol optimization:** Refining sedation protocols to minimize deep sedation duration while maintaining patient comfort.
+
+3. **Delirium prevention:** Targeted delirium prevention strategies for patients at risk of persistent sedation.
+
+4. **Resource utilization:** Reducing ICU length of stay and associated costs through earlier identification of at-risk patients.
+
+5. **Quality improvement:** Using persistent sedation as a quality metric for ICU teams.
+
+## Next Steps
+
+1. **Data validation:** Verify that RASS measurements and sedative codes are accurately captured in MIMIC-IV.
+
+2. **Pilot analysis:** Run a descriptive analysis to characterize the prevalence and patterns of persistent deep sedation in the population.
+
+3. **Model development:** Develop and validate the temporal trajectory model.
+
+4. **Mediation analysis:** Quantify the contribution of different mechanisms (delirium, prolonged ventilation, etc.) to the overall risk.
+
+5. **External validation:** If possible, validate findings in another ICU database.

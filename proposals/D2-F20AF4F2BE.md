@@ -1,0 +1,80 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# Episode 16 working checkpoint: D2-T1 exact-title repair
+
+## Current question
+Does the intervention-associated macrophage transcriptional response reflect a fibroblast-linked program rather than generic macrophage stimulation, donor composition, or assay/feature artifacts? The hypothesis remains observational and does not claim direct target action, causal mediation, clinical efficacy, or in vivo mechanism.
+
+## Current design and verified evidence
+The repaired branch preserves [prior hypothesis]'s exact-title feasibility boundary: primary GSE95588 inference is restricted to the 13 matrix columns with exact unique GSM-title matches; the remaining 57 columns and all unresolved donor records are excluded from inferential claims. E-MTAB-8316 supplies the FLS-responsive feature program from condition=none versus UNC106238, with repeated context measurements summarized within donor/condition. The proposal compares a transparent paired contrast against a hierarchical interaction alternative, with generic/technical negative controls and condition-blocked uncertainty.
+
+Inspected public evidence available in the frozen source inventory includes full-text XML for PMC13591627 (stromal–myeloid crosstalk), PMC13553944 (fibroblast-derived factor and macrophage polarization), and PMC13543596 (3D macrophage-containing therapeutic model). These support the opening and context-aware testing rationale, not the proposed dataset result or efficacy.
+
+## Unresolved issues
+- The latest child lacks attached key-references.json and experiment-card.json; parent artifacts are not inherited.
+- GSE95588 donor/GSM mapping remains unresolved outside the 13 exact-title columns, so donor-aware inference is gated.
+- The exact FLS feature-set threshold and generic reference must remain frozen before intervention analysis.
+
+## Evidence delivery repair
+
+Exactly three inspected public works have been frozen and attached as K1–K3 with claim-specific limitations and receipt hashes. The required life-science experiment card is also attached. The scientific design is unchanged.
+
+## Next step
+Reconstruct the three-work reference bundle and experiment card from the inspected frozen sources, attach them to the unchanged scientific proposal, save and assess the repaired child, then run the required critique and close the episode with the repaired child if valid.
+
+
+# Full repaired proposal
+
+## Scientific question
+
+Does the intervention-associated macrophage transcriptional response reflect a fibroblast-linked program rather than generic macrophage stimulation, donor composition, or assay/feature artifacts? This matters because reciprocal stromal–myeloid signaling can sustain rheumatoid arthritis inflammation and may explain why a drug that appears effective in isolated macrophages behaves differently in the synovial microenvironment [K1]. Resolving specificity would inform whether therapeutic screening must include fibroblast-containing context and whether an apparent drug response is informative about a fibroblast-linked program or merely generic activation.
+
+The hypothesis is observational: the intervention-associated transcriptional response is enriched in a frozen fibroblast-linked program relative to a prespecified generic-stimulation/technical reference. The available data do not establish direct target action, causal mediation, clinical efficacy, or an in vivo mechanism. A fibroblast-derived factor study supports context-dependent macrophage profiles [K2], and multicellular models support context-aware therapeutic testing [K3]; neither validates this dataset or proves efficacy.
+
+## Exact data bindings
+
+### E-MTAB-8316 (FLS readout)
+- Raw matrix: `[internal dataset path]`, [source checksum].
+- Prepared matrix: `[internal dataset path]`, [source checksum]; header is `feature` plus 12 sample columns.
+- Design: `[internal dataset path]`, [source checksum]; fields include `sample_id`, `donor_id`, `other_donor_id`, `condition`, `treatment`, `cell_type`, `age`, `sex`, and `source_metadata`.
+- Population and units: 12 samples from four verified FLS donor clusters (SA049, SA051, SA104, SA114) and nested healthy monocyte donors. The readout is FLS transcript abundance after macrophage pretreatment. Paired intervention contrast is `condition=none` versus `condition=UNC106238` (250 µM), both under LPS. Repeated context measurements are summarized within donor/condition before exploratory inference; donors are not independent.
+
+### GSE95588 (macrophage readout)
+- Raw matrix: `[internal dataset path]`, [source checksum].
+- Prepared matrix: `[internal dataset path]`, [source checksum]; header is `feature` plus 70 sample columns.
+- Feature map: `[internal dataset path]`, [source checksum]; 23,710 rows, with ambiguous date-like labels retained as `ambiguous_do_not_assign_target`.
+- Design: `[internal dataset path]`, [source checksum]; 70 records, all `donor_id=null` and `donor_status=unresolved`.
+- GSM metadata: `[internal dataset path]`, [source checksum]; 74 unique accessions and 74 titles. Original `samples.soft` and `series.soft` are also bound. Metadata fields include accession, title, treatment characteristics, barcode, BioSample and SRA links.
+- Exact mapping audit: only 13 design IDs exactly match unique GSM titles. The remaining 57 design IDs and 61 GSM titles are not exact matches, including systematic plus/alias differences and four additional Donor2 records. No verified donor identifier is available for the 70-column matrix. The primary exact-title subset is therefore used for exploratory, donor-unresolved inference only; the four Donor2 records and all non-exact columns are not silently joined or assigned donors.
+
+## Estimand and program construction
+
+For each exact-title matched intervention/context pair, define the macrophage intervention response as log2 fold-change from its corresponding control. Define the fibroblast-linked program before inspecting intervention effects: use a prespecified, frozen set of FLS-responsive features selected from the E-MTAB-8316 `condition=none` versus `condition=UNC106238` contrast, requiring a minimum expression/coverage filter and a prespecified effect threshold; retain feature identities exactly and do not merge ambiguous GSE95588 labels. If no prespecified set is available, derive the component only from the FLS dataset, freeze it before macrophage analysis, and report its feature list. The generic reference is an unstimulated/context control and/or a prespecified broad macrophage activation signature, constructed with the same normalization and feature-selection rules and without using the intervention effect. The primary specificity estimand is the difference in intervention response between the frozen fibroblast-linked program and this generic reference, within the exact-title subset. Report both context contrast (MTF minus MT) and specificity contrast with uncertainty.
+
+## Baseline and substantive alternative
+
+Simple baseline: estimate each intervention’s MT and MTF response separately, then compute paired context and specificity contrasts using a donor/condition-blocked paired test or permutation where the mapping supports it. Use the same feature set, normalization, and control definition for both assays. This directly answers whether the observed response is enriched in the fibroblast-linked program relative to generic stimulation.
+
+Substantive alternative: fit a joint hierarchical model of intervention, context (MT versus MTF), program (fibroblast-linked versus generic reference), and condition blocks, with shrinkage across interventions and genes and a prespecified negative-control program (generic activation or ambiguous/technical features). It can reveal a shared context-dependent program or intervention-specific reversal that the baseline loses. Evaluate with condition-blocked cross-validation, uncertainty intervals, and held-out prediction of the context-specific contrast; compare interaction and specificity estimates, not merely overall predictive accuracy. CPU is sufficient for the small tabular fits; no GPU is required.
+
+## Interpretation and falsification
+
+- Supportive: a reproducible specificity contrast with uncertainty excluding the prespecified null, consistent direction across available exact-title conditions, and greater contrast than the generic reference and negative-control/ambiguous-feature checks. This supports a context-specific transcriptional association, not direct target action.
+- Adverse: no specificity contrast, disappearance after condition and feature-identity checks, or a comparable generic response. This weakens the fibroblast-linked specificity claim; it does not prove drugs have no context effects in vivo.
+- Inconclusive: unresolved mapping for the majority of columns, insufficient matched contrasts, high uncertainty, or contradictory assay-specific results. This motivates metadata repair or a new donor-resolved experiment rather than a negative biological conclusion.
+
+## Limitations, alternatives, and actual deliverable
+
+E-MTAB-8316 is FLS readout after macrophage pretreatment, whereas GSE95588 is macrophage readout; cross-dataset claims must remain assay/context-specific. The exact-title restriction is a feasibility boundary, not evidence that excluded samples lack a signal. No wet-lab target validation, clinical outcome, or direct mechanistic perturbation is available. Generic activation, donor composition, normalization, duplicate/date-like feature identity, and technical artifacts are explicit rivals. A supportive result would justify a donor-resolved experiment with direct target perturbation and clinical readouts; an adverse result would redirect screening toward isolated macrophage effects or other mechanisms.
+
+The baseline is a transparent, paired condition-aware contrast of intervention response in MT versus MTF and against the frozen generic reference. The alternative is a hierarchical interaction model that borrows information across interventions and genes and can distinguish a shared fibroblast-linked program from intervention-specific reversal, information the baseline loses. The future solver must newly fit both, report the interaction and specificity estimates with uncertainty, evaluate held-out condition-blocked predictions, and report whether the fibroblast-linked program is distinguishable from generic stimulation and technical controls. This is an adaptation, not a reproduction of any demonstration paper.
+
+## Demonstration dispositions
+
+The natural-history transformer demonstration is not pursued because the configured data lack its longitudinal patient histories and the question is a molecular intervention-context contrast. The cancer multimodal demonstration is not pursued because chest images and the main article are unavailable; a lab-only adaptation would not answer this question. The Bayesian longitudinal demonstration is not pursued because genetics and longitudinal trajectories are unavailable; its latent-trajectory idea is not needed for the paired assay comparison.
+
+## References
+
+[K1] Wei W, Xu J. Failed resolution as a mechanistic basis of difficult-to-treat rheumatoid arthritis: stromal–myeloid crosstalk in the synovium and emerging resolution-restoring therapies. Front Immunol. 2026;17:1935792. doi:10.3389/fimmu.2026.1935792. PMCID:PMC13591627. Abstract/introduction inspected; supports reciprocal stromal–myeloid signaling and unresolved therapeutic implications, not this dataset’s contrast.
+[K2] Bao L, Wang D, Wang P, et al. Reduced fibroblast-derived IGFBP5 is associated with pathogenic synovial fibroblast states and altered macrophage polarization in rheumatoid arthritis. Front Immunol. 2026;17:1873778. doi:10.3389/fimmu.2026.1873778. PMCID:PMC13553944. Abstract and relevant methods/results inspected; supports context-dependent macrophage profiles, not a general intervention-response rule.
+[K3] Philippon EML, van Rooijen LJE, Jongejan A, et al. Targeting inflammatory and angiogenic responses by small-molecule kinase inhibitors in a 3D macrophage-containing spheroid model of rheumatoid arthritis synovial tissue. Arthritis Res Ther. 2026;28:163. doi:10.1186/s13075-026-03849-z. PMCID:PMC13543596. Abstract and relevant methods/results inspected; supports context-aware therapeutic testing, not validation of the present datasets.

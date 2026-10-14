@@ -1,0 +1,164 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# Scientific Proposal: Duration-Based Hypotension Risk Predicts Acute Kidney Injury Independent of Minimum Blood Pressure
+
+## 1. Refined Hypothesis Statement
+
+### Primary Hypothesis
+In critically ill patients with vasopressor-dependent hypotension, at a fixed minimum mean arterial pressure (MAP) threshold (e.g., 60 mmHg), longer duration of time spent below a higher MAP threshold (e.g., 70 mmHg) is associated with increased risk of subsequent acute kidney injury (AKI), independent of the minimum MAP achieved, baseline severity scores (Apache II, SAPS III), age, gender, and hospital characteristics [K1], [K2].
+
+### Secondary Hypothesis
+The association between hypotension duration and AKI risk is modified by hospital-level factors (ICU volume, teaching status, region), suggesting potential practice variation that warrants investigation [K3].
+
+## 2. Study Population
+
+**Population**: Adult patients in the eICU database with continuous blood pressure monitoring and vasopressor administration.
+
+**Inclusion criteria**:
+- Age ≥ 18 years
+- ICU stay duration ≥ 48 hours
+- At least 24 hours of continuous blood pressure monitoring (vitalAperiodic with noninvasivemean ≥ 0)
+- Minimum MAP ≥ 50 mmHg (to ensure sufficient data for duration calculations)
+- Vasopressor administration (infusionDrug with vasoactive drugs)
+
+**Exclusion criteria**:
+- Pre-existing chronic kidney disease (baseline creatinine ≥ 1.5 mg/dL or eGFR < 30 mL/min/1.73m²)
+- Emergency department transfer to ICU (to reduce confounding by pre-ICU illness)
+
+## 3. Main Data Tables and Variables
+
+| Table | Key Variables | Purpose |
+|-------|---------------|---------|
+| **vitalAperiodic** | `patientunitstayid`, `observationoffset`, `noninvasivemean` | Blood pressure time series; calculate duration below thresholds |
+| **infusionDrug** | `patientunitstayid`, `infusionoffset`, `drugname` | Identify vasopressor use; calculate hypotension burden during treatment |
+| **apacheApsVar** | `patientunitstayid`, `meanbp`, `creatinine` | Baseline severity and acute kidney function markers |
+| **apachePatientResult** | `patientunitstayid`, `actualicumortality` | Outcome verification |
+| **patient** | `patientunitstayid`, `age`, `gender`, `hospitalid` | Demographics and hospital-level covariates |
+| **hospital** | `hospitalid`, `numbedscategory`, `teachingstatus`, `region` | Hospital-level characteristics |
+
+## 4. Primary Outcome
+
+**Acute Kidney Injury (AKI)**: Defined by KDIGO criteria within 7 days of ICU admission, identified through:
+- **vitalAperiodic**: Urine output < 0.5 mL/kg/h for 6 hours (if available)
+- **infusionDrug**: Vasopressor dose escalation (drugrate increase > 50% within 2 hours)
+- **lab/lab**: Creatinine increase ≥ 0.3 mg/dL from baseline or ≥ 200% increase from admission
+
+## 5. Baseline and Alternative Methods
+
+### Baseline Method
+**Logistic regression/Cox proportional hazards model with**:
+- Primary exposure: Minimum MAP achieved (continuous or categorical)
+- Covariates: Age, gender, Apache II score, SAPS III score, hospital characteristics
+
+**What this tests**: Whether minimum blood pressure predicts AKI risk.
+
+### Substantive Alternative Method
+**Time-dependent Cox proportional hazards model with**:
+- Primary exposure: Total duration of hypotension (time spent below 70 mmHg MAP) within the first 24 hours of vasopressor initiation
+- Time-dependent covariate: MAP trajectory over ICU stay
+- Covariates: Same as baseline + hospital fixed effects
+
+**What this reveals that baseline loses** [K2]:
+1. **Static vs. Dynamic Risk**: Whether minimum pressure or duration is the stronger predictor
+2. **Temporal Patterns**: Whether early vs. late hypotension has different risks
+3. **Hospital Variation**: Whether the duration-pressure relationship is consistent across hospitals [K3]
+
+### Information Gain
+The alternative method can distinguish between:
+- A static measure (minimum pressure) as the primary driver of AKI risk
+- A dynamic measure (duration of hypotension) as the primary driver of AKI risk
+- Interaction effects where duration matters more at different minimum pressure levels
+
+## 6. Analysis Plan
+
+### 1. Data Preprocessing
+- Impute missing vital signs using linear interpolation
+- Handle artifacts (e.g., MAP = 0 or > 200) by flagging and excluding
+- Calculate duration below thresholds using time-series analysis
+
+### 2. Primary Analysis
+- Cox proportional hazards model with time-dependent exposure (duration below 70 mmHg MAP)
+- Adjust for: age, gender, Apache II, SAPS III, hospital fixed effects
+- Primary effect measure: Hazard ratio (HR) per additional hour of hypotension below 70 mmHg
+
+### 3. Secondary Analysis
+- Test interaction with minimum MAP (does duration matter more at lower or higher minimums?)
+- Hospital-level analysis: Mixed-effects model to test for hospital-level variation [K3]
+- Subgroup analysis: By primary diagnosis (shock, sepsis, cardiac)
+
+### 4. Falsification Criteria
+- **Null**: No association between hypotension duration and AKI (HR = 1.0, 95% CI includes 1.0)
+- **Adverse**: Shorter duration of hypotension at same minimum pressure associated with lower AKI risk
+- **Supportive**: Longer duration of hypotension at same minimum pressure associated with higher AKI risk [K2]
+
+## 7. Clinical Significance
+
+**If supported** [K1]:
+1. **Risk Stratification**: Clinicians could use duration-based metrics to identify high-risk patients requiring more aggressive monitoring or intervention
+2. **Treatment Guidance**: May inform whether to target minimum pressure or duration of perfusion
+3. **Quality Improvement**: Hospital-level analysis could identify practices that need optimization
+
+**If rejected**:
+1. **Minimum Pressure Sufficient**: Suggests minimum blood pressure may be the most important metric
+2. **Need for Alternative Measures**: May require investigation of other hemodynamic parameters
+
+## 8. Data Availability and Limitations
+
+**Available Data**: All required tables are available in the eICU dataset:
+- `vitalAperiodic`: Blood pressure monitoring data
+- `infusionDrug`: Vasopressor administration records
+- `apacheApsVar`: Acute physiology scores and creatinine
+- `apachePatientResult`: Mortality outcomes
+- `patient`: Demographics
+- `hospital`: Hospital characteristics
+
+**Limitations** [K2], [K3]:
+1. **Artifact Handling**: Blood pressure monitoring may have artifacts that need careful handling
+2. **Resuscitation Timing**: Early hypotension may reflect shock severity rather than treatment failure
+3. **Hospital Heterogeneity**: Differences in monitoring density and artifact handling across hospitals
+4. **Confounding by Indication**: Patients with different underlying pathologies may have different hypotension patterns
+
+**Missing Evidence**:
+- **Ground Truth for Duration**: Need to verify that vital signs are accurate and not subject to measurement error
+- **Treatment Thresholds**: No clear evidence for optimal MAP targets in different patient populations
+- **Causal Mechanisms**: Observational design cannot establish causation
+
+## 9. Resource Requirements
+
+**Compute**: CPU-only analysis (no GPU needed for this study)
+- Data preprocessing: ~1-2 hours
+- Statistical analysis: ~1-2 hours
+- Total: ~3-4 hours of CPU time
+
+**Data Access**: Read-only access to eICU dataset tables
+- vitalAperiodic, infusionDrug, apacheApsVar, apachePatientResult, patient, hospital
+
+## 10. Key References
+
+### [K1] Lamontagne et al. (2020)
+**Title**: Effect of Reduced Exposure to Vasopressors on 90-Day Mortality in Older Critically Ill Patients With Vasodilatory Hypotension: A Randomized Clinical Trial.
+**Journal**: JAMA
+**DOI**: 10.1001/jama.2020.0930
+**Key Finding**: Permissive hypotension (lower MAP target of 60-65 mmHg) in older ICU patients was associated with higher rates of acute renal failure (3.2% vs 2.5%) compared to usual care, suggesting that blood pressure targets alone may not capture the full risk of hypotension on organ outcomes [K1]. The study measured vasopressor exposure and found lower total norepinephrine dose in the permissive hypotension group, which was associated with higher AKI rates.
+**Limitation**: The study focused on older patients (≥65 years) and measured vasopressor exposure rather than hypotension duration specifically. The association between permissive hypotension and AKI may reflect confounding by indication or underlying disease severity.
+**Locator**: Abstract and Results section, particularly the AKI rates and odds ratio for 90-day mortality.
+**Inspection**: abstract_only
+**Source URI**: https://pubmed.ncbi.nlm.nih.gov/32049269/
+
+### [K2] Expert Seed eICU-03
+**Title**: Duration of hypotension
+**Source**: Expert seed workbook ([starting question])
+**Key Finding**: Proposes that at the same minimum blood pressure, patients with longer-lasting hypotension experience more subsequent acute kidney injury [K2]. This expert seed proposal identifies an important gap in critical care practice: focusing on minimum blood pressure thresholds may miss the temporal dynamics of hypotension. The proposal suggests that duration-based measures may be more stable and informative than minimum blood pressure alone for predicting AKI risk.
+**Limitation**: This is an expert-proposed hypothesis without empirical validation. The proposal requires concrete data bindings, method specification, and reference delivery before further development. The expert seed does not provide evidence for the hypothesis, only a research question.
+**Locator**: Card [starting question], section 'Hypothesis to test'.
+**Inspection**: full_text
+**Source URI**: [internal dataset path]
+
+### [K3] Expert Seed eICU-01
+**Title**: Hospital differences in vasopressor strategies
+**Source**: Expert seed workbook ([starting question])
+**Key Finding**: Suggests hospital differences in treatment effects may relate to timing and titration practices [K3]. This expert seed proposal is relevant to the proposed analysis plan that includes hospital-level fixed effects and mixed-effects models to test for hospital variation in the hypotension-AKI relationship.
+**Limitation**: This is an expert-proposed hypothesis without empirical validation. The proposal requires careful analysis design, as hospital preference cannot automatically be used as an instrumental variable. The expert seed does not provide evidence for the hypothesis, only a research question.
+**Locator**: Card [starting question], section 'Hypothesis to test'.
+**Inspection**: full_text
+**Source URI**: [internal dataset path]

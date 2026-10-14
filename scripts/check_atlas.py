@@ -45,16 +45,19 @@ for p in list((ROOT/'proposals').glob('*.md'))+[ROOT/'data/atlas.json', ROOT/'da
 print(json.dumps({'nodes':len(ns),'generated':sum(not n['seed'] for n in ns),'edges':sum(len(n['parents']) for n in ns),'domains':dict(collections.Counter(n['domain'] for n in ns)),'lineage':'valid DAG','proposal_links':'complete','svg_coverage':'all nodes and edges','public_export_checks':'passed'},indent=2))
 
 # Reviewer-facing surfaces must not carry explicit producer attribution.
-producer=re.compile(r"(?i)\b(?:codex|qwen[\w.-]*|claude[\w.-]*|novita|openai|anthropic|deepseek[\w.-]*|polo|luna|discovery\s+rsi|gpt[- ]?(?:5|6)[\w.-]*)\b")
+producer=re.compile(r"(?i)\b(?:codex|qwen[\w.-]*|claude[\w.-]*|novita|openai|anthropic|deepseek[\w.-]*|glm[- ]?[0-9][\w.-]*|polo|luna|discovery\s*rsi|gpt[- ]?(?:5|6)[\w.-]*)\b")
 for p in list((ROOT/'proposals').glob('*.md'))+list((ROOT/'domains').glob('*.md'))+list((ROOT/'figures').glob('*.svg'))+[ROOT/'data/atlas.json',ROOT/'REVIEW.md',ROOT/'TRANSLATION.md']:
  s=p.read_text()
- assert not re.search('[\u3400-\u4dbf\u4e00-\u9fff]',s),(p.name,'untranslated Chinese')
+ if p.parent.name!='proposals':
+  assert not re.search('[\u3400-\u4dbf\u4e00-\u9fff]',s),(p.name,'untranslated catalog title')
  assert not producer.search(s),(p.name,'producer attribution')
  if p.parent.name=='proposals':
-  assert s.startswith('> **Anonymous English review copy.**'),p.name
+  assert s.startswith(('> **Anonymous English review copy.**','> **Anonymous source-language review copy.**')),p.name
+  if re.search('[\u3400-\u4dbf\u4e00-\u9fff]',s):
+   assert s.startswith('> **Anonymous source-language review copy.**'),(p.name,'source-language notice missing')
   assert not re.search(r'https://github\.com/[^\s)]+/blob/[0-9a-f]{7,40}/',s),(p.name,'individual provenance link')
   assert not re.search(r'^Date:\s*2026-',s,re.M),(p.name,'authoring date')
-print('English-only review surfaces and explicit-attribution blinding: passed')
+print('English catalog titles, correctly labeled review languages, and explicit-attribution blinding: passed')
 
 # Unblinded attribution must cover every node exactly once, separately from review copies.
 a=json.loads((ROOT/'data/model-attribution.json').read_text())
@@ -73,15 +76,28 @@ for row in rows:
  if n['seed']:
   assert r['campaign_id'] is None and row['model_id']==''
   assert row['type']=='starting question'
+  assert row['model_family']=='Imported starting question'
  else:
   c=campaigns[r['campaign_id']]
   assert row['type']=='generated version'
   assert row['model_id']==c['model_id'] and row['model_version']==c['model_version']
   assert row['campaign']==c['label'] and row['harness_version']==c['harness_version']
+  assert row['model_family']==c['model_family']
+  if c['model_id'] in ('qwen-original','qwen38-27b'):
+   assert row['model_family']=='Qwen original'
+  elif c['model_id'] in ('qwen-sft-256k','qwen38-27b-sft-256k','qwen38-27b-raft-r2-150'):
+   assert row['model_family']=='discoveryRSI (our model)'
 for cid,c in campaigns.items():
  page=(ROOT/f'models/{cid}.md').read_text()
  expected={i for i,r in records.items() if r['campaign_id']==cid}
  linked=re.findall(r'\[(D[1-4]-[A-F0-9]{10})\]\(',page)
  assert len(linked)==len(expected) and set(linked)==expected
  assert f'`{c["model_id"]}`' in page
+family_pages={'Qwen original':'qwen-original','discoveryRSI (our model)':'discoveryrsi','Claude':'claude','DeepSeek':'deepseek','GLM':'glm','GPT':'gpt'}
+for family,slug in family_pages.items():
+ expected={i for i,r in records.items() if r['campaign_id'] and campaigns[r['campaign_id']]['model_family']==family}
+ if not expected:continue
+ page=(ROOT/f'models/{slug}.md').read_text()
+ linked=re.findall(r'\[(D[1-4]-[A-F0-9]{10})\]\(',page)
+ assert len(linked)==len(expected) and set(linked)==expected,(family,'writer catalog coverage')
 print('Model attribution: complete, CSV consistent, campaign links exact, public boundaries passed')

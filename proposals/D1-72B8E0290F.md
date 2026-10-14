@@ -1,0 +1,413 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# Antimicrobial De-escalation in ICU Patients: Organ Function Effect Modification
+
+## Hypothesis to Test
+
+In ICU patients with culture-positive infections who receive antimicrobial de-escalation within 0-72 hours of culture positivity, patients with preserved baseline renal function (creatinine < 2.0 mg/dL) and no vasopressor use at admission have shorter ICU length of stay (ILS) compared to those with deteriorating organ function (creatinine \u2265 2.0 mg/dL or vasopressor use), after adjusting for severity of illness and infection characteristics.
+
+## Scientific Rationale
+
+Antimicrobial de-escalation (ADE) is a critical antimicrobial stewardship strategy aimed at reducing antimicrobial resistance by narrowing broad-spectrum coverage based on culture results and clinical response. While previous studies have examined ADE outcomes, they have largely focused on mortality without accounting for organ function as an effect modifier [K1].
+
+This study addresses an important gap by:
+1. **Defining a specific temporal window** (0-72 hours after culture positivity) for ADE, which aligns with clinical guidelines for when de-escalation can be safely initiated [K2]
+2. **Stratifying by organ function** using creatinine \u2265 2.0 mg/dL and vasopressor use as effect modifiers, recognizing that patients with compromised organ function may have different risk-benefit profiles for ADE [K3]
+3. **Using ICU length of stay (ILS)** as the primary outcome, which captures both mortality and resource utilization, providing a more comprehensive measure of treatment success than mortality alone
+
+## Study Population
+
+**Inclusion Criteria:**
+- ICU-admitted patients aged \u226518 years
+- Admission from general wards, surgical wards, or other ICU transfers
+- Development of culture-positive infection (hosp/microbiologyevents with positive culture)
+- Initiation of antimicrobial therapy within 48 hours of ICU admission
+- Availability of culture results and antimicrobial prescriptions within 0-72 hours of culture positivity
+
+**Exclusion Criteria:**
+- Age < 18 years
+- Missing critical variables (creatinine, vasopressor use, antimicrobial prescriptions)
+- Patients with prior ICU stay in the same hospitalization episode
+- Patients receiving source control procedures that would alter the infection trajectory
+
+## Data Bindings to MIMIC-IV Tables
+
+### Primary Data Sources
+
+1. **hosp/admissions**: Patient admission records
+   - `admission_id`: Primary key
+   - `hadm_id`: Hospital admission identifier
+   - `icu_charge_flag`: ICU admission indicator
+   - `admission_discharge_diagnosis_icd`: Primary diagnosis
+   - `admission_discharge_disposition`: Disposition code
+
+2. **hosp/patients**: Patient demographics and baseline characteristics
+   - `patient_id`: Primary key
+   - `age`: Age in years
+   - `sex`: Sex (M/F)
+   - `race`: Race identifier
+   - `ethnicity`: Ethnicity identifier
+   - `height_cm`, `weight_kg`: Anthropometric measures
+   - `weight_kg`: Body weight at admission
+
+3. **hosp/d_labitems**: Laboratory test definitions
+   - `labitem_id`: Primary key
+   - `labitem_name`: Test name
+   - `labitem_unit`: Test units
+
+4. **hosp/d_labvalues**: Laboratory test results
+   - `labvalue_id`: Primary key
+   - `patient_id`: Patient identifier
+   - `hadm_id`: Hospital admission identifier
+   - `labitem_id`: Laboratory test identifier
+   - `result`: Numerical result
+   - `result_type`: Result type (Q, I, C, S, N)
+   - `value_type`: Value type (numeric, categorical)
+
+5. **hosp/emar**: Emergency department admissions
+   - `emadmission_id`: Primary key
+   - `patient_id`: Patient identifier
+   - `hadm_id`: Hospital admission identifier
+   - `edadmission_datetime`: ED admission timestamp
+
+6. **hosp/services**: ICU service records
+   - `service_id`: Primary key
+   - `patient_id`: Patient identifier
+   - `hadm_id`: Hospital admission identifier
+   - `service_datetime`: Service timestamp
+   - `service_type`: Service type code
+
+7. **icu/icustays**: ICU stay records
+   - `icustay_id`: Primary key
+   - `patient_id`: Patient identifier
+   - `hadm_id`: Hospital admission identifier
+   - `icustay_start_datetime`: ICU admission timestamp
+   - `icustay_end_datetime`: ICU discharge timestamp
+   - `icu_charge_flag`: ICU admission indicator
+
+8. **icu/datetimeevents**: ICU events timeline
+   - `datetimeevent_id`: Primary key
+   - `patient_id`: Patient identifier
+   - `hadm_id`: Hospital admission identifier
+   - `icustay_id`: ICU stay identifier
+   - `event_datetime`: Event timestamp
+   - `event_type`: Event type code
+   - `event_value`: Event value
+
+9. **hosp/poe**: Pharmacy orders
+   - `poa_id`: Primary key
+   - `patient_id`: Patient identifier
+   - `hadm_id`: Hospital admission identifier
+   - `poa_datetime`: Order timestamp
+   - `drug_id`: Drug identifier
+   - `drug_strength`: Drug strength
+   - `drug_quantity`: Drug quantity
+
+10. **hosp/poe_detail**: Pharmacy order details
+    - `poa_detail_id`: Primary key
+    - `poa_id`: Pharmacy order identifier
+    - `drug_id`: Drug identifier
+    - `drug_name`: Drug name
+    - `drug_class`: Drug class
+    - `drug_ather`: ATC classification
+    - `drug_generic_name`: Generic drug name
+    - `drug_strength`: Drug strength
+    - `drug_quantity`: Drug quantity
+    - `drug_unit`: Drug unit
+
+11. **hosp/prescriptions**: Prescriptions
+    - `prescription_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `prescription_datetime`: Prescription timestamp
+    - `drug_id`: Drug identifier
+
+12. **hosp/pharmacy**: Pharmacy records
+    - `pharmacy_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `pharmacy_datetime`: Pharmacy timestamp
+    - `drug_id`: Drug identifier
+    - `drug_name`: Drug name
+    - `drug_strength`: Drug strength
+    - `drug_quantity`: Drug quantity
+    - `drug_unit`: Drug unit
+
+13. **hosp/microbiologyevents**: Microbiology events
+    - `microbiologyevent_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `microbiologyevent_datetime`: Microbiology event timestamp
+    - `microbiologyevent_type`: Event type
+    - `microbiologyevent_value`: Event value
+    - `microbiologyevent_category`: Category
+    - `microbiologyevent_subtype`: Subtype
+
+14. **hosp/diagnoses_icd**: ICD-9 diagnoses
+    - `diagnosis_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `diag_icd`: ICD-9 code
+    - `diag_icd_date`: Diagnosis date
+    - `diag_icd_type`: Diagnosis type
+
+15. **hosp/d_icd_diagnoses**: ICD-10 diagnoses
+    - `diagnosis_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `diag_icd`: ICD-10 code
+    - `diag_icd_date`: Diagnosis date
+    - `diag_icd_type`: Diagnosis type
+
+16. **hosp/drgcodes**: DRG codes
+    - `drgcode_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `drg_code`: DRG code
+    - `drg_date`: DRG date
+
+17. **hosp/hcpcsevents**: HCPCS events
+    - `hcpcsevent_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `hcpcs_code`: HCPCS code
+    - `hcpcs_date`: HCPCS date
+    - `hcpcs_type`: HCPCS type
+
+18. **hosp/transfers**: Patient transfers
+    - `transfer_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `transfer_datetime`: Transfer timestamp
+    - `transfer_type`: Transfer type
+    - `transfer_destination`: Destination
+
+19. **icu/caregiver**: ICU caregiver information
+    - `caregiver_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `caregiver_id`: Caregiver identifier
+    - `caregiver_datetime`: Caregiver timestamp
+
+20. **icu/chartevents**: ICU chart events
+    - `chartevent_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `icustay_id`: ICU stay identifier
+    - `chartevent_datetime`: Event timestamp
+    - `chartevent_type`: Event type
+    - `chartevent_value`: Event value
+
+21. **icu/datetimeevents**: ICU datetime events
+    - `datetimeevent_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `icustay_id`: ICU stay identifier
+    - `event_datetime`: Event timestamp
+    - `event_type`: Event type
+    - `event_value`: Event value
+
+22. **icu/d_items**: ICU items
+    - `item_id`: Primary key
+    - `item_name`: Item name
+    - `item_code`: Item code
+
+23. **icu/ingredientevents**: ICU ingredient events
+    - `ingredientevent_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `icustay_id`: ICU stay identifier
+    - `ingredientevent_datetime`: Event timestamp
+    - `ingredientevent_value`: Ingredient event value
+
+24. **icu/inputevents**: ICU input events
+    - `inputevent_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `icustay_id`: ICU stay identifier
+    - `inputevent_datetime`: Event timestamp
+    - `inputevent_value`: Input event value
+
+25. **icu/outputevents**: ICU output events
+    - `outputevent_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `icustay_id`: ICU stay identifier
+    - `outputevent_datetime`: Event timestamp
+    - `outputevent_value`: Output event value
+
+26. **icu/procedureevents**: ICU procedure events
+    - `procedureevent_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `icustay_id`: ICU stay identifier
+    - `procedureevent_datetime`: Event timestamp
+    - `procedureevent_type`: Procedure type
+    - `procedureevent_value`: Procedure value
+
+27. **note/discharge**: Discharge notes
+    - `discharge_note_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `discharge_note_datetime`: Note timestamp
+    - `discharge_note_type`: Note type
+    - `discharge_note_text`: Note text
+
+28. **note/discharge_detail**: Discharge note details
+    - `discharge_note_detail_id`: Primary key
+    - `discharge_note_id`: Discharge note identifier
+    - `discharge_note_detail_type`: Detail type
+    - `discharge_note_detail_text`: Detail text
+
+29. **note/radiology**: Radiology notes
+    - `radiology_note_id`: Primary key
+    - `patient_id`: Patient identifier
+    - `hadm_id`: Hospital admission identifier
+    - `radiology_note_datetime`: Note timestamp
+    - `radiology_note_type`: Note type
+    - `radiology_note_text`: Note text
+
+30. **note/radiology_detail**: Radiology note details
+    - `radiology_note_detail_id`: Primary key
+    - `radiology_note_id`: Radiology note identifier
+    - `radiology_note_detail_type`: Detail type
+    - `radiology_note_detail_text`: Detail text
+
+## Primary Outcome
+
+**ICU Length of Stay (ILS)**: Time from ICU admission to ICU discharge, measured in days.
+
+## Exposure: Antimicrobial De-escalation
+
+**Definition**: Narrowing of antimicrobial coverage within 0-72 hours after culture positivity, defined as:
+- Initial broad-spectrum antimicrobial therapy (based on clinical judgment)
+- Culture results available within 0-72 hours of ICU admission
+- Initiation of narrow-spectrum antimicrobial therapy within 0-72 hours of culture positivity
+- Narrow-spectrum defined as targeting specific pathogens identified in culture
+
+**De-escalation Classification**:
+- **De-escalated**: Narrowing of antimicrobial coverage within 0-72 hours
+- **Continued**: No narrowing of antimicrobial coverage within 0-72 hours
+- **De-escalated after 72 hours**: Narrowing after 72 hours (excluded from primary analysis)
+
+## Effect Modification: Organ Function
+
+**Creatinine Stratification**:
+- **Preserved renal function**: Baseline creatinine < 2.0 mg/dL
+- **Impaired renal function**: Baseline creatinine \u2265 2.0 mg/dL
+
+**Vasopressor Use**:
+- **No vasopressors**: No vasopressor use at ICU admission
+- **Vasopressor use**: Vasopressor use at ICU admission (dopamine, dobutamine, norepinephrine, epinephrine, vasopressin)
+
+**Interaction Terms**:
+- Creatinine \u00d7 De-escalation
+- Vasopressor \u00d7 De-escalation
+- Creatinine \u00d7 Vasopressor \u00d7 De-escalation
+
+## Covariates
+
+### Severity of Illness
+- APACHE II score at ICU admission
+- SOFA score at ICU admission
+- MODS (Multiple Organ Dysfunction Score)
+
+### Infection Characteristics
+- Source of infection (respiratory, urinary, surgical, etc.)
+- Time to culture positivity
+- Culture results (positive/negative)
+- Pathogen identification (if available)
+- Antimicrobial susceptibility (if available)
+
+### Patient Characteristics
+- Age
+- Sex
+- Race
+- Ethnicity
+- Comorbidities (CHIPS score: Cancer, Heart disease, Immunosuppression, Pulmonary disease)
+- Prior ICU stay in same hospitalization episode
+
+### Treatment Characteristics
+- Initial antimicrobial regimen (broad vs. narrow spectrum)
+- Duration of initial therapy
+- Number of antimicrobial classes used
+- Source control procedures
+
+## Analysis Plan
+
+### Statistical Approach
+
+**Primary Analysis**: Propensity score matching (PSM) followed by inverse probability weighting (IPW)
+
+1. **Propensity Score Model**:
+   - Logistic regression to estimate propensity score for de-escalation
+   - Covariates: All pre-exposure variables (demographics, severity, infection characteristics, initial treatment)
+   - Matching: 1:1 nearest neighbor matching with caliper of 0.2 standard deviations of the logit
+   - Balance assessment: Standardized mean differences < 0.1 for all covariates
+
+2. **Primary Outcome Analysis**:
+   - Linear regression on ICU length of stay (ILS)
+   - Main effect: De-escalation \u00d7 Organ function interaction
+   - Model: ILS = \u03b2\u2080 + \u03b2\u2081(De-escalation) + \u03b2\u2082(Organ Function) + \u03b2\u2083(De-escalation \u00d7 Organ Function) + \u03b2\u2084(Covariates) + \u03b5
+   - Organ Function coded as: 0 = preserved (creatinine < 2.0 mg/dL, no vasopressors), 1 = impaired (creatinine \u2265 2.0 mg/dL or vasopressor use)
+
+3. **Secondary Analyses**:
+   - Multiple imputation for missing data (10 imputations)
+   - Sensitivity analyses:
+     - Alternative de-escalation windows (0-48 hours, 0-72 hours, 24-72 hours)
+     - Different organ function thresholds (creatinine \u2265 1.5 mg/dL, \u2265 2.0 mg/dL, \u2265 3.0 mg/dL)
+     - Propensity score stratification (quintiles)
+     - Instrumental variable analysis (if valid instrument identified)
+
+### Falsification Criteria
+
+The hypothesis will be **falsified** if:
+- No significant interaction effect between de-escalation and organ function (p > 0.05)
+- De-escalation is associated with longer ILS in patients with preserved organ function (\u03b2\u2081 > 0)
+- De-escalation is associated with shorter ILS in patients with impaired organ function (\u03b2\u2081 < 0)
+- Propensity score matching fails to achieve covariate balance (any standardized mean difference > 0.2)
+
+The hypothesis will be **supported** if:
+- Significant positive interaction effect (p < 0.05): De-escalation is associated with shorter ILS in patients with preserved organ function compared to impaired organ function
+- Effect size: Interaction coefficient \u03b2\u2083 < -0.5 days (clinically meaningful difference)
+
+## Compute Requirements
+
+**CPU**: 8 cores
+**Memory**: 32 GB
+**GPU**: 0
+**Time**: 1800 seconds (30 minutes)
+
+**Software Dependencies**:
+- Python 3.10+
+- pandas, numpy, scikit-learn (for propensity score matching)
+- statsmodels (for regression analysis)
+- lifelines (for survival analysis)
+
+**Data Processing Steps**:
+1. Data loading and cleaning (300 seconds)
+2. Variable construction and derivation (300 seconds)
+3. Propensity score estimation and matching (600 seconds)
+4. Outcome analysis (600 seconds)
+
+## Clinical Importance
+
+This study addresses a critical gap in antimicrobial stewardship research by:
+1. **Defining a clinically actionable window** for de-escalation (0-72 hours), which can guide clinical practice [K2]
+2. **Identifying effect modifiers** of de-escalation outcomes, which will help identify patients who may benefit most from this intervention [K3]
+3. **Using a more comprehensive outcome** (ILS) than mortality, which captures both clinical success and resource utilization
+4. **Providing evidence** to support or refute the safety and efficacy of de-escalation in patients with compromised organ function
+
+## Limitations and Unresolved Questions
+
+1. **Missing data**: Some MIMIC-IV tables have incomplete data for certain variables
+2. **Unmeasured confounding**: Propensity score matching cannot account for unmeasured confounders
+3. **Temporal ambiguity**: Culture results may not be precisely timestamped
+4. **Source control**: The study cannot account for the timing of source control procedures
+5. **Generalizability**: Results may not be applicable to other ICU populations or healthcare systems
+
+## Key References
+
+- **K1**: Joung MK, et al. "Impact of de-escalation therapy on clinical outcomes for intensive care unit-acquired pneumonia." Crit Care. 2011;15(2):R79. DOI: 10.1186/cc10072
+- **K2**: Tabah A, et al. "Antimicrobial de-escalation in critically ill patients: a position statement from a task force of the European Society of Intensive Care Medicine (ESICM) and European Society of Clinical Microbiology and Infectious Diseases (ESCMID) Critically Ill Patients Study Group (ESGCIP)." Intensive Care Med. 2020;46(2):245-265. DOI: 10.1007/s00134-019-05866-w
+- **K3**: Bagshaw SM, et al. "Acute kidney injury in critically ill children and young adults." N Engl J Med. 2017;376(1):11-20. DOI: 10.1056/NEJMoa1611391

@@ -1,6 +1,6 @@
 # Blinded expert scientific review
 
-Please open the linked **anonymous English scientific proposal** before judging the research question. Each domain page groups questions by dataset and shows only recorded parent links. A node may be an initial question, a revision, or a new direction; operational outcomes are intentionally absent.
+Please open the linked **anonymous scientific proposal** before judging the research question. Catalog titles are in English. Review copies identify whether they are English or retain Chinese source passages. Each domain page groups questions by dataset and shows only recorded parent links. A node may be an initial question, a revision, or a new direction; operational outcomes are intentionally absent.
 
 ![Anonymous domain hypothesis trees](figures/overview.svg)
 
@@ -26,6 +26,6 @@ Please review independently before discussing judgments with other reviewers. We
 
 Use the current domain catalogs and anonymous proposal copies for your initial assessment. Do not consult aggregate campaign information or repository history until you have submitted your independent review. Record only the anonymous hypothesis ID on the review form.
 
-Every proposal uses the same review header. Producer, provider, campaign, authoring-date metadata, and individual provenance links are withheld. Exact originals and source-to-review mappings are retained privately. Scientific methods, citations, and dataset descriptions are preserved; a model mentioned in a cited study is part of the scientific context, not an attribution of the hypothesis.
+Every proposal uses an anonymous review header with its language status. Producer, provider, campaign, authoring-date metadata, and individual provenance links are withheld. Exact originals and source-to-review mappings are retained privately. Scientific methods, citations, and dataset descriptions are preserved; a model mentioned in a cited study is part of the scientific context, not an attribution of the hypothesis.
 
-The hypotheses retain their scientific wording and therefore may still differ in style. This is explicit-attribution blinding, not a guarantee against inference from style or prior familiarity. See [English edition notes](TRANSLATION.md).
+The hypotheses retain their scientific wording and therefore may still differ in style. This is explicit-attribution blinding, not a guarantee against inference from style or prior familiarity. See [language and blinding notes](TRANSLATION.md).

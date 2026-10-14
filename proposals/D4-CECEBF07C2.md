@@ -1,0 +1,123 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# Scientific Proposal: Proteomic Aging Clocks and Disease-Specific Risk Prediction
+
+## Unresolved Question
+
+**Current understanding:** Multiple studies have demonstrated that proteomic "aging clocks" can predict mortality and overall health trajectories [K1]. However, it remains unknown whether:
+1. Different aging clock signatures can predict disease-specific progression within different organ systems
+2. Proteomic aging accelerates independently of chronological age and traditional clinical risk factors
+3. Aging clock signatures can be combined with clinical data to improve disease-specific risk stratification
+
+**The gap:** While proteomic aging has been studied in isolation [K1], there is no systematic investigation of whether disease-specific aging signatures exist and whether they improve prediction over traditional clinical risk scores.
+
+## Hypothesis
+
+**Main hypothesis:** In UK Biobank participants, proteomic aging clock signatures predict future incident diabetes and cardiovascular disease independently of chronological age and traditional clinical risk factors, with distinct clock signatures for each disease domain [K1].
+
+**Sub-hypothesis:** A combined proteomic-chronological aging signature outperforms traditional clinical risk scores (e.g., Framingham, QRISK) in predicting incident diabetes and cardiovascular disease over 10-year follow-up.
+
+## Clinical Importance
+
+1. **Early risk stratification:** Proteomic aging clocks could identify high-risk individuals before traditional risk factors manifest clinically
+2. **Precision medicine:** Disease-specific aging signatures could guide targeted prevention strategies
+3. **Biomarker discovery:** Accelerated aging signatures may point to novel therapeutic targets for age-related diseases
+
+## Substantive Advance Over Existing Knowledge
+
+1. **Beyond mortality:** Most proteomic aging studies focus on all-cause mortality [K1]; this proposes disease-specific prediction
+2. **Mechanistic insight:** Distinct signatures for different disease domains suggest system-level biological differences
+3. **Clinical integration:** Comparison with traditional risk scores addresses practical utility
+
+## Study Design
+
+### Population
+UK Biobank participants with proteomic measurements (assessment table) and incident diabetes/CVD outcomes (health_outcomes table)
+
+### Temporal Boundaries
+Baseline assessment through 10-year follow-up (or longest follow-up available)
+
+### Exposure
+Proteomic aging clock scores (derived from proteomic columns in assessment table)
+
+### Outcomes
+- Incident diabetes (health_outcomes table)
+- Incident cardiovascular disease (health_outcomes table)
+- All-cause mortality (health_outcomes table)
+
+### Covariates
+Chronological age, sex, baseline BMI, smoking status, education, socioeconomic status (from population table)
+
+## Baseline Comparison
+
+**Traditional approach:** Cox proportional hazards models with traditional clinical risk scores (Framingham, QRISK) as reference
+
+**Learned alternative:** Random forest or gradient boosting classifier trained on proteomic features to derive disease-specific aging signatures [K2].
+
+**Scientific question:** What information does the learned alternative reveal that the baseline loses?
+- The baseline assumes aging is a linear, chronological process
+- The learned approach can capture non-linear, multi-factorial aging trajectories [K2]
+- The learned approach can identify which proteomic features drive disease risk
+- The learned approach can potentially capture interactions between proteomic features
+
+## Falsification Criteria
+
+The hypothesis would be falsified if:
+1. Aging clock signatures show no association with incident disease after adjusting for chronological age and traditional risk factors
+2. No disease-specific patterns emerge (all clocks predict similar outcomes equally)
+3. Traditional clinical risk scores outperform proteomic signatures in prediction
+
+## Required Data Bindings
+
+### Tables
+- **assessment table:** Proteomic measurements (columns 3, 4, 5, 6, 19, 21, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 53, 54, 55, 62, 68, 74, 77, 78, 84, 87, 92, 93, 94, 95, 96, 102, 111, 120, 129, 130, 134, 135, 136, 137, 200, 393, 396, 397, 398, 399, 400, 401, 402, 403, 404, 630, 670, 680, 699, 709, 728, 738, 757, 767, 777, 796, 806, 816, 826, 845, 864, 874, 884, 894, 904, 914, 924, 943, 971, 981, 991, 1001, 1011, 1021, 1031, 1050, 1060, 1070, 1080, 1090, 1100, 1110, 1120, 1130, 1140, 1150, 1160, 1170, 1180, 1190, 1200, 1210, 1220, 1239, 1249, 1259, 1269, 1279, 1289, 1299, 1309, 1319, 1329, 1339, 1349, 1359, 1369, 1379, 1389, 1408, 1418, 1428, 1438, 1448, 1458, 1468, 1478, 1488, 1498, 1508, 1518, 1528, 1538, 1548, 1558, 1568, 1578, 1588, 1598, 1608, 1618, 1628, 1647, 1677, 1687, 1697, 1707, 1717, 1727, 1737, 1747, 1757, 1767, 1777, 1787, 1797, 1807, 1835, 1845, 1873, 1883, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020, 2030, 2040...)
+- **health_outcomes table:** Incident disease events
+- **population table:** Demographics and traditional risk factors
+
+## Key References
+
+**K1:** Organ-specific proteomic aging clocks predict disease and longevity across diverse populations (Nature Aging, 2025) - establishes proteomic aging concept [10.1038/s43587-025-01016-8]
+
+**K2:** Delphi: learned disease sequences for predicting future health events (Nature, 2025) - demonstrates machine learning approaches to disease progression [10.1038/s41586-025-09529-3]
+
+**K3:** Severe Infection and Risk of Cardiovascular Disease: A Multicohort Study (Circulation, 2022) - shows infection-related cardiovascular risk, relevant for understanding disease-specific pathways [10.1161/CIRCULATIONAHA.122.061183]
+
+## Missing Evidence / Clinical Adjudication Required
+
+1. **Proteomic column labels:** The exact biological meaning of each proteomic column needs annotation
+2. **Outcome definitions:** Need to verify how diabetes and CVD are defined in health_outcomes table
+3. **Follow-up time:** Need to confirm maximum follow-up duration
+4. **Missing data handling:** Need to understand how missing proteomic values are handled
+5. **Clinical risk score availability:** Need to verify traditional risk scores are available or can be computed
+
+## Compute Requirements
+
+**Discovery phase:** Small feasibility probe to:
+- Load and inspect proteomic data structure
+- Estimate number of participants with complete proteomic data
+- Check outcome definitions
+- Run a simple correlation analysis
+
+**Solver phase:**
+- Feature engineering for aging clocks
+- Model training (random forest, gradient boosting, or neural network)
+- Model evaluation and comparison with traditional risk scores
+
+**GPU consideration:** GPU may benefit neural network approaches, but tree-based models can run on CPU. Given the discovery budget (3600 science seconds), a small feasibility probe using GPU is warranted.
+
+## Selection Reasoning
+
+This proposal builds on the expert seed ukb-02 (organ aging and multimorbidity) but addresses an unresolved question: whether proteomic aging can be used for disease-specific prediction beyond mortality [K1]. The expert seed focuses on differences between organ ages, while this proposal investigates whether a unified aging clock can predict specific diseases.
+
+The proposal advances beyond existing knowledge by:
+1. Testing disease-specific prediction (not just mortality) [K1]
+2. Comparing with traditional clinical risk scores
+3. Using machine learning to derive aging signatures from proteomic data [K2]
+
+## Next Steps
+
+1. Launch feasibility probe to assess data availability and structure
+2. Inspect outcome definitions in health_outcomes table
+3. Evaluate proteomic data completeness
+4. If feasible, proceed with model development
+5. If not feasible, document missing dependencies and consider alternative approaches

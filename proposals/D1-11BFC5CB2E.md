@@ -1,0 +1,49 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# Provisional successor: hypotension duration versus nadir for early AKI in eICU
+
+## Proposed relationship
+Among adults in a qualifying eICU ICU stay with at least one valid systolic blood-pressure measurement below 65 mmHg during ICU time 0–24 hours, greater cumulative time below 65 mmHg is associated with higher risk of new or worsening acute kidney injury during the subsequent 24–72 hours, after accounting for baseline illness severity, prior vasopressor exposure, and hospital. The duration signal is expected to add reproducible information beyond the admission nadir alone.
+
+This is an association hypothesis, not a causal claim that lowering blood pressure causes AKI or that 65 mmHg is a treatment target.
+
+## Clinical importance and unresolved question
+A single nadir may be transient or artifact-prone, whereas sustained hypotension may represent a different exposure burden. The unresolved question is whether duration and trajectory add clinically meaningful information about subsequent AKI beyond the nadir, rather than merely reflecting severity, measurement frequency, or treatment response. Resolving this could inform whether early AKI risk assessment should use duration/trajectory rather than a single minimum value.
+
+## Evidence supporting the opening
+A perioperative study used time-weighted MAP <65 mmHg as a reference hypotension burden and found that waveform morphology did not improve postoperative AKI prediction beyond that burden; it does not answer the eICU duration-versus-nadir question [K1]. An ICU AKI review describes AKI as heterogeneous and dynamic, with creatinine-centered diagnosis necessary but insufficient and urine-output and hemodynamic context important [K2]. An EHR methods study shows that missingness and observation processes can affect dynamic prediction and compared missing-indicator and imputation strategies [K3]. These works motivate the proposed test but do not establish it. No computed eICU effect estimate is claimed.
+
+## Exact data bindings
+Use only eICU rows and documented eICU identifiers; no cross-dataset identity matching is permitted. All source files are ordinary-file archive members under the exact read-only paths in `datasets/eicu/README.md`.
+
+- `patient` (`patient.csv.gz`): `patientunitstayid`, `patienthealthsystemstayid`, `uniquepid`, `hospitalid`, `age`, `gender`, `unitadmittime24`, `unitdischargeoffset`, `unitdischargestatus`.
+- `vitalPeriodic` (`vitalPeriodic.csv.gz`): `patientunitstayid`, `observationoffset`, `systemicsystolic`.
+- `vitalAperiodic` (`vitalAperiodic.csv.gz`): `patientunitstayid`, `observationoffset`, `noninvasivesystolic`.
+- `lab` (`lab.csv.gz`): `patientunitstayid`, `labresultoffset`, `labname`, `labresult`, `labmeasurenamesystem`, `labresultrevisedoffset`; select the verified `creatinine` item.
+- `infusionDrug` (`infusionDrug.csv.gz`): `patientunitstayid`, `infusionoffset`, `drugname`, `drugrate`, `infusionrate`, `drugamount`; verify vasopressor labels before use.
+- `intakeOutput` (`intakeOutput.csv.gz`): `patientunitstayid`, `intakeoutputoffset`, `outputtotal`, `celllabel`, `cellvaluenumeric`; use urine-output AKI only if item semantics, weight, and timing are verified.
+- `hospital` (`hospital.csv.gz`): `hospitalid`, `numbedscategory`, `teachingstatus`, `region`; use for hospital-held-out evaluation.
+
+Join longitudinal tables by `patientunitstayid`; join hospital context by `hospitalid`. Source rows remain read-only; derived cohort, exposure, outcome, and analysis files go under the branch workspace. Direct source-header inspection confirmed the listed headers. A full source dictionary scan confirmed 1,277,760 `creatinine` lab rows, common norepinephrine/vasopressin/phenylephrine/epinephrine infusion labels, and urine/weight labels in `intakeOutput`; this establishes availability, not clinical validity.
+
+## Population, timing, exposure, and outcome
+Qualifying population: adults (`age >=18` at admission) in a single qualifying ICU admission with a valid ICU start time and at least one valid systolic BP <65 mmHg in the first 24 hours. Exclude records lacking the required admission identifier or with impossible/ambiguous timestamps.
+
+Primary exposure window: ICU time 0–24 hours. Derive valid systolic BP from both vital tables, cumulative minutes below 65 mmHg, nadir, and measurement counts. Use piecewise-linear interpolation between valid measurements, with no extrapolation beyond the first/last observed measurement. Flag or exclude physiologically implausible values using a prespecified range. Sensitivity analyses use no interpolation, a shorter interpolation gap, and adjustment for measurement count/observation intensity.
+
+Primary outcome window: 24–72 hours, so the outcome is assessed after the exposure window is complete. Define baseline as the last valid creatinine before or at ICU time 0 when available; otherwise use the first creatinine in a prespecified pre-exposure window, with missingness reported rather than silently imputed as normal. Primary outcome is new or worsening AKI by KDIGO-compatible creatinine criteria: creatinine increase >=0.3 mg/dL within 48 hours from baseline, or >=1.5 times baseline if the rise is documented within the outcome window. Use the earliest qualifying event and retain time to event. Secondary urine-output AKI is included only if `intakeOutput` item semantics, weight, and timing are verified; otherwise report it as unavailable rather than substitute a proxy.
+
+## Baseline versus substantive alternative
+The simple baseline is a prespecified hospital-stratified logistic model using nadir systolic BP in 0–24 hours, age, sex, baseline creatinine, and available baseline severity/vasopressor context. The substantive time-aware alternative adds cumulative hypotension minutes, time below threshold in prespecified intervals, last BP before window end, and a simple recovery/trajectory feature, while retaining nadir. The alternative can reveal whether sustained exposure, recovery after the nadir, or observation density carries information that a single minimum discards. It is scientifically useful only if those features are stable and not merely proxies for measurement intensity or treatment; otherwise the baseline remains preferred.
+
+Evaluate both models on the same rows, with a hospital-held-out split and the same outcome definition and uncertainty procedure. Report duration effect estimates and confidence intervals, calibration, and hospital-held-out discrimination as secondary descriptive outputs. Compare direction and uncertainty across hospitals. A complex sequence model is deferred because the available data cannot distinguish hypotension-mediated kidney injury from severity, treatment, and observation artifacts; revisit it only if a bounded diagnostic shows that trajectory information is materially unavailable to the simpler representation.
+
+## Falsification and interpretation
+The hypothesis is supported if duration adds reproducible information beyond nadir with a prespecified direction and uncertainty, and the result is not explained solely by observation density or a single hospital. It is adverse if duration adds no information, reverses after prespecified adjustment, or is confined to artifact-prone measurements. It is inconclusive if AKI ascertainment, timestamp validity, or sampling is too sparse to estimate the comparison reliably. Any causal interpretation, treatment threshold, or mechanism requires additional clinical adjudication, richer treatment/etiology data, and prospective or quasi-experimental evidence.
+
+## Scientific deliverable and limitations
+The actual deliverable is a newly fitted baseline and time-aware analysis with a frozen cohort, exposure/outcome timing, uncertainty, hospital-held-out evaluation, and interpretation tied to computed outputs. No full study result has been computed in discovery. Clinical adjudication of AKI, reasons for missing measurements, interface interruptions, discharge/transfer, and end-of-life treatment limitations are not assumed available. The attached works were inspected through returned abstract/article excerpts and are labeled abstract-only; no unavailable full text is claimed.
+
+
+## Episode-9 provisional status
+This is a provisional successor registered at the early-draft checkpoint. It preserves the inherited question and exact eICU design, but no new effect estimate, clinical adjudication, or full-study result has been computed in this episode. The three attached works remain the current inspected evidence; any revision must preserve their abstract-only scope and frozen receipts. Remaining decisions are whether the primary outcome window, urine-output ascertainment, and observation-intensity adjustment should be refined after a bounded source/semantic check.

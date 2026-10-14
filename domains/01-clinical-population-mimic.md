@@ -6,7 +6,16 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 ## MIMIC-IV
 
-665 nodes
+998 nodes
+
+<a id="d1-000a6b7841"></a>
+### D1-000A6B7841 · Discordant renal recovery after creatinine-based AKI: a multi-hospital eICU-CRD 2.0 cohort study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-000A6B7841.md)
+
+**Derived from:** [D1-C5C5B65EAE](#d1-c5c5b65eae)
+
+**Type:** Generated hypothesis version
 
 <a id="d1-003bbd20c5"></a>
 ### D1-003BBD20C5 · Observed creatinine/Foley discordance after an early ICU renal insult
@@ -35,6 +44,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Starting question
 
+<a id="d1-00913ea3c2"></a>
+### D1-00913EA3C2 · Asynchronous Organ Recovery: Persistent Respiratory Failure After Circulatory Stabilization and Risk of Circulatory Re-Escalation
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-00913EA3C2.md)
+
+**Derived from:** [D1-04A03E8ABF](#d1-04a03e8abf)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-00da4ce79e"></a>
+### D1-00DA4CE79E · Does perfusion status modify the effect of early loop-diuretic initiation on mortality in sepsis? (Diuretic-timing effect modification in MIMIC-IV v3.1)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-00DA4CE79E.md)
+
+**Derived from:** [D1-5F3668761C](#d1-5f3668761c)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-01136dc404"></a>
 ### D1-01136DC404 · Episode 60: restore the output recording clock and test recording-lag sensitivity
 
@@ -62,6 +89,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-01f07ffb03"></a>
+### D1-01F07FFB03 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-01F07FFB03.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-026bffc1ac"></a>
+### D1-026BFFC1AC · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-026BFFC1AC.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-026f4bd433"></a>
 ### D1-026F4BD433 · An independently anchored departure-status ledger for copied, tentative, completed, and superseded recommendations
 
@@ -77,6 +122,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-02D5A07582.md)
 
 **Derived from:** [D1-2762FC75C9](#d1-2762fc75c9)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-02d99a723b"></a>
+### D1-02D99A723B · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-02D99A723B.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
 
 **Type:** Generated hypothesis version
 
@@ -116,6 +170,33 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-041b0870b7"></a>
+### D1-041B0870B7 · Residual instability before ICU discharge (MIMIC-IV, episode 20)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-041B0870B7.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-046ec6c50a"></a>
+### D1-046EC6C50A · Multi-Organ Recovery Trajectory Hypothesis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-046EC6C50A.md)
+
+**Derived from:** [D1-E363DF23C9](#d1-e363df23c9)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-04703b833d"></a>
+### D1-04703B833D · Episode 6 provisional hypothesis: discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-04703B833D.md)
+
+**Derived from:** [D1-E8689C0248](#d1-e8689c0248)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-04a03e8abf"></a>
 ### D1-04A03E8ABF · Asynchronous organ recovery
 
@@ -134,12 +215,66 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-051a3b1ac2"></a>
+### D1-051A3B1AC2 · Episode 48 (MIMIC-IV island) — EVOLUTION of board leader [prior hypothesis]
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-051A3B1AC2.md)
+
+**Derived from:** [D1-71B36EEF4D](#d1-71b36eef4d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-05702c42b5"></a>
+### D1-05702C42B5 · Episode-3 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-05702C42B5.md)
+
+**Derived from:** [D1-E8689C0248](#d1-e8689c0248)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-0586662198"></a>
+### D1-0586662198 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-0586662198.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-05a8fe4955"></a>
+### D1-05A8FE4955 · Persistent hyperlactatemia with divergent perfusion trajectories: a refined MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-05A8FE4955.md)
+
+**Derived from:** [D1-83D8EBDF71](#d1-83d8ebdf71)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-063a2bdff2"></a>
+### D1-063A2BDFF2 · Context-Dependent Lactate Clearance in Sepsis: A MIMIC-IV Cohort Study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-063A2BDFF2.md)
+
+**Derived from:** [D1-0DEB3EDE0F](#d1-0deb3ede0f)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-0698dae208"></a>
 ### D1-0698DAE208 · Live ICU discharge: ascertainable competing risks and observation-robust late instability
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-0698DAE208.md)
 
 **Derived from:** [D1-220D8070FD](#d1-220d8070fd)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-069ea3c643"></a>
+### D1-069EA3C643 · Episode 18 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-069EA3C643.md)
+
+**Derived from:** [D1-4E4E3930F2](#d1-4e4e3930f2)
 
 **Type:** Generated hypothesis version
 
@@ -161,12 +296,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-072c60a21a"></a>
+### D1-072C60A21A · Discordant Organ Recovery Predicts ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-072C60A21A.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-07d9034a65"></a>
 ### D1-07D9034A65 · Close the EHR enrichment branch and validate whether a charted restart is a true hemodynamic failure
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-07D9034A65.md)
 
 **Derived from:** [D1-B28C651E62](#d1-b28c651e62), [D1-4236DF762F](#d1-4236df762f)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-07f82cda4f"></a>
+### D1-07F82CDA4F · Episode-3 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-07F82CDA4F.md)
+
+**Derived from:** [D1-E8689C0248](#d1-e8689c0248)
 
 **Type:** Generated hypothesis version
 
@@ -197,6 +350,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-0963ef00d1"></a>
+### D1-0963EF00D1 · Episode 19 provisional hypothesis: does discordant AKI recovery add information beyond current severity?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-0963EF00D1.md)
+
+**Derived from:** [D1-4E4E3930F2](#d1-4e4e3930f2)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-097ee806ba"></a>
+### D1-097EE806BA · When creatinine falls after AKI, which reason it fell for: a mass-balance separation of dilution, lost creatinine generation and restored clearance, and whether the mechanism predicts dialysis and dea
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-097EE806BA.md)
+
+**Derived from:** [D1-7B6B52B91F](#d1-7b6b52b91f)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-0980c02149"></a>
 ### D1-0980C02149 · Actionability-gated pulmonary-nodule propagation failure with an action-semantic comparator hierarchy
 
@@ -224,6 +395,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-09aa4da3ff"></a>
+### D1-09AA4DA3FF · Successor hypothesis: persistent discordant AKI recovery beyond current state
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-09AA4DA3FF.md)
+
+**Derived from:** [D1-E8689C0248](#d1-e8689c0248)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-0a642f1724"></a>
 ### D1-0A642F1724 · Residual instability before an ICU-to-ward transfer and 48-hour deterioration
 
@@ -233,12 +413,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-0a65af2259"></a>
+### D1-0A65AF2259 · Episode 16 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-0A65AF2259.md)
+
+**Derived from:** [D1-E1A5C04AB6](#d1-e1a5c04ab6)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-0a92e9f164"></a>
 ### D1-0A92E9F164 · Observation-aware acute respiratory successor to the post-shock IV-loop target trial
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-0A92E9F164.md)
 
 **Derived from:** [D1-2A724B247D](#d1-2a724b247d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-0af5277160"></a>
+### D1-0AF5277160 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-0AF5277160.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-0b8239915c"></a>
+### D1-0B8239915C · Residual Physiological Instability Before ICU Discharge Predicts ICU Readmission and In-Hospital Death in MIMIC-IV
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-0B8239915C.md)
+
+**Derived from:** [D1-7F64DCC70B](#d1-7f64dcc70b)
 
 **Type:** Generated hypothesis version
 
@@ -260,6 +467,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-0be120a6d4"></a>
+### D1-0BE120A6D4 · Discordant renal recovery in MIMIC-IV: a falsifiable, temporally separated prognostic study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-0BE120A6D4.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-0cfa099a4b"></a>
 ### D1-0CFA099A4B · When apparent AKI recovery is discordant: a MIMIC-IV landmark study
 
@@ -275,6 +491,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-0D40E102C0.md)
 
 **Derived from:** [D1-83D576D3DB](#d1-83d576d3db)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-0deb3ede0f"></a>
+### D1-0DEB3EDE0F · Context-Dependent Lactate Clearance in Sepsis: A MIMIC-IV Cohort Study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-0DEB3EDE0F.md)
+
+**Derived from:** [D1-FA7739808C](#d1-fa7739808c)
 
 **Type:** Generated hypothesis version
 
@@ -314,6 +539,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-102c0f48f5"></a>
+### D1-102C0F48F5 · Working proposal (Lead) — MIMIC-IV island, episode 30 (evolution: computed gate + hardened method)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-102C0F48F5.md)
+
+**Derived from:** [D1-4264AC00D3](#d1-4264ac00d3)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-10659592fa"></a>
 ### D1-10659592FA · Provisional hypothesis: discordant AKI recovery in MIMIC-IV
 
@@ -332,6 +566,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-110e0e52bb"></a>
+### D1-110E0E52BB · Episode 14 working proposal: discordant AKI recovery with an executable estimand
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-110E0E52BB.md)
+
+**Derived from:** [D1-E1A5C04AB6](#d1-e1a5c04ab6)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-11723363d6"></a>
 ### D1-11723363D6 · Discharge-boundary fidelity of interval-specific pulmonary-nodule recommendations
 
@@ -347,6 +590,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-119B84C5D6.md)
 
 **Derived from:** [D1-D9BC622BA8](#d1-d9bc622ba8)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-11a48e0f2a"></a>
+### D1-11A48E0F2A · Research Proposal: Discordant Multi-Organ Recovery Trajectories Predict Subsequent Treatment Escalation and Mortality in ICU Patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-11A48E0F2A.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -404,12 +656,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-13a4ee7f9d"></a>
+### D1-13A4EE7F9D · Provisional successor: persistent discordance beyond current severity and measurement noise
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-13A4EE7F9D.md)
+
+**Derived from:** [D1-AD186D3A84](#d1-ad186d3a84)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-13b3c1ec65"></a>
 ### D1-13B3C1EC65 · Deterministic FSM, H3 certificate, and fail-closed parent-plus-bridge execution contract
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-13B3C1EC65.md)
 
 **Derived from:** [D1-71DBE8B574](#d1-71dbe8b574)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-1416b9f895"></a>
+### D1-1416B9F895 · Provisional hypothesis (not yet validated): In patients with acute kidney injury, a clinically meaningful association between early lactate clearance and subsequent kidney recovery may be modified by
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-1416B9F895.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-14247580ec"></a>
+### D1-14247580EC · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-14247580EC.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
 
 **Type:** Generated hypothesis version
 
@@ -464,6 +743,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-16A058FE79.md)
 
 **Derived from:** [D1-632B76E6B1](#d1-632b76e6b1)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-16baca90df"></a>
+### D1-16BACA90DF · Research Proposal: Discordant Organ Recovery Patterns Predict ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-16BACA90DF.md)
+
+**Derived from:** [D1-FB964203AA](#d1-fb964203aa)
 
 **Type:** Generated hypothesis version
 
@@ -530,6 +818,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-18c3ab0969"></a>
+### D1-18C3AB0969 · Working proposal (Lead) — MIMIC-IV island, episode 5 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-18C3AB0969.md)
+
+**Derived from:** [D1-7842B0FB43](#d1-7842b0fb43)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-190407ee68"></a>
 ### D1-190407EE68 · Residual instability before ICU-to-ward transfer: frozen endpoint-linked attribution task
 
@@ -554,6 +851,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-197F6B8C76.md)
 
 **Derived from:** [D1-08C3B9CAF6](#d1-08c3b9caf6)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-19c7ae5b60"></a>
+### D1-19C7AE5B60 · Temporal Discordance Between Organ Systems Predicts ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-19C7AE5B60.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -638,6 +944,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-1b29287c35"></a>
+### D1-1B29287C35 · Working proposal (worker gen-s04b) — MIMIC-IV island, episode 21 (RESTART)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-1B29287C35.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-1b63044100"></a>
 ### D1-1B63044100 · Candidate: Stop systemic anti-MRSA therapy after a finalized negative MRSA surveillance screen in ICU pneumonia?
 
@@ -683,6 +998,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-1c892af748"></a>
+### D1-1C892AF748 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-1C892AF748.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-1caf78058a"></a>
+### D1-1CAF78058A · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-1CAF78058A.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-1ce91459af"></a>
 ### D1-1CE91459AF · Episode 29: renal-injury-aware post-shock recorded-loop initiation
 
@@ -710,12 +1043,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-1def4504ea"></a>
+### D1-1DEF4504EA · Temporal Discordance in Multi-Organ Recovery Predicts ICU Mortality
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-1DEF4504EA.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-1e0428a4e4"></a>
 ### D1-1E0428A4E4 · Competing failure pathways after support withdrawal at first ICU discharge
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-1E0428A4E4.md)
 
 **Derived from:** [D1-3C8862A45D](#d1-3c8862a45d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-1e163aa998"></a>
+### D1-1E163AA998 · Episode 17 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-1E163AA998.md)
+
+**Derived from:** [D1-E1A5C04AB6](#d1-e1a5c04ab6)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-1e90a6591d"></a>
+### D1-1E90A6591D · Provisional hypothesis: discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-1E90A6591D.md)
+
+**Derived from:** [D1-A49267CED1](#d1-a49267ced1)
 
 **Type:** Generated hypothesis version
 
@@ -746,6 +1106,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-1f7d33339b"></a>
+### D1-1F7D33339B · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-1F7D33339B.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-1f80f57e56"></a>
 ### D1-1F80F57E56 · Can conservative pulmonary-nodule handoff routes survive independent review? A blinded, all-opportunity reproducibility and purity audit before silent validation
 
@@ -764,6 +1133,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-20a7b82e4c"></a>
+### D1-20A7B82E4C · Discordant creatinine recovery after AKI: a prespecified MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-20A7B82E4C.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-21105664c4"></a>
+### D1-21105664C4 · Discordant renal recovery in MIMIC-IV: a falsifiable, temporally separated prognostic study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-21105664C4.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-218f82a961"></a>
 ### D1-218F82A961 · A leakage-resistant probability-verified admission-routing gate: separated component seals and a held-out route-purity audit
 
@@ -779,6 +1166,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-21A77DD9F3.md)
 
 **Derived from:** [D1-D166B6BC45](#d1-d166b6bc45)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-220467b913"></a>
+### D1-220467B913 · Discordant recovery after acute kidney injury: a data-bound, falsifiable MIMIC-IV experiment
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-220467B913.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
 
 **Type:** Generated hypothesis version
 
@@ -818,6 +1214,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-2248b9a310"></a>
+### D1-2248B9A310 · Asynchronous Organ Recovery in Critically Ill Patients: A Multi-Organ Trajectory Study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2248B9A310.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-2256335c4c"></a>
 ### D1-2256335C4C · Decision-validity bridge and fail-closed packet contract
 
@@ -854,6 +1259,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-237c0e3d9a"></a>
+### D1-237C0E3D9A · Discordant creatinine recovery after AKI: a severity-, treatment-intensity-, and RRT-stratified MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-237C0E3D9A.md)
+
+**Derived from:** [D1-E691E1CD77](#d1-e691e1cd77)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-239adb3aee"></a>
 ### D1-239ADB3AEE · Residual physiologic instability in the final ICU day and failed transition
 
@@ -881,6 +1295,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-23cd0f4428"></a>
+### D1-23CD0F4428 · Residual physiological instability in the 24 h before ICU discharge and post-ICU outcomes: a MIMIC-IV cohort study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-23CD0F4428.md)
+
+**Derived from:** [D1-C8F688A2C1](#d1-c8f688a2c1)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-24098e4c0f"></a>
 ### D1-24098E4C0F · A transport-gated, rare-route audit of pulmonary-nodule admission routing
 
@@ -905,6 +1328,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-24EC5C01BE.md)
 
 **Derived from:** [D1-CD2F5DA800](#d1-cd2f5da800)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-25a7f7a3a0"></a>
+### D1-25A7F7A3A0 · Dynamic Multi-Organ Dysfunction Trajectories in Sepsis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-25A7F7A3A0.md)
+
+**Derived from:** [D1-C5C5B65EAE](#d1-c5c5b65eae)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-25b1476b58"></a>
+### D1-25B1476B58 · Child proposal (Evolution, episode 19) — MIMIC-IV island: partial identification of the
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-25B1476B58.md)
+
+**Derived from:** [D1-DAB95A7D83](#d1-dab95a7d83)
 
 **Type:** Generated hypothesis version
 
@@ -962,6 +1403,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-2647917fd6"></a>
+### D1-2647917FD6 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2647917FD6.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-264991677a"></a>
 ### D1-264991677A · lagged temporal validation of discordant-AKI recovery
 
@@ -980,6 +1430,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-2684e3997c"></a>
+### D1-2684E3997C · Persistent deep sedation after stabilization
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2684E3997C.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Starting question
+
 <a id="d1-26cf39d19d"></a>
 ### D1-26CF39D19D · Creatinine increases during diuresis
 
@@ -989,12 +1448,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Starting question
 
+<a id="d1-26e577e52e"></a>
+### D1-26E577E52E · Multi-Organ Recovery Trajectory Hypothesis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-26E577E52E.md)
+
+**Derived from:** [D1-04A03E8ABF](#d1-04a03e8abf)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-271c788ac9"></a>
+### D1-271C788AC9 · Research Proposal: Discordant Organ Recovery After Critical Illness
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-271C788AC9.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-27457e1b36"></a>
 ### D1-27457E1B36 · Hemoglobin trajectory as a distinct modifier of observed transfusion-associated risk
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-27457E1B36.md)
 
 **Derived from:** [D1-798234B475](#d1-798234b475)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-2751bd1725"></a>
+### D1-2751BD1725 · Asynchronous organ recovery after circulatory stabilization: a severity-matched, temporally explicit MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2751BD1725.md)
+
+**Derived from:** [D1-9F68E5C917](#d1-9f68e5c917)
 
 **Type:** Generated hypothesis version
 
@@ -1025,6 +1511,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-27a392b850"></a>
+### D1-27A392B850 · Discordant renal recovery in MIMIC-IV: a falsifiable, temporally separated prognostic study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-27A392B850.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-27dba22b96"></a>
 ### D1-27DBA22B96 · Documented 7-day sustained liberation after post-shock IV loop initiation
 
@@ -1043,6 +1538,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-282be5c32e"></a>
+### D1-282BE5C32E · Discordant AKI recovery: separating true renal recovery from creatinine artifacts
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-282BE5C32E.md)
+
+**Derived from:** [D1-B255812F33](#d1-b255812f33)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-289a406b5b"></a>
 ### D1-289A406B5B · Acute recorded hemoglobin decline beyond stress: a noncausal MIMIC-IV experiment
 
@@ -1052,12 +1556,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-28c4357f52"></a>
+### D1-28C4357F52 · Research Proposal: Perfusion-Dependent Effects of Diuretic Initiation in Sepsis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-28C4357F52.md)
+
+**Derived from:** [D1-FB964203AA](#d1-fb964203aa)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-2900da23aa"></a>
 ### D1-2900DA23AA · Episode 28: storetime-free airway-anchored item-227194 extubation after the first post-shock recorded-loop opportunity
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-2900DA23AA.md)
 
 **Derived from:** [D1-7668F44508](#d1-7668f44508)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-2941b3b54f"></a>
+### D1-2941B3B54F · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2941B3B54F.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
 
 **Type:** Generated hypothesis version
 
@@ -1088,12 +1610,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-2a4fbef441"></a>
+### D1-2A4FBEF441 · Evolution child — decoupling the pre-ICU-discharge instability footprint from the observation/monitoring-intensity artifact
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2A4FBEF441.md)
+
+**Derived from:** [D1-2F58DB026E](#d1-2f58db026e)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-2a724b247d"></a>
 ### D1-2A724B247D · ICU-recorded IV furosemide or bumetanide after post-shock stabilization: partition- and RRT-repaired proposal
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-2A724B247D.md)
 
 **Derived from:** [D1-2E939A5EFC](#d1-2e939a5efc)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-2aa1a6fe58"></a>
+### D1-2AA1A6FE58 · Discordant Multi-Organ Recovery Predicts ICU Mortality
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2AA1A6FE58.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-2b3e595173"></a>
+### D1-2B3E595173 · Working child: urine-output trajectory versus treatment response and endpoint artifacts
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2B3E595173.md)
+
+**Derived from:** [D1-F2C22FBB09](#d1-f2c22fbb09)
 
 **Type:** Generated hypothesis version
 
@@ -1106,12 +1655,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-2c84bdf6ad"></a>
+### D1-2C84BDF6AD · Asynchronous Organ Recovery in Critically Ill Patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2C84BDF6AD.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-2cc7bc145d"></a>
 ### D1-2CC7BC145D · Transfer-ascertained early failure after first ICU discharge
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-2CC7BC145D.md)
 
 **Derived from:** [D1-D964D64C7D](#d1-d964d64c7d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-2e6329264b"></a>
+### D1-2E6329264B · Generation-B — Method comparison & strongest rival (MIMIC episode 46)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2E6329264B.md)
+
+**Derived from:** [D1-71B36EEF4D](#d1-71b36eef4d)
 
 **Type:** Generated hypothesis version
 
@@ -1124,12 +1691,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-2edd922dcd"></a>
+### D1-2EDD922DCD · Provisional repaired hypothesis: discordant AKI recovery
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2EDD922DCD.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-2ef7430c2e"></a>
 ### D1-2EF7430C2E · Observation-aware target-trial emulation of IV loop initiation after post-shock stabilization
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-2EF7430C2E.md)
 
 **Derived from:** [D1-2E939A5EFC](#d1-2e939a5efc)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-2eff1bb254"></a>
+### D1-2EFF1BB254 · Persistent hyperlactatemia with divergent perfusion trajectories: a refined MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2EFF1BB254.md)
+
+**Derived from:** [D1-83D8EBDF71](#d1-83d8ebdf71)
 
 **Type:** Generated hypothesis version
 
@@ -1142,12 +1727,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-2f58db026e"></a>
+### D1-2F58DB026E · Working proposal (Generation, MIMIC-IV island, episode 32) — pre-ICU-discharge residual instability
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2F58DB026E.md)
+
+**Derived from:** [D1-C909F4E327](#d1-c909f4e327)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-2f7141f893"></a>
 ### D1-2F7141F893 · Working proposal
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-2F7141F893.md)
 
 **Derived from:** [D1-30B72178DF](#d1-30b72178df)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-2f859c4012"></a>
+### D1-2F859C4012 · Working proposal (Evolution, Lead) — MIMIC-IV island, episode 24 (identifiability repair)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2F859C4012.md)
+
+**Derived from:** [D1-480CE8ACD5](#d1-480ce8acd5)
 
 **Type:** Generated hypothesis version
 
@@ -1178,6 +1781,51 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-2fee44deba"></a>
+### D1-2FEE44DEBA · Discordant recovery after acute kidney injury: does persistent oliguria at creatinine-based reversal predict in-hospital death and RRT beyond the creatinine-only recovery classification?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2FEE44DEBA.md)
+
+**Derived from:** [D1-8795232138](#d1-8795232138)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-2fefe5e229"></a>
+### D1-2FEFE5E229 · Multi-Organ Recovery Trajectory Hypothesis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-2FEFE5E229.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-3004cc3e79"></a>
+### D1-3004CC3E79 · Working proposal (Lead) - MIMIC-IV island, episode 11 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-3004CC3E79.md)
+
+**Derived from:** [D1-58A51088BD](#d1-58a51088bd)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-302d77702f"></a>
+### D1-302D77702F · Discordant Recovery After Acute Kidney Injury: Urine Output vs. Creatinine Trajectories and Subsequent Adverse Outcomes
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-302D77702F.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-304bc4a32d"></a>
+### D1-304BC4A32D · MIMIC-IV island, episode 42 (EVOLUTION)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-304BC4A32D.md)
+
+**Derived from:** [D1-B6F06EC174](#d1-b6f06ec174)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-30b72178df"></a>
 ### D1-30B72178DF · Different meanings of persistent hyperlactatemia
 
@@ -1187,12 +1835,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Starting question
 
+<a id="d1-30d26c2a17"></a>
+### D1-30D26C2A17 · Provisional hypothesis: discordant renal recovery after AKI
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-30D26C2A17.md)
+
+**Derived from:** [D1-66B676E231](#d1-66b676e231)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-30d30a93ef"></a>
 ### D1-30D30A93EF · Executable target-freeze and nested-probability repair
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-30D30A93EF.md)
 
 **Derived from:** [D1-0BCC8A9790](#d1-0bcc8a9790)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-30ea545523"></a>
+### D1-30EA545523 · When did the clinician actually have the susceptibility result? Re-anchoring antimicrobial de-escalation in MIMIC-IV 3.1 at measured result-availability time, with a pre-result negative control that m
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-30EA545523.md)
+
+**Derived from:** [D1-A6578BE3E1](#d1-a6578be3e1)
 
 **Type:** Generated hypothesis version
 
@@ -1214,6 +1880,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-31ef3c0e94"></a>
+### D1-31EF3C0E94 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-31EF3C0E94.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-323cdfdac0"></a>
 ### D1-323CDFDAC0 · Timing of antimicrobial de-escalation
 
@@ -1222,6 +1897,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Derived from:** — (recorded root)
 
 **Type:** Starting question
+
+<a id="d1-328e9ed70b"></a>
+### D1-328E9ED70B · Asynchronous Organ Recovery: A Multi-Organ Recovery Phenotype Predicts ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-328E9ED70B.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
 
 <a id="d1-32f033d3ae"></a>
 ### D1-32F033D3AE · Residual physiologic instability immediately before alive ICU discharge: a competing-risk MIMIC-IV test
@@ -1250,6 +1934,33 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-33638e57a4"></a>
+### D1-33638E57A4 · Different meanings of persistent hyperlactatemia
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-33638E57A4.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Starting question
+
+<a id="d1-33f162933f"></a>
+### D1-33F162933F · Persistent hyperlactatemia with improving perfusion: a prespecified MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-33F162933F.md)
+
+**Derived from:** [D1-F7389479D4](#d1-f7389479d4)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-33fc089ed5"></a>
+### D1-33FC089ED5 · Asynchronous Organ Recovery: Persistent Respiratory Failure After Circulatory Stabilization and Risk of Circulatory Re-Escalation
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-33FC089ED5.md)
+
+**Derived from:** [D1-04A03E8ABF](#d1-04a03e8abf)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-342fb79519"></a>
 ### D1-342FB79519 · Synchronous versus discordant recorded organ recovery after first ICU discharge
 
@@ -1267,6 +1978,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Derived from:** [D1-C7145E6FBF](#d1-c7145e6fbf)
 
 **Type:** Generated hypothesis version
+
+<a id="d1-3487aa0ad4"></a>
+### D1-3487AA0AD4 · Discordant recovery after acute kidney injury
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-3487AA0AD4.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Starting question
 
 <a id="d1-3511059cc7"></a>
 ### D1-3511059CC7 · Target-linked longitudinal and structured-event falsification of departure status
@@ -1292,6 +2012,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-3570E165BA.md)
 
 **Derived from:** [D1-F04626AA33](#d1-f04626aa33)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-35fde24886"></a>
+### D1-35FDE24886 · Asynchronous Organ Recovery in ICU: A Falsifiable Test of Recovery Patterns and Mortality
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-35FDE24886.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -1367,6 +2096,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-3800d0f7b9"></a>
+### D1-3800D0F7B9 · Acute glucose elevation relative to chronic glycemia
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-3800D0F7B9.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Starting question
+
 <a id="d1-389667d784"></a>
 ### D1-389667D784 · Fixed-capacity enrichment of transported transfusion-risk heterogeneity
 
@@ -1403,6 +2141,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-3a76cd4fb6"></a>
+### D1-3A76CD4FB6 · MIMIC-IV island, episode 37 (Lead)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-3A76CD4FB6.md)
+
+**Derived from:** [D1-491A36A755](#d1-491a36a755)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-3ac46041d5"></a>
 ### D1-3AC46041D5 · Alive-and-durably-liberated by day 7 after delivery-coherent post-shock IV loop initiation
 
@@ -1430,6 +2177,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-3b1724a4da"></a>
+### D1-3B1724A4DA · Provisional hypothesis: discordant AKI recovery and subsequent ICU deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-3B1724A4DA.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-3b468f6c53"></a>
 ### D1-3B468F6C53 · What “respiratory support withdrawal” means at first ICU discharge
 
@@ -1448,6 +2204,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-3babfbbecb"></a>
+### D1-3BABFBBECB · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-3BABFBBECB.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-3bc47ed9ae"></a>
 ### D1-3BC47ED9AE · Loss-weight frontier and robust policy dominance for pulmonary-opportunity routing
 
@@ -1457,12 +2222,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-3c2aa5e993"></a>
+### D1-3C2AA5E993 · Discordant creatinine recovery after AKI: a severity-, treatment-intensity-, and RRT-stratified MIMIC-IV study with KDIGO urine-output sensitivity analysis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-3C2AA5E993.md)
+
+**Derived from:** [D1-237C0E3D9A](#d1-237c0e3d9a)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-3c8862a45d"></a>
 ### D1-3C8862A45D · Partial-identification of early post-ICU escalation after first ICU discharge
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-3C8862A45D.md)
 
 **Derived from:** [D1-2CC7BC145D](#d1-2cc7bc145d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-3cf59e046e"></a>
+### D1-3CF59E046E · Evolution child (gen39) - outcome-specificity negative control + escalation-event control for the pre-ICU-discharge dynamic-instability footprint
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-3CF59E046E.md)
+
+**Derived from:** [D1-2A4FBEF441](#d1-2a4fbef441)
 
 **Type:** Generated hypothesis version
 
@@ -1481,6 +2264,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-3D0B2A7AAF.md)
 
 **Derived from:** [D1-D6E3E74A85](#d1-d6e3e74a85)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-3d6e5c413f"></a>
+### D1-3D6E5C413F · Discordant renal recovery in MIMIC-IV: a falsifiable, temporally separated prognostic study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-3D6E5C413F.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
 
 **Type:** Generated hypothesis version
 
@@ -1556,6 +2348,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-3f8b669863"></a>
+### D1-3F8B669863 · Working proposal (Lead) — MIMIC-IV island, episode 16 (restart, new direction)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-3F8B669863.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-3fc4d35ce4"></a>
 ### D1-3FC4D35CE4 · Provisional hypothesis: discordant AKI recovery is prognostic, not causal
 
@@ -1574,6 +2375,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-40358344c6"></a>
+### D1-40358344C6 · Residual instability before ICU discharge
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-40358344C6.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Starting question
+
+<a id="d1-404c8e02bb"></a>
+### D1-404C8E02BB · Residual Instability Before ICU Discharge: Pre-Discharge Vital Sign and Oxygen Requirement Abnormalities and Subsequent ICU Readmission or In-Hospital Death
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-404C8E02BB.md)
+
+**Derived from:** [D1-7F64DCC70B](#d1-7f64dcc70b)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-40d15bf143"></a>
 ### D1-40D15BF143 · Calibrating discharge-artifact delay before prioritizing a pulmonary-nodule handoff intervention
 
@@ -1589,6 +2408,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-40D2285779.md)
 
 **Derived from:** [D1-F4E5F59B42](#d1-f4e5f59b42), [D1-93EB508EDA](#d1-93eb508eda)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-40df7c9fde"></a>
+### D1-40DF7C9FDE · Provisional hypothesis: discordant AKI recovery and subsequent vulnerability
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-40DF7C9FDE.md)
+
+**Derived from:** [D1-716C952099](#d1-716c952099)
 
 **Type:** Generated hypothesis version
 
@@ -1616,6 +2444,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-4236DF762F.md)
 
 **Derived from:** [D1-69FE2761EB](#d1-69fe2761eb), [D1-55A78B258C](#d1-55a78b258c)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-4264ac00d3"></a>
+### D1-4264AC00D3 · Working proposal (Lead) — MIMIC-IV island, episode 29 (RESTART)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-4264AC00D3.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -1700,12 +2537,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-44c3d9ee80"></a>
+### D1-44C3D9EE80 · Asynchronous Organ Recovery After Circulatory Stabilization in Sepsis: A Falsifiable MIMIC-IV Experiment
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-44C3D9EE80.md)
+
+**Derived from:** [D1-5194999FD9](#d1-5194999fd9)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-44c663af1f"></a>
 ### D1-44C663AF1F · ICU-recorded IV furosemide or bumetanide after post-shock stabilization
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-44C663AF1F.md)
 
 **Derived from:** [D1-1AEBDFFE76](#d1-1aebdffe76)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-4538975b6a"></a>
+### D1-4538975B6A · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-4538975B6A.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-454e3771c5"></a>
+### D1-454E3771C5 · Persistent Deep Sedation After Hemodynamic Stabilization Delays Liberation from Mechanical Ventilation in MIMIC-IV
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-454E3771C5.md)
+
+**Derived from:** [D1-1A8D5C7229](#d1-1a8d5c7229)
 
 **Type:** Generated hypothesis version
 
@@ -1718,12 +2582,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-46204ab857"></a>
+### D1-46204AB857 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-46204AB857.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-47197c8957"></a>
 ### D1-47197C8957 · A leakage-resistant audit of an admission-level pulmonary-nodule handoff gate: split evidence views, held-out route purity, and partial identification
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-47197C8957.md)
 
 **Derived from:** [D1-2762FC75C9](#d1-2762fc75c9)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-473828cb36"></a>
+### D1-473828CB36 · Recorded research hypothesis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-473828CB36.md)
+
+**Derived from:** [D1-FB964203AA](#d1-fb964203aa)
 
 **Type:** Generated hypothesis version
 
@@ -1754,6 +2636,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-480ce8acd5"></a>
+### D1-480CE8ACD5 · MIMIC-IV island, episode 22 (RESTART, new direction)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-480CE8ACD5.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-480fbe9664"></a>
 ### D1-480FBE9664 · Report-opportunity case-crossover documentation layer
 
@@ -1769,6 +2660,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-48BBDB76D9.md)
 
 **Derived from:** [D1-DCF524E46D](#d1-dcf524e46d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-491a36a755"></a>
+### D1-491A36A755 · MIMIC-IV island, episode 36 (evolution child)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-491A36A755.md)
+
+**Derived from:** [D1-C909F4E327](#d1-c909f4e327)
 
 **Type:** Generated hypothesis version
 
@@ -1835,12 +2735,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-4c717d7103"></a>
+### D1-4C717D7103 · Working proposal (Lead) — MIMIC-IV island, episode 15 (evolution child of ep-11)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-4C717D7103.md)
+
+**Derived from:** [D1-3004CC3E79](#d1-3004cc3e79)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-4cb91d961a"></a>
+### D1-4CB91D961A · Latent Disease Signatures in Critical Illness: Outperforming Traditional Severity Scores and Revealing Novel Patient Subgroups
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-4CB91D961A.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-4d1356dc21"></a>
 ### D1-4D1356DC21 · Perfusion–lactate discordance and the next crystalloid decision
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-4D1356DC21.md)
 
 **Derived from:** [D1-30B72178DF](#d1-30b72178df)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-4d3e1c9389"></a>
+### D1-4D3E1C9389 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-4D3E1C9389.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
 
 **Type:** Generated hypothesis version
 
@@ -1853,12 +2780,48 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-4dade8a986"></a>
+### D1-4DADE8A986 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-4DADE8A986.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-4e132620d5"></a>
+### D1-4E132620D5 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-4E132620D5.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-4e4d8b2595"></a>
 ### D1-4E4D8B2595 · Episode 7 successor: does worsening instability before ICU discharge add information beyond current burden and charting intensity?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-4E4D8B2595.md)
 
 **Derived from:** [D1-7AF2389B32](#d1-7af2389b32)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-4e4e3930f2"></a>
+### D1-4E4E3930F2 · Episode 17 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-4E4E3930F2.md)
+
+**Derived from:** [D1-E1A5C04AB6](#d1-e1a5c04ab6)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-4e95f1abb5"></a>
+### D1-4E95F1ABB5 · MIMIC-IV island, episode 25 (EVOLUTION crossover: separable estimand × HbA1c-independent anchor)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-4E95F1ABB5.md)
+
+**Derived from:** [D1-A0B2549C08](#d1-a0b2549c08), [D1-C9B319CBD1](#d1-c9b319cbd1)
 
 **Type:** Generated hypothesis version
 
@@ -1877,6 +2840,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-4F5327C89B.md)
 
 **Derived from:** [D1-96314A72A8](#d1-96314a72a8)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-4f618f6b2a"></a>
+### D1-4F618F6B2A · Discordant Recovery After Acute Kidney Injury: Urine Output vs Creatinine Trajectories in MIMIC-IV
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-4F618F6B2A.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-4f84d2fc5e"></a>
+### D1-4F84D2FC5E · Dynamic Multi-Organ Dysfunction Trajectories in Sepsis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-4F84D2FC5E.md)
+
+**Derived from:** [D1-C5C5B65EAE](#d1-c5c5b65eae)
 
 **Type:** Generated hypothesis version
 
@@ -1907,6 +2888,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-5091df4045"></a>
+### D1-5091DF4045 · Candidate Proposal: Temporal Discordance of Antimicrobial De-escalation and Clinical Improvement in Sepsis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5091DF4045.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-50a9f4787c"></a>
 ### D1-50A9F4787C · Provisional hypothesis: discordant AKI recovery in MIMIC-IV
 
@@ -1922,6 +2912,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-50D20C85F3.md)
 
 **Derived from:** [D1-CCEACF1637](#d1-cceacf1637)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-5147868d31"></a>
+### D1-5147868D31 · Discordant creatinine recovery after AKI: a prespecified MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5147868D31.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
 
 **Type:** Generated hypothesis version
 
@@ -1943,6 +2942,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Starting question
 
+<a id="d1-51b196df85"></a>
+### D1-51B196DF85 · Discordant recovery after acute kidney injury: creatinine-defined recovery with persistent oliguria and subsequent outcomes (MIMIC-IV)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-51B196DF85.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-51dd9af8bb"></a>
 ### D1-51DD9AF8BB · Acute glucose elevation relative to chronic glycemia
 
@@ -1961,6 +2969,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-52eebe1068"></a>
+### D1-52EEBE1068 · Episode 10 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-52EEBE1068.md)
+
+**Derived from:** [D1-A49267CED1](#d1-a49267ced1)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-5303736740"></a>
+### D1-5303736740 · Does persistent oliguria at the time of creatinine recovery identify high-risk "creatinine-recovered" AKI in sepsis? (MIMIC-IV v3.1)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5303736740.md)
+
+**Derived from:** [D1-04A03E8ABF](#d1-04a03e8abf)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-5347914565"></a>
 ### D1-5347914565 · Paired observed renal recovery after an early ICU renal insult — episode 5 repair
 
@@ -1969,6 +2995,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Derived from:** [D1-0E978D6513](#d1-0e978d6513)
 
 **Type:** Generated hypothesis version
+
+<a id="d1-53541c4bb6"></a>
+### D1-53541C4BB6 · Creatinine increases during diuresis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-53541C4BB6.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Starting question
 
 <a id="d1-53e433e5c0"></a>
 ### D1-53E433E5C0 · Deterministic unit matching and availability-typed bridge (successor of [prior hypothesis])
@@ -1997,6 +3032,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-5459b33fc8"></a>
+### D1-5459B33FC8 · Episode 49 child — observed feasibility/precision gate for early antimicrobial de-escalation (MIMIC-IV v3.1)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5459B33FC8.md)
+
+**Derived from:** [D1-71B36EEF4D](#d1-71b36eef4d)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-54d4b189f5"></a>
 ### D1-54D4B189F5 · Provisional repaired hypothesis: discordant AKI recovery in MIMIC-IV
 
@@ -2015,12 +3059,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-553573a517"></a>
+### D1-553573A517 · Asynchronous organ recovery
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-553573A517.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Starting question
+
 <a id="d1-555fdd3e70"></a>
 ### D1-555FDD3E70 · Episode 81 targeted repair: freeze the first eligible hour-48 opportunity
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-555FDD3E70.md)
 
 **Derived from:** [D1-5A21B37B52](#d1-5a21b37b52)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-5572d917be"></a>
+### D1-5572D917BE · Working proposal (Generation, episode 17) — negative-control-outcome discriminator
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5572D917BE.md)
+
+**Derived from:** [D1-3F8B669863](#d1-3f8b669863)
 
 **Type:** Generated hypothesis version
 
@@ -2087,6 +3149,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-578ea74247"></a>
+### D1-578EA74247 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-578EA74247.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-57cb1d71c0"></a>
 ### D1-57CB1D71C0 · Matched low-burden respiratory-transition evidence at first ICU discharge
 
@@ -2096,12 +3167,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-5821905a82"></a>
+### D1-5821905A82 · Provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5821905A82.md)
+
+**Derived from:** [D1-E1A5C04AB6](#d1-e1a5c04ab6)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-58a51088bd"></a>
+### D1-58A51088BD · Working proposal (Lead) - MIMIC-IV island, episode 10 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-58A51088BD.md)
+
+**Derived from:** [D1-D6C3F92009](#d1-d6c3f92009)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-58f2b1596d"></a>
 ### D1-58F2B1596D · Episode 93: source-symmetric exposure adjudication and closed H120 topology for the hour-48 recorded-loop experiment
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-58F2B1596D.md)
 
 **Derived from:** [D1-3F873EB382](#d1-3f873eb382)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-597ab3eadc"></a>
+### D1-597AB3EADC · Evidence and bounded feasibility note
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-597AB3EADC.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
 
 **Type:** Generated hypothesis version
 
@@ -2141,12 +3239,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-5a25d07931"></a>
+### D1-5A25D07931 · Persistent Deep Sedation After Stabilization Delays Liberation from Mechanical Ventilation: A Falsifiable MIMIC-IV Experiment
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5A25D07931.md)
+
+**Derived from:** [D1-1A8D5C7229](#d1-1a8d5c7229)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-5ab8e67cb3"></a>
 ### D1-5AB8E67CB3 · IV loop start-or-restart at ICU hour 48 after vasopressor-treated shock
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-5AB8E67CB3.md)
 
 **Derived from:** [D1-E1530C26CE](#d1-e1530c26ce)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-5ad6d26b51"></a>
+### D1-5AD6D26B51 · Discordant renal recovery after creatinine-based AKI: a multi-hospital eICU-CRD 2.0 cohort study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5AD6D26B51.md)
+
+**Derived from:** [D1-C5C5B65EAE](#d1-c5c5b65eae)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-5b20b8b5ff"></a>
+### D1-5B20B8B5FF · Alternative discriminator (Generation child) — MIMIC-IV island, episode 18
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5B20B8B5FF.md)
+
+**Derived from:** [D1-A46A9AD505](#d1-a46a9ad505)
 
 **Type:** Generated hypothesis version
 
@@ -2159,12 +3284,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-5b76724cb1"></a>
+### D1-5B76724CB1 · Discordant creatinine recovery after AKI: a severity-, treatment-intensity-, and RRT-stratified MIMIC-IV study with baseline comparison
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5B76724CB1.md)
+
+**Derived from:** [D1-237C0E3D9A](#d1-237c0e3d9a)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-5c36feb670"></a>
+### D1-5C36FEB670 · Discordant recovery after acute kidney injury: does persistent oliguria at creatinine-based reversal predict in-hospital death and RRT beyond the creatinine-only recovery classification?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5C36FEB670.md)
+
+**Derived from:** [D1-C5C5B65EAE](#d1-c5c5b65eae)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-5c72cf36b5"></a>
 ### D1-5C72CF36B5 · Target-linked discharge documentation and workflow falsification layer
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-5C72CF36B5.md)
 
 **Derived from:** [D1-8398E787BA](#d1-8398e787ba)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-5c8b42ded7"></a>
+### D1-5C8B42DED7 · Discordant renal recovery in MIMIC-IV: a falsifiable, temporally separated prognostic study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5C8B42DED7.md)
+
+**Derived from:** [D1-3D6E5C413F](#d1-3d6e5c413f)
 
 **Type:** Generated hypothesis version
 
@@ -2192,6 +3344,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-5D3D64EF06.md)
 
 **Derived from:** [D1-A2BE1C861A](#d1-a2be1c861a)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-5d7f655654"></a>
+### D1-5D7F655654 · Episode 18 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-5D7F655654.md)
+
+**Derived from:** [D1-4E4E3930F2](#d1-4e4e3930f2)
 
 **Type:** Generated hypothesis version
 
@@ -2249,6 +3410,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-607811df6f"></a>
+### D1-607811DF6F · Timing of antimicrobial de-escalation
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-607811DF6F.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Starting question
+
 <a id="d1-60b7928aec"></a>
 ### D1-60B7928AEC · Targeted child: successful recorded respiratory liberation after first post-shock loop opportunity
 
@@ -2303,6 +3473,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-61ec22bbc8"></a>
+### D1-61EC22BBC8 · urine output trajectory and early ICU deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-61EC22BBC8.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-621755602a"></a>
+### D1-621755602A · Asynchronous Organ Recovery: A Multi-Organ Recovery Phenotype Predicts ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-621755602A.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-62583cc073"></a>
 ### D1-62583CC073 · Residual instability at ICU discharge: a time-specific competing-risk audit
 
@@ -2321,12 +3509,75 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-62d59eca42"></a>
+### D1-62D59ECA42 · Sibling proposal (Evolution, episode 19) — MIMIC-IV island: alternative identification via target-trial emulation of the sustained lightening strategy
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-62D59ECA42.md)
+
+**Derived from:** [D1-DAB95A7D83](#d1-dab95a7d83)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-62e994823c"></a>
+### D1-62E994823C · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-62E994823C.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-62f2c84a65"></a>
+### D1-62F2C84A65 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-62F2C84A65.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-62f387b14b"></a>
+### D1-62F387B14B · Stress Hyperglycemia Ratio (SHR) as an Independent Prognostic Marker Beyond Absolute Glucose in Undifferentiated ICU Patients: A Falsifiable MIMIC-IV Experiment
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-62F387B14B.md)
+
+**Derived from:** [D1-37312BEFA2](#d1-37312befa2)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-632b76e6b1"></a>
 ### D1-632B76E6B1 · Prospective full-verification study of whether an EHR restart captures intent-qualified pump-native rescue
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-632B76E6B1.md)
 
 **Derived from:** [D1-22368D2936](#d1-22368d2936)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-6373ac28fa"></a>
+### D1-6373AC28FA · Discordant renal recovery in MIMIC-IV: a falsifiable, temporally separated prognostic study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-6373AC28FA.md)
+
+**Derived from:** [D1-5C8B42DED7](#d1-5c8b42ded7)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-637aa0a97d"></a>
+### D1-637AA0A97D · Episode 7 provisional hypothesis: persistent discordant AKI recovery beyond current severity and observation intensity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-637AA0A97D.md)
+
+**Derived from:** [D1-04703B833D](#d1-04703b833d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-637ff93030"></a>
+### D1-637FF93030 · Persistent Deep Sedation After Stabilization Predicts Failed Ventilator Liberation
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-637FF93030.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -2339,6 +3590,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-65509f81e1"></a>
+### D1-65509F81E1 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-65509F81E1.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-658d179325"></a>
 ### D1-658D179325 · Episode 61 successor: treatment-documentation concordance for the post-shock loop-diuretic A12/B12 experiment
 
@@ -2348,12 +3608,57 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-66b676e231"></a>
+### D1-66B676E231 · Provisional hypothesis: discordant renal recovery after AKI
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-66B676E231.md)
+
+**Derived from:** [D1-E89A3CEDAD](#d1-e89a3cedad)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-66fbf9db6e"></a>
 ### D1-66FBF9DB6E · Residual instability at live ICU discharge: association first, sequence increment second
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-66FBF9DB6E.md)
 
 **Derived from:** [D1-24E56791B9](#d1-24e56791b9)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-6716874bb8"></a>
+### D1-6716874BB8 · Organ-Function Trajectory as an Effect Modifier of Antimicrobial De-escalation Safety in ICU: A Falsifiable MIMIC-IV Experiment
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-6716874BB8.md)
+
+**Derived from:** [D1-A6578BE3E1](#d1-a6578be3e1)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-671aed6fd4"></a>
+### D1-671AED6FD4 · Provisional hypothesis: discordant renal recovery after acute kidney injury
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-671AED6FD4.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-67271f42ef"></a>
+### D1-67271F42EF · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-67271F42EF.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-6767c8cbe2"></a>
+### D1-6767C8CBE2 · Episode 19 provisional child: discordant AKI recovery after a severity-and-observation stress test
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-6767C8CBE2.md)
+
+**Derived from:** [D1-4E4E3930F2](#d1-4e4e3930f2)
 
 **Type:** Generated hypothesis version
 
@@ -2384,6 +3689,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-681a37cbd4"></a>
+### D1-681A37CBD4 · Component-specific competing-risk successor: hour-12 urine trajectory and observed ICU events
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-681A37CBD4.md)
+
+**Derived from:** [D1-C2E3C601A0](#d1-c2e3c601a0)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-68358ceb96"></a>
 ### D1-68358CEB96 · Bridge-specific early failure after first ICU discharge: a selection-robust lactate/support study
 
@@ -2402,12 +3716,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-688590c228"></a>
+### D1-688590C228 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-688590C228.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-69a17c3760"></a>
 ### D1-69A17C3760 · Coverage-gated lactate-by-perfusion heterogeneity at the first observed live ICU exit
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-69A17C3760.md)
 
 **Derived from:** [D1-4428EF6997](#d1-4428ef6997)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-69aaee8658"></a>
+### D1-69AAEE8658 · Research Proposal: Perfusion-Dependent Effects of Diuretic Initiation in Sepsis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-69AAEE8658.md)
+
+**Derived from:** [D1-FB964203AA](#d1-fb964203aa)
 
 **Type:** Generated hypothesis version
 
@@ -2447,12 +3779,48 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-6a2ee3a4bf"></a>
+### D1-6A2EE3A4BF · MIMIC-IV island, episode 30 (method/estimand evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-6A2EE3A4BF.md)
+
+**Derived from:** [D1-4264AC00D3](#d1-4264ac00d3)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-6a4acb0731"></a>
 ### D1-6A4ACB0731 · Domain-specific recovery and process-stable partial identification after first ICU discharge
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-6A4ACB0731.md)
 
 **Derived from:** [D1-3C8862A45D](#d1-3c8862a45d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-6b317d8b74"></a>
+### D1-6B317D8B74 · Working proposal (Lead) — MIMIC-IV island, episode 15 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-6B317D8B74.md)
+
+**Derived from:** [D1-3004CC3E79](#d1-3004cc3e79)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-6b5b93e67a"></a>
+### D1-6B5B93E67A · Proposal (rival-separation branch) — pre-ICU-discharge residual instability, MIMIC-IV island, ep 33
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-6B5B93E67A.md)
+
+**Derived from:** [D1-2F58DB026E](#d1-2f58db026e)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-6b7efe345b"></a>
+### D1-6B7EFE345B · Provisional hypothesis: discordant AKI recovery after current severity is accounted for
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-6B7EFE345B.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
 
 **Type:** Generated hypothesis version
 
@@ -2492,6 +3860,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-6e4ff47275"></a>
+### D1-6E4FF47275 · Residual Instability Before ICU Discharge: A Multi-Dimensional Trajectory Approach
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-6E4FF47275.md)
+
+**Derived from:** [D1-C8F688A2C1](#d1-c8f688a2c1)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-6e7c6e973a"></a>
 ### D1-6E7C6E973A · Route-concealed pulmonary-opportunity audit with a preregistered governance state machine
 
@@ -2519,6 +3896,33 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-6f883eaaa0"></a>
+### D1-6F883EAAA0 · Recovery Asynchrony Index (RAI) in ICU Patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-6F883EAAA0.md)
+
+**Derived from:** [D1-04A03E8ABF](#d1-04a03e8abf)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-6fb9125790"></a>
+### D1-6FB9125790 · Discordant AKI recovery: separating true renal recovery from creatinine artifacts
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-6FB9125790.md)
+
+**Derived from:** [D1-B255812F33](#d1-b255812f33)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-6fde6f0b60"></a>
+### D1-6FDE6F0B60 · Asynchronous Organ Recovery: Persistent Respiratory Failure After Circulatory Stabilization and Risk of Circulatory Re-Escalation
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-6FDE6F0B60.md)
+
+**Derived from:** [D1-04A03E8ABF](#d1-04a03e8abf)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-7010f557f8"></a>
 ### D1-7010F557F8 · Recovery order after circulatory stabilization and 72-hour organ-support re-escalation
 
@@ -2537,12 +3941,57 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-7159e3549c"></a>
+### D1-7159E3549C · Episode 7 provisional hypothesis: persistent discordant AKI recovery beyond current severity and observation intensity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-7159E3549C.md)
+
+**Derived from:** [D1-04703B833D](#d1-04703b833d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-7162b26ab3"></a>
+### D1-7162B26AB3 · Discordant creatinine recovery after AKI: a severity-, treatment-intensity-, and RRT-stratified MIMIC-IV study with KDIGO urine-output sensitivity analysis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-7162B26AB3.md)
+
+**Derived from:** [D1-237C0E3D9A](#d1-237c0e3d9a)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-716c693567"></a>
 ### D1-716C693567 · Episode 97 integrated source-symmetric H120 recorded-policy experiment
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-716C693567.md)
 
 **Derived from:** [D1-FB6C7CE891](#d1-fb6c7ce891), [D1-58F2B1596D](#d1-58f2b1596d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-716c952099"></a>
+### D1-716C952099 · Episode 19 provisional child: discordant AKI recovery after a severity-and-observation stress test
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-716C952099.md)
+
+**Derived from:** [D1-4E4E3930F2](#d1-4e4e3930f2)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-71b36eef4d"></a>
+### D1-71B36EEF4D · Episode 45 (MIMIC-IV island) — RESTART from UNUSED expert seed [starting question]
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-71B36EEF4D.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-71c823554f"></a>
+### D1-71C823554F · When creatinine is moving, does a kinetic clearance estimate predict renal drug elimination better than the steady-state equations used to dose drugs?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-71C823554F.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
 
 **Type:** Generated hypothesis version
 
@@ -2573,6 +4022,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-72b8e0290f"></a>
+### D1-72B8E0290F · Antimicrobial De-escalation in ICU Patients: Organ Function Effect Modification
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-72B8E0290F.md)
+
+**Derived from:** [D1-323CDFDAC0](#d1-323cdfdac0)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-72ccc4f988"></a>
 ### D1-72CCC4F988 · Temporal-provenance and fluid-phenotype repair of the post-shock IV-loop target trial
 
@@ -2582,12 +4040,48 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-735c881afc"></a>
+### D1-735C881AFC · Residual Instability Before ICU Discharge: A Falsifiable MIMIC-IV Experiment (Compile-Ready Revision)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-735C881AFC.md)
+
+**Derived from:** [D1-BB76F4C20D](#d1-bb76f4c20d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-7363c61803"></a>
+### D1-7363C61803 · Does delayed liberation after stabilization track the clinician's *documented sedation target* or *achieved depth below that target*?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-7363C61803.md)
+
+**Derived from:** [D1-A6578BE3E1](#d1-a6578be3e1)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-736668e92c"></a>
 ### D1-736668E92C · Route-blinded documentation-to-actionability bridge (binding child of [prior hypothesis])
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-736668E92C.md)
 
 **Derived from:** [D1-8398E787BA](#d1-8398e787ba)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-73ac24e01a"></a>
+### D1-73AC24E01A · Episode 9 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-73AC24E01A.md)
+
+**Derived from:** [D1-A49267CED1](#d1-a49267ced1)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-73d00094a2"></a>
+### D1-73D00094A2 · Episode 9 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-73D00094A2.md)
+
+**Derived from:** [D1-A49267CED1](#d1-a49267ced1)
 
 **Type:** Generated hypothesis version
 
@@ -2636,6 +4130,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-765dbe5ede"></a>
+### D1-765DBE5EDE · Working proposal (Lead) — MIMIC-IV island, episode 28 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-765DBE5EDE.md)
+
+**Derived from:** [D1-C909F4E327](#d1-c909f4e327)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-7668f44508"></a>
 ### D1-7668F44508 · Episode 27: airway-anchored planned extubation after the first post-shock recorded-loop opportunity
 
@@ -2660,6 +4163,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-778922A5DA.md)
 
 **Derived from:** [D1-5EDF0AD893](#d1-5edf0ad893)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-78001abe5f"></a>
+### D1-78001ABE5F · MIMIC-IV island, episode 44 (RESTART)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-78001ABE5F.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-7842b0fb43"></a>
+### D1-7842B0FB43 · Working proposal (Lead) — MIMIC-IV island, episode 4 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-7842B0FB43.md)
+
+**Derived from:** [D1-8EEBD12389](#d1-8eebd12389)
 
 **Type:** Generated hypothesis version
 
@@ -2708,6 +4229,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-7a40d56cf4"></a>
+### D1-7A40D56CF4 · Working proposal (Lead) - MIMIC-IV island, episode 12 (RESTART, new direction)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-7A40D56CF4.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-7a57774149"></a>
 ### D1-7A57774149 · Documentary target-linkage and actionability layer for the frozen pulmonary routing protocol
 
@@ -2744,6 +4274,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-7b6b52b91f"></a>
+### D1-7B6B52B91F · Is "recovery from AKI" partly a dilution artifact? A mass-balance test of fluid-corrected creatinine at an ICU landmark
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-7B6B52B91F.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-7ba9385d63"></a>
+### D1-7BA9385D63 · Episode 49 (MIMIC-IV island) — Evolution child of [prior hypothesis]
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-7BA9385D63.md)
+
+**Derived from:** [D1-71B36EEF4D](#d1-71b36eef4d)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-7be929d72b"></a>
 ### D1-7BE929D72B · Episode 68 successor: observable day-7 ICU liberation for the post-shock recorded-loop experiment
 
@@ -2762,12 +4310,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-7d113e28c4"></a>
+### D1-7D113E28C4 · Provisional hypothesis: discordant AKI recovery and subsequent renal deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-7D113E28C4.md)
+
+**Derived from:** [D1-E8689C0248](#d1-e8689c0248)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-7d2dd102b2"></a>
 ### D1-7D2DD102B2 · Fixed all-randomized endpoint validation with uncensored safety flags, component-specific ambiguity budgets, cluster-aware sensitivity, and an empirical accrual contract
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-7D2DD102B2.md)
 
 **Derived from:** [D1-F9EF0DC439](#d1-f9ef0dc439)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-7d635a2579"></a>
+### D1-7D635A2579 · Working child: urine-output trajectory versus treatment response and endpoint artifacts
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-7D635A2579.md)
+
+**Derived from:** [D1-2B3E595173](#d1-2b3e595173)
 
 **Type:** Generated hypothesis version
 
@@ -2779,6 +4345,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Derived from:** — (recorded root)
 
 **Type:** Starting question
+
+<a id="d1-7d87f3883d"></a>
+### D1-7D87F3883D · Asynchronous organ recovery after circulatory stabilization in MIMIC-IV
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-7D87F3883D.md)
+
+**Derived from:** [D1-5194999FD9](#d1-5194999fd9)
+
+**Type:** Generated hypothesis version
 
 <a id="d1-7db6c175b6"></a>
 ### D1-7DB6C175B6 · Discordant observed renal recovery after early ICU AKI: a data-bound noncausal prognostic experiment
@@ -2825,6 +4400,33 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-801e37557e"></a>
+### D1-801E37557E · When to initiate loop diuretics: a timed target-trial experiment in MIMIC-IV
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-801E37557E.md)
+
+**Derived from:** [D1-5F3668761C](#d1-5f3668761c)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8067cfcf64"></a>
+### D1-8067CFCF64 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8067CFCF64.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-80fb77b589"></a>
+### D1-80FB77B589 · discordant AKI recovery in MIMIC-IV
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-80FB77B589.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-8183338358"></a>
 ### D1-8183338358 · Independent child: a crossed-panel partial-identification audit for correlated codebook error
 
@@ -2843,12 +4445,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-81f2b46198"></a>
+### D1-81F2B46198 · Inflammatory Biomarker Trajectories Predict Multi-Organ Trajectory Divergence in Sepsis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-81F2B46198.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-8206b3e56e"></a>
 ### D1-8206B3E56E · Actionability- and supersession-audited route selection for pulmonary discharge handoff
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-8206B3E56E.md)
 
 **Derived from:** [D1-23C62CD30F](#d1-23c62cd30f), [D1-261CAF6BD5](#d1-261caf6bd5)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-82467a833d"></a>
+### D1-82467A833D · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-82467A833D.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
 
 **Type:** Generated hypothesis version
 
@@ -2906,6 +4526,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-83d8ebdf71"></a>
+### D1-83D8EBDF71 · Persistent hyperlactatemia with divergent perfusion trajectories: a MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-83D8EBDF71.md)
+
+**Derived from:** [D1-F7389479D4](#d1-f7389479d4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-8404aca667"></a>
 ### D1-8404ACA667 · Persistent residual instability at ICU discharge: a falsifiable MIMIC-IV study
 
@@ -2939,6 +4568,33 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-8650EA49A6.md)
 
 **Derived from:** [D1-3DBBE146E3](#d1-3dbbe146e3)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-86eae128fc"></a>
+### D1-86EAE128FC · Asynchronous Organ Recovery: A Multi-Organ Recovery Phenotype Predicts ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-86EAE128FC.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8738cc77b4"></a>
+### D1-8738CC77B4 · Episode 11 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8738CC77B4.md)
+
+**Derived from:** [D1-1E90A6591D](#d1-1e90a6591d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8795232138"></a>
+### D1-8795232138 · Discordant recovery after acute kidney injury: does persistent oliguria at creatinine-based reversal predict in-hospital death and RRT beyond the creatinine-only recovery classification?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8795232138.md)
+
+**Derived from:** [D1-5C36FEB670](#d1-5c36feb670)
 
 **Type:** Generated hypothesis version
 
@@ -3023,6 +4679,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-89fbf0bda7"></a>
+### D1-89FBF0BDA7 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-89FBF0BDA7.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-8a07022386"></a>
 ### D1-8A07022386 · all-eligible observation-aware ICU-discharge instability with a paired temporal boundary check
 
@@ -3077,12 +4742,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-8b56ba520e"></a>
+### D1-8B56BA520E · Episode 12 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8B56BA520E.md)
+
+**Derived from:** [D1-E1A5C04AB6](#d1-e1a5c04ab6)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8b96394fd5"></a>
+### D1-8B96394FD5 · Working proposal (Lead) — MIMIC-IV island, episode 2
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8B96394FD5.md)
+
+**Derived from:** [D1-553573A517](#d1-553573a517)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-8bbf5d9fcf"></a>
 ### D1-8BBF5D9FCF · Target-cell nested probability validation with frozen precision allocation
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-8BBF5D9FCF.md)
 
 **Derived from:** [D1-D6B8565202](#d1-d6b8565202)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8bf10ea985"></a>
+### D1-8BF10EA985 · Persistent Deep Sedation After Initial Stabilization Predicts Adverse Outcomes
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8BF10EA985.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -3104,12 +4796,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-8d65a8de7a"></a>
+### D1-8D65A8DE7A · Discordant creatinine recovery after AKI: a severity-, treatment-intensity-, and RRT-stratified MIMIC-IV study with prespecified baseline comparison
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8D65A8DE7A.md)
+
+**Derived from:** [D1-237C0E3D9A](#d1-237c0e3d9a)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-8d6adbb557"></a>
 ### D1-8D6ADBB557 · Prospective verification of EHR restart accuracy, including pump-native rescue missed by EHR
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-8D6ADBB557.md)
 
 **Derived from:** [D1-22368D2936](#d1-22368d2936)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8dbb86a3cf"></a>
+### D1-8DBB86A3CF · Evolution proposal — MIMIC-IV island, episode 35
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8DBB86A3CF.md)
+
+**Derived from:** [D1-2A4FBEF441](#d1-2a4fbef441)
 
 **Type:** Generated hypothesis version
 
@@ -3149,6 +4859,69 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-8eebd12389"></a>
+### D1-8EEBD12389 · Working proposal (Lead) — MIMIC-IV island, episode 3 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8EEBD12389.md)
+
+**Derived from:** [D1-8B96394FD5](#d1-8b96394fd5)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8ef30f965c"></a>
+### D1-8EF30F965C · Persistent hyperlactatemia with improving perfusion: a prespecified MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8EF30F965C.md)
+
+**Derived from:** [D1-F7389479D4](#d1-f7389479d4)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8f26282c86"></a>
+### D1-8F26282C86 · Dynamic Multi-Organ Dysfunction Trajectories in Sepsis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8F26282C86.md)
+
+**Derived from:** [D1-C5C5B65EAE](#d1-c5c5b65eae)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8f881dcb28"></a>
+### D1-8F881DCB28 · MIMIC-IV island, episode 39 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8F881DCB28.md)
+
+**Derived from:** [D1-2A4FBEF441](#d1-2a4fbef441)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8faab55fef"></a>
+### D1-8FAAB55FEF · Proposal (rival-separation branch) — pre-ICU-discharge residual instability, MIMIC-IV island, ep 33
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8FAAB55FEF.md)
+
+**Derived from:** [D1-2F58DB026E](#d1-2f58db026e)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8faefa87f5"></a>
+### D1-8FAEFA87F5 · Diuretic initiation in fluid-accumulating critically ill patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8FAEFA87F5.md)
+
+**Derived from:** [D1-5F3668761C](#d1-5f3668761c)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-8fb62a356d"></a>
+### D1-8FB62A356D · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-8FB62A356D.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-8fbe3bd13e"></a>
 ### D1-8FBE3BD13E · Episode 25: renal-reserve effect modification of post-shock loop initiation
 
@@ -3167,12 +4940,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-904c352c92"></a>
+### D1-904C352C92 · Different Meanings of Persistent Hyperlactatemia: Improving vs Worsening Perfusion in Adult ICU Patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-904C352C92.md)
+
+**Derived from:** [D1-F7389479D4](#d1-f7389479d4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-90543e61f4"></a>
 ### D1-90543E61F4 · A prospective safety case for pulmonary-nodule admission routing: frozen retrospective gate, route-specific silent validation, and separable randomized trials
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-90543E61F4.md)
 
 **Derived from:** [D1-2762FC75C9](#d1-2762fc75c9)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-9059a69992"></a>
+### D1-9059A69992 · Research Proposal: Discordant Organ Recovery Patterns Predict ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9059A69992.md)
+
+**Derived from:** [D1-FB964203AA](#d1-fb964203aa)
 
 **Type:** Generated hypothesis version
 
@@ -3203,6 +4994,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-922a6548ad"></a>
+### D1-922A6548AD · Asynchronous organ recovery after circulatory stabilization: a severity-matched MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-922A6548AD.md)
+
+**Derived from:** [D1-7D87F3883D](#d1-7d87f3883d)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-924c091a25"></a>
 ### D1-924C091A25 · Repair : observed discordant renal recovery at the ICU-discharge landmark
 
@@ -3227,6 +5027,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-92753F0C1C.md)
 
 **Derived from:** [D1-5A21B37B52](#d1-5a21b37b52)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-928c45e768"></a>
+### D1-928C45E768 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-928C45E768.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
 
 **Type:** Generated hypothesis version
 
@@ -3293,6 +5102,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-93f64e70f9"></a>
+### D1-93F64E70F9 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-93F64E70F9.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-9424ea322d"></a>
 ### D1-9424EA322D · Episode 87 targeted repair: bind recorded RRT harms to the H120 ICU-day-7 clock
 
@@ -3344,6 +5162,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-950EBDF6B1.md)
 
 **Derived from:** [D1-218F82A961](#d1-218f82a961)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-955981534e"></a>
+### D1-955981534E · Does perfusion status modify the effect of early loop-diuretic initiation on mortality in sepsis? (Diuretic-timing effect modification in MIMIC-IV v3.1)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-955981534E.md)
+
+**Derived from:** [D1-5F3668761C](#d1-5f3668761c)
 
 **Type:** Generated hypothesis version
 
@@ -3401,6 +5228,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-96848ab9d8"></a>
+### D1-96848AB9D8 · Discordant creatinine recovery after AKI: a severity-, treatment-intensity-, and RRT-stratified MIMIC-IV study with KDIGO urine-output sensitivity analysis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-96848AB9D8.md)
+
+**Derived from:** [D1-237C0E3D9A](#d1-237c0e3d9a)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-970b6cd861"></a>
+### D1-970B6CD861 · Asynchronous Organ Recovery in ICU: A Falsifiable Test of Recovery Patterns and Mortality
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-970B6CD861.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-97187dfdc6"></a>
 ### D1-97187DFDC6 · Compiler-ready child: residual instability at ICU discharge and 7-day post-ICU failure
 
@@ -3410,12 +5255,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-97be3ba0f4"></a>
+### D1-97BE3BA0F4 · Episode 9 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-97BE3BA0F4.md)
+
+**Derived from:** [D1-A49267CED1](#d1-a49267ced1)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-980664d86a"></a>
 ### D1-980664D86A · MIMIC AKI discordance: all-eligible landmark flow and component-specific outcomes
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-980664D86A.md)
 
 **Derived from:** [D1-5EDF0AD893](#d1-5edf0ad893)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-9863ce92fc"></a>
+### D1-9863CE92FC · Serial SOFA Trajectories Predict ICU Mortality Beyond Baseline Severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9863CE92FC.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -3464,12 +5327,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-9af9f01d60"></a>
+### D1-9AF9F01D60 · Episode 8 provisional hypothesis: discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9AF9F01D60.md)
+
+**Derived from:** [D1-A49267CED1](#d1-a49267ced1)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-9bbb70c608"></a>
 ### D1-9BBB70C608 · Time-blinded, recommendation-level adjudication of pulmonary-nodule handoff: separating safe propagation from clinician reconciliation
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-9BBB70C608.md)
 
 **Derived from:** [D1-6145C9F518](#d1-6145c9f518)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-9c743123a2"></a>
+### D1-9C743123A2 · Recorded research hypothesis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9C743123A2.md)
+
+**Derived from:** [D1-FB964203AA](#d1-fb964203aa)
 
 **Type:** Generated hypothesis version
 
@@ -3509,12 +5390,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-9d6715577b"></a>
+### D1-9D6715577B · Working proposal (Lead) — MIMIC-IV island, episode 9 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9D6715577B.md)
+
+**Derived from:** [D1-A9C4DA1F6C](#d1-a9c4da1f6c)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-9dda5be038"></a>
+### D1-9DDA5BE038 · Provisional hypothesis: discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9DDA5BE038.md)
+
+**Derived from:** [D1-A49267CED1](#d1-a49267ced1)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-9df1b3cdea"></a>
 ### D1-9DF1B3CDEA · Decision-relevant partial identification of recovery-pattern signal after first ICU discharge
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-9DF1B3CDEA.md)
 
 **Derived from:** [D1-3C8862A45D](#d1-3c8862a45d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-9e2618783f"></a>
+### D1-9E2618783F · Discordant AKI Recovery in MIMIC-IV — Experiment Specification (v2)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9E2618783F.md)
+
+**Derived from:** [D1-A219C5003F](#d1-a219c5003f)
 
 **Type:** Generated hypothesis version
 
@@ -3554,6 +5462,51 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-9edd2db966"></a>
+### D1-9EDD2DB966 · Relative Glycemic Elevation (Stress Hyperglycemia Ratio) Independently Predicts ICU Mortality Beyond Absolute Glucose in MIMIC-IV
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9EDD2DB966.md)
+
+**Derived from:** [D1-37312BEFA2](#d1-37312befa2)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-9f579a4fc3"></a>
+### D1-9F579A4FC3 · Ischemia-Modified Effect of PRBC Transfusion on In-Hospital Mortality: A Falsifiable MIMIC-IV Experiment
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9F579A4FC3.md)
+
+**Derived from:** [D1-BC40FE415D](#d1-bc40fe415d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-9f68e5c917"></a>
+### D1-9F68E5C917 · Asynchronous organ recovery after circulatory stabilization: a severity-matched, temporally explicit MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9F68E5C917.md)
+
+**Derived from:** [D1-922A6548AD](#d1-922a6548ad)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-9f963744d9"></a>
+### D1-9F963744D9 · Discordant renal recovery in MIMIC-IV: a falsifiable, temporally separated prognostic study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9F963744D9.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-9fe67879c7"></a>
+### D1-9FE67879C7 · Persistent hyperlactatemia with divergent perfusion trajectories: a MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-9FE67879C7.md)
+
+**Derived from:** [D1-F7389479D4](#d1-f7389479d4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-a01368805d"></a>
 ### D1-A01368805D · Residual multiorgan instability at ICU discharge and near-term in-hospital deterioration
 
@@ -3578,6 +5531,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-A036A44450.md)
 
 **Derived from:** [D1-9065894758](#d1-9065894758)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-a0b2549c08"></a>
+### D1-A0B2549C08 · MIMIC-IV island, episode 24 (EVOLUTION of board-top SHR candidate)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A0B2549C08.md)
+
+**Derived from:** [D1-480CE8ACD5](#d1-480ce8acd5)
 
 **Type:** Generated hypothesis version
 
@@ -3623,6 +5585,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-A1C460A01A.md)
 
 **Derived from:** [D1-1A8D568BA3](#d1-1a8d568ba3)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-a219c5003f"></a>
+### D1-A219C5003F · Discordant AKI Recovery in MIMIC-IV — Experiment Specification (Draft)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A219C5003F.md)
+
+**Derived from:** [D1-C5C5B65EAE](#d1-c5c5b65eae)
 
 **Type:** Generated hypothesis version
 
@@ -3680,6 +5651,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-a374eaa4a8"></a>
+### D1-A374EAA4A8 · Asynchronous Organ Recovery: A Multi-Organ Recovery Phenotype Predicts ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A374EAA4A8.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-a392053cbb"></a>
 ### D1-A392053CBB · Boundary-safe all-opportunity experiment for incidental pulmonary-nodule handoff
 
@@ -3725,6 +5705,51 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-a46a9ad505"></a>
+### D1-A46A9AD505 · Working proposal (Evolution child) — MIMIC-IV island
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A46A9AD505.md)
+
+**Derived from:** [D1-3F8B669863](#d1-3f8b669863)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-a475080cd0"></a>
+### D1-A475080CD0 · MIMIC-IV island, episode 41 (Evolution branch A child)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A475080CD0.md)
+
+**Derived from:** [D1-E3CB8AA3D2](#d1-e3cb8aa3d2)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-a4924b5927"></a>
+### D1-A4924B5927 · Research Proposal: Perfusion-Dependent Effects of Diuretic Initiation in Sepsis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A4924B5927.md)
+
+**Derived from:** [D1-FB964203AA](#d1-fb964203aa)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-a49267ced1"></a>
+### D1-A49267CED1 · Episode 6 provisional hypothesis: discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A49267CED1.md)
+
+**Derived from:** [D1-E8689C0248](#d1-e8689c0248)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-a4bde245a1"></a>
+### D1-A4BDE245A1 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A4BDE245A1.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-a4e35b56b6"></a>
 ### D1-A4E35B56B6 · Episode 49 v3: align the hour-48 loop question to a recent recorded pressor-to-stability transition
 
@@ -3752,12 +5777,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-a543e79cf3"></a>
+### D1-A543E79CF3 · Episode 12 working proposal: mapping-audit child
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A543E79CF3.md)
+
+**Derived from:** [D1-7D635A2579](#d1-7d635a2579)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-a584ee511e"></a>
 ### D1-A584EE511E · Record-defined stress and the observed association of red-cell transfusion in ICU anemia
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-A584EE511E.md)
 
 **Derived from:** [D1-0F139A4201](#d1-0f139a4201)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-a5a3059dc4"></a>
+### D1-A5A3059DC4 · Time-of-Day × Residual Instability Before ICU Discharge: Does the Prognostic Value of Residual Instability Differ by Discharge Time-of-Day? (MIMIC-IV)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A5A3059DC4.md)
+
+**Derived from:** [D1-E6D4185A71](#d1-e6d4185a71)
 
 **Type:** Generated hypothesis version
 
@@ -3776,6 +5819,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-A5A43B8F54.md)
 
 **Derived from:** [D1-A0179B1FEB](#d1-a0179b1feb)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-a5a4619795"></a>
+### D1-A5A4619795 · Research Proposal: Discordant Multi-Organ Recovery Trajectories Predict Subsequent Treatment Escalation and Mortality in ICU Patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A5A4619795.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-a5b48b2e90"></a>
+### D1-A5B48B2E90 · Latent Disease Signatures in Critical Illness: Outperforming Traditional Severity Scores and Revealing Novel Patient Subgroups
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A5B48B2E90.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -3815,6 +5876,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-a7de76e30e"></a>
+### D1-A7DE76E30E · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A7DE76E30E.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-a80357ed6e"></a>
 ### D1-A80357ED6E · Creatinine increases during diuresis
 
@@ -3824,12 +5894,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Starting question
 
+<a id="d1-a81407e748"></a>
+### D1-A81407E748 · urine output trajectory and early ICU deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A81407E748.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-a86a2ee21d"></a>
 ### D1-A86A2EE21D · Two-phase clinically contextual reference challenge plus scaled component audit
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-A86A2EE21D.md)
 
 **Derived from:** [D1-F4E5F59B42](#d1-f4e5f59b42)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-a8a2fe360b"></a>
+### D1-A8A2FE360B · MIMIC-IV island, episode 25 (ADVERSARIAL negative-control-first sibling)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A8A2FE360B.md)
+
+**Derived from:** [D1-A0B2549C08](#d1-a0b2549c08), [D1-C9B319CBD1](#d1-c9b319cbd1)
 
 **Type:** Generated hypothesis version
 
@@ -3842,6 +5930,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-a9c4da1f6c"></a>
+### D1-A9C4DA1F6C · Working proposal (Lead) — MIMIC-IV island, episode 8 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-A9C4DA1F6C.md)
+
+**Derived from:** [D1-7842B0FB43](#d1-7842b0fb43)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-aa2072d324"></a>
+### D1-AA2072D324 · Residual Instability Before ICU Discharge: A Falsifiable MIMIC-IV Experiment
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-AA2072D324.md)
+
+**Derived from:** [D1-7F64DCC70B](#d1-7f64dcc70b)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-aa915dd760"></a>
 ### D1-AA915DD760 · Observed renal-recovery discordance at a fixed 72-hour ICU landmark — episode 7
 
@@ -3851,12 +5957,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-aa9a20b014"></a>
+### D1-AA9A20B014 · discordant AKI recovery in MIMIC-IV
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-AA9A20B014.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-aad39188f7"></a>
 ### D1-AAD39188F7 · Respiratory-transition evidence and early failure after first ICU discharge
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-AAD39188F7.md)
 
 **Derived from:** [D1-3B468F6C53](#d1-3b468f6c53)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-aaffca6cdc"></a>
+### D1-AAFFCA6CDC · Asynchronous Organ Recovery
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-AAFFCA6CDC.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -3887,6 +6011,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-abe6ab2947"></a>
+### D1-ABE6AB2947 · Discordant renal recovery in MIMIC-IV: a falsifiable, temporally separated prognostic study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-ABE6AB2947.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-ac5953519a"></a>
 ### D1-AC5953519A · MIMIC AKI discordance: residual severity and observation-opportunity audit
 
@@ -3911,6 +6044,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-ACD2668383.md)
 
 **Derived from:** [D1-F4949D3696](#d1-f4949d3696)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-ad186d3a84"></a>
+### D1-AD186D3A84 · Final episode-1 hypothesis: discordant AKI recovery in MIMIC-IV
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-AD186D3A84.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
 
 **Type:** Generated hypothesis version
 
@@ -3959,12 +6101,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-af6f6582d5"></a>
+### D1-AF6F6582D5 · Asynchronous organ recovery after circulatory stabilization: a severity-matched, temporally explicit MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-AF6F6582D5.md)
+
+**Derived from:** [D1-9F68E5C917](#d1-9f68e5c917)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-af9961cf2a"></a>
 ### D1-AF9961CF2A · Recorded live index-hospital discharge after overlap-calibrated post-shock IV-loop initiation
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-AF9961CF2A.md)
 
 **Derived from:** [D1-F363D0913A](#d1-f363d0913a)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-b02eddedb5"></a>
+### D1-B02EDDEDB5 · Perfusion-Modified Effect of Diuretic Timing on In-Hospital Mortality: A Falsifiable MIMIC-IV Experiment
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-B02EDDEDB5.md)
+
+**Derived from:** [D1-7D649F5CD1](#d1-7d649f5cd1)
 
 **Type:** Generated hypothesis version
 
@@ -3995,6 +6155,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-b14b1dcc4f"></a>
+### D1-B14B1DCC4F · Inflammatory Biomarker Trajectories Predict Multi-Organ Trajectory Divergence in Sepsis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-B14B1DCC4F.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-b1bf7c8249"></a>
 ### D1-B1BF7C8249 · Early lactate trajectory and 28-day mortality with frozen ICU strata and fail-closed estimation
 
@@ -4013,12 +6182,48 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-b219921b33"></a>
+### D1-B219921B33 · Working proposal (Lead) — MIMIC-IV island, episode 27 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-B219921B33.md)
+
+**Derived from:** [D1-C909F4E327](#d1-c909f4e327)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-b247b39631"></a>
+### D1-B247B39631 · Episode 16 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-B247B39631.md)
+
+**Derived from:** [D1-E1A5C04AB6](#d1-e1a5c04ab6)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-b2530cafcb"></a>
 ### D1-B2530CAFCB · Context robustness of lactate-by-perfusion prioritization at the first eligible live ICU exit
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-B2530CAFCB.md)
 
 **Derived from:** [D1-CBDF0DE926](#d1-cbdf0de926)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-b255812f33"></a>
+### D1-B255812F33 · Discordant AKI recovery: creatinine vs urine output and fluid status
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-B255812F33.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-b25f142fe0"></a>
+### D1-B25F142FE0 · MIMIC-IV island, episode 50 (Lead)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-B25F142FE0.md)
+
+**Derived from:** [D1-3A76CD4FB6](#d1-3a76cd4fb6)
 
 **Type:** Generated hypothesis version
 
@@ -4103,6 +6308,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-b53ceb5d2f"></a>
+### D1-B53CEB5D2F · Persistent Deep Sedation After Initial Stabilization Predicts Adverse Outcomes
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-B53CEB5D2F.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-b5bc14cfd2"></a>
 ### D1-B5BC14CFD2 · Provisional repair draft: discordant AKI recovery
 
@@ -4130,6 +6344,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-b61922652c"></a>
+### D1-B61922652C · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-B61922652C.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-b65a13e71a"></a>
 ### D1-B65A13E71A · All-randomized composite validation of the vasopressor endpoint by exact risk-difference distortion
 
@@ -4148,12 +6371,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-b6bc40b320"></a>
+### D1-B6BC40B320 · Working proposal (Lead/Gen) — MIMIC-IV island, episode 21 (RESTART, expert seed mimic-04)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-B6BC40B320.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-b6e6c98f2f"></a>
 ### D1-B6E6C98F2F · Congestion-guided early IV loop initiation after shock stabilization
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-B6E6C98F2F.md)
 
 **Derived from:** [D1-E0A1BC5310](#d1-e0a1bc5310)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-b6f06ec174"></a>
+### D1-B6F06EC174 · MIMIC-IV island, episode 39 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-B6F06EC174.md)
+
+**Derived from:** [D1-2A4FBEF441](#d1-2a4fbef441)
 
 **Type:** Generated hypothesis version
 
@@ -4283,12 +6524,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-bb36c19b20"></a>
+### D1-BB36C19B20 · MIMIC-IV island, episode 37 (Evolution child, work/ev37)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-BB36C19B20.md)
+
+**Derived from:** [D1-491A36A755](#d1-491a36a755)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-bb471fa4eb"></a>
 ### D1-BB471FA4EB · Observable report-to-summary chronology versus discordance despite adequate storage separation in pulmonary-nodule handoff
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-BB471FA4EB.md)
 
 **Derived from:** [D1-F04626AA33](#d1-f04626aa33)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-bb76f4c20d"></a>
+### D1-BB76F4C20D · Residual Instability Before ICU Discharge: A Falsifiable MIMIC-IV Experiment
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-BB76F4C20D.md)
+
+**Derived from:** [D1-7F64DCC70B](#d1-7f64dcc70b)
 
 **Type:** Generated hypothesis version
 
@@ -4382,6 +6641,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-bcf8cea28e"></a>
+### D1-BCF8CEA28E · robust discordant AKI recovery in MIMIC-IV
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-BCF8CEA28E.md)
+
+**Derived from:** [D1-AA9A20B014](#d1-aa9a20b014)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-bd2bbde9c1"></a>
 ### D1-BD2BBDE9C1 · Executable two-phase actionability audit with fixed atom allocation and a closed workload ledger
 
@@ -4400,6 +6668,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-bdd9b8c494"></a>
+### D1-BDD9B8C494 · Heterogeneity in the effects of transfusion
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-BDD9B8C494.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Starting question
+
 <a id="d1-bde67d3229"></a>
 ### D1-BDE67D3229 · Episode 50: fixed-baseline dynamic-policy estimand for hour-48 recorded loop initiation
 
@@ -4415,6 +6692,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-BE4C9241A2.md)
 
 **Derived from:** [D1-C8F688A2C1](#d1-c8f688a2c1)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-be50642c3b"></a>
+### D1-BE50642C3B · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-BE50642C3B.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
 
 **Type:** Generated hypothesis version
 
@@ -4436,12 +6722,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-bf29e53c26"></a>
+### D1-BF29E53C26 · Provisional repair: discordant renal recovery after AKI
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-BF29E53C26.md)
+
+**Derived from:** [D1-E89A3CEDAD](#d1-e89a3cedad)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-bf6ca97c8d"></a>
 ### D1-BF6CA97C8D · Deterministic route-blinded documentation-to-actionability bridge
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-BF6CA97C8D.md)
 
 **Derived from:** [D1-736668E92C](#d1-736668e92c)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-bfb97b9966"></a>
+### D1-BFB97B9966 · Discordant creatinine recovery after AKI: a severity-, treatment-intensity-, and RRT-stratified MIMIC-IV study with KDIGO urine-output sensitivity analysis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-BFB97B9966.md)
+
+**Derived from:** [D1-237C0E3D9A](#d1-237c0e3d9a)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-bfcb8f3902"></a>
+### D1-BFCB8F3902 · Provisional episode-2 hypothesis: does discordant AKI recovery add information beyond current severity?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-BFCB8F3902.md)
+
+**Derived from:** [D1-AD186D3A84](#d1-ad186d3a84)
 
 **Type:** Generated hypothesis version
 
@@ -4496,6 +6809,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-C0DAA88ECA.md)
 
 **Derived from:** [D1-FAE188AAD3](#d1-fae188aad3)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-c0fc5bbd95"></a>
+### D1-C0FC5BBD95 · Asynchronous Organ Recovery and Subsequent Deterioration in Critical Illness
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C0FC5BBD95.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -4562,12 +6884,48 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-c29f15d0a4"></a>
+### D1-C29F15D0A4 · Asynchronous Organ Recovery and Subsequent Deterioration in Critical Illness
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C29F15D0A4.md)
+
+**Derived from:** [D1-04A03E8ABF](#d1-04a03e8abf)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-c2e3c601a0"></a>
+### D1-C2E3C601A0 · Endpoint-sharpened urine-output trajectory proposal
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C2E3C601A0.md)
+
+**Derived from:** [D1-E780640F45](#d1-e780640f45)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-c36ee1b7e2"></a>
 ### D1-C36EE1B7E2 · independent executable/schema audit
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-C36EE1B7E2.md)
 
 **Derived from:** [D1-48BBDB76D9](#d1-48bbdb76d9)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-c394bf5c64"></a>
+### D1-C394BF5C64 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C394BF5C64.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-c41491c41f"></a>
+### D1-C41491C41F · Discordant AKI recovery: separating true renal recovery from creatinine artifacts
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C41491C41F.md)
+
+**Derived from:** [D1-B255812F33](#d1-b255812f33)
 
 **Type:** Generated hypothesis version
 
@@ -4586,6 +6944,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-C4C732F7EF.md)
 
 **Derived from:** [D1-DE8E9871FF](#d1-de8e9871ff)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-c4f4e8e2a0"></a>
+### D1-C4F4E8E2A0 · Asynchronous Organ Recovery: A Multi-Organ Recovery Phenotype Predicts ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C4F4E8E2A0.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -4652,6 +7019,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-c7eee96201"></a>
+### D1-C7EEE96201 · Provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C7EEE96201.md)
+
+**Derived from:** [D1-E1A5C04AB6](#d1-e1a5c04ab6)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-c842c87188"></a>
+### D1-C842C87188 · Episode 46 (MIMIC-IV island) — Lead proposal: de-escalation timing, culture-result landmark
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C842C87188.md)
+
+**Derived from:** [D1-71B36EEF4D](#d1-71b36eef4d)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-c84d538dcb"></a>
 ### D1-C84D538DCB · Temporal order of respiratory and circulatory withdrawal at first ICU discharge
 
@@ -4706,12 +7091,48 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Starting question
 
+<a id="d1-c909f4e327"></a>
+### D1-C909F4E327 · MIMIC-IV island, episode 25 (ADVERSARIAL negative-control-first sibling)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C909F4E327.md)
+
+**Derived from:** [D1-A0B2549C08](#d1-a0b2549c08), [D1-C9B319CBD1](#d1-c9b319cbd1)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-c9517ad5e6"></a>
 ### D1-C9517AD5E6 · Endpoint–direction discordance before ICU-to-ward transfer
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-C9517AD5E6.md)
 
 **Derived from:** [D1-A437AF4101](#d1-a437af4101)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-c9b319cbd1"></a>
+### D1-C9B319CBD1 · MIMIC-IV island, episode 24, GENERATION branch (child of [prior hypothesis])
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C9B319CBD1.md)
+
+**Derived from:** [D1-480CE8ACD5](#d1-480ce8acd5)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-c9c924275e"></a>
+### D1-C9C924275E · Research Proposal: Discordant Organ Recovery Patterns Predict ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C9C924275E.md)
+
+**Derived from:** [D1-FB964203AA](#d1-fb964203aa)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-c9ec00eaa4"></a>
+### D1-C9EC00EAA4 · Discordant Organ Recovery Predicts ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-C9EC00EAA4.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -4760,6 +7181,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-cc12f6ceea"></a>
+### D1-CC12F6CEEA · MIMIC-IV island, episode 25 (EVOLUTION crossover: separable estimand × HbA1c-independent anchor)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-CC12F6CEEA.md)
+
+**Derived from:** [D1-A0B2549C08](#d1-a0b2549c08), [D1-C9B319CBD1](#d1-c9b319cbd1)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-ccca6c6fc4"></a>
 ### D1-CCCA6C6FC4 · Discordant recovery after acute kidney injury
 
@@ -4778,12 +7208,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-cd07d1a331"></a>
+### D1-CD07D1A331 · Discordant AKI recovery: a concordant decision rule versus creatinine-only recovery
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-CD07D1A331.md)
+
+**Derived from:** [D1-282BE5C32E](#d1-282be5c32e)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-cd08badb94"></a>
+### D1-CD08BADB94 · Provisional hypothesis: discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-CD08BADB94.md)
+
+**Derived from:** [D1-CCCA6C6FC4](#d1-ccca6c6fc4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-cd2f5da800"></a>
 ### D1-CD2F5DA800 · Episode 48: compiler-closed multisource record-proxy protocol for the 12-hour extubation-ordered loop policy
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-CD2F5DA800.md)
 
 **Derived from:** [D1-B4DB52DB96](#d1-b4db52db96)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-cdc3b44761"></a>
+### D1-CDC3B44761 · Discordant AKI Recovery in MIMIC-IV — Experiment Specification (Draft)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-CDC3B44761.md)
+
+**Derived from:** [D1-A219C5003F](#d1-a219c5003f)
 
 **Type:** Generated hypothesis version
 
@@ -4823,6 +7280,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-cf9bde49c7"></a>
+### D1-CF9BDE49C7 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-CF9BDE49C7.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-cfcf279ac0"></a>
 ### D1-CFCF279AC0 · Suspected discordant renal recovery after early ICU AKI: episode 2 repair
 
@@ -4832,12 +7298,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-cfe2c21a6c"></a>
+### D1-CFE2C21A6C · Antimicrobial De-escalation in ICU Patients: Organ Function Effect Modification
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-CFE2C21A6C.md)
+
+**Derived from:** [D1-323CDFDAC0](#d1-323cdfdac0)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-cff0845206"></a>
 ### D1-CFF0845206 · Fully observed alive index-hospital discharge after post-shock IV-loop initiation
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-CFF0845206.md)
 
 **Derived from:** [D1-F363D0913A](#d1-f363d0913a)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-d04527cbdb"></a>
+### D1-D04527CBDB · Working child: urine-output trajectory versus treatment response and endpoint artifacts
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-D04527CBDB.md)
+
+**Derived from:** [D1-2B3E595173](#d1-2b3e595173)
 
 **Type:** Generated hypothesis version
 
@@ -4922,12 +7406,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-d3febda3e4"></a>
+### D1-D3FEBDA3E4 · Timing of loop-diuretic initiation in critically ill patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-D3FEBDA3E4.md)
+
+**Derived from:** [D1-8FAEFA87F5](#d1-8faefa87f5)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-d43fe5a498"></a>
 ### D1-D43FE5A498 · Episode 76 integration: ICU-day-7 H120 topology with documentation-only storetime
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-D43FE5A498.md)
 
 **Derived from:** [D1-3111B74489](#d1-3111b74489), [D1-239ED67778](#d1-239ed67778)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-d45d008678"></a>
+### D1-D45D008678 · MIMIC-IV island, episode 43 (EVOLUTION)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-D45D008678.md)
+
+**Derived from:** [D1-B6F06EC174](#d1-b6f06ec174)
 
 **Type:** Generated hypothesis version
 
@@ -5012,6 +7514,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-d6c3f92009"></a>
+### D1-D6C3F92009 · Working proposal (Lead) — MIMIC-IV island, episode 9 (evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-D6C3F92009.md)
+
+**Derived from:** [D1-A9C4DA1F6C](#d1-a9c4da1f6c)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-d6e3e74a85"></a>
 ### D1-D6E3E74A85 · A sealed split-view probability audit of pulmonary-nodule admission routing
 
@@ -5027,6 +7538,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-D6E87F6276.md)
 
 **Derived from:** [D1-99DC9E781E](#d1-99dc9e781e)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-d71a37cdaa"></a>
+### D1-D71A37CDAA · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-D71A37CDAA.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
 
 **Type:** Generated hypothesis version
 
@@ -5084,6 +7604,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-d923e9cf84"></a>
+### D1-D923E9CF84 · Multi-Organ Instability Dynamics: Rate-of-Change vs. Pattern
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-D923E9CF84.md)
+
+**Derived from:** [D1-E1834E0A6A](#d1-e1834e0a6a)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-d964d64c7d"></a>
 ### D1-D964D64C7D · Recorded-support evidence versus unobserved support at first ICU discharge
 
@@ -5099,6 +7628,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-D9BC622BA8.md)
 
 **Derived from:** [D1-2211A2AB58](#d1-2211a2ab58)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-da5b0d2c86"></a>
+### D1-DA5B0D2C86 · Antimicrobial De-escalation in ICU Patients: Organ Function Effect Modification
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-DA5B0D2C86.md)
+
+**Derived from:** [D1-323CDFDAC0](#d1-323cdfdac0)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-dab95a7d83"></a>
+### D1-DAB95A7D83 · Child proposal (Evolution, episode 18) — MIMIC-IV island: process-mediation + E-value
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-DAB95A7D83.md)
+
+**Derived from:** [D1-A46A9AD505](#d1-a46a9ad505)
 
 **Type:** Generated hypothesis version
 
@@ -5129,12 +7676,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-dc0990f18b"></a>
+### D1-DC0990F18B · Discordant creatinine recovery after AKI: a severity-, treatment-intensity-, and RRT-stratified MIMIC-IV study with prespecified baseline comparison
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-DC0990F18B.md)
+
+**Derived from:** [D1-237C0E3D9A](#d1-237c0e3d9a)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-dcb9f80c86"></a>
+### D1-DCB9F80C86 · urine output trajectory and early ICU deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-DCB9F80C86.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-dcf524e46d"></a>
 ### D1-DCF524E46D · Lagged ascertainment audit and proposal: discordant-AKI recovery
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-DCF524E46D.md)
 
 **Derived from:** [D1-0F7D26F066](#d1-0f7d26f066)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-dd10a10b44"></a>
+### D1-DD10A10B44 · Episode 12 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-DD10A10B44.md)
+
+**Derived from:** [D1-E1A5C04AB6](#d1-e1a5c04ab6)
 
 **Type:** Generated hypothesis version
 
@@ -5153,6 +7727,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-DD545CFC2F.md)
 
 **Derived from:** [D1-B5E6840FBB](#d1-b5e6840fbb)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-de3035c756"></a>
+### D1-DE3035C756 · Research Proposal: Discordant Organ Recovery After Critical Illness
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-DE3035C756.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -5201,6 +7784,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-dfb1411049"></a>
+### D1-DFB1411049 · Discordant AKI recovery: a concordant decision rule versus creatinine-only recovery
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-DFB1411049.md)
+
+**Derived from:** [D1-282BE5C32E](#d1-282be5c32e)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-e070c2d4d8"></a>
 ### D1-E070C2D4D8 · Destination-aware day-28 endpoint for the hour-48 post-shock IV-loop target trial
 
@@ -5237,6 +7829,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-e14acb039b"></a>
+### D1-E14ACB039B · Repaired hypothesis: discordant renal recovery after AKI
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E14ACB039B.md)
+
+**Derived from:** [D1-66B676E231](#d1-66b676e231)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-e150d1b372"></a>
 ### D1-E150D1B372 · Observed creatinine/Foley recovery discordance at a fixed 72-hour ICU landmark — episode 7 support-gated child
 
@@ -5261,6 +7862,33 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-E155962C45.md)
 
 **Derived from:** [D1-CDC7AEA66E](#d1-cdc7aea66e)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e1824490d4"></a>
+### D1-E1824490D4 · Discordant creatinine recovery after AKI: a severity-, treatment-intensity-, and RRT-stratified MIMIC-IV study with KDIGO urine-output sensitivity analysis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E1824490D4.md)
+
+**Derived from:** [D1-237C0E3D9A](#d1-237c0e3d9a)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e1834e0a6a"></a>
+### D1-E1834E0A6A · Multi-Organ Recovery Trajectory Hypothesis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E1834E0A6A.md)
+
+**Derived from:** [D1-26E577E52E](#d1-26e577e52e)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e1a5c04ab6"></a>
+### D1-E1A5C04AB6 · Episode 11 provisional hypothesis: persistent discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E1A5C04AB6.md)
+
+**Derived from:** [D1-1E90A6591D](#d1-1e90a6591d)
 
 **Type:** Generated hypothesis version
 
@@ -5309,6 +7937,33 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-e363df23c9"></a>
+### D1-E363DF23C9 · Multi-Organ Recovery Trajectory Hypothesis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E363DF23C9.md)
+
+**Derived from:** [D1-E9BC700046](#d1-e9bc700046)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e3cb8aa3d2"></a>
+### D1-E3CB8AA3D2 · MIMIC-IV island, episode 40 (Lead evolution)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E3CB8AA3D2.md)
+
+**Derived from:** [D1-C909F4E327](#d1-c909f4e327)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e3ea267045"></a>
+### D1-E3EA267045 · Working proposal (Evolution child, episode 20) — MIMIC-IV island
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E3EA267045.md)
+
+**Derived from:** [D1-A46A9AD505](#d1-a46a9ad505)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-e49e78236b"></a>
 ### D1-E49E78236B · Clinically decision-anchored fixed-lock validation of the vasopressor-restart endpoint
 
@@ -5354,12 +8009,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-e6596157ca"></a>
+### D1-E6596157CA · Research Proposal: Discordant Organ Recovery After Critical Illness
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E6596157CA.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e691e1cd77"></a>
+### D1-E691E1CD77 · Discordant creatinine recovery after AKI: a severity- and treatment-intensity-matched MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E691E1CD77.md)
+
+**Derived from:** [D1-5147868D31](#d1-5147868d31)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-e6cd920c34"></a>
 ### D1-E6CD920C34 · Residual instability before ICU-to-ward transfer: audited coupling-control support
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-E6CD920C34.md)
 
 **Derived from:** [D1-BBEF626BEA](#d1-bbef626bea)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e6d4185a71"></a>
+### D1-E6D4185A71 · Component-Specific Residual Instability Before ICU Discharge: Does the Prognostic Value Differ by Dominant Component? (MIMIC-IV)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E6D4185A71.md)
+
+**Derived from:** [D1-735C881AFC](#d1-735c881afc)
 
 **Type:** Generated hypothesis version
 
@@ -5381,6 +8063,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-e780640f45"></a>
+### D1-E780640F45 · Successor proposal: urine-output trajectory versus treatment, observation, and endpoint timing
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E780640F45.md)
+
+**Derived from:** [D1-A543E79CF3](#d1-a543e79cf3)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-e7a39e9c8f"></a>
 ### D1-E7A39E9C8F · Evidence-trace reference-validity calibration for a clinically live departure obligation
 
@@ -5396,6 +8087,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-E7E7C2F9EB.md)
 
 **Derived from:** [D1-E6CD920C34](#d1-e6cd920c34)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e80e024ecb"></a>
+### D1-E80E024ECB · Research Proposal: Discordant Multi-Organ Recovery Trajectories Predict Subsequent Treatment Escalation and Mortality in ICU Patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E80E024ECB.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e810d8845b"></a>
+### D1-E810D8845B · Research Proposal: Discordant Multi-Organ Recovery Trajectories Predict Subsequent Treatment Escalation and Mortality in ICU Patients
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E810D8845B.md)
+
+**Derived from:** [D1-04A03E8ABF](#d1-04a03e8abf)
 
 **Type:** Generated hypothesis version
 
@@ -5417,6 +8126,33 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-e8689c0248"></a>
+### D1-E8689C0248 · Episode-2 hypothesis: does persistent discordant AKI recovery add information beyond current severity?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E8689C0248.md)
+
+**Derived from:** [D1-AD186D3A84](#d1-ad186d3a84)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e87f59809c"></a>
+### D1-E87F59809C · Discordant recovery after acute kidney injury: creatinine-defined recovery with persistent oliguria and subsequent outcomes (MIMIC-IV) — data-verified child
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E87F59809C.md)
+
+**Derived from:** [D1-51B196DF85](#d1-51b196df85)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e89a3cedad"></a>
+### D1-E89A3CEDAD · Provisional hypothesis: discordant renal recovery after acute kidney injury
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E89A3CEDAD.md)
+
+**Derived from:** [D1-671AED6FD4](#d1-671aed6fd4)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-e8abbf3bc9"></a>
 ### D1-E8ABBF3BC9 · A nested two-phase probability validation of actionability and supersession with all-unit fail-closed routing
 
@@ -5426,12 +8162,75 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-e8f87eba0f"></a>
+### D1-E8F87EBA0F · Discordant creatinine recovery after AKI: a severity-, treatment-intensity-, and RRT-stratified MIMIC-IV study with urine-output sensitivity analysis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E8F87EBA0F.md)
+
+**Derived from:** [D1-237C0E3D9A](#d1-237c0e3d9a)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e93d982a6a"></a>
+### D1-E93D982A6A · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E93D982A6A.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e976d9bb87"></a>
+### D1-E976D9BB87 · Provisional hypothesis: discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E976D9BB87.md)
+
+**Derived from:** [D1-A49267CED1](#d1-a49267ced1)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e9ba4b3a4e"></a>
+### D1-E9BA4B3A4E · Discordant Organ Recovery Predicts ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E9BA4B3A4E.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-e9bc700046"></a>
+### D1-E9BC700046 · Multi-Organ Recovery Trajectory Hypothesis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-E9BC700046.md)
+
+**Derived from:** [D1-04A03E8ABF](#d1-04a03e8abf)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-e9f9141810"></a>
 ### D1-E9F9141810 · Is the retrospective pulmonary-nodule handoff route transportable, or is it a subgroup/documentation artifact?
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-E9F9141810.md)
 
 **Derived from:** [D1-2762FC75C9](#d1-2762fc75c9)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-ea62bcdc70"></a>
+### D1-EA62BCDC70 · Provisional repair: discordant renal recovery after AKI
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-EA62BCDC70.md)
+
+**Derived from:** [D1-E89A3CEDAD](#d1-e89a3cedad)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-ea89533d00"></a>
+### D1-EA89533D00 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-EA89533D00.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
 
 **Type:** Generated hypothesis version
 
@@ -5459,6 +8258,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-EAFFF0FE9E.md)
 
 **Derived from:** [D1-ACD2668383](#d1-acd2668383), [D1-F4949D3696](#d1-f4949d3696)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-eb28a3ad3d"></a>
+### D1-EB28A3AD3D · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-EB28A3AD3D.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
 
 **Type:** Generated hypothesis version
 
@@ -5498,6 +8306,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-ecec7743aa"></a>
+### D1-ECEC7743AA · Episode 14 working proposal: discordant AKI recovery with an executable estimand
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-ECEC7743AA.md)
+
+**Derived from:** [D1-E1A5C04AB6](#d1-e1a5c04ab6)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-ecf78985ed"></a>
+### D1-ECF78985ED · Provisional hypothesis: discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-ECF78985ED.md)
+
+**Derived from:** [D1-A49267CED1](#d1-a49267ced1)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-eda699b1aa"></a>
 ### D1-EDA699B1AA · Opportunity-conditional target-link documentation experiment
 
@@ -5507,12 +8333,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-edb378d35b"></a>
+### D1-EDB378D35B · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-EDB378D35B.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-edf1b16392"></a>
 ### D1-EDF1B16392 · Residual instability before ICU-to-ward transfer: endpoint-fixed falsification of trajectory-state discordance
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-EDF1B16392.md)
 
 **Derived from:** [D1-C6D83CABFF](#d1-c6d83cabff)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-ef138e7931"></a>
+### D1-EF138E7931 · Episode 6 provisional hypothesis: discordant AKI recovery beyond current severity
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-EF138E7931.md)
+
+**Derived from:** [D1-E8689C0248](#d1-e8689c0248)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-ef5e3cdbb4"></a>
+### D1-EF5E3CDBB4 · MIMIC-IV island, episode 23 (RESTART, new direction)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-EF5E3CDBB4.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -5606,6 +8459,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-f1cfa117d3"></a>
+### D1-F1CFA117D3 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-F1CFA117D3.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-f26726a07e"></a>
 ### D1-F26726A07E · Residual instability at ICU discharge: a time-specific competing-risk audit
 
@@ -5630,6 +8492,24 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-F2B6BA8274.md)
 
 **Derived from:** [D1-F26726A07E](#d1-f26726a07e)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-f2c22fbb09"></a>
+### D1-F2C22FBB09 · urine output trajectory and early ICU deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-F2C22FBB09.md)
+
+**Derived from:** [D1-DCB9F80C86](#d1-dcb9f80c86)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-f32aa49e13"></a>
+### D1-F32AA49E13 · Discordant recovery after AKI: does creatinine recovery overstate renal recovery?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-F32AA49E13.md)
+
+**Derived from:** [D1-1C892AF748](#d1-1c892af748)
 
 **Type:** Generated hypothesis version
 
@@ -5660,12 +8540,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-f41f6610a7"></a>
+### D1-F41F6610A7 · Creatinine Rise During Decongestion in Acute Heart Failure: A Falsifiable MIMIC-IV Experiment
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-F41F6610A7.md)
+
+**Derived from:** [D1-A80357ED6E](#d1-a80357ed6e)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-f41fe4d9cd"></a>
 ### D1-F41FE4D9CD · Transportability of recorded support patterns after the first ICU outtime
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-F41FE4D9CD.md)
 
 **Derived from:** [D1-D964D64C7D](#d1-d964d64c7d)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-f43c44d975"></a>
+### D1-F43C44D975 · Persistent hyperlactatemia with divergent perfusion trajectories: a refined MIMIC-IV study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-F43C44D975.md)
+
+**Derived from:** [D1-83D8EBDF71](#d1-83d8ebdf71)
 
 **Type:** Generated hypothesis version
 
@@ -5786,6 +8684,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-f958285b6c"></a>
+### D1-F958285B6C · Research Proposal: Discordant Organ Recovery Patterns Predict ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-F958285B6C.md)
+
+**Derived from:** [D1-FB964203AA](#d1-fb964203aa)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-f9b33c4c4a"></a>
 ### D1-F9B33C4C4A · Pre-registered source/actionability bridge with workload and correlated-error stress tests
 
@@ -5801,6 +8708,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-F9DCA304B3.md)
 
 **Derived from:** [D1-71DBE8B574](#d1-71dbe8b574), [D1-8398E787BA](#d1-8398e787ba)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-f9eb6cebfa"></a>
+### D1-F9EB6CEBFA · Research Proposal: Discordant Organ Recovery After Critical Illness
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-F9EB6CEBFA.md)
+
+**Derived from:** — (recorded root)
 
 **Type:** Generated hypothesis version
 
@@ -5822,6 +8738,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-fa16c32535"></a>
+### D1-FA16C32535 · Timing of diuretic initiation
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-FA16C32535.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Starting question
+
 <a id="d1-fa28dbaad0"></a>
 ### D1-FA28DBAAD0 · Prospective translation of the conservative pulmonary-nodule handoff gate: silent validation followed, only after lane-specific gates, by a governed route-stratified workflow trial
 
@@ -5840,6 +8765,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-fa7739808c"></a>
+### D1-FA7739808C · Context-Dependent Lactate Clearance in Sepsis: A MIMIC-IV Cohort Study
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-FA7739808C.md)
+
+**Derived from:** [D1-30B72178DF](#d1-30b72178df)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-fa77cb5bdc"></a>
 ### D1-FA77CB5BDC · Successor: strict destination-neutral day-7 recorded ICU topology
 
@@ -5849,12 +8783,39 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-faabc0fbd3"></a>
+### D1-FAABC0FBD3 · robust discordant AKI recovery in MIMIC-IV
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-FAABC0FBD3.md)
+
+**Derived from:** [D1-AA9A20B014](#d1-aa9a20b014)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-fae188aad3"></a>
 ### D1-FAE188AAD3 · Observed creatinine/Foley recovery discordance at 72 hours — episode 8 executable successor
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-FAE188AAD3.md)
 
 **Derived from:** [D1-E150D1B372](#d1-e150d1b372)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-fb18453e1c"></a>
+### D1-FB18453E1C · Research Proposal: Perfusion-Dependent Effects of Diuretic Initiation in Sepsis
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-FB18453E1C.md)
+
+**Derived from:** [D1-FB964203AA](#d1-fb964203aa)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-fb334354c2"></a>
+### D1-FB334354C2 · MIMIC-IV island, episode 32 (EVOLVED child: adversarial negative-control-first)
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-FB334354C2.md)
+
+**Derived from:** [D1-C909F4E327](#d1-c909f4e327)
 
 **Type:** Generated hypothesis version
 
@@ -5876,12 +8837,30 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-fb964203aa"></a>
+### D1-FB964203AA · Research Proposal: Diuretic Initiation in Septic Patients with Fluid Overload
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-FB964203AA.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-fc40b8f7fd"></a>
 ### D1-FC40B8F7FD · Residual physiologic instability at ICU discharge and early ICU return
 
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-FC40B8F7FD.md)
 
 **Derived from:** [D1-C8F688A2C1](#d1-c8f688a2c1)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-fc86d716d9"></a>
+### D1-FC86D716D9 · Evolution proposal (ep30) — MIMIC-IV island
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-FC86D716D9.md)
+
+**Derived from:** [D1-4264AC00D3](#d1-4264ac00d3)
 
 **Type:** Generated hypothesis version
 
@@ -5948,6 +8927,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 
 **Type:** Generated hypothesis version
 
+<a id="d1-fdd258c5f8"></a>
+### D1-FDD258C5F8 · Asynchronous Organ Recovery: A Multi-Organ Recovery Phenotype Predicts ICU Deterioration
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-FDD258C5F8.md)
+
+**Derived from:** — (recorded root)
+
+**Type:** Generated hypothesis version
+
 <a id="d1-fe019c7aaf"></a>
 ### D1-FE019C7AAF · residual instability at ICU discharge
 
@@ -5981,6 +8969,15 @@ Search by node ID or scientific term. Parent IDs link within this catalog.
 **Full scientific proposal:** [Read the public review copy](../proposals/D1-FEA3E6D21F.md)
 
 **Derived from:** [D1-FE9A1E1E67](#d1-fe9a1e1e67)
+
+**Type:** Generated hypothesis version
+
+<a id="d1-feb12662b5"></a>
+### D1-FEB12662B5 · Provisional episode-2 hypothesis: does discordant AKI recovery add information beyond current severity?
+
+**Full scientific proposal:** [Read the public review copy](../proposals/D1-FEB12662B5.md)
+
+**Derived from:** [D1-AD186D3A84](#d1-ad186d3a84)
 
 **Type:** Generated hypothesis version
 

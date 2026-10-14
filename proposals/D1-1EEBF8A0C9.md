@@ -1,0 +1,111 @@
+> **Anonymous source-language review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained. Some source passages remain in Chinese.
+
+# Is a change in a patient's own lab-draw intensity a prospective deterioration signal, or a severity/practice fingerprint?
+
+Lead working proposal — eICU 2.0 island, episode 13. Operation: **evolve** of true parent
+`[prior hypothesis]` (valid, mu 30.997; episode-9 child of
+`[prior hypothesis]`). Seed origin: `[starting question]`
+("Reduced testing and subsequent deterioration"). Status: **design frozen by Lead for
+compilation**. A bounded Lead probe was executed this episode with the REAL source files
+(numbers below). **No reference/solver solution was executed at discovery** — this is
+readiness, not a solved result.
+
+## Unresolved question and clinical importance
+
+ICU patients are monitored by repeated lab draws, and clinicians decide how often to draw.
+[K1] Agniel 2018 showed, across 272 lab tests in 669,452 patients, that the *presence and
+timing* of a test order — not only its value — carries survival signal (order presence
+significant in 233/272; order timing beat the value in 118/174). Monitoring intensity
+therefore encodes a care process. Prior episodes of this branch asked whether a *drop* in
+draw intensity is a patient-level deterioration signal; the decisive, still-unresolved
+question is directional and security-adjusted, because a change in how often a patient is
+sampled could mean (H1) clinicians are tracking a sensed deterioration, (R1) sicker
+patients simply get more draws (confounding by indication/severity), (R2) it is a
+between-hospital practice fingerprint [K2][K3], or (R3) it reflects disposition/recovery
+and end-of-life planning. Resolving which dominates would tell intensivists whether a
+monitoring trajectory is an actionable early-warning input or an artifact of local practice.
+
+## Evidence and the opening (computed this episode)
+
+Bounded Lead probe on the real source files (streaming `patient.csv.gz` + `lab.csv.gz`,
+join key `patientunitstayid`): 200,859 stays; eligible (age>=16, `unitdischargeoffset`
+>=1440 min, decisive `unitdischargestatus` in {Alive,Expired}) = **128,140**; **208**
+hospitals, **135** with >=200 eligible. Draw = distinct `labresultoffset` per patient.
+Ratio R=(d2+0.5)/(d1+0.5) over (0,12]h vs (12,24]h; (24,48]h mortality (Expired and
+1440<`unitdischargeoffset`<=2880). Crude mortality by R quartile: **Q1 1.16%, Q2 1.24%,
+Q3 0.71%, Q4 (R>1, ESCALATION) 2.33%**; overall 1.36%. The highest crude risk is at
+*escalation*, not de-escalation — i.e. the naive "less monitoring => worse outcome" story
+is not what the raw cohort shows. This reversal is the scientific opening and makes the
+severity-adjusted, directional comparison the decisive test rather than an incremental one.
+
+## Population, exposure, outcome — concrete bindings
+
+- Source files (read-only): `.../EICU 2.0数据/patient.csv.gz`
+  ([source checksum]),
+  `.../lab.csv.gz` (`[source checksum]`),
+  `.../apachePatientResult.csv.gz` (`[source checksum]`),
+  `.../vitalPeriodic.csv.gz` (`[source checksum]`),
+  `.../hospital.csv.gz`, `.../carePlanEOL.csv.gz`, `.../treatment.csv.gz`.
+- `patient` columns used: `patientunitstayid` (join key), `hospitalid`, `age`,
+  `unitdischargeoffset` (MINUTES from ICU admit), `unitdischargestatus`,
+  `unitdischargelocation`, `unitstaytype`.
+- `lab` columns used: `patientunitstayid`, `labresultoffset` (MINUTES), `labname`,
+  `labresult`. `apachePatientResult`: `patientunitstayid`, `predictedicumortality`,
+  `apachescore`, `apacheversion`. `vitalPeriodic`: `patientunitstayid`, `observationoffset`
+  (MINUTES), `temperature`, `heartrate`, `respiration`, `sao2`, `systemicsystolic`,
+  `systemicdiastolic`, `systemicmean` (MAP; binding correction verified this episode by the Generation branch header read: `vitalPeriodic` has NO `meanbp` column; `meanbp` exists only in `apacheApsVar`).
+- Exposure: person-centered `logR = log((d2+0.5)/(d1+0.5))`, d1=distinct draws in (0,12]h,
+  d2 in (12,24]h, over the bound panel analytes (creatinine, BUN, WBC x1000, Hgb, Hct,
+  platelets x1000, sodium, potassium, chloride, bicarbonate, glucose, calcium, magnesium,
+  anion gap). Landmark = hour 24 for outcome ascertainment; severity covariates from hour 12.
+- Outcome (primary): (24,48]h in-ICU mortality. Observability rule: require
+  `unitdischargeoffset`>2880 (still admitted at 48h) OR in-window death; exclude alive
+  patients discharged/transferred before 48h. Secondary: escalation (new vasopressor) only
+  in still-admitted patients.
+
+## Estimand and analysis
+
+Primary estimand: the within-person adjusted association of `logR` with (24,48]h mortality,
+controlling hour-12 severity (APACHE IVa `predictedicumortality`+`apachescore` plus hour-12
+vitals/labs), estimated with a **multilevel logistic model** (hospital random intercept +
+random slope on `logR`). Report OR per doubling of the draw-rate ratio with 95% CI,
+between-hospital variance of the `logR` slope, and LOHO transport (delta-AUROC, calibration
+slope, O:E, Brier, net benefit).
+
+## Falsification — pre-specified outcomes
+
+- **Supportive of H1 (severity-adjusted indication/anticipation):** adjusted OR per doubling
+  of R is >1 with 95% CI excluding 1, AND the effect is concentrated in the physiologically
+  UNSTABLE hour-12 subgroup (stable-subgroup negative-control OR within [0.8,1.25]).
+- **Adverse (R1 severity/indication explains it):** the crude escalation association
+  attenuates to a null CI after hour-12 severity adjustment.
+- **Adverse (R2 practice fingerprint):** the hospital random-slope variance is large and the
+  within-hospital effect is inconsistent across hospitals / fails LOHO transport.
+- **Adverse (R3 disposition/recovery artifact):** the association is concentrated in
+  patients near unit discharge or with `carePlanEOL`/comfort-care `treatment` records and
+  disappears when those are excluded.
+- **Inconclusive:** wide CIs, or effect present but not separable from R1-R3 in the
+  pre-specified sensitivity set.
+
+## Baseline vs substantive alternative
+
+- Simple baseline: fixed-effect logistic on hour-12 severity + `logR`.
+- Substantive alternative: the multilevel random-slope model (and optionally an
+  inhomogeneous-Poisson model of draw times). The alternative separates WITHIN-hospital
+  patient-level signal from BETWEEN-hospital practice (R2) and quantifies how much of any
+  apparent effect is a practice fingerprint — information the fixed-effect baseline loses.
+
+## Honest limits
+
+- Association/transport only; eICU has no order-set, staffing, or bed-capacity data, so no
+  mechanism (R2) can be established, only characterized as heterogeneity.
+- Probe used ALL lab offsets, not the bound panel subset; per-panel-analyte recount is a
+  solver step. eICU offsets are MINUTES. Vasopressor `drugname` strings for the secondary
+  outcome are not yet bound.
+- Key works K1-K3 were inspected at ABSTRACT level only; claim scope is bounded accordingly.
+- No reference/solver execution at discovery.
+
+## Key references
+[K1] Agniel D, Kohane IS, Weber GM. BMJ 2018;361:k1479. doi:10.1136/bmj.k1479.
+[K2] Futoma J, Simons M, Panter T, Doshi-Velez F, Celi LA. Lancet Digit Health 2020;2(9):e489-e492. doi:10.1016/S2589-7500(20)30186-2.
+[K3] Meybohm P, Baron DM, Fries D, Lasocki S, Vlaar APJ, Zacharowski K, Choorapoikayil S. Intensive Care Med 2026;52(6):1290-1305. doi:10.1007/s00134-026-08491-6.

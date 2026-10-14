@@ -1,0 +1,29 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# Evidence and bounded feasibility note
+
+## Inspected public evidence
+1. Haines et al., *Comparison of Cystatin C and Creatinine in the Assessment of Measured Kidney Function during Critical Illness*, CJASN 2023, DOI 10.2215/cjn.0000000000000203, inspected Europe PMC metadata/abstract source `[source checksum]`. The abstract reports that eGFR creatinine systematically overestimated kidney function after prolonged critical illness and that cystatin C better estimated measured GFR in 38 ventilated patients. This supports the measurement limitation, not the proposed discordant-recovery association.
+2. Li et al., *Clinical practice guidelines for acute kidney injury: a systematic review of the methodological quality*, Front Med 2025, DOI 10.3389/fmed.2025.1567359, inspected full-text XML source `[source checksum]`. It describes the 2012 KDIGO framework and the common creatinine/urine-output AKI definition, while identifying implementation and population-applicability gaps. This supports using a prespecified creatinine/urine-output operational definition and limits claims about clinical guideline compliance.
+3. Tang et al., *An interpretable machine learning model for early prediction of subsequent observed CRRT initiation in patients with sepsis-associated acute kidney injury*, Clin Exp Med 2026, DOI 10.1007/s10238-026-02305-1, inspected full-text XML source `[source checksum]`. It used a strict 24-hour landmark, MIMIC-IV/eICU data, urine output and severity predictors, and explicitly treated observed CRRT initiation as a treatment decision rather than objective necessity. This supports a leakage-safe landmark design and warns against causal interpretation of RRT.
+
+No numerical effect for the proposed hypothesis has been computed.
+
+## Verified MIMIC bindings and bounded dictionary inspection
+Read-only archive: `[internal dataset path]`, [source checksum], snapshot `[source checksum]`.
+
+- `mimic-iv-3.1/hosp/labevents.csv.gz`: `subject_id`, `hadm_id`, `itemid`, `charttime`, `storetime`, `valuenum`, `valueuom`; join to `hosp/d_labitems` by `itemid`. Dictionary inspection found serum creatinine item `50912` (`Creatinine`, Blood, Chemistry).
+- `mimic-iv-3.1/icu/outputevents.csv.gz`: `subject_id`, `hadm_id`, `stay_id`, `charttime`, `storetime`, `itemid`, `value`, `valueuom`; join to `icu/d_items` by `itemid`. Urine output items are `226559` Foley, `226560` Void, `226561` Condom Cath, `226563` Suprapubic, `226567` Straight Cath, and `226627` OR Urine; `227489` GU irrigant/urine output is excluded from the primary urine definition because it can include irrigant.
+- `mimic-iv-3.1/icu/inputevents.csv.gz`: `subject_id`, `hadm_id`, `stay_id`, `starttime`, `endtime`, `itemid`, `amount`, `amountuom`, `rate`, `rateuom`, `statusdescription`; join to `icu/d_items` by `itemid`. Verified treatment/context items include norepinephrine `221906`, epinephrine `221289`, phenylephrine `221749`, dopamine `221662`, vasopressin `222315`, furosemide `221794`, bumetanide `229639`, NaCl 0.9% `225158`, and NaCl 0.45% `225159`. Fluid balance is an exposure/context variable, not a validated fluid-status measure.
+- `mimic-iv-3.1/icu/procedureevents.csv.gz`: `subject_id`, `hadm_id`, `stay_id`, `starttime`, `endtime`, `itemid`, `value`, `valueuom`, `statusdescription`; join to `icu/d_items` by `itemid`. Verified RRT procedure items are hemodialysis `225441`, CRRT `225802`, CVVHD `225803`, CVVHDF `225809`, and SCUF `225955`; peritoneal dialysis `225805` is secondary.
+- `mimic-iv-3.1/icu/icustays.csv.gz`: `subject_id`, `hadm_id`, `stay_id`, `intime`, `outtime`, `los`; join to `hosp/admissions` by `subject_id`,`hadm_id` and to ICU event tables by `stay_id`.
+- `mimic-iv-3.1/hosp/admissions.csv.gz`: `subject_id`, `hadm_id`, `admittime`, `dischtime`, `deathtime`, `hospital_expire_flag`; join to `hosp/patients` by `subject_id` for `anchor_age`, `gender`.
+- `mimic-iv-3.1/hosp/patients.csv.gz`: `subject_id`, `anchor_age`, `gender`, `dod`; adult eligibility is `anchor_age >= 18`.
+
+The catalog states that timestamps are deidentified subject-specific shifts with preserved within-subject intervals; cross-subject calendar alignment is invalid. The catalog also states that MIMIC core lacks waveforms and radiology images. Notes are not required for this primary structured study.
+
+## Bounded feasibility check
+The archive and dictionary members are accessible. Dictionary inspection verified the exact item IDs above. A full cohort count was not run because the episode’s current checkpoint requires preserving the hypothesis before expanding analysis; no prevalence, landmark eligibility, event count, or model result is claimed. The future solver must first quantify creatinine coverage, urine-output coverage, discordant-cell support, and RRT/death events before fitting. If the discordant group or post-landmark follow-up is sparse, the result is inconclusive rather than evidence against the hypothesis.
+
+## Method decision
+The simple baseline is a prespecified landmark logistic/Cox model using current creatinine, creatinine slope, urine-output summary, AKI stage, age/sex, and available severity/treatment context. The substantive alternative is a compact trajectory model using pre-landmark creatinine and urine-output sequences (slopes, nadir, persistence, and co-movement), with identical patient splits, held-out temporal evaluation, calibration, discrimination, and uncertainty. It is retained because persistence/ordering may distinguish true discordance from a single noisy measurement; it is deferred if the bounded diagnostic shows insufficient sequence support. CPU is adequate for the baseline and compact trajectory fit; no GPU is required at this stage.

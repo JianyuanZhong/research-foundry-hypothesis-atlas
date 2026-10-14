@@ -2,59 +2,78 @@
 
 [← Trees and expert review](README.md)
 
-**For blinded review:** complete your independent assessment from the current [review copies](REVIEW.md) before consulting this aggregate campaign inventory. This page provides aggregate counts; the separate [model index](MODEL_INDEX.md) now maps individual hypotheses to their producing model.
+**This page reveals aggregate campaign attribution.** Complete independent review from the [anonymous copies](REVIEW.md) before consulting the [model index](MODEL_INDEX.md).
 
-The October 5, 2026 refresh contains **2,582 nodes: 2,455 generated versions and 127 starting questions**, with **2,932 recorded parent links**. The previous 403 nodes retain their public IDs and original scientific source text; public redactions may improve between editions.
+The **2026-10-14 16:50 China time** refresh contains **4,622 nodes: 4,444 generated versions and 178 starting questions**, with **4,508 recorded parent links**. All 2,582 previously published nodes retain their public IDs, proposal copies, and recorded lineage.
 
-## Additions since the previous edition
+## Additions since October 5
 
-| Addition | Generated versions added | Notes |
-|---|---:|---|
-| Completed Codex campaign | 27 | Now 67 generated versions in total; 80/80 episodes closed. |
-| Discovery RSI draft-first campaign | 114 | Stopped at 58/60 episodes; all registered drafts included, regardless of selection. |
-| Historical Sol campaigns | 2,008 | Eleven runs covering HCC, eICU, MIMIC-IV, and UK Biobank. |
-| Historical starting questions | — | 30 additional seed records; repeated imports of the same seed are deduplicated. |
+This refresh adds **1,989 generated hypothesis versions** and **51 starting questions**. It includes original Qwen, additional tuned discoveryRSI campaigns, Claude, DeepSeek, and GLM.
 
-This is an archive of recorded scientific proposals, not a collection restricted to successful or selected outputs. The Discovery RSI selection replay does not add new hypotheses and is not counted as new research.
+| Hypothesis writer | Generated versions in full atlas |
+|---|---:|
+| Qwen original | 628 |
+| discoveryRSI (our model) | 1,176 |
+| Claude | 23 |
+| DeepSeek | 257 |
+| GLM | 19 |
+| GPT | 2,341 |
 
-## Model provenance
+## Writer attribution
 
-**Discovery RSI** is the public-facing name of our in-house research model. The campaign in this snapshot used our fine-tuned Qwen 3.8 27B model. Earlier atlas wording called this the “Pure Qwen” draft-first campaign; it is the same run, with unchanged hypotheses, counts, and lineage.
+**Qwen original** includes original Qwen 3.5 4B and Qwen 3.8 27B checkpoints. **discoveryRSI (our model)** includes our tuned Qwen 3.5 4B SFT, Qwen 3.8 27B SFT, and Qwen 3.8 27B RAFT R2 checkpoints. Exact served model IDs and checkpoint variants are listed separately in the [model index](MODEL_INDEX.md) and CSV.
 
-## Source inventory
+In mixed Qwen/Luna runs, attribution follows the model that wrote the hypothesis, using the author-linked attempt at candidate creation. Coordinators and reviewers are not assigned as hypothesis writers. A Qwen workflow setting does not change the label of a GLM-written hypothesis.
 
-The table identifies campaign families for coverage auditing. Individual proposal catalogs retain anonymous IDs and omit model scores.
+## Added source inventory
 
-| Campaign family | Generated versions retained | Closed episodes observed |
-|---|---:|---:|
-| Earlier Luna clinical / population campaign | 225 | 86 |
-| Earlier four-domain Luna campaign | 41 | 28 |
-| Completed four-domain Codex campaign | 67 | 80 |
-| Discovery RSI draft-first campaign | 114 | 58 |
-| Sol, September 9, Codex time-bounded run | 14 | 1 |
-| Sol, September 9, Claude-hosted episode campaign and continuations | 667 | 356 |
-| Sol, September 9, Codex-hosted episode campaign and continuations | 575 | 387 |
-| Sol, September 9, restarted ablation | 10 | 4 |
-| Sol, September 13, v0.3.0 | 60 | 40 |
-| Sol, September 13, v0.3.1 | 56 | 39 |
-| Sol, September 13, v0.3.2 proxy campaign | 41 | 35 |
-| Sol, September 14, v0.4.0 | 200 | 200 |
-| Sol, September 15, v0.5.0 | 243 | 200 |
-| Sol, September 22, v0.7.0 | 4 | 5 |
-| Sol, September 23, Novita campaign | 138 | 165 |
+Counts describe the frozen records at collection. Closed episodes are observed closures, not successful experiments or a claim that a campaign has finished. Some October 14 campaigns may still be active.
 
-Counts use committed candidate records and non-null episode closure timestamps at collection. Historical runs may include continuations or have stopped early. Episode closure is not evidence of scientific success. Five seed-only Sol runs and one empty Sol run were inspected but add no generated material and are excluded from the forests.
+| Campaign / retained hypothesis links | Writer | Newly added generated versions | Observed closed episodes |
+|---|---|---:|---:|
+| [Qwen original — balanced campaign](models/C16.md) | Qwen original | 95 | 120 |
+| [discoveryRSI — balanced SFT campaign](models/C17.md) | discoveryRSI (our model) | 50 | 120 |
+| [discoveryRSI — RAFT adapted campaign](models/C18.md) | discoveryRSI (our model) | 144 | 30 |
+| [discoveryRSI — RAFT R2 campaign](models/C19.md) | discoveryRSI (our model) | 109 | 94 |
+| [discoveryRSI — RAFT repaired campaign](models/C20.md) | discoveryRSI (our model) | 222 | 120 |
+| [Qwen original — evidence iteration](models/C21.md) | Qwen original | 23 | 30 |
+| [discoveryRSI — RAFT evidence iteration](models/C22.md) | discoveryRSI (our model) | 94 | 30 |
+| [GLM — research contract campaign](models/C23.md) | GLM | 19 | 40 |
+| [Claude — four-domain campaign](models/C24.md) | Claude | 23 | 9 |
+| [Qwen original — initial 4B pilot](models/C25.md) | Qwen original | 1 | 1 |
+| [Qwen original — mixed 4B campaign v8](models/C26.md) | Qwen original | 23 | 11 |
+| [Qwen original — mixed 4B campaign v9](models/C27.md) | Qwen original | 176 | 40 |
+| [Qwen original — 4B pilot v2](models/C28.md) | Qwen original | 15 | 25 |
+| [Qwen original — 4B pilot v3](models/C29.md) | Qwen original | 39 | 36 |
+| [Qwen original — 4B campaign v6](models/C30.md) | Qwen original | 42 | 40 |
+| [Qwen original — 4B campaign v7](models/C31.md) | Qwen original | 153 | 40 |
+| [Qwen original — mixed 27B campaign v9](models/C32.md) | Qwen original | 28 | 40 |
+| [Qwen original — 27B campaign v7](models/C33.md) | Qwen original | 19 | 40 |
+| [discoveryRSI — mixed 4B SFT campaign v9](models/C34.md) | discoveryRSI (our model) | 75 | 40 |
+| [discoveryRSI — 4B SFT campaign v6](models/C35.md) | discoveryRSI (our model) | 11 | 40 |
+| [discoveryRSI — 4B SFT campaign v7](models/C36.md) | discoveryRSI (our model) | 11 | 40 |
+| [Qwen original — research contract replay](models/C37.md) | Qwen original | 14 | 30 |
+| [discoveryRSI — RAFT research contract replay](models/C38.md) | discoveryRSI (our model) | 47 | 30 |
+| [DeepSeek — four-domain campaign](models/C39.md) | DeepSeek | 257 | 281 |
+| [discoveryRSI — fresh SFT campaign](models/C40.md) | discoveryRSI (our model) | 17 | 7 |
+| [discoveryRSI — repaired fresh SFT campaign](models/C41.md) | discoveryRSI (our model) | 268 | 120 |
+| [discoveryRSI — targeted SFT campaign](models/C42.md) | discoveryRSI (our model) | 3 | 13 |
+| [discoveryRSI — fresh SFT continuation](models/C43.md) | discoveryRSI (our model) | 3 | 7 |
+| [discoveryRSI — targeted SFT continuation](models/C44.md) | discoveryRSI (our model) | 8 | 15 |
+
+The earlier 15 campaign catalogs remain included, covering GPT and the original 114-version tuned draft-first campaign. All campaigns are listed in the [complete model index](MODEL_INDEX.md). Empty and seed-only runs add no generated material. Evaluation copies, working files, unregistered drafts, selection replays, and reviewer outputs are not new scientific nodes.
 
 ## Counting and lineage
 
-- A node is one recorded version or imported starting question, not necessarily a unique hypothesis or discovery.
-- Shared seeds are collapsed only when domain, source candidate identity, and exact proposal text match. Previously published IDs are preserved, including earlier seed representations.
-- Independently recorded generated versions remain distinct even when their text is similar or identical.
-- All recorded parents must exist. No inferred links, artificial common ancestors, or model-score-based pruning are introduced.
-- UK Biobank is grouped under Population Multi-omics & Disease Targets for continuity. This includes clinical and epidemiological work that does not itself use multi-omics.
+- A node is one registered hypothesis version or imported starting question, not necessarily a unique idea or discovery.
+- All previously published IDs, review copies, dataset assignments, seed flags, and parent links are preserved.
+- Shared seeds are collapsed only when domain, source candidate identity, and exact original proposal text match.
+- 34 copied generated-record occurrences are reused when candidate identity, exact original proposal hash, episode, author, and creation timestamp all match. Independently recorded versions remain separate.
+- All recorded parents must exist in the same domain and dataset. No inferred links, artificial common ancestors, or score-based pruning are introduced.
+- UK Biobank remains under Population Multi-omics & Disease Targets for continuity, including clinical and epidemiological questions that do not use multi-omics.
 
-The public graph contains only review IDs, domain and dataset labels, titles, seed flags, parent links, and paths to redacted proposals. Exact source exports, hashes, source-to-review mappings, and originals remain in the private archive. A minimal public attribution table links review IDs to models in the [model index](MODEL_INDEX.md). Source datasets and run databases were accessed read-only; this refresh launched no model rollouts, training, or new experiments.
+## Public boundaries and languages
 
-## English review edition
+The public graph contains review IDs, domain and dataset labels, titles, seed flags, recorded parents, and paths to redacted proposals. Separate unblinded attribution metadata maps generated versions to their writer. Exact original source exports, hashes, and source-to-review mappings remain private. Source datasets, credentials, raw traces, and private execution packages are excluded.
 
-An editorial translation and blinding pass on October 5, 2026 changes presentation only. Counts and lineage are unchanged. Individual proposals omit producer and execution attribution; see [edition notes](TRANSLATION.md).
+Catalog titles are in English. Earlier English translations remain unchanged; 339 added copies retain Chinese source passages and carry explicit source-language notices. See [language and blinding notes](TRANSLATION.md). Source databases and datasets were accessed read-only. This update launches no new research rollouts, inference, training, or experiments.

@@ -1,0 +1,50 @@
+> **Anonymous source-language review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained. Some source passages remain in Chinese.
+
+# Working proposal: in-hospital laboratory trajectories after acute coronary syndrome (v17)
+
+## Question
+Among adults with an acute or subacute coronary syndrome diagnosis during an index hospitalization, does the in-hospital laboratory trajectory from admission to discharge predict 60-day all-cause readmission beyond what is captured by discharge laboratory values alone?
+
+## Clinical importance
+ACS patients are at high risk of readmission, and post-discharge monitoring decisions often rely on a single discharge laboratory snapshot. If the in-hospital trajectory (e.g., troponin, creatinine, hemoglobin, platelet count) carries incremental information, this could inform follow-up intensity and readmission prevention. The prior post-discharge trajectory design was not feasible in the available HCC data: a bounded diagnostic found only 8 patients with post-discharge lab coverage under the broadened ACS definition. In-hospital labs are available for the index admission by definition, making this question feasible while retaining the scientific question of whether dynamic laboratory change adds prognostic information.
+
+## Evidence base
+- [K1] Liu et al. 2026: In-hospital inflammatory-nutritional-renal trajectory phenotypes are associated with graded 90-day risks after ADHF discharge and provide limited additional prognostic information beyond baseline clinical and biomarker data.
+- [K2] Marcus et al. 2026: In patients hospitalized with ADHF, a decline in platelet count from normal at admission to thrombocytopenia at discharge was associated with excess 30-day readmission and mortality.
+- [K3] (to be added after literature inspection)
+
+## Data bindings (HCC)
+- Encounters: HCC/data_基本信息_2500296761891079109.csv (columns: 患者主索引, 就诊号, 年龄, 性别, 就诊时间, 入院时间, 出院时间, 就诊科室)
+- Diagnoses: HCC/data_诊断_7504718184492840569.csv (columns: 患者主索引, 就诊号, 诊断名称, 诊断类型)
+- Labs: HCC/data_检验_609065997844652188.csv (columns: 患者主索引, 就诊号, 检验, 定性结果, 定量结果, 标本类型, 检验时间)
+- Medications: HCC/data_用药_5693407050835159466.csv (columns: 患者主索引, 就诊号, 用药, 单次用药计量, 单次用药计量单位, 频次, 开始时间, 结束时间, 用药方式, 药品类型)
+- Join keys: 患者主索引 (patient), 就诊号 (encounter)
+- Time fields: 入院时间 (admission), 出院时间 (discharge), 检验时间 (lab time), 就诊时间 (encounter time)
+
+## Design
+1. Population: adults (age >= 18) with an acute or subacute coronary syndrome diagnosis during an index hospitalization.
+2. Temporal boundaries: index admission to discharge for laboratory trajectories; 60-day follow-up for readmission.
+3. Variables: admission and discharge laboratory values (troponin, creatinine, hemoglobin, platelet count), clinical covariates (age, sex, diagnosis, medications).
+4. Outcome: 60-day all-cause readmission.
+5. Baseline: logistic regression using discharge laboratory values and clinical covariates.
+6. Alternative: longitudinal model using admission-to-discharge laboratory trajectories.
+7. Analysis: compare held-out discrimination and calibration.
+8. Falsification: no incremental performance beyond the baseline.
+
+## Method comparison
+- Baseline: logistic regression with discharge values.
+- Alternative: longitudinal model with admission-to-discharge trajectories.
+- The alternative could reveal whether the direction and rate of change in laboratory values carry information that a single discharge snapshot loses.
+- Resource budget: CPU-only, small sample size (73 adult index patients), feasible within the discovery budget.
+- Selection reason: the baseline is simple and interpretable; the alternative is scientifically substantive because it tests whether dynamic change adds information.
+
+## Unresolved claim
+Whether the in-hospital laboratory trajectory carries incremental prognostic information beyond the discharge laboratory snapshot for 60-day readmission after acute or subacute coronary syndrome.
+
+## Falsifiable test
+Fit a baseline logistic model using discharge laboratory values and clinical covariates, then fit a longitudinal alternative using admission-to-discharge laboratory trajectories. A supportive result requires a prespecified improvement in held-out discrimination or calibration beyond the baseline; an adverse result is no incremental performance; an inconclusive result is insufficient coverage or unstable estimates.
+
+## Alternatives
+- Post-discharge trajectory: not feasible due to limited post-discharge lab coverage (8 patients).
+- Different outcome: 30-day readmission is underpowered (1 event in 22 patients under the narrow ACS definition).
+- Different population: broader ACS definition is needed to increase sample size.

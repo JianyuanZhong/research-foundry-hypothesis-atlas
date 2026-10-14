@@ -1,0 +1,156 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# Hypotension Duration × Inflammatory Burden Interaction Predicts Vasopressor Resistance and Mortality
+
+## Hypothesis Statement
+In patients with septic shock requiring vasopressor therapy in the eICU, the combined burden of hypotension duration and systemic inflammation (measured as time-weighted hypotension × inflammatory marker levels) is independently associated with vasopressor resistance and in-hospital mortality, beyond the effects of baseline severity alone.
+
+**Formal Statement:** After adjusting for age, APACHE II score, comorbidities, and hospital characteristics, the interaction term between hypotension duration and inflammatory burden (CRP/hs-CRP) will be significantly positive (β_interaction > 0, p < 0.05), indicating that patients with both prolonged hypotension AND high inflammation have synergistically increased risk of vasopressor resistance and mortality.
+
+## Clinical Importance
+1. **Personalized Vasopressor Management:** Identify patients at high risk of vasopressor resistance who may benefit from earlier escalation or alternative strategies.
+2. **Improved Risk Stratification:** Combined hypotension-inflammation metric improves risk prediction beyond minimum BP targets alone.
+3. **Mechanistic Insight:** Tests whether hypotension and inflammation interact (multiplicative effect) rather than just additively, providing insight into pathophysiology.
+
+## Study Population and Inclusion Criteria
+**Population:** Adult patients in eICU with septic shock requiring vasopressor therapy.
+
+**Inclusion:**
+- Received vasopressor(s) for at least 12 hours
+- Had at least one vasopressor discontinuation event
+- Followed for 72 hours after final vasopressor dose
+- Have complete blood gas and FiO2 records
+- Have laboratory measurements including CRP/hs-CRP
+
+**Exclusion:**
+- Non-septic shock (confirmed by diagnosis table)
+- ICU stay < 72 hours
+- Missing key variables (BP, vasopressors, CRP)
+
+## Data Bindings - eICU Tables
+
+### Primary Tables:
+1. **vitalPeriodic** - Blood pressure monitoring (5-minute medians)
+   - Columns: patientunitstayid, offset, systolic, diastolic, mean, spO2
+   - Use: Calculate hypotension episodes and duration
+
+2. **infusionDrug** - Vasopressor administration
+   - Columns: patientunitstayid, infusionoffset, infusionenteredoffset, drugname, drugdosage, drugunit
+   - Use: Identify vasopressor use, duration, and cessation
+
+3. **lab** - Laboratory measurements
+   - Columns: labevent_id, subject_id, hadm_id, itemid, charttime, value, valuenum, valueuom
+   - Use: Extract CRP/hs-CRP measurements
+
+4. **patient** - Patient demographics
+   - Columns: subject_id, age, gender, anchor_age
+   - Use: Baseline severity and demographics
+
+5. **hospital** - Hospital characteristics
+   - Columns: hospitalid
+   - Use: Hospital-level covariates
+
+### Key Join Keys:
+```
+infusionDrug.patientunitstayid → vitalPeriodic.patientunitstayid → lab.patientunitstayid → patient.patientunitstayid → hospital.hospitalid
+```
+
+## Analysis Plan
+
+### Step 1: Define Hypotension Episodes
+- Define hypotension as systolic BP < 70 mmHg (or < 5th percentile for age/weight)
+- Calculate time-weighted hypotension burden: ∫(1 if hypotensive) dτ
+- Or use cumulative hypotension hours during vasopressor therapy
+
+### Step 2: Define Inflammatory Burden
+- Extract CRP/hs-CRP values during ICU stay
+- Calculate mean, max, and time-weighted inflammatory burden
+- Use log-transformed CRP if skewed
+
+### Step 3: Define Vasopressor Resistance
+- Define as: Need for escalation of vasopressor dose despite adequate BP target achievement
+- Or: Sustained hypotension requiring dose escalation despite optimal BP targets
+- Or: Vasopressor-free interval > 4 hours before achieving sustained normotension (>90th percentile systolic BP for 2 consecutive hours)
+
+### Step 4: Define Mortality
+- In-hospital mortality (EMAR table)
+- 28-day mortality (if EMAR not available)
+
+### Step 5: Statistical Analysis
+
+**Baseline Model (A):**
+```
+logit(P(y=1)) = β0 + β1*age + β2*APACHE_II + β3*hospital_effects + β4*hypotension_duration + β5*inflammatory_burden
+```
+
+**Substantive Alternative Model (B) - Interaction Model:**
+```
+logit(P(y=1)) = β0 + β1*age + β2*APACHE_II + β3*hospital_effects
+              + β4*hypotension_duration + β5*inflammatory_burden
+              + β6*(hypotension_duration × inflammatory_burden)
+```
+
+**Falsification Criteria:**
+- β6 (interaction coefficient) should be significantly positive (p < 0.05)
+- If β6 is not significant, hypothesis is falsified
+
+**Model Comparison:**
+- Use likelihood ratio test or AIC/BIC to compare Model A vs Model B
+- If Model B fits significantly better and β6 > 0, hypothesis supported
+
+## Key References (Abstract-Only Inspection)
+
+### K1: Intensity of renal support in critically ill patients with acute kidney injury
+- **PMID:** 18492867
+- **Title:** Intensity of renal support in critically ill patients with acute kidney injury.
+- **Authors:** VA/NIH Acute Renal Failure Trial Network (Palevsky PM, et al.)
+- **Year:** 2008
+- **Journal:** New England Journal of Medicine
+- **Claim:** Hypotension during renal-replacement therapy is associated with complications, suggesting temporal dynamics of hemodynamic instability matter.
+- **Locator:** Abstract, Results section
+- **Inspection:** abstract_only
+
+### K2: Effect of Continuous Infusion Therapy With Low-dose Terlipressin Combined With Norepinephrine on Hemodynamics, Inflammatory Markers, and Prognosis in Patients With Severe Septic Shock
+- **PMID:** 39091078
+- **Title:** Effect of Continuous Infusion Therapy With Low-dose Terlipressin Combined With Norepinephrine on Hemodynamics, Inflammatory Markers, and Prognosis in Patients With Severe Septic Shock.
+- **Authors:** Li W, Deng J
+- **Year:** 2025
+- **Journal:** Military Medicine
+- **Claim:** Inflammatory markers (hs-CRP, IL-8, TNF-α) are measured and associated with prognosis in septic shock patients receiving vasopressor therapy.
+- **Locator:** Abstract, Results section
+- **Inspection:** abstract_only
+
+### K3: Early, Goal-Directed Therapy for Septic Shock - A Patient-Level Meta-Analysis
+- **PMID:** 28320242
+- **Title:** Early, Goal-Directed Therapy for Septic Shock - A Patient-Level Meta-Analysis.
+- **Authors:** PRISM Investigators (Rowan KM, et al.)
+- **Year:** 2017
+- **Journal:** New England Journal of Medicine
+- **Claim:** Standard goal-directed therapy does not improve mortality across diverse patient characteristics, suggesting heterogeneity in treatment response.
+- **Locator:** Abstract, Results section
+- **Inspection:** abstract_only
+
+## Limitations
+1. **Reference Inspection:** Currently only abstract-only inspection available; full-text required for mechanistic insights
+2. **Measurement:** SpO2 near 100% cannot reliably quantify hyperoxemia (if applicable)
+3. **CRP Availability:** Not all patients have CRP measurements
+4. **Vasopressor Resistance Definition:** Needs clinical adjudication for precise definition
+5. **Confounding:** Unmeasured confounders (e.g., source of infection, microbiome)
+
+## Scientific Advance Over Existing Knowledge
+Most existing studies on hypotension in sepsis:
+- Focus on minimum BP targets (e.g., MAP ≥ 65 mmHg)
+- Treat hypotension as binary (yes/no)
+- Don't consider interaction with inflammation
+
+This study advances by:
+- Testing multiplicative interaction (not just additive)
+- Using duration and burden (not just occurrence)
+- Focusing on vasopressor resistance (actionable outcome)
+- Proposing novel combined risk metric
+
+## Next Steps
+1. Inspect three key references with full-text access when available
+2. Evolve candidate with more precise operationalization of key variables
+3. Add sensitivity analyses (e.g., different hypotension definitions, lag times)
+4. Consider hospital-level random effects to account for practice variation

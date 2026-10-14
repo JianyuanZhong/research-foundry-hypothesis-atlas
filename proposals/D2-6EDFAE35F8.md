@@ -1,0 +1,537 @@
+> **Anonymous English review copy.** Producer and execution provenance are withheld. Scientific methods and citations are retained.
+
+# Does methotrexate failure leave a fingerprint on the synovial macrophage?
+
+Episode 2 working proposal (Lead-owned). Domain 2, Therapeutic Target Prioritization.
+Status markers: [OBS] = observed/verified by me or by a named job; [PLAN] = proposed solver
+work, not executed; [UNRESOLVED] = open objection.
+
+---
+
+## 1. The scientific opening
+
+Alivernini et al. 2020 (Nat Med 26:1295-1306, local full text
+`sources/remission.txt`) is the source of the data analysed here and is the closest
+prior work. It profiles FACS-purified synovial tissue macrophages (STM) across healthy
+donors, undifferentiated peripheral arthritis (UPA), treatment-naive active RA,
+treatment-resistant active RA and RA in sustained remission, and establishes two things
+that I take as *supported by existing evidence and not under test*:
+
+* MerTK+CD206+ STM subsets (TREM2-high, LYVE1+) dominate healthy and remission synovium;
+  MerTK-negative CD48+S100A12+ / CD48+SPP1+ subsets dominate active RA. [OBS, [K1]]
+* MerTK+ STM proportion in remission relates to risk of flare after treatment tapering,
+  and MerTK+ STM products restrain fibroblast activation. [OBS, [K1]]
+
+The opening is a load-bearing analytic assumption inside that paper, not a gap in its
+conclusions. **For its single-cell analyses the paper merges treatment-naive and
+treatment-resistant RA into one group, labelled "Naive/Resistant RA".** [OBS: figure
+panel labels, `remission.txt` lines 138-140; group counts at lines 398, 473, 1235, 2313.]
+The merge is never tested.
+
+The two groups are not pharmacologically equivalent. The Methods state it precisely
+[OBS, `remission.txt` lines 1896-1935]:
+
+| group | drug exposure at biopsy | disease state |
+|---|---|---|
+| naive | none (treatment-naive) | active |
+| resistant | stable methotrexate, 15.3 +/- 3.3 mg/week; inadequate responder | active |
+| remission | methotrexate (15.2 +/- 2.9 mg/wk) + TNF inhibitor | sustained clinical + ultrasound remission >= 6 months |
+
+So the deposit contains a near-factorial contrast of *drug exposure* x *disease state*
+that the published analysis collapsed. The missing cell (untreated remission) does not
+exist and cannot be fabricated; this is stated as a design limit in section 8.
+
+## 2. The unresolved claim under test
+
+> **READ SECTION 13 FIRST.** The exploratory diagnostics of this episode were executed
+> and they already **falsified the crudest version of H1** (donor-level whole-
+> transcriptome separation). H1 as written below is retained as the historical statement
+> of the question; the claim the solver actually tests is **H1' / H2' in section 14**,
+> and the falsification criteria that govern are **section 15**, which supersede
+> section 6. Nothing in sections 1-12 that conflicts with sections 13-16 stands.
+
+**H1 (original, now partly settled — see 13).** Donor-level synovial macrophage
+transcriptomes from MTX-inadequate-responder
+("resistant") active RA are distinguishable from treatment-naive active RA by a
+reproducible axis that is **not** reducible to (i) macrophage subset composition,
+(ii) the disease-activity axis defined by the remission contrast, or (iii) cohort /
+sequencing-depth technical structure.
+
+**H0 (the null I expect to be hard to reject, and which is itself informative).**
+Naive and MTX-IR active RA macrophages are exchangeable at donor level: a leave-one-
+donor-out classifier performs no better than its exact label-permutation null, and no
+gene set survives composition matching and cohort-split validation.
+
+**Secondary partition (the target-prioritization payload).** Using all three RA groups,
+partition donor-level differential expression into:
+
+* **A — activity axis**: (naive + resistant) vs remission. Expected to be large; it is
+  the already-known axis and serves as a positive control that the pipeline can detect
+  real biology at these donor numbers.
+* **T — treatment-exposure-like**: changed in resistant-vs-naive *and* in
+  remission-vs-naive in the same direction. Both treated groups receive MTX, so this set
+  is the candidate MTX fingerprint (confounded with TNFi and with disease duration;
+  see section 8).
+* **R — refractory-specific**: resistant differs from *both* naive and remission. These
+  are the candidate refractory-disease targets, i.e. molecules present when MTX is on
+  board and failing, absent both before treatment and in successful treatment.
+
+**Therapeutic-window arm.** Any candidate in R is then scored for expression in the
+MerTK+TREM2+/LYVE1+ "protective" subsets that dominate remission synovium. A target
+enriched in R and absent from the protective subsets has a window; one expressed in both
+does not. This is the D2-T2 seed's concern (reduce a harmful program while preserving a
+protective state) applied to a compartment and dataset the seed listed but episode 1 did
+not use. No selectivity claim follows from expression alone — this arm *ranks* and
+*excludes* candidates, it does not establish selectivity.
+
+## 3. Why the answer matters clinically
+
+MTX-inadequate response is the decision point at which a biologic or targeted synthetic
+DMARD is added, and it is upstream of the EULAR "difficult-to-treat RA" population
+[K3]. Two outcomes change different things:
+
+* **If H1 is supported** — MTX-IR synovium carries a macrophage program absent from
+  untreated disease — then target lists derived from treatment-naive cohorts (which is
+  what most synovial biopsy discovery cohorts are) are the wrong list for the refractory
+  patients who actually need new drugs, and R nominates an alternative list.
+* **If H0 holds** — the compartment is unmoved by failing MTX — then the published merge
+  is empirically justified, discovery in naive cohorts transfers to MTX-IR disease, and
+  the failure of MTX in these patients is not visible as a macrophage state change. That
+  is a useful negative: it argues against "escape programs" in this compartment and
+  redirects attention to the cells MTX does reach.
+
+Neither outcome is a treatment recommendation. Both change what a target-discovery
+cohort should look like.
+
+## 4. Data binding (verified)
+
+Source dir (read-only):
+`[internal dataset path]`
+
+* Per-sample 10x triplets `{SAMPLE}.matrix.mtx`, `{SAMPLE}.genes.tsv`,
+  `{SAMPLE}.barcodes.tsv`, 27 samples. [OBS] `HC0547.matrix.mtx` header
+  `%%MatrixMarket matrix coordinate integer general` / `33694 852 1116987`, i.e.
+  genes x cells; `genes.tsv` is two columns Ensembl-ID + symbol
+  (`ENSG00000243485  RP11-34P13.3`), 33694 rows, hg19/CellRanger 2.1 reference
+  [OBS, `remission.txt` line 2513]; barcodes carry the `-1` suffix.
+  All `*.genes.tsv` share catalog [source checksum] (to be
+  re-verified byte-wise in diagnostic D1).
+* Metadata: `.../prepared/E-MTAB-8322.design.json` (sample_id, donor_id, donor_status,
+  age, sex, tissue, cell_type, condition, source_metadata, cells). [OBS: 27 records.]
+* `E-MTAB-8322.sdrf.txt` (107 lines): `Source Name`, `Comment[ENA_RUN]`,
+  `Comment[library construction]` = 10xV2 for all; 1, 3, 4 or 8 runs per Source Name.
+* Catalog: `datasets/therapeutic_targets/README.md`, snapshot `[internal campaign]`,
+  catalog [source checksum].
+
+Group assignment (sample_id -> donor_id, age, sex, cells) [OBS, design.json]:
+
+* **Healthy** HC0547(24M,852), HC0572(48M,1699), HC0701(22M,2102), HC0732(26F,783)
+* **Naive active RA** NaiveSA131(77F,591), NaiveSA138(56F,1885), NaiveSA146(65F,1546),
+  NaiveSA172(53F,1893), SA139(66F,10775), SA220(65F,1871)
+* **Resistant active RA** ResistantSA144(58F,1627), ResistantSA145(60F,666),
+  ResistantSA151(63F,1305), ResistantSA166(56F,1212), SA222(60F,5209), SA227(57F,4819)
+* **Remission RA** RemSA132(51F,1626), RemSA160(52F,726), RemSA161(62F,1086),
+  RemSA174(72F,1323), SA159(66F,3223), SA168(50F,5067), SA225(42F,2011)
+* **UPA** UPASA149(65F,1354), UPASA153(62F,1792), SA154(51F,2533), SA149P(65F,4957)
+
+**Join keys.** `design.json:sample_id` == file stem of the matrix triplet ==
+`sdrf:Source Name` for the 1/3-run samples; the Source-Name-to-sample-stem mapping for
+the deep samples must be re-verified in D1 before use. Donor identity is
+`design.json:donor_id`; **SA149 and SA149P are of unresolved relatedness and are never
+counted as two independent donors** (domain-guide limit, honoured).
+
+**Cohort structure.** The paper has two cohorts [OBS, `remission.txt` lines 2014-2030,
+2292-2295]: Cohort 1 (Oxford, "Discovery") = FACS-sorted CD64+CD11b+ STMs; Cohort 2
+(Glasgow, "Validation") = all synovial cell types sequenced, myeloid separated
+*computationally* on CD64/CD11b/CD14/MARCO/CD1c/LYZ. The samples with 4 or 8 SDRF runs
+and much larger cell counts (SA139, SA220, SA159, SA168, SA225, SA222, SA227, SA149P,
+SA154) are the candidate Cohort 2. **Consequence**: the deposited Cohort-2 matrices may
+contain non-macrophages, so (a) computational myeloid gating is mandatory before any
+composition statement, and (b) the cohort split is a genuine centre/protocol-split
+validation set. Diagnostic D2 settles this empirically. [UNRESOLVED until D2 reports.]
+
+**Not used and why.** E-MTAB-8873 and E-MTAB-8316 are not joined to this deposit:
+donor namespaces are source-specific and a shared `SAxxx` style is not evidence of the
+same donor. The MerTK+/protective-subset marker panel from E-MTAB-8873 may be used as a
+*gene list*, never as a row-level join. GSE55235/55457/55584 are reserved from
+expression-driven discovery by the domain guide. Healthy donors are a context anchor
+only, not a primary contrast, because of the age/sex confound (HC 22-48, 3/4 male; RA
+42-77, all female).
+
+## 5. Analysis plan
+
+0. **Gating.** Per-cell QC (UMI, genes, MT fraction), then marker-based myeloid gating
+   with a prespecified gate, applied identically to both cohorts, reported with the
+   fraction of cells excluded per sample.
+1. **Composition.** Normalise, HVG, PCA, cluster; annotate subsets against the published
+   MerTK/CD206/TREM2/LYVE1/CD48/S100A12/SPP1 axes; donor-level subset proportions;
+   rank-based group comparison with exact permutation nulls.
+2. **Primary test (baseline).** Donor-level pseudobulk; leave-one-donor-out classification
+   of naive vs resistant (6 v 6), all feature selection inside the fold; exact
+   label-permutation null over C(12,6)=924 assignments; repeat within Cohort 1 only
+   (4 v 4, C(8,4)=70, minimum two-sided p = 0.029) and score Cohort-2 donors out of
+   sample.
+3. **Composition control.** Repeat 2 on composition-matched pseudobulk (subset-balanced
+   resampling) and within each annotated subset separately. A signal that disappears
+   here is a composition effect, not a state effect. (Episode 1's hardest lesson on this
+   island was exactly this: a module-level result there was a denominator artefact and
+   reversed after gating.)
+4. **Partition.** Compute sets A / T / R of section 2 with permutation-calibrated set
+   sizes.
+5. **Alternative model.** Per-cell latent model (Branch C decides the form) to separate
+   "rare refractory subpopulation" from "graded shift in all cells"; donor-held-out
+   evaluation; ablation against pseudobulk; permuted-label negative control to detect
+   donor-identity learning.
+6. **Window arm.** Score R candidates in MerTK+ protective subsets.
+
+## 6. Falsification criteria (prespecified; numeric thresholds to be finalised once the
+power ceiling is measured in D5, exactly as episode 1 was forced to do)
+
+* **Supportive**: LOO donor classification of naive vs resistant exceeds its exact
+  permutation null at the prespecified level; the signal survives composition matching
+  (point 3) and keeps its direction in the held-out cohort; set R is larger than the
+  permuted-label expectation and is not dominated by dissociation-stress or
+  glucocorticoid-response genes.
+* **Adverse (H0)**: classification at or below the permutation null, and/or the apparent
+  signal is abolished by composition matching, and/or R is no larger than permuted
+  expectation. Interpretation: the merge in K1 is empirically justified for this
+  compartment; no refractory-specific macrophage target list is supported.
+* **Inconclusive**: signal in Cohort 1 that is confounded by depth/composition or that
+  cannot be evaluated in Cohort 2 (only 2 naive and 2 resistant donors there, so the
+  cohort-split arm gives direction, never significance), or a null too imprecise to
+  exclude a modest effect. An imprecise null does not refute H1 and must not be reported
+  as a refutation.
+
+## 7. What each outcome would and would not establish
+
+Supportive results establish a **descriptive, donor-level regularity** — that MTX-IR
+synovium differs — and nominate candidates. They do **not** establish that MTX caused the
+difference (disease duration and prior disease course are collinear with treatment
+status here), nor that any candidate is a drug target, nor anything about protein,
+function or erosion. Adverse results establish absence of a *detectable* macrophage-level
+difference at these donor numbers in this compartment; they do not establish that MTX has
+no synovial effect (other cell types were not profiled in Cohort 1) and do not establish
+equivalence. Causal attribution to MTX would require either a within-patient
+pre/post-MTX biopsy series or an ex vivo MTX exposure of STMs — neither exists in this
+island's sources; both are named here as the next evidence to acquire.
+
+## 8. Competing explanations, honestly ranked
+
+1. **Disease duration / disease course.** Naive = new onset; resistant = established,
+   previously failed therapy. **Not separable in this deposit.** Partial check only: the
+   remission group is also established and treated, so a component shared by resistant
+   and remission versus naive is *consistent with* duration or treatment and is not
+   attributable to refractoriness. Accepted limitation, stated in every claim.
+2. **Disease activity.** No per-donor DAS28, CRP, ESR or synovitis grade in the deposit.
+   Mitigation: an internal activity proxy (MerTK+/CD48+ balance or an inflammation score)
+   and a check of whether the naive/resistant separation survives matching on it. Weak.
+3. **Composition vs per-cell state.** Addressed structurally (section 5.3 and the
+   per-cell model), not by assertion.
+4. **Technical: cohort, sorting strategy, depth, ambient RNA, dissociation stress.**
+   D2/D3 measure these; the cohort split is both a confound and the validation axis, so
+   it is modelled explicitly and the within-Cohort-1 analysis is the primary one.
+5. **Donor identity learning by a flexible model.** Donor-held-out evaluation and
+   permuted-label controls.
+6. **Age/sex.** Within the RA groups all donors are female with overlapping ages; the
+   confound is severe only for the healthy arm, which is demoted to context.
+7. **Sample size.** 6 v 6 donors. The exact permutation floor is computable and will be
+   reported before interpretation, not after.
+
+## 9. Method comparison (summary; full record in `work/branch-c/method-comparison.md`)
+
+Baseline = donor pseudobulk + regularised LOO classifier + exact permutation nulls.
+Alternative = a per-cell latent model with donor random effects. The alternative is
+justified only if it answers something the baseline provably cannot: whether a positive
+signal is a *rare refractory subpopulation* (target a cell) or a *graded shift in all
+macrophages* (target a state) — different therapeutic objects. If the baseline returns a
+null, the alternative still has work to do (a rare subpopulation can be invisible in
+pseudobulk), which is the main reason not to run baseline alone.
+
+## 10. Deliverable for a future solver
+
+Newly fitted/estimated: gated per-cell macrophage data for 27 samples; donor-level
+subset proportions; a LOO-cross-validated donor classifier with its exact permutation
+null; composition-matched re-analyses; the A/T/R gene partition with permutation
+calibration; a per-cell latent model with donor-held-out evaluation and per-cell score
+distribution statistics; the window-arm scoring of R candidates in protective subsets.
+Completion outputs: gating report, composition table, classifier/null distributions,
+partition tables, model ablation and negative-control results, and an explicit
+supportive/adverse/inconclusive verdict mapped to section 6.
+
+## 11. Disposition of the three expert research demonstrations
+
+Recorded in full in episode 1's closing reason and not repeated by rote. Unchanged here:
+Delphi (generative transformers for disease natural history) and the Cell longitudinal
+oncology paper have categorical missing dependencies on this island (no longitudinal
+records, no EHR, no imaging; the latter's main text was not retrievable and I do not
+claim to have read it). The Bayesian longitudinal latent-structure paper is not
+reproducible here either, but its *method template* — latent factors with partial
+pooling across units fitted by gradient descent — is exactly what section 5.5 adapts,
+with the changed assumptions stated (no temporal component; units are cells nested in
+donors nested in cohorts).
+
+## 12. Seeds
+
+D2-T1 and D2-T2 were assessed `repairable` and used as parents in episode 1; this
+episode is a restart, not a derivation from them, so they are recorded as transition
+context only. D2-T3 (OA GWAS) and D2-T4 (GSE308009, PGDH) remain **blocked expanded
+branches** — their inputs are not admitted on this island, which is research context and
+not permission to pretend the data exist.
+
+---
+
+# EPISODE-2 EXECUTED EVIDENCE AND THE REVISED TEST (sections 13-16 govern)
+
+## 13. What was actually executed this episode, including the results against me
+
+All numbers below are [OBS] from named scripts/jobs in `work/a4d90ef291dbb9b1f/`
+(diagnostics D1-D6, Branch A) and `work/branch-c/` (probes, Branch C). They are
+**exploratory discovery diagnostics**, not the solver study; they were run to decide
+whether the proposed study is worth compiling and in what form. They changed it.
+
+**D1 - feature space.** 33,694 genes; one single `genes.tsv` [source checksum] across all 27
+samples; 68 rows carry a duplicated symbol (Ensembl IDs unique) and are kept distinct,
+as the domain guide requires; 13 MT- genes; all composition markers
+(MERTK/MRC1/TREM2/LYVE1/CD48/S100A12/SPP1/CD163/FOLR2/HLA-DRA) present.
+
+**D2 - gating was mandatory, as suspected.** Myeloid fraction after the prespecified
+gate ranges 0.218-0.996 across samples. It is >0.96 in the single-/triple-run Cohort-1
+samples but 0.22-0.59 in SA220, SA139, SA222, SA227 - i.e. the deep multi-lane samples
+do contain large non-macrophage fractions, confirming the Cohort-1/Cohort-2 protocol
+split inferred from the SDRF run counts. Any statement made on ungated matrices would
+have been a cell-type-composition artefact.
+
+**D3 - technical rivals are not differential between the two primary groups**, but
+depth contaminates marker detection. naive vs resistant exact Mann-Whitney p: runs 0.48,
+cells 0.70, total UMI 0.82, median UMI 0.31, median genes 0.70, median MT 1.00, myeloid
+fraction 0.82. However, across all 27 samples marker detection rate correlates with
+sequencing depth: MERTK rho=0.487 (p=0.010), TREM2 rho=0.448 (p=0.019). **Consequence:
+depth is a covariate for every composition statement, not a nuisance to mention.**
+
+**D4 - composition reproduces the published axis as a positive control, and shows no
+naive-vs-resistant difference.** Gated, clustered (k=8), annotated. MerTK-hi fraction
+(c5+c7): HC 0.691, naive 0.233, resistant 0.189, remission 0.404, UPA 0.335.
+HC vs active p=0.0011 (the published MerTK depletion in active RA is recovered);
+active vs remission p=0.100 (right direction, not significant at n=12 vs 7);
+**naive vs resistant p=0.485**. SPP1-hi: HC vs active p=0.0198, naive vs resistant 0.70.
+S100A12-hi: naive vs resistant 0.31.
+
+**D5 - the crude form of H1 is falsified.** Donor pseudobulk over gated macrophages,
+11,894 genes, leave-one-donor-out, feature selection inside the fold, **exact** null over
+all C(12,6)=924 assignments: nearest-centroid accuracy 0.500 (AUC 0.417, p=0.554),
+logistic 0.500 (AUC 0.361, p=0.409). Minimum attainable p is 0.00108, so this is a real
+null, not a resolution floor. Within Cohort 1 (4v4): accuracy 0.125, p=0.97. Donor scores
+correlate with median UMI (rho=0.776, p=0.003) - what little structure exists is depth.
+Positive-control ladder on the identical pipeline: **HC(4) vs active(12) accuracy 0.81,
+p=0.022** (the pipeline can detect a real axis at these donor numbers);
+active(12) vs remission(7) accuracy 0.63, **p=0.237**; resistant vs remission p=0.338;
+naive vs remission p=0.51. **This is the single most important number in the episode:
+the known disease-activity axis is itself not recoverable as a donor-level pseudobulk
+classifier here. Any null on naive-vs-resistant is therefore only as informative as the
+measured sensitivity floor allows, and must be reported with it.**
+
+**D6 - the A/T/R partition gives a refractory set smaller than chance.** Thresholds
+p<0.05, |log2FC|>0.5, non-difference arm p>0.2; permutation-calibrated set sizes:
+activity 492 (null mean 261, p=0.108), treatment-exposure-like 46 (null 54.6, p=0.350),
+**refractory-specific 8 (null mean 48.7, p=0.916)**. Glucocorticoid-response negative
+controls FKBP5, TSC22D3, KLF9 fall in no set, arguing against a steroid-exposure artefact.
+So at donor-pseudobulk resolution there is **no evidence for a refractory-specific
+macrophage program**, and the "activity" set itself does not clear its own null.
+
+**Branch C probes.** (i) GPU capacity is not the constraint: a per-cell NB latent model
+of the required size trains at 0.356 s/epoch, 0.54 GiB peak, 9.78x a 4-thread CPU
+(job `[research job]`, A100-SXM4-80GB). (ii) A **supervised** per-cell
+(MIL) arm is donor-limited, not compute-limited: on synthetic data using this study's
+real per-donor cell counts, leave-one-donor-out AUC was 0.44 (graded shift), 0.31 (rare
+3% subpopulation), 0.31 (pure composition shift), 0.27 (no effect) - chance in every
+planted world. (iii) The **label-free** route (representation -> clusters -> donor
+abundance) detects a composition shift (AUC 1.00, exact p=0.00108, 3/3 seeds) and a
+graded within-subset shift (AUC 1.00, 2/3 seeds) but **fails on a rare 3% subpopulation
+at exactly the level of the no-effect control**, and the naive "best cluster of k" screen
+is **anti-conservative** (nominal exact p=0.032 in a world with no group effect, because
+donor random effects create donor-private clusters). (iv) Exact null geometry: 6v6 needs
+donor-level AUC >= 0.778; Cohort-1 4v4 needs >= 0.9375 (one discordant pair kills it), so
+the cohort-split arm is a direction check, never a significance test. (v) Pseudobulk power
+at residual SD 0.4: detectable |log2FC| 0.72 at nominal alpha, ~2.5 genome-wide corrected.
+(vi) Rare-subset dilution: a subset at f=0.05 with within-subset log2FC 2.0 appears in
+pseudobulk as 0.20 - below the detectable effect. Transcriptome-wide pseudobulk screening
+is therefore structurally blind to exactly the world that would matter most.
+
+**One measurability check run by the Lead (presence only, no contrast inspected):** all
+37 genes of the external interferon-stimulated-gene (ISG) module listed in section 14 are
+retained in the 11,930-gene filtered 12-donor matrix.
+
+## 14. The revised, discriminating claim
+
+The honest state of evidence after section 13 is: *the published merge of treatment-naive
+and MTX-inadequate-responder RA is not contradicted by any transcriptome-wide donor-level
+summary of the macrophage compartment, and the design's measured sensitivity floor is
+high enough that this null is not yet decisive.* Two things remain genuinely unresolved,
+and the solver study is reorganised around them.
+
+**H1' (primary, prespecified, and - this is the point - *discriminating*).**
+Define an ISG module score on gated macrophages from an **external** 37-gene list
+(ISG15, MX1, MX2, OAS1/2/3, OASL, IFIT1/2/3, IFI6, IFI44, IFI44L, RSAD2, STAT1, STAT2,
+IRF7, IRF9, DDX58, IFIH1, EIF2AK2, XAF1, BST2, LY6E, SIGLEC1, USP18, HERC5, CMPK2,
+EPSTI1, SAMD9L, PARP9, DTX3L, GBP1, GBP5, CXCL9, CXCL10, CXCL11), **not** from the genes
+observed in D6. One module test replaces 11,930 gene tests, which is the only way the
+donor numbers buy any power at all (section 13, power table).
+
+The reason to interrogate the interferon axis specifically, and why this is not
+variable-fishing: it is the one axis on which two independent, differently-sourced
+observations on this island point the same way - episode 1's post-gating result in a
+*different* dataset and compartment (E-MTAB-8873, FLS coculture) found the CXCR3 ligands
+CXCL11/CXCL10/CXCL9, all ISGs, to be the most consistently restrained molecules; and D6's
+treatment-exposure-like set is topped by IFIT1, DDX58, EIF2AK2 with STAT2 in the
+refractory set. **The D6 observation is post-hoc and is declared as such**; it motivates
+the prespecification, it is not evidence for it, and the primary test uses the external
+list precisely so that the observed genes cannot carry it. No donor-level join is made
+between the two sources; the convergence is at the level of a gene set only.
+
+The discriminating structure is the three-group design, and it separates two
+explanations that an ordinary two-group comparison confounds:
+
+| explanation | predicted ISG pattern across the three RA groups |
+|---|---|
+| **E1 MTX-exposure** (ISG shift tracks drug exposure) | resistant ~ remission, both differing from naive (both treated groups are on MTX 15.2-15.3 mg/wk) |
+| **E2 disease activity** (ISG shift tracks inflammation) | naive ~ resistant, both differing from remission |
+| **E3 refractory-specific** | resistant differs from naive **and** from remission |
+| **E4 none** | no separation beyond the measured sensitivity floor |
+
+E1, E2, E3 and E4 make different, checkable orderings of the same three group means.
+That is the observation on which the rival explanations differ, and it is computable from
+the data bound in section 4. Disease duration remains collinear with treatment (section
+8.1): E1 cannot be separated from "duration/established disease" here, and must be
+reported as E1-or-duration throughout.
+
+**H2' (the bounding deliverable, which is the study's main product if H1' is null).**
+Quantify, rather than assert, what this compartment can exclude. Produce an **exclusion
+surface** over (subset frequency f x within-subset log2 effect d) for a refractory-specific
+macrophage program, from (a) within-subset donor-level tests on the annotated subsets,
+(b) the label-free composition/state arm **with re-clustering inside the permutation
+loop** (Branch C measured that the fixed-clustering version is anti-conservative), and
+(c) the measured dilution arithmetic. Calibrate the whole surface against the internal
+positive-control ladder of section 13 (HC-vs-active detected at p=0.022; active-vs-
+remission not detected at p=0.237). The deliverable is the curve and the calibration,
+not a p-value.
+
+## 15. Falsification criteria (supersede section 6)
+
+Primary endpoint: donor-level ISG module score on gated macrophages, depth-adjusted
+(median UMI as covariate and as a matching variable in a sensitivity run), two-sided,
+exact permutation null over the 924 6v6 assignments and the 420 within-cohort-restricted
+assignments.
+
+* **Supportive for E1 (MTX-exposure-or-duration fingerprint):** resistant differs from
+  naive at exact two-sided p <= 0.05 (equivalently donor-level AUC >= 0.778), the
+  remission group's module score sits with resistant and not with naive, the difference
+  survives (i) within-subset analysis, so it is not MerTK-hi/S100A12-hi composition,
+  (ii) depth matching, and (iii) keeps its sign in the four Cohort-2 donors (direction
+  only; n=4 cannot be significant). Claim permitted: a drug-exposure-or-duration-
+  associated interferon program exists in synovial macrophages and the published merge is
+  unsafe for interferon-axis questions. Claim **not** permitted: that MTX causes it, that
+  it is a target, or anything about protein or function.
+* **Supportive for E2 (activity axis):** active (naive+resistant) differs from remission
+  with resistant ~ naive. This is **adverse to the MTX-fingerprint hypothesis** and is
+  the result I consider most likely a priori; it would say the interferon convergence is
+  an inflammation readout, and it also repairs the D5 finding that the activity axis was
+  invisible to a transcriptome-wide classifier by showing a prespecified module recovers
+  it. That contrast (12 vs 7 donors) is the better-powered one.
+* **Supportive for E3 (refractory-specific):** resistant differs from both other groups
+  in the same module, with the same controls. This is the outcome that would nominate a
+  distinct target list for MTX-IR disease, and given D6 (refractory set p=0.916) I
+  consider it unlikely; if it appeared it would require the within-subset and cohort-
+  direction checks before any claim.
+* **Adverse / E4 with an informative bound:** no separation, **and** the positive-control
+  ladder fires (active-vs-remission module score separates, HC-vs-active separates). Then
+  the exclusion surface of H2' is interpretable and the conclusion is: at the macrophage
+  level, failing MTX leaves no detectable fingerprint down to the stated (f, d) boundary;
+  the published merge is empirically justified for discovery purposes at that resolution;
+  target discovery in treatment-naive synovial cohorts transfers to MTX-IR disease.
+* **Inconclusive, and it must be labelled so rather than dressed as a negative:** no
+  separation **and** the positive-control ladder does not fire at module level either.
+  Then the sensitivity floor is above plausible effect sizes and the study has measured
+  its own blindness, not the biology. The honest output is the floor itself plus the
+  statement that 6 vs 6 donors from this deposit cannot settle the question, together
+  with the named next evidence: a within-patient pre/post-MTX synovial biopsy series, an
+  ex vivo MTX exposure of sorted STMs, or a larger treatment-stratified cohort. None of
+  these exist on this island and none may be simulated.
+
+An imprecise null is not a refutation; the exclusion surface, not a p-value, carries the
+negative result.
+
+## 16. Method decision, with the measured reasons
+
+**Primary = the "simple" arm, and it is simple on evidence, not by preference:**
+prespecified module score + within-subset donor-level tests + exact permutation nulls,
+CPU-sufficient (the full D1-D6 battery ran inside the discovery budget).
+
+**Second arm = label-free representation -> clusters -> donor-level abundance and
+within-cluster state, with re-clustering inside the permutation loop.** Branch C measured
+that this arm detects composition (AUC 1.00, p=0.00108) and graded within-subset shifts
+(AUC 1.00) that pseudobulk cannot localise, and measured that omitting the nested
+re-clustering makes it anti-conservative. It is retained because it recovers *where* in
+the compartment any signal sits - the baseline provably cannot (section 1.5 of
+`work/branch-c/method-comparison.md`: three biological worlds with different therapeutic
+objects collapse to the same pseudobulk vector).
+
+**Deferred = the supervised learned per-cell alternative (MIL / conditional VAE with
+donor random effects).** The deferral is measured, not an objection to neural models or
+GPUs: the unique question it would answer (rare refractory subpopulation) is the one
+question Branch C's simulation shows is **not recoverable at 12 donors** (LOO AUC 0.31
+with a planted 3% subpopulation, versus 0.27 under no effect), and its exact permutation
+null would cost ~1.6x10^6 GPU-seconds, roughly 7x the entire 28,800 s solver planning
+envelope. GPU feasibility itself is measured and fine (0.356 s/epoch, 0.54 GiB).
+**Evidence that would justify revisiting it:** a treatment-stratified synovial cohort with
+tens of donors per arm (e.g. the 79-donor AMP-RA resource of [K2], not admitted on this
+island), or any within-patient pre/post-MTX series. This is recorded so a later episode
+can retrieve it rather than re-deriving it.
+
+**Resource estimate for the solver.** CPU-dominant: gating, clustering and the exact
+924-assignment nulls for a module-level statistic are minutes-to-hours on 16 CPUs
+[DERIVED from the measured D1-D6 runtimes]. One optional GPU for the label-free
+representation, measured at 0.356 s/epoch. Well inside 16 CPUs / 262 GiB / 28,800 s.
+
+**Not run during discovery, deliberately.** The ISG module contrast itself was **not**
+computed in this episode, although the data and code to do it are in hand. Running it now
+would consume the one prespecified confirmation this design has, and would convert the
+primary endpoint into another post-hoc observation. Only measurability (37/37 genes
+retained) was checked. This is the main reason the episode closes with a designed test
+rather than a reported effect.
+
+## 17. Key references and how each bears on the claim
+
+Full receipts, locators, inspection levels and content hashes are in the attached
+`key-references.json`; the inspected bytes themselves are attached.
+
+* **[K1]** Alivernini S. et al. *Distinct synovial tissue macrophage subsets regulate
+  inflammation and remission in rheumatoid arthritis.* Nat Med 26:1295-1306 (2020).
+  doi:10.1038/s41591-020-0939-8. Inspected: full text of a mechanical PDF-to-text
+  extraction. It is both the closest prior work and the origin of E-MTAB-8322. It
+  **supports** the MerTK+/MerTK- subset axis this proposal takes as given and recovers
+  as a positive control (D4: HC vs active p=0.0011). It is also the work this proposal
+  **challenges on one specific point**: its single-cell analyses merge treatment-naive
+  with treatment-resistant RA and never test that merge. What it does not establish:
+  anything about whether failing methotrexate changes the macrophage compartment, which
+  is the question here.
+* **[K2]** Zhang F. et al. *Deconstruction of rheumatoid arthritis synovium defines
+  inflammatory subtypes.* Nature 623:616-624 (2023). doi:10.1038/s41586-023-06708-y.
+  Inspected: Europe PMC JATS full text (PMC10651487). It is the strongest **rival frame
+  and bound**: with 79 donors it argues that synovial heterogeneity is organised by
+  cell-type-abundance phenotypes largely independent of clinical covariates, which
+  predicts that a treatment stratum should *not* carry its own macrophage program -
+  consistent with this episode's executed null - and it is also the resource whose donor
+  numbers would be required to revisit the deferred per-cell learned model. What it does
+  not establish: it does not contrast treatment-naive against methotrexate-inadequate
+  responders as an exposure, and it is not joined to this deposit at donor level.
+* **[K3]** Nagy G. et al. *EULAR definition of difficult-to-treat rheumatoid arthritis.*
+  Ann Rheum Dis 80:31-35 (2021). doi:10.1136/annrheumdis-2020-217344. Inspected: Europe
+  PMC JATS full text (PMC7788062). It **bounds the clinical claim**: it defines the
+  refractory population by failure of two or more biologic/targeted synthetic DMARDs,
+  i.e. downstream of the methotrexate-inadequate responders studied here. So this
+  proposal addresses the entry point to that pathway, not the D2T population itself, and
+  no D2T claim may be made from these data under any outcome.
+
+Additional context cited in the text but not occupying a key-reference slot: episode 1's
+own executed diagnostics on E-MTAB-8873 (CXCR3-ligand restraint after gating), recorded
+in `[prior hypothesis]`.
