@@ -10,6 +10,8 @@ Search a hypothesis ID or title in the [complete CSV index](data/model-index.csv
 
 **Mixed runs are labeled by the model that wrote the hypothesis.** Qwen-written outputs remain **Qwen original**; outputs from our tuned checkpoints are **discoveryRSI (our model)**, including when another model coordinates the run. Reviewers and coordinators are not assigned as hypothesis writers.
 
+For the technical comparison, discoveryRSI is partitioned by recorded model version: **discoveryRSI-SFT** contains 560 generated versions from the two SFT IDs, and **discoveryRSI-RAFT (final)** contains 616 generated versions from `qwen38-27b-raft-r2-150`. The public writer label remains the aggregate discoveryRSI label.
+
 ## Browse by hypothesis writer
 
 | Hypothesis writer / all hypothesis links | Generated versions |

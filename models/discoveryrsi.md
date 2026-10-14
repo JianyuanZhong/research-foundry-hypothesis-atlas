@@ -6,6 +6,10 @@
 
 **1,176 generated hypothesis versions.** Labels follow the recorded hypothesis writer, including in mixed runs. Imported starting questions are excluded.
 
+## Analysis split
+
+The public writer label remains **discoveryRSI (our model)**. For comparison, the tuned runs are reported separately: **discoveryRSI-SFT: 560 generated versions** (`qwen-sft-256k` and `qwen38-27b-sft-256k`); **discoveryRSI-RAFT (final): 616 generated versions** (`qwen38-27b-raft-r2-150`). RAFT is the final tuned version in the current experiment comparison. These are descriptive model-version partitions, not separate public writer labels.
+
 | Campaign / hypothesis links | Model version | Recorded model ID | Generated versions |
 |---|---|---|---:|
 | [discoveryRSI draft-first campaign](C04.md) | discoveryRSI (Qwen 3.8 27B SFT) | `qwen38-27b-sft-256k` | 114 |
